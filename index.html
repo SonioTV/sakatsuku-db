@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サカつく2026 コンボ検索</title>
+
+  <style>
+    /* ===== タブ ===== */
+    .tabs{
+      display:flex;
+      gap:8px;
+      margin: 10px 0 14px;
+    }
+    .tab-btn{
+      flex:1;
+      padding:10px 12px;
+      border:1px solid #ccc;
+      background:#f7f7f7;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:700;
+    }
+    .tab-btn.active{
+      background:#111;
+      color:#fff;
+      border-color:#111;
+    }
+    .tab-panel{ display:none; }
+    .tab-panel.active{ display:block; }
+
+    @media (max-width: 480px){
+      .tab-btn{ padding:12px 10px; font-size:14px; }
+    }
+
+    /* ===== タイトル下の注釈 ===== */
+    .note-main{
+      margin: 4px 0 2px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
+    .note-sub{
+      margin: 0 0 12px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* ===== 結果カード ===== */
+    .result-card{
+      margin-bottom:15px;
+      padding:10px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      background:#fff;
+    }
+    .result-card.exact{ border-left:6px solid #2e7d32; }        /* ① */
+    .result-card.diffPolicy{ border-left:6px solid #1565c0; }   /* ② */
+    .result-card.diffPosition{ border-left:6px solid #6a1b9a; } /* ③ */
+    .result-card.state-active{ background:#e8f5e9; }  /* 発動中（あと0） */
+    .result-card.state-soon{ background:#fff8e1; }    /* あと1 */
+    .result-card.state-far{ background:#f5f5f5; }     /* あと2+ */
+
+    /* ===== ポリシー画像UI ===== */
+    .policy-board{
+      display:grid;
+      grid-template-columns: repeat(2, 90px);
+      gap:12px;
+      margin-bottom:15px;
+    }
+    .policy-board input{ display:none; }
+    .policy-board label{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:6px;
+      border:2px solid transparent;
+      border-radius:10px;
+      cursor:pointer;
+      background:#fff;
+      text-align:center;
+    }
+    .policy-board label div{
+      white-space: nowrap;
+      font-size:12px;
+    }
+    .policy-board img{
+      width:60px;
+      height:60px;
+      object-fit:contain;
+    }
+    .policy-board input:checked + label{
+      border-color:#ff9800;
+      box-shadow:0 0 0 2px #ff9800;
+    }
+
+    /* ===== ポジション選択UI ===== */
+    .pos-board{
+      display:grid;
+      grid-template-columns: repeat(3, 65px);
+      grid-auto-rows: 45px;
+      gap: 6px;
+      background:#eee;  /* 背景：薄いグレー */
+      padding:8px;
+      width: fit-content;
+      border-radius: 8px;
+    }
+    .pos-board input{ display:none; }
+
+    .pos{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      font-size:18px;
+      background:#666;   /* ボタン背景：濃いグレー */
+      color:#fff;
+      border:3px solid transparent;
+      border-radius:6px;
+      cursor:pointer;
+      user-select:none;
+      transition: all 0.15s ease;
+    }
+
+    /* 枠線カラー（通常時） */
+    .atk{ border-color:#49d35a; } /* 緑 */
+    .mid{ border-color:#f6c21a; } /* 黄 */
+    .def{ border-color:#4bb5e6; } /* 青 */
+    .gk { border-color:#ff2b2b; } /* 赤 */
+
+    .tall{ grid-row: span 2; }
+
+    /* 配置 */
+    #pos_LW + label{ grid-column:1; grid-row:1; }
+    #pos_CF + label{ grid-column:2; grid-row:1; }
+    #pos_RW + label{ grid-column:3; grid-row:1; }
+
+    #pos_LM + label{ grid-column:1; grid-row:2 / span 2; }
+    #pos_AM + label{ grid-column:2; grid-row:2; }
+    #pos_RM + label{ grid-column:3; grid-row:2 / span 2; }
+
+    #pos_DM + label{ grid-column:2; grid-row:3; }
+
+    #pos_LB + label{ grid-column:1; grid-row:4; }
+    #pos_CB + label{ grid-column:2; grid-row:4; }
+    #pos_RB + label{ grid-column:3; grid-row:4; }
+
+    #pos_GK + label{ grid-column:2; grid-row:5; }
+
+    /* 選択時：ポジション色に変化（赤枠は無し） */
+    .pos-board input:checked + label.atk{ background:#49d35a; color:#000; }
+    .pos-board input:checked + label.mid{ background:#f6c21a; color:#000; }
+    .pos-board input:checked + label.def{ background:#4bb5e6; color:#000; }
+    .pos-board input:checked + label.gk { background:#ff2b2b; color:#fff; }
+
+    /* ===== プレイスタイル画像UI ===== */
+    .style-board{
+      display:grid;
+      grid-template-columns: repeat(3, 80px);
+      gap:4px;
+      margin-bottom:15px;
+    }
+    .style-board input{ display:none; }
+    .style-board label{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:1px 6px;
+      border:2px solid transparent;
+      border-radius:8px;
+      cursor:pointer;
+      background:#fff;
+      text-align:center;
+    }
+    .style-board img{
+      width:57px;
+      height:57px;
+      object-fit:contain;
+    }
+    .style-board label div{
+      white-space: nowrap;
+      font-size:10px;
+    }
+    .style-board input:checked + label{
+      border-color:#2196f3;
+      box-shadow:0 0 0 2px #2196f3;
+    }
+
+    /* ===== 結果（スマホで読みやすく） ===== */
+    .kv { display: grid; grid-template-columns: 110px 1fr; gap: 6px 10px; }
+    .k { font-weight: 800; color: #111; }
+    .v { color: #111; }
+
+    @media (max-width: 480px){
+      .result-card{ font-size: 13px; line-height: 1.55; }
+      .kv{ grid-template-columns: 1fr; gap: 2px 0; }
+      .k{ margin-top: 6px; }
+    }
+
+    /* ===== 条件カード（見やすく） ===== */
+    .cond-kv { margin-top: 6px; }
+    .candidates { margin-top: 10px; display: grid; gap: 10px; }
+    .cand-block{
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    .cand-title{ font-weight: 900; margin-bottom: 4px; }
+    .cand-list{ white-space: pre-wrap; line-height: 1.6; }
+  </style>
+</head>
+
+<body>
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="tab-search">フォーメーションコンボ検索</button>
+    <button class="tab-btn" data-tab="tab-combo">コンボから選手を探す</button>
+  </div>
+
+  <!-- =========================
+    タブ①：フォーメーションコンボ検索
+  ========================= -->
+  <div id="tab-search" class="tab-panel active">
+    <h2>フォーメーションコンボ検索</h2>
+    <p class="note-main">検索したい選手の情報を入力してください</p>
+    <p class="note-sub">※ポジションは適正がある場所を全て選択してください。</p>
+
+    <div>【ポリシー】</div>
+    <div class="policy-board">
+      <input type="radio" name="policy" id="pol_counter" value="カウンター">
+      <label for="pol_counter"><img src="img/policy/counter.png"><div>カウンター</div></label>
+
+      <input type="radio" name="policy" id="pol_moving" value="ムービング">
+      <label for="pol_moving"><img src="img/policy/moving.png"><div>ムービング</div></label>
+
+      <input type="radio" name="policy" id="pol_reaction" value="リアクション">
+      <label for="pol_reaction"><img src="img/policy/reaction.png"><div>リアクション</div></label>
+
+      <input type="radio" name="policy" id="pol_possession" value="ポゼッション" checked>
+      <label for="pol_possession"><img src="img/policy/possession.png"><div>ポゼッション</div></label>
+    </div>
+
+    <div>【ポジション（複数可）】</div>
+    <div class="pos-board">
+      <input id="pos_LW" type="checkbox" value="LW"><label class="pos atk" for="pos_LW">LW</label>
+      <input id="pos_CF" type="checkbox" value="CF"><label class="pos atk" for="pos_CF">CF</label>
+      <input id="pos_RW" type="checkbox" value="RW"><label class="pos atk" for="pos_RW">RW</label>
+
+      <input id="pos_LM" type="checkbox" value="LM"><label class="pos mid tall" for="pos_LM">LM</label>
+      <input id="pos_AM" type="checkbox" value="AM"><label class="pos mid" for="pos_AM">AM</label>
+      <input id="pos_RM" type="checkbox" value="RM"><label class="pos mid tall" for="pos_RM">RM</label>
+      <input id="pos_DM" type="checkbox" value="DM"><label class="pos mid" for="pos_DM">DM</label>
+
+      <input id="pos_LB" type="checkbox" value="LB"><label class="pos def" for="pos_LB">LB</label>
+      <input id="pos_CB" type="checkbox" value="CB"><label class="pos def" for="pos_CB">CB</label>
+      <input id="pos_RB" type="checkbox" value="RB"><label class="pos def" for="pos_RB">RB</label>
+
+      <input id="pos_GK" type="checkbox" value="GK"><label class="pos gk" for="pos_GK">GK</label>
+    </div>
+
+    <br>
+    <div>【プレイスタイル】</div>
+    <div class="style-board">
+      <input type="radio" name="style" id="sty_striker" value="ストライカー" checked>
+      <label for="sty_striker"><img src="img/style/striker.png"><div>ストライカー</div></label>
+
+      <input type="radio" name="style" id="sty_line" value="ラインブレーカー">
+      <label for="sty_line"><img src="img/style/linebreaker.png"><div>ラインブレーカー</div></label>
+
+      <input type="radio" name="style" id="sty_post" value="ポストプレーヤー">
+      <label for="sty_post"><img src="img/style/postplayer.png"><div>ポストプレーヤー</div></label>
+
+      <input type="radio" name="style" id="sty_side" value="サイドアタッカー">
+      <label for="sty_side"><img src="img/style/sideattacker.png"><div>サイドアタッカー</div></label>
+
+      <input type="radio" name="style" id="sty_drib" value="ドリブラー">
+      <label for="sty_drib"><img src="img/style/dribbler.png"><div>ドリブラー</div></label>
+
+      <input type="radio" name="style" id="sty_att" value="アタッカー">
+      <label for="sty_att"><img src="img/style/attacker.png"><div>アタッカー</div></label>
+
+      <input type="radio" name="style" id="sty_pass" value="パサー">
+      <label for="sty_pass"><img src="img/style/passer.png"><div>パサー</div></label>
+
+      <input type="radio" name="style" id="sty_cmf" value="セントラルMF">
+      <label for="sty_cmf"><img src="img/style/centralmf.png"><div>セントラルMF</div></label>
+
+      <input type="radio" name="style" id="sty_hard" value="ハードマーカー">
+      <label for="sty_hard"><img src="img/style/hardmarker.png"><div>ハードマーカー</div></label>
+
+      <input type="radio" name="style" id="sty_stop" value="ストッパー">
+      <label for="sty_stop"><img src="img/style/stopper.png"><div>ストッパー</div></label>
+
+      <input type="radio" name="style" id="sty_build" value="組立CB">
+      <label for="sty_build"><img src="img/style/buildupcb.png"><div>組立CB</div></label>
+
+      <input type="radio" name="style" id="sty_afb" value="攻撃的FB">
+      <label for="sty_afb"><img src="img/style/attackfb.png"><div>攻撃的FB</div></label>
+
+      <input type="radio" name="style" id="sty_dfb" value="守備的FB">
+      <label for="sty_dfb"><img src="img/style/defensefb.png"><div>守備的FB</div></label>
+
+      <input type="radio" name="style" id="sty_ogk" value="オーソドックスGK">
+      <label for="sty_ogk"><img src="img/style/orthodoxgk.png"><div>オーソドックスGK</div></label>
+
+      <input type="radio" name="style" id="sty_sgk" value="スイーパーGK">
+      <label for="sty_sgk"><img src="img/style/sweepergk.png"><div>スイーパーGK</div></label>
+    </div>
+
+    <div>【Lv】</div>
+    <select id="lv">
+      <option value="1">Lv1</option>
+      <option value="2">Lv2</option>
+      <option value="3">Lv3</option>
+    </select>
+
+    <br><br>
+    <button type="button" onclick="search()">検索</button>
+
+    <hr>
+
+    <h3>① 完全一致</h3>
+    <div id="exact"></div>
+
+    <h3>② ポリシー違い</h3>
+    <div id="diffPolicy"></div>
+
+    <h3>③ ポジション違い</h3>
+    <div id="diffPosition"></div>
+  </div>
+
+  <!-- =========================
+    タブ②：コンボから選手を探す
+  ========================= -->
+  <div id="tab-combo" class="tab-panel">
+    <h2>コンボから選手を探す</h2>
+    <p class="note-sub">※選手名横の（）内は「初期総合力/プレイスタイル/メインポジション」です</p>
+
+    <div style="margin:10px 0 6px; font-weight:700;">フォーメーションコンボを選択</div>
+    <select id="comboSelect"></select>
+    <br>
+    <button type="button" onclick="showComboPlayers()">対応選手を表示</button>
+
+    <div id="comboPlayers" style="margin-top:10px;"></div>
+  </div>
+
+  <script>
+    let combos = [];
+    let players = [];
+
+    /* ===== JSON読み込み ===== */
+    fetch("combos.json")
+      .then(r => r.json())
+      .then(data => {
+        combos = data;
+        initComboSelect();
+      })
+      .catch(err => console.error("combos.json 読み込み失敗", err));
+
+    fetch("players.json")
+      .then(r => r.json())
+      .then(data => { players = data; })
+      .catch(err => console.error("players.json 読み込み失敗", err));
+
+    /* ===== ランクソート ===== */
+    function rankScore(rank) {
+      if (rank === "金") return 3;
+      if (rank === "銀") return 2;
+      if (rank === "銅") return 1;
+      return 0;
+    }
+    function sortByRank(list) {
+      return list.slice().sort((a, b) => rankScore(b.rank) - rankScore(a.rank));
+    }
+
+    /* ===== 表示補助 ===== */
+    function wbrJP(text){
+      return String(text || "").replaceAll("、", "、<wbr>");
+    }
+
+    function formatResult(list, category) {
+      return list.map(combo => {
+        const required = combo.requiredPlayers ?? (combo.conditions?.length ?? 0);
+        const remain = combo._remain ?? 0;
+        const comboPolicy = combo.policy ?? combo.conditions?.[0]?.policy ?? "";
+        const requiredText = remain > 0 ? `${required}人（あと${remain}人で発動）` : `${required}人`;
+
+        const stateClass =
+          remain === 0 ? "state-active" :
+          remain === 1 ? "state-soon" :
+          "state-far";
+
+        let missingText = "";
+        if (remain > 0 && Array.isArray(combo._missing) && combo._missing.length > 0) {
+          const show = combo._missing.slice(0, remain);
+          missingText =
+            `※不足条件※<br>` +
+            show.map(c =>
+              `ポジション：${c.position} / プレイスタイル：${c.playStyle}Lv${c.lv}以上`
+            ).join("<br>");
+        }
+
+        return `
+          <div class="result-card ${category} ${stateClass}">
+            <div class="kv">
+              <div class="k">フォーメーション名</div><div class="v">${combo.name}</div>
+              <div class="k">ランク</div><div class="v">${combo.rank}</div>
+              <div class="k">効果</div><div class="v">${wbrJP(combo.effect)}</div>
+              <div class="k">フォーメーション</div><div class="v">${combo.formation}</div>
+              <div class="k">ポリシー</div><div class="v">${comboPolicy}</div>
+              <div class="k">必要人数</div><div class="v">${requiredText}</div>
+            </div>
+            ${missingText ? `<div style="margin-top:8px;">${missingText}</div>` : ""}
+          </div>
+        `;
+      }).join("");
+    }
+
+    /* ===== コンボ→選手表示用 ===== */
+    function getOverall(p) {
+      const v = p.overall ?? p.initialOverall ?? p.total ?? null;
+      return (v === null || v === undefined || v === "") ? "-" : v;
+    }
+    function formatPlayerLine(p) {
+      // 注釈は「初期総合力/プレイスタイル/メインポジション」にしたいならここを変更
+      // return `${p.name}（${getOverall(p)}/${p.playStyle}/${p.mainPosition}）`;
+
+      // 現状の仕様（初期総合力/ポリシー/メインポジション）
+      return `${p.name}（${getOverall(p)}/${p.policy}/${p.mainPosition}）`;
+    }
+    function sortPlayers(list) {
+      return [...list].sort((a, b) => {
+        const ao = Number(getOverall(a));
+        const bo = Number(getOverall(b));
+        const aNum = Number.isFinite(ao);
+        const bNum = Number.isFinite(bo);
+        if (aNum && bNum && ao !== bo) return bo - ao;
+        if (aNum && !bNum) return -1;
+        if (!aNum && bNum) return 1;
+        return (a.name || "").localeCompare(b.name || "");
+      });
+    }
+
+    function playerMatchesPosStyle(p, cond) {
+      const posOk = Array.isArray(p.positions) && p.positions.includes(cond.position);
+      const styleOk = (p.playStyle === cond.playStyle);
+      const lvOk = (Number(p.lv || 1) >= Number(cond.lv || 1));
+      return posOk && styleOk && lvOk;
+    }
+
+    // ★不足していた関数：完全一致（pos+style+lv+policy）
+    function playerMatchesCondition(p, cond) {
+      return playerMatchesPosStyle(p, cond) && (p.policy === cond.policy);
+    }
+
+    /* ===== フォーメーションコンボ検索（タブ1） ===== */
+    function search() {
+      const policy = document.querySelector('input[name="policy"]:checked')?.value ?? "";
+      const style = document.querySelector('input[name="style"]:checked')?.value ?? "";
+      const lv = parseInt(document.getElementById("lv").value, 10);
+
+      const checkboxes = document.querySelectorAll(".pos-board input[type=checkbox]:checked");
+      const positions = Array.from(checkboxes).map(cb => cb.value);
+
+      const player = { policy, positions, playStyle: style, lv };
+
+      const results = {
+        exact: new Set(),
+        diffPolicy: new Set(),
+        diffPosition: new Set()
+      };
+
+      combos.forEach(combo => {
+        const need = combo.requiredPlayers ?? (combo.conditions?.length ?? 0);
+        let matchCount = 0;
+        const missing = [];
+
+        (combo.conditions ?? []).forEach(condition => {
+          const policyMatch = condition.policy === player.policy;
+          const positionMatch = player.positions.includes(condition.position);
+          const styleMatch = condition.playStyle === player.playStyle;
+          const lvMatch = player.lv >= condition.lv;
+
+          const isMet = policyMatch && positionMatch && styleMatch && lvMatch;
+          if (isMet) matchCount++;
+          else missing.push(condition);
+
+          if (styleMatch && lvMatch) {
+            if (policyMatch && positionMatch) results.exact.add(combo);
+            else if (!policyMatch && positionMatch) results.diffPolicy.add(combo);
+            else if (policyMatch && !positionMatch) results.diffPosition.add(combo);
+          }
+        });
+
+        const remain = Math.max(0, need - matchCount);
+        combo._remain = remain;
+        combo._missing = missing;
+      });
+
+      document.getElementById("exact").innerHTML =
+        formatResult(sortByRank([...results.exact]), "exact");
+
+      document.getElementById("diffPolicy").innerHTML =
+        formatResult(sortByRank([...results.diffPolicy]), "diffPolicy");
+
+      document.getElementById("diffPosition").innerHTML =
+        formatResult(sortByRank([...results.diffPosition]), "diffPosition");
+    }
+
+    /* ===== プルダウン（タブ2） ===== */
+    function makeComboKey(c) {
+      return `${c.formation}|${c.name}`;
+    }
+    function initComboSelect() {
+      const sel = document.getElementById("comboSelect");
+      if (!sel) return;
+
+      const sorted = [...combos].sort((a,b) => {
+        const fa = (a.formation || "").localeCompare(b.formation || "");
+        if (fa !== 0) return fa;
+        return (a.name || "").localeCompare(b.name || "");
+      });
+
+      sel.innerHTML = sorted.map(c => {
+        const key = makeComboKey(c);
+        return `<option value="${key}">${c.formation}｜${c.name}（${c.rank}）</option>`;
+      }).join("");
+    }
+
+    function showComboPlayers() {
+      const sel = document.getElementById("comboSelect");
+      const out = document.getElementById("comboPlayers");
+      if (!sel || !out) return;
+
+      const selectedKey = sel.value;
+      const combo = combos.find(c => makeComboKey(c) === selectedKey);
+
+      if (!combo) {
+        out.innerHTML = "コンボが見つかりません";
+        return;
+      }
+
+      const comboPolicy = combo.policy ?? combo.conditions?.[0]?.policy ?? "";
+      const required = combo.requiredPlayers ?? (combo.conditions?.length ?? 0);
+
+      let html = `
+        <div class="result-card exact state-active">
+          <div class="kv">
+            <div class="k">フォーメーション名</div><div class="v">${combo.name}</div>
+            <div class="k">フォーメーション</div><div class="v">${combo.formation}</div>
+            <div class="k">ランク</div><div class="v">${combo.rank}</div>
+            <div class="k">ポリシー</div><div class="v">${comboPolicy}</div>
+            <div class="k">効果</div><div class="v">${wbrJP(combo.effect)}</div>
+            <div class="k">必要人数</div><div class="v">${required}人</div>
+          </div>
+        </div>
+      `;
+
+      const conds = Array.isArray(combo.conditions) ? combo.conditions : [];
+      conds.forEach((cond, idx) => {
+        const full = sortPlayers(players.filter(p => playerMatchesCondition(p, cond)));
+        const policyDiff = sortPlayers(players.filter(p => playerMatchesPosStyle(p, cond) && (p.policy !== cond.policy)));
+
+        const fullText = full.length ? full.map(formatPlayerLine).join("\n") : "なし";
+        const policyDiffText = policyDiff.length ? policyDiff.map(formatPlayerLine).join("\n") : "なし";
+
+        html += `
+          <div class="result-card">
+            <div style="font-weight:900;">条件${idx + 1}</div>
+
+            <div class="kv cond-kv">
+              <div class="k">ポジション</div><div class="v">${cond.position}</div>
+              <div class="k">プレイスタイル</div><div class="v">${cond.playStyle} Lv${cond.lv}以上</div>
+              <div class="k">ポリシー</div><div class="v">${cond.policy}</div>
+            </div>
+
+            <div class="candidates">
+              <div class="cand-block">
+                <div class="cand-title">完全一致（${full.length}人）</div>
+                <div class="cand-list">${fullText}</div>
+              </div>
+
+              <div class="cand-block">
+                <div class="cand-title">ポリシー違い（${policyDiff.length}人）</div>
+                <div class="cand-list">${policyDiffText}</div>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      out.innerHTML = html;
+    }
+
+    /* ===== タブ切替 ===== */
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest(".tab-btn");
+      if (!btn) return;
+
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const tabId = btn.dataset.tab;
+      document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("active"));
+      document.getElementById(tabId).classList.add("active");
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>

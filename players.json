@@ -1,0 +1,352 @@
+[
+  {
+    "playerId": "P0001",
+    "name": "ブカヨ・サカ",
+    "overall": 7377,
+    "policy": "ポゼッション",
+    "playStyle": "ドリブラー",
+    "lv": 3,
+    "mainPosition": "RW",
+    "positions": [
+      "RW"
+    ]
+  },
+  {
+    "playerId": "P0002",
+    "name": "ラウタロ・マルティネス",
+    "overall": 7170,
+    "policy": "リアクション",
+    "playStyle": "ラインブレーカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ]
+  },
+  {
+    "playerId": "P0003",
+    "name": "マイク・メニャン",
+    "overall": 7061,
+    "policy": "ポゼッション",
+    "playStyle": "オーソドックスGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ]
+  },
+  {
+    "playerId": "P0004",
+    "name": "イスコ",
+    "overall": 6799,
+    "policy": "ポゼッション",
+    "playStyle": "セントラルMF",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ]
+  },
+  {
+    "playerId": "P0005",
+    "name": "本田圭佑",
+    "overall": 7161,
+    "policy": "ムービング",
+    "playStyle": "サイドアタッカー",
+    "lv": 3,
+    "mainPosition": "RM",
+    "positions": [
+      "RM",
+      "AM"
+    ]
+  },
+  {
+    "playerId": "P0006",
+    "name": "クリスティアーノ・ロナウド",
+    "overall": 7638,
+    "policy": "リアクション",
+    "playStyle": "ストライカー",
+    "lv": 3,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ]
+  },
+  {
+    "playerId": "P0007",
+    "name": "ソン・フンミン",
+    "overall": 7212,
+    "policy": "ポゼッション",
+    "playStyle": "ラインブレーカー",
+    "lv": 3,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ]
+  },
+  {
+    "playerId": "P0008",
+    "name": "フィル・フォーデン",
+    "overall": 7397,
+    "policy": "ムービング",
+    "playStyle": "サイドアタッカー",
+    "lv": 3,
+    "mainPosition": "LM",
+    "positions": [
+      "LM"
+    ]
+  },
+  {
+    "playerId": "P0009",
+    "name": "三苫薫",
+    "overall": 7099,
+    "policy": "ポゼッション",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "LW",
+    "positions": [
+      "LW"
+    ]
+  },
+  {
+    "playerId": "P0010",
+    "name": "フェデリコ・バルベルデ",
+    "overall": 7365,
+    "policy": "リアクション",
+    "playStyle": "セントラルMF",
+    "lv": 3,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ]
+  },
+  {
+    "playerId": "P0011",
+    "name": "ヤン・ゾマー",
+    "overall": 7170,
+    "policy": "リアクション",
+    "playStyle": "オーソドックスGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ]
+  },
+  {
+    "playerId": "P0012",
+    "name": "カラム・ウィルソン",
+    "overall": 6748,
+    "policy": "リアクション",
+    "playStyle": "ポストプレーヤー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ]
+  },
+  {
+    "playerId": "P0013",
+    "name": "ファン・ヒチャン",
+    "overall": 6668,
+    "policy": "カウンター",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "LW",
+    "positions": [
+      "LW"
+    ]
+  },
+  {
+    "playerId": "P0014",
+    "name": "ペドロ",
+    "overall": 6784,
+    "policy": "リアクション",
+    "playStyle": "サイドアタッカー",
+    "lv": 2,
+    "mainPosition": "RW",
+    "positions": [
+      "RW"
+    ]
+  },
+  {
+    "playerId": "P0015",
+    "name": "ブラヒム・ディアス",
+    "overall": 7111,
+    "policy": "リアクション",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "RW",
+    "positions": [
+      "RW"
+    ]
+  },
+  {
+    "playerId": "P0016",
+    "name": "南野拓実",
+    "overall": 6815,
+    "policy": "ムービング",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ]
+  },
+  {
+    "playerId": "P0017",
+    "name": "ジョアン・ペドロ",
+    "overall": 6881,
+    "policy": "リアクション",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ]
+  },
+  {
+    "playerId": "P0018",
+    "name": "アシュリー・ヤング",
+    "overall": 6664,
+    "policy": "カウンター",
+    "playStyle": "サイドアタッカー",
+    "lv": 2,
+    "mainPosition": "LM",
+    "positions": [
+      "LM"
+    ]
+  },
+  {
+    "playerId": "P0019",
+    "name": "ステファン・エル・シャーラウィ",
+    "overall": 6691,
+    "policy": "リアクション",
+    "playStyle": "サイドアタッカー",
+    "lv": 2,
+    "mainPosition": "LM",
+    "positions": [
+      "LM"
+    ]
+  },
+  {
+    "playerId": "P0020",
+    "name": "フアン・クアドラード",
+    "overall": 6768,
+    "policy": "ポゼッション",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "RM",
+    "positions": [
+      "RM",
+      "AM"
+    ]
+  },
+  {
+    "playerId": "P0021",
+    "name": "ショーン・ロングスタッフ",
+    "overall": 6654,
+    "policy": "ムービング",
+    "playStyle": "セントラルMF",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ]
+  },
+  {
+    "playerId": "P0022",
+    "name": "ファン・インボム",
+    "overall": 6673,
+    "policy": "ムービング",
+    "playStyle": "パサー",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ]
+  },
+  {
+    "playerId": "P0023",
+    "name": "ファビアン・ルイス",
+    "overall": 6771,
+    "policy": "ポゼッション",
+    "playStyle": "パサー",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ]
+  },
+  {
+    "playerId": "P0024",
+    "name": "ルーク・ショー",
+    "overall": 6686,
+    "policy": "ムービング",
+    "playStyle": "守備的FB",
+    "lv": 2,
+    "mainPosition": "LB",
+    "positions": [
+      "LB"
+    ]
+  },
+  {
+    "playerId": "P0025",
+    "name": "ユリエン・ティンバー",
+    "overall": 6770,
+    "policy": "ポゼッション",
+    "playStyle": "守備的FB",
+    "lv": 2,
+    "mainPosition": "LB",
+    "positions": [
+      "LB"
+    ]
+  },
+  {
+    "playerId": "P0026",
+    "name": "ナウエル・モリーナ",
+    "overall": 6750,
+    "policy": "カウンター",
+    "playStyle": "攻撃的FB",
+    "lv": 2,
+    "mainPosition": "RB",
+    "positions": [
+      "RB"
+    ]
+  },
+  {
+    "playerId": "P0027",
+    "name": "アレクサンドロ・リベイロ",
+    "overall": 6663,
+    "policy": "ポゼッション",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ]
+  },
+  {
+    "playerId": "P0028",
+    "name": "フェデリコ・ガッティ",
+    "overall": 6775,
+    "policy": "カウンター",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ]
+  },
+  {
+    "playerId": "P0029",
+    "name": "ニック・ホープ",
+    "overall": 6874,
+    "policy": "カウンター",
+    "playStyle": "オーソドックスGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ]
+  }
+]

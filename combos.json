@@ -1,0 +1,1138 @@
+[
+  {
+    "comboId": "C001",
+    "name": "4-4-2Bポゼッションスタイル",
+    "formation": "4-4-2B",
+    "rank": "銅",
+    "requiredPlayers": 1,
+    "effect": "ジャンプ、走力が30%アップ",
+    "effects": [
+      {
+        "status": "ジャンプ",
+        "value": 30
+      },
+      {
+        "status": "走力",
+        "value": 30
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ポゼッション",
+        "position": "DM",
+        "playStyle": "パサー",
+        "lv": 1
+      }
+    ]
+  },
+  {
+    "comboId": "C002",
+    "name": "3-5-2Aポゼッションスタイル",
+    "formation": "3-5-2A",
+    "rank": "銅",
+    "requiredPlayers": 1,
+    "effect": "ロングパス、パスカットが30%アップ",
+    "effects": [
+      {
+        "status": "ロングパス",
+        "value": 30
+      },
+      {
+        "status": "パスカット",
+        "value": 30
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ポゼッション",
+        "position": "CF",
+        "playStyle": "ラインブレーカー",
+        "lv": 1
+      }
+    ]
+  },
+  {
+    "comboId": "C003",
+    "name": "3-6-1Aカウンタースタイル",
+    "formation": "3-6-1A",
+    "rank": "銅",
+    "requiredPlayers": 1,
+    "effect": "キープ力、コンタクトが30%アップ",
+    "effects": [
+      {
+        "status": "キープ力",
+        "value": 30
+      },
+      {
+        "status": "コンタクト",
+        "value": 30
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "カウンター",
+        "position": "DM",
+        "playStyle": "ハードマーカー",
+        "lv": 1
+      }
+    ]
+  },
+  {
+    "comboId": "C004",
+    "name": "4-3-3Aカウンタースタイル",
+    "formation": "4-3-3A",
+    "rank": "銅",
+    "requiredPlayers": 1,
+    "effect": "パスカット、コンタクトが30%アップ",
+    "effects": [
+      {
+        "status": "パスカット",
+        "value": 30
+      },
+      {
+        "status": "コンタクト",
+        "value": 30
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "カウンター",
+        "position": "RB",
+        "playStyle": "攻撃的FB",
+        "lv": 1
+      }
+    ]
+  },
+  {
+    "comboId": "C005",
+    "name": "4-3-3Bリアクションスタイル",
+    "formation": "4-3-3B",
+    "rank": "銅",
+    "requiredPlayers": 1,
+    "effect": "キック精度、コンタクトが30%アップ",
+    "effects": [
+      {
+        "status": "キック精度",
+        "value": 30
+      },
+      {
+        "status": "コンタクト",
+        "value": 30
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "リアクション",
+        "position": "GK",
+        "playStyle": "オーソドックスGK",
+        "lv": 1
+      }
+    ]
+  },
+  {
+    "comboId": "C006",
+    "name": "4-4-2Bムービングスタイル",
+    "formation": "4-4-2B",
+    "rank": "銅",
+    "requiredPlayers": 1,
+    "effect": "ロングパス、キック精度が30%アップ",
+    "effects": [
+      {
+        "status": "ロングパス",
+        "value": 30
+      },
+      {
+        "status": "キック精度",
+        "value": 30
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ムービング",
+        "position": "LB",
+        "playStyle": "守備的FB",
+        "lv": 1
+      }
+    ]
+  },
+  {
+    "comboId": "C007",
+    "name": "4-4-2Cムービングスタイル",
+    "formation": "4-4-2C",
+    "rank": "銅",
+    "requiredPlayers": 1,
+    "effect": "ロングパス、キープ力が30%アップ",
+    "effects": [
+      {
+        "status": "ロングパス",
+        "value": 30
+      },
+      {
+        "status": "キープ力",
+        "value": 30
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ムービング",
+        "position": "AM",
+        "playStyle": "アタッカー",
+        "lv": 1
+      }
+    ]
+  },
+  {
+    "comboId": "C008",
+    "name": "4-5-1Bリアクションスタイル",
+    "formation": "4-5-1B",
+    "rank": "銅",
+    "requiredPlayers": 1,
+    "effect": "パスカット、敏捷性が30%アップ",
+    "effects": [
+      {
+        "status": "パスカット",
+        "value": 30
+      },
+      {
+        "status": "敏捷性",
+        "value": 30
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "リアクション",
+        "position": "CF",
+        "playStyle": "ストライカー",
+        "lv": 1
+      }
+    ]
+  },
+  {
+    "comboId": "C009",
+    "name": "チームメッリ'97",
+    "formation": "3-4-3A",
+    "rank": "銅",
+    "requiredPlayers": 1,
+    "effect": "キック力、ロングパスが50%アップ",
+    "effects": [
+      {
+        "status": "キック力",
+        "value": 50
+      },
+      {
+        "status": "ロングパス",
+        "value": 50
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "カウンター",
+        "position": "GK",
+        "playStyle": "スイーパーGK",
+        "lv": 1
+      }
+    ]
+  },
+  {
+    "comboId": "C010",
+    "name": "シュヴァルツ・ゲルベン'97",
+    "formation": "3-5-2B",
+    "rank": "銅",
+    "requiredPlayers": 1,
+    "effect": "冷静さ、マークが50%アップ",
+    "effects": [
+      {
+        "status": "冷静さ",
+        "value": 50
+      },
+      {
+        "status": "マーク",
+        "value": 50
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ポゼッション",
+        "position": "CF",
+        "playStyle": "ポストプレーヤー",
+        "lv": 1
+      }
+    ]
+  },
+  {
+    "comboId": "C011",
+    "name": "ディー・ヴェルフェ'09",
+    "formation": "4-4-2D",
+    "rank": "銅",
+    "requiredPlayers": 1,
+    "effect": "冷静さ、ボールタッチが50%アップ",
+    "effects": [
+      {
+        "status": "冷静さ",
+        "value": 50
+      },
+      {
+        "status": "ボールタッチ",
+        "value": 50
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "リアクション",
+        "position": "AM",
+        "playStyle": "セントラルMF",
+        "lv": 1
+      }
+    ]
+  },
+  {
+    "comboId": "C012",
+    "name": "ロス・グアラニエス'02",
+    "formation": "5-4-1A",
+    "rank": "銅",
+    "requiredPlayers": 1,
+    "effect": "キック力、マークが50%アップ",
+    "effects": [
+      {
+        "status": "キック力",
+        "value": 50
+      },
+      {
+        "status": "マーク",
+        "value": 50
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ムービング",
+        "position": "CB",
+        "playStyle": "組立CB",
+        "lv": 1
+      }
+    ]
+  },
+  {
+    "comboId": "C013",
+    "name": "太極戦士'02",
+    "formation": "3-4-3A",
+    "rank": "銀",
+    "requiredPlayers": 2,
+    "effect": "キック精度、キープ力、ジャンプが60%アップ",
+    "effects": [
+      {
+        "status": "キック精度",
+        "value": 60
+      },
+      {
+        "status": "キープ力",
+        "value": 60
+      },
+      {
+        "status": "ジャンプ",
+        "value": 60
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ポゼッション",
+        "position": "LM",
+        "playStyle": "ドリブラー",
+        "lv": 2
+      },
+      {
+        "policy": "ポゼッション",
+        "position": "CB",
+        "playStyle": "ストッパー",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C014",
+    "name": "ダニッシュ・ダイナマイト'86",
+    "formation": "3-5-2B",
+    "rank": "銀",
+    "requiredPlayers": 2,
+    "effect": "突破力、セービング、ジャンプが60%アップ",
+    "effects": [
+      {
+        "status": "突破力",
+        "value": 60
+      },
+      {
+        "status": "セービング",
+        "value": 60
+      },
+      {
+        "status": "ジャンプ",
+        "value": 60
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ムービング",
+        "position": "CF",
+        "playStyle": "ラインブレーカー",
+        "lv": 2
+      },
+      {
+        "policy": "ムービング",
+        "position": "DM",
+        "playStyle": "ハードマーカー",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C015",
+    "name": "ディアブル・ルージュ'18",
+    "formation": "4-3-3A",
+    "rank": "銀",
+    "requiredPlayers": 2,
+    "effect": "キープ力、ジャンプ、スタミナが60%アップ",
+    "effects": [
+      {
+        "status": "キープ力",
+        "value": 60
+      },
+      {
+        "status": "ジャンプ",
+        "value": 60
+      },
+      {
+        "status": "スタミナ",
+        "value": 60
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ポゼッション",
+        "position": "CB",
+        "playStyle": "組立CB",
+        "lv": 2
+      },
+      {
+        "policy": "ポゼッション",
+        "position": "RW",
+        "playStyle": "ドリブラー",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C016",
+    "name": "ロス・プロス’01",
+    "formation": "4-4-2A",
+    "rank": "銀",
+    "requiredPlayers": 2,
+    "effect": "突破力、キープ力、ジャンプが60%アップ",
+    "effects": [
+      {
+        "status": "突破力",
+        "value": 60
+      },
+      {
+        "status": "キープ力",
+        "value": 60
+      },
+      {
+        "status": "ジャンプ",
+        "value": 60
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "カウンター",
+        "position": "GK",
+        "playStyle": "スイーパーGK",
+        "lv": 2
+      },
+      {
+        "policy": "カウンター",
+        "position": "RB",
+        "playStyle": "守備的FB",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C017",
+    "name": "ラ・ブランキロハ'82",
+    "formation": "4-4-2E",
+    "rank": "銀",
+    "requiredPlayers": 2,
+    "effect": "突破力、セービング、コンタクトが60%アップ",
+    "effects": [
+      {
+        "status": "突破力",
+        "value": 60
+      },
+      {
+        "status": "セービング",
+        "value": 60
+      },
+      {
+        "status": "コンタクト",
+        "value": 60
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "カウンター",
+        "position": "AM",
+        "playStyle": "アタッカー",
+        "lv": 2
+      },
+      {
+        "policy": "カウンター",
+        "position": "AM",
+        "playStyle": "パサー",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C018",
+    "name": "アズーリ’06",
+    "formation": "4-5-1B",
+    "rank": "銀",
+    "requiredPlayers": 2,
+    "effect": "突破力、ジャンプ、敏捷性が60%アップ",
+    "effects": [
+      {
+        "status": "突破力",
+        "value": 60
+      },
+      {
+        "status": "ジャンプ",
+        "value": 60
+      },
+      {
+        "status": "敏捷性",
+        "value": 60
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "リアクション",
+        "position": "LM",
+        "playStyle": "ドリブラー",
+        "lv": 2
+      },
+      {
+        "policy": "リアクション",
+        "position": "CB",
+        "playStyle": "組立CB",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C019",
+    "name": "ヴァルデ・アマレーラ'02",
+    "formation": "5-3-2A",
+    "rank": "銀",
+    "requiredPlayers": 2,
+    "effect": "パスカット、ジャンプ、コンタクトが60%アップ",
+    "effects": [
+      {
+        "status": "パスカット",
+        "value": 60
+      },
+      {
+        "status": "ジャンプ",
+        "value": 60
+      },
+      {
+        "status": "コンタクト",
+        "value": 60
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ムービング",
+        "position": "CF",
+        "playStyle": "ストライカー",
+        "lv": 2
+      },
+      {
+        "policy": "ムービング",
+        "position": "CB",
+        "playStyle": "ストッパー",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C020",
+    "name": "FCハリウッド'01",
+    "formation": "5-4-1B",
+    "rank": "銀",
+    "requiredPlayers": 2,
+    "effect": "キープ力、パスカット、コンタクトが60%アップ",
+    "effects": [
+      {
+        "status": "キープ力",
+        "value": 60
+      },
+      {
+        "status": "パスカット",
+        "value": 60
+      },
+      {
+        "status": "コンタクト",
+        "value": 60
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "リアクション",
+        "position": "CF",
+        "playStyle": "ラインブレーカー",
+        "lv": 2
+      },
+      {
+        "policy": "リアクション",
+        "position": "RB",
+        "playStyle": "攻撃的FB",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C021",
+    "name": "レ・ルージュ・エ・ブラン'04",
+    "formation": "4-3-3B",
+    "rank": "銀",
+    "requiredPlayers": 3,
+    "effect": "決定力、キープ力、パスカットが60%アップ",
+    "effects": [
+      {
+        "status": "決定力",
+        "value": 60
+      },
+      {
+        "status": "キープ力",
+        "value": 60
+      },
+      {
+        "status": "パスカット",
+        "value": 60
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ムービング",
+        "position": "LW",
+        "playStyle": "サイドアタッカー",
+        "lv": 2
+      },
+      {
+        "policy": "ムービング",
+        "position": "DM",
+        "playStyle": "パサー",
+        "lv": 2
+      },
+      {
+        "policy": "ムービング",
+        "position": "GK",
+        "playStyle": "オーソドックスGK",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C022",
+    "name": "ヒノマルスタイル'68",
+    "formation": "3-4-3C",
+    "rank": "銀",
+    "requiredPlayers": 3,
+    "effect": "決定力、ショートパス、キック精度が80%アップ",
+    "effects": [
+      {
+        "status": "決定力",
+        "value": 80
+      },
+      {
+        "status": "ショートパス",
+        "value": 80
+      },
+      {
+        "status": "キック精度",
+        "value": 80
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "カウンター",
+        "position": "LW",
+        "playStyle": "ドリブラー",
+        "lv": 2
+      },
+      {
+        "policy": "カウンター",
+        "position": "CF",
+        "playStyle": "ストライカー",
+        "lv": 2
+      },
+      {
+        "policy": "カウンター",
+        "position": "CB",
+        "playStyle": "ストッパー",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C023",
+    "name": "ウルチカ'03",
+    "formation": "4-5-1A",
+    "rank": "銀",
+    "requiredPlayers": 3,
+    "effect": "決定力、ロングパス、キープ力が80%アップ",
+    "effects": [
+      {
+        "status": "決定力",
+        "value": 80
+      },
+      {
+        "status": "ロングパス",
+        "value": 80
+      },
+      {
+        "status": "キープ力",
+        "value": 80
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ポゼッション",
+        "position": "LB",
+        "playStyle": "守備的FB",
+        "lv": 2
+      },
+      {
+        "policy": "ポゼッション",
+        "position": "AM",
+        "playStyle": "アタッカー",
+        "lv": 2
+      },
+      {
+        "policy": "ポゼッション",
+        "position": "CF",
+        "playStyle": "ポストプレーヤー",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C024",
+    "name": "クロチャ＾ティ'99",
+    "formation": "5-3-2B",
+    "rank": "銀",
+    "requiredPlayers": 3,
+    "effect": "決定力、パスカット、ジャンプが80%アップ",
+    "effects": [
+      {
+        "status": "決定力",
+        "value": 80
+      },
+      {
+        "status": "パスカット",
+        "value": 80
+      },
+      {
+        "status": "ジャンプ",
+        "value": 80
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "リアクション",
+        "position": "DM",
+        "playStyle": "セントラルMF",
+        "lv": 2
+      },
+      {
+        "policy": "リアクション",
+        "position": "AM",
+        "playStyle": "アタッカー",
+        "lv": 2
+      },
+      {
+        "policy": "リアクション",
+        "position": "CF",
+        "playStyle": "ストライカー",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C025",
+    "name": "ソベラーノ'94",
+    "formation": "4-4-2E",
+    "rank": "金",
+    "requiredPlayers": 3,
+    "effect": "キック力、突破力、コンタクト、スタミナが80%アップ",
+    "effects": [
+      {
+        "status": "キック力",
+        "value": 80
+      },
+      {
+        "status": "突破力",
+        "value": 80
+      },
+      {
+        "status": "コンタクト",
+        "value": 80
+      },
+      {
+        "status": "スタミナ",
+        "value": 80
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ムービング",
+        "position": "AM",
+        "playStyle": "パサー",
+        "lv": 2
+      },
+      {
+        "policy": "ムービング",
+        "position": "AM",
+        "playStyle": "アタッカー",
+        "lv": 2
+      },
+      {
+        "policy": "ムービング",
+        "position": "CF",
+        "playStyle": "ストライカー",
+        "lv": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C026",
+    "name": "ゴーデンゾーネン'95",
+    "formation": "3-4-3C",
+    "rank": "金",
+    "requiredPlayers": 3,
+    "effect": "キック精度、突破力、コンタクト、スタミナが80%アップ",
+    "effects": [
+      {
+        "status": "キック精度",
+        "value": 80
+      },
+      {
+        "status": "突破力",
+        "value": 80
+      },
+      {
+        "status": "コンタクト",
+        "value": 80
+      },
+      {
+        "status": "スタミナ",
+        "value": 80
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "リアクション",
+        "position": "CB",
+        "playStyle": "ストッパー",
+        "lv": 2
+      },
+      {
+        "policy": "リアクション",
+        "position": "DM",
+        "playStyle": "ハードマーカー",
+        "lv": 2
+      },
+      {
+        "policy": "リアクション",
+        "position": "DM",
+        "playStyle": "セントラルMF",
+        "lv": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C027",
+    "name": "レ・ブルー'98",
+    "formation": "4-4-2D",
+    "rank": "金",
+    "requiredPlayers": 3,
+    "effect": "キック力、ジャンプ、コンタクト、敏捷性が80%アップ",
+    "effects": [
+      {
+        "status": "キック力",
+        "value": 80
+      },
+      {
+        "status": "ジャンプ",
+        "value": 80
+      },
+      {
+        "status": "コンタクト",
+        "value": 80
+      },
+      {
+        "status": "敏捷性",
+        "value": 80
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "カウンター",
+        "position": "LB",
+        "playStyle": "守備的FB",
+        "lv": 2
+      },
+      {
+        "policy": "カウンター",
+        "position": "AM",
+        "playStyle": "セントラルMF",
+        "lv": 2
+      },
+      {
+        "policy": "カウンター",
+        "position": "CF",
+        "playStyle": "ストライカー",
+        "lv": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C028",
+    "name": "ラ・デア'22",
+    "formation": "3-5-2B",
+    "rank": "金",
+    "requiredPlayers": 3,
+    "effect": "冷静さ、パスカット、ジャンプ、コンタクトが80%アップ",
+    "effects": [
+      {
+        "status": "冷静さ",
+        "value": 80
+      },
+      {
+        "status": "パスカット",
+        "value": 80
+      },
+      {
+        "status": "ジャンプ",
+        "value": 80
+      },
+      {
+        "status": "コンタクト",
+        "value": 80
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ポゼッション",
+        "position": "CB",
+        "playStyle": "ストッパー",
+        "lv": 2
+      },
+      {
+        "policy": "ポゼッション",
+        "position": "RM",
+        "playStyle": "ドリブラー",
+        "lv": 2
+      },
+      {
+        "policy": "ポゼッション",
+        "position": "CF",
+        "playStyle": "ラインブレーカー",
+        "lv": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C029",
+    "name": "アルビセレステ'01",
+    "formation": "3-4-3A",
+    "rank": "金",
+    "requiredPlayers": 3,
+    "effect": "ジャンプ、コンタクト、走力、敏捷性が80%アップ",
+    "effects": [
+      {
+        "status": "ジャンプ",
+        "value": 80
+      },
+      {
+        "status": "コンタクト",
+        "value": 80
+      },
+      {
+        "status": "走力",
+        "value": 80
+      },
+      {
+        "status": "敏捷性",
+        "value": 80
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ムービング",
+        "position": "CB",
+        "playStyle": "組立CB",
+        "lv": 2
+      },
+      {
+        "policy": "ムービング",
+        "position": "LM",
+        "playStyle": "サイドアタッカー",
+        "lv": 3
+      },
+      {
+        "policy": "ムービング",
+        "position": "CF",
+        "playStyle": "ストライカー",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C030",
+    "name": "セレソン・ダス・キナス'16",
+    "formation": "4-4-2A",
+    "rank": "金",
+    "requiredPlayers": 3,
+    "effect": "パスカット、ジャンプ、コンタクト、走力が80%アップ",
+    "effects": [
+      {
+        "status": "パスカット",
+        "value": 80
+      },
+      {
+        "status": "ジャンプ",
+        "value": 80
+      },
+      {
+        "status": "コンタクト",
+        "value": 80
+      },
+      {
+        "status": "走力",
+        "value": 80
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "リアクション",
+        "position": "LB",
+        "playStyle": "攻撃的FB",
+        "lv": 2
+      },
+      {
+        "policy": "リアクション",
+        "position": "LM",
+        "playStyle": "サイドアタッカー",
+        "lv": 2
+      },
+      {
+        "policy": "リアクション",
+        "position": "CF",
+        "playStyle": "ストライカー",
+        "lv": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C031",
+    "name": "ディアボロ・ディ・ミラノ'99",
+    "formation": "3-4-3B",
+    "rank": "金",
+    "requiredPlayers": 3,
+    "effect": "キック力、突破力、ジャンプ、コンタクトが80%アップ",
+    "effects": [
+      {
+        "status": "キック力",
+        "value": 80
+      },
+      {
+        "status": "突破力",
+        "value": 80
+      },
+      {
+        "status": "ジャンプ",
+        "value": 80
+      },
+      {
+        "status": "コンタクト",
+        "value": 80
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "カウンター",
+        "position": "CF",
+        "playStyle": "組立CB",
+        "lv": 2
+      },
+      {
+        "policy": "カウンター",
+        "position": "DM",
+        "playStyle": "セントラルMF",
+        "lv": 3
+      },
+      {
+        "policy": "カウンター",
+        "position": "LW",
+        "playStyle": "ドリブラー",
+        "lv": 2
+      }
+    ]
+  },
+  {
+    "comboId": "C032",
+    "name": "ラ・ロハ'24",
+    "formation": "4-3-3B",
+    "rank": "金",
+    "requiredPlayers": 3,
+    "effect": "冷静さ、キック精度、パスカット、コンタクトが80%アップ",
+    "effects": [
+      {
+        "status": "冷静さ",
+        "value": 80
+      },
+      {
+        "status": "キック精度",
+        "value": 80
+      },
+      {
+        "status": "パスカット",
+        "value": 80
+      },
+      {
+        "status": "コンタクト",
+        "value": 80
+      }
+    ],
+    "conditions": [
+      {
+        "policy": "ポゼッション",
+        "position": "RB",
+        "playStyle": "攻撃的FB",
+        "lv": 2
+      },
+      {
+        "policy": "ポゼッション",
+        "position": "DM",
+        "playStyle": "パサー",
+        "lv": 2
+      },
+      {
+        "policy": "ポゼッション",
+        "position": "RW",
+        "playStyle": "ドリブラー",
+        "lv": 3
+      }
+    ]
+  }
+]
