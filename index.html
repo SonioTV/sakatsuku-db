@@ -209,7 +209,7 @@
     .cand-title{ font-weight: 900; margin-bottom: 4px; }
     .cand-list{ white-space: pre-wrap; line-height: 1.6; }
 
-  /* ===== Lv選択を大きく（スマホ向け） ===== */
+/* ===== Lv選択を大きく（スマホ向け） ===== */
 #lv{
   font-size: 18px;      /* 文字を大きく */
   padding: 6px 10px;    /* 押しやすく */
@@ -229,7 +229,61 @@
     padding: 8px 12px;
   }
 }
-  
+
+/* ===== 全体フォント（読みやすい） ===== */
+body{
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+               "Yu Gothic", Meiryo, sans-serif;
+  font-size: 1.5em; /* ← 全体を1.5倍 */
+}
+
+/* ===== 検索画面を中央揃え ===== */
+#tab-search{
+  text-align: center;
+}
+
+/* 結果だけ左寄せに戻す */
+#exact, #diffPolicy, #diffPosition{
+  text-align: left;
+}
+
+/* ===== 画像を1.5倍 ===== */
+.policy-board img,
+.style-board img{
+  transform: scale(1.5);
+  margin: 6px 0;
+}
+
+/* ===== 検索ボタン：3倍 ===== */
+button[onclick="search()"]{
+  font-size: 1.8em;
+  padding: 18px 40px;
+  border-radius: 12px;
+  font-weight: 900;
+}
+
+/* ===== 対応選手を表示ボタン：2倍 ===== */
+button[onclick="showComboPlayers()"]{
+  font-size: 1.4em;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+/* ===== セレクトを大きく ===== */
+select{
+  font-size: 1.2em;
+  padding: 6px 10px;
+}
+
+/* ===== 中央寄せ補正 ===== */
+.policy-board,
+.pos-board,
+.style-board{
+  margin-left: auto;
+  margin-right: auto;
+}
+
   </style>
 </head>
 
@@ -358,8 +412,21 @@
     <h2>コンボから選手を探す</h2>
     <p class="note-sub">※選手名横の（）内は「初期総合力/プレイスタイル/メインポジション」です</p>
 
-    <div style="margin:10px 0 6px; font-weight:700;">フォーメーションコンボを選択</div>
-    <select id="comboSelect"></select>
+<div style="margin:10px 0 6px; font-weight:700;">ランクを選択</div>
+
+<select id="rankFilter">
+  <option value="all">すべて</option>
+  <option value="金">金</option>
+  <option value="銀">銀</option>
+  <option value="銅">銅</option>
+</select>
+
+<br><br>
+
+<div style="margin:10px 0 6px; font-weight:700;">フォーメーションコンボを選択</div>
+
+<select id="comboSelect"></select>
+
     <br>
     <button type="button" onclick="showComboPlayers()">対応選手を表示</button>
 
@@ -533,21 +600,45 @@
     function makeComboKey(c) {
       return `${c.formation}|${c.name}`;
     }
-    function initComboSelect() {
-      const sel = document.getElementById("comboSelect");
-      if (!sel) return;
+function initComboSelect() {
 
-      const sorted = [...combos].sort((a,b) => {
-        const fa = (a.formation || "").localeCompare(b.formation || "");
-        if (fa !== 0) return fa;
-        return (a.name || "").localeCompare(b.name || "");
-      });
+  const sel = document.getElementById("comboSelect");
+  const rankSel = document.getElementById("rankFilter");
 
-      sel.innerHTML = sorted.map(c => {
-        const key = makeComboKey(c);
-        return `<option value="${key}">${c.formation}｜${c.name}（${c.rank}）</option>`;
-      }).join("");
+  if (!sel || !rankSel) return;
+
+  function updateList(){
+
+    const rank = rankSel.value;
+
+    let list = combos;
+
+    if(rank !== "all"){
+      list = combos.filter(c => c.rank === rank);
     }
+
+    const sorted = [...list].sort((a,b)=>{
+      const f = (a.formation||"").localeCompare(b.formation||"");
+      if(f!==0) return f;
+      return (a.name||"").localeCompare(b.name||"");
+    });
+
+    sel.innerHTML = sorted.map(c=>{
+      return `<option value="${makeComboKey(c)}">
+        ${c.formation}｜${c.name}（${c.rank}）
+      </option>`;
+    }).join("");
+
+    // 結果クリア
+    document.getElementById("comboPlayers").innerHTML = "";
+  }
+
+  // 初期表示
+  updateList();
+
+  // 変更時に更新
+  rankSel.addEventListener("change", updateList);
+}
 
     function showComboPlayers() {
       const sel = document.getElementById("comboSelect");
@@ -631,4 +722,3 @@
   </script>
 </body>
 </html>
-
