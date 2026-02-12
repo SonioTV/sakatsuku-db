@@ -42,7 +42,12 @@
     .tab-panel.active{ display:block; }
 
     @media (max-width: 480px){
-      .tab-btn{ padding:12px 10px; font-size:14px; }
+      #comboSelect{ font-size: 1em; }
+      .rank-board{ grid-template-columns: repeat(3, 76px); gap: 10px; }
+      .rank-tile{ width:76px; height:76px; border-radius:14px; }
+      .lv-board{ gap: 8px; }
+      .lv-tile{ height: 52px; }
+    }
     }
 
     /* ===== タイトル下の注釈 ===== */
@@ -232,7 +237,12 @@
     .v { color: #111; }
 
     @media (max-width: 480px){
-      .result-card{ font-size: 13px; line-height: 1.55; }
+      #comboSelect{ font-size: 1em; }
+      .rank-board{ grid-template-columns: repeat(3, 76px); gap: 10px; }
+      .rank-tile{ width:76px; height:76px; border-radius:14px; }
+      .lv-board{ gap: 8px; }
+      .lv-tile{ height: 52px; }
+    }
       .kv{ grid-template-columns: 1fr; gap: 2px 0; }
       .k{ margin-top: 6px; }
     }
@@ -286,27 +296,35 @@
     }
   
     /* ===== Lv 選択（タイル式・単一選択） ===== */
+    .lv-label{
+      font-size: 1.6em; /* 【プレイスタイル】相当 */
+      font-weight: 900;
+      margin-top: 10px;
+    }
+
+    /* ===== Lv 選択（タイル式・単一選択） ===== */
     .lv-board{
       display:grid;
-      grid-template-columns: repeat(3, 90px);
+      grid-template-columns: repeat(3, 1fr);
       gap: 10px;
-      width: fit-content;
+      width: min(520px, 100%);
       margin: 8px auto 0;
       justify-content:center;
-      justify-items:center;
+      justify-items:stretch;
     }
     .lv-board input{ display:none; }
     .lv-tile{
       display:flex;
       align-items:center;
       justify-content:center;
-      height: 52px;
-      border-radius: 12px;
+      height: 56px;           /* 横長 */
+      border-radius: 14px;
       background:#f3f3f3;
       border:2px solid #ddd;
       font-weight: 900;
       cursor:pointer;
       user-select:none;
+      letter-spacing: .02em;
     }
     .lv-board input:checked + .lv-tile{
       border-color:#2196f3;
@@ -317,34 +335,49 @@
     /* ===== ランク選択（タイル式・複数選択） ===== */
     .rank-board{
       display:grid;
-      grid-template-columns: repeat(3, 90px);
-      gap: 10px;
+      grid-template-columns: repeat(3, 88px);
+      gap: 12px;
       width: fit-content;
       justify-content:start;
       justify-items:center;
+      margin-top: 2px;
     }
     .rank-board input{ display:none; }
+
     .rank-tile{
       display:flex;
       align-items:center;
       justify-content:center;
-      height: 52px;
-      border-radius: 12px;
-      background:#f3f3f3;
-      border:2px solid #ddd;
-      font-weight: 900;
+      width: 88px;           /* 正方形 */
+      height: 88px;
+      border-radius: 16px;   /* 角丸 */
+      border:2px solid rgba(0,0,0,.25);
+      font-weight: 950;
       cursor:pointer;
       user-select:none;
+      box-shadow: 0 6px 16px rgba(0,0,0,.12);
+      letter-spacing: .02em;
     }
-    .rank-tile.gold{ border-color:#d4af37; }
-    .rank-tile.silver{ border-color:#9e9e9e; }
-    .rank-tile.bronze{ border-color:#cd7f32; }
 
+    /* それっぽい背景色 */
+    .rank-tile.gold{
+      background: linear-gradient(135deg, #fff2b2, #d4af37);
+      color:#111;
+    }
+    .rank-tile.silver{
+      background: linear-gradient(135deg, #ffffff, #bdbdbd);
+      color:#111;
+    }
+    .rank-tile.bronze{
+      background: linear-gradient(135deg, #ffe2c7, #cd7f32);
+      color:#111;
+    }
+
+    /* 選択時：強調（枠＋発光） */
     .rank-board input:checked + .rank-tile{
-      background:#111;
-      color:#fff;
       border-color:#111;
-      box-shadow:0 0 0 2px #111;
+      box-shadow: 0 0 0 3px rgba(0,0,0,.85), 0 10px 20px rgba(0,0,0,.18);
+      transform: translateY(-1px);
     }
 
     /* ===== コンボ選択プルダウン：画面内に収める ===== */
@@ -356,6 +389,11 @@
 
     @media (max-width: 480px){
       #comboSelect{ font-size: 1em; }
+      .rank-board{ grid-template-columns: repeat(3, 76px); gap: 10px; }
+      .rank-tile{ width:76px; height:76px; border-radius:14px; }
+      .lv-board{ gap: 8px; }
+      .lv-tile{ height: 52px; }
+    }
       .rank-board{ grid-template-columns: repeat(3, 80px); gap: 8px; }
       .lv-board{ grid-template-columns: repeat(3, 80px); gap: 8px; }
     }
@@ -457,7 +495,7 @@
       <label for="sty_sgk"><img src="img/style/sweepergk.png" alt="スイーパーGK"><div>スイーパーGK</div></label>
     </div>
 
-    <div class="lv-label">【Lv】</div>
+    <div class="lv-label">【プレイスタイルのLv選択】</div>
     <div class="lv-board" aria-label="Lvを選択">
       <input type="radio" name="lv" id="lv1" value="1" checked>
       <label class="lv-tile" for="lv1">Lv1</label>
@@ -488,7 +526,7 @@
   <!-- タブ②：コンボから選手を探す -->
   <div id="tab-combo" class="tab-panel">
     <h2>コンボから選手を探す</h2>
-    <p class="note-sub">※選手名横の（）内は「初期総合力/プレイスタイル/メインポジション」です</p>
+    <p class="note-sub">※選手名横の（）内は「初期総合力/プレイスタイル/メインポジション」です<br>※表示される選手はSP選手のみです</p>
 
     <div style="margin:10px 0 6px; font-weight:700;">ランクを選択（複数可）</div>
     <div class="rank-board" aria-label="ランクを選択（複数可）">
