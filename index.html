@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>サカつく2026 コンボ検索</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
+
   <style>
     /* ===== タブ ===== */
     .tabs{
@@ -248,11 +252,14 @@ body{
 }
 
 /* ===== 画像を1.5倍 ===== */
-.policy-board img,
-.style-board img{
-  transform: scale(1.5);
-  margin: 6px 0;
-}
+/* 画像を物理サイズで1.5倍（崩れにくい） */
+.policy-board img{ width: 90px; height: 90px; }
+.style-board img{  width: 86px; height: 86px; }
+
+/* 文字も少し調整 */
+.policy-board label div{ font-size: 14px; }
+.style-board label div{  font-size: 12px; }
+
 
 /* ===== 検索ボタン：3倍 ===== */
 button[onclick="search()"]{
@@ -510,9 +517,9 @@ select{
       const v = p.overall ?? p.initialOverall ?? p.total ?? null;
       return (v === null || v === undefined || v === "") ? "-" : v;
     }
-    function formatPlayerLine(p) {
-      // 注釈は「初期総合力/プレイスタイル/メインポジション」にしたいならここを変更
-      // return `${p.name}（${getOverall(p)}/${p.playStyle}/${p.mainPosition}）`;
+function formatPlayerLine(p) {
+  return `${p.name}（${getOverall(p)}/${p.playStyle}/${p.mainPosition}）`;
+}
 
       // 現状の仕様（初期総合力/ポリシー/メインポジション）
       return `${p.name}（${getOverall(p)}/${p.policy}/${p.mainPosition}）`;
