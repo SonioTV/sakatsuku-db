@@ -208,6 +208,28 @@
     }
     .cand-title{ font-weight: 900; margin-bottom: 4px; }
     .cand-list{ white-space: pre-wrap; line-height: 1.6; }
+
+  /* ===== Lv選択を大きく（スマホ向け） ===== */
+#lv{
+  font-size: 18px;      /* 文字を大きく */
+  padding: 6px 10px;    /* 押しやすく */
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
+/* Lvラベル */
+.lv-label{
+  font-weight: 700;
+  font-size: 15px;
+}
+
+@media (max-width: 480px){
+  #lv{
+    font-size: 20px;    /* スマホはさらに大きく */
+    padding: 8px 12px;
+  }
+}
+  
   </style>
 </head>
 
@@ -307,7 +329,7 @@
       <label for="sty_sgk"><img src="img/style/sweepergk.png"><div>スイーパーGK</div></label>
     </div>
 
-    <div>【Lv】</div>
+    <div class="lv-label">【Lv】</div>
     <select id="lv">
       <option value="1">Lv1</option>
       <option value="2">Lv2</option>
@@ -609,3 +631,4 @@
   </script>
 </body>
 </html>
+
