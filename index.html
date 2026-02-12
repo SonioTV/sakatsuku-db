@@ -5,11 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>サカつく2026 コンボ検索</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <!-- 読みやすい日本語フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <style>
+    /* ===== ベース ===== */
+    body{
+      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN","Yu Gothic", Meiryo, sans-serif;
+      margin: 12px;
+      font-size: 1.5em; /* 文字を1.5倍 */
+    }
+
     /* ===== タブ ===== */
     .tabs{
       display:flex;
@@ -50,6 +58,11 @@
       color: #666;
     }
 
+    /* ===== 検索画面（中央揃え） ===== */
+    #tab-search{ text-align:center; }
+    /* 結果だけ左寄せ */
+    #exact, #diffPolicy, #diffPosition{ text-align:left; }
+
     /* ===== 結果カード ===== */
     .result-card{
       margin-bottom:15px;
@@ -58,40 +71,51 @@
       border-radius:8px;
       background:#fff;
     }
-    .result-card.exact{ border-left:6px solid #2e7d32; }        /* ① */
-    .result-card.diffPolicy{ border-left:6px solid #1565c0; }   /* ② */
-    .result-card.diffPosition{ border-left:6px solid #6a1b9a; } /* ③ */
-    .result-card.state-active{ background:#e8f5e9; }  /* 発動中（あと0） */
-    .result-card.state-soon{ background:#fff8e1; }    /* あと1 */
-    .result-card.state-far{ background:#f5f5f5; }     /* あと2+ */
+    .result-card.exact{ border-left:6px solid #2e7d32; }
+    .result-card.diffPolicy{ border-left:6px solid #1565c0; }
+    .result-card.diffPosition{ border-left:6px solid #6a1b9a; }
+    .result-card.state-active{ background:#e8f5e9; }
+    .result-card.state-soon{ background:#fff8e1; }
+    .result-card.state-far{ background:#f5f5f5; }
 
-    /* ===== ポリシー画像UI ===== */
+    /* ===== ポリシー画像UI（中央揃え強化） ===== */
     .policy-board{
       display:grid;
-      grid-template-columns: repeat(2, 90px);
-      gap:12px;
-      margin-bottom:15px;
+      grid-template-columns: repeat(2, minmax(0, 120px));
+      gap:14px;
+      margin: 0 auto 15px;
+      width: fit-content;
+      justify-content:center;
+      justify-items:center;
     }
     .policy-board input{ display:none; }
     .policy-board label{
+      width: 120px;
       display:flex;
       flex-direction:column;
       align-items:center;
-      padding:6px;
+      justify-content:center;
+      padding:8px 6px;
       border:2px solid transparent;
-      border-radius:10px;
+      border-radius:12px;
       cursor:pointer;
       background:#fff;
       text-align:center;
+      box-sizing:border-box;
     }
     .policy-board label div{
       white-space: nowrap;
-      font-size:12px;
+      font-size:14px;
+      line-height: 1.2;
+      text-align:center;
+      width:100%;
     }
     .policy-board img{
-      width:60px;
-      height:60px;
+      width:90px;
+      height:90px;
       object-fit:contain;
+      display:block;
+      margin: 0 auto 4px;
     }
     .policy-board input:checked + label{
       border-color:#ff9800;
@@ -104,10 +128,11 @@
       grid-template-columns: repeat(3, 65px);
       grid-auto-rows: 45px;
       gap: 6px;
-      background:#eee;  /* 背景：薄いグレー */
+      background:#eee;
       padding:8px;
       width: fit-content;
       border-radius: 8px;
+      margin: 0 auto;
     }
     .pos-board input{ display:none; }
 
@@ -117,20 +142,21 @@
       justify-content:center;
       font-weight:800;
       font-size:18px;
-      background:#666;   /* ボタン背景：濃いグレー */
+      background:#666;
       color:#fff;
       border:3px solid transparent;
       border-radius:6px;
       cursor:pointer;
       user-select:none;
       transition: all 0.15s ease;
+      box-sizing:border-box;
     }
 
     /* 枠線カラー（通常時） */
-    .atk{ border-color:#49d35a; } /* 緑 */
-    .mid{ border-color:#f6c21a; } /* 黄 */
-    .def{ border-color:#4bb5e6; } /* 青 */
-    .gk { border-color:#ff2b2b; } /* 赤 */
+    .atk{ border-color:#49d35a; }
+    .mid{ border-color:#f6c21a; }
+    .def{ border-color:#4bb5e6; }
+    .gk { border-color:#ff2b2b; }
 
     .tall{ grid-row: span 2; }
 
@@ -142,7 +168,6 @@
     #pos_LM + label{ grid-column:1; grid-row:2 / span 2; }
     #pos_AM + label{ grid-column:2; grid-row:2; }
     #pos_RM + label{ grid-column:3; grid-row:2 / span 2; }
-
     #pos_DM + label{ grid-column:2; grid-row:3; }
 
     #pos_LB + label{ grid-column:1; grid-row:4; }
@@ -157,40 +182,51 @@
     .pos-board input:checked + label.def{ background:#4bb5e6; color:#000; }
     .pos-board input:checked + label.gk { background:#ff2b2b; color:#fff; }
 
-    /* ===== プレイスタイル画像UI ===== */
+    /* ===== プレイスタイル画像UI（中央揃え & 横間隔UP） ===== */
     .style-board{
       display:grid;
-      grid-template-columns: repeat(3, 80px);
-      gap:4px;
-      margin-bottom:15px;
+      grid-template-columns: repeat(3, minmax(0, 120px));
+      gap:12px; /* ← 横の間隔を広げる */
+      margin: 0 auto 15px;
+      width: fit-content;
+      justify-content:center;
+      justify-items:center;
     }
     .style-board input{ display:none; }
     .style-board label{
+      width: 120px;
       display:flex;
       flex-direction:column;
       align-items:center;
-      padding:1px 6px;
+      justify-content:center;
+      padding:6px 6px;
       border:2px solid transparent;
-      border-radius:8px;
+      border-radius:12px;
       cursor:pointer;
       background:#fff;
       text-align:center;
+      box-sizing:border-box;
     }
     .style-board img{
-      width:57px;
-      height:57px;
+      width:86px;
+      height:86px;
       object-fit:contain;
+      display:block;
+      margin: 0 auto 4px;
     }
     .style-board label div{
       white-space: nowrap;
-      font-size:10px;
+      font-size:12px;
+      line-height: 1.2;
+      text-align:center;
+      width:100%;
     }
     .style-board input:checked + label{
       border-color:#2196f3;
       box-shadow:0 0 0 2px #2196f3;
     }
 
-    /* ===== 結果（スマホで読みやすく） ===== */
+    /* ===== 検索結果（スマホで読みやすく） ===== */
     .kv { display: grid; grid-template-columns: 110px 1fr; gap: 6px 10px; }
     .k { font-weight: 800; color: #111; }
     .v { color: #111; }
@@ -213,96 +249,57 @@
     .cand-title{ font-weight: 900; margin-bottom: 4px; }
     .cand-list{ white-space: pre-wrap; line-height: 1.6; }
 
-/* ===== Lv選択を大きく（スマホ向け） ===== */
-#lv{
-  font-size: 18px;      /* 文字を大きく */
-  padding: 6px 10px;    /* 押しやすく */
-  border-radius: 6px;
-  margin-top: 4px;
-}
+    /* ===== Lv選択 ===== */
+    #lv{
+      font-size: 20px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin-top: 4px;
+    }
+    .lv-label{
+      font-weight: 700;
+      font-size: 15px;
+    }
 
-/* Lvラベル */
-.lv-label{
-  font-weight: 700;
-  font-size: 15px;
-}
+    /* ===== セレクトを大きく ===== */
+    select{
+      font-size: 1.1em;
+      padding: 8px 12px;
+    }
 
-@media (max-width: 480px){
-  #lv{
-    font-size: 20px;    /* スマホはさらに大きく */
-    padding: 8px 12px;
-  }
-}
+    /* ===== ボタンサイズ ===== */
+    .btn-search{
+      font-size: 1.8em;  /* 今の3倍相当 */
+      padding: 18px 40px;
+      border-radius: 12px;
+      font-weight: 900;
+      cursor:pointer;
+    }
+    .btn-show{
+      font-size: 1.4em;  /* 今の2倍相当 */
+      padding: 12px 30px;
+      border-radius: 10px;
+      font-weight: 800;
+      cursor:pointer;
+    }
 
-/* ===== 全体フォント（読みやすい） ===== */
-body{
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN",
-               "Yu Gothic", Meiryo, sans-serif;
-  font-size: 1.5em; /* ← 全体を1.5倍 */
-}
-
-/* ===== 検索画面を中央揃え ===== */
-#tab-search{
-  text-align: center;
-}
-
-/* 結果だけ左寄せに戻す */
-#exact, #diffPolicy, #diffPosition{
-  text-align: left;
-}
-
-/* ===== 画像を1.5倍 ===== */
-/* 画像を物理サイズで1.5倍（崩れにくい） */
-.policy-board img{ width: 90px; height: 90px; }
-.style-board img{  width: 86px; height: 86px; }
-
-/* 文字も少し調整 */
-.policy-board label div{ font-size: 14px; }
-.style-board label div{  font-size: 12px; }
-
-
-/* ===== 検索ボタン：3倍 ===== */
-button[onclick="search()"]{
-  font-size: 1.8em;
-  padding: 18px 40px;
-  border-radius: 12px;
-  font-weight: 900;
-}
-
-/* ===== 対応選手を表示ボタン：2倍 ===== */
-button[onclick="showComboPlayers()"]{
-  font-size: 1.4em;
-  padding: 12px 30px;
-  border-radius: 10px;
-  font-weight: 800;
-}
-
-/* ===== セレクトを大きく ===== */
-select{
-  font-size: 1.2em;
-  padding: 6px 10px;
-}
-
-/* ===== 中央寄せ補正 ===== */
-.policy-board,
-.pos-board,
-.style-board{
-  margin-left: auto;
-  margin-right: auto;
-}
-
+    /* ===== バリデーションメッセージ ===== */
+    .warn{
+      margin-top: 10px;
+      color: #d32f2f;
+      font-weight: 800;
+      display:none;
+    }
   </style>
 </head>
 
 <body>
   <div class="tabs">
-    <button class="tab-btn active" data-tab="tab-search">フォーメーションコンボ検索</button>
-    <button class="tab-btn" data-tab="tab-combo">コンボから選手を探す</button>
+    <button class="tab-btn active" data-tab="tab-search" type="button">フォーメーションコンボ検索</button>
+    <button class="tab-btn" data-tab="tab-combo" type="button">コンボから選手を探す</button>
   </div>
 
-  <!-- =========================
-    タブ①：フォーメーションコンボ検索
-  ========================= -->
+  <!-- タブ①：フォーメーションコンボ検索 -->
   <div id="tab-search" class="tab-panel active">
     <h2>フォーメーションコンボ検索</h2>
     <p class="note-main">検索したい選手の情報を入力してください</p>
@@ -311,16 +308,16 @@ select{
     <div>【ポリシー】</div>
     <div class="policy-board">
       <input type="radio" name="policy" id="pol_counter" value="カウンター">
-      <label for="pol_counter"><img src="img/policy/counter.png"><div>カウンター</div></label>
+      <label for="pol_counter"><img src="img/policy/counter.png" alt="カウンター"><div>カウンター</div></label>
 
       <input type="radio" name="policy" id="pol_moving" value="ムービング">
-      <label for="pol_moving"><img src="img/policy/moving.png"><div>ムービング</div></label>
+      <label for="pol_moving"><img src="img/policy/moving.png" alt="ムービング"><div>ムービング</div></label>
 
       <input type="radio" name="policy" id="pol_reaction" value="リアクション">
-      <label for="pol_reaction"><img src="img/policy/reaction.png"><div>リアクション</div></label>
+      <label for="pol_reaction"><img src="img/policy/reaction.png" alt="リアクション"><div>リアクション</div></label>
 
       <input type="radio" name="policy" id="pol_possession" value="ポゼッション" checked>
-      <label for="pol_possession"><img src="img/policy/possession.png"><div>ポゼッション</div></label>
+      <label for="pol_possession"><img src="img/policy/possession.png" alt="ポゼッション"><div>ポゼッション</div></label>
     </div>
 
     <div>【ポジション（複数可）】</div>
@@ -345,49 +342,49 @@ select{
     <div>【プレイスタイル】</div>
     <div class="style-board">
       <input type="radio" name="style" id="sty_striker" value="ストライカー" checked>
-      <label for="sty_striker"><img src="img/style/striker.png"><div>ストライカー</div></label>
+      <label for="sty_striker"><img src="img/style/striker.png" alt="ストライカー"><div>ストライカー</div></label>
 
       <input type="radio" name="style" id="sty_line" value="ラインブレーカー">
-      <label for="sty_line"><img src="img/style/linebreaker.png"><div>ラインブレーカー</div></label>
+      <label for="sty_line"><img src="img/style/linebreaker.png" alt="ラインブレーカー"><div>ラインブレーカー</div></label>
 
       <input type="radio" name="style" id="sty_post" value="ポストプレーヤー">
-      <label for="sty_post"><img src="img/style/postplayer.png"><div>ポストプレーヤー</div></label>
+      <label for="sty_post"><img src="img/style/postplayer.png" alt="ポストプレーヤー"><div>ポストプレーヤー</div></label>
 
       <input type="radio" name="style" id="sty_side" value="サイドアタッカー">
-      <label for="sty_side"><img src="img/style/sideattacker.png"><div>サイドアタッカー</div></label>
+      <label for="sty_side"><img src="img/style/sideattacker.png" alt="サイドアタッカー"><div>サイドアタッカー</div></label>
 
       <input type="radio" name="style" id="sty_drib" value="ドリブラー">
-      <label for="sty_drib"><img src="img/style/dribbler.png"><div>ドリブラー</div></label>
+      <label for="sty_drib"><img src="img/style/dribbler.png" alt="ドリブラー"><div>ドリブラー</div></label>
 
       <input type="radio" name="style" id="sty_att" value="アタッカー">
-      <label for="sty_att"><img src="img/style/attacker.png"><div>アタッカー</div></label>
+      <label for="sty_att"><img src="img/style/attacker.png" alt="アタッカー"><div>アタッカー</div></label>
 
       <input type="radio" name="style" id="sty_pass" value="パサー">
-      <label for="sty_pass"><img src="img/style/passer.png"><div>パサー</div></label>
+      <label for="sty_pass"><img src="img/style/passer.png" alt="パサー"><div>パサー</div></label>
 
       <input type="radio" name="style" id="sty_cmf" value="セントラルMF">
-      <label for="sty_cmf"><img src="img/style/centralmf.png"><div>セントラルMF</div></label>
+      <label for="sty_cmf"><img src="img/style/centralmf.png" alt="セントラルMF"><div>セントラルMF</div></label>
 
       <input type="radio" name="style" id="sty_hard" value="ハードマーカー">
-      <label for="sty_hard"><img src="img/style/hardmarker.png"><div>ハードマーカー</div></label>
+      <label for="sty_hard"><img src="img/style/hardmarker.png" alt="ハードマーカー"><div>ハードマーカー</div></label>
 
       <input type="radio" name="style" id="sty_stop" value="ストッパー">
-      <label for="sty_stop"><img src="img/style/stopper.png"><div>ストッパー</div></label>
+      <label for="sty_stop"><img src="img/style/stopper.png" alt="ストッパー"><div>ストッパー</div></label>
 
       <input type="radio" name="style" id="sty_build" value="組立CB">
-      <label for="sty_build"><img src="img/style/buildupcb.png"><div>組立CB</div></label>
+      <label for="sty_build"><img src="img/style/buildupcb.png" alt="組立CB"><div>組立CB</div></label>
 
       <input type="radio" name="style" id="sty_afb" value="攻撃的FB">
-      <label for="sty_afb"><img src="img/style/attackfb.png"><div>攻撃的FB</div></label>
+      <label for="sty_afb"><img src="img/style/attackfb.png" alt="攻撃的FB"><div>攻撃的FB</div></label>
 
       <input type="radio" name="style" id="sty_dfb" value="守備的FB">
-      <label for="sty_dfb"><img src="img/style/defensefb.png"><div>守備的FB</div></label>
+      <label for="sty_dfb"><img src="img/style/defensefb.png" alt="守備的FB"><div>守備的FB</div></label>
 
       <input type="radio" name="style" id="sty_ogk" value="オーソドックスGK">
-      <label for="sty_ogk"><img src="img/style/orthodoxgk.png"><div>オーソドックスGK</div></label>
+      <label for="sty_ogk"><img src="img/style/orthodoxgk.png" alt="オーソドックスGK"><div>オーソドックスGK</div></label>
 
       <input type="radio" name="style" id="sty_sgk" value="スイーパーGK">
-      <label for="sty_sgk"><img src="img/style/sweepergk.png"><div>スイーパーGK</div></label>
+      <label for="sty_sgk"><img src="img/style/sweepergk.png" alt="スイーパーGK"><div>スイーパーGK</div></label>
     </div>
 
     <div class="lv-label">【Lv】</div>
@@ -398,7 +395,8 @@ select{
     </select>
 
     <br><br>
-    <button type="button" onclick="search()">検索</button>
+    <button class="btn-search" type="button" onclick="search()">検索</button>
+    <div id="posWarning" class="warn">ポジションを選択してください</div>
 
     <hr>
 
@@ -412,30 +410,26 @@ select{
     <div id="diffPosition"></div>
   </div>
 
-  <!-- =========================
-    タブ②：コンボから選手を探す
-  ========================= -->
+  <!-- タブ②：コンボから選手を探す -->
   <div id="tab-combo" class="tab-panel">
     <h2>コンボから選手を探す</h2>
     <p class="note-sub">※選手名横の（）内は「初期総合力/プレイスタイル/メインポジション」です</p>
 
-<div style="margin:10px 0 6px; font-weight:700;">ランクを選択</div>
+    <div style="margin:10px 0 6px; font-weight:700;">ランクを選択</div>
+    <select id="rankFilter">
+      <option value="all">すべて</option>
+      <option value="金">金</option>
+      <option value="銀">銀</option>
+      <option value="銅">銅</option>
+    </select>
 
-<select id="rankFilter">
-  <option value="all">すべて</option>
-  <option value="金">金</option>
-  <option value="銀">銀</option>
-  <option value="銅">銅</option>
-</select>
+    <br><br>
 
-<br><br>
+    <div style="margin:10px 0 6px; font-weight:700;">フォーメーションコンボを選択</div>
+    <select id="comboSelect"></select>
 
-<div style="margin:10px 0 6px; font-weight:700;">フォーメーションコンボを選択</div>
-
-<select id="comboSelect"></select>
-
-    <br>
-    <button type="button" onclick="showComboPlayers()">対応選手を表示</button>
+    <br><br>
+    <button class="btn-show" type="button" onclick="showComboPlayers()">対応選手を表示</button>
 
     <div id="comboPlayers" style="margin-top:10px;"></div>
   </div>
@@ -443,19 +437,25 @@ select{
   <script>
     let combos = [];
     let players = [];
+    let combosLoaded = false;
+    let playersLoaded = false;
 
     /* ===== JSON読み込み ===== */
     fetch("combos.json")
       .then(r => r.json())
       .then(data => {
         combos = data;
+        combosLoaded = true;
         initComboSelect();
       })
       .catch(err => console.error("combos.json 読み込み失敗", err));
 
     fetch("players.json")
       .then(r => r.json())
-      .then(data => { players = data; })
+      .then(data => {
+        players = data;
+        playersLoaded = true;
+      })
       .catch(err => console.error("players.json 読み込み失敗", err));
 
     /* ===== ランクソート ===== */
@@ -517,12 +517,8 @@ select{
       const v = p.overall ?? p.initialOverall ?? p.total ?? null;
       return (v === null || v === undefined || v === "") ? "-" : v;
     }
-function formatPlayerLine(p) {
-  return `${p.name}（${getOverall(p)}/${p.playStyle}/${p.mainPosition}）`;
-}
-
-      // 現状の仕様（初期総合力/ポリシー/メインポジション）
-      return `${p.name}（${getOverall(p)}/${p.policy}/${p.mainPosition}）`;
+    function formatPlayerLine(p) {
+      return `${p.name}（${getOverall(p)}/${p.playStyle}/${p.mainPosition}）`;
     }
     function sortPlayers(list) {
       return [...list].sort((a, b) => {
@@ -543,20 +539,33 @@ function formatPlayerLine(p) {
       const lvOk = (Number(p.lv || 1) >= Number(cond.lv || 1));
       return posOk && styleOk && lvOk;
     }
-
-    // ★不足していた関数：完全一致（pos+style+lv+policy）
     function playerMatchesCondition(p, cond) {
       return playerMatchesPosStyle(p, cond) && (p.policy === cond.policy);
     }
 
     /* ===== フォーメーションコンボ検索（タブ1） ===== */
     function search() {
+      if (!combosLoaded) {
+        alert("データ読み込み中です。少し待ってからもう一度押してください。");
+        return;
+      }
+
       const policy = document.querySelector('input[name="policy"]:checked')?.value ?? "";
       const style = document.querySelector('input[name="style"]:checked')?.value ?? "";
       const lv = parseInt(document.getElementById("lv").value, 10);
 
       const checkboxes = document.querySelectorAll(".pos-board input[type=checkbox]:checked");
       const positions = Array.from(checkboxes).map(cb => cb.value);
+
+      const warn = document.getElementById("posWarning");
+      if (!positions.length) {
+        warn.style.display = "block";
+        document.getElementById("exact").innerHTML = "";
+        document.getElementById("diffPolicy").innerHTML = "";
+        document.getElementById("diffPosition").innerHTML = "";
+        return;
+      }
+      warn.style.display = "none";
 
       const player = { policy, positions, playStyle: style, lv };
 
@@ -603,51 +612,63 @@ function formatPlayerLine(p) {
         formatResult(sortByRank([...results.diffPosition]), "diffPosition");
     }
 
+    // ポジションを選んだら警告を消す
+    document.addEventListener("change", (e) => {
+      if (e.target && e.target.matches('.pos-board input[type="checkbox"]')) {
+        const checkboxes = document.querySelectorAll(".pos-board input[type=checkbox]:checked");
+        if (checkboxes.length) {
+          const warn = document.getElementById("posWarning");
+          if (warn) warn.style.display = "none";
+        }
+      }
+    });
+
     /* ===== プルダウン（タブ2） ===== */
     function makeComboKey(c) {
       return `${c.formation}|${c.name}`;
     }
-function initComboSelect() {
 
-  const sel = document.getElementById("comboSelect");
-  const rankSel = document.getElementById("rankFilter");
+    function initComboSelect() {
+      const sel = document.getElementById("comboSelect");
+      const rankSel = document.getElementById("rankFilter");
+      if (!sel || !rankSel) return;
 
-  if (!sel || !rankSel) return;
+      function updateList(){
+        const rank = rankSel.value;
+        let list = combos;
 
-  function updateList(){
+        if(rank !== "all"){
+          list = combos.filter(c => c.rank === rank);
+        }
 
-    const rank = rankSel.value;
+        const sorted = [...list].sort((a,b)=>{
+          const f = (a.formation||"").localeCompare(b.formation||"");
+          if(f!==0) return f;
+          return (a.name||"").localeCompare(b.name||"");
+        });
 
-    let list = combos;
+        sel.innerHTML = sorted.map(c=>{
+          return `<option value="${makeComboKey(c)}">${c.formation}｜${c.name}（${c.rank}）</option>`;
+        }).join("");
 
-    if(rank !== "all"){
-      list = combos.filter(c => c.rank === rank);
+        const out = document.getElementById("comboPlayers");
+        if (out) out.innerHTML = "";
+      }
+
+      updateList();
+      rankSel.addEventListener("change", updateList);
     }
 
-    const sorted = [...list].sort((a,b)=>{
-      const f = (a.formation||"").localeCompare(b.formation||"");
-      if(f!==0) return f;
-      return (a.name||"").localeCompare(b.name||"");
-    });
-
-    sel.innerHTML = sorted.map(c=>{
-      return `<option value="${makeComboKey(c)}">
-        ${c.formation}｜${c.name}（${c.rank}）
-      </option>`;
-    }).join("");
-
-    // 結果クリア
-    document.getElementById("comboPlayers").innerHTML = "";
-  }
-
-  // 初期表示
-  updateList();
-
-  // 変更時に更新
-  rankSel.addEventListener("change", updateList);
-}
-
     function showComboPlayers() {
+      if (!combosLoaded) {
+        alert("データ読み込み中です。少し待ってからもう一度押してください。");
+        return;
+      }
+      if (!playersLoaded) {
+        alert("選手データ読み込み中です。少し待ってからもう一度押してください。");
+        return;
+      }
+
       const sel = document.getElementById("comboSelect");
       const out = document.getElementById("comboPlayers");
       if (!sel || !out) return;
