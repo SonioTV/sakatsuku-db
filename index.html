@@ -1,751 +1,327 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>サカつく2026 コンボ検索</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>サカつく2026 検索ツール</title>
 
-  <!-- 読みやすい日本語フォント -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
-
-  <style>
-
-    /* ===== ベース ===== */
-    body{
-      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN","Yu Gothic", Meiryo, sans-serif;
-      margin: 12px;
-      font-size: 1.5em;
-    }
-
-    /* ===== タブ ===== */
-    .tabs{ display:flex; gap:8px; margin: 10px 0 14px; }
-    .tab-btn{
-      flex:1; padding:10px 12px; border:1px solid #ccc; background:#f7f7f7;
-      border-radius:10px; cursor:pointer; font-weight:700;
-    }
-    .tab-btn.active{ background:#111; color:#fff; border-color:#111; }
-    .tab-panel{ display:none; }
-    .tab-panel.active{ display:block; }
-
-    /* ===== タイトル下の注釈 ===== */
-    .note-main{ margin: 4px 0 2px; font-size: 14px; font-weight: 600; color: #333; }
-    .note-sub{ margin: 0 0 12px; font-size: 12px; color: #666; }
-
-    /* ===== 検索画面（中央揃え） ===== */
-    #tab-search{ text-align:center; }
-    #exact, #diffPolicy, #diffPosition{ text-align:left; }
-
-/* ===== タブ②（入力UIは中央揃え、結果は左寄せ） ===== */
-#tab-combo{ text-align:center; }          /* 見出し〜ボタンまで中央寄せ */
-#comboPlayers{ text-align:left; }         /* 検索結果は左寄せのまま */
-
-/* ランクタイルの並びも中央へ */
-#tab-combo .rank-board{
-  justify-content:center;                /* start → center */
+<style>
+body{
+  font-family: "Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  margin:0;
+  background:#f7f7f7;
 }
 
-/* プルダウンを中央に（幅は既存 #comboSelect 指定が効く） */
-#tab-combo #comboSelect{
-  display:block;
-  margin: 0 auto;
+h2{text-align:center}
+
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:10px 0;
 }
 
-/* ボタンが念のため中央に来るように（inlineでも中央寄せされるが保険） */
-#tab-combo .btn-show{
-  display:inline-block;
+.tab-btn{
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  background:#ddd;
+  font-weight:700;
+  cursor:pointer;
 }
 
-    /* ===== 結果カード ===== */
-    .result-card{
-      margin-bottom:15px; padding:10px; border:1px solid #ccc; border-radius:8px; background:#fff;
-    }
-    .result-card.exact{ border-left:6px solid #2e7d32; }
-    .result-card.diffPolicy{ border-left:6px solid #1565c0; }
-    .result-card.diffPosition{ border-left:6px solid #6a1b9a; }
-    .result-card.state-active{ background:#e8f5e9; }
-    .result-card.state-soon{ background:#fff8e1; }
-    .result-card.state-far{ background:#f5f5f5; }
+.tab-btn.active{background:#4a90e2;color:#fff}
 
-    /* 結果カード文字サイズ（小さめ） */
-    .result-card, .cand-block{ font-size: 0.85em; }
-    .cand-list{ line-height: 1.45; white-space: pre-wrap; }
-
-    /* ===== ポリシー画像UI ===== */
-    .policy-board{
-      display:grid; grid-template-columns: repeat(2, minmax(0, 120px)); gap:14px;
-      margin: 0 auto 15px; width: fit-content; justify-content:center; justify-items:center;
-    }
-    .policy-board input{ display:none; }
-    .policy-board label{
-      width: 120px; display:flex; flex-direction:column; align-items:center; justify-content:center;
-      padding:8px 6px; border:2px solid transparent; border-radius:12px; cursor:pointer;
-      background:#fff; text-align:center; box-sizing:border-box;
-    }
-    .policy-board label div{ white-space: nowrap; font-size:14px; line-height: 1.2; text-align:center; width:100%; }
-    .policy-board img{ width:90px; height:90px; object-fit:contain; display:block; margin: 0 auto 4px; }
-    .policy-board input:checked + label{ border-color:#ff9800; box-shadow:0 0 0 2px #ff9800; }
-
-    /* ===== ポジション選択UI ===== */
-    .pos-board{
-      display:grid; grid-template-columns: repeat(3, 65px); grid-auto-rows: 45px; gap: 6px;
-      background:#eee; padding:8px; width: fit-content; border-radius: 8px; margin: 0 auto;
-    }
-    .pos-board input{ display:none; }
-    .pos{
-      display:flex; align-items:center; justify-content:center; font-weight:800; font-size:18px;
-      background:#666; color:#fff; border:3px solid transparent; border-radius:6px;
-      cursor:pointer; user-select:none; transition: all 0.15s ease; box-sizing:border-box;
-    }
-    .atk{ border-color:#49d35a; }
-    .mid{ border-color:#f6c21a; }
-    .def{ border-color:#4bb5e6; }
-    .gk { border-color:#ff2b2b; }
-    .tall{ grid-row: span 2; }
-    #pos_LW + label{ grid-column:1; grid-row:1; }
-    #pos_CF + label{ grid-column:2; grid-row:1; }
-    #pos_RW + label{ grid-column:3; grid-row:1; }
-    #pos_LM + label{ grid-column:1; grid-row:2 / span 2; }
-    #pos_AM + label{ grid-column:2; grid-row:2; }
-    #pos_RM + label{ grid-column:3; grid-row:2 / span 2; }
-    #pos_DM + label{ grid-column:2; grid-row:3; }
-    #pos_LB + label{ grid-column:1; grid-row:4; }
-    #pos_CB + label{ grid-column:2; grid-row:4; }
-    #pos_RB + label{ grid-column:3; grid-row:4; }
-    #pos_GK + label{ grid-column:2; grid-row:5; }
-    .pos-board input:checked + label.atk{ background:#49d35a; color:#000; }
-    .pos-board input:checked + label.mid{ background:#f6c21a; color:#000; }
-    .pos-board input:checked + label.def{ background:#4bb5e6; color:#000; }
-    .pos-board input:checked + label.gk { background:#ff2b2b; color:#fff; }
-
-    /* ===== プレイスタイル画像UI ===== */
-    .style-board{
-      display:grid; grid-template-columns: repeat(3, minmax(0, 120px)); gap:12px;
-      margin: 0 auto 15px; width: fit-content; justify-content:center; justify-items:center;
-    }
-    .style-board input{ display:none; }
-    .style-board label{
-      width: 120px; display:flex; flex-direction:column; align-items:center; justify-content:center;
-      padding:6px 6px; border:2px solid transparent; border-radius:12px; cursor:pointer;
-      background:#fff; text-align:center; box-sizing:border-box;
-    }
-    .style-board img{ width:86px; height:86px; object-fit:contain; display:block; margin: 0 auto 4px; }
-    .style-board label div{ white-space: nowrap; font-size:12px; line-height: 1.2; text-align:center; width:100%; }
-    .style-board input:checked + label{ border-color:#2196f3; box-shadow:0 0 0 2px #2196f3; }
-
-    /* ===== 検索結果のKey-Value表示 ===== */
-    .kv { display: grid; grid-template-columns: 110px 1fr; gap: 6px 10px; }
-    .k { font-weight: 800; color: #111; }
-    .v { color: #111; }
-
-    /* ===== 条件カード ===== */
-    .cond-kv { margin-top: 6px; }
-    .candidates { margin-top: 10px; display: grid; gap: 10px; }
-    .cand-block{ padding: 8px; border: 1px solid #ddd; border-radius: 8px; background: #fafafa; }
-    .cand-title{ font-weight: 900; margin-bottom: 4px; }
-
-    /* ===== バリデーションメッセージ ===== */
-    .warn{ margin-top: 10px; color: #d32f2f; font-weight: 800; display:none; }
-
-    /* ===== Lv 選択（タイル式・単一選択） ===== */
-    .lv-label{
-      font-size: 1.15em;
-      font-weight: 900;
-      margin-top: 10px;
-    }
-    .lv-board{
-      display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
-      width: min(520px, 100%); margin: 8px auto 0;
-      justify-content:center; justify-items:stretch;
-    }
-    .lv-board input{ display:none; }
-    .lv-tile{
-      display:flex; align-items:center; justify-content:center;
-      height: 56px; border-radius: 14px; background:#f3f3f3; border:2px solid #ddd;
-      font-weight: 900; cursor:pointer; user-select:none; letter-spacing: .02em;
-    }
-    .lv-board input:checked + .lv-tile{
-      border-color:#2196f3; box-shadow:0 0 0 2px #2196f3; background:#e3f2fd;
-    }
-
-    /* ===== ランク選択（タイル式・複数選択） ===== */
-    .rank-board{
-      display:grid; grid-template-columns: repeat(3, 88px); gap: 12px;
-      width: fit-content; justify-content:center; justify-items:center; margin-top: 2px;
-    }
-    .rank-board input{ display:none; }
-    .rank-tile{
-      display:flex; align-items:center; justify-content:center;
-      width: 88px; height: 88px; border-radius: 16px;
-      border:2px solid rgba(0,0,0,.25); font-weight: 950;
-      cursor:pointer; user-select:none; box-shadow: 0 6px 16px rgba(0,0,0,.12);
-      letter-spacing: .02em;
-    }
-    .rank-tile.gold{ background: linear-gradient(135deg, #fff2b2, #d4af37); color:#111; }
-    .rank-tile.silver{ background: linear-gradient(135deg, #ffffff, #bdbdbd); color:#111; }
-    .rank-tile.bronze{ background: linear-gradient(135deg, #ffe2c7, #cd7f32); color:#111; }
-    .rank-board input:checked + .rank-tile{
-      border-color:#111;
-      box-shadow: 0 0 0 3px rgba(0,0,0,.85), 0 10px 20px rgba(0,0,0,.18);
-      transform: translateY(-1px);
-    }
-
-    /* ===== セレクト ===== */
-    select{ font-size: 1.1em; padding: 8px 12px; }
-
-    /* ===== ボタン ===== */
-    .btn-search{
-      font-size: 1.8em; padding: 18px 40px; border-radius: 12px; font-weight: 900; cursor:pointer;
-    }
-    .btn-show{
-      font-size: 1.4em; padding: 12px 30px; border-radius: 10px; font-weight: 800; cursor:pointer;
-    }
-
-    /* ===== コンボ選択プルダウン ===== */
-    #comboSelect{ width: 100%; max-width: 560px; box-sizing: border-box; }
-
-    /* ===== トップへ戻るボタン（ふわっと表示） ===== */
-    #scrollTopBtn{
-      position: fixed;
-      right: 20px;
-      bottom: 80px;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(0,123,255,0.9);
-      color: #fff;
-      font-size: 22px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 9999;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-
-      opacity: 0;
-      transform: translateY(20px);
-      pointer-events: none;
-      transition: all 0.3s ease;
-    }
-    #scrollTopBtn.show{
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-    #scrollTopBtn:hover{ background: rgba(0,86,179,0.95); }
-
-/* ===== スマホ調整 ===== */
-@media (max-width: 480px){
-  .kv{ grid-template-columns: 1fr; gap: 2px 0; }
-  .k{ margin-top: 6px; }
-  #comboSelect{ font-size: 1em; }
-  .rank-board{ grid-template-columns: repeat(3, 76px); gap: 10px; }
-  .rank-tile{ width:76px; height:76px; border-radius:14px; }
-  .lv-board{ gap: 8px; }
-  .lv-tile{ height: 52px; }
-
-  /* ★ここを追加（検索結果を小さくする） */
-  .result-card,
-  .cand-block{
-    font-size: 0.8em;
-  }
+.tab{
+  display:none;
+  max-width:900px;
+  margin:0 auto;
+  padding:10px;
 }
 
-  </style>
+.tab.active{display:block}
+
+/* 結果 */
+.result-card{
+  background:#fff;
+  border-radius:12px;
+  padding:10px;
+  margin:10px 0;
+  font-size:0.85em;
+}
+
+.kv{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:6px 10px;
+}
+
+.k{font-weight:700}
+
+/* ボタン */
+.btn-main{
+  font-size:1.3em;
+  padding:15px 30px;
+  border:none;
+  border-radius:14px;
+  background:#ff9800;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ランク */
+.rank-board{
+  display:grid;
+  grid-template-columns:repeat(3,80px);
+  gap:12px;
+  justify-content:center;
+}
+
+.rank-tile{
+  width:80px;
+  height:80px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  cursor:pointer;
+  border:2px solid #999;
+}
+
+.rank-gold{background:#ffd700}
+.rank-silver{background:#c0c0c0}
+.rank-bronze{background:#cd7f32}
+
+/* モーダル */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.4);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.modal.open{display:flex}
+
+.modal-box{
+  background:#fff;
+  width:min(600px,100%);
+  border-radius:16px;
+  padding:15px;
+  max-height:85vh;
+  overflow:auto;
+}
+
+.modal-close{
+  float:right;
+  font-size:24px;
+  border:none;
+  background:none;
+  cursor:pointer;
+}
+
+.player-link{
+  color:#1565c0;
+  cursor:pointer;
+  text-decoration:underline;
+}
+
+/* トップ */
+#scrollTopBtn{
+  position:fixed;
+  right:20px;
+  bottom:70px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  border:none;
+  background:#4a90e2;
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+  opacity:0;
+  transform:translateY(20px);
+  pointer-events:none;
+  transition:.3s;
+  z-index:9999;
+}
+
+#scrollTopBtn.show{
+  opacity:1;
+  transform:none;
+  pointer-events:auto;
+}
+
+/* スマホ */
+@media(max-width:480px){
+  .result-card{font-size:11px;line-height:1.5}
+  .kv{grid-template-columns:1fr}
+  .k{margin-top:6px}
+}
+</style>
 </head>
 
 <body>
-  <div class="tabs">
-    <button class="tab-btn active" data-tab="tab-search" type="button">フォーメーションコンボ検索</button>
-    <button class="tab-btn" data-tab="tab-combo" type="button">コンボから選手を探す</button>
+
+<h2>サカつく2026 検索ツール</h2>
+
+<div class="tabs">
+  <button class="tab-btn active" data-tab="t1">コンボ検索</button>
+  <button class="tab-btn" data-tab="t2">選手検索</button>
+</div>
+
+<!-- タブ1 -->
+<div id="t1" class="tab active">
+
+  <p style="text-align:center">フォーメーションコンボ検索</p>
+
+  <div style="text-align:center">
+    <button class="btn-main" onclick="dummySearch()">検索</button>
   </div>
 
-  <!-- タブ①：フォーメーションコンボ検索 -->
-  <div id="tab-search" class="tab-panel active">
-    <h2>フォーメーションコンボ検索</h2>
-    <p class="note-main">検索したい選手の情報を入力してください</p>
-    <p class="note-sub">※ポジションは適正がある場所を全て選択してください。</p>
+  <div id="result1"></div>
+</div>
 
-    <div>【ポリシー】</div>
-    <div class="policy-board">
-      <input type="radio" name="policy" id="pol_counter" value="カウンター">
-      <label for="pol_counter"><img src="img/policy/counter.png" alt="カウンター"><div>カウンター</div></label>
+<!-- タブ2 -->
+<div id="t2" class="tab">
 
-      <input type="radio" name="policy" id="pol_moving" value="ムービング">
-      <label for="pol_moving"><img src="img/policy/moving.png" alt="ムービング"><div>ムービング</div></label>
+  <p style="text-align:center">コンボから選手を探す</p>
 
-      <input type="radio" name="policy" id="pol_reaction" value="リアクション">
-      <label for="pol_reaction"><img src="img/policy/reaction.png" alt="リアクション"><div>リアクション</div></label>
-
-      <input type="radio" name="policy" id="pol_possession" value="ポゼッション" checked>
-      <label for="pol_possession"><img src="img/policy/possession.png" alt="ポゼッション"><div>ポゼッション</div></label>
-    </div>
-
-    <div>【ポジション（複数可）】</div>
-    <div class="pos-board">
-      <input id="pos_LW" type="checkbox" value="LW"><label class="pos atk" for="pos_LW">LW</label>
-      <input id="pos_CF" type="checkbox" value="CF"><label class="pos atk" for="pos_CF">CF</label>
-      <input id="pos_RW" type="checkbox" value="RW"><label class="pos atk" for="pos_RW">RW</label>
-
-      <input id="pos_LM" type="checkbox" value="LM"><label class="pos mid tall" for="pos_LM">LM</label>
-      <input id="pos_AM" type="checkbox" value="AM"><label class="pos mid" for="pos_AM">AM</label>
-      <input id="pos_RM" type="checkbox" value="RM"><label class="pos mid tall" for="pos_RM">RM</label>
-      <input id="pos_DM" type="checkbox" value="DM"><label class="pos mid" for="pos_DM">DM</label>
-
-      <input id="pos_LB" type="checkbox" value="LB"><label class="pos def" for="pos_LB">LB</label>
-      <input id="pos_CB" type="checkbox" value="CB"><label class="pos def" for="pos_CB">CB</label>
-      <input id="pos_RB" type="checkbox" value="RB"><label class="pos def" for="pos_RB">RB</label>
-
-      <input id="pos_GK" type="checkbox" value="GK"><label class="pos gk" for="pos_GK">GK</label>
-    </div>
-
-    <br>
-    <div>【プレイスタイル】</div>
-    <div class="style-board">
-      <input type="radio" name="style" id="sty_striker" value="ストライカー" checked>
-      <label for="sty_striker"><img src="img/style/striker.png" alt="ストライカー"><div>ストライカー</div></label>
-
-      <input type="radio" name="style" id="sty_line" value="ラインブレーカー">
-      <label for="sty_line"><img src="img/style/linebreaker.png" alt="ラインブレーカー"><div>ラインブレーカー</div></label>
-
-      <input type="radio" name="style" id="sty_post" value="ポストプレーヤー">
-      <label for="sty_post"><img src="img/style/postplayer.png" alt="ポストプレーヤー"><div>ポストプレーヤー</div></label>
-
-      <input type="radio" name="style" id="sty_side" value="サイドアタッカー">
-      <label for="sty_side"><img src="img/style/sideattacker.png" alt="サイドアタッカー"><div>サイドアタッカー</div></label>
-
-      <input type="radio" name="style" id="sty_drib" value="ドリブラー">
-      <label for="sty_drib"><img src="img/style/dribbler.png" alt="ドリブラー"><div>ドリブラー</div></label>
-
-      <input type="radio" name="style" id="sty_att" value="アタッカー">
-      <label for="sty_att"><img src="img/style/attacker.png" alt="アタッカー"><div>アタッカー</div></label>
-
-      <input type="radio" name="style" id="sty_pass" value="パサー">
-      <label for="sty_pass"><img src="img/style/passer.png" alt="パサー"><div>パサー</div></label>
-
-      <input type="radio" name="style" id="sty_cmf" value="セントラルMF">
-      <label for="sty_cmf"><img src="img/style/centralmf.png" alt="セントラルMF"><div>セントラルMF</div></label>
-
-      <input type="radio" name="style" id="sty_hard" value="ハードマーカー">
-      <label for="sty_hard"><img src="img/style/hardmarker.png" alt="ハードマーカー"><div>ハードマーカー</div></label>
-
-      <input type="radio" name="style" id="sty_stop" value="ストッパー">
-      <label for="sty_stop"><img src="img/style/stopper.png" alt="ストッパー"><div>ストッパー</div></label>
-
-      <input type="radio" name="style" id="sty_build" value="組立CB">
-      <label for="sty_build"><img src="img/style/buildupcb.png" alt="組立CB"><div>組立CB</div></label>
-
-      <input type="radio" name="style" id="sty_afb" value="攻撃的FB">
-      <label for="sty_afb"><img src="img/style/attackfb.png" alt="攻撃的FB"><div>攻撃的FB</div></label>
-
-      <input type="radio" name="style" id="sty_dfb" value="守備的FB">
-      <label for="sty_dfb"><img src="img/style/defensefb.png" alt="守備的FB"><div>守備的FB</div></label>
-
-      <input type="radio" name="style" id="sty_ogk" value="オーソドックスGK">
-      <label for="sty_ogk"><img src="img/style/orthodoxgk.png" alt="オーソドックスGK"><div>オーソドックスGK</div></label>
-
-      <input type="radio" name="style" id="sty_sgk" value="スイーパーGK">
-      <label for="sty_sgk"><img src="img/style/sweepergk.png" alt="スイーパーGK"><div>スイーパーGK</div></label>
-    </div>
-
-    <div class="lv-label">【プレイスタイルのLv選択】</div>
-    <div class="lv-board" aria-label="Lvを選択">
-      <input type="radio" name="lv" id="lv1" value="1" checked>
-      <label class="lv-tile" for="lv1">Lv1</label>
-
-      <input type="radio" name="lv" id="lv2" value="2">
-      <label class="lv-tile" for="lv2">Lv2</label>
-
-      <input type="radio" name="lv" id="lv3" value="3">
-      <label class="lv-tile" for="lv3">Lv3</label>
-    </div>
-
-    <br><br>
-    <button class="btn-search" type="button" onclick="search()">検索</button>
-    <div id="posWarning" class="warn">ポジションを選択してください</div>
-
-    <hr>
-
-    <h3>① 完全一致</h3>
-    <div id="exact"></div>
-
-    <h3>② ポリシー違い</h3>
-    <div id="diffPolicy"></div>
-
-    <h3>③ ポジション違い</h3>
-    <div id="diffPosition"></div>
+  <div class="rank-board">
+    <div class="rank-tile rank-gold" data-r="金">金</div>
+    <div class="rank-tile rank-silver" data-r="銀">銀</div>
+    <div class="rank-tile rank-bronze" data-r="銅">銅</div>
   </div>
 
-  <!-- タブ②：コンボから選手を探す -->
-  <div id="tab-combo" class="tab-panel">
-    <h2>コンボから選手を探す</h2>
-    <p class="note-sub">※選手名横の（）内は「初期総合力/プレイスタイル/メインポジション」です<br>※表示される選手はSP選手のみです</p>
-
-    <div style="margin:10px 0 6px; font-weight:700;">ランクを選択（複数可）</div>
-    <div class="rank-board" aria-label="ランクを選択（複数可）">
-      <input type="checkbox" id="rank_gold" value="金">
-      <label class="rank-tile gold" for="rank_gold">金</label>
-
-      <input type="checkbox" id="rank_silver" value="銀">
-      <label class="rank-tile silver" for="rank_silver">銀</label>
-
-      <input type="checkbox" id="rank_bronze" value="銅">
-      <label class="rank-tile bronze" for="rank_bronze">銅</label>
-    </div>
-    <div class="note-sub" style="margin-top:6px;">※未選択の場合は「すべて」を表示します</div>
-
-    <br>
-
-    <div style="margin:10px 0 6px; font-weight:700;">フォーメーションコンボを選択</div>
-    <select id="comboSelect"></select>
-
-    <br><br>
-    <button class="btn-show" type="button" onclick="showComboPlayers()">対応選手を表示</button>
-
-    <div id="comboPlayers" style="margin-top:10px;"></div>
+  <div style="text-align:center;margin:15px">
+    <select id="comboSelect" style="font-size:1.2em">
+      <option>テストコンボ</option>
+    </select>
   </div>
 
-<!-- トップへ戻るボタン -->
-<button id="scrollTopBtn" type="button">▲</button>
+  <div style="text-align:center">
+    <button class="btn-main" onclick="showPlayers()">対応選手を表示</button>
+  </div>
 
-  <script>
-    let combos = [];
-    let players = [];
-    let combosLoaded = false;
-    let playersLoaded = false;
+  <p style="text-align:center;font-size:0.9em">
+    ※選手名横は（入手方法：入手場所）<br>
+    ※表示される選手はSP選手のみです
+  </p>
 
-    /* ===== JSON読み込み ===== */
-    fetch("combos.json")
-      .then(r => r.json())
-      .then(data => {
-        combos = data;
-        combosLoaded = true;
-        initComboSelect();
-      })
-      .catch(err => console.error("combos.json 読み込み失敗", err));
+  <div id="comboPlayers"></div>
+</div>
 
-    fetch("players.json")
-      .then(r => r.json())
-      .then(data => {
-        players = data;
-        playersLoaded = true;
-      })
-      .catch(err => console.error("players.json 読み込み失敗", err));
+<!-- モーダル -->
+<div id="playerModal" class="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <h3 id="modalTitle"></h3>
+    <div id="modalBody"></div>
+  </div>
+</div>
 
-    /* ===== ランクソート ===== */
-    function rankScore(rank) {
-      if (rank === "金") return 3;
-      if (rank === "銀") return 2;
-      if (rank === "銅") return 1;
-      return 0;
-    }
-    function sortByRank(list) {
-      return list.slice().sort((a, b) => rankScore(b.rank) - rankScore(a.rank));
-    }
+<!-- トップ -->
+<button id="scrollTopBtn">▲</button>
 
-    /* ===== 表示補助 ===== */
-    function wbrJP(text){
-      return String(text || "").replaceAll("、", "、<wbr>");
-    }
+<script>
+/* ダミーデータ */
+const players=[
+  {
+    playerId:"P001",
+    name:"テスト太郎",
+    overall:85,
+    maxUpgrade:95,
+    policy:"ポゼッション",
+    playStyle:"パサー",
+    lv:2,
+    mainPosition:"AM",
+    mainSkill:"パス◎",
+    mainTrait:"司令塔",
+    period:"2026/01-2026/03",
+    obtainMethod:"ガチャ",
+    obtainPlace:"限定"
+  }
+];
 
-    function formatResult(list, category) {
-      return list.map(combo => {
-        const required = combo.requiredPlayers ?? (combo.conditions?.length ?? 0);
-        const remain = combo._remain ?? 0;
-        const comboPolicy = combo.policy ?? combo.conditions?.[0]?.policy ?? "";
-        const requiredText = remain > 0 ? `${required}人（あと${remain}人で発動）` : `${required}人`;
-
-        const stateClass =
-          remain === 0 ? "state-active" :
-          remain === 1 ? "state-soon" :
-          "state-far";
-
-        let missingText = "";
-        if (remain > 0 && Array.isArray(combo._missing) && combo._missing.length > 0) {
-          const show = combo._missing.slice(0, remain);
-          missingText =
-            `※不足条件※<br>` +
-            show.map(c =>
-              `ポジション：${c.position} / プレイスタイル：${c.playStyle}Lv${c.lv}以上`
-            ).join("<br>");
-        }
-
-        return `
-          <div class="result-card ${category} ${stateClass}">
-            <div class="kv">
-              <div class="k">フォーメーション名</div><div class="v">${combo.name}</div>
-              <div class="k">ランク</div><div class="v">${combo.rank}</div>
-              <div class="k">効果</div><div class="v">${wbrJP(combo.effect)}</div>
-              <div class="k">フォーメーション</div><div class="v">${combo.formation}</div>
-              <div class="k">ポリシー</div><div class="v">${comboPolicy}</div>
-              <div class="k">必要人数</div><div class="v">${requiredText}</div>
-            </div>
-            ${missingText ? `<div style="margin-top:8px;">${missingText}</div>` : ""}
-          </div>
-        `;
-      }).join("");
-    }
-
-    /* ===== コンボ→選手表示用 ===== */
-    function getOverall(p) {
-      const v = p.overall ?? p.initialOverall ?? p.total ?? null;
-      return (v === null || v === undefined || v === "") ? "-" : v;
-    }
-    function formatPlayerLine(p) {
-      return `${p.name}（${getOverall(p)}/${p.playStyle}/${p.mainPosition}）`;
-    }
-    function sortPlayers(list) {
-      return [...list].sort((a, b) => {
-        const ao = Number(getOverall(a));
-        const bo = Number(getOverall(b));
-        const aNum = Number.isFinite(ao);
-        const bNum = Number.isFinite(bo);
-        if (aNum && bNum && ao !== bo) return bo - ao;
-        if (aNum && !bNum) return -1;
-        if (!aNum && bNum) return 1;
-        return (a.name || "").localeCompare(b.name || "");
-      });
-    }
-
-    function playerMatchesPosStyle(p, cond) {
-      const posOk = Array.isArray(p.positions) && p.positions.includes(cond.position);
-      const styleOk = (p.playStyle === cond.playStyle);
-      const lvOk = (Number(p.lv || 1) >= Number(cond.lv || 1));
-      return posOk && styleOk && lvOk;
-    }
-    function playerMatchesCondition(p, cond) {
-      return playerMatchesPosStyle(p, cond) && (p.policy === cond.policy);
-    }
-
-    /* ===== フォーメーションコンボ検索（タブ1） ===== */
-    function search() {
-      if (!combosLoaded) {
-        alert("データ読み込み中です。少し待ってからもう一度押してください。");
-        return;
-      }
-
-      const policy = document.querySelector('input[name="policy"]:checked')?.value ?? "";
-      const style = document.querySelector('input[name="style"]:checked')?.value ?? "";
-      const lv = parseInt(document.querySelector('input[name="lv"]:checked')?.value ?? "1", 10);
-
-      const checkboxes = document.querySelectorAll(".pos-board input[type=checkbox]:checked");
-      const positions = Array.from(checkboxes).map(cb => cb.value);
-
-      const warn = document.getElementById("posWarning");
-      if (!positions.length) {
-        warn.style.display = "block";
-        document.getElementById("exact").innerHTML = "";
-        document.getElementById("diffPolicy").innerHTML = "";
-        document.getElementById("diffPosition").innerHTML = "";
-        return;
-      }
-      warn.style.display = "none";
-
-      const player = { policy, positions, playStyle: style, lv };
-
-      const results = {
-        exact: new Set(),
-        diffPolicy: new Set(),
-        diffPosition: new Set()
-      };
-
-      combos.forEach(combo => {
-        const need = combo.requiredPlayers ?? (combo.conditions?.length ?? 0);
-        let matchCount = 0;
-        const missing = [];
-
-        (combo.conditions ?? []).forEach(condition => {
-          const policyMatch = condition.policy === player.policy;
-          const positionMatch = player.positions.includes(condition.position);
-          const styleMatch = condition.playStyle === player.playStyle;
-          const lvMatch = player.lv >= condition.lv;
-
-          const isMet = policyMatch && positionMatch && styleMatch && lvMatch;
-          if (isMet) matchCount++;
-          else missing.push(condition);
-
-          if (styleMatch && lvMatch) {
-            if (policyMatch && positionMatch) results.exact.add(combo);
-            else if (!policyMatch && positionMatch) results.diffPolicy.add(combo);
-            else if (policyMatch && !positionMatch) results.diffPosition.add(combo);
-          }
-        });
-
-        const remain = Math.max(0, need - matchCount);
-        combo._remain = remain;
-        combo._missing = missing;
-      });
-
-      document.getElementById("exact").innerHTML =
-        formatResult(sortByRank([...results.exact]), "exact");
-
-      document.getElementById("diffPolicy").innerHTML =
-        formatResult(sortByRank([...results.diffPolicy]), "diffPolicy");
-
-      document.getElementById("diffPosition").innerHTML =
-        formatResult(sortByRank([...results.diffPosition]), "diffPosition");
-    }
-
-    // ポジションを選んだら警告を消す
-    document.addEventListener("change", (e) => {
-      if (e.target && e.target.matches('.pos-board input[type="checkbox"]')) {
-        const checkboxes = document.querySelectorAll(".pos-board input[type=checkbox]:checked");
-        if (checkboxes.length) {
-          const warn = document.getElementById("posWarning");
-          if (warn) warn.style.display = "none";
-        }
-      }
-    });
-
-    /* ===== プルダウン（タブ2） ===== */
-    function makeComboKey(c) {
-      return `${c.formation}|${c.name}`;
-    }
-
-    function initComboSelect() {
-      const sel = document.getElementById("comboSelect");
-      if (!sel) return;
-
-      const rankChecks = Array.from(document.querySelectorAll('.rank-board input[type="checkbox"]'));
-
-      function getSelectedRanks() {
-        const checked = rankChecks.filter(c => c.checked).map(c => c.value);
-        return checked.length ? checked : ["金","銀","銅"]; // 未選択＝すべて
-      }
-
-      function updateList() {
-        const ranks = new Set(getSelectedRanks());
-        const list = combos.filter(c => ranks.has(c.rank));
-
-        const sorted = [...list].sort((a,b)=>{
-          const f = (a.formation||"").localeCompare(b.formation||"");
-          if(f!==0) return f;
-          return (a.name||"").localeCompare(b.name||"");
-        });
-
-        sel.innerHTML = sorted.map(c=>{
-          return `<option value="${makeComboKey(c)}">${c.formation}｜${c.name}（${c.rank}）</option>`;
-        }).join("");
-
-        const out = document.getElementById("comboPlayers");
-        if (out) out.innerHTML = "";
-      }
-
-      updateList();
-      rankChecks.forEach(c => c.addEventListener("change", updateList));
-    }
-
-    function showComboPlayers() {
-      if (!combosLoaded) {
-        alert("データ読み込み中です。少し待ってからもう一度押してください。");
-        return;
-      }
-      if (!playersLoaded) {
-        alert("選手データ読み込み中です。少し待ってからもう一度押してください。");
-        return;
-      }
-
-      const sel = document.getElementById("comboSelect");
-      const out = document.getElementById("comboPlayers");
-      if (!sel || !out) return;
-
-      const selectedKey = sel.value;
-      const combo = combos.find(c => makeComboKey(c) === selectedKey);
-
-      if (!combo) {
-        out.innerHTML = "コンボが見つかりません";
-        return;
-      }
-
-      const comboPolicy = combo.policy ?? combo.conditions?.[0]?.policy ?? "";
-      const required = combo.requiredPlayers ?? (combo.conditions?.length ?? 0);
-
-      let html = `
-        <div class="result-card exact state-active">
-          <div class="kv">
-            <div class="k">フォーメーション名</div><div class="v">${combo.name}</div>
-            <div class="k">フォーメーション</div><div class="v">${combo.formation}</div>
-            <div class="k">ランク</div><div class="v">${combo.rank}</div>
-            <div class="k">ポリシー</div><div class="v">${comboPolicy}</div>
-            <div class="k">効果</div><div class="v">${wbrJP(combo.effect)}</div>
-            <div class="k">必要人数</div><div class="v">${required}人</div>
-          </div>
-        </div>
-      `;
-
-      const conds = Array.isArray(combo.conditions) ? combo.conditions : [];
-      conds.forEach((cond, idx) => {
-        const full = sortPlayers(players.filter(p => playerMatchesCondition(p, cond)));
-        const policyDiff = sortPlayers(players.filter(p => playerMatchesPosStyle(p, cond) && (p.policy !== cond.policy)));
-
-        const fullText = full.length ? full.map(formatPlayerLine).join("\n") : "なし";
-        const policyDiffText = policyDiff.length ? policyDiff.map(formatPlayerLine).join("\n") : "なし";
-
-        html += `
-          <div class="result-card">
-            <div style="font-weight:900;">条件${idx + 1}</div>
-
-            <div class="kv cond-kv">
-              <div class="k">ポジション</div><div class="v">${cond.position}</div>
-              <div class="k">プレイスタイル</div><div class="v">${cond.playStyle} Lv${cond.lv}以上</div>
-              <div class="k">ポリシー</div><div class="v">${cond.policy}</div>
-            </div>
-
-            <div class="candidates">
-              <div class="cand-block">
-                <div class="cand-title">完全一致（${full.length}人）</div>
-                <div class="cand-list">${fullText}</div>
-              </div>
-
-              <div class="cand-block">
-                <div class="cand-title">ポリシー違い（${policyDiff.length}人）</div>
-                <div class="cand-list">${policyDiffText}</div>
-              </div>
-            </div>
-          </div>
-        `;
-      });
-
-      out.innerHTML = html;
-    }
-
-    /* ===== タブ切替 ===== */
-    document.addEventListener("click", (e) => {
-      const btn = e.target.closest(".tab-btn");
-      if (!btn) return;
-
-      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const tabId = btn.dataset.tab;
-      document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("active"));
-      document.getElementById(tabId).classList.add("active");
-
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-/* ===== トップへ戻る処理 ===== */
-document.addEventListener("DOMContentLoaded", () => {
-  const scrollBtn = document.getElementById("scrollTopBtn");
-  if (!scrollBtn) return;
-
-  const toggleBtn = () => {
-    if (window.scrollY > 300) scrollBtn.classList.add("show");
-    else scrollBtn.classList.remove("show");
+/* タブ */
+document.querySelectorAll(".tab-btn").forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll(".tab-btn").forEach(x=>x.classList.remove("active"));
+    document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");
+    document.getElementById(b.dataset.tab).classList.add("active");
   };
-
-  // 初期表示判定（リロード位置が下の時も反映）
-  toggleBtn();
-
-  // スクロールで表示/非表示
-  window.addEventListener("scroll", toggleBtn, { passive: true });
-
-  // クリックでトップへ
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
 });
-  </script>
+
+/* ダミー検索 */
+function dummySearch(){
+  const r=document.getElementById("result1");
+  r.innerHTML=`
+    <div class="result-card">
+      <div class="kv">
+        <div class="k">名称</div><div>テストコンボ</div>
+        <div class="k">効果</div><div>能力UP</div>
+      </div>
+    </div>`;
+}
+
+/* 選手表示 */
+function showPlayers(){
+  const box=document.getElementById("comboPlayers");
+  box.innerHTML = players.map(p=>
+    `<div class="result-card">
+      <span class="player-link" onclick="openModal('${p.playerId}')">
+      ${p.name}</span>（${p.obtainMethod}：${p.obtainPlace}）
+    </div>`
+  ).join("");
+}
+
+/* モーダル */
+function roman(n){
+  return ["Ⅰ","Ⅱ","Ⅲ"][n-1]||"";
+}
+
+function openModal(id){
+  const p=players.find(x=>x.playerId===id);
+  if(!p)return;
+
+  document.getElementById("modalTitle").textContent=p.name;
+  document.getElementById("modalBody").innerHTML=`
+    <div class="kv">
+      <div class="k">入手期間</div><div>${p.period||"-"}</div>
+      <div class="k">総合力</div><div>${p.overall}（${p.maxUpgrade}）</div>
+      <div class="k">ポリシー</div><div>${p.policy}</div>
+      <div class="k">プレイスタイル</div><div>${p.playStyle} ${roman(p.lv)}</div>
+      <div class="k">メイン位置</div><div>${p.mainPosition}</div>
+      <div class="k">スキル</div><div>${p.mainSkill}</div>
+      <div class="k">特徴</div><div>${p.mainTrait}</div>
+    </div>`;
+
+  document.getElementById("playerModal").classList.add("open");
+}
+
+function closeModal(){
+  document.getElementById("playerModal").classList.remove("open");
+}
+
+/* トップ */
+const btn=document.getElementById("scrollTopBtn");
+
+function toggleTop(){
+  if(window.scrollY>300)btn.classList.add("show");
+  else btn.classList.remove("show");
+}
+
+window.addEventListener("scroll",toggleTop,{passive:true});
+
+btn.onclick=()=>{
+  window.scrollTo({top:0,behavior:"smooth"});
+};
+</script>
 
 </body>
 </html>
