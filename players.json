@@ -536,7 +536,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14585
+    "maxUpgrade": 14585,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0031",
@@ -552,7 +554,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14447
+    "maxUpgrade": 14447,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0032",
@@ -568,7 +572,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14584
+    "maxUpgrade": 14584,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0033",
@@ -584,7 +590,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14501
+    "maxUpgrade": 14501,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0034",
@@ -600,7 +608,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14358
+    "maxUpgrade": 14358,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0035",
@@ -616,7 +626,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14530
+    "maxUpgrade": 14530,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0036",
@@ -632,7 +644,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14367
+    "maxUpgrade": 14367,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0037",
@@ -648,7 +662,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14388
+    "maxUpgrade": 14388,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0038",
@@ -664,7 +680,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14409
+    "maxUpgrade": 14409,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0039",
@@ -680,7 +698,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14520
+    "maxUpgrade": 14520,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0040",
@@ -696,7 +716,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14523
+    "maxUpgrade": 14523,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0041",
@@ -712,7 +734,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14682
+    "maxUpgrade": 14682,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0042",
@@ -728,7 +752,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14404
+    "maxUpgrade": 14404,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0043",
@@ -744,7 +770,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14413
+    "maxUpgrade": 14413,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0044",
@@ -760,7 +788,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14247
+    "maxUpgrade": 14247,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0045",
@@ -776,7 +806,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14506
+    "maxUpgrade": 14506,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0046",
@@ -792,7 +824,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14539
+    "maxUpgrade": 14539,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0047",
@@ -808,7 +842,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14478
+    "maxUpgrade": 14478,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0048",
@@ -824,7 +860,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14332
+    "maxUpgrade": 14332,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0049",
@@ -840,7 +878,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14399
+    "maxUpgrade": 14399,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0050",
@@ -856,7 +896,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14526
+    "maxUpgrade": 14526,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0051",
@@ -872,7 +914,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14328
+    "maxUpgrade": 14328,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0052",
@@ -888,7 +932,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14264
+    "maxUpgrade": 14264,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0053",
@@ -904,7 +950,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14519
+    "maxUpgrade": 14519,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0054",
@@ -920,7 +968,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14244
+    "maxUpgrade": 14244,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0055",
@@ -936,7 +986,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14411
+    "maxUpgrade": 14411,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0056",
@@ -952,7 +1004,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14125
+    "maxUpgrade": 14125,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0057",
@@ -968,7 +1022,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14357
+    "maxUpgrade": 14357,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0058",
@@ -984,7 +1040,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14000
+    "maxUpgrade": 14000,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0059",
@@ -1000,7 +1058,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14176
+    "maxUpgrade": 14176,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0060",
@@ -1016,7 +1076,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14157
+    "maxUpgrade": 14157,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0061",
@@ -1032,7 +1094,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14378
+    "maxUpgrade": 14378,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0062",
@@ -1048,7 +1112,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14201
+    "maxUpgrade": 14201,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0063",
@@ -1064,7 +1130,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14519
+    "maxUpgrade": 14519,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0064",
@@ -1080,7 +1148,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14203
+    "maxUpgrade": 14203,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0065",
@@ -1096,7 +1166,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14398
+    "maxUpgrade": 14398,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0066",
@@ -1112,7 +1184,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14472
+    "maxUpgrade": 14472,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0067",
@@ -1128,7 +1202,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14416
+    "maxUpgrade": 14416,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0068",
@@ -1144,7 +1220,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14286
+    "maxUpgrade": 14286,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0069",
@@ -1160,7 +1238,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14430
+    "maxUpgrade": 14430,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0070",
@@ -1176,7 +1256,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14543
+    "maxUpgrade": 14543,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0071",
@@ -1192,7 +1274,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14287
+    "maxUpgrade": 14287,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0072",
@@ -1208,7 +1292,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14390
+    "maxUpgrade": 14390,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0073",
@@ -1224,7 +1310,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14413
+    "maxUpgrade": 14413,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0074",
@@ -1240,7 +1328,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14557
+    "maxUpgrade": 14557,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0075",
@@ -1256,7 +1346,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14136
+    "maxUpgrade": 14136,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0076",
@@ -1272,7 +1364,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14609
+    "maxUpgrade": 14609,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0077",
@@ -1288,7 +1382,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14498
+    "maxUpgrade": 14498,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0078",
@@ -1304,7 +1400,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14462
+    "maxUpgrade": 14462,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0079",
@@ -1320,7 +1418,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14508
+    "maxUpgrade": 14508,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0080",
@@ -1336,7 +1436,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14500
+    "maxUpgrade": 14500,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0081",
@@ -1352,7 +1454,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14560
+    "maxUpgrade": 14560,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0082",
@@ -1368,7 +1472,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14340
+    "maxUpgrade": 14340,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0083",
@@ -1384,7 +1490,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14348
+    "maxUpgrade": 14348,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0084",
@@ -1400,7 +1508,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14405
+    "maxUpgrade": 14405,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0085",
@@ -1416,7 +1526,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14430
+    "maxUpgrade": 14430,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0086",
@@ -1432,7 +1544,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14579
+    "maxUpgrade": 14579,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0087",
@@ -1448,7 +1562,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14505
+    "maxUpgrade": 14505,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0088",
@@ -1464,7 +1580,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14431
+    "maxUpgrade": 14431,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0089",
@@ -1480,7 +1598,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14265
+    "maxUpgrade": 14265,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0090",
@@ -1496,7 +1616,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14070
+    "maxUpgrade": 14070,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0091",
@@ -1512,7 +1634,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14298
+    "maxUpgrade": 14298,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0092",
@@ -1528,7 +1652,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14190
+    "maxUpgrade": 14190,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0093",
@@ -1544,7 +1670,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14314
+    "maxUpgrade": 14314,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0094",
@@ -1560,7 +1688,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14274
+    "maxUpgrade": 14274,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0095",
@@ -1576,7 +1706,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14347
+    "maxUpgrade": 14347,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0096",
@@ -1592,7 +1724,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14416
+    "maxUpgrade": 14416,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0097",
@@ -1608,7 +1742,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14189
+    "maxUpgrade": 14189,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0098",
@@ -1624,7 +1760,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14115
+    "maxUpgrade": 14115,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0099",
@@ -1640,7 +1778,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14077
+    "maxUpgrade": 14077,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0100",
@@ -1656,7 +1796,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14264
+    "maxUpgrade": 14264,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0101",
@@ -1672,7 +1814,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14228
+    "maxUpgrade": 14228,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0102",
@@ -1688,7 +1832,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14124
+    "maxUpgrade": 14124,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0103",
@@ -1704,7 +1850,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14220
+    "maxUpgrade": 14220,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0104",
@@ -1720,7 +1868,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 13965
+    "maxUpgrade": 13965,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0105",
@@ -1736,7 +1886,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14144
+    "maxUpgrade": 14144,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0106",
@@ -1752,7 +1904,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14213
+    "maxUpgrade": 14213,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0107",
@@ -1768,7 +1922,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14401
+    "maxUpgrade": 14401,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0108",
@@ -1784,7 +1940,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14284
+    "maxUpgrade": 14284,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0109",
@@ -1800,7 +1958,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14180
+    "maxUpgrade": 14180,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0110",
@@ -1816,7 +1976,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "JリーグセレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14085
+    "maxUpgrade": 14085,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0111",
@@ -1832,7 +1994,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14165
+    "maxUpgrade": 14165,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0112",
@@ -1848,7 +2012,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14397
+    "maxUpgrade": 14397,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0113",
@@ -1864,7 +2030,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14476
+    "maxUpgrade": 14476,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0114",
@@ -1880,7 +2048,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14002
+    "maxUpgrade": 14002,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0115",
@@ -1896,7 +2066,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14326
+    "maxUpgrade": 14326,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0116",
@@ -1912,7 +2084,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14160
+    "maxUpgrade": 14160,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0117",
@@ -1928,7 +2102,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14464
+    "maxUpgrade": 14464,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0118",
@@ -1944,7 +2120,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14188
+    "maxUpgrade": 14188,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0119",
@@ -1960,7 +2138,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14358
+    "maxUpgrade": 14358,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0120",
@@ -1976,7 +2156,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14422
+    "maxUpgrade": 14422,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0121",
@@ -1992,7 +2174,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14279
+    "maxUpgrade": 14279,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0122",
@@ -2008,7 +2192,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14122
+    "maxUpgrade": 14122,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0123",
@@ -2024,7 +2210,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14325
+    "maxUpgrade": 14325,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0124",
@@ -2040,7 +2228,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14361
+    "maxUpgrade": 14361,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0125",
@@ -2056,7 +2246,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14390
+    "maxUpgrade": 14390,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0126",
@@ -2072,7 +2264,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14543
+    "maxUpgrade": 14543,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0127",
@@ -2088,7 +2282,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14256
+    "maxUpgrade": 14256,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0128",
@@ -2104,7 +2300,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14404
+    "maxUpgrade": 14404,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0129",
@@ -2120,7 +2318,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14288
+    "maxUpgrade": 14288,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0130",
@@ -2136,7 +2336,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14338
+    "maxUpgrade": 14338,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0131",
@@ -2152,7 +2354,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14074
+    "maxUpgrade": 14074,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0132",
@@ -2168,7 +2372,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14348
+    "maxUpgrade": 14348,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0133",
@@ -2184,7 +2390,9 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14194
+    "maxUpgrade": 14194,
+    "mainSkill": "",
+    "mainTrait": ""
   },
   {
     "playerId": "P0134",
@@ -2200,6 +2408,8 @@
     "acquisitionMethod": "常設ガチャ",
     "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
     "availabilityPeriod": "終了日未定",
-    "maxUpgrade": 14559
+    "maxUpgrade": 14559,
+    "mainSkill": "",
+    "mainTrait": ""
   }
 ]
