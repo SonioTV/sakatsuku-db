@@ -9,7 +9,13 @@
     "mainPosition": "RW",
     "positions": [
       "RW"
-    ]
+    ],
+    "acquisitionMethod": "期間限定ガチャ",
+    "acquisitionLocation": "ピックアップSP選手スカウト",
+    "availabilityPeriod": "2026年2月12日まで",
+    "maxUpgrade": 15587,
+    "mainSkill": "ジャックナイフ",
+    "mainTrait": "ゴールに導くターン"
   },
   {
     "playerId": "P0002",
@@ -21,7 +27,13 @@
     "mainPosition": "CF",
     "positions": [
       "CF"
-    ]
+    ],
+    "acquisitionMethod": "期間限定ガチャ",
+    "acquisitionLocation": "ピックアップSP選手スカウト",
+    "availabilityPeriod": "2026年2月12日まで",
+    "maxUpgrade": 15403,
+    "mainSkill": "魂のワンタッチ",
+    "mainTrait": "冷静なファイター"
   },
   {
     "playerId": "P0003",
@@ -33,7 +45,13 @@
     "mainPosition": "GK",
     "positions": [
       "GK"
-    ]
+    ],
+    "acquisitionMethod": "期間限定ガチャ",
+    "acquisitionLocation": "ピックアップSP選手スカウト",
+    "availabilityPeriod": "2026年2月12日まで",
+    "maxUpgrade": 15353,
+    "mainSkill": "指令のロングフィード",
+    "mainTrait": "絶え間ない反応"
   },
   {
     "playerId": "P0004",
@@ -45,7 +63,13 @@
     "mainPosition": "AM",
     "positions": [
       "AM"
-    ]
+    ],
+    "acquisitionMethod": "期間限定ガチャ",
+    "acquisitionLocation": "ピックアップSP選手スカウト",
+    "availabilityPeriod": "2026年2月12日まで",
+    "maxUpgrade": 14887,
+    "mainSkill": "ファストフィード",
+    "mainTrait": "精緻なパサー"
   },
   {
     "playerId": "P0005",
@@ -58,7 +82,13 @@
     "positions": [
       "RM",
       "AM"
-    ]
+    ],
+    "acquisitionMethod": "期間限定ガチャ",
+    "acquisitionLocation": "本田圭佑ピックアップスカウト",
+    "availabilityPeriod": "2026年2月12日まで",
+    "maxUpgrade": 15321,
+    "mainSkill": "魔術師の弾道",
+    "mainTrait": "成功なる重撃"
   },
   {
     "playerId": "P0006",
@@ -70,7 +100,13 @@
     "mainPosition": "CF",
     "positions": [
       "CF"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 15972,
+    "mainSkill": "コントロールショット",
+    "mainTrait": "ゴールハンター"
   },
   {
     "playerId": "P0007",
@@ -82,7 +118,13 @@
     "mainPosition": "CF",
     "positions": [
       "CF"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 15475,
+    "mainSkill": "ゴールへ導くトラップ",
+    "mainTrait": "疾走するアタッカー"
   },
   {
     "playerId": "P0008",
@@ -94,7 +136,13 @@
     "mainPosition": "LM",
     "positions": [
       "LM"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 15639,
+    "mainSkill": "シャペウトラップ",
+    "mainTrait": "躍動する拠点"
   },
   {
     "playerId": "P0009",
@@ -106,7 +154,13 @@
     "mainPosition": "LW",
     "positions": [
       "LW"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 15336,
+    "mainSkill": "スリップビート",
+    "mainTrait": "技巧派ドリブラー"
   },
   {
     "playerId": "P0010",
@@ -118,7 +172,13 @@
     "mainPosition": "DM",
     "positions": [
       "DM"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 15533,
+    "mainSkill": "ロングキャノン",
+    "mainTrait": "クイックスティール"
   },
   {
     "playerId": "P0011",
@@ -130,7 +190,13 @@
     "mainPosition": "GK",
     "positions": [
       "GK"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 15482,
+    "mainSkill": "エレガントセーブ",
+    "mainTrait": "超反応"
   },
   {
     "playerId": "P0012",
@@ -142,7 +208,13 @@
     "mainPosition": "CF",
     "positions": [
       "CF"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14972,
+    "mainSkill": "狙いすましたシュート",
+    "mainTrait": "冷静なフィニッシュ"
   },
   {
     "playerId": "P0013",
@@ -154,7 +226,13 @@
     "mainPosition": "LW",
     "positions": [
       "LW"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14904,
+    "mainSkill": "華麗なトラップ",
+    "mainTrait": "アジャイルターゲット"
   },
   {
     "playerId": "P0014",
@@ -166,7 +244,13 @@
     "mainPosition": "RW",
     "positions": [
       "RW"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14979,
+    "mainSkill": "テクニカルドリブル",
+    "mainTrait": "俊敏なタッチ"
   },
   {
     "playerId": "P0015",
@@ -178,7 +262,13 @@
     "mainPosition": "RW",
     "positions": [
       "RW"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 15368,
+    "mainSkill": "ピンポイントクロス",
+    "mainTrait": "失わないドリブラー"
   },
   {
     "playerId": "P0016",
@@ -190,7 +280,13 @@
     "mainPosition": "AM",
     "positions": [
       "AM"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14913,
+    "mainSkill": "狙いすましたシュート",
+    "mainTrait": "アジャイルターゲット"
   },
   {
     "playerId": "P0017",
@@ -202,7 +298,13 @@
     "mainPosition": "AM",
     "positions": [
       "AM"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14973,
+    "mainSkill": "切り裂くドリブル",
+    "mainTrait": "技巧派ドリブラー"
   },
   {
     "playerId": "P0018",
@@ -214,7 +316,13 @@
     "mainPosition": "LM",
     "positions": [
       "LM"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14845,
+    "mainSkill": "テクニカルドリブル",
+    "mainTrait": "懐の深いボールタッチ"
   },
   {
     "playerId": "P0019",
@@ -226,7 +334,13 @@
     "mainPosition": "LM",
     "positions": [
       "LM"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14867,
+    "mainSkill": "切り裂くドリブル",
+    "mainTrait": "懐の深いボールタッチ"
   },
   {
     "playerId": "P0020",
@@ -237,9 +351,14 @@
     "lv": 2,
     "mainPosition": "RM",
     "positions": [
-      "RM",
-      "AM"
-    ]
+      "RM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 15004,
+    "mainSkill": "高速クロス",
+    "mainTrait": "アジャイルターゲット"
   },
   {
     "playerId": "P0021",
@@ -251,7 +370,13 @@
     "mainPosition": "DM",
     "positions": [
       "DM"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14786,
+    "mainSkill": "反撃のパスカット",
+    "mainTrait": "無限のアジリティ"
   },
   {
     "playerId": "P0022",
@@ -263,7 +388,13 @@
     "mainPosition": "DM",
     "positions": [
       "DM"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14843,
+    "mainSkill": "安定したパスワーク",
+    "mainTrait": "シルクタッチ"
   },
   {
     "playerId": "P0023",
@@ -275,7 +406,13 @@
     "mainPosition": "DM",
     "positions": [
       "DM"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14907,
+    "mainSkill": "意外性のあるミドルパス",
+    "mainTrait": "俊敏なタッチ"
   },
   {
     "playerId": "P0024",
@@ -287,7 +424,13 @@
     "mainPosition": "LB",
     "positions": [
       "LB"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14910,
+    "mainSkill": "テクニカルドリブル",
+    "mainTrait": "インターセプター"
   },
   {
     "playerId": "P0025",
@@ -299,7 +442,13 @@
     "mainPosition": "LB",
     "positions": [
       "LB"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 15001,
+    "mainSkill": "熟練のインターセプト",
+    "mainTrait": "ボールスティーラー"
   },
   {
     "playerId": "P0026",
@@ -311,7 +460,13 @@
     "mainPosition": "RB",
     "positions": [
       "RB"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14979,
+    "mainSkill": "テクニカルドリブル",
+    "mainTrait": "俊敏なドリブラー"
   },
   {
     "playerId": "P0027",
@@ -323,7 +478,13 @@
     "mainPosition": "CB",
     "positions": [
       "CB"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14902,
+    "mainSkill": "反撃のパスカット",
+    "mainTrait": "アジャイルターゲット"
   },
   {
     "playerId": "P0028",
@@ -335,7 +496,13 @@
     "mainPosition": "CB",
     "positions": [
       "CB"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 15026,
+    "mainSkill": "鋭角的なタックル",
+    "mainTrait": "パワーアジリティ"
   },
   {
     "playerId": "P0029",
@@ -347,6 +514,1692 @@
     "mainPosition": "GK",
     "positions": [
       "GK"
-    ]
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "SP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 15194,
+    "mainSkill": "驚異的なセービング",
+    "mainTrait": "上空の守護神"
+  },
+  {
+    "playerId": "P0030",
+    "name": "鈴木優磨",
+    "overall": 6349,
+    "policy": "リアクション",
+    "playStyle": "ポストプレーヤー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14585
+  },
+  {
+    "playerId": "P0031",
+    "name": "濃野公人",
+    "overall": 6222,
+    "policy": "リアクション",
+    "playStyle": "攻撃的FB",
+    "lv": 2,
+    "mainPosition": "RB",
+    "positions": [
+      "RB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14447
+  },
+  {
+    "playerId": "P0032",
+    "name": "植田直通",
+    "overall": 6318,
+    "policy": "リアクション",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14584
+  },
+  {
+    "playerId": "P0033",
+    "name": "マリウス・ホイブラーテン",
+    "overall": 6242,
+    "policy": "ポゼッション",
+    "playStyle": "組立CB",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14501
+  },
+  {
+    "playerId": "P0034",
+    "name": "渡邊凌磨",
+    "overall": 6273,
+    "policy": "ポゼッション",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14358
+  },
+  {
+    "playerId": "P0035",
+    "name": "西川周作",
+    "overall": 6251,
+    "policy": "ポゼッション",
+    "playStyle": "スイーパーGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14530
+  },
+  {
+    "playerId": "P0036",
+    "name": "細谷真大",
+    "overall": 6155,
+    "policy": "ムービング",
+    "playStyle": "ラインブレーカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14367
+  },
+  {
+    "playerId": "P0037",
+    "name": "仲間隼斗",
+    "overall": 6159,
+    "policy": "ムービング",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "LW",
+    "positions": [
+      "LW"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14388
+  },
+  {
+    "playerId": "P0038",
+    "name": "古賀太陽",
+    "overall": 6166,
+    "policy": "ムービング",
+    "playStyle": "組立CB",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14409
+  },
+  {
+    "playerId": "P0039",
+    "name": "橋本拳人",
+    "overall": 6323,
+    "policy": "リアクション",
+    "playStyle": "ハードマーカー",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14520
+  },
+  {
+    "playerId": "P0040",
+    "name": "マルセロ・ヒアン",
+    "overall": 6288,
+    "policy": "リアクション",
+    "playStyle": "ラインブレーカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14523
+  },
+  {
+    "playerId": "P0041",
+    "name": "長友佑都",
+    "overall": 6434,
+    "policy": "リアクション",
+    "playStyle": "攻撃的FB",
+    "lv": 2,
+    "mainPosition": "LB",
+    "positions": [
+      "LB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14682
+  },
+  {
+    "playerId": "P0042",
+    "name": "谷口栄人",
+    "overall": 6133,
+    "policy": "ムービング",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14404
+  },
+  {
+    "playerId": "P0043",
+    "name": "染野唯月",
+    "overall": 6188,
+    "policy": "ムービング",
+    "playStyle": "ポストプレーヤー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14413
+  },
+  {
+    "playerId": "P0044",
+    "name": "森田晃樹",
+    "overall": 6114,
+    "policy": "ムービング",
+    "playStyle": "セントラルMF",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14247
+  },
+  {
+    "playerId": "P0045",
+    "name": "谷晃生",
+    "overall": 6230,
+    "policy": "カウンター",
+    "playStyle": "オーソドックスGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14506
+  },
+  {
+    "playerId": "P0046",
+    "name": "中山雄太",
+    "overall": 6268,
+    "policy": "カウンター",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14539
+  },
+  {
+    "playerId": "P0047",
+    "name": "オ・セフン",
+    "overall": 6228,
+    "policy": "カウンター",
+    "playStyle": "ポストプレーヤー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14478
+  },
+  {
+    "playerId": "P0048",
+    "name": "家長昭博",
+    "overall": 6129,
+    "policy": "ポゼッション",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "RW",
+    "positions": [
+      "RW"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14332
+  },
+  {
+    "playerId": "P0049",
+    "name": "脇坂泰斗",
+    "overall": 6276,
+    "policy": "ポゼッション",
+    "playStyle": "パサー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14399
+  },
+  {
+    "playerId": "P0050",
+    "name": "伊藤達哉",
+    "overall": 6291,
+    "policy": "ポゼッション",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "LW",
+    "positions": [
+      "LW"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14526
+  },
+  {
+    "playerId": "P0051",
+    "name": "朴一圭",
+    "overall": 6074,
+    "policy": "リアクション",
+    "playStyle": "スイーパーGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14328
+  },
+  {
+    "playerId": "P0052",
+    "name": "天野純",
+    "overall": 6111,
+    "policy": "リアクション",
+    "playStyle": "パサー",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14264
+  },
+  {
+    "playerId": "P0053",
+    "name": "喜田拓也",
+    "overall": 6316,
+    "policy": "リアクション",
+    "playStyle": "ハードマーカー",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14519
+  },
+  {
+    "playerId": "P0054",
+    "name": "ユーリ・ララ",
+    "overall": 6115,
+    "policy": "リアクション",
+    "playStyle": "ハードマーカー",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14244
+  },
+  {
+    "playerId": "P0055",
+    "name": "市川暉記",
+    "overall": 6100,
+    "policy": "リアクション",
+    "playStyle": "オーソドックスGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14411
+  },
+  {
+    "playerId": "P0056",
+    "name": "福森晃斗",
+    "overall": 5941,
+    "policy": "リアクション",
+    "playStyle": "組立CB",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14125
+  },
+  {
+    "playerId": "P0057",
+    "name": "鈴木章斗",
+    "overall": 6141,
+    "policy": "カウンター",
+    "playStyle": "ストライカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14357
+  },
+  {
+    "playerId": "P0058",
+    "name": "鈴木雄斗",
+    "overall": 5855,
+    "policy": "カウンター",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "RM",
+    "positions": [
+      "RM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14000
+  },
+  {
+    "playerId": "P0059",
+    "name": "小野瀬康介",
+    "overall": 6088,
+    "policy": "カウンター",
+    "playStyle": "セントラルMF",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14176
+  },
+  {
+    "playerId": "P0060",
+    "name": "堀米悠斗",
+    "overall": 5969,
+    "policy": "ポゼッション",
+    "playStyle": "攻撃的FB",
+    "lv": 2,
+    "mainPosition": "LB",
+    "positions": [
+      "LB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14157
+  },
+  {
+    "playerId": "P0061",
+    "name": "谷口海斗",
+    "overall": 6150,
+    "policy": "ポゼッション",
+    "playStyle": "ラインブレーカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14378
+  },
+  {
+    "playerId": "P0062",
+    "name": "藤原奏哉",
+    "overall": 6009,
+    "policy": "ポゼッション",
+    "playStyle": "攻撃的FB",
+    "lv": 2,
+    "mainPosition": "RB",
+    "positions": [
+      "RB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14201
+  },
+  {
+    "playerId": "P0063",
+    "name": "乾貴士",
+    "overall": 6302,
+    "policy": "リアクション",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "LM",
+    "positions": [
+      "LM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14519
+  },
+  {
+    "playerId": "P0064",
+    "name": "北川航也",
+    "overall": 6017,
+    "policy": "リアクション",
+    "playStyle": "ストライカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14203
+  },
+  {
+    "playerId": "P0065",
+    "name": "吉住ジェラニレショーン",
+    "overall": 6119,
+    "policy": "リアクション",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14398
+  },
+  {
+    "playerId": "P0066",
+    "name": "ピサノ・アレックス幸冬堀尾",
+    "overall": 6164,
+    "policy": "カウンター",
+    "playStyle": "オーソドックスGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14472
+  },
+  {
+    "playerId": "P0067",
+    "name": "稲垣祥",
+    "overall": 6273,
+    "policy": "カウンター",
+    "playStyle": "セントラルMF",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14416
+  },
+  {
+    "playerId": "P0068",
+    "name": "永井謙佑",
+    "overall": 6092,
+    "policy": "カウンター",
+    "playStyle": "ラインブレーカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14286
+  },
+  {
+    "playerId": "P0069",
+    "name": "鈴木義宜",
+    "overall": 6158,
+    "policy": "カウンター",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14430
+  },
+  {
+    "playerId": "P0070",
+    "name": "ラファエル・エリアス",
+    "overall": 6312,
+    "policy": "カウンター",
+    "playStyle": "ストライカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14543
+  },
+  {
+    "playerId": "P0071",
+    "name": "原大智",
+    "overall": 6095,
+    "policy": "カウンター",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "LW",
+    "positions": [
+      "LW"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14287
+  },
+  {
+    "playerId": "P0072",
+    "name": "宇佐美貴史",
+    "overall": 6303,
+    "policy": "ポゼッション",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14390
+  },
+  {
+    "playerId": "P0073",
+    "name": "半田陸",
+    "overall": 6175,
+    "policy": "ポゼッション",
+    "playStyle": "攻撃的FB",
+    "lv": 2,
+    "mainPosition": "RB",
+    "positions": [
+      "RB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14413
+  },
+  {
+    "playerId": "P0074",
+    "name": "中谷進之介",
+    "overall": 6290,
+    "policy": "ポゼッション",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14557
+  },
+  {
+    "playerId": "P0075",
+    "name": "田中駿汰",
+    "overall": 6038,
+    "policy": "ポゼッション",
+    "playStyle": "セントラルMF",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14136
+  },
+  {
+    "playerId": "P0076",
+    "name": "香川真司",
+    "overall": 6519,
+    "policy": "ポゼッション",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14609
+  },
+  {
+    "playerId": "P0077",
+    "name": "キム・ジンヒョン",
+    "overall": 6195,
+    "policy": "ポゼッション",
+    "playStyle": "オーソドックスGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14498
+  },
+  {
+    "playerId": "P0078",
+    "name": "大迫勇也",
+    "overall": 6263,
+    "policy": "カウンター",
+    "playStyle": "ポストプレーヤー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14462
+  },
+  {
+    "playerId": "P0079",
+    "name": "武藤嘉紀",
+    "overall": 6309,
+    "policy": "カウンター",
+    "playStyle": "サイドアタッカー",
+    "lv": 2,
+    "mainPosition": "LW",
+    "positions": [
+      "LW"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14508
+  },
+  {
+    "playerId": "P0080",
+    "name": "山川哲史",
+    "overall": 6233,
+    "policy": "カウンター",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14500
+  },
+  {
+    "playerId": "P0081",
+    "name": "スベンド・ブローダーセン",
+    "overall": 6252,
+    "policy": "カウンター",
+    "playStyle": "オーソドックスGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14560
+  },
+  {
+    "playerId": "P0082",
+    "name": "江坂任",
+    "overall": 6264,
+    "policy": "カウンター",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14340
+  },
+  {
+    "playerId": "P0083",
+    "name": "ルカオ",
+    "overall": 6132,
+    "policy": "カウンター",
+    "playStyle": "ポストプレーヤー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14348
+  },
+  {
+    "playerId": "P0084",
+    "name": "佐々木翔",
+    "overall": 6158,
+    "policy": "ムービング",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14405
+  },
+  {
+    "playerId": "P0085",
+    "name": "トルガイ・アルスラン",
+    "overall": 6338,
+    "policy": "ムービング",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14430
+  },
+  {
+    "playerId": "P0086",
+    "name": "大迫敬介",
+    "overall": 6279,
+    "policy": "ムービング",
+    "playStyle": "オーソドックスGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14579
+  },
+  {
+    "playerId": "P0087",
+    "name": "紺野和也",
+    "overall": 6262,
+    "policy": "カウンター",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "RM",
+    "positions": [
+      "RM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14505
+  },
+  {
+    "playerId": "P0088",
+    "name": "岩崎悠人",
+    "overall": 6194,
+    "policy": "カウンター",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "LM",
+    "positions": [
+      "LM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14431
+  },
+  {
+    "playerId": "P0089",
+    "name": "松岡大起",
+    "overall": 6116,
+    "policy": "カウンター",
+    "playStyle": "ハードマーカー",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14265
+  },
+  {
+    "playerId": "P0090",
+    "name": "荒野拓馬",
+    "overall": 5972,
+    "policy": "ムービング",
+    "playStyle": "セントラルMF",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14070
+  },
+  {
+    "playerId": "P0091",
+    "name": "菅田真啓",
+    "overall": 6035,
+    "policy": "リアクション",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14298
+  },
+  {
+    "playerId": "P0092",
+    "name": "松村航太",
+    "overall": 5935,
+    "policy": "カウンター",
+    "playStyle": "攻撃的FB",
+    "lv": 2,
+    "mainPosition": "LB",
+    "positions": [
+      "LB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14190
+  },
+  {
+    "playerId": "P0093",
+    "name": "ディサロ燦シルヴァーノ",
+    "overall": 6080,
+    "policy": "ポゼッション",
+    "playStyle": "ラインブレーカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14314
+  },
+  {
+    "playerId": "P0094",
+    "name": "五十嵐聖己",
+    "overall": 6030,
+    "policy": "カウンター",
+    "playStyle": "守備的FB",
+    "lv": 2,
+    "mainPosition": "RB",
+    "positions": [
+      "RB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14274
+  },
+  {
+    "playerId": "P0095",
+    "name": "渡邉新太",
+    "overall": 6115,
+    "policy": "カウンター",
+    "playStyle": "ストライカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14347
+  },
+  {
+    "playerId": "P0096",
+    "name": "市原吏音",
+    "overall": 6149,
+    "policy": "カウンター",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14416
+  },
+  {
+    "playerId": "P0097",
+    "name": "田中和樹",
+    "overall": 5978,
+    "policy": "ムービング",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "RM",
+    "positions": [
+      "RM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14189
+  },
+  {
+    "playerId": "P0098",
+    "name": "三平和司",
+    "overall": 5900,
+    "policy": "ポゼッション",
+    "playStyle": "ポストプレーヤー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14115
+  },
+  {
+    "playerId": "P0099",
+    "name": "神山京右",
+    "overall": 5808,
+    "policy": "カウンター",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14077
+  },
+  {
+    "playerId": "P0100",
+    "name": "松原后",
+    "overall": 6032,
+    "policy": "ポゼッション",
+    "playStyle": "守備的FB",
+    "lv": 2,
+    "mainPosition": "LB",
+    "positions": [
+      "LB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14264
+  },
+  {
+    "playerId": "P0101",
+    "name": "朝倉廉",
+    "overall": 6129,
+    "policy": "ムービング",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14228
+  },
+  {
+    "playerId": "P0102",
+    "name": "野寄和哉",
+    "overall": 5900,
+    "policy": "リアクション",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "RM",
+    "positions": [
+      "RM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14124
+  },
+  {
+    "playerId": "P0103",
+    "name": "渡大生",
+    "overall": 6002,
+    "policy": "ポゼッション",
+    "playStyle": "ラインブレーカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14220
+  },
+  {
+    "playerId": "P0104",
+    "name": "深澤佑太",
+    "overall": 5850,
+    "policy": "ムービング",
+    "playStyle": "セントラルMF",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 13965
+  },
+  {
+    "playerId": "P0105",
+    "name": "マルクス・ヴィニシウス",
+    "overall": 5927,
+    "policy": "カウンター",
+    "playStyle": "ラインブレーカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14144
+  },
+  {
+    "playerId": "P0106",
+    "name": "井上太聖",
+    "overall": 5971,
+    "policy": "ポゼッション",
+    "playStyle": "組立CB",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14213
+  },
+  {
+    "playerId": "P0107",
+    "name": "マテウス・ジェズス",
+    "overall": 6302,
+    "policy": "リアクション",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14401
+  },
+  {
+    "playerId": "P0108",
+    "name": "上村周平",
+    "overall": 6087,
+    "policy": "ムービング",
+    "playStyle": "ハードマーカー",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14284
+  },
+  {
+    "playerId": "P0109",
+    "name": "野村直輝",
+    "overall": 6079,
+    "policy": "リアクション",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14180
+  },
+  {
+    "playerId": "P0110",
+    "name": "田中パウロ淳一",
+    "overall": 5881,
+    "policy": "ムービング",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "LW",
+    "positions": [
+      "LW"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "JリーグセレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14085
+  },
+  {
+    "playerId": "P0111",
+    "name": "ファン・ジェウォン",
+    "overall": 5976,
+    "policy": "ポゼッション",
+    "playStyle": "攻撃的FB",
+    "lv": 2,
+    "mainPosition": "RB",
+    "positions": [
+      "RB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14165
+  },
+  {
+    "playerId": "P0112",
+    "name": "セシーニャ",
+    "overall": 6299,
+    "policy": "ポゼッション",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14397
+  },
+  {
+    "playerId": "P0113",
+    "name": "イ・チャングン",
+    "overall": 6156,
+    "policy": "リアクション",
+    "playStyle": "オーソドックスGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14476
+  },
+  {
+    "playerId": "P0114",
+    "name": "石田雅俊",
+    "overall": 5810,
+    "policy": "リアクション",
+    "playStyle": "ラインブレーカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14002
+  },
+  {
+    "playerId": "P0115",
+    "name": "イ・チャンヨン",
+    "overall": 6077,
+    "policy": "ムービング",
+    "playStyle": "組立CB",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14326
+  },
+  {
+    "playerId": "P0116",
+    "name": "マテウス・オリベイラ",
+    "overall": 6062,
+    "policy": "ムービング",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14160
+  },
+  {
+    "playerId": "P0117",
+    "name": "ジェシー・リンガード",
+    "overall": 6365,
+    "policy": "ムービング",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14464
+  },
+  {
+    "playerId": "P0118",
+    "name": "ヤザン・アルアラブ",
+    "overall": 5963,
+    "policy": "ムービング",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14188
+  },
+  {
+    "playerId": "P0119",
+    "name": "キム・ドンヒョン",
+    "overall": 6172,
+    "policy": "カウンター",
+    "playStyle": "ハードマーカー",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14358
+  },
+  {
+    "playerId": "P0120",
+    "name": "イ・サンホン",
+    "overall": 6316,
+    "policy": "カウンター",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14422
+  },
+  {
+    "playerId": "P0121",
+    "name": "イ・ドンギョン",
+    "overall": 6201,
+    "policy": "リアクション",
+    "playStyle": "アタッカー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14279
+  },
+  {
+    "playerId": "P0122",
+    "name": "イ・スンウォン",
+    "overall": 5986,
+    "policy": "リアクション",
+    "playStyle": "パサー",
+    "lv": 2,
+    "mainPosition": "AM",
+    "positions": [
+      "AM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14122
+  },
+  {
+    "playerId": "P0123",
+    "name": "イ・ミンギ",
+    "overall": 6090,
+    "policy": "カウンター",
+    "playStyle": "攻撃的FB",
+    "lv": 2,
+    "mainPosition": "LB",
+    "positions": [
+      "LB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14325
+  },
+  {
+    "playerId": "P0124",
+    "name": "ビョン・ジュンス",
+    "overall": 6125,
+    "policy": "カウンター",
+    "playStyle": "組立CB",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14361
+  },
+  {
+    "playerId": "P0125",
+    "name": "キム・ドンジュン",
+    "overall": 6114,
+    "policy": "ムービング",
+    "playStyle": "オーソドックスGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14390
+  },
+  {
+    "playerId": "P0126",
+    "name": "ユリ",
+    "overall": 6292,
+    "policy": "ムービング",
+    "playStyle": "ポストプレーヤー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14543
+  },
+  {
+    "playerId": "P0127",
+    "name": "ソン・ミンギュ",
+    "overall": 6087,
+    "policy": "ポゼッション",
+    "playStyle": "サイドアタッカー",
+    "lv": 2,
+    "mainPosition": "LW",
+    "positions": [
+      "LW"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14256
+  },
+  {
+    "playerId": "P0128",
+    "name": "イ・スンウ",
+    "overall": 6164,
+    "policy": "ポゼッション",
+    "playStyle": "ドリブラー",
+    "lv": 2,
+    "mainPosition": "RW",
+    "positions": [
+      "RW"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14404
+  },
+  {
+    "playerId": "P0129",
+    "name": "イ・ホジェ",
+    "overall": 6081,
+    "policy": "ムービング",
+    "playStyle": "ストライカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14288
+  },
+  {
+    "playerId": "P0130",
+    "name": "オベルダン",
+    "overall": 6202,
+    "policy": "ムービング",
+    "playStyle": "セントラルMF",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14338
+  },
+  {
+    "playerId": "P0131",
+    "name": "ユン・ビッカラム",
+    "overall": 5930,
+    "policy": "リアクション",
+    "playStyle": "セントラルMF",
+    "lv": 2,
+    "mainPosition": "DM",
+    "positions": [
+      "DM"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14074
+  },
+  {
+    "playerId": "P0132",
+    "name": "パブロ・サバグ",
+    "overall": 6122,
+    "policy": "リアクション",
+    "playStyle": "ラインブレーカー",
+    "lv": 2,
+    "mainPosition": "CF",
+    "positions": [
+      "CF"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14348
+  },
+  {
+    "playerId": "P0133",
+    "name": "キム・ヨングォン",
+    "overall": 5961,
+    "policy": "ポゼッション",
+    "playStyle": "ストッパー",
+    "lv": 2,
+    "mainPosition": "CB",
+    "positions": [
+      "CB"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14194
+  },
+  {
+    "playerId": "P0134",
+    "name": "チョ・ヒョヌ",
+    "overall": 6259,
+    "policy": "ポゼッション",
+    "playStyle": "オーソドックスGK",
+    "lv": 2,
+    "mainPosition": "GK",
+    "positions": [
+      "GK"
+    ],
+    "acquisitionMethod": "常設ガチャ",
+    "acquisitionLocation": "Kリーグ1セレクトSP選手スカウト",
+    "availabilityPeriod": "終了日未定",
+    "maxUpgrade": 14559
   }
 ]

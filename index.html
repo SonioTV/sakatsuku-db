@@ -37,6 +37,26 @@
     #tab-search{ text-align:center; }
     #exact, #diffPolicy, #diffPosition{ text-align:left; }
 
+/* ===== タブ②（入力UIは中央揃え、結果は左寄せ） ===== */
+#tab-combo{ text-align:center; }          /* 見出し〜ボタンまで中央寄せ */
+#comboPlayers{ text-align:left; }         /* 検索結果は左寄せのまま */
+
+/* ランクタイルの並びも中央へ */
+#tab-combo .rank-board{
+  justify-content:center;                /* start → center */
+}
+
+/* プルダウンを中央に（幅は既存 #comboSelect 指定が効く） */
+#tab-combo #comboSelect{
+  display:block;
+  margin: 0 auto;
+}
+
+/* ボタンが念のため中央に来るように（inlineでも中央寄せされるが保険） */
+#tab-combo .btn-show{
+  display:inline-block;
+}
+
     /* ===== 結果カード ===== */
     .result-card{
       margin-bottom:15px; padding:10px; border:1px solid #ccc; border-radius:8px; background:#fff;
@@ -49,7 +69,7 @@
     .result-card.state-far{ background:#f5f5f5; }
 
     /* 結果カード文字サイズ（小さめ） */
-    .result-card, .cand-block{ font-size: 0.9em; }
+    .result-card, .cand-block{ font-size: 0.85em; }
     .cand-list{ line-height: 1.45; white-space: pre-wrap; }
 
     /* ===== ポリシー画像UI ===== */
@@ -152,7 +172,7 @@
     /* ===== ランク選択（タイル式・複数選択） ===== */
     .rank-board{
       display:grid; grid-template-columns: repeat(3, 88px); gap: 12px;
-      width: fit-content; justify-content:start; justify-items:center; margin-top: 2px;
+      width: fit-content; justify-content:center; justify-items:center; margin-top: 2px;
     }
     .rank-board input{ display:none; }
     .rank-tile{
@@ -214,16 +234,22 @@
     }
     #scrollTopBtn:hover{ background: rgba(0,86,179,0.95); }
 
-    /* ===== スマホ調整 ===== */
-    @media (max-width: 480px){
-      .kv{ grid-template-columns: 1fr; gap: 2px 0; }
-      .k{ margin-top: 6px; }
-      #comboSelect{ font-size: 1em; }
-      .rank-board{ grid-template-columns: repeat(3, 76px); gap: 10px; }
-      .rank-tile{ width:76px; height:76px; border-radius:14px; }
-      .lv-board{ gap: 8px; }
-      .lv-tile{ height: 52px; }
-    }
+/* ===== スマホ調整 ===== */
+@media (max-width: 480px){
+  .kv{ grid-template-columns: 1fr; gap: 2px 0; }
+  .k{ margin-top: 6px; }
+  #comboSelect{ font-size: 1em; }
+  .rank-board{ grid-template-columns: repeat(3, 76px); gap: 10px; }
+  .rank-tile{ width:76px; height:76px; border-radius:14px; }
+  .lv-board{ gap: 8px; }
+  .lv-tile{ height: 52px; }
+
+  /* ★ここを追加（検索結果を小さくする） */
+  .result-card,
+  .cand-block{
+    font-size: 0.8em;
+  }
+}
 
   </style>
 </head>
@@ -368,7 +394,7 @@
     </div>
     <div class="note-sub" style="margin-top:6px;">※未選択の場合は「すべて」を表示します</div>
 
-    <br><br>
+    <br>
 
     <div style="margin:10px 0 6px; font-weight:700;">フォーメーションコンボを選択</div>
     <select id="comboSelect"></select>
