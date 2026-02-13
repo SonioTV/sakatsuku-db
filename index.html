@@ -465,9 +465,20 @@
     .barRow{ grid-template-columns: 1fr 140px 58px; gap:10px; }
     .barPct{ font-size:13px; }
   }
+
+    /* ===== タイトル画像 ===== */
+    .site-banner{ width:100%; display:flex; justify-content:center; align-items:center; padding: 10px 12px 4px; }
+    .title-img{ width:min(1100px, 100%); height:auto; display:block; border-radius: 14px; }
+    @media (max-width: 480px){
+      .site-banner{ padding: 8px 10px 2px; }
+      .title-img{ border-radius: 12px; }
+    }
+
 </style>
 </head>
 <body>
+  <div class="site-banner"><img src="img/title.png" alt="ソニオTVの サカつく攻略データベース" class="title-img"></div>
+
 <div class="wrap">
   <h1>サカつく2026 検索ツール</h1>
 
@@ -691,22 +702,21 @@ function setupToTop(){
    モーダル
 ========================= */
 function openPlayerModal(p){
-  if(!p) return;
-  const title = esc(p.name || "選手詳細");
-  document.getElementById("modalTitle").textContent = p.name || "選手詳細";
+  const title = nvl(p.name,"-");
+  document.getElementById("modalTitle").textContent = title;
+
+  const ps = nvl(p.playStyle, "-");
+  const lv = romanLv(p.playStyleLv);
 
   const lines = [];
-  // ★要望：入手方法/入手場所 を 入手可能期間の上に追加
+  // ※ 要望の順：区分,入手方法,入手場所,入手可能期間,初期総合力,最大強化,ポリシー,プレイスタイル,メインポジション,メインスキル,メイン特徴
+  lines.push(`<div class="mLine"><span class="mKey">区分</span><span class="mVal">${esc(nvl(p.category,"-"))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class="mVal">${esc(nvl(p.acquisitionMethod,"-"))}</span></div>`);
-  lines.push(`<div class="mLine"><span class="mKey">入手場所</span><span class="mVal">${esc(nvl(p.acquisitionLocation,"-"))}</span></div>`);
-  lines.push(`<div class="mLine"><span class="mKey">入手可能期間</span><span class="mVal">${esc(nvl(p.availabilityPeriod,"-"))}</span></div>`);
-  lines.push(`<div class="mLine"><span class="mKey">選手名</span><span class="mVal">${esc(nvl(p.name,"-"))}</span></div>`);
-  const overall = nvl(p.overall, "-");
-  const maxUp = nvl(p.maxUpgrade, "-");
-  lines.push(`<div class="mLine"><span class="mKey">初期総合力</span><span class="mVal">${esc(overall)}（${esc(maxUp)}）</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">入手場所</span><span class="mVal">${esc(nvl(p.acquisitionPlace,"-"))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">入手可能期間</span><span class="mVal">${esc(nvl(p.availablePeriod,"-"))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">初期総合力</span><span class="mVal">${esc(nvl(p.overall,"-"))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">最大強化</span><span class="mVal">${esc(nvl(p.maxUpgrade,"-"))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">ポリシー</span><span class="mVal">${esc(nvl(p.policy,"-"))}</span></div>`);
-  const ps = nvl(p.playStyle,"-");
-  const lv = romanLv(nvl(p.lv,"-"));
   lines.push(`<div class="mLine"><span class="mKey">プレイスタイル</span><span class="mVal">${esc(ps)} ${esc(lv)}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">メインポジション</span><span class="mVal">${esc(nvl(p.mainPosition,"-"))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">メインスキル</span><span class="mVal">${esc(nvl(p.mainSkill,"-"))}</span></div>`);
