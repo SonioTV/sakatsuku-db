@@ -245,6 +245,37 @@
     .k { font-weight: 800; color: #111; }
     .v { color: #111; }
 
+/* ===== 折り返し禁止（検索結果を1行表示） ===== */
+/* フォーメーションコンボ検索（タブ1）の結果カード */
+.result-card .kv,
+.result-card .k,
+.result-card .v{
+  white-space: nowrap;     /* 折り返さない */
+}
+
+.result-card .kv{
+  overflow-x: auto;        /* はみ出したら横スクロール */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ※不足条件※ の行も折り返し禁止 */
+.result-card div{
+  word-break: normal;      /* 念のため */
+}
+
+/* コンボから選手を探す（タブ2）の候補リスト */
+.cand-list{
+  white-space: pre;        /* 改行は維持、折り返さない */
+  overflow-x: auto;        /* はみ出したら横スクロール */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 条件カードのkvも折り返し禁止にしたい場合（任意） */
+.result-card .cond-kv .k,
+.result-card .cond-kv .v{
+  white-space: nowrap;
+}
+
     @media (max-width: 480px){
       #comboSelect{ font-size: 1em; }
       .rank-board{ grid-template-columns: repeat(3, 76px); gap: 10px; }
