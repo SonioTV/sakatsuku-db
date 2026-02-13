@@ -407,51 +407,27 @@
       .lv-board{ grid-template-columns: repeat(3, 80px); gap: 8px; }
     }
 
-/* ===== トップへ戻るボタン ===== */
-#scrollTopBtn{
-  position: fixed;
-  right: 20px;
-  bottom: 80px;      /* iPhoneのバーに被らない位置 */
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: none;
-  background: #007bff;
-  color: #fff;
-  font-size: 22px;
-  font-weight: bold;
-  cursor: pointer;
-  display: none;     /* 最初は非表示 */
-  z-index: 9999;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-}
-
 /* ===== トップへ戻るボタン（ふわっと表示） ===== */
 #scrollTopBtn{
+  display: block; /* ★追加：display:noneを打ち消す */
   position: fixed;
   right: 20px;
   bottom: 80px;
-
   width: 55px;
   height: 55px;
   border-radius: 50%;
   border: none;
-
   background: rgba(0,123,255,0.9);
   color: #fff;
   font-size: 22px;
   font-weight: bold;
-
   cursor: pointer;
   z-index: 9999;
-
   box-shadow: 0 3px 8px rgba(0,0,0,0.3);
 
-  /* ★ここがポイント */
   opacity: 0;
   transform: translateY(20px);
   pointer-events: none;
-
   transition: all 0.3s ease;
 }
 
@@ -619,6 +595,9 @@
 
     <div id="comboPlayers" style="margin-top:10px;"></div>
   </div>
+
+<!-- トップへ戻るボタン -->
+<button id="scrollTopBtn" type="button">▲</button>
 
   <script>
     let combos = [];
@@ -937,19 +916,27 @@
     });
 
 /* ===== トップへ戻る処理 ===== */
-const scrollBtn = document.getElementById("scrollTopBtn");
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollBtn = document.getElementById("scrollTopBtn");
+  if (!scrollBtn) return;
 
-/* スクロールしたら表示 */
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    scrollBtn.classList.add("show");
-  } else {
-    scrollBtn.classList.remove("show");
-  }
+  const toggleBtn = () => {
+    if (window.scrollY > 300) scrollBtn.classList.add("show");
+    else scrollBtn.classList.remove("show");
+  };
+
+  // 初期表示判定（リロード位置が下の時も反映）
+  toggleBtn();
+
+  // スクロールで表示/非表示
+  window.addEventListener("scroll", toggleBtn, { passive: true });
+
+  // クリックでトップへ
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 });
   </script>
 
-<!-- トップへ戻るボタン -->
-<button id="scrollTopBtn" onclick="scrollToTop()">▲</button>
 </body>
 </html>
