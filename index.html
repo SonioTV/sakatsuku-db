@@ -408,6 +408,29 @@
       .lv-board{ grid-template-columns: repeat(3, 80px); gap: 8px; }
     }
 
+/* ===== トップへ戻るボタン ===== */
+#scrollTopBtn{
+  position: fixed;
+  right: 20px;
+  bottom: 80px;      /* iPhoneのバーに被らない位置 */
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;     /* 最初は非表示 */
+  z-index: 9999;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+#scrollTopBtn:hover{
+  background: #0056b3;
+}
+
   </style>
 </head>
 
@@ -877,6 +900,29 @@
 
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
+/* ===== トップへ戻る処理 ===== */
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+/* スクロールしたら表示 */
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+
+/* トップへ戻る */
+function scrollToTop(){
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
   </script>
+
+<!-- トップへ戻るボタン -->
+<button id="scrollTopBtn" onclick="scrollToTop()">▲</button>
 </body>
 </html>
