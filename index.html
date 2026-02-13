@@ -11,69 +11,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <style>
+
     /* ===== ベース ===== */
     body{
       font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN","Yu Gothic", Meiryo, sans-serif;
       margin: 12px;
-      font-size: 1.5em; /* 文字を1.5倍 */
+      font-size: 1.5em;
     }
 
     /* ===== タブ ===== */
-    .tabs{
-      display:flex;
-      gap:8px;
-      margin: 10px 0 14px;
-    }
+    .tabs{ display:flex; gap:8px; margin: 10px 0 14px; }
     .tab-btn{
-      flex:1;
-      padding:10px 12px;
-      border:1px solid #ccc;
-      background:#f7f7f7;
-      border-radius:10px;
-      cursor:pointer;
-      font-weight:700;
+      flex:1; padding:10px 12px; border:1px solid #ccc; background:#f7f7f7;
+      border-radius:10px; cursor:pointer; font-weight:700;
     }
-    .tab-btn.active{
-      background:#111;
-      color:#fff;
-      border-color:#111;
-    }
+    .tab-btn.active{ background:#111; color:#fff; border-color:#111; }
     .tab-panel{ display:none; }
     .tab-panel.active{ display:block; }
 
-    @media (max-width: 480px){
-      #comboSelect{ font-size: 1em; }
-      .rank-board{ grid-template-columns: repeat(3, 76px); gap: 10px; }
-      .rank-tile{ width:76px; height:76px; border-radius:14px; }
-      .lv-board{ gap: 8px; }
-      .lv-tile{ height: 52px; }
-    }
-
     /* ===== タイトル下の注釈 ===== */
-    .note-main{
-      margin: 4px 0 2px;
-      font-size: 14px;
-      font-weight: 600;
-      color: #333;
-    }
-    .note-sub{
-      margin: 0 0 12px;
-      font-size: 12px;
-      color: #666;
-    }
+    .note-main{ margin: 4px 0 2px; font-size: 14px; font-weight: 600; color: #333; }
+    .note-sub{ margin: 0 0 12px; font-size: 12px; color: #666; }
 
     /* ===== 検索画面（中央揃え） ===== */
     #tab-search{ text-align:center; }
-    /* 結果だけ左寄せ */
     #exact, #diffPolicy, #diffPosition{ text-align:left; }
 
     /* ===== 結果カード ===== */
     .result-card{
-      margin-bottom:15px;
-      padding:10px;
-      border:1px solid #ccc;
-      border-radius:8px;
-      background:#fff;
+      margin-bottom:15px; padding:10px; border:1px solid #ccc; border-radius:8px; background:#fff;
     }
     .result-card.exact{ border-left:6px solid #2e7d32; }
     .result-card.diffPolicy{ border-left:6px solid #1565c0; }
@@ -81,366 +47,183 @@
     .result-card.state-active{ background:#e8f5e9; }
     .result-card.state-soon{ background:#fff8e1; }
     .result-card.state-far{ background:#f5f5f5; }
-/* ===== 検索結果（カード内）だけ文字を小さく ===== */
-.result-card,
-.cand-block{
-  font-size: 0.9em;   /* ←結果文字のサイズ（好みで 0.85〜0.95） */
-}
 
-.cand-list{
-  line-height: 1.45;  /* ←行間も少し詰めてスマホで見やすく */
-}
+    /* 結果カード文字サイズ（小さめ） */
+    .result-card, .cand-block{ font-size: 0.9em; }
+    .cand-list{ line-height: 1.45; white-space: pre-wrap; }
 
-    /* ===== ポリシー画像UI（中央揃え強化） ===== */
+    /* ===== ポリシー画像UI ===== */
     .policy-board{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 120px));
-      gap:14px;
-      margin: 0 auto 15px;
-      width: fit-content;
-      justify-content:center;
-      justify-items:center;
+      display:grid; grid-template-columns: repeat(2, minmax(0, 120px)); gap:14px;
+      margin: 0 auto 15px; width: fit-content; justify-content:center; justify-items:center;
     }
     .policy-board input{ display:none; }
     .policy-board label{
-      width: 120px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      padding:8px 6px;
-      border:2px solid transparent;
-      border-radius:12px;
-      cursor:pointer;
-      background:#fff;
-      text-align:center;
-      box-sizing:border-box;
+      width: 120px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+      padding:8px 6px; border:2px solid transparent; border-radius:12px; cursor:pointer;
+      background:#fff; text-align:center; box-sizing:border-box;
     }
-    .policy-board label div{
-      white-space: nowrap;
-      font-size:14px;
-      line-height: 1.2;
-      text-align:center;
-      width:100%;
-    }
-    .policy-board img{
-      width:90px;
-      height:90px;
-      object-fit:contain;
-      display:block;
-      margin: 0 auto 4px;
-    }
-    .policy-board input:checked + label{
-      border-color:#ff9800;
-      box-shadow:0 0 0 2px #ff9800;
-    }
+    .policy-board label div{ white-space: nowrap; font-size:14px; line-height: 1.2; text-align:center; width:100%; }
+    .policy-board img{ width:90px; height:90px; object-fit:contain; display:block; margin: 0 auto 4px; }
+    .policy-board input:checked + label{ border-color:#ff9800; box-shadow:0 0 0 2px #ff9800; }
 
     /* ===== ポジション選択UI ===== */
     .pos-board{
-      display:grid;
-      grid-template-columns: repeat(3, 65px);
-      grid-auto-rows: 45px;
-      gap: 6px;
-      background:#eee;
-      padding:8px;
-      width: fit-content;
-      border-radius: 8px;
-      margin: 0 auto;
+      display:grid; grid-template-columns: repeat(3, 65px); grid-auto-rows: 45px; gap: 6px;
+      background:#eee; padding:8px; width: fit-content; border-radius: 8px; margin: 0 auto;
     }
     .pos-board input{ display:none; }
-
     .pos{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:800;
-      font-size:18px;
-      background:#666;
-      color:#fff;
-      border:3px solid transparent;
-      border-radius:6px;
-      cursor:pointer;
-      user-select:none;
-      transition: all 0.15s ease;
-      box-sizing:border-box;
+      display:flex; align-items:center; justify-content:center; font-weight:800; font-size:18px;
+      background:#666; color:#fff; border:3px solid transparent; border-radius:6px;
+      cursor:pointer; user-select:none; transition: all 0.15s ease; box-sizing:border-box;
     }
-
-    /* 枠線カラー（通常時） */
     .atk{ border-color:#49d35a; }
     .mid{ border-color:#f6c21a; }
     .def{ border-color:#4bb5e6; }
     .gk { border-color:#ff2b2b; }
-
     .tall{ grid-row: span 2; }
-
-    /* 配置 */
     #pos_LW + label{ grid-column:1; grid-row:1; }
     #pos_CF + label{ grid-column:2; grid-row:1; }
     #pos_RW + label{ grid-column:3; grid-row:1; }
-
     #pos_LM + label{ grid-column:1; grid-row:2 / span 2; }
     #pos_AM + label{ grid-column:2; grid-row:2; }
     #pos_RM + label{ grid-column:3; grid-row:2 / span 2; }
     #pos_DM + label{ grid-column:2; grid-row:3; }
-
     #pos_LB + label{ grid-column:1; grid-row:4; }
     #pos_CB + label{ grid-column:2; grid-row:4; }
     #pos_RB + label{ grid-column:3; grid-row:4; }
-
     #pos_GK + label{ grid-column:2; grid-row:5; }
-
-    /* 選択時：ポジション色に変化（赤枠は無し） */
     .pos-board input:checked + label.atk{ background:#49d35a; color:#000; }
     .pos-board input:checked + label.mid{ background:#f6c21a; color:#000; }
     .pos-board input:checked + label.def{ background:#4bb5e6; color:#000; }
     .pos-board input:checked + label.gk { background:#ff2b2b; color:#fff; }
 
-    /* ===== プレイスタイル画像UI（中央揃え & 横間隔UP） ===== */
+    /* ===== プレイスタイル画像UI ===== */
     .style-board{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 120px));
-      gap:12px; /* ← 横の間隔を広げる */
-      margin: 0 auto 15px;
-      width: fit-content;
-      justify-content:center;
-      justify-items:center;
+      display:grid; grid-template-columns: repeat(3, minmax(0, 120px)); gap:12px;
+      margin: 0 auto 15px; width: fit-content; justify-content:center; justify-items:center;
     }
     .style-board input{ display:none; }
     .style-board label{
-      width: 120px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      padding:6px 6px;
-      border:2px solid transparent;
-      border-radius:12px;
-      cursor:pointer;
-      background:#fff;
-      text-align:center;
-      box-sizing:border-box;
+      width: 120px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+      padding:6px 6px; border:2px solid transparent; border-radius:12px; cursor:pointer;
+      background:#fff; text-align:center; box-sizing:border-box;
     }
-    .style-board img{
-      width:86px;
-      height:86px;
-      object-fit:contain;
-      display:block;
-      margin: 0 auto 4px;
-    }
-    .style-board label div{
-      white-space: nowrap;
-      font-size:12px;
-      line-height: 1.2;
-      text-align:center;
-      width:100%;
-    }
-    .style-board input:checked + label{
-      border-color:#2196f3;
-      box-shadow:0 0 0 2px #2196f3;
-    }
+    .style-board img{ width:86px; height:86px; object-fit:contain; display:block; margin: 0 auto 4px; }
+    .style-board label div{ white-space: nowrap; font-size:12px; line-height: 1.2; text-align:center; width:100%; }
+    .style-board input:checked + label{ border-color:#2196f3; box-shadow:0 0 0 2px #2196f3; }
 
-    /* ===== 検索結果（スマホで読みやすく） ===== */
+    /* ===== 検索結果のKey-Value表示 ===== */
     .kv { display: grid; grid-template-columns: 110px 1fr; gap: 6px 10px; }
     .k { font-weight: 800; color: #111; }
     .v { color: #111; }
 
-    @media (max-width: 480px){
-      #comboSelect{ font-size: 1em; }
-      .rank-board{ grid-template-columns: repeat(3, 76px); gap: 10px; }
-      .rank-tile{ width:76px; height:76px; border-radius:14px; }
-      .lv-board{ gap: 8px; }
-      .lv-tile{ height: 52px; }
-    }
-      .kv{ grid-template-columns: 1fr; gap: 2px 0; }
-      .k{ margin-top: 6px; }
-    }
-
-    /* ===== 条件カード（見やすく） ===== */
+    /* ===== 条件カード ===== */
     .cond-kv { margin-top: 6px; }
     .candidates { margin-top: 10px; display: grid; gap: 10px; }
-    .cand-block{
-      padding: 8px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background: #fafafa;
-    }
+    .cand-block{ padding: 8px; border: 1px solid #ddd; border-radius: 8px; background: #fafafa; }
     .cand-title{ font-weight: 900; margin-bottom: 4px; }
-    .cand-list{ white-space: pre-wrap; line-height: 1.6; }
-
-    /* ===== Lv選択 ===== */
-    .lv-label{
-      font-weight: 700;
-      font-size: 15px;
-    }
-
-    /* ===== セレクトを大きく ===== */
-    select{
-      font-size: 1.1em;
-      padding: 8px 12px;
-    }
-
-    /* ===== ボタンサイズ ===== */
-    .btn-search{
-      font-size: 1.8em;  /* 今の3倍相当 */
-      padding: 18px 40px;
-      border-radius: 12px;
-      font-weight: 900;
-      cursor:pointer;
-    }
-    .btn-show{
-      font-size: 1.4em;  /* 今の2倍相当 */
-      padding: 12px 30px;
-      border-radius: 10px;
-      font-weight: 800;
-      cursor:pointer;
-    }
 
     /* ===== バリデーションメッセージ ===== */
-    .warn{
+    .warn{ margin-top: 10px; color: #d32f2f; font-weight: 800; display:none; }
+
+    /* ===== Lv 選択（タイル式・単一選択） ===== */
+    .lv-label{
+      font-size: 1.15em;
+      font-weight: 900;
       margin-top: 10px;
-      color: #d32f2f;
-      font-weight: 800;
-      display:none;
     }
-  
-    /* ===== Lv 選択（タイル式・単一選択） ===== */
-.lv-label{
-  font-size: 1.15em;   /* ←ここを小さく（好みで 1.1〜1.25 くらい） */
-  font-weight: 900;
-  margin-top: 10px;
-}
-
-
-    /* ===== Lv 選択（タイル式・単一選択） ===== */
     .lv-board{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      width: min(520px, 100%);
-      margin: 8px auto 0;
-      justify-content:center;
-      justify-items:stretch;
+      display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+      width: min(520px, 100%); margin: 8px auto 0;
+      justify-content:center; justify-items:stretch;
     }
     .lv-board input{ display:none; }
     .lv-tile{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      height: 56px;           /* 横長 */
-      border-radius: 14px;
-      background:#f3f3f3;
-      border:2px solid #ddd;
-      font-weight: 900;
-      cursor:pointer;
-      user-select:none;
-      letter-spacing: .02em;
+      display:flex; align-items:center; justify-content:center;
+      height: 56px; border-radius: 14px; background:#f3f3f3; border:2px solid #ddd;
+      font-weight: 900; cursor:pointer; user-select:none; letter-spacing: .02em;
     }
     .lv-board input:checked + .lv-tile{
-      border-color:#2196f3;
-      box-shadow:0 0 0 2px #2196f3;
-      background:#e3f2fd;
+      border-color:#2196f3; box-shadow:0 0 0 2px #2196f3; background:#e3f2fd;
     }
 
     /* ===== ランク選択（タイル式・複数選択） ===== */
     .rank-board{
-      display:grid;
-      grid-template-columns: repeat(3, 88px);
-      gap: 12px;
-      width: fit-content;
-      justify-content:start;
-      justify-items:center;
-      margin-top: 2px;
+      display:grid; grid-template-columns: repeat(3, 88px); gap: 12px;
+      width: fit-content; justify-content:start; justify-items:center; margin-top: 2px;
     }
     .rank-board input{ display:none; }
-
     .rank-tile{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      width: 88px;           /* 正方形 */
-      height: 88px;
-      border-radius: 16px;   /* 角丸 */
-      border:2px solid rgba(0,0,0,.25);
-      font-weight: 950;
-      cursor:pointer;
-      user-select:none;
-      box-shadow: 0 6px 16px rgba(0,0,0,.12);
+      display:flex; align-items:center; justify-content:center;
+      width: 88px; height: 88px; border-radius: 16px;
+      border:2px solid rgba(0,0,0,.25); font-weight: 950;
+      cursor:pointer; user-select:none; box-shadow: 0 6px 16px rgba(0,0,0,.12);
       letter-spacing: .02em;
     }
-
-    /* それっぽい背景色 */
-    .rank-tile.gold{
-      background: linear-gradient(135deg, #fff2b2, #d4af37);
-      color:#111;
-    }
-    .rank-tile.silver{
-      background: linear-gradient(135deg, #ffffff, #bdbdbd);
-      color:#111;
-    }
-    .rank-tile.bronze{
-      background: linear-gradient(135deg, #ffe2c7, #cd7f32);
-      color:#111;
-    }
-
-    /* 選択時：強調（枠＋発光） */
+    .rank-tile.gold{ background: linear-gradient(135deg, #fff2b2, #d4af37); color:#111; }
+    .rank-tile.silver{ background: linear-gradient(135deg, #ffffff, #bdbdbd); color:#111; }
+    .rank-tile.bronze{ background: linear-gradient(135deg, #ffe2c7, #cd7f32); color:#111; }
     .rank-board input:checked + .rank-tile{
       border-color:#111;
       box-shadow: 0 0 0 3px rgba(0,0,0,.85), 0 10px 20px rgba(0,0,0,.18);
       transform: translateY(-1px);
     }
 
-    /* ===== コンボ選択プルダウン：画面内に収める ===== */
-    #comboSelect{
-      width: 100%;
-      max-width: 560px;
-      box-sizing: border-box;
+    /* ===== セレクト ===== */
+    select{ font-size: 1.1em; padding: 8px 12px; }
+
+    /* ===== ボタン ===== */
+    .btn-search{
+      font-size: 1.8em; padding: 18px 40px; border-radius: 12px; font-weight: 900; cursor:pointer;
+    }
+    .btn-show{
+      font-size: 1.4em; padding: 12px 30px; border-radius: 10px; font-weight: 800; cursor:pointer;
     }
 
+    /* ===== コンボ選択プルダウン ===== */
+    #comboSelect{ width: 100%; max-width: 560px; box-sizing: border-box; }
+
+    /* ===== トップへ戻るボタン（ふわっと表示） ===== */
+    #scrollTopBtn{
+      position: fixed;
+      right: 20px;
+      bottom: 80px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0,123,255,0.9);
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 9999;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+    #scrollTopBtn.show{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #scrollTopBtn:hover{ background: rgba(0,86,179,0.95); }
+
+    /* ===== スマホ調整 ===== */
     @media (max-width: 480px){
+      .kv{ grid-template-columns: 1fr; gap: 2px 0; }
+      .k{ margin-top: 6px; }
       #comboSelect{ font-size: 1em; }
       .rank-board{ grid-template-columns: repeat(3, 76px); gap: 10px; }
       .rank-tile{ width:76px; height:76px; border-radius:14px; }
       .lv-board{ gap: 8px; }
       .lv-tile{ height: 52px; }
     }
-      .rank-board{ grid-template-columns: repeat(3, 80px); gap: 8px; }
-      .lv-board{ grid-template-columns: repeat(3, 80px); gap: 8px; }
-    }
-
-/* ===== トップへ戻るボタン（ふわっと表示） ===== */
-#scrollTopBtn{
-  display: block; /* ★追加：display:noneを打ち消す */
-  position: fixed;
-  right: 20px;
-  bottom: 80px;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(0,123,255,0.9);
-  color: #fff;
-  font-size: 22px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 9999;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-
-  opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-
-/* 表示時 */
-#scrollTopBtn.show{
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-#scrollTopBtn:hover{
-  background: rgba(0,86,179,0.95);
-}
 
   </style>
 </head>
