@@ -242,7 +242,21 @@
   }
   .comboCard.blue{ border-left-color:#1565c0; background:#e8f1ff; }
   .comboCard.gray{ border-left-color:#9aa0aa; background:#f3f4f6; }
-  .comboName{ font-size:20px; font-weight:900; margin:0 0 8px; }
+  
+/* ランク別（コンボ検索の結果枠色） */
+.comboCard.rank-gold{
+  border-left-color:#d2b451;
+  background:#fff9e2;
+}
+.comboCard.rank-silver{
+  border-left-color:#b7b7b7;
+  background:#f6f6f6;
+}
+.comboCard.rank-bronze{
+  border-left-color:#c8894a;
+  background:#fff3e7;
+}
+.comboName{ font-size:20px; font-weight:900; margin:0 0 8px; }
   .kv{ display:grid; grid-template-columns: 108px 1fr; gap:6px 10px; }
   .k{ color:#000; font-weight:900; }
   .v{ 
@@ -1087,23 +1101,37 @@ function runComboSearch(){
     const conds = getComboConditions(c);
     if(!conds.length) continue;
 
-    // 条件のうち 1つでもポジション＆プレイスタイル＆Lvが合うものがあるか
-    let anyCore = false;
-
-    // policy は combo_policys（新）/ conditions[].policy（旧）から判定
+    // 条件マッチ判定
+    // ①完全一致: (ポジションOK && PS/Lv OK) かつ ポリシーOK
+    // ②ポリシー違い: (ポジションOK && PS/Lv OK) かつ ポリシーNG
+    // ③ポジション違い: (ポジションNG && PS/Lv OK) かつ ポリシーOK
     const comboPolicys = getComboPolicys(c);
     const comboPolOk = !selPolicy ? true : comboPolicys.includes(selPolicy);
 
+    let anyFull = false;
+    let anyPolicyMismatch = false;
+    let anyPosMismatch = false;
+    let anyStyleLv = false;
+
+    const hasPosFilter = selPositions.size > 0;
+
     for(const cond of conds){
       const {posOk, styleOk, lvOk} = conditionMatch(cond);
-      const coreOk = posOk && styleOk && lvOk;
-      if(coreOk) anyCore = true;
+
+      if(styleOk && lvOk){
+        anyStyleLv = true;
+
+        if(posOk){
+          if(comboPolOk) anyFull = true;
+          else anyPolicyMismatch = true;
+        }else{
+          if(comboPolOk && hasPosFilter) anyPosMismatch = true;
+        }
+      }
     }
 
-    if(anyCore){
-      const anyFull = comboPolOk;
-      const anyPolicyMismatch = !comboPolOk;
-      const anyPosMismatch = false;
+    if(anyStyleLv){
+      // ③は「①が無い」時だけ出したいので、後でフィルタ側でも anyFull を優先
       matches.push({combo:c, anyFull, anyPolicyMismatch, anyPosMismatch});
     }
   }
@@ -1132,6 +1160,8 @@ function runComboSearch(){
       const name = getComboField(combo, ["name","comboName","formationName","title"], "名称なし");
       const formation = getComboField(combo, ["formation","formationCode","フォーメーション"], "-");
       const rank = normalizeRank(getComboField(combo, ["rank","ランク"], "-"));
+  const rankKey = (rank==="金") ? "gold" : (rank==="銀") ? "silver" : (rank==="銅") ? "bronze" : "";
+  if(rankKey) card.classList.add("rank-"+rankKey);
       const policy = (getComboPolicys(combo).filter(Boolean).join(" / ")) || getComboField(combo, ["policy","ポリシー"], "-");
       const effect = getComboField(combo, ["effect","効果"], "-");
       const need = getComboField(combo, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
