@@ -405,6 +405,7 @@
     gap:12px;
   }
   .modalHead .ttl{ font-size:18px; font-weight:900; }
+  .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; }
   .modalHead button{
     border:none;
     background:transparent;
@@ -634,7 +635,10 @@
 <div id="modalBack" class="modalBack" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal">
     <div class="modalHead">
-      <div id="modalTitle" class="ttl">詳細</div>
+      <div>
+        <div id="modalTitle" class="ttl">詳細</div>
+        <div id="modalSub" class="subttl"></div>
+      </div>
       <button id="modalClose" type="button" aria-label="close">✕</button>
     </div>
     <div id="modalBody" class="modalBody"></div>
@@ -654,6 +658,8 @@ let playerById = new Map();
 
 function safeStr(v){ return (v===null || v===undefined) ? "" : String(v); }
 function nvl(v, d=""){ return (v===null || v===undefined || v==="") ? d : v; }
+
+function getPlayerId(p){ return safeStr((p && (p.playerId ?? p.player_id ?? p.player_id ?? p.playerID ?? p.player_id)) || ""); }
 
 function romanLv(lv){
   const n = Number(lv);
@@ -686,7 +692,7 @@ async function loadJson(url){
     COMBOS = [];
   }
 
-  playerById = new Map(PLAYERS.map(p => [safeStr(p.playerId || p.player_id), p]));
+  playerById = new Map(PLAYERS.map(p => [getPlayerId(p), p]).filter(([id])=>id));
   setupTabs();
   setupToTop();
 
@@ -746,6 +752,12 @@ function setupToTop(){
 function openPlayerModal(p){
   const title = nvl(p.name,"-");
   document.getElementById("modalTitle").textContent = title;
+
+  const nat = nvl(p.nationality, "-");
+  const gt = nvl(p.growthType || p.growth_type, "-");
+  const sub = (nat!=="-" || gt!=="-") ? `国籍：${nat} / 成長タイプ：${gt}` : "";
+  const subEl = document.getElementById("modalSub");
+  if(subEl) subEl.textContent = sub;
 
   const ps = nvl(p.playStyle, "-");
   const lv = romanLv(p.playStyleLv);
@@ -1053,7 +1065,7 @@ function runComboSearch(){
       const condHtml = getComboConditions(combo).map(cond => {
         const p = getComboField(cond, ["position","pos","ポジション"], "-");
         const s = getComboField(cond, ["playStyle","style","プレイスタイル"], "-");
-        const lvRaw = getComboField(cond, ["lv","level","Lv","プレイスタイルLv"], "");
+        const lvRaw = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "");
         const lv = romanLv(parseLvReq(lvRaw) || lvRaw);
 
         const styleText = (lv && safeStr(lv) !== "0" && safeStr(lv) !== "-")
@@ -1191,7 +1203,7 @@ function renderComboDetail(){
   const condText = getComboConditions(c).map(cond => {
     const p = getComboField(cond, ["position","pos","ポジション"], "-");
     const s = getComboField(cond, ["playStyle","style","プレイスタイル"], "-");
-    const lv = getComboField(cond, ["lv","level","Lv","プレイスタイルLv"], "-");
+    const lv = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "-");
     const pol = getComboField(cond, ["policy","ポリシー"], "-");
     return `${p}/${s}Lv${lv}/${pol}`;
   }).join(" , ");
@@ -1214,7 +1226,7 @@ function playerMatchesCondition(p, cond){
   const pos = normalizePos(getComboField(cond, ["position","pos","ポジション"], ""));
   const style = normalizeStyle(getComboField(cond, ["playStyle","style","プレイスタイル"], ""));
   const pol = normalizePolicy(getComboField(cond, ["policy","ポリシー"], ""));
-  const lvReq = parseLvReq(getComboField(cond, ["lv","level","Lv","プレイスタイルLv"], 0));
+  const lvReq = parseLvReq(getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], 0));
 
   // プレイヤー側
   const pPos = normalizePos(p.mainPosition || "");
@@ -1267,7 +1279,7 @@ function renderPlayersForCombo(){
       <div style="font-weight:900;font-size:20px;margin-bottom:10px;">条件${idx+1}</div>
       <div class="kv" style="grid-template-columns:110px 1fr;">
         <div class="k">ポジション</div><div class="v">${esc(pos)}</div>
-        <div class="k">プレイスタイル</div><div class="v">${esc(style)} ${esc(safeStr(lvReq))}</div>
+        <div class="k">プレイスタイル</div><div class="v">${esc(style)}${lvReq ? " " + esc(romanLv(lvReq)) : ""}</div>
         <div class="k">ポリシー</div><div class="v">${esc(pol)}</div>
       </div>
       <div style="margin-top:12px;">
@@ -1294,7 +1306,7 @@ function renderPlayerNameOnlyList(arr){
   if(!arr || arr.length===0) return `<div class="note" style="text-align:left;margin:6px 0;">なし</div>`;
   // ★要望：検索結果は選手名のみに変更
   return arr.map(p=>{
-    const pid = esc(p.playerId);
+    const pid = esc(getPlayerId(p));
     return `<div class="playerRow"><a href="#" data-player-id="${pid}">${esc(p.name || "-")}</a></div>`;
   }).join("");
 }
@@ -1334,7 +1346,7 @@ function renderRankTable(tbl, arr, field){
   const rows = arr.map((p,i)=>{
     const v = field==="overall" ? (p.overall ?? "-") : (p.maxUpgrade ?? "-");
     const pos = p.mainPosition || "-";
-    const pid = esc(p.playerId || p.player_id);
+    const pid = esc(getPlayerId(p));
     const nm = esc(p.name || "-");
     return `
       <tr>
