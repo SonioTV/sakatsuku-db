@@ -16,12 +16,14 @@
         "value": 30
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ポゼッション",
         "position": "DM",
         "playStyle": "パサー",
-        "lv": 1
+        "playStyleLv": 1
       }
     ]
   },
@@ -42,12 +44,14 @@
         "value": 30
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ポゼッション",
         "position": "CF",
         "playStyle": "ラインブレーカー",
-        "lv": 1
+        "playStyleLv": 1
       }
     ]
   },
@@ -68,12 +72,14 @@
         "value": 30
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "カウンター"
+    ],
+    "combo_requirements": [
       {
-        "policy": "カウンター",
         "position": "DM",
         "playStyle": "ハードマーカー",
-        "lv": 1
+        "playStyleLv": 1
       }
     ]
   },
@@ -94,12 +100,14 @@
         "value": 30
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "カウンター"
+    ],
+    "combo_requirements": [
       {
-        "policy": "カウンター",
         "position": "RB",
         "playStyle": "攻撃的FB",
-        "lv": 1
+        "playStyleLv": 1
       }
     ]
   },
@@ -120,12 +128,14 @@
         "value": 30
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "リアクション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "リアクション",
         "position": "GK",
         "playStyle": "オーソドックスGK",
-        "lv": 1
+        "playStyleLv": 1
       }
     ]
   },
@@ -146,12 +156,14 @@
         "value": 30
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ムービング"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ムービング",
         "position": "LB",
         "playStyle": "守備的FB",
-        "lv": 1
+        "playStyleLv": 1
       }
     ]
   },
@@ -172,12 +184,14 @@
         "value": 30
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ムービング"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ムービング",
         "position": "AM",
         "playStyle": "アタッカー",
-        "lv": 1
+        "playStyleLv": 1
       }
     ]
   },
@@ -198,12 +212,14 @@
         "value": 30
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "リアクション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "リアクション",
         "position": "CF",
         "playStyle": "ストライカー",
-        "lv": 1
+        "playStyleLv": 1
       }
     ]
   },
@@ -224,12 +240,14 @@
         "value": 50
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "カウンター"
+    ],
+    "combo_requirements": [
       {
-        "policy": "カウンター",
         "position": "GK",
         "playStyle": "スイーパーGK",
-        "lv": 1
+        "playStyleLv": 1
       }
     ]
   },
@@ -250,12 +268,14 @@
         "value": 50
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ポゼッション",
         "position": "CF",
         "playStyle": "ポストプレーヤー",
-        "lv": 1
+        "playStyleLv": 1
       }
     ]
   },
@@ -276,12 +296,14 @@
         "value": 50
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "リアクション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "リアクション",
         "position": "AM",
         "playStyle": "セントラルMF",
-        "lv": 1
+        "playStyleLv": 1
       }
     ]
   },
@@ -302,12 +324,14 @@
         "value": 50
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ムービング"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ムービング",
         "position": "CB",
         "playStyle": "組立CB",
-        "lv": 1
+        "playStyleLv": 1
       }
     ]
   },
@@ -332,18 +356,19 @@
         "value": 60
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ポゼッション",
         "position": "LM",
         "playStyle": "ドリブラー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ポゼッション",
         "position": "CB",
         "playStyle": "ストッパー",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -368,18 +393,19 @@
         "value": 60
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ムービング"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ムービング",
         "position": "CF",
         "playStyle": "ラインブレーカー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ムービング",
         "position": "DM",
         "playStyle": "ハードマーカー",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -404,18 +430,19 @@
         "value": 60
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ポゼッション",
         "position": "CB",
         "playStyle": "組立CB",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ポゼッション",
         "position": "RW",
         "playStyle": "ドリブラー",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -440,18 +467,19 @@
         "value": 60
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "カウンター"
+    ],
+    "combo_requirements": [
       {
-        "policy": "カウンター",
         "position": "GK",
         "playStyle": "スイーパーGK",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "カウンター",
         "position": "RB",
         "playStyle": "守備的FB",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -476,18 +504,19 @@
         "value": 60
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "カウンター"
+    ],
+    "combo_requirements": [
       {
-        "policy": "カウンター",
         "position": "AM",
         "playStyle": "アタッカー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "カウンター",
         "position": "AM",
         "playStyle": "パサー",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -512,18 +541,19 @@
         "value": 60
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "リアクション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "リアクション",
         "position": "LM",
         "playStyle": "ドリブラー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "リアクション",
         "position": "CB",
         "playStyle": "組立CB",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -548,18 +578,19 @@
         "value": 60
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ムービング"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ムービング",
         "position": "CF",
         "playStyle": "ストライカー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ムービング",
         "position": "CB",
         "playStyle": "ストッパー",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -584,18 +615,19 @@
         "value": 60
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "リアクション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "リアクション",
         "position": "CF",
         "playStyle": "ラインブレーカー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "リアクション",
         "position": "RB",
         "playStyle": "攻撃的FB",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -620,24 +652,24 @@
         "value": 60
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ムービング"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ムービング",
         "position": "LW",
         "playStyle": "サイドアタッカー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ムービング",
         "position": "DM",
         "playStyle": "パサー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ムービング",
         "position": "GK",
         "playStyle": "オーソドックスGK",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -662,24 +694,24 @@
         "value": 80
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "カウンター"
+    ],
+    "combo_requirements": [
       {
-        "policy": "カウンター",
         "position": "LW",
         "playStyle": "ドリブラー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "カウンター",
         "position": "CF",
         "playStyle": "ストライカー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "カウンター",
         "position": "CB",
         "playStyle": "ストッパー",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -704,24 +736,24 @@
         "value": 80
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ポゼッション",
         "position": "LB",
         "playStyle": "守備的FB",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ポゼッション",
         "position": "AM",
         "playStyle": "アタッカー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ポゼッション",
         "position": "CF",
         "playStyle": "ポストプレーヤー",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -746,24 +778,24 @@
         "value": 80
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "リアクション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "リアクション",
         "position": "DM",
         "playStyle": "セントラルMF",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "リアクション",
         "position": "AM",
         "playStyle": "アタッカー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "リアクション",
         "position": "CF",
         "playStyle": "ストライカー",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -792,24 +824,24 @@
         "value": 80
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ムービング"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ムービング",
         "position": "AM",
         "playStyle": "パサー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ムービング",
         "position": "AM",
         "playStyle": "アタッカー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ムービング",
         "position": "CF",
         "playStyle": "ストライカー",
-        "lv": 3
+        "playStyleLv": 3
       }
     ]
   },
@@ -838,24 +870,24 @@
         "value": 80
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "リアクション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "リアクション",
         "position": "CB",
         "playStyle": "ストッパー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "リアクション",
         "position": "DM",
         "playStyle": "ハードマーカー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "リアクション",
         "position": "DM",
         "playStyle": "セントラルMF",
-        "lv": 3
+        "playStyleLv": 3
       }
     ]
   },
@@ -884,24 +916,24 @@
         "value": 80
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "カウンター"
+    ],
+    "combo_requirements": [
       {
-        "policy": "カウンター",
         "position": "LB",
         "playStyle": "守備的FB",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "カウンター",
         "position": "AM",
         "playStyle": "セントラルMF",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "カウンター",
         "position": "CF",
         "playStyle": "ストライカー",
-        "lv": 3
+        "playStyleLv": 3
       }
     ]
   },
@@ -930,24 +962,24 @@
         "value": 80
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ポゼッション",
         "position": "CB",
         "playStyle": "ストッパー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ポゼッション",
         "position": "RM",
         "playStyle": "ドリブラー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ポゼッション",
         "position": "CF",
         "playStyle": "ラインブレーカー",
-        "lv": 3
+        "playStyleLv": 3
       }
     ]
   },
@@ -976,24 +1008,24 @@
         "value": 80
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ムービング"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ムービング",
         "position": "CB",
         "playStyle": "組立CB",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ムービング",
         "position": "LM",
         "playStyle": "サイドアタッカー",
-        "lv": 3
+        "playStyleLv": 3
       },
       {
-        "policy": "ムービング",
         "position": "CF",
         "playStyle": "ストライカー",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -1022,24 +1054,24 @@
         "value": 80
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "リアクション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "リアクション",
         "position": "LB",
         "playStyle": "攻撃的FB",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "リアクション",
         "position": "LM",
         "playStyle": "サイドアタッカー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "リアクション",
         "position": "CF",
         "playStyle": "ストライカー",
-        "lv": 3
+        "playStyleLv": 3
       }
     ]
   },
@@ -1068,24 +1100,24 @@
         "value": 80
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "カウンター"
+    ],
+    "combo_requirements": [
       {
-        "policy": "カウンター",
         "position": "CF",
         "playStyle": "組立CB",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "カウンター",
         "position": "DM",
         "playStyle": "セントラルMF",
-        "lv": 3
+        "playStyleLv": 3
       },
       {
-        "policy": "カウンター",
         "position": "LW",
         "playStyle": "ドリブラー",
-        "lv": 2
+        "playStyleLv": 2
       }
     ]
   },
@@ -1114,24 +1146,24 @@
         "value": 80
       }
     ],
-    "conditions": [
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "combo_requirements": [
       {
-        "policy": "ポゼッション",
         "position": "RB",
         "playStyle": "攻撃的FB",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ポゼッション",
         "position": "DM",
         "playStyle": "パサー",
-        "lv": 2
+        "playStyleLv": 2
       },
       {
-        "policy": "ポゼッション",
         "position": "RW",
         "playStyle": "ドリブラー",
-        "lv": 3
+        "playStyleLv": 3
       }
     ]
   }
