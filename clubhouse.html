@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>サカつく2026 DB - クラブハウス設備シミュレーション</title>
+<style>
+:root{
+  --blue:#1e88ff; --blue2:#0b5bd3;
+  --bg:#f6f7fb; --card:#fff; --text:#111; --muted:#666; --line:#d7dbe6;
+  --shadow:0 10px 30px rgba(0,0,0,.08); --radius:18px;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;background:var(--bg);color:var(--text);}
+.wrap{max-width:920px;margin:0 auto;padding:18px 14px 90px;}
+h1{margin:10px 0 6px;font-size:30px;letter-spacing:.02em;text-align:center;}
+.sub{margin:0 0 14px;text-align:center;color:var(--muted);font-weight:700;}
+.nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:10px 0 18px;}
+.nav a{display:inline-block;padding:10px 14px;border-radius:14px;border:2px solid var(--line);background:#fff;color:var(--blue2);font-weight:900;text-decoration:none;}
+.card{background:var(--card);border:1px solid #e7e9f0;border-radius:22px;box-shadow:var(--shadow);padding:18px;}
+.sectionTitle{font-size:22px;font-weight:900;text-align:center;margin:10px 0 12px;}
+select.bigSelect{
+  width:min(720px, 96%);
+  font-size:20px;
+  font-weight:900;
+  border-radius:18px;
+  border:2px solid #e1e5ef;
+  padding:12px 14px;
+  background:#ececec;
+  color:var(--blue2);
+  outline:none;
+}
+.bigBtn{
+  width:min(520px, 92%);
+  display:block;
+  margin:14px auto 6px;
+  padding:16px 18px;
+  font-size:26px;
+  font-weight:900;
+  border-radius:18px;
+  border:none;
+  cursor:pointer;
+  background:#f59e0b;
+  color:#fff;
+  box-shadow:0 16px 26px rgba(245,158,11,.25);
+}
+.bigBtn:active{transform:scale(.99);}
+.note{color:var(--muted);text-align:center;line-height:1.6;margin:10px 0 0;font-size:14px;}
+.hr{height:1px;background:#e7e9f0;margin:16px 0;}
+.kpi{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+  margin:12px 0 6px;
+}
+.kpi .box{background:#f3f4f6;border:1px solid #e7e9f0;border-radius:16px;padding:12px;}
+.kpi .k{font-weight:900;color:#111;font-size:14px;}
+.kpi .v{font-weight:900;color:#111;font-size:22px;margin-top:4px;}
+@media (max-width: 520px){
+  .kpi{grid-template-columns:1fr;}
+}
+.tableWrap{overflow-x:auto;}
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  min-width:620px;
+  margin:10px 0 8px;
+  font-size:14px;
+}
+th,td{padding:10px 10px;border-bottom:1px solid #e7e9f0;text-align:left;vertical-align:top;white-space:nowrap;}
+th{background:#f1f3f8;font-weight:900;}
+td.effects{white-space:normal;}
+.badge{display:inline-block;padding:2px 10px;border-radius:999px;background:#e8f1ff;border:1px solid #cfe2ff;color:#0b5bd3;font-weight:900;font-size:12px;margin:2px 6px 2px 0;}
+.small{font-size:12px;color:var(--muted);font-weight:800;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>クラブハウス設備シミュレーション</h1>
+  <p class="sub">選んだ「category（効果）」が最大になる施設の組み合わせ（最大設置数＝stack_group）を表示します。</p>
+  <div class="nav">
+    <a href="index.html">検索ツールへ戻る</a>
+    <a href="stadium.html">スタジアム編へ</a>
+  </div>
+
+  <div class="card">
+    <div class="sectionTitle">効果カテゴリを選択</div>
+    <div style="text-align:center;">
+      <select id="selCategory" class="bigSelect" aria-label="category select"></select>
+    </div>
+    <button id="btnCalc" class="bigBtn" type="button">最大組み合わせを計算</button>
+    <p class="note">※効果の合算は単純加算 / コストは cost（D列）合計 / 同一categoryの最大設置数は stack_group。</p>
+
+    <div class="hr"></div>
+
+    <div id="outArea" style="display:none;">
+      <div class="sectionTitle">結果（最適組み合わせ）</div>
+      <div class="kpi">
+        <div class="box"><div class="k">最大化対象（選択category）の合計上昇Lv</div><div id="kpiValue" class="v">-</div></div>
+        <div class="box"><div class="k">施設の総コスト</div><div id="kpiCost" class="v">-</div></div>
+      </div>
+
+      <div class="tableWrap">
+        <table aria-label="best combination table">
+          <thead>
+            <tr>
+              <th>施設ID</th>
+              <th>施設名</th>
+              <th>category</th>
+              <th>コスト</th>
+              <th>選択categoryの上昇Lv</th>
+              <th>効果（effect1~3）</th>
+            </tr>
+          </thead>
+          <tbody id="bestTbody"></tbody>
+        </table>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="sectionTitle">参考：このcategoryが上がる施設一覧</div>
+      <div class="small" style="text-align:center;margin-top:-6px;">（上の最適組み合わせは、この一覧から「上昇Lvが高い順に stack_group 件」抽出したものです）</div>
+      <div class="tableWrap">
+        <table aria-label="all facilities table">
+          <thead>
+            <tr>
+              <th>施設ID</th>
+              <th>施設名</th>
+              <th>category</th>
+              <th>コスト</th>
+              <th>選択categoryの上昇Lv</th>
+              <th>効果（effect1~3）</th>
+            </tr>
+          </thead>
+          <tbody id="allTbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA_URL = "club_facilities.json";
+
+function effectPairs(row){
+  const pairs = [];
+  for (let i=1;i<=3;i++){
+    const e = row["effect"+i];
+    const v = row["effect_value"+i];
+    if (e && v!==null && v!==undefined && v!=="" && !Number.isNaN(v)){
+      pairs.push({e, v:Number(v)});
+    }
+  }
+  return pairs;
+}
+
+function scoreForCategory(row, category){
+  return effectPairs(row).reduce((sum,p)=> sum + (p.e===category ? p.v : 0), 0);
+}
+
+function renderEffects(row){
+  const ps = effectPairs(row);
+  if (!ps.length) return "";
+  return ps.map(p => `<span class="badge">${escapeHtml(p.e)} +${p.v}</span>`).join("");
+}
+
+function escapeHtml(s){
+  return String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+}
+
+async function main(){
+  const res = await fetch(DATA_URL, {cache:"no-store"});
+  const rows = await res.json();
+
+  // categories from data
+  const cats = Array.from(new Set(rows.map(r=>r.category).filter(Boolean)));
+  cats.sort((a,b)=> String(a).localeCompare(String(b), "ja"));
+
+  const sel = document.getElementById("selCategory");
+  sel.innerHTML = cats.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join("");
+
+  document.getElementById("btnCalc").addEventListener("click", () => calc(rows));
+  calc(rows); // initial
+}
+
+function calc(rows){
+  const cat = document.getElementById("selCategory").value;
+
+  const boosted = rows.map(r => ({
+    ...r,
+    score: scoreForCategory(r, cat),
+    costNum: Number(r.cost||0)
+  })).filter(r => r.score > 0);
+
+  // stack_group is per-category max count. If inconsistent, use the minimum among candidates.
+  const stackCandidates = boosted.map(r => Number(r.stack_group||0)).filter(n => Number.isFinite(n) && n>0);
+  const stackGroup = stackCandidates.length ? Math.min(...stackCandidates) : 0;
+
+  // best: top k by score, tie-breaker: lower cost, then id
+  const best = boosted.slice().sort((a,b)=>{
+    if (b.score !== a.score) return b.score - a.score;
+    if (a.costNum !== b.costNum) return a.costNum - b.costNum;
+    return String(a.facility_id).localeCompare(String(b.facility_id));
+  }).slice(0, stackGroup);
+
+  const totalScore = best.reduce((s,r)=>s+r.score,0);
+  const totalCost = best.reduce((s,r)=>s+r.costNum,0);
+
+  document.getElementById("outArea").style.display = "block";
+  document.getElementById("kpiValue").textContent = `${totalScore}`;
+  document.getElementById("kpiCost").textContent = `${totalCost}`;
+
+  const bestT = document.getElementById("bestTbody");
+  bestT.innerHTML = best.map(r => `
+    <tr>
+      <td>${escapeHtml(r.facility_id||"")}</td>
+      <td>${escapeHtml(r.facility_name||"")}</td>
+      <td>${escapeHtml(r.category||"")}</td>
+      <td>${escapeHtml(r.costNum)}</td>
+      <td><b>+${escapeHtml(r.score)}</b></td>
+      <td class="effects">${renderEffects(r)}</td>
+    </tr>
+  `).join("");
+
+  const allT = document.getElementById("allTbody");
+  const allSorted = boosted.slice().sort((a,b)=>{
+    if (b.score !== a.score) return b.score - a.score;
+    if (a.costNum !== b.costNum) return a.costNum - b.costNum;
+    return String(a.facility_id).localeCompare(String(b.facility_id));
+  });
+  allT.innerHTML = allSorted.map(r => `
+    <tr>
+      <td>${escapeHtml(r.facility_id||"")}</td>
+      <td>${escapeHtml(r.facility_name||"")}</td>
+      <td>${escapeHtml(r.category||"")}</td>
+      <td>${escapeHtml(r.costNum)}</td>
+      <td><b>+${escapeHtml(r.score)}</b></td>
+      <td class="effects">${renderEffects(r)}</td>
+    </tr>
+  `).join("");
+
+  // if stack_group is 0 or no boosted facilities
+  if (!boosted.length){
+    bestT.innerHTML = `<tr><td colspan="6">このcategoryを上げる施設が見つかりません。</td></tr>`;
+    allT.innerHTML = bestT.innerHTML;
+    document.getElementById("kpiValue").textContent = "0";
+    document.getElementById("kpiCost").textContent = "0";
+  }
+}
+
+main().catch(err=>{
+  console.error(err);
+  alert("データ読み込みに失敗しました。club_facilities.json が同じ階層にあるか確認してください。");
+});
+</script>
+</body>
+</html>
