@@ -517,6 +517,27 @@
   .condVal{ font-size:13px; }
   .condBox{ padding:9px 10px; }
 }
+/* ===== 更新履歴UI（緑系） ===== */
+.updateCard{
+  margin-top:28px;
+  border-left:6px solid #2e7d32;
+  background:#f1faf3;
+}
+.updateItem{
+  padding:14px 6px;
+  border-bottom:1px solid #dce8dd;
+}
+.updateItem:last-child{ border-bottom:none; }
+.updateDate{
+  font-weight:900;
+  color:#2e7d32;
+  font-size:16px;
+  margin-bottom:6px;
+}
+.updateText{
+  font-size:15px;
+  line-height:1.6;
+}
 </style>
 </head>
 <body>
@@ -629,6 +650,30 @@
       <div id="barsPos" class="barList"></div>
     </div>
   </section>
+
+
+<!-- ===== 更新履歴 ===== -->
+<section class="card updateCard" id="changelog">
+  <div class="sectionTitle" style="text-align:left;">更新履歴</div>
+
+  <div class="updateItem">
+    <div class="updateDate">2026.02.14</div>
+    <div class="updateText">
+      ・独自ドメイン + HTTPS 対応<br>
+      ・コンボ検索：条件表示（PS/Lv/配置）を改善<br>
+      ・選手詳細：国籍／成長タイプ表示を追加
+    </div>
+  </div>
+
+  <div class="updateItem">
+    <div class="updateDate">2026.02.10</div>
+    <div class="updateText">
+      ・コンボ検索、選手検索、ランキング表示を追加
+    </div>
+  </div>
+
+</section>
+
 </div>
 
 <!-- モーダル -->

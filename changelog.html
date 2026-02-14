@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>更新履歴 | サカつく2026 DB</title>
+
+  <style>
+    :root{
+      --bg: #f7f7f7;
+      --card: #eaf7ee;           /* 薄い緑 */
+      --border: #2e7d32;         /* 緑枠 */
+      --text: #111;
+      --muted: #5a5a5a;
+      --chip: rgba(255,255,255,.75);
+      --chip-border: rgba(0,0,0,.08);
+    }
+
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .wrap{
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 18px 14px 48px;
+    }
+
+    .page-title{
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: .02em;
+      margin: 8px 0 14px;
+    }
+
+    .sub{
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 18px;
+    }
+
+    /* 緑枠カード */
+    .log-card{
+      position: relative;
+      background: var(--card);
+      border-radius: 18px;
+      border: 2px solid rgba(46,125,50,.25);
+      padding: 16px 14px 14px 18px;
+      margin: 14px 0;
+      overflow: hidden;
+    }
+    .log-card::before{
+      content:"";
+      position:absolute;
+      left:0; top:0; bottom:0;
+      width: 8px;
+      background: var(--border);
+    }
+
+    .log-head{
+      display:flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      padding-left: 6px;
+    }
+
+    .date{
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: .02em;
+    }
+
+    .ver{
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 700;
+      background: var(--chip);
+      border: 1px solid var(--chip-border);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .tags{
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-left: auto;
+    }
+
+    .tag{
+      font-size: 12px;
+      font-weight: 800;
+      color: #1b5e20;
+      background: rgba(46,125,50,.10);
+      border: 1px solid rgba(46,125,50,.25);
+      padding: 4px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    ul{
+      margin: 0;
+      padding-left: 24px;
+      line-height: 1.7;
+    }
+    li{
+      margin: 2px 0;
+      word-break: break-word;
+    }
+
+    .footer{
+      margin-top: 22px;
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .back{
+      display:inline-block;
+      text-decoration:none;
+      font-weight: 900;
+      color: #0b3d0f;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.12);
+      padding: 10px 14px;
+      border-radius: 12px;
+    }
+
+    .note{
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="page-title">更新履歴</div>
+    <div class="sub">サイトの機能追加・修正・データ更新の履歴です。</div>
+
+    <!-- ▼ ここから1件ずつ追加（新しいものを上に） -->
+    <section class="log-card">
+      <div class="log-head">
+        <div class="date">2026-02-14</div>
+        <div class="ver">ver 1.2.0</div>
+        <div class="tags">
+          <span class="tag">修正</span>
+          <span class="tag">UI</span>
+          <span class="tag">データ</span>
+        </div>
+      </div>
+      <ul>
+        <li>コンボ検索：条件表示を整理（PS表記、枠内レイアウト調整）</li>
+        <li>選手詳細：国籍・成長タイプ表示を追加</li>
+        <li>独自ドメイン + HTTPS 対応</li>
+      </ul>
+    </section>
+
+    <section class="log-card">
+      <div class="log-head">
+        <div class="date">2026-02-10</div>
+        <div class="ver">ver 1.1.0</div>
+        <div class="tags">
+          <span class="tag">機能追加</span>
+        </div>
+      </div>
+      <ul>
+        <li>コンボ検索（ポリシー/ポジション/プレイスタイル/PS Lv）</li>
+        <li>ランキング表示（初期総合力/最大強化など）</li>
+      </ul>
+    </section>
+    <!-- ▲ ここまで -->
+
+    <div class="footer">
+      <a class="back" href="index.html">← サイトに戻る</a>
+      <div class="note">※ 更新が増えたら、同じ「log-card」を上に追記していくだけでOK</div>
+    </div>
+  </div>
+</body>
+</html>
