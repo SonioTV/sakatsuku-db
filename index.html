@@ -114,12 +114,14 @@
   /* ポリシー選択（リング配置） */
   .policyRing{
     display:grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap:12px;
     justify-items:center;
-    align-items:center;
+    align-items:start;
     margin-top:10px;
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
   }
   .policyRing .imgTile{ width:120px; }
   .policyRing .imgTile img{ width:86px; height:60px; }
@@ -694,6 +696,19 @@
   <section id="panelBonus" class="panel">
     <div class="card">
       <div class="sectionTitle" style="text-align:left;">総合力ランキング</div>
+
+      <!-- ===== ホームタウン関連 ===== -->
+      <div class="resultGroupTitle" style="margin-top:4px;">ホームタウン関連</div>
+      <div style="text-align:center; margin:12px 0 18px;">
+        <a href="stadium.html"
+           style="display:inline-block;padding:14px 24px;margin:10px;font-size:20px;font-weight:900;background:#4a90e2;color:#fff;border-radius:16px;text-decoration:none;box-shadow:0 10px 20px rgba(0,0,0,.15);">
+          スタジアム施設一覧
+        </a>
+        <a href="clubhouse.html"
+           style="display:inline-block;padding:14px 24px;margin:10px;font-size:20px;font-weight:900;background:#2e7d32;color:#fff;border-radius:16px;text-decoration:none;box-shadow:0 10px 20px rgba(0,0,0,.15);">
+          クラブハウス設備一覧
+        </a>
+      </div>
 
       <div class="resultGroupTitle">① 初期総合力 TOP10</div>
       <div class="tableWrap"><table id="tblOverall" class="rankTable"></table></div>
