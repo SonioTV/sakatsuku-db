@@ -538,6 +538,38 @@
   font-size:15px;
   line-height:1.6;
 }
+
+  /* --- Site pages table --- */
+  #site-pages{ margin:14px auto 18px; }
+  .site-pages-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .site-pages-table th,
+  .site-pages-table td{
+    padding:10px 8px;
+    border-bottom:1px solid #e7e9f0;
+    vertical-align:top;
+  }
+  .site-pages-table th{
+    text-align:left;
+    color:var(--muted);
+    font-weight:800;
+    letter-spacing:.02em;
+    white-space:nowrap;
+  }
+  .site-pages-table td:first-child{
+    width:34%;
+    white-space:nowrap;
+  }
+  .site-pages-table a{
+    color:var(--green-dark);
+    text-decoration:none;
+    font-weight:800;
+  }
+  .site-pages-table a:hover{ text-decoration:underline; }
+
 </style>
 </head>
 <body>
@@ -545,6 +577,24 @@
 
 <div class="wrap">
   <h1>サカつく2026 検索ツール</h1>
+
+  <!-- Site pages (About/Policy/Contact etc.) -->
+  <section class="card" id="site-pages" aria-label="サイト情報ページ">
+    <h2 style="margin:0 0 10px;">サイト情報</h2>
+    <table class="site-pages-table">
+      <thead>
+        <tr><th>ページ</th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="about.html">about.html</a></td><td>このサイトについて</td></tr>
+        <tr><td><a href="privacy.html">privacy.html</a></td><td>プライバシーポリシー</td></tr>
+        <tr><td><a href="terms.html">terms.html</a></td><td>利用規約</td></tr>
+        <tr><td><a href="disclosure.html">disclosure.html</a></td><td>運営者情報・広告/免責（収益化向け）</td></tr>
+        <tr><td><a href="contact.html">contact.html</a></td><td>お問い合わせ</td></tr>
+      </tbody>
+    </table>
+  </section>
+
 <!-- ===== 更新履歴 ===== -->
 <section class="card updateCard" id="changelog">
   <div class="sectionTitle" style="text-align:left;">更新履歴</div>
