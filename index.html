@@ -1132,7 +1132,7 @@ function runComboSearch(){
       const name = getComboField(combo, ["name","comboName","formationName","title"], "名称なし");
       const formation = getComboField(combo, ["formation","formationCode","フォーメーション"], "-");
       const rank = normalizeRank(getComboField(combo, ["rank","ランク"], "-"));
-      const policy = getComboField(combo, ["policy","ポリシー"], "-");
+      const policy = (getComboPolicys(combo).filter(Boolean).join(" / ")) || getComboField(combo, ["policy","ポリシー"], "-");
       const effect = getComboField(combo, ["effect","効果"], "-");
       const need = getComboField(combo, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
 
@@ -1166,6 +1166,7 @@ function runComboSearch(){
         <div class="kv">
           <div class="k">フォーメーション</div><div class="v">${esc(formation)}</div>
           <div class="k">ランク</div><div class="v">${esc(rank)}</div>
+          <div class="k">ポリシー</div><div class="v">${esc(policy)}</div>
           <div class="k">効果</div><div class="v">${esc(effect)}</div>
           <div class="k">必要人数</div><div class="v">${esc(need)}</div>
           <div class="k">条件</div><div class="v">${condBlock}</div>
@@ -1346,7 +1347,7 @@ function renderPlayersForCombo(){
 
     for(const p of PLAYERS){
       const m = playerMatchesCondition(p, cond, comboPolicys);
-      if(m.full) matchedFull.push(p);
+      if(m.ok) matchedFull.push(p);
       else if(m.core && !m.polOk) matchedPolDiff.push(p);
     }
 
@@ -1365,7 +1366,6 @@ function renderPlayersForCombo(){
       <div class="kv" style="grid-template-columns:110px 1fr;">
         <div class="k">ポジション</div><div class="v">${esc(pos)}</div>
         <div class="k">プレイスタイル</div><div class="v">${esc(style)}${lvReq ? " " + esc(romanLv(lvReq)) : ""}</div>
-        <div class="k">ポリシー</div><div class="v">${esc(pol)}</div>
       </div>
       <div style="margin-top:12px;">
         <div style="font-weight:900;font-size:18px;margin:10px 0 8px;">完全一致（${matchedFull.length}人）</div>
@@ -1427,11 +1427,11 @@ function renderPlayerNameOnlyList(arr){
         <tr><th></th><th>内容</th></tr>
       </thead>
       <tbody>
-        <tr><td><a href="about.html">about.html</a></td><td>このサイトについて</td></tr>
-        <tr><td><a href="privacy.html">privacy.html</a></td><td>プライバシーポリシー</td></tr>
-        <tr><td><a href="terms.html">terms.html</a></td><td>利用規約</td></tr>
-        <tr><td><a href="disclosure.html">disclosure.html</a></td><td>運営者情報・広告/免責（収益化向け）</td></tr>
-        <tr><td><a href="contact.html">contact.html</a></td><td>お問い合わせ</td></tr>
+        <tr><td><a href="about.html">このサイトについて</a></td><td>概要・目的</td></tr>
+        <tr><td><a href="privacy.html">プライバシーポリシー</a></td><td>個人情報の取り扱い</td></tr>
+        <tr><td><a href="terms.html">利用規約</a></td><td>ご利用上のルール</td></tr>
+        <tr><td><a href="disclosure.html">運営者情報・広告/免責</a></td><td>広告・免責・収益化</td></tr>
+        <tr><td><a href="contact.html">お問い合わせ</a></td><td>X / Googleフォーム</td></tr>
       </tbody>
     </table>
   </section>
