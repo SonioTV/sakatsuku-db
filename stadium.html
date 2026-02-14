@@ -78,8 +78,7 @@ td.effects{white-space:normal;}
 <body>
 <div class="wrap">
   <h1>スタジアム施設シミュレーション</h1>
-  <p class="sub">選んだ「category（効果）」が最大になる施設の組み合わせ（最大設置数＝stack_group）を表示します。</p>
-  <div class="nav">
+<div class="nav">
     <a href="index.html">検索ツールへ戻る</a>
     <a href="clubhouse.html">クラブハウス編へ</a>
   </div>
@@ -89,48 +88,20 @@ td.effects{white-space:normal;}
     <div style="text-align:center;">
       <select id="selCategory" class="bigSelect" aria-label="category select"></select>
     </div>
-    <button id="btnCalc" class="bigBtn" type="button">最大組み合わせを計算</button>
-    <p class="note">※効果の合算は単純加算 / コストは cost（D列）合計 / 同一categoryの最大設置数は stack_group。</p>
+    <button id="btnCalc" class="bigBtn" type="button">施設一覧を表示</button>
+<div class="hr"></div>
 
-    <div class="hr"></div>
-
+    
     <div id="outArea" style="display:none;">
-      <div class="sectionTitle">結果（最適組み合わせ）</div>
-      <div class="kpi">
-        <div class="box"><div class="k">最大化対象（選択category）の合計上昇Lv</div><div id="kpiValue" class="v">-</div></div>
-        <div class="box"><div class="k">施設の総コスト</div><div id="kpiCost" class="v">-</div></div>
-      </div>
-
+      <div class="sectionTitle">このカテゴリが上昇する施設一覧</div>
       <div class="tableWrap">
-        <table aria-label="best combination table">
+        <table aria-label="facilities table">
           <thead>
             <tr>
-              <th>施設ID</th>
               <th>施設名</th>
-              <th>category</th>
+              <th>カテゴリ</th>
               <th>コスト</th>
-              <th>選択categoryの上昇Lv</th>
-              <th>効果（effect1~3）</th>
-            </tr>
-          </thead>
-          <tbody id="bestTbody"></tbody>
-        </table>
-      </div>
-
-      <div class="hr"></div>
-
-      <div class="sectionTitle">参考：このcategoryが上がる施設一覧</div>
-      <div class="small" style="text-align:center;margin-top:-6px;">（上の最適組み合わせは、この一覧から「上昇Lvが高い順に stack_group 件」抽出したものです）</div>
-      <div class="tableWrap">
-        <table aria-label="all facilities table">
-          <thead>
-            <tr>
-              <th>施設ID</th>
-              <th>施設名</th>
-              <th>category</th>
-              <th>コスト</th>
-              <th>選択categoryの上昇Lv</th>
-              <th>効果（effect1~3）</th>
+              <th>上昇効果</th>
             </tr>
           </thead>
           <tbody id="allTbody"></tbody>
@@ -138,6 +109,7 @@ td.effects{white-space:normal;}
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <script>
@@ -193,60 +165,29 @@ function calc(rows){
     costNum: Number(r.cost||0)
   })).filter(r => r.score > 0);
 
-  // stack_group is per-category max count. If inconsistent, use the minimum among candidates.
-  const stackCandidates = boosted.map(r => Number(r.stack_group||0)).filter(n => Number.isFinite(n) && n>0);
-  const stackGroup = stackCandidates.length ? Math.min(...stackCandidates) : 0;
-
-  // best: top k by score, tie-breaker: lower cost, then id
-  const best = boosted.slice().sort((a,b)=>{
-    if (b.score !== a.score) return b.score - a.score;
-    if (a.costNum !== b.costNum) return a.costNum - b.costNum;
-    return String(a.facility_id).localeCompare(String(b.facility_id));
-  }).slice(0, stackGroup);
-
-  const totalScore = best.reduce((s,r)=>s+r.score,0);
-  const totalCost = best.reduce((s,r)=>s+r.costNum,0);
-
+  // 表示
   document.getElementById("outArea").style.display = "block";
-  document.getElementById("kpiValue").textContent = `${totalScore}`;
-  document.getElementById("kpiCost").textContent = `${totalCost}`;
-
-  const bestT = document.getElementById("bestTbody");
-  bestT.innerHTML = best.map(r => `
-    <tr>
-      <td>${escapeHtml(r.facility_id||"")}</td>
-      <td>${escapeHtml(r.facility_name||"")}</td>
-      <td>${escapeHtml(r.category||"")}</td>
-      <td>${escapeHtml(r.costNum)}</td>
-      <td><b>+${escapeHtml(r.score)}</b></td>
-      <td class="effects">${renderEffects(r)}</td>
-    </tr>
-  `).join("");
 
   const allT = document.getElementById("allTbody");
+  if (!boosted.length){
+    allT.innerHTML = `<tr><td colspan="4">このカテゴリが上昇する施設が見つかりません。</td></tr>`;
+    return;
+  }
+
   const allSorted = boosted.slice().sort((a,b)=>{
-    if (b.score !== a.score) return b.score - a.score;
-    if (a.costNum !== b.costNum) return a.costNum - b.costNum;
-    return String(a.facility_id).localeCompare(String(b.facility_id));
+    if (b.score !== a.score) return b.score - a.score;       // 上昇Lvが高い順
+    if (a.costNum !== b.costNum) return a.costNum - b.costNum; // 同値ならコスト低い順
+    return String(a.facility_name||"").localeCompare(String(b.facility_name||""), "ja");
   });
+
   allT.innerHTML = allSorted.map(r => `
     <tr>
-      <td>${escapeHtml(r.facility_id||"")}</td>
       <td>${escapeHtml(r.facility_name||"")}</td>
       <td>${escapeHtml(r.category||"")}</td>
       <td>${escapeHtml(r.costNum)}</td>
-      <td><b>+${escapeHtml(r.score)}</b></td>
       <td class="effects">${renderEffects(r)}</td>
     </tr>
   `).join("");
-
-  // if stack_group is 0 or no boosted facilities
-  if (!boosted.length){
-    bestT.innerHTML = `<tr><td colspan="6">このcategoryを上げる施設が見つかりません。</td></tr>`;
-    allT.innerHTML = bestT.innerHTML;
-    document.getElementById("kpiValue").textContent = "0";
-    document.getElementById("kpiCost").textContent = "0";
-  }
 }
 
 main().catch(err=>{
