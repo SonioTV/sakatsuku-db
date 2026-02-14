@@ -996,12 +996,16 @@ function runComboSearch(){
       return;
     }
     arr.forEach(({combo})=>{
+      const card = document.createElement("div");
+      card.className = "comboCard" + (cls ? (" " + cls) : "");
+
       const name = getComboField(combo, ["name","comboName","formationName","title"], "名称なし");
       const formation = getComboField(combo, ["formation","formationCode","フォーメーション"], "-");
       const rank = normalizeRank(getComboField(combo, ["rank","ランク"], "-"));
       const policy = getComboField(combo, ["policy","ポリシー"], "-");
       const effect = getComboField(combo, ["effect","効果"], "-");
       const need = getComboField(combo, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
+
       const condHtml = getComboConditions(combo).map(cond => {
         const p = getComboField(cond, ["position","pos","ポジション"], "-");
         const s = getComboField(cond, ["playStyle","style","プレイスタイル"], "-");
@@ -1029,8 +1033,8 @@ function runComboSearch(){
           <div class="k">ポリシー</div><div class="v">${esc(policy)}</div>
           <div class="k">効果</div><div class="v">${esc(effect)}</div>
           <div class="k">必要人数</div><div class="v">${esc(need)}</div>
-        <div class="k">条件</div><div class="v">${condBlock}</div>
-</div>
+          <div class="k">条件</div><div class="v">${condBlock}</div>
+        </div>
       `;
       result.appendChild(card);
     });
