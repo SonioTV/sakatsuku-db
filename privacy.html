@@ -5,22 +5,61 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>プライバシーポリシー | サカつく2026攻略DB</title>
 <style>
-body{font-family:sans-serif;line-height:1.8;margin:20px;max-width:920px}
-h1{margin:0 0 8px}
-small{color:#555}
+:root{
+  --fg:#111; --muted:#555; --border:#eaeaea; --bg:#fff; --panel:#f7f7f7;
+  --link:#0b5ed7;
+}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;margin:0;background:var(--bg);color:var(--fg)}
+main{max-width:920px;margin:0 auto;padding:20px}
+h1{margin:0 0 8px;font-size:28px}
+h2{margin:22px 0 10px;font-size:20px}
+small{color:var(--muted)}
+a{color:var(--link)}
+a:hover{opacity:.85}
 .section{margin:24px 0}
+.box{background:var(--panel);border:1px solid #e5e5e5;border-radius:12px;padding:14px 16px}
+.hr{border-top:1px solid var(--border);margin:18px 0}
+.topbar{border-bottom:1px solid var(--border);background:#fff}
+.topbarInner{max-width:920px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:900}
+.brand a{color:inherit;text-decoration:none}
+.nav a{margin-left:10px;text-decoration:none;font-size:14px}
+.backlink{margin-top:34px}
+.backbtn{
+  display:inline-block;padding:10px 14px;border:1px solid rgba(0,0,0,.12);
+  border-radius:10px;text-decoration:none;font-weight:900;background:#fff
+}
+.footer{margin-top:44px;padding:18px 0;border-top:1px solid var(--border);font-size:14px;text-align:center}
+.footer a{text-decoration:none}
+@media (max-width:480px){
+  main{padding:16px}
+  h1{font-size:24px}
+  .nav{display:none}
+}
 </style>
 </head>
 <body>
+<header class="topbar">
+  <div class="topbarInner">
+    <div class="brand"><a href="index.html">サカつく2026攻略DB</a></div>
+    <div class="nav">
+      <a href="about.html">このサイトについて</a>
+      <a href="privacy.html">プライバシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="disclosure.html">広告・PR</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+  </div>
+</header>
 
+<main>
 <h1>プライバシーポリシー</h1>
 <small>最終更新日：2026-02-14</small>
 
 <div class="section">
 <h2>1. 取得する情報</h2>
-<p>
-本サイトでは、以下の情報を取得する場合があります。
-</p>
+<p>本サイトでは、以下の情報を取得する場合があります。</p>
 <ul>
   <li>お問い合わせ時に入力された情報（名称・メールアドレス・お問い合わせ内容等）</li>
   <li>アクセス解析・広告配信に伴いCookie等を通じて収集される情報（閲覧ページ、滞在時間、端末情報、IPアドレス等）</li>
@@ -61,9 +100,7 @@ small{color:#555}
 
 <div class="section">
 <h2>6. 個人情報の第三者提供</h2>
-<p>
-法令に基づく場合等を除き、本人の同意なく第三者に個人情報を提供しません。
-</p>
+<p>法令に基づく場合等を除き、本人の同意なく第三者に個人情報を提供しません。</p>
 </div>
 
 <div class="section">
@@ -75,17 +112,20 @@ small{color:#555}
 
 <div class="section">
 <h2>8. お問い合わせ</h2>
-<p>
-本ポリシーに関するお問い合わせは <a href="contact.html">お問い合わせ</a> よりお願いいたします。
-</p>
+<p>本ポリシーに関するお問い合わせは <a href="contact.html">お問い合わせ</a> よりお願いいたします。</p>
 </div>
 
-<footer style="margin-top:48px;padding:18px 0;border-top:1px solid #eee;font-size:14px;">
+<div class="backlink">
+  <a class="backbtn" href="index.html">← サイトに戻る</a>
+</div>
+
+<footer class="footer">
   <a href="about.html">このサイトについて</a> |
+  <a href="privacy.html">プライバシーポリシー</a> |
   <a href="terms.html">利用規約</a> |
   <a href="disclosure.html">広告・PR表記</a> |
   <a href="contact.html">お問い合わせ</a>
 </footer>
-
+</main>
 </body>
 </html>
