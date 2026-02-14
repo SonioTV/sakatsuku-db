@@ -243,9 +243,9 @@
   .comboCard.blue{ border-left-color:#1565c0; background:#e8f1ff; }
   .comboCard.gray{ border-left-color:#9aa0aa; background:#f3f4f6; }
   .comboName{ font-size:20px; font-weight:900; margin:0 0 8px; }
-  .kv{ display:grid; grid-template-columns: 120px 1fr; gap:6px 10px; }
+  .kv{ display:grid; grid-template-columns: 108px 1fr; gap:6px 10px; }
   .k{ color:#000; font-weight:900; }
-  .v{ color:#111; }
+  .v{ color:#111; overflow-wrap:anywhere; word-break:break-word; }
   .needNote{ margin-top:10px; color:#111; font-weight:900; }
 
   /* 選手検索：ランクタイル */
@@ -480,35 +480,36 @@
   display:flex;
   flex-direction:column;
   gap:10px;
-  overflow-x:auto;           /* 折り返さずに表示（必要なら横スクロール） */
-  padding-bottom:2px;
+  max-width:100%;
 }
 .condBox{
   background:rgba(255,255,255,.65);
   border:1px solid rgba(0,0,0,.10);
   border-radius:14px;
   padding:10px 12px;
+  max-width:100%;
 }
 .condRow{
   display:flex;
   gap:8px;
   align-items:baseline;
-  flex-wrap:nowrap;          /* 折り返し禁止 */
-  white-space:nowrap;        /* 折り返し禁止 */
+  flex-wrap:wrap;          /* 枠内に収めるため改行OK */
+  white-space:normal;
 }
 .condKey{
   font-weight:900;
   color:#111;
-  min-width:110px;           /* 「ポジション：」「プレイスタイル：」を揃える */
+  min-width:88px;          /* 「ポジション：」「PS：」の「：」を揃える */
 }
 .condVal{
   font-weight:900;
   color:#111;
-  white-space:nowrap;
+  overflow-wrap:anywhere;
+  word-break:break-word;
 }
 
 @media (max-width: 480px){
-  .condKey{ min-width:96px; font-size:13px; }
+  .condKey{ min-width:78px; font-size:13px; }
   .condVal{ font-size:13px; }
   .condBox{ padding:9px 10px; }
 }
@@ -1042,7 +1043,7 @@ function runComboSearch(){
         return `
           <div class="condBox">
             <div class="condRow"><span class="condKey">ポジション：</span><span class="condVal">${esc(p)}</span></div>
-            <div class="condRow"><span class="condKey">プレイスタイル：</span><span class="condVal">${styleText}</span></div>
+            <div class="condRow"><span class="condKey">PS：</span><span class="condVal">${styleText}</span></div>
           </div>`;
       }).join("");
 
