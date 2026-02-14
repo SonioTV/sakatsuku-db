@@ -1,209 +1,162 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>スタジアム施設一覧 - サカつく2026 DB</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>サカつく2026 DB - スタジアム施設一覧</title>
 <style>
-  :root {
-    --bg:#f3f5f9;
-    --card:#ffffff;
-    --text:#111827;
-    --muted:#6b7280;
-    --line:rgba(0,0,0,.10);
-    --shadow:0 18px 40px rgba(0,0,0,.08);
-    --radius:20px;
-    --btn:#f59e0b;
-    --btnText:#fff;
-    --primary:#2563eb;
-  }
-  body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif; background:var(--bg); color:var(--text); }
-  .wrap{ width:min(980px, 92%); margin:0 auto; padding:18px 0 36px; }
-  h1{ font-size:34px; margin:14px 0 14px; text-align:center; letter-spacing:.02em; }
-  .topBtns{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:14px; }
-  .topBtns a{ text-decoration:none; font-weight:900; padding:12px 16px; border-radius:16px; background:#fff; border:2px solid #c7d2fe; color:var(--primary); box-shadow:0 10px 18px rgba(0,0,0,.06); }
-  .card{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; }
-  .sectionTitle{ font-size:22px; font-weight:900; text-align:center; margin:0 0 12px; }
-  select.bigSelect{ width:min(520px, 100%); font-size:22px; font-weight:900; padding:14px 16px; border-radius:18px; border:2px solid #d1d5db; background:#f7f7f8; }
-  .center{ display:flex; justify-content:center; }
-  .bigBtn{ width:min(520px, 100%); display:block; margin:14px auto 0; padding:18px 18px; font-size:30px; font-weight:900; border-radius:20px; border:none; cursor:pointer; background:var(--btn); color:var(--btnText); box-shadow:0 16px 26px rgba(245,158,11,.25); }
-  .bigBtn:active{ transform:scale(.99); }
-  .hr{ height:1px; background:rgba(0,0,0,.10); margin:18px 0; }
-  .muted{ color:var(--muted); font-weight:700; font-size:14px; text-align:center; }
-  /* list */
-  .listTitle{ font-size:20px; font-weight:900; text-align:center; margin:2px 0 12px; }
-  .list{ display:flex; flex-direction:column; gap:10px; }
-  .item{ border:1px solid var(--line); border-radius:18px; padding:12px 14px; background:#fff; }
-  .itemTop{ display:flex; gap:10px; align-items:baseline; justify-content:space-between; flex-wrap:wrap; }
-  .name{ font-weight:900; font-size:18px; }
-  .meta{ display:flex; gap:10px; flex-wrap:wrap; color:var(--muted); font-weight:900; }
-  .pill{ padding:4px 10px; border-radius:999px; background:#eef2ff; color:#1e3a8a; font-size:13px; }
-  .pill.gray{ background:#f3f4f6; color:#111827; }
-  .effects{ margin-top:10px; display:flex; flex-wrap:wrap; gap:8px; }
-  .eff{ border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-weight:900; background:#fafafa; }
-  /* desktop table (no horizontal scroll) */
-  table{ width:100%; border-collapse:separate; border-spacing:0; margin-top:8px; }
-  th,td{ border-bottom:1px solid rgba(0,0,0,.08); padding:10px 10px; vertical-align:top; }
-  th{ text-align:left; font-size:13px; color:var(--muted); font-weight:900; }
-  td{ font-weight:900; word-break:break-word; overflow-wrap:anywhere; }
-  .tblWrap{ margin-top:8px; }
-  @media (max-width: 680px){
-    h1{ font-size:30px; }
-    .bigBtn{ font-size:28px; }
-    .tblWrap{ display:none; }
-  }
-  @media (min-width: 681px){
-    .list{ display:none; }
-  }
+:root{
+  --blue:#1e88ff; --blue2:#0b5bd3;
+  --bg:#f6f7fb; --card:#fff; --text:#111; --muted:#666; --line:#d7dbe6;
+  --shadow:0 10px 30px rgba(0,0,0,.08); --radius:18px;
+  --orange:#f59e0b; --orange2:#f5b041;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;background:var(--bg);color:var(--text);}
+.wrap{max-width:980px;margin:0 auto;padding:18px 14px 40px;}
+h1{margin:18px 0 14px;font-size:40px;letter-spacing:.5px;text-align:center;}
+.topLinks{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:10px 0 18px;}
+.aBtn{display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 18px;min-width:220px;border-radius:18px;border:3px solid #cfe0ff;
+  text-decoration:none;font-weight:900;font-size:22px;color:var(--blue2);background:#fff;
+}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:18px 16px;}
+.sectionTitle{font-size:26px;font-weight:900;text-align:center;margin:4px 0 12px;}
+.bigSelect{width:min(560px, 100%);display:block;margin:0 auto;border-radius:18px;border:3px solid #d0d5e2;
+  padding:14px 16px;font-size:26px;font-weight:900;}
+.bigBtn{width:min(560px, 100%);display:block;margin:16px auto 4px;padding:18px 18px;font-size:34px;
+  font-weight:900;border-radius:24px;border:none;cursor:pointer;background:var(--orange);color:#fff;
+  box-shadow:0 16px 26px rgba(245,158,11,.25);}
+.bigBtn:active{transform:scale(.99);}
+.hr{height:1px;background:#e7e2d7;margin:14px 0 16px;}
+.resultTitle{text-align:center;font-size:30px;font-weight:900;margin:4px 0 12px;}
+.list{display:flex;flex-direction:column;gap:14px;}
+.item{border:2px solid rgba(0,0,0,.08);border-radius:22px;padding:14px 14px 12px;background:#fff;}
+.name{font-size:24px;font-weight:900;text-align:center;line-height:1.25;word-break:break-word;}
+.metaRow{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:10px;}
+.badge{display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:999px;
+  font-weight:900;font-size:18px;background:#eef3ff;color:#1f3b7a;border:1px solid rgba(0,0,0,.06);}
+.badge.cost{background:#f3f4f6;color:#111;}
+.effects{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:10px;}
+.effect{padding:8px 14px;border-radius:999px;border:2px solid rgba(0,0,0,.12);font-weight:900;font-size:20px;background:#fff;}
+.smallMuted{text-align:center;color:var(--muted);font-weight:900;margin-top:10px;}
+@media (max-width: 480px){
+  h1{font-size:34px;}
+  .aBtn{min-width:160px;font-size:20px;padding:12px 14px;}
+  .bigSelect{font-size:22px;}
+  .bigBtn{font-size:30px;}
+  .name{font-size:22px;}
+  .badge{font-size:16px;}
+  .effect{font-size:18px;}
+}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>スタジアム施設一覧</h1>
+<div class="wrap">
+  <h1>スタジアム施設一覧</h1>
 
-    <div class="topBtns">
-      <a href="index.html">検索ツールへ戻る</a>
-      <a href="clubhouse.html">クラブハウス編へ</a>
-    </div>
-
-    <div class="card">
-      <div class="sectionTitle">効果カテゴリを選択</div>
-      <div class="center">
-        <select id="catSel" class="bigSelect" aria-label="category select"></select>
-      </div>
-
-      <button class="bigBtn" id="runBtn">施設一覧を表示</button>
-
-      <div class="hr"></div>
-
-      <div class="listTitle">このカテゴリが上昇する施設一覧</div>
-      <div id="emptyMsg" class="muted" style="display:none;">該当施設がありません</div>
-
-      <!-- Mobile: card list -->
-      <div id="list" class="list" aria-label="facility list"></div>
-
-      <!-- Desktop: table (no horizontal scroll) -->
-      <div class="tblWrap">
-        <table aria-label="facility table">
-          <thead>
-            <tr>
-              <th style="width:34%;">施設名</th>
-              <th style="width:10%;">カテゴリ</th>
-              <th style="width:10%;">コスト</th>
-              <th>上昇効果</th>
-            </tr>
-          </thead>
-          <tbody id="tbody"></tbody>
-        </table>
-      </div>
-    </div>
+  <div class="topLinks">
+    <a class="aBtn" href="index.html">検索ツールへ戻る</a>
+    <a class="aBtn" href="clubhouse.html">クラブハウス編へ</a>
   </div>
 
+  <div class="card">
+    <div class="sectionTitle">効果カテゴリを選択</div>
+    <select id="catSel" class="bigSelect">
+<option value="満足度">満足度</option>
+<option value="収入力">収入力</option>
+<option value="PR力">PR力</option>
+    </select>
+
+    <button id="btnRun" class="bigBtn" type="button">一覧を表示</button>
+
+    <div class="hr"></div>
+
+    <div class="resultTitle">このカテゴリが上昇する施設一覧</div>
+
+    <div id="list" class="list"></div>
+    <div id="note" class="smallMuted"></div>
+  </div>
+</div>
+
 <script>
-  const DATA_URL = "stadium_facilities.json";
-  let DATA = [];
+const DATA_URL = "stadium_facilities.json";
+let DATA = [];
 
-  function esc(s){
-    return String(s ?? "").replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+function safeStr(x){ return (x===null||x===undefined) ? "" : String(x); }
+
+function getEffects(row){
+  const out = [];
+  for(let i=1;i<=3;i++){
+    const e = safeStr(row["effect"+i]).trim();
+    const v = Number(row["effect_value"+i]);
+    if(e && Number.isFinite(v) && v!==0) out.push({effect:e, value:v});
+  }
+  return out;
+}
+
+function hasSelectedEffect(row, selected){
+  return getEffects(row).some(ev => ev.effect === selected);
+}
+
+function esc(s){
+  return safeStr(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+function render(selected){
+  const list = document.getElementById("list");
+  const note = document.getElementById("note");
+  list.innerHTML = "";
+  note.textContent = "";
+
+  const rows = DATA.filter(r => hasSelectedEffect(r, selected));
+
+  rows.sort((a,b)=>{
+    const av = (getEffects(a).find(x=>x.effect===selected)||{value:0}).value;
+    const bv = (getEffects(b).find(x=>x.effect===selected)||{value:0}).value;
+    if(bv!==av) return bv-av;
+    const ac = Number(a.cost)||0, bc=Number(b.cost)||0;
+    if(ac!==bc) return ac-bc;
+    return safeStr(a.facility_name).localeCompare(safeStr(b.facility_name), "ja");
+  });
+
+  if(!rows.length){
+    note.textContent = "該当する施設がありません。";
+    return;
   }
 
-  function parseEffects(row){
-    const out = [];
-    for(let i=1;i<=3;i++) {
-      const k = row["effect"+i];
-      const v = row["effect_value"+i];
-      if(!k) continue;
-      const key = String(k).trim();
-      const val = Number(v ?? 0);
-      if(!key) continue;
-      out.push({key, val});
-    }
-    return out;
-  }
-
-  function sumLv(row){
-    let s=0;
-    for(let i=1;i<=3;i++) s += Number(row["effect_value"+i] ?? 0);
-    return s;
-  }
-
-  function render(cat){
-    const listEl = document.getElementById("list");
-    const tbody = document.getElementById("tbody");
-    const emptyMsg = document.getElementById("emptyMsg");
-    listEl.innerHTML = "";
-    tbody.innerHTML = "";
-
-    const rows = DATA
-      .filter(r => String(r.category ?? "").trim() === cat)
-      .map(r => {
-        const effects = parseEffects(r);
-        return {
-          name: r.facility_name ?? r.name ?? "",
-          category: String(r.category ?? "").trim(),
-          cost: Number(r.cost ?? 0),
-          effects,
-          totalLv: sumLv(r),
-        };
-      })
-      .sort((a,b)=> (b.totalLv - a.totalLv) || (a.cost - b.cost) || String(a.name).localeCompare(String(b.name), "ja"));
-
-    if(!rows.length) {
-      emptyMsg.style.display = "block";
-      return;
-    }
-    emptyMsg.style.display = "none";
-
-    // Mobile cards
-    for(const r of rows){
-      const effHtml = r.effects.map(e=>`<span class="eff">${esc(e.key)} +${e.val}</span>`).join("");
-      const div = document.createElement("div");
-      div.className = "item";
-      div.innerHTML = `
-        <div class="itemTop">
-          <div class="name">${esc(r.name)}</div>
-          <div class="meta">
-            <span class="pill">${esc(r.category)}</span>
-            <span class="pill gray">コスト ${r.cost}</span>
-          </div>
+  list.innerHTML = rows.map(r=>{
+    const name = esc(r.facility_name || r.name || "-");
+    const cost = Number(r.cost)||0;
+    const effs = getEffects(r).map(ev=>`<span class="effect">${esc(ev.effect)} +${esc(ev.value)}</span>`).join("");
+    return `
+      <div class="item">
+        <div class="name">${name}</div>
+        <div class="metaRow">
+          <span class="badge">${esc(selected)}</span>
+          <span class="badge cost">コスト ${cost}</span>
         </div>
-        <div class="effects">${effHtml || "<span class='muted'>上昇効果なし</span>"}</div>
-      `;
-      listEl.appendChild(div);
-    }
+        <div class="effects">${effs || '<span class="effect">-</span>'}</div>
+      </div>
+    `;
+  }).join("");
 
-    // Desktop table
-    for(const r of rows){
-      const tr = document.createElement("tr");
-      const effText = r.effects.length
-        ? r.effects.map(e=>`${e.key} +${e.val}`).join(" / ")
-        : "-";
-      tr.innerHTML = `
-        <td>${esc(r.name)}</td>
-        <td>${esc(r.category)}</td>
-        <td>${r.cost}</td>
-        <td>${esc(effText)}</td>
-      `;
-      tbody.appendChild(tr);
-    }
-  }
+  note.textContent = `表示件数：${rows.length}`;
+}
 
-  async function init(){
+async function init(){
+  try{
     const res = await fetch(DATA_URL, {cache:"no-store"});
     DATA = await res.json();
-
-    const cats = Array.from(new Set(DATA.map(r=>String(r.category ?? "").trim()).filter(Boolean))).sort((a,b)=>a.localeCompare(b,"ja"));
-    const sel = document.getElementById("catSel");
-    sel.innerHTML = cats.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join("");
-    // default selection stays first
-    render(sel.value);
-    document.getElementById("runBtn").addEventListener("click", ()=> render(sel.value));
+  }catch(e){
+    document.getElementById("note").textContent = "データの読み込みに失敗しました。";
+    return;
   }
-
-  init().catch(err=>{
-    console.error(err);
-    alert("データの読み込みに失敗しました（JSON配置・ファイル名をご確認ください）");
+  document.getElementById("btnRun").addEventListener("click", ()=>{
+    render(document.getElementById("catSel").value);
   });
+}
+init();
 </script>
 </body>
 </html>

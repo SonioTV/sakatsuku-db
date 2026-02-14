@@ -111,6 +111,28 @@
     margin:10px auto 6px;
     max-width:720px;
   }
+  /* ポリシー選択（リング配置） */
+  .policyRing{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, auto);
+    gap:12px;
+    justify-items:center;
+    align-items:center;
+    margin-top:10px;
+  }
+  .policyRing .imgTile{ width:120px; }
+  .policyRing .imgTile img{ width:86px; height:60px; }
+  .policyRing .imgTile .lbl{ font-size:14px; }
+  .policyRing .imgTile[data-slot="top"]{ grid-column:2; grid-row:1; }
+  .policyRing .imgTile[data-slot="right"]{ grid-column:3; grid-row:2; }
+  .policyRing .imgTile[data-slot="bottom"]{ grid-column:2; grid-row:3; }
+  .policyRing .imgTile[data-slot="left"]{ grid-column:1; grid-row:2; }
+  @media (max-width: 480px){
+    .policyRing .imgTile{ width:110px; }
+    .policyRing .imgTile img{ width:80px; height:56px; }
+  }
+
   .imgTile{
     width:180px;
     padding:10px 10px 8px;
@@ -617,7 +639,7 @@
       </div>
 
       <div class="sectionTitle" style="font-size:22px;margin-top:2px;">【ポリシー】</div>
-      <div id="policyGrid" class="imgGrid" aria-label="policy grid"></div>
+      <div id="policyGrid" class="policyRing" aria-label="policy grid"></div>
 
       <div class="sectionTitle" style="font-size:22px;margin-top:10px;">【ポジション（複数可）】</div>
       <div class="posWrap">
@@ -671,38 +693,7 @@
   <!-- ===== タブ3：おまけ ===== -->
   <section id="panelBonus" class="panel">
     <div class="card">
-      <!-- ===== ホームタウン関連（新規） ===== -->
-      <div class="card" style="margin-bottom:20px;">
-        <div class="sectionTitle" style="font-size:24px;">ホームタウン関連</div>
-
-        <div style="text-align:center; margin-top:14px;">
-          <a href="stadium.html"
-             style="display:inline-block;
-                    padding:14px 24px;
-                    margin:10px;
-                    font-size:20px;
-                    font-weight:900;
-                    background:#4a90e2;
-                    color:#fff;
-                    border-radius:16px;
-                    text-decoration:none;
-                    box-shadow:0 10px 20px rgba(0,0,0,.15);">スタジアム施設一覧</a>
-
-          <a href="clubhouse.html"
-             style="display:inline-block;
-                    padding:14px 24px;
-                    margin:10px;
-                    font-size:20px;
-                    font-weight:900;
-                    background:#2e7d32;
-                    color:#fff;
-                    border-radius:16px;
-                    text-decoration:none;
-                    box-shadow:0 10px 20px rgba(0,0,0,.15);">クラブハウス設備一覧</a>
-        </div>
-      </div>
-
-      <div class="sectionTitle" style="text-align:left;">ランキング</div>
+      <div class="sectionTitle" style="text-align:left;">総合力ランキング</div>
 
       <div class="resultGroupTitle">① 初期総合力 TOP10</div>
       <div class="tableWrap"><table id="tblOverall" class="rankTable"></table></div>
