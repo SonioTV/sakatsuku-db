@@ -579,43 +579,12 @@
   <h1>サカつく2026 検索ツール</h1>
 
   <!-- Site pages (About/Policy/Contact etc.) -->
-  <section class="card" id="site-pages" aria-label="サイト情報ページ">
-    <h2 style="margin:0 0 10px;">サイト情報</h2>
-    <table class="site-pages-table">
-      <thead>
-        <tr><th>ページ</th><th>内容</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><a href="about.html">about.html</a></td><td>このサイトについて</td></tr>
-        <tr><td><a href="privacy.html">privacy.html</a></td><td>プライバシーポリシー</td></tr>
-        <tr><td><a href="terms.html">terms.html</a></td><td>利用規約</td></tr>
-        <tr><td><a href="disclosure.html">disclosure.html</a></td><td>運営者情報・広告/免責（収益化向け）</td></tr>
-        <tr><td><a href="contact.html">contact.html</a></td><td>お問い合わせ</td></tr>
-      </tbody>
-    </table>
-  </section>
+  
+
 
 <!-- ===== 更新履歴 ===== -->
-<section class="card updateCard" id="changelog">
-  <div class="sectionTitle" style="text-align:left;">更新履歴</div>
 
-  <div class="updateItem">
-    <div class="updateDate">2026.02.14</div>
-    <div class="updateText">
-      ・独自ドメイン + HTTPS 対応<br>
-      ・コンボ検索：条件表示（PS/Lv/配置）を改善<br>
-      ・選手詳細：国籍／成長タイプ表示を追加
-    </div>
-  </div>
 
-  <div class="updateItem">
-    <div class="updateDate">2026.02.10</div>
-    <div class="updateText">
-      ・コンボ検索、選手検索、ランキング表示を追加
-    </div>
-  </div>
-
-</section>
 
 
   <div class="tabs">
@@ -818,8 +787,7 @@ function setupTabs(){
         document.getElementById(b).classList.toggle("active", b===btnId);
         document.getElementById(p).classList.toggle("active", p===panelId);
       });
-      window.scrollTo({top:0, behavior:"smooth"});
-    });
+});
   });
 }
 </script>
@@ -837,8 +805,7 @@ function setupToTop(){
   window.addEventListener("scroll", onScroll, {passive:true});
   onScroll();
   btn.addEventListener("click", ()=>{
-    window.scrollTo({top:0, behavior:"smooth"});
-  });
+});
 }
 </script>
 
@@ -1011,7 +978,7 @@ function setupComboSearchUI(){
 
   // LV
   const lb = document.getElementById("lvBoard");
-  lb.innerHTML = [1,2,3].map(n=>`<div class="lvTile ${n===3?"selected":""}" data-lv="${n}">Lv${n}</div>`).join("");
+  lb.innerHTML = [1,2,3].map(n=>`<div class="lvTile ${selLv===n?"selected":""}" data-lv="${n}">Lv${n}</div>`).join("");
   lb.querySelectorAll(".lvTile").forEach(tile=>{
     tile.addEventListener("click", ()=>{
       selLv = Number(tile.dataset.lv);
@@ -1304,7 +1271,8 @@ function renderComboDetail(){
   const name = getComboField(c, ["name","comboName","formationName","title"], "名称なし");
   const formation = getComboField(c, ["formation","formationCode","フォーメーション"], "-");
   const rank = normalizeRank(getComboField(c, ["rank","ランク"], "-"));
-  const policy = getComboField(c, ["policy","ポリシー"], "-");
+  const policyArr = getComboPolicys(c);
+  const policy = policyArr.length ? policyArr.join(" / ") : "-";
   const effect = getComboField(c, ["effect","効果"], "-");
   const need = getComboField(c, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
   const condText = getComboConditions(c).map(cond => {
@@ -1329,31 +1297,41 @@ function renderComboDetail(){
   `;
 }
 
-function playerMatchesCondition(p, cond){
-  const pos = normalizePos(getComboField(cond, ["position","pos","ポジション"], ""));
-  const style = normalizeStyle(getComboField(cond, ["playStyle","style","プレイスタイル"], ""));
-  const pol = normalizePolicy(getComboField(cond, ["policy","ポリシー"], ""));
-  const lvReq = parseLvReq(getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], 0));
+function playerMatchesCondition(p, cond, comboPolicys){
+      const posReq   = getComboField(cond, ["pos","position","ポジション"], null);
+      const styleReq = getComboField(cond, ["playStyle","play_style","style","プレイスタイル","PS"], null);
 
-  // プレイヤー側
-  const pPos = normalizePos(p.mainPosition || "");
-  const pPol = normalizePolicy(p.policy || "");
-  const pStyle = normalizeStyle(p.playStyle || "");
-  const pLv = Number(p.playStyleLv ?? p.lv ?? 0);
+      // Lv はデータ側の揺れがあるので複数キーを許容
+      const lvReqRaw = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], null);
+      const lvReq = (lvReqRaw===null || lvReqRaw===undefined || lvReqRaw==="") ? null : Number(lvReqRaw);
 
-  const posOk = (pPos === pos) || (Array.isArray(p.positions) && p.positions.map(normalizePos).includes(pos));
-  const styleOk = !style ? true : (pStyle === style);
-  const polOk = !pol ? true : (pPol === pol);
-  const lvOk = !lvReq ? true : (pLv >= lvReq);
+      const pPos   = getComboField(p, ["mainPosition","main_position","position","ポジション","メインポジション"], "");
+      const pStyle = getComboField(p, ["playStyle","play_style","style","プレイスタイル"], "");
+      const pLvRaw = getComboField(p, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "");
+      const pLv = (pLvRaw===null || pLvRaw===undefined || pLvRaw==="") ? null : Number(pLvRaw);
 
-  return {posOk, styleOk, polOk, lvOk, full: (posOk && styleOk && polOk && lvOk), core:(posOk && styleOk && lvOk)};
-}
+      const posOk   = !posReq   || pPos   === posReq;
+      const styleOk = !styleReq || pStyle === styleReq;
+      const lvOk    = (lvReq===null) || (pLv===lvReq);
+
+      const core = posOk && styleOk && lvOk;
+
+      // combo のポリシー要件（条件側ではなく combo 側で管理）
+      const polReqs = Array.isArray(comboPolicys) ? comboPolicys.filter(Boolean) : [];
+      const pPol = getComboField(p, ["policy","ポリシー"], "");
+
+      const polOk = (polReqs.length===0) ? true : polReqs.includes(pPol);
+
+      return { ok: core && polOk, core, polOk };
+    }
+
 
 function renderPlayersForCombo(){
   const c = getSelectedCombo();
   const out = document.getElementById("playerResult");
   out.innerHTML = "";
   if(!c) return;
+  const comboPolicys = getComboPolicys(c);
 
   const conds = getComboConditions(c);
   if(!conds.length){
@@ -1367,14 +1345,14 @@ function renderPlayersForCombo(){
     const matchedPolDiff = [];
 
     for(const p of PLAYERS){
-      const m = playerMatchesCondition(p, cond);
+      const m = playerMatchesCondition(p, cond, comboPolicys);
       if(m.full) matchedFull.push(p);
       else if(m.core && !m.polOk) matchedPolDiff.push(p);
     }
 
     const pos = normalizePos(getComboField(cond, ["position","pos","ポジション"], "-"));
     const style = normalizeStyle(getComboField(cond, ["playStyle","style","プレイスタイル"], "-"));
-    const lvReq = getComboField(cond, ["lv","level","Lv","プレイスタイルLv"], "-");
+    const lvReq = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "-");
     const pol = normalizePolicy(getComboField(cond, ["policy","ポリシー"], "-"));
 
     const card = document.createElement("div");
@@ -1419,6 +1397,44 @@ function renderPlayerNameOnlyList(arr){
 }
 </script>
 
+
+
+<!-- ===== 更新履歴 / サイト情報（ページ下部表示） ===== -->
+<section class="card updateCard" id="changelog">
+  <div class="sectionTitle" style="text-align:left;">更新履歴</div>
+
+  <div class="updateItem">
+    <div class="updateDate">2026.02.14</div>
+    <div class="updateText">
+      ・独自ドメイン + HTTPS 対応<br>
+      ・コンボ検索：条件表示（PS/Lv/配置）を改善<br>
+      ・選手詳細：国籍／成長タイプ表示を追加
+    </div>
+  </div>
+
+  <div class="updateItem">
+    <div class="updateDate">2026.02.10</div>
+    <div class="updateText">
+      ・コンボ検索、選手検索、ランキング表示を追加
+    </div>
+  </div>
+
+</section>
+<section class="card" id="site-pages" aria-label="サイト情報ページ">
+    <h2 style="margin:0 0 10px;">サイト情報</h2>
+    <table class="site-pages-table">
+      <thead>
+        <tr><th></th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="about.html">about.html</a></td><td>このサイトについて</td></tr>
+        <tr><td><a href="privacy.html">privacy.html</a></td><td>プライバシーポリシー</td></tr>
+        <tr><td><a href="terms.html">terms.html</a></td><td>利用規約</td></tr>
+        <tr><td><a href="disclosure.html">disclosure.html</a></td><td>運営者情報・広告/免責（収益化向け）</td></tr>
+        <tr><td><a href="contact.html">contact.html</a></td><td>お問い合わせ</td></tr>
+      </tbody>
+    </table>
+  </section>
 <script>
 /* =========================
    タブ3：おまけ（ランキング/割合）
