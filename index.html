@@ -243,14 +243,9 @@
   .comboCard.blue{ border-left-color:#1565c0; background:#e8f1ff; }
   .comboCard.gray{ border-left-color:#9aa0aa; background:#f3f4f6; }
   .comboName{ font-size:20px; font-weight:900; margin:0 0 8px; }
-  .kv{ display:grid; grid-template-columns: 108px 1fr; gap:6px 10px; }
+  .kv{ display:grid; grid-template-columns: 120px 1fr; gap:6px 10px; }
   .k{ color:#000; font-weight:900; }
-  .v{ 
-  color:#111; 
-  overflow-wrap:break-word; 
-  word-break:normal;
-}
-
+  .v{ color:#111; }
   .needNote{ margin-top:10px; color:#111; font-weight:900; }
 
   /* 選手検索：ランクタイル */
@@ -405,7 +400,6 @@
     gap:12px;
   }
   .modalHead .ttl{ font-size:18px; font-weight:900; }
-  .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; }
   .modalHead button{
     border:none;
     background:transparent;
@@ -480,64 +474,6 @@
       .title-img{ border-radius: 12px; }
     }
 
-
-/* --- combo conditions (structured) --- */
-.condList{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  max-width:100%;
-}
-.condBox{
-  background:rgba(255,255,255,.65);
-  border:1px solid rgba(0,0,0,.10);
-  border-radius:14px;
-  padding:10px 12px;
-  max-width:100%;
-}
-.condRow{
-  display:flex;
-  align-items:baseline;
-  gap:4px;          /* 小さく */
-}
-.condKey{
-  font-weight:900;
-  color:#111;
-  min-width:88px;          /* 「ポジション：」「PS：」の「：」を揃える */
-}
-.condVal{
-  font-weight:900;
-  color:#111;
-  overflow-wrap:anywhere;
-  word-break:break-word;
-}
-
-@media (max-width: 480px){
-  .condKey{ min-width:78px; font-size:13px; }
-  .condVal{ font-size:13px; }
-  .condBox{ padding:9px 10px; }
-}
-/* ===== 更新履歴UI（緑系） ===== */
-.updateCard{
-  margin-top:28px;
-  border-left:6px solid #2e7d32;
-  background:#f1faf3;
-}
-.updateItem{
-  padding:14px 6px;
-  border-bottom:1px solid #dce8dd;
-}
-.updateItem:last-child{ border-bottom:none; }
-.updateDate{
-  font-weight:900;
-  color:#2e7d32;
-  font-size:16px;
-  margin-bottom:6px;
-}
-.updateText{
-  font-size:15px;
-  line-height:1.6;
-}
 </style>
 </head>
 <body>
@@ -576,7 +512,7 @@
       <div id="lvBoard" class="lvBoard" aria-label="lv board"></div>
 
       <button id="btnSearchCombo" class="bigBtn" type="button">検索</button>
-      <div id="comboErr" class="error">ポリシーを選択してください</div>
+      <div id="comboErr" class="error">ポジションを選択してください</div>
 
       <div id="comboResult" class="resultArea"></div>
     </div>
@@ -650,40 +586,13 @@
       <div id="barsPos" class="barList"></div>
     </div>
   </section>
-
-
-<!-- ===== 更新履歴 ===== -->
-<section class="card updateCard" id="changelog">
-  <div class="sectionTitle" style="text-align:left;">更新履歴</div>
-
-  <div class="updateItem">
-    <div class="updateDate">2026.02.14</div>
-    <div class="updateText">
-      ・独自ドメイン + HTTPS 対応<br>
-      ・コンボ検索：条件表示（PS/Lv/配置）を改善<br>
-      ・選手詳細：国籍／成長タイプ表示を追加
-    </div>
-  </div>
-
-  <div class="updateItem">
-    <div class="updateDate">2026.02.10</div>
-    <div class="updateText">
-      ・コンボ検索、選手検索、ランキング表示を追加
-    </div>
-  </div>
-
-</section>
-
 </div>
 
 <!-- モーダル -->
 <div id="modalBack" class="modalBack" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal">
     <div class="modalHead">
-      <div>
-        <div id="modalTitle" class="ttl">詳細</div>
-        <div id="modalSub" class="subttl"></div>
-      </div>
+      <div id="modalTitle" class="ttl">詳細</div>
       <button id="modalClose" type="button" aria-label="close">✕</button>
     </div>
     <div id="modalBody" class="modalBody"></div>
@@ -703,8 +612,6 @@ let playerById = new Map();
 
 function safeStr(v){ return (v===null || v===undefined) ? "" : String(v); }
 function nvl(v, d=""){ return (v===null || v===undefined || v==="") ? d : v; }
-
-function getPlayerId(p){ return safeStr((p && (p.playerId ?? p.player_id ?? p.player_id ?? p.playerID ?? p.player_id)) || ""); }
 
 function romanLv(lv){
   const n = Number(lv);
@@ -737,7 +644,7 @@ async function loadJson(url){
     COMBOS = [];
   }
 
-  playerById = new Map(PLAYERS.map(p => [getPlayerId(p), p]).filter(([id])=>id));
+  playerById = new Map(PLAYERS.map(p => [safeStr(p.playerId), p]));
   setupTabs();
   setupToTop();
 
@@ -798,12 +705,6 @@ function openPlayerModal(p){
   const title = nvl(p.name,"-");
   document.getElementById("modalTitle").textContent = title;
 
-  const nat = nvl(p.nationality, "-");
-  const gt = nvl(p.growthType || p.growth_type, "-");
-  const sub = (nat!=="-" || gt!=="-") ? `国籍：${nat} / 成長タイプ：${gt}` : "";
-  const subEl = document.getElementById("modalSub");
-  if(subEl) subEl.textContent = sub;
-
   const ps = nvl(p.playStyle, "-");
   const lv = romanLv(p.playStyleLv);
 
@@ -862,21 +763,21 @@ const POLICIES = [
 ];
 
 const PLAYSTYLES = [
-  {key:"ストライカー", img:"img/style/striker.png"},
-  {key:"ラインブレーカー", img:"img/style/linebreaker.png"},
-  {key:"ポストプレーヤー", img:"img/style/postplayer.png"},
-  {key:"サイドアタッカー", img:"img/style/sideattacker.png"},
-  {key:"ドリブラー", img:"img/style/dribbler.png"},
-  {key:"アタッカー", img:"img/style/attacker.png"},
-  {key:"パサー", img:"img/style/passer.png"},
-  {key:"セントラルMF", img:"img/style/centralmf.png"},
-  {key:"ハードマーカー", img:"img/style/hardmarker.png"},
-  {key:"ストッパー", img:"img/style/stopper.png"},
-  {key:"組立CB", img:"img/style/buildupcb.png"},
-  {key:"攻撃的FB", img:"img/style/attackfb.png"},
-  {key:"守備的FB", img:"img/style/defensefb.png"},
-  {key:"オーソドックスGK", img:"img/style/orthodoxgk.png"},
-  {key:"スイーパーGK", img:"img/style/sweepergk.png"},
+  {key:"ストライカー", img:"img/playstyle/st.png"},
+  {key:"ラインブレーカー", img:"img/playstyle/lbk.png"},
+  {key:"ポストプレーヤー", img:"img/playstyle/pst.png"},
+  {key:"サイドアタッカー", img:"img/playstyle/sat.png"},
+  {key:"ドリブラー", img:"img/playstyle/drb.png"},
+  {key:"アタッカー", img:"img/playstyle/atk.png"},
+  {key:"パサー", img:"img/playstyle/pas.png"},
+  {key:"セントラルMF", img:"img/playstyle/cmf.png"},
+  {key:"ハードマーカー", img:"img/playstyle/hdm.png"},
+  {key:"ストッパー", img:"img/playstyle/stp.png"},
+  {key:"組立CB", img:"img/playstyle/mcb.png"},
+  {key:"攻撃的FB", img:"img/playstyle/afb.png"},
+  {key:"守備的FB", img:"img/playstyle/dfb.png"},
+  {key:"オーソドックスGK", img:"img/playstyle/ogk.png"},
+  {key:"スイーパーGK", img:"img/playstyle/sgk.png"},
 ];
 
 const POS_LAYOUT = [
@@ -978,25 +879,8 @@ function getComboField(c, keys, def=""){
   return def;
 }
 function getComboConditions(c){
-  // combo_master: combo_requirements（推奨）/ 旧: conditions
-  const v = getComboField(c, ["combo_requirements","comboRequirements","requirements","reqs","conditions","conditionList"], []);
+  const v = getComboField(c, ["conditions","reqs","requirements","conditionList"], []);
   return Array.isArray(v) ? v : [];
-}
-function getComboPolicys(c){
-  // combo_master: combo_policys（推奨） / 旧: conditions[].policy
-  const v = getComboField(c, ["combo_policys","comboPolicies","policies"], null);
-  if(Array.isArray(v)) return v.map(normalizePolicy).filter(Boolean);
-  if(typeof v === "string" && v.trim() !== "") return [normalizePolicy(v)];
-  // fallback（旧フォーマット）
-  const conds = getComboField(c, ["conditions","conditionList"], []);
-  const set = new Set();
-  if(Array.isArray(conds)){
-    for(const cond of conds){
-      const p = normalizePolicy(getComboField(cond, ["policy","ポリシー"], ""));
-      if(p) set.add(p);
-    }
-  }
-  return [...set];
 }
 function normalizeRank(r){
   const s = safeStr(r);
@@ -1023,28 +907,23 @@ function parseLvReq(x){
 }
 
 function conditionMatch(cond){
-  // cond: {position, playStyle, playStyleLv}（policy は combo_policys に移動）
+  // cond: {position, playStyle, lv, policy} のどれか
   const cpos = normalizePos(getComboField(cond, ["position","pos","ポジション"], ""));
   const cstyle = normalizeStyle(getComboField(cond, ["playStyle","style","プレイスタイル"], ""));
-  const clv = parseLvReq(getComboField(cond, ["playStyleLv","lv","level","Lv","プレイスタイルLv"], 0));
+  const clv = parseLvReq(getComboField(cond, ["lv","level","Lv","プレイスタイルLv"], 0));
+  const cpol = normalizePolicy(getComboField(cond, ["policy","ポリシー"], ""));
 
   const posOk = selPositions.size===0 ? true : selPositions.has(cpos);
   const styleOk = !selPlayStyle ? true : (cstyle===selPlayStyle || cstyle.includes(selPlayStyle));
   const lvOk = !clv ? true : (selLv >= clv);
+  const polOk = !selPolicy ? true : (cpol===selPolicy);
 
-  return {posOk, styleOk, lvOk};
+  return {posOk, styleOk, lvOk, polOk};
 }
 
 function runComboSearch(){
   const err = document.getElementById("comboErr");
-  if(!selPolicy){
-    err.textContent = "ポリシーを選択してください";
-    err.style.display="block";
-    return;
-  }
   if(selPositions.size===0){
-    err.textContent = "ポジションを選択してください";
-
     err.style.display="block";
     return;
   }
@@ -1060,21 +939,19 @@ function runComboSearch(){
 
     // 条件のうち 1つでもポジション＆プレイスタイル＆Lvが合うものがあるか
     let anyCore = false;
-
-    // policy は combo_policys（新）/ conditions[].policy（旧）から判定
-    const comboPolicys = getComboPolicys(c);
-    const comboPolOk = !selPolicy ? true : comboPolicys.includes(selPolicy);
+    let anyFull = false;
+    let anyPolicyMismatch = false;
+    let anyPosMismatch = false;
 
     for(const cond of conds){
-      const {posOk, styleOk, lvOk} = conditionMatch(cond);
+      const {posOk, styleOk, lvOk, polOk} = conditionMatch(cond);
       const coreOk = posOk && styleOk && lvOk;
       if(coreOk) anyCore = true;
+      if(coreOk && polOk) anyFull = true;
+      if(coreOk && !polOk) anyPolicyMismatch = true;
+      if(!posOk && styleOk && lvOk && polOk) anyPosMismatch = true;
     }
-
     if(anyCore){
-      const anyFull = comboPolOk;
-      const anyPolicyMismatch = !comboPolOk;
-      const anyPosMismatch = false;
       matches.push({combo:c, anyFull, anyPolicyMismatch, anyPosMismatch});
     }
   }
@@ -1097,49 +974,23 @@ function runComboSearch(){
       return;
     }
     arr.forEach(({combo})=>{
-      const card = document.createElement("div");
-      card.className = "comboCard" + (cls ? (" " + cls) : "");
-
       const name = getComboField(combo, ["name","comboName","formationName","title"], "名称なし");
       const formation = getComboField(combo, ["formation","formationCode","フォーメーション"], "-");
       const rank = normalizeRank(getComboField(combo, ["rank","ランク"], "-"));
       const policy = getComboField(combo, ["policy","ポリシー"], "-");
       const effect = getComboField(combo, ["effect","効果"], "-");
-      const need = getComboField(combo, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
+      const need = getComboField(combo, ["requiredCount","needCount","必要人数"], "-");
 
-      const condHtml = getComboConditions(combo).map(cond => {
-        const p = getComboField(cond, ["position","pos","ポジション"], "-");
-        const s = getComboField(cond, ["playStyle","style","プレイスタイル"], "-");
-        const lvRaw = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "");
-        const lv = romanLv(parseLvReq(lvRaw) || lvRaw);
-
-        const styleText = (lv && safeStr(lv) !== "0" && safeStr(lv) !== "-")
-          ? `${esc(s)} ${esc(lv)}`
-          : `${esc(s)}`;
-
-        return `
-  <div class="condBox">
-    <div class="condRow">
-      <span class="condKey">ポジション：</span>
-      <span class="condVal">${esc(p)}</span>
-    </div>
-    <div class="condRow">
-      <span class="condKey">PS：</span>
-      <span class="condVal">${esc(s)}${lv ? " " + esc(lv) : ""}</span>
-    </div>
-  </div>`;
-      }).join("");
-
-      const condBlock = `<div class="condList">${condHtml || `<div class="note" style="text-align:left;margin:0;">-</div>`}</div>`;
-
+      const card = document.createElement("div");
+      card.className = "comboCard " + cls;
       card.innerHTML = `
         <div class="comboName">${esc(name)}</div>
         <div class="kv">
           <div class="k">フォーメーション</div><div class="v">${esc(formation)}</div>
           <div class="k">ランク</div><div class="v">${esc(rank)}</div>
+          <div class="k">ポリシー</div><div class="v">${esc(policy)}</div>
           <div class="k">効果</div><div class="v">${esc(effect)}</div>
           <div class="k">必要人数</div><div class="v">${esc(need)}</div>
-          <div class="k">条件</div><div class="v">${condBlock}</div>
         </div>
       `;
       result.appendChild(card);
@@ -1244,14 +1095,7 @@ function renderComboDetail(){
   const rank = normalizeRank(getComboField(c, ["rank","ランク"], "-"));
   const policy = getComboField(c, ["policy","ポリシー"], "-");
   const effect = getComboField(c, ["effect","効果"], "-");
-  const need = getComboField(c, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
-  const condText = getComboConditions(c).map(cond => {
-    const p = getComboField(cond, ["position","pos","ポジション"], "-");
-    const s = getComboField(cond, ["playStyle","style","プレイスタイル"], "-");
-    const lv = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "-");
-    const pol = getComboField(cond, ["policy","ポリシー"], "-");
-    return `${p}/${s}Lv${lv}/${pol}`;
-  }).join(" , ");
+  const need = getComboField(c, ["requiredCount","needCount","必要人数"], "-");
 
   box.innerHTML = `
     <div class="comboCard" style="margin-top:16px;">
@@ -1271,13 +1115,13 @@ function playerMatchesCondition(p, cond){
   const pos = normalizePos(getComboField(cond, ["position","pos","ポジション"], ""));
   const style = normalizeStyle(getComboField(cond, ["playStyle","style","プレイスタイル"], ""));
   const pol = normalizePolicy(getComboField(cond, ["policy","ポリシー"], ""));
-  const lvReq = parseLvReq(getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], 0));
+  const lvReq = parseLvReq(getComboField(cond, ["lv","level","Lv","プレイスタイルLv"], 0));
 
   // プレイヤー側
   const pPos = normalizePos(p.mainPosition || "");
   const pPol = normalizePolicy(p.policy || "");
   const pStyle = normalizeStyle(p.playStyle || "");
-  const pLv = Number(p.playStyleLv ?? p.lv ?? 0);
+  const pLv = Number(p.lv || 0);
 
   const posOk = (pPos === pos) || (Array.isArray(p.positions) && p.positions.map(normalizePos).includes(pos));
   const styleOk = !style ? true : (pStyle === style);
@@ -1324,7 +1168,7 @@ function renderPlayersForCombo(){
       <div style="font-weight:900;font-size:20px;margin-bottom:10px;">条件${idx+1}</div>
       <div class="kv" style="grid-template-columns:110px 1fr;">
         <div class="k">ポジション</div><div class="v">${esc(pos)}</div>
-        <div class="k">プレイスタイル</div><div class="v">${esc(style)}${lvReq ? " " + esc(romanLv(lvReq)) : ""}</div>
+        <div class="k">プレイスタイル</div><div class="v">${esc(style)} ${esc(safeStr(lvReq))}</div>
         <div class="k">ポリシー</div><div class="v">${esc(pol)}</div>
       </div>
       <div style="margin-top:12px;">
@@ -1351,7 +1195,7 @@ function renderPlayerNameOnlyList(arr){
   if(!arr || arr.length===0) return `<div class="note" style="text-align:left;margin:6px 0;">なし</div>`;
   // ★要望：検索結果は選手名のみに変更
   return arr.map(p=>{
-    const pid = esc(getPlayerId(p));
+    const pid = esc(p.playerId);
     return `<div class="playerRow"><a href="#" data-player-id="${pid}">${esc(p.name || "-")}</a></div>`;
   }).join("");
 }
@@ -1386,20 +1230,17 @@ function renderRankTable(tbl, arr, field){
     <tr>
       <th>順位</th>
       <th>選手名</th>
+      <th>${field==="overall" ? "初期総合力" : "最大強化"}</th>
       <th>Pos</th>
     </tr>`;
   const rows = arr.map((p,i)=>{
     const v = field==="overall" ? (p.overall ?? "-") : (p.maxUpgrade ?? "-");
     const pos = p.mainPosition || "-";
-    const pid = esc(getPlayerId(p));
-    const nm = esc(p.name || "-");
     return `
       <tr>
         <td>${i+1}</td>
-        <td>
-          <span class="rankLink" data-player-id="${pid}">${nm}</span>
-          <span style="float:right;font-weight:900;">${esc(v)}</span>
-        </td>
+        <td><span class="rankLink" data-player-id="${esc(p.playerId)}">${esc(p.name || "-")}</span></td>
+        <td>${esc(v)}</td>
         <td>${esc(pos)}</td>
       </tr>`;
   }).join("");
@@ -1492,5 +1333,14 @@ function renderBarsInOrder(container, order, map, total){
   });
 }
 </script>
+
+<footer style="margin-top:60px;padding:20px 0;text-align:center;font-size:14px;">
+  <a href="about.html">このサイトについて</a> |
+  <a href="privacy.html">プライバシーポリシー</a> |
+  <a href="terms.html">利用規約</a> |
+  <a href="disclosure.html">広告・PR表記</a> |
+  <a href="contact.html">お問い合わせ</a>
+</footer>
+
 </body>
 </html>
