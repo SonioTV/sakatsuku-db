@@ -29,7 +29,11 @@ h1{margin:18px 0 14px;font-size:40px;letter-spacing:.5px;text-align:center;}
   box-shadow:0 16px 26px rgba(245,158,11,.25);}
 .bigBtn:active{transform:scale(.99);}
 .hr{height:1px;background:#e7e2d7;margin:14px 0 16px;}
-.resultTitle{text-align:center;font-size:30px;font-weight:900;margin:4px 0 12px;}
+.resultTitle{text-align:center;font-size:24px;font-weight:900;margin:4px 0 12px;line-height:1.2;}
+.line2{margin-top:10px;text-align:center;font-weight:900;font-size:18px;color:#111;}
+.line3{margin-top:10px;text-align:center;font-weight:900;font-size:18px;color:#111;}
+.line3 .muted{color:var(--muted);}
+
 .list{display:flex;flex-direction:column;gap:14px;}
 .item{border:2px solid rgba(0,0,0,.08);border-radius:22px;padding:14px 14px 12px;background:#fff;}
 .name{font-size:24px;font-weight:900;text-align:center;line-height:1.25;word-break:break-word;}
@@ -42,6 +46,8 @@ h1{margin:18px 0 14px;font-size:40px;letter-spacing:.5px;text-align:center;}
 .smallMuted{text-align:center;color:var(--muted);font-weight:900;margin-top:10px;}
 @media (max-width: 480px){
   h1{font-size:34px;}
+  .resultTitle{font-size:20px;}
+  .line2,.line3{font-size:16px;}
   .aBtn{min-width:160px;font-size:20px;padding:12px 14px;}
   .bigSelect{font-size:22px;}
   .bigBtn{font-size:30px;}
@@ -136,17 +142,12 @@ function render(selected){
   list.innerHTML = rows.map(r=>{
     const name = esc(r.facility_name || r.name || "-");
     const cost = Number(r.cost)||0;
-    const effs = getEffects(r).map(ev=>`<span class="effect">${esc(ev.effect)} +${esc(ev.value)}</span>`).join("");
-    return `
-      <div class="item">
+    const effText = (getEffects(r).length ? getEffects(r).map(ev=>`${esc(ev.effect)}+${esc(ev.value)}`).join(" / ") : "-");
+    return `<div class="item">
         <div class="name">${name}</div>
-        <div class="metaRow">
-          <span class="badge">${esc(selected)}</span>
-          <span class="badge cost">コスト ${cost}</span>
-        </div>
-        <div class="effects">${effs || '<span class="effect">-</span>'}</div>
-      </div>
-    `;
+        <div class="line2">カテゴリ：${esc(selected)} / 設置コスト：${cost}</div>
+        <div class="line3">上昇効果：${effText}</div>
+      </div>`;
   }).join("");
 
   note.textContent = `表示件数：${rows.length}`;
