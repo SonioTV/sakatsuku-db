@@ -1535,34 +1535,39 @@ function setupBonusUI(){
 function renderTopTables(){
   const topOverall = [...PLAYERS].sort((a,b)=>(b.overall||0)-(a.overall||0)).slice(0,10);
   const topMax = [...PLAYERS].filter(p=>Number.isFinite(Number(p.maxUpgrade))).sort((a,b)=>(b.maxUpgrade||0)-(a.maxUpgrade||0)).slice(0,10);
-  renderRankTable(document.getElementById("tblOverall"), topOverall, "overall");
-  renderRankTable(document.getElementById("tblMaxUp"), topMax, "maxUpgrade");
+renderRankTable(document.getElementById("tblOverall"), topOverall, "overall", "初期総合力");
+renderRankTable(document.getElementById("tblMaxUp"), topMax, "maxUpgrade", "最大総合力");
 }
 
-function renderRankTable(tbl, arr, field){
+function renderRankTable(tbl, arr, field, scoreLabel){
   const head = `
     <tr>
       <th>順位</th>
       <th>選手名</th>
-      <th>Pos</th>
+      <th>${esc(scoreLabel)}</th>
+      <th>ポジション</th>
     </tr>`;
+
   const rows = arr.map((p,i)=>{
-    const v = field==="overall" ? (p.overall ?? "-") : (p.maxUpgrade ?? "-");
-    const pos = p.mainPosition || "-";
+    // field が "overall" なら初期総合力、"maxUpgrade" なら最大総合力 を想定
+    const v = (p && p[field] != null) ? p[field] : "-";
+    const pos = (p && p.mainPosition) ? p.mainPosition : "-";
     const pid = esc(getPlayerId(p));
-    const nm = esc(p.name || "-");
+    const nm  = esc(p?.name || "-");
+
     return `
       <tr>
         <td>${i+1}</td>
-        <td>
-          <span class="rankLink" data-player-id="${pid}">${nm}</span>
-          <span style="float:right;font-weight:900;">${esc(v)}</span>
-        </td>
+        <td><span class="rankLink" data-player-id="${pid}">${nm}</span></td>
+        <td>${esc(v)}</td>
         <td>${esc(pos)}</td>
       </tr>`;
   }).join("");
-  tbl.innerHTML = head + rows;
 
+  // thead/tbody を明示（レイアウト崩れ＆CSS当たり方の事故を減らす）
+  tbl.innerHTML = `<thead>${head}</thead><tbody>${rows}</tbody>`;
+
+  // クリックで選手モーダル
   tbl.querySelectorAll("[data-player-id]").forEach(el=>{
     el.addEventListener("click", ()=>{
       openPlayerModal(playerById.get(el.dataset.playerId));
@@ -1595,7 +1600,7 @@ function setupFilterUI(){
     if(fs) arr = arr.filter(p=>p.playStyle===fs);
     arr = arr.sort((a,b)=>(b.overall||0)-(a.overall||0)).slice(0,5);
 
-    renderRankTable(document.getElementById("tblFiltered"), arr, "overall");
+    renderRankTable(document.getElementById("tblFiltered"), arr, "overall", "初期総合力");
   };
 
   fPolicy.addEventListener("change", rerender);
