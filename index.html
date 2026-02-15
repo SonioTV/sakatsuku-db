@@ -861,7 +861,15 @@ function setupToTop(){
   window.addEventListener("scroll", onScroll, {passive:true});
   onScroll();
   btn.addEventListener("click", ()=>{
-});
+    // スムーズにページ上部へ
+    try{
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }catch(e){
+      // 古いブラウザ向けフォールバック
+      window.scrollTo(0, 0);
+    }
+  });
+
 }
 </script>
 
