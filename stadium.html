@@ -106,10 +106,31 @@ h1{
   .itemMeta,.itemEff{ font-size:13px !important; }
 }
 
+/* ===== タイトル画像 ===== */
+.pageTitleImg{
+  text-align:center;
+  margin:10px 0 6px;
+}
+.pageTitleImg img{
+  max-width:100%;
+  height:auto;
+  width:420px;      /* PC表示サイズ */
+}
+@media (max-width:520px){
+  .pageTitleImg img{
+    width:85%;
+  }
+}
+
 </style>
 </head>
 <body>
 <div class="wrap">
+
+<div class="pageTitleImg">
+  <img src="img/title.png" alt="サカつく2026 DB">
+</div>
+
   <h1>スタジアム施設一覧</h1>
 
   <div class="nav">
