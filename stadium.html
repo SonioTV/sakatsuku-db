@@ -44,46 +44,66 @@ h1{font-size:42px;line-height:1.1;margin:10px 0 10px;text-align:center;font-weig
   .itemMeta,.itemEff{font-size:20px;}
 }
 
-/* ===== 施設/設備 一覧表示：文字サイズ調整（折り返し抑制） ===== */
+/* ===== 施設/設備 一覧表示：見やすさ重視（横スクロール無し） ===== */
+h1{
+  font-size:36px;
+  line-height:1.15;
+  letter-spacing:.01em;
+}
+
 .resultTitle{
-  font-size:20px !important;
+  font-size:18px !important;
   line-height:1.25 !important;
-  letter-spacing:.02em;
+  margin:10px 0 12px !important;
 }
+
+.list{ gap:12px; }
+
 .item{
-  padding:16px 14px !important;
+  padding:14px 12px !important;
+  border-radius:22px;
 }
+
 .itemName{
-  font-size:24px !important;
+  font-size:22px !important;
   line-height:1.25 !important;
   margin:0 0 8px !important;
   letter-spacing:.01em;
 }
-.itemMeta,
-.itemEff{
-  font-size:16px !important;
-  font-weight:800 !important;
-  line-height:1.35 !important;
-  margin:0 0 8px !important;
-  white-space:nowrap !important;   /* 改行しない */
-  overflow-x:auto;                /* どうしても長い場合だけ横に流せる */
-  -webkit-overflow-scrolling:touch;
-}
-.itemEff{ margin:0 !important; }
-.itemMeta::-webkit-scrollbar,
-.itemEff::-webkit-scrollbar{ display:none; }
-.itemMeta,
-.itemEff{ scrollbar-width:none; }
 
-.count{
+.itemMeta{
   font-size:14px !important;
   font-weight:800 !important;
+  line-height:1.35 !important;
+  margin:0 0 6px !important;
+  white-space:normal !important;    /* 折り返しOK */
+  overflow:visible !important;      /* 行内スクロール禁止 */
+}
+
+.itemEff{
+  font-size:14px !important;
+  font-weight:800 !important;
+  line-height:1.35 !important;
+  margin:0 !important;
+  white-space:normal !important;    /* 折り返しOK */
+  overflow:visible !important;      /* 行内スクロール禁止 */
+  word-break:keep-all;              /* 過剰な分割を抑える */
+}
+
+.count{
+  font-size:13px !important;
+  font-weight:800 !important;
+  margin-top:10px !important;
 }
 
 @media (max-width:520px){
-  .resultTitle{ font-size:18px !important; }
-  .itemName{ font-size:22px !important; }
-  .itemMeta,.itemEff{ font-size:14px !important; }
+  h1{ font-size:30px; }
+  .sectionTitle{ font-size:26px; }
+  .bigSelect{ font-size:22px; padding:14px 14px; border-radius:18px; }
+  .bigBtn{ font-size:26px; padding:16px 16px; border-radius:22px; }
+  .resultTitle{ font-size:16px !important; }
+  .itemName{ font-size:20px !important; }
+  .itemMeta,.itemEff{ font-size:13px !important; }
 }
 
 </style>
