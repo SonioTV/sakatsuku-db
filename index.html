@@ -1267,27 +1267,45 @@ function conditionMatch(cond){
   return {posOk, styleOk, lvOk};
 }
 
+
+function scrollSectionToCenter(el){
+  if(!el) return;
+  // できるだけ中央に来るようにスムーズスクロール
+  try{
+    el.scrollIntoView({ behavior:"smooth", block:"center", inline:"nearest" });
+  }catch(e){
+    const rect = el.getBoundingClientRect();
+    const y = (window.pageYOffset || document.documentElement.scrollTop || 0)
+            + rect.top - (window.innerHeight/2) + (rect.height/2);
+    window.scrollTo(0, Math.max(0, y));
+  }
+}
+
 function runComboSearch(){
   const err = document.getElementById("comboErr");
   // 必須選択チェック
   if(!selPolicy){
     err.textContent = "ポリシーを選択してください";
     err.style.display="block";
+    scrollSectionToCenter(document.getElementById("policyGrid"));
     return;
   }
   if(selPositions.size===0){
     err.textContent = "ポジションを1つ以上選択してください";
     err.style.display="block";
+    scrollSectionToCenter(document.getElementById("posBoard"));
     return;
   }
   if(!selPlayStyle){
     err.textContent = "プレイスタイルを選択してください";
     err.style.display="block";
+    scrollSectionToCenter(document.getElementById("playStyleGrid"));
     return;
   }
   if(!selLv){
     err.textContent = "プレイスタイルLvを選択してください";
     err.style.display="block";
+    scrollSectionToCenter(document.getElementById("lvBoard"));
     return;
   }
   err.style.display="none";
