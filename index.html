@@ -1134,6 +1134,7 @@ renderSelectedConditions();
       // LM/RM を AM+DM と同じ縦幅に
       if(pos === "LM" || pos === "RM"){
         d.style.gridRowEnd = "span 2";
+        d.style.height = "118px"; // 54*2 + gap(10)
       }
 
       d.addEventListener("click", ()=>{
