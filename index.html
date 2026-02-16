@@ -143,7 +143,8 @@
     object-fit:contain;
     display:block;
     margin:0 auto 8px;
-  }    .imgTile .lbl{ font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  }
+    .imgTile .lbl{ font-size:12px; -webkit-line-clamp:2; }
 /* ポジション選択 */
   .posWrap{
     display:flex;
@@ -171,7 +172,10 @@
     cursor:pointer;
     user-select:none;
   }
-  .posBtn.selected{ background:#1f2937; }
+  
+    .posBoard{ grid-auto-rows:52px; }
+    .posBtn.tall{ height:112px; }
+.posBtn.selected{ background:#1f2937; }
   .posBtn[data-color="green"]{ border-color:#41c95a; }
   .posBtn[data-color="yellow"]{ border-color:#f1c40f; }
   .posBtn[data-color="blue"]{ border-color:#4aa3ff; }
@@ -180,6 +184,14 @@
   .posBtn.selected[data-color="yellow"]{ background:#f1c40f; color:#111; }
   .posBtn.selected[data-color="blue"]{ background:#4aa3ff; }
   .posBtn.selected[data-color="red"]{ background:#ff3b30; }
+
+
+  /* ポジション：グリッドを安定させる（LM/RM縦長対応） */
+  .posBoard{ grid-auto-rows:54px; }
+  .posBtn.tall{
+    grid-row: span 2;
+    height:118px; /* 54*2 + gap(10) */
+  }
 
   /* Lv選択（横長） */
   .lvBoard{
@@ -1131,32 +1143,38 @@ renderSelectedConditions();
   });
 
   // positions
+  // positions（配置固定：LM/RM 縦長対応）
   const pb = document.getElementById("posBoard");
   pb.innerHTML = "";
-  POS_LAYOUT.forEach(row=>{
-    row.forEach(pos=>{
-      if(!pos){
-        const spacer = document.createElement("div");
-        spacer.style.width="76px";
-        spacer.style.height="54px";
-        spacer.style.opacity="0";
-        pb.appendChild(spacer);
-        return;
-      }
+
+  POS_LAYOUT.forEach((row, r)=>{
+    row.forEach((pos, c)=>{
+      if(!pos) return; // 空セルは何も置かない（LM/RM の span で埋まるセルもここ）
+
       const d = document.createElement("div");
-      d.className="posBtn";
-      d.textContent=pos;
-      d.dataset.pos=pos;
-      d.dataset.color=POS_COLOR[pos] || "yellow";
+      d.className = "posBtn" + ((pos==="LM" || pos==="RM") ? " tall" : "");
+      d.textContent = pos;
+      d.dataset.pos = pos;
+      d.dataset.color = POS_COLOR[pos] || "yellow";
+
+      // ★セル位置を固定（スペーサー不要）
+      d.style.gridRowStart = String(r + 1);
+      d.style.gridColumnStart = String(c + 1);
+      if(pos==="LM" || pos==="RM"){
+        d.style.gridRowEnd = "span 2";
+      }
+
       d.addEventListener("click", ()=>{
         if(selPositions.has(pos)) selPositions.delete(pos);
         else selPositions.add(pos);
         d.classList.toggle("selected", selPositions.has(pos));
-renderSelectedConditions();
+        renderSelectedConditions();
       });
+
       pb.appendChild(d);
     });
   });
+
 
   // LV
   const lb = document.getElementById("lvBoard");
@@ -1173,6 +1191,8 @@ renderSelectedConditions();
 // search
 document.getElementById("btnSearchCombo").addEventListener("click", runComboSearch);
 
+
+  document.getElementById("btnClearCombo").addEventListener("click", resetComboSelections);
 // ★初期表示を反映（推奨）
 renderSelectedConditions();
 
