@@ -143,8 +143,7 @@
     object-fit:contain;
     display:block;
     margin:0 auto 8px;
-  }
-    .imgTile .lbl{ font-size:12px; -webkit-line-clamp:2; }
+  }    .imgTile .lbl{ font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:clip; }
 /* ポジション選択 */
   .posWrap{
     display:flex;
@@ -172,10 +171,7 @@
     cursor:pointer;
     user-select:none;
   }
-  
-    .posBoard{ grid-auto-rows:52px; }
-    .posBtn.tall{ height:112px; }
-.posBtn.selected{ background:#1f2937; }
+  .posBtn.selected{ background:#1f2937; }
   .posBtn[data-color="green"]{ border-color:#41c95a; }
   .posBtn[data-color="yellow"]{ border-color:#f1c40f; }
   .posBtn[data-color="blue"]{ border-color:#4aa3ff; }
@@ -184,14 +180,6 @@
   .posBtn.selected[data-color="yellow"]{ background:#f1c40f; color:#111; }
   .posBtn.selected[data-color="blue"]{ background:#4aa3ff; }
   .posBtn.selected[data-color="red"]{ background:#ff3b30; }
-
-
-  /* ポジション：グリッドを安定させる（LM/RM縦長対応） */
-  .posBoard{ grid-auto-rows:54px; }
-  .posBtn.tall{
-    grid-row: span 2;
-    height:118px; /* 54*2 + gap(10) */
-  }
 
   /* Lv選択（横長） */
   .lvBoard{
@@ -956,6 +944,7 @@ function resetComboSelections(){
   if(res) res.innerHTML = "";
 
   renderSelectedConditions();
+  setTimeout(fitPlaystyleLabels, 0);
 }
 
 </script>
@@ -1143,38 +1132,32 @@ renderSelectedConditions();
   });
 
   // positions
-  // positions（配置固定：LM/RM 縦長対応）
   const pb = document.getElementById("posBoard");
   pb.innerHTML = "";
-
-  POS_LAYOUT.forEach((row, r)=>{
-    row.forEach((pos, c)=>{
-      if(!pos) return; // 空セルは何も置かない（LM/RM の span で埋まるセルもここ）
-
-      const d = document.createElement("div");
-      d.className = "posBtn" + ((pos==="LM" || pos==="RM") ? " tall" : "");
-      d.textContent = pos;
-      d.dataset.pos = pos;
-      d.dataset.color = POS_COLOR[pos] || "yellow";
-
-      // ★セル位置を固定（スペーサー不要）
-      d.style.gridRowStart = String(r + 1);
-      d.style.gridColumnStart = String(c + 1);
-      if(pos==="LM" || pos==="RM"){
-        d.style.gridRowEnd = "span 2";
+  POS_LAYOUT.forEach(row=>{
+    row.forEach(pos=>{
+      if(!pos){
+        const spacer = document.createElement("div");
+        spacer.style.width="76px";
+        spacer.style.height="54px";
+        spacer.style.opacity="0";
+        pb.appendChild(spacer);
+        return;
       }
-
+      const d = document.createElement("div");
+      d.className="posBtn";
+      d.textContent=pos;
+      d.dataset.pos=pos;
+      d.dataset.color=POS_COLOR[pos] || "yellow";
       d.addEventListener("click", ()=>{
         if(selPositions.has(pos)) selPositions.delete(pos);
         else selPositions.add(pos);
         d.classList.toggle("selected", selPositions.has(pos));
-        renderSelectedConditions();
+renderSelectedConditions();
       });
-
       pb.appendChild(d);
     });
   });
-
 
   // LV
   const lb = document.getElementById("lvBoard");
@@ -1191,8 +1174,6 @@ renderSelectedConditions();
 // search
 document.getElementById("btnSearchCombo").addEventListener("click", runComboSearch);
 
-
-  document.getElementById("btnClearCombo").addEventListener("click", resetComboSelections);
 // ★初期表示を反映（推奨）
 renderSelectedConditions();
 
@@ -1811,6 +1792,34 @@ function renderBarsInOrder(container, order, map, total){
     container.appendChild(row);
   });
 }
+<script>
+
+  // --- Playstyle label fit (no wrap / no overflow / no ellipsis) ---
+  function fitPlaystyleLabels(){
+    const labels = document.querySelectorAll('.imgTile .lbl');
+    labels.forEach(lbl=>{
+      // reset
+      const base = window.matchMedia('(max-width: 480px)').matches ? 12 : 14;
+      let size = base;
+      lbl.style.fontSize = size + 'px';
+      lbl.style.whiteSpace = 'nowrap';
+      lbl.style.overflow = 'hidden';
+      lbl.style.textOverflow = 'clip';
+
+      // shrink until it fits or reach minimum
+      const min = 9;
+      // Use a small loop; scrollWidth includes overflow content
+      while(size > min && lbl.scrollWidth > lbl.clientWidth + 1){
+        size -= 0.5;
+        lbl.style.fontSize = size + 'px';
+      }
+    });
+  }
+
+// 初期表示とタブ切替後に適用
+window.addEventListener('load', ()=>{ setTimeout(fitPlaystyleLabels, 0); });
+window.addEventListener('resize', ()=>{ setTimeout(fitPlaystyleLabels, 0); });
+</script>
 </script>
 </body>
 </html>
