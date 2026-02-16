@@ -178,7 +178,11 @@
     cursor:pointer;
     user-select:none;
   }
-  .posBtn.selected{ background:#1f2937; }
+  
+  .posBtn.tall{
+    height:118px; /* 54*2 + gap(10) */
+  }
+.posBtn.selected{ background:#1f2937; }
   .posBtn[data-color="green"]{ border-color:#41c95a; }
   .posBtn[data-color="yellow"]{ border-color:#f1c40f; }
   .posBtn[data-color="blue"]{ border-color:#4aa3ff; }
@@ -1122,32 +1126,55 @@ renderSelectedConditions();
   });
 
   // positions
+  // positions
   const pb = document.getElementById("posBoard");
   pb.innerHTML = "";
-  POS_LAYOUT.forEach(row=>{
-    row.forEach(pos=>{
+
+  // 座標配置 + LM/RMを2段スパン（AM+DM相当の縦幅）
+  for(let r=0; r<POS_LAYOUT.length; r++){
+    for(let c=0; c<POS_LAYOUT[r].length; c++){
+      const pos = POS_LAYOUT[r][c];
+
+      // LM/RMを2段スパンさせるので、その直下の空マスは作らない（row=2, col=0/2）
+      const isUnderSpan = (r===2 && (c===0 || c===2));
       if(!pos){
+        if(isUnderSpan) continue;
+
         const spacer = document.createElement("div");
-        spacer.style.width="76px";
-        spacer.style.height="54px";
-        spacer.style.opacity="0";
+        spacer.style.width = "76px";
+        spacer.style.height = "54px";
+        spacer.style.opacity = "0";
+        spacer.style.gridRowStart = String(r+1);
+        spacer.style.gridColumnStart = String(c+1);
         pb.appendChild(spacer);
-        return;
+        continue;
       }
+
       const d = document.createElement("div");
-      d.className="posBtn";
-      d.textContent=pos;
-      d.dataset.pos=pos;
-      d.dataset.color=POS_COLOR[pos] || "yellow";
+      d.className = "posBtn";
+      d.textContent = pos;
+      d.dataset.pos = pos;
+      d.dataset.color = POS_COLOR[pos] || "yellow";
+      d.style.gridRowStart = String(r+1);
+      d.style.gridColumnStart = String(c+1);
+
+      if(pos === "LM" || pos === "RM"){
+        d.style.gridRowEnd = "span 2";
+        d.classList.add("tall");
+      }
+
       d.addEventListener("click", ()=>{
         if(selPositions.has(pos)) selPositions.delete(pos);
         else selPositions.add(pos);
         d.classList.toggle("selected", selPositions.has(pos));
-renderSelectedConditions();
+        renderSelectedConditions();
       });
+
       pb.appendChild(d);
-    });
-  });
+    }
+  }
+
+
 
   // LV
   const lb = document.getElementById("lvBoard");
@@ -1164,6 +1191,8 @@ renderSelectedConditions();
 // search
 document.getElementById("btnSearchCombo").addEventListener("click", runComboSearch);
 
+
+document.getElementById("btnClearCombo").addEventListener("click", resetComboSelections);
 // ★初期表示を反映（推奨）
 renderSelectedConditions();
 
