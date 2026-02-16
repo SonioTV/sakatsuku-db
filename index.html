@@ -1100,30 +1100,52 @@ renderSelectedConditions();
   // positions
   const pb = document.getElementById("posBoard");
   pb.innerHTML = "";
-  POS_LAYOUT.forEach(row=>{
-    row.forEach(pos=>{
+
+  // 座標配置 + LM/RM を2段スパン（AM+DM と同じ縦幅）
+  for(let r=0; r<POS_LAYOUT.length; r++){
+    for(let c=0; c<POS_LAYOUT[r].length; c++){
+      const pos = POS_LAYOUT[r][c];
+
+      // LM/RM を2段スパンさせるので、その直下の空マス(spacer)は作らない
+      const isUnderSpan = (r===2 && (c===0 || c===2)); // row=3 col=1/3（0-index）
       if(!pos){
+        if(isUnderSpan) continue;
+
         const spacer = document.createElement("div");
-        spacer.style.width="76px";
-        spacer.style.height="54px";
-        spacer.style.opacity="0";
+        spacer.style.width = "76px";
+        spacer.style.height = "54px";
+        spacer.style.opacity = "0";
+        spacer.style.gridRowStart = String(r+1);
+        spacer.style.gridColumnStart = String(c+1);
         pb.appendChild(spacer);
-        return;
+        continue;
       }
+
       const d = document.createElement("div");
-      d.className="posBtn";
-      d.textContent=pos;
-      d.dataset.pos=pos;
-      d.dataset.color=POS_COLOR[pos] || "yellow";
+      d.className = "posBtn";
+      d.textContent = pos;
+      d.dataset.pos = pos;
+      d.dataset.color = POS_COLOR[pos] || "yellow";
+
+      // 座標固定
+      d.style.gridRowStart = String(r+1);
+      d.style.gridColumnStart = String(c+1);
+
+      // LM/RM を AM+DM と同じ縦幅に
+      if(pos === "LM" || pos === "RM"){
+        d.style.gridRowEnd = "span 2";
+      }
+
       d.addEventListener("click", ()=>{
         if(selPositions.has(pos)) selPositions.delete(pos);
         else selPositions.add(pos);
         d.classList.toggle("selected", selPositions.has(pos));
-renderSelectedConditions();
+        renderSelectedConditions();
       });
+
       pb.appendChild(d);
-    });
-  });
+    }
+  }
 
   // LV
   const lb = document.getElementById("lvBoard");
@@ -1140,6 +1162,9 @@ renderSelectedConditions();
 // search
 document.getElementById("btnSearchCombo").addEventListener("click", runComboSearch);
 
+
+// clear
+document.getElementById("btnClearCombo").addEventListener("click", resetComboSelections);
 // ★初期表示を反映（推奨）
 renderSelectedConditions();
 
