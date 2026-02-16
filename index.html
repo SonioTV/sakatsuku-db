@@ -232,6 +232,36 @@
     display:none;
   }
 
+.comboBtnRow{
+  width:min(560px, 92%);
+  margin:16px auto 6px;
+  display:flex;
+  gap:12px;
+  align-items:stretch;
+}
+.comboBtnRow .bigBtn{
+  margin:0;           /* 既存.bigBtnのmarginを行内だけ無効化 */
+  width:auto;
+  flex:1;
+}
+.comboClearBtn{
+  width:160px;
+  border:none;
+  border-radius:20px;
+  font-weight:900;
+  font-size:26px;
+  cursor:pointer;
+  background:#9aa0aa;
+  color:#fff;
+  box-shadow:0 16px 26px rgba(0,0,0,.12);
+}
+.comboClearBtn:active{ transform:scale(.99); }
+
+@media (max-width: 480px){
+  .comboBtnRow{ width:min(560px, 96%); gap:10px; }
+  .comboClearBtn{ width:120px; font-size:20px; }
+}
+
   /* 結果 */
   .resultArea{ margin-top:16px; }
   .resultGroupTitle{
@@ -637,10 +667,21 @@
       <div class="sectionTitle" style="font-size:22px;margin-top:10px;">【プレイスタイルのLv選択】</div>
       <div id="lvBoard" class="lvBoard" aria-label="lv board"></div>
 
-      <button id="btnSearchCombo" class="bigBtn" type="button">検索</button>
-      <div id="comboErr" class="error">ポリシーを選択してください</div>
+<div class="comboBtnRow">
+  <button id="btnSearchCombo" class="bigBtn" type="button">検索</button>
+  <button id="btnClearCombo" class="comboClearBtn" type="button">クリア</button>
+</div>
 
-      <div id="comboResult" class="resultArea"></div>
+<div id="comboErr" class="error">ポリシーを選択してください</div>
+
+<!-- ★ここに追加 -->
+<div id="comboSelectedCond" class="note" style="text-align:left;max-width:min(720px,96%);margin:10px auto 0;">
+  <div style="font-weight:900;margin-bottom:6px;">【選択した検索条件】</div>
+  <div id="comboSelectedCondText" style="font-weight:900;">（未選択）</div>
+</div>
+
+<div id="comboResult" class="resultArea"></div>
+
     </div>
   </section>
 
@@ -846,6 +887,32 @@ function setupTabs(){
 });
   });
 }
+
+function resetComboSelections(){
+  selPolicy = null;
+  selPlayStyle = null;
+  selLv = null;
+  selPositions = new Set();
+
+  // UI反映：policy/playstyle
+  document.querySelectorAll("#policyGrid .imgTile").forEach(t=>t.classList.remove("selected"));
+  document.querySelectorAll("#playStyleGrid .imgTile").forEach(t=>t.classList.remove("selected"));
+
+  // UI反映：positions
+  document.querySelectorAll("#posBoard .posBtn").forEach(b=>b.classList.remove("selected"));
+
+  // UI反映：lv
+  document.querySelectorAll("#lvBoard .lvTile").forEach(t=>t.classList.remove("selected"));
+
+  // エラー/結果をクリア
+  const err = document.getElementById("comboErr");
+  if(err) err.style.display = "none";
+  const res = document.getElementById("comboResult");
+  if(res) res.innerHTML = "";
+
+  renderSelectedConditions();
+}
+
 </script>
 
 <script>
@@ -965,9 +1032,11 @@ const PLAYSTYLES = [
 const POS_LAYOUT = [
   ["LW","CF","RW"],
   ["LM","AM","RM"],
+  ["","DM",""],
   ["LB","CB","RB"],
   ["","GK",""],
 ];
+
 // 色は適当にゲームの枠色に寄せる（FW=green, MF=yellow, DF=blue, GK=red）
 const POS_COLOR = {
   LW:"green", CF:"green", RW:"green",
@@ -980,6 +1049,19 @@ let selPolicy = null;
 let selPlayStyle = null;
 let selLv = null;
 let selPositions = new Set();
+
+function renderSelectedConditions(){
+  const pol = selPolicy ? selPolicy : "（未選択）";
+  const pos = (selPositions && selPositions.size)
+    ? [...selPositions].join(" / ")
+    : "（未選択）";
+  const ps  = selPlayStyle ? selPlayStyle : "（未選択）";
+  const lv  = selLv ? `Lv${selLv}` : "（未選択）";
+
+  const text = `${pol} / ${pos} / ${ps} ${lv}`;
+  const el = document.getElementById("comboSelectedCondText");
+  if(el) el.textContent = text;
+}
 
 function setupComboSearchUI(){
   // policy tiles
@@ -995,6 +1077,7 @@ function setupComboSearchUI(){
     tile.addEventListener("click", ()=>{
       selPolicy = tile.dataset.policy;
       pg.querySelectorAll(".imgTile").forEach(t=>t.classList.toggle("selected", t===tile));
+renderSelectedConditions();
     });
   });
 
@@ -1010,6 +1093,7 @@ function setupComboSearchUI(){
     tile.addEventListener("click", ()=>{
       selPlayStyle = tile.dataset.style;
       sg.querySelectorAll(".imgTile").forEach(t=>t.classList.toggle("selected", t===tile));
+renderSelectedConditions();
     });
   });
 
@@ -1020,8 +1104,8 @@ function setupComboSearchUI(){
     row.forEach(pos=>{
       if(!pos){
         const spacer = document.createElement("div");
-        spacer.style.width="72px";
-        spacer.style.height="52px";
+        spacer.style.width="76px";
+        spacer.style.height="54px";
         spacer.style.opacity="0";
         pb.appendChild(spacer);
         return;
@@ -1035,6 +1119,7 @@ function setupComboSearchUI(){
         if(selPositions.has(pos)) selPositions.delete(pos);
         else selPositions.add(pos);
         d.classList.toggle("selected", selPositions.has(pos));
+renderSelectedConditions();
       });
       pb.appendChild(d);
     });
@@ -1047,11 +1132,17 @@ function setupComboSearchUI(){
     tile.addEventListener("click", ()=>{
       selLv = Number(tile.dataset.lv);
       lb.querySelectorAll(".lvTile").forEach(t=>t.classList.toggle("selected", t===tile));
+renderSelectedConditions();
     });
   });
 
   // search
-  document.getElementById("btnSearchCombo").addEventListener("click", runComboSearch);
+// search
+document.getElementById("btnSearchCombo").addEventListener("click", runComboSearch);
+
+// ★初期表示を反映（推奨）
+renderSelectedConditions();
+
 }
 
 function getComboField(c, keys, def=""){
