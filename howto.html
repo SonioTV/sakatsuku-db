@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>このサイトの遊び方 | サカつく2026攻略DB</title>
+<link rel="canonical" href="https://sakatsuku2026-db.com/howto.html">
+<style>
+:root{
+  --fg:#111; --muted:#555; --border:#eaeaea; --bg:#fff; --panel:#f7f7f7;
+  --link:#0b5ed7;
+}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.8;margin:0;background:var(--bg);color:var(--fg)}
+main{max-width:920px;margin:0 auto;padding:20px}
+h1{margin:0 0 8px;font-size:28px}
+h2{margin:22px 0 10px;font-size:20px}
+h3{margin:16px 0 8px;font-size:16px}
+small{color:var(--muted)}
+a{color:var(--link)}
+a:hover{opacity:.85}
+.section{margin:24px 0}
+.box{background:var(--panel);border:1px solid #e5e5e5;border-radius:12px;padding:14px 16px}
+.hr{border-top:1px solid var(--border);margin:18px 0}
+.topbar{border-bottom:1px solid var(--border);background:#fff}
+.topbarInner{max-width:920px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:900}
+.brand a{color:inherit;text-decoration:none}
+.nav a{margin-left:10px;text-decoration:none;font-size:14px}
+.backlink{margin-top:34px}
+.backbtn{
+  display:inline-block;padding:10px 14px;border:1px solid rgba(0,0,0,.12);
+  border-radius:10px;text-decoration:none;font-weight:900;background:#fff
+}
+.footer{margin-top:44px;padding:18px 0;border-top:1px solid var(--border);font-size:14px;text-align:center}
+.footer a{text-decoration:none}
+.toc a{display:inline-block;margin:6px 10px 0 0;text-decoration:none;font-weight:800}
+.step{margin:10px 0 0 0;padding-left:20px}
+.badge{display:inline-block;font-size:12px;font-weight:900;color:#0b3d0f;background:#e7f5ea;border:1px solid rgba(46,125,50,.25);padding:3px 10px;border-radius:999px;margin-left:8px}
+.kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.95em;background:#fff;border:1px solid rgba(0,0,0,.12);padding:2px 6px;border-radius:6px}
+@media (max-width:480px){
+  main{padding:16px}
+  h1{font-size:24px}
+  .nav{display:none}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbarInner">
+    <div class="brand"><a href="index.html">サカつく2026攻略DB</a></div>
+    <div class="nav">
+      <a href="about.html">このサイトについて</a>
+      <a href="howto.html">遊び方</a>
+      <a href="privacy.html">プライバシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="disclosure.html">広告・PR</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<h1>このサイトの遊び方</h1>
+<small>最終更新日：2026-02-16</small>
+
+<div class="section box">
+  <p>
+    本ページでは「サカつく2026攻略DB」の使い方（＝遊び方）をまとめています。
+    このサイトは<strong>「コンボを探す」</strong>だけでなく、<strong>「新しく手に入れた選手が、どのコンボのキーになれるか」</strong>を調べるためにも使えます。
+  </p>
+  <div class="toc" aria-label="目次">
+    <a href="#combo">コンボ検索</a>
+    <a href="#player">選手検索</a>
+    <a href="#bonus">おまけ</a>
+    <a href="#faq">よくある質問</a>
+  </div>
+</div>
+
+<div class="section" id="combo">
+  <h2>コンボ検索 <span class="badge">基本</span></h2>
+  <div class="box">
+    <p><strong>「コンボ検索」はこんな時に使います！</strong></p>
+    <ul>
+      <li>SP選手に新しい選手が実装された時</li>
+      <li>サカつくモードで新しい選手を見つけた時や獲得した時</li>
+    </ul>
+    <p>
+      その選手の<strong>ポジション</strong>や<strong>プレイスタイル</strong>が、フォーメーションコンボの「キー」として採用できるかを検索できます。
+      コンボの候補が出たら、必要人数や条件を見ながら編成を組み立てるのが基本です。
+    </p>
+
+    <h3>手順</h3>
+    <ol class="step">
+      <li><strong>ポリシー</strong>を選択（必須）</li>
+      <li><strong>ポジション</strong>を複数選択（例：<span class="kbd">LW</span>＋<span class="kbd">AM</span>＋<span class="kbd">DM</span> など）</li>
+      <li><strong>プレイスタイル</strong>を選択し、必要なら<strong>Lv</strong>を指定</li>
+      <li><span class="kbd">検索</span>で結果を表示</li>
+      <li>条件をやり直したい場合は<span class="kbd">クリア</span>で一括リセット</li>
+    </ol>
+
+    <h3>検索結果の意味</h3>
+    <ul>
+      <li><strong>① 完全一致</strong>：選手のポリシー／ポジション／プレイスタイルLvが、コンボの発動条件と完全一致。理想の状態です。</li>
+      <li><strong>② ポリシー違い</strong>：ポジションとプレイスタイルLvは条件を満たすが、ポリシーが不一致の状態です。</li>
+      <li><strong>③ ポジション違い</strong>：プレイスタイルLvは条件を満たし、ポリシーも一致しているが、選手のメインポジションが異なります。</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section" id="player">
+  <h2>選手検索 <span class="badge">便利</span></h2>
+  <div class="box">
+    <p><strong>「選手検索」はこんな時に使います！</strong></p>
+    <ul>
+      <li>他のフォーメーションコンボを試してみたいが、どの選手で発動条件を満たせるか知りたい</li>
+      <li>発動条件を満たせる選手が、どこで手に入るのか／どんな性能なのか知りたい</li>
+    </ul>
+    <p>
+      各フォーメーションコンボの発動条件を満たせる選手がリストアップされ、<strong>選手名をタップ</strong>すると詳細を確認できます。
+      （※表示内容は players.json のデータに基づきます）
+    </p>
+
+    <h3>検索結果の意味</h3>
+    <ul>
+      <li><strong>① 条件1〜3</strong>：発動に必要なポジション／プレイスタイル／プレイスタイルLvがわかります。</li>
+      <li><strong>② 完全一致</strong>：コンボのポリシーと発動条件が完全一致している選手が表示されます。<br>
+        <strong>「なし」</strong>と表示される場合は、以下の可能性があります：
+        <ul>
+          <li>SP選手では未実装の性能</li>
+          <li>サカつくモードで対象選手の獲得が必須</li>
+        </ul>
+        ※今後サイト情報を追加していくことで解消される可能性があります。
+      </li>
+      <li><strong>③ ポリシー違い</strong>：条件に一致するポジションとプレイスタイルを持つ選手が表示されますが、ポリシーが不一致です。<br>
+        ※チームポリシーと選手ポリシーが一致すると、選手の総合力にバフ効果があります。
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="section" id="bonus">
+  <h2>おまけ（ランキング / ホームタウン）</h2>
+  <div class="box">
+    <p><strong>「おまけ」はこんな時に使います！</strong></p>
+    <ul>
+      <li>スタジアム施設の中で、収入力が上がる施設の一覧が知りたい</li>
+      <li>クラブハウス設備の中で、休息Lvが上昇する設備が知りたい</li>
+      <li>今のSP選手で最強の選手はだれか知りたい</li>
+      <li>各ポリシーの分布（傾向）を眺めたい</li>
+    </ul>
+    <p>
+      施設・設備の効果を一覧で確認して、スタジアム／クラブハウスのレベルに合わせた最適な選択が可能になります。
+      選手データを元にしたランキングや分布は、眺めながら暇つぶしできます。
+    </p>
+  </div>
+</div>
+
+<div class="section" id="faq">
+  <h2>よくある質問</h2>
+  <div class="box">
+    <h3>Q. 検索結果が出ない</h3>
+    <p>A. コンボ検索はポリシー未選択の状態では検索できません。まずポリシーを選択してください。</p>
+
+    <h3>Q. 表示が古い/データが違う気がする</h3>
+    <p>A. データ更新タイミングにより差分が出る場合があります。最新の更新は<a href="changelog.html">更新履歴</a>をご確認ください。</p>
+
+    <h3>Q. 不具合や要望を送りたい</h3>
+    <p>A. <a href="contact.html">お問い合わせ</a>からご連絡ください。可能な範囲で対応します。</p>
+  </div>
+</div>
+
+<div class="backlink">
+  <a class="backbtn" href="index.html">← サイトに戻る</a>
+</div>
+
+
+</main>
+</body>
+</html>
