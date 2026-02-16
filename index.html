@@ -143,7 +143,7 @@
     object-fit:contain;
     display:block;
     margin:0 auto 8px;
-  }    .imgTile .lbl{ font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:clip; }
+  }    .imgTile .lbl{ font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 /* ポジション選択 */
   .posWrap{
     display:flex;
@@ -944,7 +944,6 @@ function resetComboSelections(){
   if(res) res.innerHTML = "";
 
   renderSelectedConditions();
-  setTimeout(fitPlaystyleLabels, 0);
 }
 
 </script>
@@ -1792,34 +1791,6 @@ function renderBarsInOrder(container, order, map, total){
     container.appendChild(row);
   });
 }
-<script>
-
-  // --- Playstyle label fit (no wrap / no overflow / no ellipsis) ---
-  function fitPlaystyleLabels(){
-    const labels = document.querySelectorAll('.imgTile .lbl');
-    labels.forEach(lbl=>{
-      // reset
-      const base = window.matchMedia('(max-width: 480px)').matches ? 12 : 14;
-      let size = base;
-      lbl.style.fontSize = size + 'px';
-      lbl.style.whiteSpace = 'nowrap';
-      lbl.style.overflow = 'hidden';
-      lbl.style.textOverflow = 'clip';
-
-      // shrink until it fits or reach minimum
-      const min = 9;
-      // Use a small loop; scrollWidth includes overflow content
-      while(size > min && lbl.scrollWidth > lbl.clientWidth + 1){
-        size -= 0.5;
-        lbl.style.fontSize = size + 'px';
-      }
-    });
-  }
-
-// 初期表示とタブ切替後に適用
-window.addEventListener('load', ()=>{ setTimeout(fitPlaystyleLabels, 0); });
-window.addEventListener('resize', ()=>{ setTimeout(fitPlaystyleLabels, 0); });
-</script>
 </script>
 </body>
 </html>
