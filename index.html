@@ -1493,9 +1493,6 @@ function runComboSearch(){
           <div class="k">ポリシー</div><div class="v">${esc(policy)}</div>
           <div class="k">効果</div><div class="v">${esc(effect)}</div>
           <div class="k">必要人数</div><div class="v">${esc(need)}</div>
-        <div class="k">入手方法</div><div class="v">${esc(acqMethod)}</div>
-        <div class="k">入手場所</div><div class="v">${esc(acqPlace)}</div>
-        <div class="k">入手可能期間</div><div class="v">${esc(acqPeriod)}</div>
           <div class="k">入手方法</div><div class="v">${esc(acqMethod)}</div>
           <div class="k">入手場所</div><div class="v">${esc(acqPlace)}</div>
           <div class="k">入手可能期間</div><div class="v">${esc(acqPeriod)}</div>
@@ -1637,8 +1634,8 @@ function renderComboDetail(){
     const s = getComboField(cond, ["playStyle","style","プレイスタイル"], "-");
     const lv = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "-");
     const pol = getComboField(cond, ["policy","ポリシー"], "-");
-    return `${p}/${s}Lv${lv}/${pol}`;
-  }).join(" , ");
+    return `${esc(p)}/${esc(s)}Lv${esc(lv)}/${esc(pol)}`;
+  }).join("<br/>");
 
   box.innerHTML = `
     <div class="comboCard" style="margin-top:16px;">
@@ -1648,7 +1645,11 @@ function renderComboDetail(){
         <div class="k">ランク</div><div class="v">${esc(rank)}</div>
         <div class="k">ポリシー</div><div class="v">${esc(policy)}</div>
         <div class="k">効果</div><div class="v">${esc(effect)}</div>
-        <div class="k">必要人数</div><div class="v">${esc(need)}</div>
+                <div class="k">必要人数</div><div class="v">${esc(need)}</div>
+        <div class="k">入手方法</div><div class="v">${esc(acqMethod)}</div>
+        <div class="k">入手場所</div><div class="v">${esc(acqPlace)}</div>
+        <div class="k">入手可能期間</div><div class="v">${esc(acqPeriod)}</div>
+        <div class="k">条件</div><div class="v"><div class="condBox">${condText}</div></div>
       </div>
     </div>
   `;
@@ -1757,24 +1758,13 @@ function renderPlayerNameOnlyList(arr){
 
 <!-- ===== 更新履歴 / サイト情報（ページ下部表示） ===== -->
 <section class="card updateCard" id="changelog">
-  <div class="sectionTitle" style="text-align:left;">更新履歴</div>
-
-  <div class="updateItem">
-    <div class="updateDate">2026.02.14</div>
-    <div class="updateText">
-      ・独自ドメイン + HTTPS 対応<br>
-      ・コンボ検索：条件表示（PS/Lv/配置）を改善<br>
-      ・選手詳細：国籍／成長タイプ表示を追加
-    </div>
+  <div class="sectionTitle" style="text-align:left;">
+    <a href="changelog.html" style="color:inherit;text-decoration:none;">更新履歴</a>
   </div>
-
-  <div class="updateItem">
-    <div class="updateDate">2026.02.10</div>
-    <div class="updateText">
-      ・コンボ検索、選手検索、ランキング表示を追加
-    </div>
+  <div id="latestChangelog" class="updateItem">
+    <div class="updateDate">読み込み中…</div>
+    <div class="updateText">更新履歴を取得しています。</div>
   </div>
-
 </section>
 <section class="card" id="site-pages" aria-label="サイト情報ページ">
     <h2 style="margin:0 0 10px;">サイト情報</h2>
@@ -1944,5 +1934,36 @@ function renderBarsInOrder(container, order, map, total){
   });
 }
 </script>
+
+<script>
+(function(){
+  const target = document.getElementById("latestChangelog");
+  if(!target) return;
+
+  function setFallback(msg){
+    target.innerHTML = '<div class="updateDate">更新履歴</div><div class="updateText">'+msg+'</div>';
+  }
+
+  fetch("changelog.html", { cache: "no-store" })
+    .then(r => r.text())
+    .then(txt => {
+      const doc = new DOMParser().parseFromString(txt, "text/html");
+      const first = doc.querySelector(".log-card");
+      if(!first){ setFallback('更新履歴を取得できませんでした。<br><a href="changelog.html">changelog.html を開く</a>'); return; }
+
+      const date = (first.querySelector(".date")?.textContent || "").trim();
+      const items = Array.from(first.querySelectorAll("ul li")).map(li => li.textContent.trim()).filter(Boolean);
+
+      const html = [
+        '<div class="updateDate">'+(date || "更新")+'</div>',
+        '<div class="updateText">'+(items.length ? "・"+items.join("<br>・") : "更新内容がありません")+'</div>'
+      ].join("");
+
+      target.innerHTML = html;
+    })
+    .catch(() => setFallback('更新履歴を取得できませんでした。<br><a href="changelog.html">changelog.html を開く</a>'));
+})();
+</script>
+
 </body>
 </html>
