@@ -783,7 +783,14 @@
         <div class="note" style="margin-top:6px;">※未選択の場合は「すべて」を表示します</div>
       </div>
 
-      <div class="sectionTitle" style="font-size:24px;margin-top:6px;">フォーメーションコンボを選択</div>
+      
+      <div class="sectionTitle" style="font-size:24px;margin-top:10px;margin-bottom:6px;">ポリシーを選択</div>
+      <div class="centerBlock">
+        <div id="playerPolicyGrid" class="imgGrid" aria-label="player policy grid"></div>
+        <div class="note" style="margin-top:6px;">※未選択の場合は「すべて」を表示します</div>
+      </div>
+
+<div class="sectionTitle" style="font-size:24px;margin-top:6px;">フォーメーションコンボを選択</div>
       <div class="centerBlock">
         <select id="comboSelect" class="bigSelect"></select>
       </div>
@@ -924,50 +931,6 @@ async function loadJson(url){
   return await res.json();
 }
 
-
-async function loadLatestChangelog(){
-  const dateEl = document.getElementById("latestUpdateDate");
-  const textEl = document.getElementById("latestUpdateText");
-  if(!dateEl || !textEl) return;
-
-  try{
-    const res = await fetch("changelog.html", {cache:"no-store"});
-    if(!res.ok) throw new Error("fetch failed: changelog.html");
-    const html = await res.text();
-
-    const doc = new DOMParser().parseFromString(html, "text/html");
-    const card = doc.querySelector(".log-card");
-    if(!card){
-      dateEl.textContent = "更新履歴が見つかりません";
-      textEl.textContent = "";
-      return;
-    }
-
-    const date = (card.querySelector(".date")?.textContent || "").trim();
-    const ver  = (card.querySelector(".ver")?.textContent || "").trim();
-    const items = [...card.querySelectorAll("ul li")]
-      .map(li => (li.textContent || "").trim())
-      .filter(Boolean);
-
-    // date line (version optional)
-    if(ver){
-      dateEl.innerHTML = `${esc(date || "-")} <span style="color:var(--muted);font-weight:900;font-size:13px;margin-left:8px;">${esc(ver)}</span>`;
-    }else{
-      dateEl.textContent = date || "-";
-    }
-
-    if(items.length){
-      textEl.innerHTML = `<ul style="margin:0;padding-left:22px;line-height:1.6;">${items.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`;
-    }else{
-      textEl.textContent = "-";
-    }
-  }catch(e){
-    console.error(e);
-    dateEl.textContent = "更新履歴の読み込みに失敗しました";
-    textEl.textContent = "";
-  }
-}
-
 (async function init(){
   try{
     PLAYERS = await loadJson("players.json");
@@ -989,10 +952,6 @@ async function loadLatestChangelog(){
   setupComboSearchUI();
   setupPlayerSearchUI();
   setupBonusUI();
-
-  
-  // 更新履歴（最新1件）
-  await loadLatestChangelog();
 
   // 初期
   refreshComboSelect();
@@ -1518,8 +1477,30 @@ function runComboSearch(){
    タブ2：選手検索（コンボ→対応選手）
 ========================= */
 let selectedRanks = new Set(); // 金/銀/銅
+let selectedPlayerPolicy = null; // ポリシー（未選択=null）
 
 function setupPlayerSearchUI(){
+  // policy tiles (player search)
+  const ppg = document.getElementById("playerPolicyGrid");
+  if(ppg){
+    ppg.innerHTML = POLICIES.map(p=>`
+      <div class="imgTile" data-policy="${esc(p.key)}" role="button" tabindex="0">
+        <img src="${esc(p.img)}" onerror="this.onerror=null;this.src='${esc(p.fallback||p.img)}';" alt="${esc(p.key)}">
+        <div class="lbl">${esc(p.key)}</div>
+      </div>
+    `).join("");
+
+    ppg.querySelectorAll(".imgTile").forEach(tile=>{
+      tile.addEventListener("click", ()=>{
+        const pol = tile.dataset.policy || null;
+        // toggle off if same
+        selectedPlayerPolicy = (selectedPlayerPolicy===pol) ? null : pol;
+        ppg.querySelectorAll(".imgTile").forEach(t=>t.classList.toggle("selected", (t.dataset.policy||"")===safeStr(selectedPlayerPolicy)));
+        refreshComboSelect();
+      });
+    });
+  }
+
   const board = document.getElementById("rankBoard");
   board.querySelectorAll(".rankTile").forEach(tile=>{
     tile.addEventListener("click", ()=>{
@@ -1549,16 +1530,17 @@ function refreshComboSelect(){
   const ranks = selectedRanks;
   const list = COMBOS
     .filter(c=>{
-      if(ranks.size===0) return true;
-      const r = normalizeRank(getComboField(c,["rank","ランク"],""));
-      return ranks.has(r);
+      const rOk = (ranks.size===0) ? true : ranks.has(normalizeRank(getComboField(c,["rank","ランク"],"")));
+      const pSel = safeStr(selectedPlayerPolicy);
+      const pOk = (!pSel) ? true : (normalizePolicy(getComboField(c,["policy","ポリシー"],"")) === pSel);
+      return rOk && pOk;
     })
     .map(c=>{
       const id = safeStr(getComboField(c,["comboId","id","ID"],""));
       const name = getComboField(c, ["name","comboName","formationName","title"], "名称なし");
       const formation = getComboField(c, ["formation","formationCode","フォーメーション"], "");
       const rank = normalizeRank(getComboField(c, ["rank","ランク"], ""));
-      const label = `${formation ? (formation+" ｜ ") : ""}${name}${rank?("（"+rank+"）"):""}`;
+      const label = `${name}${rank?('（'+rank+'）'):''}`;
       return {id: id || label, label, combo:c};
     });
 
@@ -1732,14 +1714,24 @@ function renderPlayerNameOnlyList(arr){
 
 <!-- ===== 更新履歴 / サイト情報（ページ下部表示） ===== -->
 <section class="card updateCard" id="changelog">
-  <a href="changelog.html" style="text-decoration:none;color:inherit;display:block;">
-    <div class="sectionTitle" style="text-align:left;">更新履歴</div>
-  </a>
+  <div class="sectionTitle" style="text-align:left;">更新履歴</div>
 
   <div class="updateItem">
-    <div id="latestUpdateDate" class="updateDate">読み込み中…</div>
-    <div id="latestUpdateText" class="updateText"></div>
+    <div class="updateDate">2026.02.14</div>
+    <div class="updateText">
+      ・独自ドメイン + HTTPS 対応<br>
+      ・コンボ検索：条件表示（PS/Lv/配置）を改善<br>
+      ・選手詳細：国籍／成長タイプ表示を追加
+    </div>
   </div>
+
+  <div class="updateItem">
+    <div class="updateDate">2026.02.10</div>
+    <div class="updateText">
+      ・コンボ検索、選手検索、ランキング表示を追加
+    </div>
+  </div>
+
 </section>
 <section class="card" id="site-pages" aria-label="サイト情報ページ">
     <h2 style="margin:0 0 10px;">サイト情報</h2>
