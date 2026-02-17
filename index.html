@@ -130,6 +130,36 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width:520px;
   }
+
+
+  /* ▼ player search policy grid: horizontal (no wrap) */
+  #playerPolicyGrid.imgGrid{
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:stretch;
+    gap:12px;
+    overflow-x:auto;
+    max-width:720px;
+    padding:0 6px 4px;
+  }
+  #playerPolicyGrid .imgTile{
+    width:150px;
+    flex:0 0 auto;
+  }
+  #playerPolicyGrid .imgTile .lbl{
+    display:block;
+    max-width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap; /* keep */
+  }
+  @media (max-width:420px){
+    #playerPolicyGrid{ gap:10px; }
+    #playerPolicyGrid .imgTile{ width:120px; }
+    #playerPolicyGrid .imgTile img{ width:96px; height:64px; }
+  }
+  /* ▲ player search policy grid */
   .imgTile{
     width:180px;
     padding:10px 10px 8px;
@@ -1463,6 +1493,9 @@ function runComboSearch(){
           <div class="k">ポリシー</div><div class="v">${esc(policy)}</div>
           <div class="k">効果</div><div class="v">${esc(effect)}</div>
           <div class="k">必要人数</div><div class="v">${esc(need)}</div>
+        <div class="k">入手方法</div><div class="v">${esc(acqMethod)}</div>
+        <div class="k">入手場所</div><div class="v">${esc(acqPlace)}</div>
+        <div class="k">入手可能期間</div><div class="v">${esc(acqPeriod)}</div>
           <div class="k">入手方法</div><div class="v">${esc(acqMethod)}</div>
           <div class="k">入手場所</div><div class="v">${esc(acqPlace)}</div>
           <div class="k">入手可能期間</div><div class="v">${esc(acqPeriod)}</div>
@@ -1596,6 +1629,9 @@ function renderComboDetail(){
   const policy = policyArr.length ? policyArr.join(" / ") : "-";
   const effect = getComboField(c, ["effect","効果"], "-");
   const need = getComboField(c, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
+  const acqMethod = getComboField(c, ["acquisitionMethod","入手方法"], "-");
+  const acqPlace  = getComboField(c, ["acquisitionPlace","入手場所"], "-");
+  const acqPeriod = getComboField(c, ["availablePeriod","入手可能期間"], "-");
   const condText = getComboConditions(c).map(cond => {
     const p = getComboField(cond, ["position","pos","ポジション"], "-");
     const s = getComboField(cond, ["playStyle","style","プレイスタイル"], "-");
