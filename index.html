@@ -718,10 +718,16 @@
 
 <!-- ===== 更新履歴 ===== -->
 
+  <div class="card updateCard" id="latestUpdateCard" aria-label="latest update">
+    <div class="sectionTitle" style="text-align:left;">
+      <a href="changelog.html" style="color:inherit;text-decoration:none;">更新履歴</a>
+    </div>
+    <div id="latestUpdateBody" class="updateItem">
+      <div class="note" style="text-align:left;margin:0;">読み込み中…</div>
+    </div>
+  </div>
 
-
-
-  <div class="tabs">
+<div class="tabs">
     <button id="tabCombo" class="tabbtn active" type="button">コンボ検索</button>
     <button id="tabPlayer" class="tabbtn" type="button">選手検索</button>
     <button id="tabBonus" class="tabbtn" type="button">おまけ</button>
@@ -921,7 +927,46 @@ function esc(s){
 async function loadJson(url){
   const res = await fetch(url, {cache:"no-store"});
   if(!res.ok) throw new Error("fetch failed: " + url);
+
   return await res.json();
+}
+
+async function loadLatestChangelog(){
+  const mount = document.getElementById("latestUpdateBody");
+  if(!mount) return;
+
+  try{
+    const res = await fetch("changelog.html", {cache:"no-store"});
+    if(!res.ok) throw new Error("fetch failed: changelog.html");
+    const html = await res.text();
+
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const card = doc.querySelector(".log-card");
+    if(!card){
+      mount.innerHTML = `<div class="note" style="text-align:left;margin:0;">更新履歴が見つかりません</div>`;
+      return;
+    }
+
+    const date = (card.querySelector(".date")?.textContent || "").trim();
+    const ver  = (card.querySelector(".ver")?.textContent || "").trim();
+
+    const items = [...card.querySelectorAll("ul li")].map(li => (li.textContent || "").trim()).filter(Boolean);
+
+    const verHtml = ver ? `<span style="color:var(--muted);font-weight:900;font-size:13px;margin-left:8px;">${esc(ver)}</span>` : "";
+    const dateLine = `${esc(date || "-")}${verHtml ? "  " + verHtml : ""}`;
+
+    const listHtml = items.length
+      ? `<ul style="margin:0;padding-left:22px;line-height:1.6;">${items.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`
+      : `<div class="note" style="text-align:left;margin:0;">-</div>`;
+
+    mount.innerHTML = `
+      <div class="updateDate">${dateLine}</div>
+      <div class="updateText">${listHtml}</div>
+    `;
+  }catch(e){
+    console.error(e);
+    mount.innerHTML = `<div class="note" style="text-align:left;margin:0;">更新履歴の読み込みに失敗しました</div>`;
+  }
 }
 
 (async function init(){
@@ -945,6 +990,9 @@ async function loadJson(url){
   setupComboSearchUI();
   setupPlayerSearchUI();
   setupBonusUI();
+
+  // 更新履歴（最新1件）
+  loadLatestChangelog();
 
   // 初期
   refreshComboSelect();
