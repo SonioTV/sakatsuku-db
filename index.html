@@ -1426,6 +1426,10 @@ function runComboSearch(){
       const effect = getComboField(combo, ["effect","効果"], "-");
       const need = getComboField(combo, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
 
+      const acqMethod = getComboField(combo, ["acquisitionMethod","入手方法"], "-");
+      const acqPlace  = getComboField(combo, ["acquisitionPlace","入手場所"], "-");
+      const acqPeriod = getComboField(combo, ["availablePeriod","入手可能期間"], "-");
+
       const condHtml = getComboConditions(combo).map(cond => {
         const p = getComboField(cond, ["position","pos","ポジション"], "-");
         const s = getComboField(cond, ["playStyle","style","プレイスタイル"], "-");
@@ -1459,6 +1463,9 @@ function runComboSearch(){
           <div class="k">ポリシー</div><div class="v">${esc(policy)}</div>
           <div class="k">効果</div><div class="v">${esc(effect)}</div>
           <div class="k">必要人数</div><div class="v">${esc(need)}</div>
+          <div class="k">入手方法</div><div class="v">${esc(acqMethod)}</div>
+          <div class="k">入手場所</div><div class="v">${esc(acqPlace)}</div>
+          <div class="k">入手可能期間</div><div class="v">${esc(acqPeriod)}</div>
           <div class="k">条件</div><div class="v">${condBlock}</div>
         </div>
       `;
@@ -1532,7 +1539,7 @@ function refreshComboSelect(){
     .filter(c=>{
       const rOk = (ranks.size===0) ? true : ranks.has(normalizeRank(getComboField(c,["rank","ランク"],"")));
       const pSel = safeStr(selectedPlayerPolicy);
-      const pOk = (!pSel) ? true : (normalizePolicy(getComboField(c,["policy","ポリシー"],"")) === pSel);
+      const pOk = (!pSel) ? true : (getComboPolicys(c).some(pol => normalizePolicy(pol) === pSel));
       return rOk && pOk;
     })
     .map(c=>{
