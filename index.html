@@ -718,15 +718,6 @@
 
 <!-- ===== 更新履歴 ===== -->
 
-  <div class="card updateCard" id="latestUpdateCard" aria-label="latest update">
-    <div class="sectionTitle" style="text-align:left;">
-      <a href="changelog.html" style="color:inherit;text-decoration:none;">更新履歴</a>
-    </div>
-    <div id="latestUpdateBody" class="updateItem">
-      <div class="note" style="text-align:left;margin:0;">読み込み中…</div>
-    </div>
-  </div>
-
 <div class="tabs">
     <button id="tabCombo" class="tabbtn active" type="button">コンボ検索</button>
     <button id="tabPlayer" class="tabbtn" type="button">選手検索</button>
@@ -931,7 +922,7 @@ async function loadJson(url){
   return await res.json();
 }
 
-async function loadLatestChangelog(){
+async async function loadLatestChangelog(){
   const mount = document.getElementById("latestUpdateBody");
   if(!mount) return;
 
@@ -992,7 +983,7 @@ async function loadLatestChangelog(){
   setupBonusUI();
 
   // 更新履歴（最新1件）
-  loadLatestChangelog();
+  await loadLatestChangelog();
 
   // 初期
   refreshComboSelect();
@@ -1743,25 +1734,15 @@ function renderPlayerNameOnlyList(arr){
 
 
 <!-- ===== 更新履歴 / サイト情報（ページ下部表示） ===== -->
-<section class="card updateCard" id="changelog">
-  <div class="sectionTitle" style="text-align:left;">更新履歴</div>
-
-  <div class="updateItem">
-    <div class="updateDate">2026.02.14</div>
-    <div class="updateText">
-      ・独自ドメイン + HTTPS 対応<br>
-      ・コンボ検索：条件表示（PS/Lv/配置）を改善<br>
-      ・選手詳細：国籍／成長タイプ表示を追加
-    </div>
+<section class="card updateCard" id="changelog" aria-label="update history">
+  <div class="sectionTitle" style="text-align:left;">
+    <a href="changelog.html" style="color:inherit;text-decoration:none;">更新履歴</a>
   </div>
 
-  <div class="updateItem">
-    <div class="updateDate">2026.02.10</div>
-    <div class="updateText">
-      ・コンボ検索、選手検索、ランキング表示を追加
-    </div>
+  <!-- changelog.html の最新1件をここに自動反映 -->
+  <div id="latestUpdateBody" class="updateItem">
+    <div class="note" style="text-align:left;margin:0;">読み込み中…</div>
   </div>
-
 </section>
 <section class="card" id="site-pages" aria-label="サイト情報ページ">
     <h2 style="margin:0 0 10px;">サイト情報</h2>
