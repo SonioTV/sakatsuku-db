@@ -1418,6 +1418,9 @@ function runComboSearch(){
       const policy = (getComboPolicys(combo).filter(Boolean).join(" / ")) || getComboField(combo, ["policy","ポリシー"], "-");
       const effect = getComboField(combo, ["effect","効果"], "-");
       const need = getComboField(combo, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
+      const acqMethod = getComboField(combo, ["acquisitionMethod","入手方法"], "-");
+      const acqPlace  = getComboField(combo, ["acquisitionPlace","入手場所"], "-");
+      const acqPeriod = getComboField(combo, ["availablePeriod","入手可能期間"], "-");
 
       const condHtml = getComboConditions(combo).map(cond => {
         const p = getComboField(cond, ["position","pos","ポジション"], "-");
@@ -1452,6 +1455,9 @@ function runComboSearch(){
           <div class="k">ポリシー</div><div class="v">${esc(policy)}</div>
           <div class="k">効果</div><div class="v">${esc(effect)}</div>
           <div class="k">必要人数</div><div class="v">${esc(need)}</div>
+          <div class="k">入手方法</div><div class="v">${esc(acqMethod)}</div>
+          <div class="k">入手場所</div><div class="v">${esc(acqPlace)}</div>
+          <div class="k">入手可能期間</div><div class="v">${esc(acqPeriod)}</div>
           <div class="k">条件</div><div class="v">${condBlock}</div>
         </div>
       `;
@@ -1559,6 +1565,9 @@ function renderComboDetail(){
   const policy = policyArr.length ? policyArr.join(" / ") : "-";
   const effect = getComboField(c, ["effect","効果"], "-");
   const need = getComboField(c, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
+  const acqMethod = getComboField(c, ["acquisitionMethod","入手方法"], "-");
+  const acqPlace  = getComboField(c, ["acquisitionPlace","入手場所"], "-");
+  const acqPeriod = getComboField(c, ["availablePeriod","入手可能期間"], "-");
   const condText = getComboConditions(c).map(cond => {
     const p = getComboField(cond, ["position","pos","ポジション"], "-");
     const s = getComboField(cond, ["playStyle","style","プレイスタイル"], "-");
@@ -1576,6 +1585,9 @@ function renderComboDetail(){
         <div class="k">ポリシー</div><div class="v">${esc(policy)}</div>
         <div class="k">効果</div><div class="v">${esc(effect)}</div>
         <div class="k">必要人数</div><div class="v">${esc(need)}</div>
+        <div class="k">入手方法</div><div class="v">${esc(acqMethod)}</div>
+        <div class="k">入手場所</div><div class="v">${esc(acqPlace)}</div>
+        <div class="k">入手可能期間</div><div class="v">${esc(acqPeriod)}</div>
       </div>
     </div>
   `;
