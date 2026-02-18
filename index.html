@@ -1686,7 +1686,7 @@ function playerMatchesCondition(p, cond, comboPolicys){
 
       const posOk   = !posReq   || pPos   === posReq;
       const styleOk = !styleReq || pStyle === styleReq;
-      const lvOk    = (lvReq===null) || (pLv===lvReq);
+      const lvOk    = (lvReq===null) || (pLv!==null && pLv>=lvReq);
 
       const core = posOk && styleOk && lvOk;
 
