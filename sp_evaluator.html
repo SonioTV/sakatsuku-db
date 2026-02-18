@@ -423,6 +423,22 @@
   </div>
 </div>
 
+
+<!-- Player Detail Modal -->
+<div id="pModalBack" class="pmodalBack" aria-hidden="true">
+  <div class="pmodal" role="dialog" aria-modal="true">
+    <div class="pmodalHead">
+      <div>
+        <div id="pModalTitle" class="ttl">詳細</div>
+        <div id="pModalSub" class="subttl"></div>
+      </div>
+      <button id="pModalClose" aria-label="閉じる">×</button>
+    </div>
+    <div id="pModalBody" class="pmodalBody"></div>
+  </div>
+</div>
+
+
 <!-- Modal -->
 <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
   <div class="modal">
@@ -1109,12 +1125,6 @@ function openPlayerModal(p){
   back.classList.add("show");
   back.setAttribute("aria-hidden","false");
 }
-
-function setupPlayerModal(){
-  const closeBtn = document.getElementById("playerModalClose");
-  if(!closeBtn) return; // 要素が無いなら何もしない
-  closeBtn.addEventListener("click", closePlayerModal);
-} 
 
 function setupPlayerModal(){
   const back = document.getElementById("pModalBack");
