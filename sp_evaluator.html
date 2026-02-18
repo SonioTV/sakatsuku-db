@@ -867,6 +867,31 @@ function openCompatList(title, players){
   });
 }
 
+
+/* combo list modal */
+function openComboList(title, combos){
+  const list = (combos||[]).filter(Boolean).sort((a,b)=>getComboName(a).localeCompare(getComboName(b),"ja"));
+  const body = list.length
+    ? `<div style="font-weight:900;line-height:1.6;text-align:center;">
+        ${list.map(c=>{
+          const cid = getComboId(c);
+          const nm  = getComboName(c);
+          return `<a href="#" class="tag tagBtn" data-combo-id="${esc(cid)}">${esc(nm)}</a>`;
+        }).join(" ")}
+      </div>`
+    : `<div class="note" style="margin:0;">対象なし</div>`;
+  openModal(title, body);
+
+  $("modalBody").querySelectorAll("[data-combo-id]").forEach(a=>{
+    a.addEventListener("click", (e)=>{
+      e.preventDefault();
+      const cid = a.getAttribute("data-combo-id");
+      const combo = COMBOS.find(c=>getComboId(c)===cid) || null;
+      openComboDetail(combo);
+    });
+  });
+}
+
 /* ===== Render ===== */
 function renderResult(target){
   const nm = normalize(target.name || target.player_name || "（不明）");
@@ -920,7 +945,7 @@ function renderResult(target){
         const left = r.labelVal ? `${esc(r.labelKey)} <span class="pill">${esc(r.labelVal)}</span>` : `${esc(r.labelKey)}`;
         return `
           <div class="row blueCols">
-            <div>${left}</div>
+            <div class="center">${left}</div>
             <div class="center">${esc(makeRankLine(r.overallRank, r.total))}</div>
             <div class="center">${esc(makeRankLine(r.maxRank, r.total))}</div>
           </div>
@@ -936,9 +961,9 @@ function renderResult(target){
         <div class="center">コンボ名</div>
       </div>
 
-      ${renderComboLine("完全一致", combos.full)}
-      ${renderComboLine("ポリシー違い", combos.polDiff)}
-      ${renderComboLine("ポジション違い", combos.posDiff)}
+      ${renderComboLine("完全一致", combos.full, "combo_full")}
+      ${renderComboLine("ポリシー違い", combos.polDiff, "combo_pol")}
+      ${renderComboLine("ポジション違い", combos.posDiff, "combo_pos")}
     </div>
 
     <!-- ③ Compatibility -->
@@ -965,6 +990,18 @@ function renderResult(target){
       openComboDetail(combo);
     });
   });
+  // attach combo "他◯個" handlers
+  out.querySelectorAll("[data-combo-key]").forEach(el=>{
+    el.addEventListener("click", (e)=>{
+      e.preventDefault();
+      const key = el.getAttribute("data-combo-key");
+      if(key==="combo_full") openComboList("フォメコン適性：完全一致", combos.full);
+      if(key==="combo_pol") openComboList("フォメコン適性：ポリシー違い", combos.polDiff);
+      if(key==="combo_pos") openComboList("フォメコン適性：ポジション違い", combos.posDiff);
+    });
+  });
+
+
 
   // attach compat "他◯名" handlers
   out.querySelectorAll("[data-compat-key]").forEach(el=>{
@@ -990,20 +1027,24 @@ function renderResult(target){
 
 }
 
-function renderComboLine(label, combos){
+function renderComboLine(label, combos, comboKey){
   const count = combos.length;
-  const names = count
-    ? combos.map(c=>{
-        const cid = getComboId(c);
-        const nm = getComboName(c);
-        return `<a href="#" class="tag tagBtn" data-combo-id="${esc(cid)}">${esc(nm)}</a>`;
-      }).join("")
-    : `<span style="opacity:.7;">-</span>`;
+  let right = `<span style="opacity:.7;">-</span>`;
+  if(count){
+    const sorted = [...combos].sort((a,b)=>getComboName(a).localeCompare(getComboName(b),"ja"));
+    const first = sorted[0];
+    const cid = getComboId(first);
+    const nm = getComboName(first);
+    right = `<a href="#" class="tag tagBtn" data-combo-id="${esc(cid)}">${esc(nm)}</a>`;
+    if(count>1){
+      right += ` <span class="pill clickPill" data-combo-key="${esc(comboKey)}">他${count-1}個</span>`;
+    }
+  }
   return `
     <div class="row smallCols">
       <div>${esc(label)}</div>
       <div class="center">${count ? `${count}個` : "-"}</div>
-      <div>${names}</div>
+      <div>${right}</div>
     </div>
   `;
 }
