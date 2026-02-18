@@ -306,6 +306,58 @@
     #resultArea .tag{ font-size:9px !important; }
   }
 
+
+  /* player name link in compatibility table */
+  .playerNameLink{
+    font-weight:900;
+    color:#0b3d50;
+    text-decoration:underline;
+    text-underline-offset:3px;
+    cursor:pointer;
+  }
+
+  /* Player detail modal (same layout as index.html) */
+  .pmodalBack{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+    z-index:99999;
+  }
+  .pmodalBack.show{ display:flex; }
+  .pmodal{
+    width:min(720px, 100%);
+    background:#fff;
+    border-radius:22px;
+    box-shadow:0 30px 60px rgba(0,0,0,.25);
+    overflow:hidden;
+  }
+  .pmodalHead{
+    padding:16px 18px;
+    background:#0b0b0b;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .pmodalHead .ttl{ font-size:18px; font-weight:900; }
+  .pmodalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; }
+  .pmodalHead button{
+    border:none;
+    background:transparent;
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+  }
+  .pmodalBody{ padding:16px 18px 18px; }
+  .pmodalBody .mLine{ margin:8px 0; }
+  .pmodalBody .mKey{ font-weight:900; display:inline-block; min-width:140px; color:#111; }
+  .pmodalBody .mVal{ color:#111; font-weight:700; }
+
 </style>
 </head>
 <body>
@@ -794,7 +846,7 @@ function openCompatList(title, players){
       e.preventDefault();
       const pid = a.getAttribute("data-player-id");
       const p = findPlayerById(pid) || null;
-      openPlayerDetail(p);
+      openPlayerModal(p);
     });
   });
 }
@@ -828,7 +880,7 @@ function renderResult(target){
         <div>選手名</div><div class="center">初期総合力</div><div class="center">最大強化</div>
       </div>
       <div class="row" style="grid-template-columns: 1fr 150px 150px;">
-        <div>${esc(nm)}</div>
+        <div class="center">${esc(nm)}</div>
         <div class="center">${overall!=null?esc(overall):"-"}</div>
         <div class="center">${maxUp!=null?esc(maxUp):"-"}</div>
       </div>
@@ -837,7 +889,7 @@ function renderResult(target){
         <div>ポリシー</div><div class="center">ポジション</div><div class="center">プレイスタイル</div>
       </div>
       <div class="row" style="grid-template-columns: 1fr 150px 150px;">
-        <div>${esc(pol||"-")}</div>
+        <div class="center">${esc(pol||"-")}</div>
         <div class="center">${esc(pos||"-")}</div>
         <div class="center">${styShow}</div>
       </div>
@@ -846,7 +898,7 @@ function renderResult(target){
     <!-- ① Rankings -->
     <div class="block">
       <div class="hdr blue">
-        <div>総合ランキング</div><div class="center">初期総合力</div><div class="center">最大強化</div>
+        <div class="center">総合ランキング</div><div class="center">初期総合力</div><div class="center">最大強化</div>
       </div>
       ${rankRows.map(r=>{
         const left = r.labelVal ? `${esc(r.labelKey)} <span class="pill">${esc(r.labelVal)}</span>` : `${esc(r.labelKey)}`;
@@ -909,6 +961,17 @@ function renderResult(target){
       if(key==="compat_style") openCompatList("互換性能選手：プレイスタイル違い", compat.styleDiff);
     });
   });
+
+  // attach main player name (compat) click handlers
+  out.querySelectorAll("[data-player-id]").forEach(el=>{
+    el.addEventListener("click", (e)=>{
+      e.preventDefault();
+      const pid = el.getAttribute("data-player-id");
+      const p = findPlayerById(pid) || null;
+      openPlayerModal(p);
+    });
+  });
+
 }
 
 function renderComboLine(label, combos){
@@ -933,7 +996,9 @@ function renderCompatLine(label, list, pickInfo, compatKey){
   const count = list.length;
   let right = "-";
   if(count){
-    right = esc(pickInfo.show);
+    const pid = (pickInfo.pick && (pickInfo.pick.player_id || pickInfo.pick.playerId)) || "";
+    const nm = esc(pickInfo.show);
+    right = pid ? `<a href="#" class="playerNameLink" data-player-id="${esc(pid)}">${nm}</a>` : nm;
     if(pickInfo.extra>0){
       right += ` <span class="pill clickPill" data-compat-key="${esc(compatKey)}">他${pickInfo.extra}名</span>`;
     }
@@ -1000,6 +1065,73 @@ $("btnEvaluate").addEventListener("click", ()=>{
     setErr(String(e && e.message ? e.message : e));
   }
 })();
+
+/* ===== Player modal (index.html style) ===== */
+function openPlayerModal(p){
+  if(!p){
+    const body = `<div style="font-weight:900;">選手データが見つかりませんでした。</div>`;
+    document.getElementById("pModalTitle").textContent = "詳細";
+    document.getElementById("pModalSub").textContent = "";
+    document.getElementById("pModalBody").innerHTML = body;
+    const back = document.getElementById("pModalBack");
+    back.classList.add("show");
+    back.setAttribute("aria-hidden","false");
+    return;
+  }
+  const title = (p.name ?? p.player_name ?? "-");
+  document.getElementById("pModalTitle").textContent = title;
+
+  const nat = (p.nationality ?? "-");
+  const gt = (p.growthType ?? p.growth_type ?? "-");
+  const sub = (nat!=="-" || gt!=="-") ? `国籍：${nat} / 成長タイプ：${gt}` : "";
+  document.getElementById("pModalSub").textContent = sub;
+
+  const ps = (p.playStyle ?? "-");
+  const lv = romanLv(p.playStyleLv);
+
+  const esc2 = esc; // reuse
+
+  const lines = [];
+  lines.push(`<div class="mLine"><span class="mKey">区分</span><span class="mVal">${esc2(p.category ?? "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class="mVal">${esc2(p.acquisitionMethod ?? "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">入手場所</span><span class="mVal">${esc2(p.acquisitionPlace ?? "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">入手可能期間</span><span class="mVal">${esc2(p.availablePeriod ?? "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">初期総合力</span><span class="mVal">${esc2(p.overall ?? "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">最大強化</span><span class="mVal">${esc2(p.maxUpgrade ?? "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">ポリシー</span><span class="mVal">${esc2(p.policy ?? "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">プレイスタイル</span><span class="mVal">${esc2(ps)} ${esc2(lv)}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">メインポジション</span><span class="mVal">${esc2(p.mainPosition ?? "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">メインスキル</span><span class="mVal">${esc2(p.mainSkill ?? "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">メイン特徴</span><span class="mVal">${esc2(p.mainTrait ?? "-")}</span></div>`);
+
+  document.getElementById("pModalBody").innerHTML = lines.join("");
+  const back = document.getElementById("pModalBack");
+  back.classList.add("show");
+  back.setAttribute("aria-hidden","false");
+}
+
+function setupPlayerModal(){
+  const back = document.getElementById("pModalBack");
+  const close = document.getElementById("pModalClose");
+  close.addEventListener("click", ()=>{
+    back.classList.remove("show");
+    back.setAttribute("aria-hidden","true");
+  });
+  back.addEventListener("click", (e)=>{
+    if(e.target === back){
+      back.classList.remove("show");
+      back.setAttribute("aria-hidden","true");
+    }
+  });
+  document.addEventListener("keydown", (e)=>{
+    if(e.key==="Escape" && back.classList.contains("show")){
+      back.classList.remove("show");
+      back.setAttribute("aria-hidden","true");
+    }
+  });
+}
+setupPlayerModal();
+
 </script>
 </body>
 </html>
