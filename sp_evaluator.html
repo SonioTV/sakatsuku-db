@@ -291,19 +291,19 @@
 
   /* ===== Result area (SNS screenshot) ===== */
   #resultArea .hdr, #resultArea .row{
-    font-size:11px !important;
+    font-size:16.5px !important;
     white-space:nowrap;
   }
-  #resultArea .pill{ font-size:9px !important; padding:2px 6px !important; }
-  #resultArea .tag{ font-size:10px !important; padding:0 !important; border:none !important; background:transparent !important; margin:0 6px 0 0 !important; }
+  #resultArea .pill{ font-size:13.5px !important; padding:2px 6px !important; }
+  #resultArea .tag{ font-size:15px !important; padding:0 !important; border:none !important; background:transparent !important; margin:0 6px 0 0 !important; }
   #resultArea .tagBtn{ text-decoration:underline; text-underline-offset:3px; }
   #resultArea .hdr div, #resultArea .row div{ text-align:center !important; }
   #resultArea .list{ text-align:center; word-break:normal; }
   #resultArea .row > div{ overflow:visible !important; text-overflow:clip !important; }
   @media (max-width: 420px){
-    #resultArea .hdr, #resultArea .row{ font-size:9.5px !important; }
-    #resultArea .pill{ font-size:8px !important; }
-    #resultArea .tag{ font-size:9px !important; }
+    #resultArea .hdr, #resultArea .row{ font-size:14.25px !important; }
+    #resultArea .pill{ font-size:12px !important; }
+    #resultArea .tag{ font-size:13.5px !important; }
   }
 
 
@@ -319,7 +319,7 @@
   /* label value shown under the label like image2 */
   #resultArea .resultSub{
     display:block;
-    font-size:9px;
+    font-size:13.5px;
     font-weight:900;
     margin-top:1px;
     opacity:.95;
@@ -327,7 +327,7 @@
 
   /* "(他◯個/名)" as inline link like image2 */
   #resultArea .resultMore{
-    font-size:10px;
+    font-size:15px;
     font-weight:900;
     text-decoration:underline;
     text-underline-offset:3px;
@@ -351,6 +351,9 @@
   #resultArea .hdr.smallCols{ grid-template-columns: 120px 74px 1fr !important; }
   #resultArea .row.smallCols{ grid-template-columns: 120px 74px 1fr !important; }
 
+  #resultArea .hdr.twoCols{ grid-template-columns: 1fr 1fr !important; }
+  #resultArea .row.twoCols{ grid-template-columns: 1fr 1fr !important; }
+
   /* round-enclosed value / "他◯個, 他◯名" */
   #resultArea .circPill{
     display:inline-block;
@@ -359,7 +362,7 @@
     border:1px solid rgba(0,0,0,.18);
     background:#fff;
     font-weight:900;
-    font-size:9px;
+    font-size:13.5px;
     line-height:1.4;
     vertical-align:middle;
     white-space:nowrap;
@@ -1015,7 +1018,7 @@ function renderResult(target){
         <div class="center">総合ランキング</div><div class="center">初期総合力</div><div class="center">最大強化</div>
       </div>
       ${rankRows.map(r=>{
-        const left = r.labelVal ? `${esc(r.labelKey)}<span class="resultSub"><span class="circPill">${esc(r.labelVal)}</span></span>` : `${esc(r.labelKey)}`;
+        const left = `${esc(r.labelKey)}`;
         return `
           <div class="row blueCols">
             <div class="center">${left}</div>
@@ -1028,9 +1031,8 @@ function renderResult(target){
 
     <!-- ② Combo aptitude -->
     <div class="block">
-      <div class="hdr blue smallCols">
+      <div class="hdr blue twoCols">
         <div>フォメコン適性<br>（金ランクのみ）</div>
-        <div class="center">対応数</div>
         <div class="center">コンボ名</div>
       </div>
 
@@ -1041,9 +1043,8 @@ function renderResult(target){
 
     <!-- ③ Compatibility -->
     <div class="block">
-      <div class="hdr blue smallCols">
+      <div class="hdr blue twoCols">
         <div>互換選手<br>（SP選手）</div>
-        <div class="center">対象人数</div>
         <div class="center">主な選手</div>
       </div>
 
@@ -1113,16 +1114,16 @@ function renderComboLine(label, combos, comboKey){
       right += `<span class="resultMore circPill" data-combo-key="${esc(comboKey)}">他${count-1}個</span>`;
     }
   }
+  const left = `${esc(label)}${count ? ` <span class="circPill">${count}個</span>` : ""}`;
   return `
-    <div class="row smallCols">
-      <div>${esc(label)}</div>
-      <div class="center">${count ? `${count}個` : "-"}</div>
+    <div class="row twoCols">
+      <div>${left}</div>
       <div>${right}</div>
     </div>
   `;
 }
 
-function renderCompatLine(label, list, pickInfo, compatKey){
+function renderCompatLinefunction renderCompatLine(label, list, pickInfo, compatKey){
   const count = list.length;
   let right = "-";
   if(count){
@@ -1133,10 +1134,10 @@ function renderCompatLine(label, list, pickInfo, compatKey){
       right += `<span class="resultMore circPill" data-compat-key="${esc(compatKey)}">他${pickInfo.extra}名</span>`;
     }
   }
+  const left = `${esc(label)} <span class="circPill">${count}人</span>`;
   return `
-    <div class="row smallCols">
-      <div>${esc(label)}</div>
-      <div class="center">${count ? `${count}人` : "0人"}</div>
+    <div class="row twoCols">
+      <div>${left}</div>
       <div>${right}</div>
     </div>
   `;
