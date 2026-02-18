@@ -308,16 +308,37 @@
 
 
   
-  /* iPhone16 width fix: prevent right-edge clipping by tightening grid columns in result area */
-  @media (max-width: 460px){
-    #resultArea .hdr{ grid-template-columns: 1fr 106px 106px !important; }
-    #resultArea .row{ grid-template-columns: 1fr 106px 106px !important; }
-    #resultArea .hdr.blue{ grid-template-columns: 1fr 118px 118px !important; }
-    #resultArea .row.blueCols{ grid-template-columns: 1fr 118px 118px !important; }
-    #resultArea .hdr.smallCols{ grid-template-columns: 1fr 112px 1fr !important; }
-    #resultArea .row.smallCols{ grid-template-columns: 1fr 112px 1fr !important; }
-    #resultArea .hdr, #resultArea .row{ gap:6px !important; padding:9px 10px !important; }
+  /* fixed column positions (iPhone16) */
+  #resultArea .hdr{ grid-template-columns: 140px 1fr 1fr !important; }
+  #resultArea .row{ grid-template-columns: 140px 1fr 1fr !important; }
+  #resultArea .hdr.blue{ grid-template-columns: 140px 1fr 1fr !important; }
+  #resultArea .row.blueCols{ grid-template-columns: 140px 1fr 1fr !important; }
+  #resultArea .hdr.smallCols{ grid-template-columns: 140px 78px 1fr !important; }
+  #resultArea .row.smallCols{ grid-template-columns: 140px 78px 1fr !important; }
+
+  /* label value shown under the label like image2 */
+  #resultArea .resultSub{
+    display:block;
+    font-size:9px;
+    font-weight:900;
+    margin-top:1px;
+    opacity:.95;
   }
+
+  /* "(他◯個/名)" as inline link like image2 */
+  #resultArea .resultMore{
+    font-size:10px;
+    font-weight:900;
+    text-decoration:underline;
+    text-underline-offset:3px;
+    cursor:pointer;
+    margin-left:2px;
+    white-space:nowrap;
+  }
+
+  /* make spacing uniform */
+  #resultArea .hdr, #resultArea .row{ gap:0 !important; padding:10px 12px !important; }
+  #resultArea .row{ border-top:1px solid #d8e3ea; }
 
 
 /* player name link in compatibility table */
@@ -955,7 +976,7 @@ function renderResult(target){
         <div class="center">総合ランキング</div><div class="center">初期総合力</div><div class="center">最大強化</div>
       </div>
       ${rankRows.map(r=>{
-        const left = r.labelVal ? `${esc(r.labelKey)} <span class="pill">${esc(r.labelVal)}</span>` : `${esc(r.labelKey)}`;
+        const left = r.labelVal ? `${esc(r.labelKey)}<span class="resultSub">（${esc(r.labelVal)}）</span>` : `${esc(r.labelKey)}`;
         return `
           <div class="row blueCols">
             <div class="center">${left}</div>
@@ -1050,7 +1071,7 @@ function renderComboLine(label, combos, comboKey){
     const nm = getComboName(first);
     right = `<a href="#" class="tag tagBtn" data-combo-id="${esc(cid)}">${esc(nm)}</a>`;
     if(count>1){
-      right += ` <span class="pill clickPill" data-combo-key="${esc(comboKey)}">他${count-1}個</span>`;
+      right += `<span class="resultMore" data-combo-key="${esc(comboKey)}">（他${count-1}個）</span>`;
     }
   }
   return `
@@ -1070,7 +1091,7 @@ function renderCompatLine(label, list, pickInfo, compatKey){
     const nm = esc(pickInfo.show);
     right = pid ? `<a href="#" class="playerNameLink" data-player-id="${esc(pid)}">${nm}</a>` : nm;
     if(pickInfo.extra>0){
-      right += ` <span class="pill clickPill" data-compat-key="${esc(compatKey)}">他${pickInfo.extra}名</span>`;
+      right += `<span class="resultMore" data-compat-key="${esc(compatKey)}">（他${pickInfo.extra}名）</span>`;
     }
   }
   return `
