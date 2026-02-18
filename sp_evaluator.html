@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>SP選手評価ツール | サカつく2026 DB</title>
+<title>選手評価ツール | サカつく2026 DB</title>
 <link rel="canonical" href="https://sakatsuku2026-db.com/sp_evaluator.html">
 
 <style>
@@ -288,6 +288,24 @@
     text-decoration:underline;
     text-underline-offset:3px;
   }
+
+  /* ===== Result area (SNS screenshot) ===== */
+  #resultArea .hdr, #resultArea .row{
+    font-size:11px !important;
+    white-space:nowrap;
+  }
+  #resultArea .pill{ font-size:9px !important; padding:2px 6px !important; }
+  #resultArea .tag{ font-size:10px !important; padding:0 !important; border:none !important; background:transparent !important; margin:0 6px 0 0 !important; }
+  #resultArea .tagBtn{ text-decoration:underline; text-underline-offset:3px; }
+  #resultArea .hdr div, #resultArea .row div{ text-align:center !important; }
+  #resultArea .list{ text-align:center; word-break:normal; }
+  #resultArea .row > div{ overflow:visible !important; text-overflow:clip !important; }
+  @media (max-width: 420px){
+    #resultArea .hdr, #resultArea .row{ font-size:9.5px !important; }
+    #resultArea .pill{ font-size:8px !important; }
+    #resultArea .tag{ font-size:9px !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -296,9 +314,9 @@
     <a class="back" href="index.html">← サイトに戻る</a>
   </div>
 
-  <h1>SP選手評価ツール</h1>
+  <h1>選手評価ツール</h1>
   <div class="note">
-    条件（ポリシー/ポジション/プレイスタイル + キーワード）で候補を絞り、SP選手の順位・コンボ適性・互換選手を表示します。
+    条件（ポリシー/ポジション/プレイスタイル + キーワード）で候補を絞り、選手の順位・コンボ適性・互換選手を表示します。
   </div>
 
   <div class="grid">
@@ -664,6 +682,52 @@ $("modalBackdrop").addEventListener("click", (e)=>{
   if(e.target === $("modalBackdrop")) closeModal();
 });
 
+
+/* player detail modal (layout borrowed: kv grid) */
+function openPlayerDetail(p){
+  if(!p){
+    openModal("選手詳細", `<div class="note" style="margin:0;">選手データが見つかりませんでした。</div>`);
+    return;
+  }
+  const nm = normalize(p.name || p.player_name || "（不明）");
+  const overall = toNum(p.overall);
+  const maxUp   = toNum(p.maxUpgrade);
+  const pol = normalize(p.policy || "-");
+  const pos = normalize(p.mainPosition || "-");
+  const sty = normalize(p.playStyle || "-");
+  const lv  = toNum(p.playStyleLv);
+  const styShow = `${esc(sty)}${lv!=null?` ${esc(romanLv(lv))}`:""}`;
+
+  const acM = normalize(p.acquisitionMethod || p.acquisition_method || "-");
+  const acP = normalize(p.acquisitionPlace  || p.acquisition_place  || "-");
+  const period = normalize(p.availablePeriod || p.available_period || "-");
+  const skill = normalize(p.mainSkill || p.main_skill || "-");
+  const trait = normalize(p.mainTrait || p.main_trait || "-");
+  const cat = normalize(p.category || "-");
+  const nat = normalize(p.nationality || "-");
+  const grow = normalize(p.growthType || p.growth_type || "-");
+
+  const body = `
+    <div class="kv">
+      <div class="k">選手名</div><div class="v">${esc(nm)}</div>
+      <div class="k">初期総合力</div><div class="v">${overall!=null?esc(overall):"-"}</div>
+      <div class="k">最大強化</div><div class="v">${maxUp!=null?esc(maxUp):"-"}</div>
+      <div class="k">ポリシー</div><div class="v">${esc(pol)}</div>
+      <div class="k">ポジション</div><div class="v">${esc(pos)}</div>
+      <div class="k">プレイスタイル</div><div class="v">${styShow}</div>
+      <div class="k">入手方法</div><div class="v">${esc(acM)}</div>
+      <div class="k">入手場所</div><div class="v">${esc(acP)}</div>
+      <div class="k">入手可能期間</div><div class="v">${esc(period)}</div>
+      <div class="k">メインスキル</div><div class="v">${esc(skill)}</div>
+      <div class="k">特性</div><div class="v">${esc(trait)}</div>
+      <div class="k">カテゴリ</div><div class="v">${esc(cat)}</div>
+      <div class="k">国籍</div><div class="v">${esc(nat)}</div>
+      <div class="k">成長タイプ</div><div class="v">${esc(grow)}</div>
+    </div>
+  `;
+  openModal("選手詳細", body);
+}
+
 /* combo detail modal */
 function openComboDetail(combo){
   if(!combo) return;
@@ -713,9 +777,28 @@ function openComboDetail(combo){
 
 /* compat list modal */
 function openCompatList(title, players){
-  const names = (players||[]).map(p=>normalize(p.name||p.player_name||"")).filter(Boolean);
-  const body = names.length
-    ? `<div style="font-weight:900;line-height:1.6;">${names.map(n=>`<span class="tag">${esc(n)}</span>`).join("")}</div>`
+  const list = (players||[]).filter(Boolean);
+  const body = list.length
+    ? `<div style="font-weight:900;line-height:1.6;text-align:center;">
+        ${list.map(p=>{
+          const pid = normalize(p.player_id || p.playerId || "");
+          const nm  = normalize(p.name || p.player_name || pid);
+          return `<a href="#" class="tag tagBtn" data-player-id="${esc(pid)}">${esc(nm)}</a>`;
+        }).join(" ")}
+      </div>`
+    : `<div class="note" style="margin:0;">対象なし</div>`;
+  openModal(title, body);
+
+  $("modalBody").querySelectorAll("[data-player-id]").forEach(a=>{
+    a.addEventListener("click", (e)=>{
+      e.preventDefault();
+      const pid = a.getAttribute("data-player-id");
+      const p = findPlayerById(pid) || null;
+      openPlayerDetail(p);
+    });
+  });
+}
+</span>`).join("")}</div>`
     : `<div class="note" style="margin:0;">対象なし</div>`;
   openModal(title, body);
 }
@@ -784,9 +867,9 @@ function renderResult(target){
     <!-- ② Combo aptitude -->
     <div class="block">
       <div class="hdr blue smallCols">
-        <div>フォーメーションコンボ適性（金ランクのみ）</div>
+        <div>フォメコン適性<br>（金ランクのみ）</div>
         <div class="center">対応数</div>
-        <div class="center">フォーメーションコンボ</div>
+        <div class="center">コンボ名</div>
       </div>
 
       ${renderComboLine("完全一致", combos.full)}
@@ -797,7 +880,7 @@ function renderResult(target){
     <!-- ③ Compatibility -->
     <div class="block">
       <div class="hdr blue smallCols">
-        <div>互換性能選手（SP選手）</div>
+        <div>互換性能選手<br>（SP選手）</div>
         <div class="center">対象人数</div>
         <div class="center">主なSP選手</div>
       </div>
@@ -840,7 +923,7 @@ function renderComboLine(label, combos){
         const nm = getComboName(c);
         return `<a href="#" class="tag tagBtn" data-combo-id="${esc(cid)}">${esc(nm)}</a>`;
       }).join("")
-    : `<span class="tag" style="opacity:.6;">-</span>`;
+    : `<span style="opacity:.7;">-</span>`;
   return `
     <div class="row smallCols">
       <div>${esc(label)}</div>
