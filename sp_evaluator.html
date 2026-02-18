@@ -143,7 +143,7 @@
     border-radius:999px;
     border:1px solid rgba(0,0,0,.12);
     background:#fff;
-    font-size:10px;
+    font-size:9px;
     font-weight:900;
     color:#111;
     vertical-align:middle;
@@ -162,7 +162,7 @@
   .list .empty{ color:var(--muted); font-weight:800; }
   .tag{
     display:inline-block;
-    font-size:10px;
+    font-size:12px;
     font-weight:900;
     background:rgba(21,95,128,.08);
     border:1px solid rgba(21,95,128,.25);
@@ -741,49 +741,3 @@ $("btnEvaluate").addEventListener("click", ()=>{
 </script>
 </body>
 </html>
-/* player detail modal (layout borrowed style: kv grid like existing player detail) */
-function openPlayerDetail(p){
-  if(!p){
-    openModal("選手詳細", `<div class="note" style="margin:0;">選手データが見つかりませんでした。</div>`);
-    return;
-  }
-  const nm = normalize(p.name || p.player_name || "（不明）");
-  const overall = toNum(p.overall);
-  const maxUp = toNum(p.maxUpgrade);
-  const pol = normalize(p.policy || "-");
-  const pos = normalize(p.mainPosition || "-");
-  const sty = normalize(p.playStyle || "-");
-  const lv = toNum(p.playStyleLv);
-  const styShow = `${esc(sty)}${lv!=null?` ${esc(romanLv(lv))}`:""}`;
-
-  const acM = normalize(p.acquisitionMethod || p.acquisition_method || "-");
-  const acP = normalize(p.acquisitionPlace || p.acquisition_place || "-");
-  const period = normalize(p.availablePeriod || p.available_period || "-");
-  const skill = normalize(p.mainSkill || p.main_skill || "-");
-  const trait = normalize(p.mainTrait || p.main_trait || "-");
-  const cat = normalize(p.category || "-");
-  const nat = normalize(p.nationality || "-");
-  const grow = normalize(p.growthType || p.growth_type || "-");
-
-  const body = `
-    <div class="kv">
-      <div class="k">選手名</div><div class="v">${esc(nm)}</div>
-      <div class="k">初期総合力</div><div class="v">${overall!=null?esc(overall):"-"}</div>
-      <div class="k">最大強化</div><div class="v">${maxUp!=null?esc(maxUp):"-"}</div>
-      <div class="k">ポリシー</div><div class="v">${esc(pol)}</div>
-      <div class="k">ポジション</div><div class="v">${esc(pos)}</div>
-      <div class="k">プレイスタイル</div><div class="v">${styShow}</div>
-      <div class="k">入手方法</div><div class="v">${esc(acM)}</div>
-      <div class="k">入手場所</div><div class="v">${esc(acP)}</div>
-      <div class="k">入手可能期間</div><div class="v">${esc(period)}</div>
-      <div class="k">メインスキル</div><div class="v">${esc(skill)}</div>
-      <div class="k">特性</div><div class="v">${esc(trait)}</div>
-      <div class="k">カテゴリ</div><div class="v">${esc(cat)}</div>
-      <div class="k">国籍</div><div class="v">${esc(nat)}</div>
-      <div class="k">成長タイプ</div><div class="v">${esc(grow)}</div>
-    </div>
-  `;
-  openModal("選手詳細", body);
-}
-
-
