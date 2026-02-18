@@ -1111,6 +1111,12 @@ function openPlayerModal(p){
 }
 
 function setupPlayerModal(){
+  const closeBtn = document.getElementById("playerModalClose");
+  if(!closeBtn) return; // 要素が無いなら何もしない
+  closeBtn.addEventListener("click", closePlayerModal);
+} 
+
+function setupPlayerModal(){
   const back = document.getElementById("pModalBack");
   const close = document.getElementById("pModalClose");
   close.addEventListener("click", ()=>{
