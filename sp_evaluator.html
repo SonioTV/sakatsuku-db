@@ -337,19 +337,19 @@
   }
 
   /* make spacing uniform */
-  #resultArea .hdr, #resultArea .row{ gap:0 !important; padding:10px 12px !important; }
+  #resultArea .hdr, #resultArea .row{ gap:0 !important; padding:8px 10px !important; }
   #resultArea .row{ border-top:1px solid #d8e3ea; }
 
 
 
   /* ===== Layout tweak (iPhone16): shift contents slightly left & keep fixed positions ===== */
-  #resultArea .hdr, #resultArea .row{ padding-left:10px !important; padding-right:4px !important; }
-  #resultArea .hdr{ grid-template-columns: 132px 1fr 1fr !important; }
-  #resultArea .row{ grid-template-columns: 132px 1fr 1fr !important; }
-  #resultArea .hdr.blue{ grid-template-columns: 132px 1fr 1fr !important; }
-  #resultArea .row.blueCols{ grid-template-columns: 132px 1fr 1fr !important; }
-  #resultArea .hdr.smallCols{ grid-template-columns: 132px 74px 1fr !important; }
-  #resultArea .row.smallCols{ grid-template-columns: 132px 74px 1fr !important; }
+  #resultArea .hdr, #resultArea .row{ padding-left:6px !important; padding-right:4px !important; }
+  #resultArea .hdr{ grid-template-columns: 120px 1fr 1fr !important; }
+  #resultArea .row{ grid-template-columns: 120px 1fr 1fr !important; }
+  #resultArea .hdr.blue{ grid-template-columns: 120px 1fr 1fr !important; }
+  #resultArea .row.blueCols{ grid-template-columns: 120px 1fr 1fr !important; }
+  #resultArea .hdr.smallCols{ grid-template-columns: 120px 74px 1fr !important; }
+  #resultArea .row.smallCols{ grid-template-columns: 120px 74px 1fr !important; }
 
   /* round-enclosed value / "他◯個, 他◯名" */
   #resultArea .circPill{
@@ -912,12 +912,16 @@ function openComboDetail(combo){
 function openCompatList(title, players){
   const list = (players||[]).filter(Boolean);
   const body = list.length
-    ? `<div style="font-weight:900;line-height:1.6;text-align:center;">
+    ? `<div style="font-weight:900;line-height:1.6;text-align:left;">
         ${list.map(p=>{
           const pid = normalize(p.player_id || p.playerId || "");
           const nm  = normalize(p.name || p.player_name || pid);
-          return `<a href="#" class="tag tagBtn" data-player-id="${esc(pid)}">${esc(nm)}</a>`;
-        }).join(" ")}
+          return `<div style="margin:6px 0;">
+                    <a href="#" class="tagBtn" data-player-id="${esc(pid)}" style="font-size:1.1em;font-weight:900;color:#0b3d50;text-decoration:underline;text-underline-offset:3px;">
+                      ${esc(nm)}
+                    </a>
+                  </div>`;
+        }).join("")}
       </div>`
     : `<div class="note" style="margin:0;">対象なし</div>`;
   openModal(title, body);
@@ -937,12 +941,16 @@ function openCompatList(title, players){
 function openComboList(title, combos){
   const list = (combos||[]).filter(Boolean).sort((a,b)=>getComboName(a).localeCompare(getComboName(b),"ja"));
   const body = list.length
-    ? `<div style="font-weight:900;line-height:1.6;text-align:center;">
+    ? `<div style="font-weight:900;line-height:1.6;text-align:left;">
         ${list.map(c=>{
           const cid = getComboId(c);
           const nm  = getComboName(c);
-          return `<a href="#" class="tag tagBtn" data-combo-id="${esc(cid)}">${esc(nm)}</a>`;
-        }).join(" ")}
+          return `<div style="margin:8px 0;">
+                    <a href="#" class="tagBtn" data-combo-id="${esc(cid)}" style="font-size:1.5em;font-weight:900;color:#0b3d50;text-decoration:underline;text-underline-offset:3px;">
+                      ${esc(nm)}
+                    </a>
+                  </div>`;
+        }).join("")}
       </div>`
     : `<div class="note" style="margin:0;">対象なし</div>`;
   openModal(title, body);
@@ -1073,10 +1081,10 @@ function renderResult(target){
     el.addEventListener("click", (e)=>{
       e.preventDefault();
       const key = el.getAttribute("data-compat-key");
-      if(key==="compat_full") openCompatList("互換性能選手：完全一致", compat.full);
-      if(key==="compat_pol") openCompatList("互換性能選手：ポリシー違い", compat.polDiff);
-      if(key==="compat_pos") openCompatList("互換性能選手：ポジション違い", compat.posDiff);
-      if(key==="compat_style") openCompatList("互換性能選手：プレイスタイル違い", compat.styleDiff);
+      if(key==="compat_full") openCompatList("互換選手：完全一致", compat.full);
+      if(key==="compat_pol") openCompatList("互換選手：ポリシー違い", compat.polDiff);
+      if(key==="compat_pos") openCompatList("互換選手：ポジション違い", compat.posDiff);
+      if(key==="compat_style") openCompatList("互換選手：プレイスタイル違い", compat.styleDiff);
     });
   });
 
