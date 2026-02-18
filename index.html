@@ -892,7 +892,6 @@
         <select id="fPolicy" class="bigSelect" style="width:240px;font-size:18px;padding:10px 12px;"></select>
         <select id="fPos" class="bigSelect" style="width:200px;font-size:18px;padding:10px 12px;"></select>
         <select id="fStyle" class="bigSelect" style="width:240px;font-size:18px;padding:10px 12px;"></select>
-        <select id="fMetric" class="bigSelect" style="width:240px;font-size:18px;padding:10px 12px;"></select>
         <select id="fPlace" class="bigSelect" style="width:240px;font-size:18px;padding:10px 12px;"></select>
         <button id="btnResetFilters" class="tile" type="button" style="min-height:44px;font-size:16px;padding:10px 12px;">リセット</button>
       </div>
@@ -1877,7 +1876,6 @@ function setupFilterUI(){
   const fPolicy = document.getElementById("fPolicy");
   const fPos = document.getElementById("fPos");
   const fStyle = document.getElementById("fStyle");
-  const fMetric = document.getElementById("fMetric");
   const fPlace = document.getElementById("fPlace");
 
   const uniq = (arr)=>[...new Set(arr.filter(Boolean))];
@@ -1889,7 +1887,6 @@ function setupFilterUI(){
   fPolicy.innerHTML = `<option value="">（ポリシー）</option>` + policies.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
   fPos.innerHTML = `<option value="">（ポジション）</option>` + pos.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
   fStyle.innerHTML = `<option value="">（プレイスタイル）</option>` + styles.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
-  fMetric.innerHTML = `<option value="overall">（参照値：初期総合力）</option><option value="maxUpgrade">（参照値：最大強化）</option>`;
   fPlace.innerHTML = `<option value="">（入手場所）</option>` + places.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
 
   const rerender = ()=>{
@@ -1904,26 +1901,23 @@ function setupFilterUI(){
     if(fs) arr = arr.filter(p=>p.playStyle===fs);
     if(fpl) arr = arr.filter(p=>p.acquisitionPlace===fpl);
 
-    arr = arr.sort((a,b)=>((b[fm]||0)-(a[fm]||0))).slice(0,5);
-
-    const metricLabel = (fm==="maxUpgrade") ? "最大強化" : "初期総合力";
+    arr = arr.sort((a,b)=>(b.overall||0)-(a.overall||0)).slice(0,5);
 
     const tbl = document.getElementById("tblFiltered");
     if(!arr.length){
-      tbl.innerHTML = `<thead><tr><th>順位</th><th>選手名</th><th>${metricLabel}</th><th>ポジション</th></tr></thead><tbody><tr><td colspan="4" style="text-align:center;padding:12px;">対象なし</td></tr></tbody>`;
+      tbl.innerHTML = `<thead><tr><th>順位</th><th>選手名</th><th>初期総合力</th><th>ポジション</th></tr></thead><tbody><tr><td colspan="4" style="text-align:center;padding:12px;">対象なし</td></tr></tbody>`;
       return;
     }
-    renderRankTable(tbl, arr, fm, metricLabel);
+    renderRankTable(tbl, arr, "overall", "初期総合力");
   };
 
   fPolicy.addEventListener("change", rerender);
   fPos.addEventListener("change", rerender);
   fStyle.addEventListener("change", rerender);
-  fMetric.addEventListener("change", rerender);
   fPlace.addEventListener("change", rerender);
 
   document.getElementById("btnResetFilters").addEventListener("click", ()=>{
-    fPolicy.value=""; fPos.value=""; fStyle.value=""; fMetric.value="overall"; fPlace.value="";
+    fPolicy.value=""; fPos.value=""; fStyle.value=""; fPlace.value="";
     rerender();
   });
 
