@@ -18,6 +18,7 @@
 
     --green:#4aa52a;
     --blue:#155f80;
+    --blue2:#0b5bd3;
 
     --gold1:#f6df7b; --gold2:#d2b451;
     --silver1:#e9e9e9; --silver2:#b7b7b7;
@@ -43,7 +44,6 @@
     color:var(--muted);
     margin:0 0 14px;
     line-height:1.5;
-    font-weight:800;
   }
   .card{
     background:var(--card);
@@ -51,7 +51,6 @@
     border-radius:22px;
     box-shadow:var(--shadow);
     padding:16px;
-    overflow:hidden;
   }
   .grid{
     display:grid;
@@ -110,15 +109,16 @@
     color:#fff;
     font-weight:900;
     padding:10px 12px;
-    font-size:18px; /* smaller to avoid overflow */
+    font-size:20px;
     display:grid;
     grid-template-columns: 1fr 140px 140px;
     gap:8px;
     align-items:center;
   }
+  .hdr.smallCols{ grid-template-columns: 1fr 180px 1fr; } /* used for 3 cols */
   .hdr.blue{
     background:var(--blue);
-    grid-template-columns: 1fr 170px 170px;
+    grid-template-columns: 1fr 180px 180px;
   }
   .row{
     display:grid;
@@ -128,28 +128,26 @@
     border-top:1px solid #d8e3ea;
     align-items:center;
     font-weight:900;
-    font-size:16px; /* smaller */
   }
   .row:nth-child(even){ background:#fbfcff; }
+  .row .muted{ color:var(--muted); font-weight:800; }
 
-  .row.blueCols{ grid-template-columns: 1fr 170px 170px; }
-  .row.smallCols{ grid-template-columns: 1fr 170px 1fr; }
-
-  .hdr.smallCols{ grid-template-columns: 1fr 170px 1fr; }
-
+  .row.blueCols{ grid-template-columns: 1fr 180px 180px; }
+  .row.smallCols{ grid-template-columns: 1fr 180px 1fr; }
   .row .center{ text-align:center; }
+  .row .right{ text-align:right; }
+
   .pill{
     display:inline-block;
-    padding:3px 9px;
+    padding:3px 10px;
     border-radius:999px;
     border:1px solid rgba(0,0,0,.12);
     background:#fff;
-    font-size:12px;
+    font-size:10px;
     font-weight:900;
     color:#111;
     vertical-align:middle;
     margin-left:6px;
-    white-space:nowrap;
   }
 
   .list{
@@ -161,24 +159,18 @@
     color:#111;
     word-break:break-word;
   }
-
+  .list .empty{ color:var(--muted); font-weight:800; }
   .tag{
     display:inline-block;
-    font-size:11px;
+    font-size:10px;
     font-weight:900;
     background:rgba(21,95,128,.08);
     border:1px solid rgba(21,95,128,.25);
     color:#0b3d50;
-    padding:3px 8px;
+    padding:3px 10px;
     border-radius:999px;
     margin:3px 6px 0 0;
-    line-height:1.3;
   }
-  .tagBtn{
-    cursor:pointer;
-    text-decoration:none;
-  }
-
   .topbar{
     display:flex;
     justify-content:space-between;
@@ -197,103 +189,13 @@
     border-radius:12px;
     display:inline-block;
   }
-
-  /* prevent horizontal scroll on small screens */
-  @media (max-width: 420px){
-    .hdr{ font-size:16px; grid-template-columns: 1fr 112px 112px; }
-    .row{ font-size:14px; grid-template-columns: 1fr 112px 112px; }
-    .hdr.blue{ grid-template-columns: 1fr 128px 128px; }
-    .row.blueCols{ grid-template-columns: 1fr 128px 128px; }
-    .hdr.smallCols{ grid-template-columns: 1fr 120px 1fr; }
-    .row.smallCols{ grid-template-columns: 1fr 120px 1fr; }
-    .pill{ font-size:11px; padding:2px 7px; }
-    .tag{ font-size:10px; padding:2px 7px; }
-  }
-
-  /* Modal */
-  .modal-backdrop{
-    position:fixed; inset:0;
-    background:rgba(0,0,0,.55);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:16px;
-    z-index:9999;
-  }
-  .modal{
-    width:min(720px, 96vw);
-    background:#fff;
-    border-radius:20px;
-    box-shadow:0 20px 60px rgba(0,0,0,.35);
-    overflow:hidden;
-    border:1px solid rgba(0,0,0,.12);
-  }
-  .modal-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:10px;
-    padding:12px 14px;
-    background:#f7f8fb;
-    border-bottom:1px solid #e7e9f0;
-  }
-  .modal-title{
-    font-weight:900;
-    font-size:18px;
-    margin:0;
-  }
-  .modal-close{
-    border:none;
-    background:#fff;
-    border:1px solid rgba(0,0,0,.15);
-    border-radius:12px;
-    padding:8px 10px;
-    font-weight:900;
-    cursor:pointer;
-  }
-  .modal-body{ padding:14px; }
-  .kv{
-    display:grid;
-    grid-template-columns: 140px 1fr;
-    gap:10px 12px;
-    align-items:start;
-    font-weight:900;
-  }
-  .kv .k{ color:#223; opacity:.85; }
-  .kv .v{ font-weight:800; color:#111; word-break:break-word; }
-  @media (max-width: 420px){
-    .kv{ grid-template-columns: 110px 1fr; font-size:14px; }
-  }
-
-  .condCard{
-    margin-top:10px;
-    border:1px solid #e7e9f0;
-    border-radius:16px;
-    padding:10px 12px;
-    background:#fbfcff;
-  }
-  .condCard .t{ font-weight:900; margin-bottom:8px; }
-  .condGrid{
-    display:grid;
-    grid-template-columns: 120px 1fr;
-    gap:8px 12px;
-    align-items:start;
-    font-weight:900;
-  }
-  .condGrid .k{ color:#223; opacity:.85; }
-  .condGrid .v{ font-weight:800; word-break:break-word; }
-
-  .clickPill{
-    cursor:pointer;
-    text-decoration:underline;
-    text-underline-offset:3px;
-  }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="topbar">
     <a class="back" href="index.html">← サイトに戻る</a>
+    <div class="muted" style="font-weight:900;color:#445;">※ SP選手評価ツール（players.json / combos.json）</div>
   </div>
 
   <h1>SP選手評価ツール</h1>
@@ -353,17 +255,6 @@
   </div>
 </div>
 
-<!-- Modal -->
-<div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
-  <div class="modal">
-    <div class="modal-head">
-      <div id="modalTitle" class="modal-title">詳細</div>
-      <button id="modalClose" class="modal-close">閉じる</button>
-    </div>
-    <div id="modalBody" class="modal-body"></div>
-  </div>
-</div>
-
 <script>
 /* ===== Data ===== */
 let PLAYERS = [];
@@ -379,17 +270,10 @@ function toNum(v){
   return Number.isFinite(n) ? n : null;
 }
 
-/* Roman Lv */
-function romanLv(n){
-  const v = toNum(n);
-  if(v===1) return "Ⅰ";
-  if(v===2) return "Ⅱ";
-  if(v===3) return "Ⅲ";
-  return "";
-}
-
 /* ===== Ranking (competition ranking: 1,2,2,4...) ===== */
 function rankCompetition(sortedValuesDesc, targetValue){
+  // sortedValuesDesc: number[] already sorted desc
+  // returns rank (1-indexed)
   let rank = 1;
   let prev = null;
   let seen = 0;
@@ -417,7 +301,7 @@ function makeRankLine(rank, total){
 function lvInclusiveMatch(reqLv, playerLv){
   const r = toNum(reqLv);
   const p = toNum(playerLv);
-  if(r==null || p==null) return true;
+  if(r==null || p==null) return true; // if missing, don't block
   return p >= r;
 }
 
@@ -447,6 +331,7 @@ async function loadData(){
     ? PLAYERS.filter(p=>normalize(p.category)==="SP選手")
     : [...PLAYERS];
 
+  // populate filters based on SP players
   fillSelect($("fPolicy"), uniqueSorted(SP_PLAYERS.map(p=>p.policy)));
   fillSelect($("fPos"), uniqueSorted(SP_PLAYERS.map(p=>p.mainPosition)));
   fillSelect($("fStyle"), uniqueSorted(SP_PLAYERS.map(p=>p.playStyle)));
@@ -470,6 +355,7 @@ function filterCandidates(){
     return true;
   });
 
+  // sort by overall desc (fallback to maxUpgrade desc) then name
   list.sort((a,b)=>{
     const ao = toNum(a.overall) ?? -Infinity;
     const bo = toNum(b.overall) ?? -Infinity;
@@ -480,17 +366,17 @@ function filterCandidates(){
     return normalize(a.name||"").localeCompare(normalize(b.name||""), "ja");
   });
 
+  // populate picker
   const sel = $("playerPick");
   if(!list.length){
     sel.innerHTML = `<option value="">（該当なし）</option>`;
     return { list: [], message: "条件に一致するSP選手が見つかりませんでした。" };
   }
-
-  // 表示は「選手名のみ」
   sel.innerHTML = list.map(p=>{
     const id = p.player_id || p.playerId || "";
     const nm = p.name || p.player_name || id;
-    return `<option value="${esc(id)}">${esc(nm)}</option>`;
+    const o  = toNum(p.overall);
+    return `<option value="${esc(id)}">${esc(nm)}${o!=null?`（overall ${o}）`:``}</option>`;
   }).join("");
   sel.value = (list[0].player_id || list[0].playerId || "");
   return { list, message: `候補：${list.length}人` };
@@ -512,21 +398,51 @@ function calcRankings(target){
     const oRank = (overall!=null) ? rankCompetition(oVals, overall) : null;
     const mRank = (maxUp!=null) ? rankCompetition(mVals, maxUp) : null;
 
-    return { labelKey, labelVal, total: pool.length, overallRank:oRank, maxRank:mRank };
+    return {
+      labelKey,
+      labelVal,
+      total: pool.length,
+      overallRank: oRank,
+      maxRank: mRank
+    };
   };
 
-  return [
-    make(SP_PLAYERS, "SP選手全体", ""),
-    make(SP_PLAYERS.filter(p=>normalize(p.policy)===normalize(target.policy)), "ポリシー", normalize(target.policy)),
-    make(SP_PLAYERS.filter(p=>normalize(p.mainPosition)===normalize(target.mainPosition)), "ポジション", normalize(target.mainPosition)),
-    make(SP_PLAYERS.filter(p=>normalize(p.playStyle)===normalize(target.playStyle)), "プレイスタイル", normalize(target.playStyle)),
-  ];
+  const res = [];
+
+  // SP全体
+  res.push(make(SP_PLAYERS, "SP選手全体", ""));
+
+  // policy
+  res.push(make(
+    SP_PLAYERS.filter(p=>normalize(p.policy)===normalize(target.policy)),
+    "ポリシー",
+    normalize(target.policy)
+  ));
+
+  // position
+  res.push(make(
+    SP_PLAYERS.filter(p=>normalize(p.mainPosition)===normalize(target.mainPosition)),
+    "ポジション",
+    normalize(target.mainPosition)
+  ));
+
+  // playStyle
+  res.push(make(
+    SP_PLAYERS.filter(p=>normalize(p.playStyle)===normalize(target.playStyle)),
+    "プレイスタイル",
+    normalize(target.playStyle)
+  ));
+
+  return res;
 }
 
-/* ===== Combo helpers ===== */
-function getComboId(c){ return normalize(c.comboId || c.combo_id || c.id || c.comboID || ""); }
-function getComboName(c){ return normalize(c.name || c.combo_name || c.comboName || c.combo_name_jp || getComboId(c) || ""); }
-function getComboRank(c){ return normalize(c.rank || c.combo_rank || ""); }
+/* ===== Combo aptitude (Gold only) ===== */
+function getComboName(c){
+  return normalize(c.name || c.combo_name || c.comboName || c.combo_name_jp || c.comboId || c.combo_id || "");
+}
+function getComboRank(c){
+  return normalize(c.rank || c.combo_rank || "");
+}
 function getComboPolicies(c){
   const v = c.combo_policys || c.comboPolicies || c.policies;
   if(Array.isArray(v)) return v.map(normalize).filter(Boolean);
@@ -544,7 +460,6 @@ function getReqField(req, keys, def=""){
   return def;
 }
 
-/* ===== Combo aptitude (Gold only) ===== */
 function calcGoldCombos(target){
   const pPol = normalize(target.policy);
   const pPos = normalize(target.mainPosition);
@@ -575,7 +490,7 @@ function calcGoldCombos(target){
       const lvOk  = lvInclusiveMatch(rLv, pLv);
       const posOk = (rPos==="") ? true : (rPos===pPos);
 
-      const corePS = styOk && lvOk;
+      const corePS = styOk && lvOk; // playStyle(+Lv) core
       const corePosStyle = posOk && corePS;
 
       if(corePosStyle && polOk) hasFull = true;
@@ -584,20 +499,23 @@ function calcGoldCombos(target){
     }
 
     // 排他的（優先: 完全一致 > ポリシー違い > ポジション違い）
-    if(hasFull) full.push(c);
-    else if(hasPolDiff) polDiff.push(c);
-    else if(hasPosDiff) posDiff.push(c);
+    const nm = getComboName(c);
+    if(hasFull) full.push(nm);
+    else if(hasPolDiff) polDiff.push(nm);
+    else if(hasPosDiff) posDiff.push(nm);
   }
 
-  const sortJa = (a,b)=>getComboName(a).localeCompare(getComboName(b),"ja");
+  // sort names
+  const sortJa = (a,b)=>a.localeCompare(b,"ja");
   full.sort(sortJa); polDiff.sort(sortJa); posDiff.sort(sortJa);
 
   return { full, polDiff, posDiff };
 }
 
 /* ===== Compatibility players ===== */
-function pickOnePlayer(list){
+function pickOneName(list, key){
   if(!list.length) return { show:"-", extra:0, pick:null };
+  // pick highest overall then maxUpgrade
   const sorted = [...list].sort((a,b)=>{
     const ao = toNum(a.overall) ?? -Infinity;
     const bo = toNum(b.overall) ?? -Infinity;
@@ -623,7 +541,7 @@ function calcCompat(target){
 
   const styleMatchInclusive = (cand)=>{
     if(normalize(cand.playStyle)!==tSty) return false;
-    return lvInclusiveMatch(tLv, toNum(cand.playStyleLv));
+    return lvInclusiveMatch(tLv, toNum(cand.playStyleLv)); // candLv >= targetLv
   };
 
   const full = [];
@@ -640,6 +558,7 @@ function calcCompat(target){
     const polOk = (pPol===tPol);
     const styOk = styleMatchInclusive(p);
 
+    // 排他的（優先: 完全一致 > ポリシー違い > ポジション違い > プレイスタイル違い）
     if(polOk && posOk && styOk) full.push(p);
     else if(!polOk && posOk && styOk) polDiff.push(p);
     else if(polOk && !posOk && styOk) posDiff.push(p);
@@ -647,77 +566,6 @@ function calcCompat(target){
   }
 
   return { full, polDiff, posDiff, styleDiff };
-}
-
-/* ===== Modal ===== */
-function openModal(title, bodyHtml){
-  $("modalTitle").textContent = title || "詳細";
-  $("modalBody").innerHTML = bodyHtml || "";
-  $("modalBackdrop").style.display = "flex";
-}
-function closeModal(){
-  $("modalBackdrop").style.display = "none";
-  $("modalBody").innerHTML = "";
-}
-$("modalClose").addEventListener("click", closeModal);
-$("modalBackdrop").addEventListener("click", (e)=>{
-  if(e.target === $("modalBackdrop")) closeModal();
-});
-
-/* combo detail modal */
-function openComboDetail(combo){
-  if(!combo) return;
-  const nm = getComboName(combo);
-  const rank = getComboRank(combo) || "-";
-  const pols = getComboPolicies(combo);
-  const polText = pols.length ? pols.join(" / ") : "-";
-  const effect = normalize(combo.effect || combo.combo_effect || "-");
-  const reqNum = toNum(combo.requiredPlayers ?? combo.required_players ?? combo.required ?? null);
-  const acM = normalize(combo.acquisitionMethod || combo.acquisition_method || "-");
-  const acP = normalize(combo.acquisitionPlace || combo.acquisition_place || "-");
-  const period = normalize(combo.availablePeriod || combo.available_period || "-");
-  const reqs = getComboReqs(combo);
-
-  const condHtml = reqs.slice(0,3).map((r,i)=>{
-    const rPos = normalize(getReqField(r, ["position","pos","ポジション"], "-"));
-    const rSty = normalize(getReqField(r, ["playStyle","style","プレイスタイル"], "-"));
-    const rLv  = getReqField(r, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], null);
-    const rLvR = romanLv(rLv);
-    const styleShow = (rSty && rSty!=="-") ? `${esc(rSty)}${rLvR?` ${esc(rLvR)}`:""}` : "-";
-    return `
-      <div class="condCard">
-        <div class="t">条件${i+1}</div>
-        <div class="condGrid">
-          <div class="k">ポジション</div><div class="v">${esc(rPos)}</div>
-          <div class="k">プレイスタイル</div><div class="v">${styleShow}</div>
-        </div>
-      </div>
-    `;
-  }).join("");
-
-  const body = `
-    <div class="kv">
-      <div class="k">コンボ名</div><div class="v">${esc(nm)}</div>
-      <div class="k">ランク</div><div class="v">${esc(rank)}</div>
-      <div class="k">ポリシー</div><div class="v">${esc(polText)}</div>
-      <div class="k">効果</div><div class="v">${esc(effect)}</div>
-      <div class="k">必要人数</div><div class="v">${reqNum!=null?esc(reqNum):"-"}</div>
-      <div class="k">入手方法</div><div class="v">${esc(acM)}</div>
-      <div class="k">入手場所</div><div class="v">${esc(acP)}</div>
-      <div class="k">入手可能期間</div><div class="v">${esc(period)}</div>
-    </div>
-    ${condHtml}
-  `;
-  openModal("フォーメーションコンボ詳細", body);
-}
-
-/* compat list modal */
-function openCompatList(title, players){
-  const names = (players||[]).map(p=>normalize(p.name||p.player_name||"")).filter(Boolean);
-  const body = names.length
-    ? `<div style="font-weight:900;line-height:1.6;">${names.map(n=>`<span class="tag">${esc(n)}</span>`).join("")}</div>`
-    : `<div class="note" style="margin:0;">対象なし</div>`;
-  openModal(title, body);
 }
 
 /* ===== Render ===== */
@@ -729,38 +577,37 @@ function renderResult(target){
   const pos = normalize(target.mainPosition);
   const sty = normalize(target.playStyle);
   const lv  = toNum(target.playStyleLv);
-  const styShow = `${esc(sty||"-")}${lv!=null?` ${esc(romanLv(lv))}`:""}`;
 
   const rankRows = calcRankings(target);
   const combos = calcGoldCombos(target);
   const compat = calcCompat(target);
 
-  const compatPickFull = pickOnePlayer(compat.full);
-  const compatPickPol  = pickOnePlayer(compat.polDiff);
-  const compatPickPos  = pickOnePlayer(compat.posDiff);
-  const compatPickSty  = pickOnePlayer(compat.styleDiff);
+  const compatPickFull = pickOneName(compat.full);
+  const compatPickPol  = pickOneName(compat.polDiff);
+  const compatPickPos  = pickOneName(compat.posDiff);
+  const compatPickSty  = pickOneName(compat.styleDiff);
 
   const out = $("resultArea");
 
   out.innerHTML = `
     <!-- Header summary -->
     <div class="block" style="border-color:#2e7d32;">
-      <div class="hdr" style="grid-template-columns: 1fr 150px 150px;">
+      <div class="hdr" style="grid-template-columns: 1fr 160px 160px;">
         <div>選手名</div><div class="center">初期総合力</div><div class="center">最大強化</div>
       </div>
-      <div class="row" style="grid-template-columns: 1fr 150px 150px;">
+      <div class="row" style="grid-template-columns: 1fr 160px 160px;">
         <div>${esc(nm)}</div>
         <div class="center">${overall!=null?esc(overall):"-"}</div>
         <div class="center">${maxUp!=null?esc(maxUp):"-"}</div>
       </div>
 
-      <div class="hdr" style="grid-template-columns: 1fr 150px 150px;">
+      <div class="hdr" style="grid-template-columns: 1fr 160px 160px;">
         <div>ポリシー</div><div class="center">ポジション</div><div class="center">プレイスタイル</div>
       </div>
-      <div class="row" style="grid-template-columns: 1fr 150px 150px;">
+      <div class="row" style="grid-template-columns: 1fr 160px 160px;">
         <div>${esc(pol||"-")}</div>
         <div class="center">${esc(pos||"-")}</div>
-        <div class="center">${styShow}</div>
+        <div class="center">${esc(sty||"-")}${lv!=null?` <span class="pill">Lv${esc(lv)}</span>`:""}</div>
       </div>
     </div>
 
@@ -783,7 +630,7 @@ function renderResult(target){
 
     <!-- ② Combo aptitude -->
     <div class="block">
-      <div class="hdr blue smallCols">
+      <div class="hdr blue" style="grid-template-columns: 1fr 180px 1fr;">
         <div>フォーメーションコンボ適性（金ランクのみ）</div>
         <div class="center">対応数</div>
         <div class="center">フォーメーションコンボ</div>
@@ -796,51 +643,23 @@ function renderResult(target){
 
     <!-- ③ Compatibility -->
     <div class="block">
-      <div class="hdr blue smallCols">
+      <div class="hdr blue" style="grid-template-columns: 1fr 180px 1fr;">
         <div>互換性能選手（SP選手）</div>
         <div class="center">対象人数</div>
         <div class="center">主なSP選手</div>
       </div>
 
-      ${renderCompatLine("完全一致", compat.full, compatPickFull, "compat_full")}
-      ${renderCompatLine("ポリシー違い", compat.polDiff, compatPickPol, "compat_pol")}
-      ${renderCompatLine("ポジション違い", compat.posDiff, compatPickPos, "compat_pos")}
-      ${renderCompatLine("プレイスタイル違い", compat.styleDiff, compatPickSty, "compat_style")}
+      ${renderCompatLine("完全一致", compat.full, compatPickFull)}
+      ${renderCompatLine("ポリシー違い", compat.polDiff, compatPickPol)}
+      ${renderCompatLine("ポジション違い", compat.posDiff, compatPickPos)}
+      ${renderCompatLine("プレイスタイル違い", compat.styleDiff, compatPickSty)}
     </div>
   `;
-
-  // attach combo click handlers
-  out.querySelectorAll("[data-combo-id]").forEach(el=>{
-    el.addEventListener("click", (e)=>{
-      e.preventDefault();
-      const cid = el.getAttribute("data-combo-id");
-      const combo = COMBOS.find(c=>getComboId(c)===cid) || null;
-      openComboDetail(combo);
-    });
-  });
-
-  // attach compat "他◯名" handlers
-  out.querySelectorAll("[data-compat-key]").forEach(el=>{
-    el.addEventListener("click", (e)=>{
-      e.preventDefault();
-      const key = el.getAttribute("data-compat-key");
-      if(key==="compat_full") openCompatList("互換性能選手：完全一致", compat.full);
-      if(key==="compat_pol") openCompatList("互換性能選手：ポリシー違い", compat.polDiff);
-      if(key==="compat_pos") openCompatList("互換性能選手：ポジション違い", compat.posDiff);
-      if(key==="compat_style") openCompatList("互換性能選手：プレイスタイル違い", compat.styleDiff);
-    });
-  });
 }
 
-function renderComboLine(label, combos){
-  const count = combos.length;
-  const names = count
-    ? combos.map(c=>{
-        const cid = getComboId(c);
-        const nm = getComboName(c);
-        return `<a href="#" class="tag tagBtn" data-combo-id="${esc(cid)}">${esc(nm)}</a>`;
-      }).join("")
-    : `<span class="tag" style="opacity:.6;">-</span>`;
+function renderComboLine(label, list){
+  const count = list.length;
+  const names = count ? list.map(n=>`<span class="tag">${esc(n)}</span>`).join("") : `<span class="empty">-</span>`;
   return `
     <div class="row smallCols">
       <div>${esc(label)}</div>
@@ -850,14 +669,12 @@ function renderComboLine(label, combos){
   `;
 }
 
-function renderCompatLine(label, list, pickInfo, compatKey){
+function renderCompatLine(label, list, pickInfo){
   const count = list.length;
   let right = "-";
   if(count){
     right = esc(pickInfo.show);
-    if(pickInfo.extra>0){
-      right += ` <span class="pill clickPill" data-compat-key="${esc(compatKey)}">他${pickInfo.extra}名</span>`;
-    }
+    if(pickInfo.extra>0) right += ` <span class="pill">他${pickInfo.extra}名</span>`;
   }
   return `
     <div class="row smallCols">
@@ -924,3 +741,49 @@ $("btnEvaluate").addEventListener("click", ()=>{
 </script>
 </body>
 </html>
+/* player detail modal (layout borrowed style: kv grid like existing player detail) */
+function openPlayerDetail(p){
+  if(!p){
+    openModal("選手詳細", `<div class="note" style="margin:0;">選手データが見つかりませんでした。</div>`);
+    return;
+  }
+  const nm = normalize(p.name || p.player_name || "（不明）");
+  const overall = toNum(p.overall);
+  const maxUp = toNum(p.maxUpgrade);
+  const pol = normalize(p.policy || "-");
+  const pos = normalize(p.mainPosition || "-");
+  const sty = normalize(p.playStyle || "-");
+  const lv = toNum(p.playStyleLv);
+  const styShow = `${esc(sty)}${lv!=null?` ${esc(romanLv(lv))}`:""}`;
+
+  const acM = normalize(p.acquisitionMethod || p.acquisition_method || "-");
+  const acP = normalize(p.acquisitionPlace || p.acquisition_place || "-");
+  const period = normalize(p.availablePeriod || p.available_period || "-");
+  const skill = normalize(p.mainSkill || p.main_skill || "-");
+  const trait = normalize(p.mainTrait || p.main_trait || "-");
+  const cat = normalize(p.category || "-");
+  const nat = normalize(p.nationality || "-");
+  const grow = normalize(p.growthType || p.growth_type || "-");
+
+  const body = `
+    <div class="kv">
+      <div class="k">選手名</div><div class="v">${esc(nm)}</div>
+      <div class="k">初期総合力</div><div class="v">${overall!=null?esc(overall):"-"}</div>
+      <div class="k">最大強化</div><div class="v">${maxUp!=null?esc(maxUp):"-"}</div>
+      <div class="k">ポリシー</div><div class="v">${esc(pol)}</div>
+      <div class="k">ポジション</div><div class="v">${esc(pos)}</div>
+      <div class="k">プレイスタイル</div><div class="v">${styShow}</div>
+      <div class="k">入手方法</div><div class="v">${esc(acM)}</div>
+      <div class="k">入手場所</div><div class="v">${esc(acP)}</div>
+      <div class="k">入手可能期間</div><div class="v">${esc(period)}</div>
+      <div class="k">メインスキル</div><div class="v">${esc(skill)}</div>
+      <div class="k">特性</div><div class="v">${esc(trait)}</div>
+      <div class="k">カテゴリ</div><div class="v">${esc(cat)}</div>
+      <div class="k">国籍</div><div class="v">${esc(nat)}</div>
+      <div class="k">成長タイプ</div><div class="v">${esc(grow)}</div>
+    </div>
+  `;
+  openModal("選手詳細", body);
+}
+
+
