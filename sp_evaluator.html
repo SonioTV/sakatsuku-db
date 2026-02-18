@@ -341,6 +341,37 @@
   #resultArea .row{ border-top:1px solid #d8e3ea; }
 
 
+
+  /* ===== Layout tweak (iPhone16): shift contents slightly left & keep fixed positions ===== */
+  #resultArea .hdr, #resultArea .row{ padding-left:10px !important; padding-right:4px !important; }
+  #resultArea .hdr{ grid-template-columns: 132px 1fr 1fr !important; }
+  #resultArea .row{ grid-template-columns: 132px 1fr 1fr !important; }
+  #resultArea .hdr.blue{ grid-template-columns: 132px 1fr 1fr !important; }
+  #resultArea .row.blueCols{ grid-template-columns: 132px 1fr 1fr !important; }
+  #resultArea .hdr.smallCols{ grid-template-columns: 132px 74px 1fr !important; }
+  #resultArea .row.smallCols{ grid-template-columns: 132px 74px 1fr !important; }
+
+  /* round-enclosed value / "他◯個, 他◯名" */
+  #resultArea .circPill{
+    display:inline-block;
+    padding:2px 8px;
+    border-radius:999px;
+    border:1px solid rgba(0,0,0,.18);
+    background:#fff;
+    font-weight:900;
+    font-size:9px;
+    line-height:1.4;
+    vertical-align:middle;
+    white-space:nowrap;
+  }
+  #resultArea .resultSub{ margin-top:2px; }
+  #resultArea .resultMore{
+    margin-left:4px;
+    text-decoration:none !important;
+    cursor:pointer;
+  }
+
+
 /* player name link in compatibility table */
   .playerNameLink{
     font-weight:900;
@@ -976,7 +1007,7 @@ function renderResult(target){
         <div class="center">総合ランキング</div><div class="center">初期総合力</div><div class="center">最大強化</div>
       </div>
       ${rankRows.map(r=>{
-        const left = r.labelVal ? `${esc(r.labelKey)}<span class="resultSub">（${esc(r.labelVal)}）</span>` : `${esc(r.labelKey)}`;
+        const left = r.labelVal ? `${esc(r.labelKey)}<span class="resultSub"><span class="circPill">${esc(r.labelVal)}</span></span>` : `${esc(r.labelKey)}`;
         return `
           <div class="row blueCols">
             <div class="center">${left}</div>
@@ -1003,9 +1034,9 @@ function renderResult(target){
     <!-- ③ Compatibility -->
     <div class="block">
       <div class="hdr blue smallCols">
-        <div>互換性能選手<br>（SP選手）</div>
+        <div>互換選手<br>（SP選手）</div>
         <div class="center">対象人数</div>
-        <div class="center">主なSP選手</div>
+        <div class="center">主な選手</div>
       </div>
 
       ${renderCompatLine("完全一致", compat.full, compatPickFull, "compat_full")}
@@ -1071,7 +1102,7 @@ function renderComboLine(label, combos, comboKey){
     const nm = getComboName(first);
     right = `<a href="#" class="tag tagBtn" data-combo-id="${esc(cid)}">${esc(nm)}</a>`;
     if(count>1){
-      right += `<span class="resultMore" data-combo-key="${esc(comboKey)}">（他${count-1}個）</span>`;
+      right += `<span class="resultMore circPill" data-combo-key="${esc(comboKey)}">他${count-1}個</span>`;
     }
   }
   return `
@@ -1091,7 +1122,7 @@ function renderCompatLine(label, list, pickInfo, compatKey){
     const nm = esc(pickInfo.show);
     right = pid ? `<a href="#" class="playerNameLink" data-player-id="${esc(pid)}">${nm}</a>` : nm;
     if(pickInfo.extra>0){
-      right += `<span class="resultMore" data-compat-key="${esc(compatKey)}">（他${pickInfo.extra}名）</span>`;
+      right += `<span class="resultMore circPill" data-compat-key="${esc(compatKey)}">他${pickInfo.extra}名</span>`;
     }
   }
   return `
