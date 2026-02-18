@@ -876,6 +876,7 @@
 <div class="card">
       <div class="sectionTitle" style="text-align:left;">総合力ランキング</div>
 
+      <div class="note" style="text-align:left;margin-top:-4px;">※横スクロールできます</div>
       <div class="resultGroupTitle">① 初期総合力 TOP10</div>
       <div class="tableWrap"><table id="tblOverall" class="rankTable"></table></div>
 
@@ -884,13 +885,14 @@
 
       <div class="resultGroupTitle" style="margin-top:22px;">複合フィルターランキング TOP5</div>
       <div class="note" style="text-align:left;margin-top:6px;">
-        ポリシー / メインポジション / プレイスタイル を組み合わせてTOP5を表示します。
+        ポリシー / メインポジション / プレイスタイル / 入手場所 を組み合わせてTOP5を表示します。
       </div>
 
       <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0 8px;">
         <select id="fPolicy" class="bigSelect" style="width:240px;font-size:18px;padding:10px 12px;"></select>
         <select id="fPos" class="bigSelect" style="width:200px;font-size:18px;padding:10px 12px;"></select>
         <select id="fStyle" class="bigSelect" style="width:240px;font-size:18px;padding:10px 12px;"></select>
+        <select id="fPlace" class="bigSelect" style="width:240px;font-size:18px;padding:10px 12px;"></select>
         <button id="btnResetFilters" class="tile" type="button" style="min-height:44px;font-size:16px;padding:10px 12px;">リセット</button>
       </div>
 
@@ -1874,36 +1876,48 @@ function setupFilterUI(){
   const fPolicy = document.getElementById("fPolicy");
   const fPos = document.getElementById("fPos");
   const fStyle = document.getElementById("fStyle");
+  const fPlace = document.getElementById("fPlace");
 
   const uniq = (arr)=>[...new Set(arr.filter(Boolean))];
   const policies = uniq(PLAYERS.map(p=>p.policy)).sort((a,b)=>a.localeCompare(b,"ja"));
   const pos = uniq(PLAYERS.map(p=>p.mainPosition)).sort((a,b)=>a.localeCompare(b,"ja"));
   const styles = uniq(PLAYERS.map(p=>p.playStyle)).sort((a,b)=>a.localeCompare(b,"ja"));
+  const places = uniq(PLAYERS.map(p=>p.acquisitionPlace)).sort((a,b)=>a.localeCompare(b,"ja"));
 
   fPolicy.innerHTML = `<option value="">（ポリシー）</option>` + policies.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
   fPos.innerHTML = `<option value="">（ポジション）</option>` + pos.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
   fStyle.innerHTML = `<option value="">（プレイスタイル）</option>` + styles.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+  fPlace.innerHTML = `<option value="">（入手場所）</option>` + places.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
 
   const rerender = ()=>{
     const fp = fPolicy.value;
     const fpo = fPos.value;
     const fs = fStyle.value;
+    const fpl = fPlace.value;
 
     let arr = [...PLAYERS];
     if(fp) arr = arr.filter(p=>p.policy===fp);
     if(fpo) arr = arr.filter(p=>p.mainPosition===fpo);
     if(fs) arr = arr.filter(p=>p.playStyle===fs);
+    if(fpl) arr = arr.filter(p=>p.acquisitionPlace===fpl);
+
     arr = arr.sort((a,b)=>(b.overall||0)-(a.overall||0)).slice(0,5);
 
-    renderRankTable(document.getElementById("tblFiltered"), arr, "overall", "初期総合力");
+    const tbl = document.getElementById("tblFiltered");
+    if(!arr.length){
+      tbl.innerHTML = `<thead><tr><th>順位</th><th>選手名</th><th>初期総合力</th><th>ポジション</th></tr></thead><tbody><tr><td colspan="4" style="text-align:center;padding:12px;">対象なし</td></tr></tbody>`;
+      return;
+    }
+    renderRankTable(tbl, arr, "overall", "初期総合力");
   };
 
   fPolicy.addEventListener("change", rerender);
   fPos.addEventListener("change", rerender);
   fStyle.addEventListener("change", rerender);
+  fPlace.addEventListener("change", rerender);
 
   document.getElementById("btnResetFilters").addEventListener("click", ()=>{
-    fPolicy.value=""; fPos.value=""; fStyle.value="";
+    fPolicy.value=""; fPos.value=""; fStyle.value=""; fPlace.value="";
     rerender();
   });
 
