@@ -307,7 +307,20 @@
   }
 
 
-  /* player name link in compatibility table */
+  
+  /* iPhone16 width fix: prevent right-edge clipping by tightening grid columns in result area */
+  @media (max-width: 460px){
+    #resultArea .hdr{ grid-template-columns: 1fr 106px 106px !important; }
+    #resultArea .row{ grid-template-columns: 1fr 106px 106px !important; }
+    #resultArea .hdr.blue{ grid-template-columns: 1fr 118px 118px !important; }
+    #resultArea .row.blueCols{ grid-template-columns: 1fr 118px 118px !important; }
+    #resultArea .hdr.smallCols{ grid-template-columns: 1fr 112px 1fr !important; }
+    #resultArea .row.smallCols{ grid-template-columns: 1fr 112px 1fr !important; }
+    #resultArea .hdr, #resultArea .row{ gap:6px !important; padding:9px 10px !important; }
+  }
+
+
+/* player name link in compatibility table */
   .playerNameLink{
     font-weight:900;
     color:#0b3d50;
