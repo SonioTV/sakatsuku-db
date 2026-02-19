@@ -41,48 +41,47 @@
     .two{display:flex;flex-direction:column;gap:4px}
     .v{font-weight:900}
     .note{margin-top:10px;color:var(--mut);font-size:12px;line-height:1.6}
-    /* modal */
-    .back{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.55);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      z-index:50;
-    }
-    .back.show{ display:flex; }
-    .modal{
-      width:min(720px, 100%);
-      background:#fff;
-      border-radius:22px;
-      box-shadow:0 30px 60px rgba(0,0,0,.25);
-      overflow:hidden;
-      border:none;
-    }
-    .mhead{
-      padding:16px 18px;
-      background:#0b0b0b;
-      color:#fff;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-    }
-    .mtitle{ font-size:18px; font-weight:900; }
-    .msub{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; color:#fff; }
-    .x{
-      border:none;
-      background:transparent;
-      color:#fff;
-      font-size:22px;
-      cursor:pointer;
-    }
-    .mbody{ padding:16px 18px 18px; color:#111; }
-    .mbody .mLine, .mbody .mline{ margin:8px 0; }
-    .mbody .mKey, .mbody .mkey{ font-weight:900; display:inline-block; min-width:140px; color:#111; }
-    .mbody .mVal, .mbody .mval{ color:#111; font-weight:700; }
+    /* モーダル */
+  .modalBack{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+    z-index:50;
+  }
+  .modalBack.show{ display:flex; }
+  .modal{
+    width:min(720px, 100%);
+    background:#fff;
+    border-radius:22px;
+    box-shadow:0 30px 60px rgba(0,0,0,.25);
+    overflow:hidden;
+  }
+  .modalHead{
+    padding:16px 18px;
+    background:#0b0b0b;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .modalHead .ttl{ font-size:18px; font-weight:900; }
+  .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; }
+  .modalHead button{
+    border:none;
+    background:transparent;
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+  }
+  .modalBody{ padding:16px 18px 18px; }
+  .modalBody .mLine{ margin:8px 0; }
+  .modalBody .mKey{ font-weight:900; display:inline-block; min-width:140px; color:#111; }
+  .modalBody .mVal{ color:#111; font-weight:700; }
   </style>
 </head>
 <body>
@@ -90,14 +89,7 @@
     <h1>最強チームシミュレーション（サンプル）</h1>
 <div class="card">
       <div class="ctrl">
-        <div class="row">
-          <div class="two">
-            <label>ポリシー</label>
-            <select id="policySel"></select>
-          </div>
-        </div>
-
-        <div class="row">
+<div class="row">
           <div class="two">
             <label>フォーメーションコンボ</label>
             <select id="comboSel"></select>
@@ -131,18 +123,18 @@
   </div>
 
   <!-- modal -->
-  <div id="back" class="back" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true">
-      <div class="mhead">
-        <div>
-          <div id="mtitle" class="mtitle">詳細</div>
-          <div id="msub" class="msub"></div>
-        </div>
-        <button class="x" id="xBtn">×</button>
+  <div id="modalBack" class="modalBack" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal">
+    <div class="modalHead">
+      <div>
+        <div id="modalTitle" class="ttl">詳細</div>
+        <div id="modalSub" class="subttl"></div>
       </div>
-      <div id="mbody" class="mbody"></div>
+      <button id="modalClose" type="button" aria-label="close">✕</button>
     </div>
+    <div id="modalBody" class="modalBody"></div>
   </div>
+</div>
 
 <script>
 (function(){
@@ -199,7 +191,8 @@
 
     const sel = $("comboSel");
     sel.innerHTML = list.map(c=>{
-      const tag = `${c.rank||"-"} / ${c.formation||"-"}`;
+      const pol = Array.isArray(c.combo_policys) ? c.combo_policys.join("・") : (c.combo_policys||"-");
+      const tag = `${c.formation||"-"} / ${pol||"-"}`;
       return `<option value="${esc(c.comboId)}">${esc(c.name)}（${esc(tag)}）</option>`;
     }).join("");
 
@@ -246,7 +239,7 @@
         if(String(player.playStyle) !== String(r.playStyle)) return false;
         const needLv = Number(r.playStyleLv||0);
         const haveLv = Number(player.playStyleLv||0);
-        return haveLv >= needLv;
+        return haveLv === needLv;
       });
       if(!ok) return false;
     }
@@ -261,7 +254,7 @@
         if(String(player.playStyle) !== String(r.playStyle)) return false;
         const needLv = Number(r.playStyleLv||0);
         const haveLv = Number(player.playStyleLv||0);
-        return haveLv >= needLv;
+        return haveLv === needLv;
       });
     }
     return true;
@@ -353,18 +346,18 @@
 
   // modal
   function openModal(title, sub, bodyHtml){
-    $("mtitle").textContent = title || "詳細";
-    $("msub").textContent = sub || "";
-    $("mbody").innerHTML = bodyHtml || "";
-    $("back").classList.add("show");
-    $("back").setAttribute("aria-hidden","false");
+    $("modalTitle").textContent = title || "詳細";
+    $("modalSub").textContent = sub || "";
+    $("modalBody").innerHTML = bodyHtml || "";
+    $("modalBack").classList.add("show");
+    $("modalBack").setAttribute("aria-hidden","false");
   }
   function closeModal(){
-    $("back").classList.remove("show");
-    $("back").setAttribute("aria-hidden","true");
+    $("modalBack").classList.remove("show");
+    $("modalBack").setAttribute("aria-hidden","true");
   }
-  $("xBtn").addEventListener("click", closeModal);
-  $("back").addEventListener("click", (e)=>{ if(e.target===$("back")) closeModal(); });
+  $("modalClose").addEventListener("click", closeModal);
+  $("modalBack").addEventListener("click", (e)=>{ if(e.target===$("modalBack")) closeModal(); });
   document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") closeModal(); });
 
   function openPlayerModal(p){
@@ -385,9 +378,9 @@
       ["メイントレイト", p.mainTrait || "-"],
     ];
     const body = lines.map(([k,v])=>`
-      <div class="mline">
-        <div class="mkey">${esc(k)}</div>
-        <div class="mval">${esc(v ?? "-")}</div>
+      <div class="mLine">
+        <div class="mKey">${esc(k)}</div>
+        <div class="mVal">${esc(v ?? "-")}</div>
       </div>
     `).join("");
     openModal("選手詳細", p.name, body);
