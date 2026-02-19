@@ -345,12 +345,12 @@
 
       let hitMatch = false;
       if(bestMatch && policyHits < 3){
-        hitMatch = consumeRequirement(bestMatch, remainingPolicy, slotPos);
+        hitMatch = consumeRequirement(bestMatch, remainingPolicy, pos);
         if(hitMatch) policyHits++;
       }
       let hitAny = false;
       if(bestAny && freeHits < 3){
-        hitAny = consumeRequirement(bestAny, remainingFree, slotPos);
+        hitAny = consumeRequirement(bestAny, remainingFree, pos);
         if(hitAny) freeHits++;
       }
 
