@@ -43,46 +43,52 @@
     .note{margin-top:10px;color:var(--mut);font-size:12px;line-height:1.6}
     /* モーダル */
   .modalBack{
-    position:fixed;
-    inset:0;
+    position:fixed; inset:0;
     background:rgba(0,0,0,.55);
     display:none;
-    align-items:center;
+    align-items:flex-end;
     justify-content:center;
-    padding:18px;
-    z-index:50;
+    padding:0;
+    z-index:9999;
   }
   .modalBack.show{ display:flex; }
   .modal{
-    width:min(720px, 100%);
+    width:min(520px, 96vw);
     background:#fff;
-    border-radius:22px;
-    box-shadow:0 30px 60px rgba(0,0,0,.25);
+    border-radius:24px 24px 0 0;
+    box-shadow:0 -10px 30px rgba(0,0,0,.25);
     overflow:hidden;
   }
   .modalHead{
-    padding:16px 18px;
+    padding:14px 16px;
     background:#0b0b0b;
     color:#fff;
     display:flex;
     justify-content:space-between;
-    align-items:center;
+    align-items:flex-start;
     gap:12px;
   }
-  .modalHead .ttl{ font-size:18px; font-weight:900; }
-  .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; }
+  .modalHead .ttl{ font-size:18px; font-weight:900; line-height:1.2; }
+  .modalHead .subttl{ font-size:12px; font-weight:700; opacity:.85; margin-top:4px; }
   .modalHead button{
-    border:none;
+    border:2px solid rgba(255,255,255,.25);
     background:transparent;
     color:#fff;
+    border-radius:12px;
+    width:42px;
+    height:42px;
     font-size:22px;
     cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
-  .modalBody{ padding:16px 18px 18px; }
-  .modalBody .mLine{ margin:8px 0; }
-  .modalBody .mKey{ font-weight:900; display:inline-block; min-width:140px; color:#111; }
-  .modalBody .mVal{ color:#111; font-weight:700; }
-  </style>
+  .modalBody{ padding:14px 16px 18px; max-height:65vh; overflow:auto; }
+  .modalBody .mLine{ display:flex; gap:10px; align-items:flex-start; padding:10px 0; border-bottom:1px solid #ececec; }
+  .modalBody .mLine:last-child{ border-bottom:none; }
+  .modalBody .mKey{ flex:0 0 120px; min-width:120px; color:#666; font-weight:700; }
+  .modalBody .mVal{ flex:1; min-width:0; color:#111; font-weight:800; word-break:break-word; }
+</style>
 </head>
 <body>
   <div class="wrap">
@@ -305,10 +311,14 @@
     const usedAny   = new Set();
 
     // Highlight up to 3 players total (one per combo requirement), based on exact match to combo_requirements
-    const remainingReqs = Array.isArray(combo.combo_requirements) ? combo.combo_requirements.slice() : [];
-    const consumeRequirement = (player)=>{
+    const remainingPolicy = Array.isArray(combo.combo_requirements) ? combo.combo_requirements.slice() : [];
+    const remainingFree = Array.isArray(combo.combo_requirements) ? combo.combo_requirements.slice() : [];
+    let policyHits = 0;
+    let freeHits = 0;
+
+    const consumeRequirement = (player, remainingReqs, slotPos)=>{
       if(!player) return false;
-      const pPos = String(player.mainPosition||"");
+      const pPos = String(slotPos||"");
       const pStyle = String(player.playStyle||"");
       const pLv = String(player.playStyleLv||"");
       for(let i=0;i<remainingReqs.length;i++){
@@ -333,8 +343,16 @@
       const bestMatch = pickBest(matchCands, usedMatch, mode);
       const bestAny   = pickBest(anyCands, usedAny, mode);
 
-      const hitMatch = consumeRequirement(bestMatch);
-      const hitAny = consumeRequirement(bestAny);
+      let hitMatch = false;
+      if(bestMatch && policyHits < 3){
+        hitMatch = consumeRequirement(bestMatch, remainingPolicy, slotPos);
+        if(hitMatch) policyHits++;
+      }
+      let hitAny = false;
+      if(bestAny && freeHits < 3){
+        hitAny = consumeRequirement(bestAny, remainingFree, slotPos);
+        if(hitAny) freeHits++;
+      }
 
       tbody.insertAdjacentHTML("beforeend", rowHtml(s.slotNo, pos, bestMatch, bestAny, mode, hitMatch, hitAny));
     }
@@ -379,12 +397,10 @@
   }
   function closeModal(){
     const back = $("modalBack");
-    // Avoid aria-hidden warning: ensure focused element is not inside the modal when hiding
-    if(back && back.contains(document.activeElement)){
-      try{ document.activeElement.blur(); }catch(_){}
-    }
+    try{ if(document.activeElement){ document.activeElement.blur(); } }catch(_){ }
     back.classList.remove("show");
     back.setAttribute("aria-hidden","true");
+    document.body.style.overflow="";
   }
   $("modalClose").addEventListener("click", closeModal);
   $("modalBack").addEventListener("click", (e)=>{ if(e.target===$("modalBack")) closeModal(); });
