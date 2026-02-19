@@ -140,8 +140,16 @@
   }
 
   function rebuildComboSelect(){
-    const list = COMBOS
-      .filter(c=>c.rank==="金")
+    // Gold-only combos. Some data may represent rank as "金ランク" etc, so we use contains("金").
+    const gold = COMBOS
+      .filter(c=>{
+        const r = String(c.rank||"").trim();
+        return r === "金" || r.includes("金") || r.toLowerCase()==="gold";
+      })
+      .sort((a,b)=>String(a.name).localeCompare(String(b.name),"ja"));
+
+    // If no gold combos exist in the dataset, fall back to showing all combos (and show a warning).
+    const list = gold.length ? gold : COMBOS
       .sort((a,b)=>String(a.name).localeCompare(String(b.name),"ja"));
 
     const sel = $("comboSel");
@@ -149,6 +157,12 @@
       const tag = `${c.rank||"-"} / ${c.formation||"-"}`;
       return `<option value="${esc(c.comboId)}">${esc(c.name)}（${esc(tag)}）</option>`;
     }).join("");
+
+    if(!list.length){
+      setStatus("combos.json にコンボがありません", true);
+    }else if(!gold.length){
+      setStatus("金ランクが見つからないため、全ランクを表示しています（combos.jsonのrank表記を確認してください）", true);
+    }
   }
 
   function buildRequirementMap(combo){
