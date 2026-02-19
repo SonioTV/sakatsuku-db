@@ -58,6 +58,10 @@
 <body>
   <div class="wrap">
     <h1>最強チームシミュレーション（サンプル）</h1>
+    <p class="sub">フォーメーションコンボを選ぶと、<span class="ok">条件完全一致（ポリシー+ポジション+プレイスタイル）</span>で各ポジションの最強選手と、<span class="ok">総合力最強（条件なし）</span>を11枠分表示します。<br>
+      ※このサンプルは <span class="tag">players.json</span> / <span class="tag">combos.json</span> / <span class="tag">formation_slots.json</span> を読み込みます。
+    </p>
+
     <div class="card">
       <div class="ctrl">
         <div class="row">
@@ -82,16 +86,23 @@
         <table>
           <thead>
             <tr>
+              <th style="width:70px">枠</th>
               <th style="width:90px">ポジ</th>
-              <th>ポリシー染め</th>
-              <th>最強</th>
+              <th>条件完全一致（最強）</th>
+              <th>総合力最強（条件なし）</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
         </table>
       </div>
 
-      
+      <div class="note">
+        判定ルール（サンプル）：
+        <ul>
+          <li>「条件完全一致」＝ combo_policys にポリシー一致 かつ formation_slots のポジション一致（mainPosition）かつ（該当ポジに要求があれば）プレイスタイル一致 & Lv以上。</li>
+          <li>同一選手の重複配置は避ける（枠ごとに上から貪欲選択）。</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -140,16 +151,12 @@
   }
 
   function rebuildComboSelect(){
-    // Gold-only combos. Some data may represent rank as "金ランク" etc, so we use contains("金").
-    const gold = COMBOS
+    // Gold-only combos. Support variations like "金", "金ランク", etc.
+    const list = COMBOS
       .filter(c=>{
         const r = String(c.rank||"").trim();
         return r === "金" || r.includes("金") || r.toLowerCase()==="gold";
       })
-      .sort((a,b)=>String(a.name).localeCompare(String(b.name),"ja"));
-
-    // If no gold combos exist in the dataset, fall back to showing all combos (and show a warning).
-    const list = gold.length ? gold : COMBOS
       .sort((a,b)=>String(a.name).localeCompare(String(b.name),"ja"));
 
     const sel = $("comboSel");
@@ -159,9 +166,7 @@
     }).join("");
 
     if(!list.length){
-      setStatus("combos.json にコンボがありません", true);
-    }else if(!gold.length){
-      setStatus("金ランクが見つからないため、全ランクを表示しています（combos.jsonのrank表記を確認してください）", true);
+      setStatus("金ランクのコンボが見つかりません（combos.json の rank 表記を確認してください）", true);
     }
   }
 
@@ -268,21 +273,19 @@
   }
 
   function rowHtml(slotNo, pos, p1, p2, mode){
-    const cell = (p)=>{
+    const cell = (p, label)=>{
       if(!p) return `<div class="mut">-</div>`;
       const pid = p.player_id || p.playerId;
       const nm = p.name || "-";
-      return `<a href="#" class="link" data-player-id="${esc(pid)}">${esc(nm)}</a>`;
+      const v = Number(p[mode]||0);
+      const ps = `${p.playStyle||"-"} ${roman(p.playStyleLv||"")}`;
+      return `
+        <div class="two">
+          <div><a href="#" class="link" data-player-id="${esc(pid)}">${esc(nm)}</a></div>
+          <div class="mut">${esc(label)}：<span class="v">${esc(v)}</span> / <span class="tag">${esc(p.policy||"-")}</span> <span class="tag">${esc(ps)}</span></div>
+        </div>
+      `;
     };
-
-    return `
-      <tr>
-        <td class="pos">${esc(pos)}</td>
-        <td>${cell(p1)}</td>
-        <td>${cell(p2)}</td>
-      </tr>
-    `;
-  };
 
     return `
       <tr>
