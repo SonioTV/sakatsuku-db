@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>最強チームシミュレーション（サンプル）</title>
+  <style>
+    :root{
+      --bg:#0b1220; --card:#0f1a2e; --line:#1f3356; --txt:#e9f1ff; --mut:#9fb4d9;
+      --acc:#56a4ff; --good:#54d18a; --bad:#ff6b6b;
+    }
+    html,body{margin:0;background:linear-gradient(180deg,#081025,#071022);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;}
+    .wrap{max-width:980px;margin:0 auto;padding:18px 14px 60px;}
+    h1{font-size:18px;margin:0 0 10px;font-weight:900;letter-spacing:.02em}
+    .sub{color:var(--mut);font-size:12px;line-height:1.6;margin:0 0 14px}
+    .card{background:rgba(15,26,46,.92);border:1px solid rgba(31,51,86,.9);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);padding:14px}
+    .ctrl{display:grid;grid-template-columns:1fr;gap:10px}
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    label{font-size:12px;color:var(--mut);font-weight:800}
+    select,input[type="text"]{background:#0b1730;border:1px solid rgba(31,51,86,.9);color:var(--txt);border-radius:12px;padding:10px 12px;font-size:13px;outline:none}
+    select{min-width:260px;max-width:100%}
+    input[type="text"]{width:min(360px,100%)}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:#0b1730;border:1px solid rgba(31,51,86,.9);border-radius:999px;padding:8px 12px}
+    .pill input{margin:0}
+    .btn{background:linear-gradient(180deg,#2a87ff,#2b6ad8);border:none;border-radius:12px;color:#fff;font-weight:900;padding:10px 14px;cursor:pointer}
+    .btn:active{transform:translateY(1px)}
+    .mini{font-size:11px;color:var(--mut)}
+    .err{color:var(--bad);font-weight:900}
+    .ok{color:var(--good);font-weight:900}
+    .grid{margin-top:12px;overflow:auto;border-radius:16px;border:1px solid rgba(31,51,86,.9)}
+    table{border-collapse:separate;border-spacing:0;width:100%;min-width:720px;background:rgba(11,23,48,.6)}
+    thead th{position:sticky;top:0;background:rgba(11,23,48,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(31,51,86,.9);font-size:12px;color:var(--mut);padding:10px 10px;text-align:left}
+    tbody td{border-bottom:1px solid rgba(31,51,86,.55);padding:10px 10px;font-size:13px;vertical-align:top}
+    tbody tr:last-child td{border-bottom:none}
+    .pos{font-weight:900;letter-spacing:.04em}
+    .link{color:var(--acc);font-weight:900;text-decoration:none}
+    .link:hover{text-decoration:underline}
+    .mut{color:var(--mut)}
+    .tag{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(31,51,86,.9);background:#0b1730;border-radius:999px;padding:3px 10px;font-size:11px;color:var(--mut);white-space:nowrap}
+    .two{display:flex;flex-direction:column;gap:4px}
+    .v{font-weight:900}
+    .note{margin-top:10px;color:var(--mut);font-size:12px;line-height:1.6}
+    /* modal */
+    .back{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:18px;z-index:50}
+    .back.show{display:flex}
+    .modal{width:min(680px,100%);background:rgba(15,26,46,.98);border:1px solid rgba(31,51,86,.95);border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.5);overflow:hidden}
+    .mhead{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:12px 14px;background:rgba(11,23,48,.95);border-bottom:1px solid rgba(31,51,86,.9)}
+    .mtitle{font-weight:1000;font-size:14px}
+    .msub{color:var(--mut);font-size:12px;margin-top:2px}
+    .x{background:transparent;border:1px solid rgba(31,51,86,.9);color:var(--txt);border-radius:12px;padding:6px 10px;cursor:pointer;font-weight:900}
+    .mbody{padding:12px 14px}
+    .mline{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 0;border-bottom:1px dashed rgba(31,51,86,.7)}
+    .mline:last-child{border-bottom:none}
+    .mkey{color:var(--mut);font-size:12px;font-weight:900}
+    .mval{font-size:13px;font-weight:800}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>最強チームシミュレーション（サンプル）</h1>
+    <p class="sub">フォーメーションコンボを選ぶと、<span class="ok">条件完全一致（ポリシー+ポジション+プレイスタイル）</span>で各ポジションの最強選手と、<span class="ok">総合力最強（条件なし）</span>を11枠分表示します。<br>
+      ※このサンプルは <span class="tag">players.json</span> / <span class="tag">combos.json</span> / <span class="tag">formation_slots.json</span> を読み込みます。
+    </p>
+
+    <div class="card">
+      <div class="ctrl">
+        <div class="row">
+          <div class="two">
+            <label>フォーメーションコンボ</label>
+            <select id="comboSel"></select>
+          </div>
+
+          <div class="two">
+            <label>総合力モード</label>
+            <div class="row">
+              <label class="pill"><input type="radio" name="mode" value="overall" checked> 初期総合力</label>
+              <label class="pill"><input type="radio" name="mode" value="maxUpgrade"> 最大強化</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="two">
+            <label>絞り込み（任意）</label>
+            <div class="row">
+              <label class="pill"><input type="checkbox" id="goldOnly"> 金ランクのみ</label>
+              <input id="kw" type="text" placeholder="選手名キーワード（完全一致側の候補を絞る）" />
+            </div>
+          </div>
+          <button class="btn" id="btnSim">シミュレーション</button>
+          <div class="mini" id="status"></div>
+        </div>
+      </div>
+
+      <div class="grid" id="gridWrap" style="display:none">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:70px">枠</th>
+              <th style="width:90px">ポジ</th>
+              <th>条件完全一致（最強）</th>
+              <th>総合力最強（条件なし）</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        判定ルール（サンプル）：
+        <ul>
+          <li>「条件完全一致」＝ combo_policys にポリシー一致 かつ formation_slots のポジション一致（mainPosition）かつ（該当ポジに要求があれば）プレイスタイル一致 & Lv以上。</li>
+          <li>同一選手の重複配置は避ける（枠ごとに上から貪欲選択）。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal -->
+  <div id="back" class="back" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="mhead">
+        <div>
+          <div id="mtitle" class="mtitle">詳細</div>
+          <div id="msub" class="msub"></div>
+        </div>
+        <button class="x" id="xBtn">×</button>
+      </div>
+      <div id="mbody" class="mbody"></div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const $ = (id)=>document.getElementById(id);
+  const esc = (s)=>String(s??"").replace(/[&<>"']/g, m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
+  const roman = (n)=>({1:"Ⅰ",2:"Ⅱ",3:"Ⅲ"}[Number(n)]||String(n??""));
+  const getMode = ()=>document.querySelector('input[name="mode"]:checked')?.value || "overall";
+
+  let PLAYERS = [];
+  let COMBOS = [];
+  let SLOTS = [];
+
+  function setStatus(msg, isErr=false){
+    $("status").innerHTML = isErr ? `<span class="err">${esc(msg)}</span>` : `<span class="mut">${esc(msg)}</span>`;
+  }
+
+  async function loadAll(){
+    setStatus("データ読み込み中…");
+    const [p,c,s] = await Promise.all([
+      fetch("./players.json").then(r=>r.json()),
+      fetch("./combos.json").then(r=>r.json()),
+      fetch("./formation_slots.json").then(r=>r.json()),
+    ]);
+    PLAYERS = (p||[]).filter(x=>x && (x.player_id || x.playerId));
+    COMBOS  = (c||[]).filter(x=>x && x.comboId);
+    SLOTS   = (s||[]).filter(x=>x && x.comboId && x.slotNo);
+
+    setStatus(`読み込み完了：players ${PLAYERS.length} / combos ${COMBOS.length} / slots ${SLOTS.length}`);
+    rebuildComboSelect();
+  }
+
+  function rebuildComboSelect(){
+    const goldOnly = $("goldOnly").checked;
+    const list = COMBOS
+      .filter(c=>!goldOnly || c.rank==="金")
+      .sort((a,b)=>String(a.name).localeCompare(String(b.name),"ja"));
+
+    const sel = $("comboSel");
+    sel.innerHTML = list.map(c=>{
+      const tag = `${c.rank||"-"} / ${c.formation||"-"}`;
+      return `<option value="${esc(c.comboId)}">${esc(c.name)}（${esc(tag)}）</option>`;
+    }).join("");
+  }
+
+  function buildRequirementMap(combo){
+    const m = new Map(); // position -> array of req
+    (combo.combo_requirements||[]).forEach(req=>{
+      const pos = req.position;
+      if(!pos) return;
+      if(!m.has(pos)) m.set(pos, []);
+      m.get(pos).push(req);
+    });
+    return m;
+  }
+
+  function matchPlayerForSlot(player, combo, slotPos, reqMap, kw){
+    if(kw){
+      const name = String(player.name||"");
+      if(!name.includes(kw)) return false;
+    }
+    // policy match if combo has policies
+    const cps = combo.combo_policys || combo.combo_policies || [];
+    if(Array.isArray(cps) && cps.length){
+      if(!cps.includes(player.policy)) return false;
+    }
+    // position match
+    if(String(player.mainPosition) !== String(slotPos)) return false;
+
+    // if requirements exist for this position, must satisfy at least one
+    const reqs = reqMap.get(String(slotPos)) || [];
+    if(reqs.length){
+      const ok = reqs.some(r=>{
+        if(String(player.playStyle) !== String(r.playStyle)) return false;
+        const needLv = Number(r.playStyleLv||0);
+        const haveLv = Number(player.playStyleLv||0);
+        return haveLv >= needLv;
+      });
+      if(!ok) return false;
+    }
+    return true;
+  }
+
+  function pickBest(cands, usedSet, mode){
+    const key = mode;
+    const sorted = [...cands].sort((a,b)=>Number(b[key]||0)-Number(a[key]||0));
+    for(const p of sorted){
+      const pid = p.player_id || p.playerId;
+      if(!usedSet.has(pid)){
+        usedSet.add(pid);
+        return p;
+      }
+    }
+    return null;
+  }
+
+  function simulate(){
+    const comboId = $("comboSel").value;
+    const combo = COMBOS.find(c=>String(c.comboId)===String(comboId));
+    if(!combo){
+      setStatus("コンボが見つかりません", true);
+      return;
+    }
+    const mode = getMode();
+    const kw = ($("kw").value||"").trim();
+
+    const slots = SLOTS.filter(s=>String(s.comboId)===String(comboId))
+                       .sort((a,b)=>Number(a.slotNo)-Number(b.slotNo));
+    if(slots.length!==11){
+      setStatus(`formation_slots が 11枠ではありません（現在 ${slots.length}）`, true);
+    }else{
+      setStatus(`シミュレーション完了：${esc(combo.name)} / ${mode==="overall"?"初期総合力":"最大強化"}`);
+    }
+
+    const reqMap = buildRequirementMap(combo);
+
+    const usedMatch = new Set();
+    const usedAny   = new Set();
+
+    const tbody = $("tbody");
+    tbody.innerHTML = "";
+
+    for(const s of slots){
+      const pos = s.position;
+
+      const matchCands = PLAYERS.filter(p=>matchPlayerForSlot(p, combo, pos, reqMap, kw));
+      const anyCands   = PLAYERS.filter(p=>String(p.mainPosition)===String(pos));
+
+      const bestMatch = pickBest(matchCands, usedMatch, mode);
+      const bestAny   = pickBest(anyCands, usedAny, mode);
+
+      tbody.insertAdjacentHTML("beforeend", rowHtml(s.slotNo, pos, bestMatch, bestAny, mode));
+    }
+
+    $("gridWrap").style.display = "block";
+
+    // bind links
+    tbody.querySelectorAll("[data-player-id]").forEach(a=>{
+      a.addEventListener("click", (e)=>{
+        e.preventDefault();
+        const pid = a.getAttribute("data-player-id");
+        const p = PLAYERS.find(x=>String(x.player_id||x.playerId)===String(pid));
+        openPlayerModal(p);
+      });
+    });
+  }
+
+  function rowHtml(slotNo, pos, p1, p2, mode){
+    const cell = (p, label)=>{
+      if(!p) return `<div class="mut">-</div>`;
+      const pid = p.player_id || p.playerId;
+      const nm = p.name || "-";
+      const v = Number(p[mode]||0);
+      const ps = `${p.playStyle||"-"} ${roman(p.playStyleLv||"")}`;
+      return `
+        <div class="two">
+          <div><a href="#" class="link" data-player-id="${esc(pid)}">${esc(nm)}</a></div>
+          <div class="mut">${esc(label)}：<span class="v">${esc(v)}</span> / <span class="tag">${esc(p.policy||"-")}</span> <span class="tag">${esc(ps)}</span></div>
+        </div>
+      `;
+    };
+
+    return `
+      <tr>
+        <td class="mut">#${esc(slotNo)}</td>
+        <td class="pos">${esc(pos)}</td>
+        <td>${cell(p1, "一致")}</td>
+        <td>${cell(p2, "最強")}</td>
+      </tr>
+    `;
+  }
+
+  // modal
+  function openModal(title, sub, bodyHtml){
+    $("mtitle").textContent = title || "詳細";
+    $("msub").textContent = sub || "";
+    $("mbody").innerHTML = bodyHtml || "";
+    $("back").classList.add("show");
+    $("back").setAttribute("aria-hidden","false");
+  }
+  function closeModal(){
+    $("back").classList.remove("show");
+    $("back").setAttribute("aria-hidden","true");
+  }
+  $("xBtn").addEventListener("click", closeModal);
+  $("back").addEventListener("click", (e)=>{ if(e.target===$("back")) closeModal(); });
+  document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") closeModal(); });
+
+  function openPlayerModal(p){
+    if(!p){ openModal("選手詳細","",`<div class="mut">データなし</div>`); return; }
+    const lines = [
+      ["選手名", p.name],
+      ["ID", p.player_id || p.playerId],
+      ["カテゴリ", p.category || "-"],
+      ["ポリシー", p.policy || "-"],
+      ["ポジション", p.mainPosition || "-"],
+      ["プレイスタイル", `${p.playStyle||"-"} ${roman(p.playStyleLv||"")}`],
+      ["初期総合力", p.overall],
+      ["最大強化", p.maxUpgrade],
+      ["入手方法", p.acquisitionMethod || "-"],
+      ["入手場所", p.acquisitionPlace || "-"],
+      ["入手期間", p.availablePeriod || "-"],
+      ["メインスキル", p.mainSkill || "-"],
+      ["メイントレイト", p.mainTrait || "-"],
+    ];
+    const body = lines.map(([k,v])=>`
+      <div class="mline">
+        <div class="mkey">${esc(k)}</div>
+        <div class="mval">${esc(v ?? "-")}</div>
+      </div>
+    `).join("");
+    openModal("選手詳細", p.name, body);
+  }
+
+  // events
+  $("btnSim").addEventListener("click", simulate);
+  $("goldOnly").addEventListener("change", rebuildComboSelect);
+
+  loadAll().catch(err=>{
+    console.error(err);
+    setStatus("データの読み込みに失敗しました（players.json / combos.json / formation_slots.json を同じフォルダに配置してください）", true);
+  });
+})();
+</script>
+</body>
+</html>
