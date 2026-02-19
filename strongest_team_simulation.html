@@ -333,36 +333,50 @@ function escapeHtml(str){
     $("status").innerHTML = isErr ? `<span class="err">${esc(msg)}</span>` : `<span class="mut">${esc(msg)}</span>`;
   }
 
-  async function loadAll(){
-    setStatus("データ読み込み中…");
-    const [p,c,s] = await Promise.all([
-      fetch("./players.json").then(r=>r.json()),
-      fetch("./combos.json").then(r=>r.json()),
-      fetch("./formation_slots.json").then(r=>r.json()),
-    ]);
-    PLAYERS = (p||[]).filter(x=>x && (x.player_id || x.playerId));
-    COMBOS  = (c||[]).map(x=>{
-      if(!x) return null;
-      const comboId = x.comboId || x.combo_id || x.id;
-      const rank = x.rank || x.combo_rank || x.comboRank;
-      const name = x.name || x.combo_name || x.comboName;
-      const formation = x.formation || x.formation_name || x.formationName;
-      const combo_policys = x.combo_policys || x.comboPolicies || x.combo_policy || x.comboPolicy;
-      const combo_requirements = x.combo_requirements || x.comboRequirements || x.requirements;
-      return {...x, comboId, rank, name, formation, combo_policys, combo_requirements};
-    }).filter(x=>x && x.comboId);
-    // formation_slots.json may use camelCase or snake_case keys. Normalize here.
-    SLOTS   = (s||[])
-      .map(x=>({
-        comboId: x?.comboId ?? x?.combo_id,
-        slotNo:  x?.slotNo  ?? x?.slot_no,
-        position: x?.position
-      }))
-      .filter(x=>x && x.comboId && x.slotNo && x.position);
+  async function loadJson(url){
+  const r = await fetch(url, { cache: "no-store" });
+  if(!r.ok) throw new Error(`${url} (${r.status})`);
+  return r.json();
+}
 
+async function loadAll(){
+  setStatus("データ読み込み中…");
+
+  // players / combos are required
+  const [p,c] = await Promise.all([
+    loadJson("./players.json"),
+    loadJson("./combos.json"),
+  ]);
+
+  // formation_slots is optional for initial rendering (combo list should still appear)
+  let s = [];
+  try{
+    s = await loadJson("./formation_slots.json");
+  }catch(e){
+    console.warn(e);
+    // keep going: combo select can still be built
+    setStatus("formation_slots.json が見つかりません（コンボ選択は可能ですがシミュレーションは実行できません）", true);
+  }
+
+  PLAYERS = (p||[]).filter(x=>x && (x.player_id || x.playerId));
+  COMBOS  = (c||[]).filter(x=>x && x.comboId);
+  // formation_slots.json may use camelCase or snake_case keys. Normalize here.
+  SLOTS   = (s||[])
+    .map(x=>({
+      comboId: x?.comboId ?? x?.combo_id,
+      slotNo:  x?.slotNo  ?? x?.slot_no,
+      position: x?.position
+    }))
+    .filter(x=>x && x.comboId && x.slotNo && x.position);
+
+  // clear status only if we didn't already show the missing-slots warning
+  const cur = $("status")?.textContent?.trim();
+  if(cur === "データ読み込み中…" || !cur){
     setStatus("");
-    rebuildPolicySelect();
-    rebuildComboSelect();
+  }
+
+  rebuildPolicySelect();
+  rebuildComboSelect();
 }
 
   function rebuildPolicySelect(){
@@ -430,6 +444,109 @@ function escapeHtml(str){
 
     return true;
   }
+
+function simulate(){
+  if(!SLOTS.length){
+    setStatus("formation_slots.json が見つかりません。ファイルを同じフォルダに配置してください。", true);
+    return;
+  }
+  const comboId = $("comboSel")?.value;
+  const combo = COMBOS.find(c=>String(c.comboId)===String(comboId));
+  if(!combo){
+    setStatus("フォーメーションコンボを選択してください。", true);
+    return;
+  }
+
+  const mode = getMode(); // overall / maxUpgrade
+  const slots = SLOTS
+    .filter(s=>String(s.comboId)===String(comboId))
+    .sort((a,b)=>Number(a.slotNo)-Number(b.slotNo));
+
+  if(!slots.length){
+    setStatus("選択したコンボのスロット定義が見つかりません（formation_slots.json を確認してください）", true);
+    return;
+  }
+
+  const forcedPolicy = Array.isArray(combo.combo_policys) ? combo.combo_policys[0] : (combo.combo_policys || "");
+  const reqMap = buildRequirementMap(combo);
+
+  // greedy pick (unique players)
+  const pickBest = (available, slotPos, forcePol)=>{
+    let best = null;
+    let bestVal = -Infinity;
+    for(const p of available){
+      if(!matchPlayerForSlot(p, combo, slotPos, reqMap, "", forcePol)) continue;
+      const v = Number(p?.[mode] ?? -Infinity);
+      if(v > bestVal){
+        bestVal = v;
+        best = p;
+      }
+    }
+    return best;
+  };
+
+  const highlightOK = (player, slotPos)=>{
+    const reqs = reqMap.get(slotPos) || [];
+    if(!reqs.length) return false;
+    const ps = String(player?.playStyle ?? "");
+    const lv = Number(player?.playStyleLv ?? 0);
+    return reqs.some(r=>String(r.playStyle??"")===ps && lv >= Number(r.playStyleLv ?? 0));
+  };
+
+  const makeCell = (player, slotPos)=>{
+    if(!player) return `<span class="mut">-</span>`;
+    const v = Number(player?.[mode] ?? 0);
+    const cls = highlightOK(player, slotPos) ? "hit" : "";
+    return `<div class="two">
+      <div class="${cls}"><span class="v">${esc(player.name||"-")}</span></div>
+      <div class="mini">${mode==="overall"?"初期":"最大"}: ${Number.isFinite(v)?v:"-"}</div>
+    </div>`;
+  };
+
+  const tbody = $("tbody");
+  tbody.innerHTML = "";
+
+  // policy-dye column: force policy for all slots
+  const availA = [...PLAYERS];
+  const picksA = [];
+  for(const s of slots){
+    const p = pickBest(availA, s.position, forcedPolicy || "");
+    picksA.push({slot:s, player:p});
+    if(p){
+      const idx = availA.indexOf(p);
+      if(idx>=0) availA.splice(idx,1);
+    }
+  }
+
+  // free column: no forced policy
+  const availB = [...PLAYERS];
+  const picksB = [];
+  for(const s of slots){
+    const p = pickBest(availB, s.position, "");
+    picksB.push({slot:s, player:p});
+    if(p){
+      const idx = availB.indexOf(p);
+      if(idx>=0) availB.splice(idx,1);
+    }
+  }
+
+  for(let i=0;i<slots.length;i++){
+    const s = slots[i];
+    const a = picksA[i]?.player || null;
+    const b = picksB[i]?.player || null;
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td class="pos">${esc(s.position)}</td>
+      <td>${makeCell(a, s.position)}</td>
+      <td>${makeCell(b, s.position)}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  $("gridWrap").style.display = "";
+  $("resultNote").style.display = "";
+  setStatus("");
+}
 
   // events
   $("btnSim").addEventListener("click", simulate);
