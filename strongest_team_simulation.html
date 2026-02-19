@@ -341,7 +341,16 @@ function escapeHtml(str){
       fetch("./formation_slots.json").then(r=>r.json()),
     ]);
     PLAYERS = (p||[]).filter(x=>x && (x.player_id || x.playerId));
-    COMBOS  = (c||[]).filter(x=>x && x.comboId);
+    COMBOS  = (c||[]).map(x=>{
+      if(!x) return null;
+      const comboId = x.comboId || x.combo_id || x.id;
+      const rank = x.rank || x.combo_rank || x.comboRank;
+      const name = x.name || x.combo_name || x.comboName;
+      const formation = x.formation || x.formation_name || x.formationName;
+      const combo_policys = x.combo_policys || x.comboPolicies || x.combo_policy || x.comboPolicy;
+      const combo_requirements = x.combo_requirements || x.comboRequirements || x.requirements;
+      return {...x, comboId, rank, name, formation, combo_policys, combo_requirements};
+    }).filter(x=>x && x.comboId);
     // formation_slots.json may use camelCase or snake_case keys. Normalize here.
     SLOTS   = (s||[])
       .map(x=>({
