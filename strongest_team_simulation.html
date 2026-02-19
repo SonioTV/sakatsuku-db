@@ -29,30 +29,60 @@
     .ok{color:var(--good);font-weight:900}
     .grid{margin-top:12px;border-radius:16px;border:1px solid rgba(31,51,86,.9)}
     table{border-collapse:separate;border-spacing:0;width:100%;background:rgba(11,23,48,.6)}
-    thead th{position:sticky;top:0;background:rgba(11,23,48,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(31,51,86,.9);font-size:12px;color:var(--mut);padding:10px 10px;text-align:left}
-    tbody td{border-bottom:1px solid rgba(31,51,86,.55);padding:10px 10px;font-size:13px;vertical-align:top}
+    thead th{position:sticky;top:0;background:rgba(11,23,48,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(31,51,86,.9);font-size:12px;color:var(--mut);padding:6px 8px;text-align:left}
+    tbody td{border-bottom:1px solid rgba(31,51,86,.55);padding:6px 8px;font-size:13px;vertical-align:top}
     tbody tr:last-child td{border-bottom:none}
     .pos{font-weight:900;letter-spacing:.04em}
-    .link{color:var(--acc);font-weight:900;text-decoration:none}
+    .link{color:var(--acc);font-weight:900;text-decoration:none;white-space:nowrap}
     .link:hover{text-decoration:underline}
     .mut{color:var(--mut)}
+    .hit{color:var(--good);font-weight:1000}
     .tag{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(31,51,86,.9);background:#0b1730;border-radius:999px;padding:3px 10px;font-size:11px;color:var(--mut);white-space:nowrap}
     .two{display:flex;flex-direction:column;gap:4px}
     .v{font-weight:900}
     .note{margin-top:10px;color:var(--mut);font-size:12px;line-height:1.6}
     /* modal */
-    .back{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:18px;z-index:50}
-    .back.show{display:flex}
-    .modal{width:min(680px,100%);background:rgba(15,26,46,.98);border:1px solid rgba(31,51,86,.95);border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.5);overflow:hidden}
-    .mhead{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:12px 14px;background:rgba(11,23,48,.95);border-bottom:1px solid rgba(31,51,86,.9)}
-    .mtitle{font-weight:1000;font-size:14px}
-    .msub{color:var(--mut);font-size:12px;margin-top:2px}
-    .x{background:transparent;border:1px solid rgba(31,51,86,.9);color:var(--txt);border-radius:12px;padding:6px 10px;cursor:pointer;font-weight:900}
-    .mbody{padding:12px 14px}
-    .mline{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:8px 0;border-bottom:1px dashed rgba(31,51,86,.7)}
-    .mline:last-child{border-bottom:none}
-    .mkey{color:var(--mut);font-size:12px;font-weight:900}
-    .mval{font-size:13px;font-weight:800}
+    .back{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:50;
+    }
+    .back.show{ display:flex; }
+    .modal{
+      width:min(720px, 100%);
+      background:#fff;
+      border-radius:22px;
+      box-shadow:0 30px 60px rgba(0,0,0,.25);
+      overflow:hidden;
+      border:none;
+    }
+    .mhead{
+      padding:16px 18px;
+      background:#0b0b0b;
+      color:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+    }
+    .mtitle{ font-size:18px; font-weight:900; }
+    .msub{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; color:#fff; }
+    .x{
+      border:none;
+      background:transparent;
+      color:#fff;
+      font-size:22px;
+      cursor:pointer;
+    }
+    .mbody{ padding:16px 18px 18px; color:#111; }
+    .mbody .mLine, .mbody .mline{ margin:8px 0; }
+    .mbody .mKey, .mbody .mkey{ font-weight:900; display:inline-block; min-width:140px; color:#111; }
+    .mbody .mVal, .mbody .mval{ color:#111; font-weight:700; }
   </style>
 </head>
 <body>
@@ -82,9 +112,9 @@
         <table>
           <thead>
             <tr>
-              <th style="width:90px">ポジ</th>
+              <th style="width:64px">ポジ</th>
               <th>ポリシー染め</th>
-              <th>条件なし</th>
+              <th>ポリシー自由</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
@@ -133,9 +163,9 @@
     COMBOS  = (c||[]).filter(x=>x && x.comboId);
     SLOTS   = (s||[]).filter(x=>x && x.comboId && x.slotNo);
 
-    setStatus(`読み込み完了：players ${PLAYERS.length} / combos ${COMBOS.length} / slots ${SLOTS.length}`);
+    setStatus("");
     rebuildComboSelect();
-  }
+}
 
   function rebuildComboSelect(){
     // Gold-only combos. Support variations like "金", "金ランク", etc.
@@ -242,7 +272,9 @@
       const bestMatch = pickBest(matchCands, usedMatch, mode);
       const bestAny   = pickBest(anyCands, usedAny, mode);
 
-      tbody.insertAdjacentHTML("beforeend", rowHtml(s.slotNo, pos, bestMatch, bestAny, mode));
+      const hitMatch = !!bestMatch && matchPlayerForSlot(bestMatch, combo, pos, reqMap, kw);
+      const hitAny = !!bestAny && matchPlayerForSlot(bestAny, combo, pos, reqMap, kw);
+      tbody.insertAdjacentHTML("beforeend", rowHtml(s.slotNo, pos, bestMatch, bestAny, mode, hitMatch, hitAny));
     }
 
     $("gridWrap").style.display = "block";
@@ -258,19 +290,19 @@
     });
   }
 
-  function rowHtml(slotNo, pos, p1, p2, mode){
-    const cell = (p)=>{
+  function rowHtml(slotNo, pos, p1, p2, mode, hit1, hit2){
+    const cell = (p, hit)=>{
       if(!p) return `<div class="mut">-</div>`;
       const pid = p.player_id || p.playerId;
       const nm = p.name || "-";
-      return `<a href="#" class="link" data-player-id="${esc(pid)}">${esc(nm)}</a>`;
+      return `<a href="#" class="link${hit ? " hit" : ""}" data-player-id="${esc(pid)}">${esc(nm)}</a>`;
     };
 
     return `
       <tr>
         <td class="pos">${esc(pos)}</td>
-        <td>${cell(p1)}</td>
-        <td>${cell(p2)}</td>
+        <td>${cell(p1, hit1)}</td>
+        <td>${cell(p2, hit2)}</td>
       </tr>
     `;
   }
