@@ -10,7 +10,7 @@
       --acc:#56a4ff; --good:#54d18a; --bad:#ff6b6b;
     }
     html,body{margin:0;background:linear-gradient(180deg,#081025,#071022);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;}
-    .wrap{max-width:980px;margin:0 auto;padding:18px 14px 60px;}
+    .wrap{max-width:420px;margin:0 auto;padding:18px 14px 60px;}
     h1{font-size:18px;margin:0 0 10px;font-weight:900;letter-spacing:.02em}
     .sub{color:var(--mut);font-size:12px;line-height:1.6;margin:0 0 14px}
     .card{background:rgba(15,26,46,.92);border:1px solid rgba(31,51,86,.9);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);padding:14px}
@@ -27,8 +27,8 @@
     .mini{font-size:11px;color:var(--mut)}
     .err{color:var(--bad);font-weight:900}
     .ok{color:var(--good);font-weight:900}
-    .grid{margin-top:12px;overflow:auto;border-radius:16px;border:1px solid rgba(31,51,86,.9)}
-    table{border-collapse:separate;border-spacing:0;width:100%;min-width:720px;background:rgba(11,23,48,.6)}
+    .grid{margin-top:12px;border-radius:16px;border:1px solid rgba(31,51,86,.9)}
+    table{border-collapse:separate;border-spacing:0;width:100%;background:rgba(11,23,48,.6)}
     thead th{position:sticky;top:0;background:rgba(11,23,48,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(31,51,86,.9);font-size:12px;color:var(--mut);padding:10px 10px;text-align:left}
     tbody td{border-bottom:1px solid rgba(31,51,86,.55);padding:10px 10px;font-size:13px;vertical-align:top}
     tbody tr:last-child td{border-bottom:none}
@@ -58,11 +58,7 @@
 <body>
   <div class="wrap">
     <h1>最強チームシミュレーション（サンプル）</h1>
-    <p class="sub">フォーメーションコンボを選ぶと、<span class="ok">条件完全一致（ポリシー+ポジション+プレイスタイル）</span>で各ポジションの最強選手と、<span class="ok">総合力最強（条件なし）</span>を11枠分表示します。<br>
-      ※このサンプルは <span class="tag">players.json</span> / <span class="tag">combos.json</span> / <span class="tag">formation_slots.json</span> を読み込みます。
-    </p>
-
-    <div class="card">
+<div class="card">
       <div class="ctrl">
         <div class="row">
           <div class="two">
@@ -86,24 +82,15 @@
         <table>
           <thead>
             <tr>
-              <th style="width:70px">枠</th>
               <th style="width:90px">ポジ</th>
-              <th>条件完全一致（最強）</th>
-              <th>総合力最強（条件なし）</th>
+              <th>ポリシー染め</th>
+              <th>条件なし</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
         </table>
       </div>
-
-      <div class="note">
-        判定ルール（サンプル）：
-        <ul>
-          <li>「条件完全一致」＝ combo_policys にポリシー一致 かつ formation_slots のポジション一致（mainPosition）かつ（該当ポジに要求があれば）プレイスタイル一致 & Lv以上。</li>
-          <li>同一選手の重複配置は避ける（枠ごとに上から貪欲選択）。</li>
-        </ul>
-      </div>
-    </div>
+</div>
   </div>
 
   <!-- modal -->
@@ -236,8 +223,7 @@
     if(slots.length!==11){
       setStatus(`formation_slots が 11枠ではありません（現在 ${slots.length}）`, true);
     }else{
-      setStatus(`シミュレーション完了：${esc(combo.name)} / ${mode==="overall"?"初期総合力":"最大強化"}`);
-    }
+      }
 
     const reqMap = buildRequirementMap(combo);
 
@@ -273,26 +259,18 @@
   }
 
   function rowHtml(slotNo, pos, p1, p2, mode){
-    const cell = (p, label)=>{
+    const cell = (p)=>{
       if(!p) return `<div class="mut">-</div>`;
       const pid = p.player_id || p.playerId;
       const nm = p.name || "-";
-      const v = Number(p[mode]||0);
-      const ps = `${p.playStyle||"-"} ${roman(p.playStyleLv||"")}`;
-      return `
-        <div class="two">
-          <div><a href="#" class="link" data-player-id="${esc(pid)}">${esc(nm)}</a></div>
-          <div class="mut">${esc(label)}：<span class="v">${esc(v)}</span> / <span class="tag">${esc(p.policy||"-")}</span> <span class="tag">${esc(ps)}</span></div>
-        </div>
-      `;
+      return `<a href="#" class="link" data-player-id="${esc(pid)}">${esc(nm)}</a>`;
     };
 
     return `
       <tr>
-        <td class="mut">#${esc(slotNo)}</td>
         <td class="pos">${esc(pos)}</td>
-        <td>${cell(p1, "一致")}</td>
-        <td>${cell(p2, "最強")}</td>
+        <td>${cell(p1)}</td>
+        <td>${cell(p2)}</td>
       </tr>
     `;
   }
