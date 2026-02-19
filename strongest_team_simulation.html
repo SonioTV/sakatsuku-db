@@ -252,6 +252,30 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
     text-decoration:none;
     font-weight:700;
   }
+/* ---- Layout tweaks (fix7) ---- */
+#comboSel{
+  width:100%;
+  min-width:0;
+  padding:8px 10px;
+  border-radius:10px;
+}
+#gridWrap thead th{ padding:6px 6px; }
+#gridWrap tbody td{ padding:6px 6px; }
+#gridWrap th:first-child, #gridWrap td:first-child{ width:48px !important; }
+#gridWrap td:first-child{ padding-right:4px; }
+#gridWrap th:nth-child(2), #gridWrap td:nth-child(2){ padding-left:6px; }
+#gridWrap th:nth-child(3), #gridWrap td:nth-child(3){ padding-left:6px; }
+
+.two{ min-width:0; }
+.playerName{
+  display:block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  max-width:100%;
+}
+/* ---- end layout tweaks ---- */
+
 </style>
 </head>
 <body>
@@ -281,7 +305,7 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
         <table>
           <thead>
             <tr>
-              <th style="width:64px">ポジ</th>
+              <th style="width:48px">ポジ</th>
               <th>ポリシー染め</th>
               <th>ポリシー自由</th>
             </tr>
@@ -509,11 +533,9 @@ function simulate(){
 
   const makeCell = (player, slotPos)=>{
     if(!player) return `<span class="mut">-</span>`;
-    const v = Number(player?.[mode] ?? 0);
     const cls = highlightOK(player, slotPos) ? "hit" : "";
     return `<div class="two">
-      <div class="${cls}"><span class="v">${esc(player.name||"-")}</span></div>
-      <div class="mini">${mode==="overall"?"初期":"最大"}: ${Number.isFinite(v)?v:"-"}</div>
+      <div class="${cls}"><span class="playerName">${esc(player.name||"-")}</span></div>
     </div>`;
   };
 
