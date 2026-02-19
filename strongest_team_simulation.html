@@ -353,6 +353,8 @@ function escapeHtml(str){
   let COMBOS = [];
   let SLOTS = [];
 
+  let PLAYER_MAP = new Map();
+
   function setStatus(msg, isErr=false){
     $("status").innerHTML = isErr ? `<span class="err">${esc(msg)}</span>` : `<span class="mut">${esc(msg)}</span>`;
   }
@@ -383,7 +385,10 @@ async function loadAll(){
   }
 
   PLAYERS = (p||[]).filter(x=>x && (x.player_id || x.playerId));
-  COMBOS  = (c||[]).filter(x=>x && x.comboId);
+  
+  // build quick lookup for player detail popup
+  PLAYER_MAP = new Map(PLAYERS.map(pp=>[String(pp.player_id || pp.playerId), pp]));
+COMBOS  = (c||[]).filter(x=>x && x.comboId);
   // formation_slots.json may use camelCase or snake_case keys. Normalize here.
   SLOTS   = (s||[])
     .map(x=>({
@@ -534,8 +539,11 @@ function simulate(){
   const makeCell = (player, slotPos)=>{
     if(!player) return `<span class="mut">-</span>`;
     const cls = highlightOK(player, slotPos) ? "hit" : "";
+    const pid = String(player.player_id || player.playerId || "");
+    const nm  = player.name || "-";
+    // player name is clickable -> opens detail popup (players.json)
     return `<div class="two">
-      <div class="${cls}"><span class="playerName">${esc(player.name||"-")}</span></div>
+      <div class="${cls}"><a href="#" class="playerLink playerName" data-pid="${esc(pid)}">${esc(nm)}</a></div>
     </div>`;
   };
 
@@ -583,6 +591,63 @@ function simulate(){
   $("resultNote").style.display = "";
   setStatus("");
 }
+
+// ===== Player detail popup (reuse style from index.html) =====
+const modalBack = $("modalBack");
+const modalTitle = $("modalTitle");
+const modalSub = $("modalSub");
+const modalBody = $("modalBody");
+const modalClose = $("modalClose");
+
+function closeModal(){
+  modalBack.classList.remove("show");
+  modalBack.setAttribute("aria-hidden","true");
+}
+function openModal(){
+  modalBack.classList.add("show");
+  modalBack.setAttribute("aria-hidden","false");
+}
+function makeRow(k,v){
+  return `<div class="row"><div class="k">${esc(k)}</div><div class="v">${esc(v||"-")}</div></div>`;
+}
+function showPlayerDetailById(pid){
+  const p = PLAYER_MAP.get(String(pid));
+  if(!p) return;
+  modalTitle.textContent = p.name || "詳細";
+  const sub = `国籍：${p.nationality||"-"} / 成長タイプ：${p.growthType||"-"}`;
+  modalSub.textContent = sub;
+
+  const ps = p.playStyle ? `${p.playStyle} ${roman(p.playStyleLv)}` : "-";
+  const rows = [
+    ["区分", p.category],
+    ["入手方法", p.acquisitionMethod],
+    ["入手場所", p.acquisitionPlace],
+    ["入手可能期間", p.availablePeriod],
+    ["初期総合力", p.overall],
+    ["最大強化", p.maxUpgrade],
+    ["ポリシー", p.policy],
+    ["プレイスタイル", ps],
+    ["メインポジション", p.mainPosition],
+    ["メインスキル", p.mainSkill],
+    ["メイン特徴", p.mainTrait],
+  ].map(([k,v])=>makeRow(k,v)).join("");
+
+  modalBody.innerHTML = `<div class="modalTable">${rows}</div>`;
+  openModal();
+}
+
+// close handlers
+modalClose.addEventListener("click", closeModal);
+modalBack.addEventListener("click", (e)=>{ if(e.target===modalBack) closeModal(); });
+document.addEventListener("keydown", (e)=>{ if(e.key==="Escape" && modalBack.classList.contains("show")) closeModal(); });
+
+// delegate: click player name in results
+$("tbody").addEventListener("click", (e)=>{
+  const a = e.target.closest("a.playerLink");
+  if(!a) return;
+  e.preventDefault();
+  showPlayerDetailById(a.dataset.pid);
+});
 
   // events
   $("btnSim").addEventListener("click", simulate);
