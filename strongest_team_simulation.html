@@ -88,6 +88,81 @@
   .modalBody .mLine:last-child{ border-bottom:none; }
   .modalBody .mKey{ flex:0 0 120px; min-width:120px; color:#666; font-weight:700; }
   .modalBody .mVal{ flex:1; min-width:0; color:#111; font-weight:800; word-break:break-word; }
+
+/* ---- Fix: iPhone16 table overflow (ellipsis) ---- */
+.results table { table-layout: fixed; width: 100%; }
+.results th, .results td { overflow: hidden; text-overflow: ellipsis; }
+.results td a { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---- Fix: Player detail modal layout (match index.html) ---- */
+.modalBack{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 9999;
+}
+.modalBack.show{ display:flex; }
+
+.modal{
+  width: min(92vw, 560px);
+  max-height: min(78vh, 560px);
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 18px 60px rgba(0,0,0,.35);
+  display:flex;
+  flex-direction:column;
+}
+.modalHead{
+  background:#111;
+  color:#fff;
+  padding:14px 14px 12px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+.modalTitle{
+  font-size:18px;
+  font-weight:800;
+  line-height:1.2;
+}
+.modalSub{
+  margin-top:4px;
+  font-size:13px;
+  opacity:.85;
+  line-height:1.2;
+}
+.modalClose{
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:#fff;
+  font-size:22px;
+  line-height:1;
+  padding:6px 10px;
+  cursor:pointer;
+}
+.modalBody{
+  padding:0;
+  overflow:auto;
+}
+.modalTable{ width:100%; }
+.modalTable .row{
+  display:grid;
+  grid-template-columns: 34% 66%;
+  gap:12px;
+  padding:12px 14px;
+  border-top:1px solid #e7e7e7;
+}
+.modalTable .row:first-child{ border-top:0; }
+.modalTable .k{ color:#666; font-weight:700; }
+.modalTable .v{ color:#111; font-weight:800; word-break: break-word; }
+
 </style>
 </head>
 <body>
@@ -394,6 +469,7 @@
     $("modalBody").innerHTML = bodyHtml || "";
     $("modalBack").classList.add("show");
     $("modalBack").setAttribute("aria-hidden","false");
+    try{ $("modalClose").focus(); }catch(e){}
   }
   function closeModal(){
     const back = $("modalBack");
