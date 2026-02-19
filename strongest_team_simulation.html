@@ -88,7 +88,7 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
     align-items:center;
     justify-content:center;
   }
-  .modalBody{ padding:14px 16px 18px; max-height:82vh; overflow:auto; }
+  .modalBody{ padding:14px 16px 18px; max-height:90vh; overflow:auto; }
   .modalBody .mLine{ display:flex; gap:10px; align-items:flex-start; padding:10px 0; border-bottom:1px solid #ececec; }
   .modalBody .mLine:last-child{ border-bottom:none; }
   .modalBody .mKey{ flex:0 0 120px; min-width:120px; color:#666; font-weight:700; }
@@ -222,6 +222,36 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
 #resultTable th:first-child, #resultTable td:first-child { width: 48px; }
 #resultTable a.link { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 /* --- end overflow fix --- */
+
+  /* Ensure long player names never overflow */
+  a.playerLink{
+    display:block;
+    max-width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  /* Note under results */
+  .resultNote{
+    margin-top:10px;
+    font-size:12px;
+    color:#a9bbd8;
+    line-height:1.4;
+  }
+  .backWrap{
+    margin:18px 0 30px;
+    text-align:center;
+  }
+  .backWrap .backBtn{
+    display:inline-block;
+    padding:10px 14px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.18);
+    background:rgba(255,255,255,0.06);
+    color:#d7e6ff;
+    text-decoration:none;
+    font-weight:700;
+  }
 </style>
 </head>
 <body>
@@ -259,8 +289,11 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
           <tbody id="tbody"></tbody>
         </table>
       </div>
+        <div id="resultNote" class="resultNote" style="display:none">※緑色の選手はフォーメーションコンボの発動条件を満たした選手です</div>
 </div>
   </div>
+
+  <div class="backWrap"><a class="backBtn" href="https://sakatsuku2026-db.com/">←サイトに戻る</a></div>
 
   <!-- modal -->
   <div id="modalBack" class="modalBack" role="dialog" aria-modal="true" aria-hidden="true">
@@ -369,231 +402,25 @@ function escapeHtml(str){
   }
 
   function matchPlayerForSlot(player, combo, slotPos, reqMap, kw, forcedPolicy){
+    // NOTE: Slot assignment should be based on position (+ optional policy/keyword) only.
+    // combo_requirements is used for "強調表示" (highlight) separately.
     if(kw){
-      const name = String(player.name||"");
+      const name = String(player?.name ?? '');
       if(!name.includes(kw)) return false;
     }
-    // policy match:
-    // - if forcedPolicy is specified, use it
-    // - otherwise, if combo defines policies, require inclusion
-    const fp = (forcedPolicy ?? "").toString().trim();
-    if(fp){
-      if(String(player.policy) !== fp) return false;
-    }else{
-      const cps = combo.combo_policys || combo.combo_policies || [];
-      if(Array.isArray(cps) && cps.length){
-        if(!cps.includes(player.policy)) return false;
-      }
-    }
-    // position match
-    if(String(player.mainPosition) !== String(slotPos)) return false;
 
-    // if requirements exist for this position, must satisfy at least one
-    const reqs = reqMap.get(String(slotPos)) || [];
-    if(reqs.length){
-      const ok = reqs.some(r=>{
-        if(String(player.playStyle) !== String(r.playStyle)) return false;
-        const needLv = Number(r.playStyleLv||0);
-        const haveLv = Number(player.playStyleLv||0);
-        return haveLv === needLv;
-      });
-      if(!ok) return false;
+    // Position match
+    const pos = String(player?.mainPosition ?? '');
+    if(pos !== slotPos) return false;
+
+    // Policy match (only when forced)
+    if(forcedPolicy){
+      const pol = String(player?.policy ?? '');
+      if(pol !== forcedPolicy) return false;
     }
+
     return true;
   }
-
-  function isActivationMatch(player, slotPos, reqMap){
-    if(String(player.mainPosition) !== String(slotPos)) return false;
-    const reqs = reqMap.get(String(slotPos)) || [];
-    if(reqs.length){
-      return reqs.some(r=>{
-        if(String(player.playStyle) !== String(r.playStyle)) return false;
-        const needLv = Number(r.playStyleLv||0);
-        const haveLv = Number(player.playStyleLv||0);
-        return haveLv === needLv;
-      });
-    }
-    return true;
-  }
-
-
-  function pickBest(cands, usedSet, mode){
-    const key = mode;
-    const sorted = [...cands].sort((a,b)=>Number(b[key]||0)-Number(a[key]||0));
-    for(const p of sorted){
-      const pid = p.player_id || p.playerId;
-      if(!usedSet.has(pid)){
-        usedSet.add(pid);
-        return p;
-      }
-    }
-    return null;
-  }
-
-  function simulate(){
-    const comboId = $("comboSel").value;
-    const combo = COMBOS.find(c=>String(c.comboId)===String(comboId));
-    if(!combo){
-      setStatus("コンボが見つかりません", true);
-      return;
-    }
-    const mode = getMode();
-    const forcedPolicy = $("policySel") ? $("policySel").value : "";
-    const kw = "";
-
-    const slots = SLOTS.filter(s=>String(s.comboId)===String(comboId))
-                       .sort((a,b)=>Number(a.slotNo)-Number(b.slotNo));
-    if(slots.length!==11){
-      setStatus(`formation_slots が 11枠ではありません（現在 ${slots.length}）`, true);
-    }else{
-      }
-
-    const reqMap = buildRequirementMap(combo);
-
-    const usedMatch = new Set();
-    const usedAny   = new Set();
-
-    // Highlight up to 3 players total (one per combo requirement), based on exact match to combo_requirements
-    const remainingPolicy = Array.isArray(combo.combo_requirements) ? combo.combo_requirements.slice() : [];
-    const remainingFree = Array.isArray(combo.combo_requirements) ? combo.combo_requirements.slice() : [];
-    let policyHits = 0;
-    let freeHits = 0;
-
-    const consumeRequirement = (player, remainingReqs, slotPos)=>{
-      if(!player) return false;
-      const pPos = String(slotPos||"");
-      const pStyle = String(player.playStyle||"");
-      const pLv = String(player.playStyleLv||"");
-      for(let i=0;i<remainingReqs.length;i++){
-        const r = remainingReqs[i] || {};
-        if(String(r.position||"")===pPos && String(r.playStyle||"")===pStyle && String(r.playStyleLv||"")===pLv){
-          remainingReqs.splice(i,1);
-          return true;
-        }
-      }
-      return false;
-    };
-
-    const tbody = $("tbody");
-    tbody.innerHTML = "";
-
-    for(const s of slots){
-      const pos = s.position;
-
-      const matchCands = PLAYERS.filter(p=>matchPlayerForSlot(p, combo, pos, reqMap, kw, forcedPolicy));
-      const anyCands   = PLAYERS.filter(p=>String(p.mainPosition)===String(pos));
-
-      const bestMatch = pickBest(matchCands, usedMatch, mode);
-      const bestAny   = pickBest(anyCands, usedAny, mode);
-
-      let hitMatch = false;
-      if(bestMatch && policyHits < 3){
-        hitMatch = consumeRequirement(bestMatch, remainingPolicy, pos);
-        if(hitMatch) policyHits++;
-      }
-      let hitAny = false;
-      if(bestAny && freeHits < 3){
-        hitAny = consumeRequirement(bestAny, remainingFree, pos);
-        if(hitAny) freeHits++;
-      }
-
-      tbody.insertAdjacentHTML("beforeend", rowHtml(s.slotNo, pos, bestMatch, bestAny, mode, hitMatch, hitAny));
-    }
-
-    $("gridWrap").style.display = "block";
-
-    // bind links
-    tbody.querySelectorAll("[data-player-id]").forEach(a=>{
-      a.addEventListener("click", (e)=>{
-        e.preventDefault();
-        const pid = a.getAttribute("data-player-id");
-        const p = PLAYERS.find(x=>String(x.player_id||x.playerId)===String(pid));
-        openPlayerModal(p);
-      });
-    });
-  }
-
-  function rowHtml(slotNo, pos, p1, p2, mode, hit1, hit2){
-    const cell = (p, hit)=>{
-      if(!p) return `<div class="mut">-</div>`;
-      const pid = p.player_id || p.playerId;
-      const nm = p.name || "-";
-      return `<a href="#" class="link${hit ? " hit" : ""}" data-player-id="${esc(pid)}">${esc(nm)}</a>`;
-    };
-
-    return `
-      <tr>
-        <td class="pos">${esc(pos)}</td>
-        <td>${cell(p1, hit1)}</td>
-        <td>${cell(p2, hit2)}</td>
-      </tr>
-    `;
-  }
-
-  // modal
-  function openModal(title, sub, bodyHtml){
-    $("modalTitle").textContent = title || "詳細";
-    $("modalSub").textContent = sub || "";
-    $("modalBody").innerHTML = bodyHtml || "";
-    $("modalBack").classList.add("show");
-    $("modalBack").setAttribute("aria-hidden","false");
-    try{ $("modalClose").focus(); }catch(e){}
-  }
-  function closeModal(){
-    const back = $("modalBack");
-    try{ if(document.activeElement){ document.activeElement.blur(); } }catch(_){ }
-    back.classList.remove("show");
-    back.setAttribute("aria-hidden","true");
-    document.body.style.overflow="";
-  }
-  $("modalClose").addEventListener("click", closeModal);
-  $("modalBack").addEventListener("click", (e)=>{ if(e.target===$("modalBack")) closeModal(); });
-  document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") closeModal(); });
-
-  function openPlayerModal(player){
-  const back = document.getElementById('modalBack');
-  const titleEl = document.getElementById('modalTitle');
-  const subEl = document.getElementById('modalSub');
-  const bodyEl = document.getElementById('modalBody');
-
-  if(!back || !titleEl || !subEl || !bodyEl) return;
-
-  // タイトル部（画像3/ index.html と同じ）
-  titleEl.textContent = player?.name ?? '-';
-  const nat = player?.nationality ?? '-';
-  const grow = player?.growthType ?? '-';
-  subEl.textContent = `国籍：${nat} / 成長タイプ：${grow}`;
-
-  // プレイスタイル表記（例: パサー II）
-  const psName = player?.playStyleName ?? player?.playStyle ?? '-';
-  const psLv = (player?.playStyleLv ?? '').toString().trim();
-  const psDisp = psLv ? `${psName} ${psLv}` : psName;
-
-  const lines = [
-    ['区分', player?.category ?? '-'],
-    ['入手方法', player?.acquisitionMethod ?? '-'],
-    ['入手場所', (player?.acquisitionPlace ?? player?.acquisitionLocation ?? '-')],
-    ['入手可能期間', (player?.availablePeriod ?? player?.acquisitionPeriod ?? '-')],
-    ['初期総合力', (player?.overall ?? player?.initialOverall ?? player?.initial_total ?? '-')],
-    ['最大強化', (player?.maxUpgrade ?? player?.maxOverall ?? player?.max_total ?? '-')],
-    ['ポリシー', player?.policy ?? '-'],
-    ['プレイスタイル', psDisp ?? '-'],
-    ['メインポジション', player?.position ?? player?.mainPosition ?? '-'],
-    ['メインスキル', player?.mainSkill ?? '-'],
-    ['メイン特徴', player?.mainTrait ?? '-'],
-  ];
-
-  bodyEl.innerHTML = lines.map(([k,v]) => `
-    <div class="mLine">
-      <div class="mKey">${escapeHtml(k)}</div>
-      <div class="mVal">${escapeHtml(String(v ?? '-'))}</div>
-    </div>
-  `).join('');
-
-  // 表示
-  back.classList.add('show');
-  back.setAttribute('aria-hidden','false');
-}
 
   // events
   $("btnSim").addEventListener("click", simulate);
