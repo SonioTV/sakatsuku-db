@@ -160,7 +160,14 @@
     ]);
     PLAYERS = (p||[]).filter(x=>x && (x.player_id || x.playerId));
     COMBOS  = (c||[]).filter(x=>x && x.comboId);
-    SLOTS   = (s||[]).filter(x=>x && x.comboId && x.slotNo);
+    // formation_slots.json may use camelCase or snake_case keys. Normalize here.
+    SLOTS   = (s||[])
+      .map(x=>({
+        comboId: x?.comboId ?? x?.combo_id,
+        slotNo:  x?.slotNo  ?? x?.slot_no,
+        position: x?.position
+      }))
+      .filter(x=>x && x.comboId && x.slotNo && x.position);
 
     setStatus("");
     rebuildPolicySelect();
