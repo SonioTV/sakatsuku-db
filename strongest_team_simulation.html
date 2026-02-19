@@ -393,23 +393,37 @@ async function loadAll(){
 
 
   function rebuildComboSelect(){
-    // Gold-only combos. Support variations like "金", "金ランク", etc.
-    const list = COMBOS
-      .filter(c=>{
-        const r = String(c.rank||"").trim();
-        return r === "金" || r.includes("金") || r.toLowerCase()==="gold";
-      })
-      .sort((a,b)=>String(a.name).localeCompare(String(b.name),"ja"));
+    // Show all combos (rank can be 銅/銀/金 etc.). Keep UI minimal and stable.
+    const slotSet = new Set((SLOTS||[]).map(s=>String(s.comboId)));
+    const base = (COMBOS || []).filter(c=>!slotSet.size || slotSet.has(String(c.comboId)));
+    const list = base
+      .slice()
+      .sort((a,b)=>{
+        // rank order: 金 > 銀 > 銅 > others
+        const order = (r)=>{
+          const s = String(r||"").trim();
+          if(s.includes("金")) return 0;
+          if(s.includes("銀")) return 1;
+          if(s.includes("銅")) return 2;
+          return 3;
+        };
+        const d = order(a.rank) - order(b.rank);
+        if(d!==0) return d;
+        return String(a.name).localeCompare(String(b.name),"ja");
+      });
 
     const sel = $("comboSel");
-    sel.innerHTML = list.map(c=>{
+    const opts = list.map(c=>{
       const pol = Array.isArray(c.combo_policys) ? c.combo_policys.join("・") : (c.combo_policys||"-");
-      const tag = `${c.formation||"-"} / ${pol||"-"}`;
+      const tag = `${c.rank||"-"} / ${c.formation||"-"} / ${pol||"-"}`;
       return `<option value="${esc(c.comboId)}">${esc(c.name)}（${esc(tag)}）</option>`;
     }).join("");
 
+    // add placeholder so empty state is obvious
+    sel.innerHTML = `<option value="">（選択してください）</option>` + opts;
+
     if(!list.length){
-      setStatus("金ランクのコンボが見つかりません（combos.json の rank 表記を確認してください）", true);
+      setStatus("コンボが見つかりません（combos.json を確認してください）", true);
     }
   }
 
