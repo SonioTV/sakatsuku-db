@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>最強チームシミュレーション（サンプル）</title>
+  <title>最強チームシミュレーション</title>
   <style>
     :root{
       --bg:#0b1220; --card:#0f1a2e; --line:#1f3356; --txt:#e9f1ff; --mut:#9fb4d9;
@@ -34,6 +34,11 @@
     tbody tr:last-child td{border-bottom:none}
     .pos{font-weight:900;letter-spacing:.04em}
     .link{color:var(--acc);font-weight:900;text-decoration:none;white-space:nowrap}
+table{ table-layout: fixed; }
+th, td{ overflow:hidden; text-overflow: ellipsis; }
+td:nth-child(2), td:nth-child(3){ white-space: nowrap; }
+td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflow:hidden; text-overflow: ellipsis; }
+
     .link:hover{text-decoration:underline}
     .mut{color:var(--mut)}
     .hit{color:var(--good);font-weight:1000}
@@ -83,7 +88,7 @@
     align-items:center;
     justify-content:center;
   }
-  .modalBody{ padding:14px 16px 18px; max-height:65vh; overflow:auto; }
+  .modalBody{ padding:14px 16px 18px; max-height:82vh; overflow:auto; }
   .modalBody .mLine{ display:flex; gap:10px; align-items:flex-start; padding:10px 0; border-bottom:1px solid #ececec; }
   .modalBody .mLine:last-child{ border-bottom:none; }
   .modalBody .mKey{ flex:0 0 120px; min-width:120px; color:#666; font-weight:700; }
@@ -221,7 +226,7 @@
 </head>
 <body>
   <div class="wrap">
-    <h1>最強チームシミュレーション（サンプル）</h1>
+    <h1>最強チームシミュレーション</h1>
 <div class="card">
       <div class="ctrl">
 <div class="row">
@@ -567,10 +572,10 @@ function escapeHtml(str){
   const lines = [
     ['区分', player?.category ?? '-'],
     ['入手方法', player?.acquisitionMethod ?? '-'],
-    ['入手場所', player?.acquisitionLocation ?? '-'],
-    ['入手可能期間', player?.acquisitionPeriod ?? '-'],
-    ['初期総合力', (player?.initialOverall ?? player?.initial_total ?? '-')],
-    ['最大強化', (player?.maxOverall ?? player?.max_total ?? '-')],
+    ['入手場所', (player?.acquisitionPlace ?? player?.acquisitionLocation ?? '-')],
+    ['入手可能期間', (player?.availablePeriod ?? player?.acquisitionPeriod ?? '-')],
+    ['初期総合力', (player?.overall ?? player?.initialOverall ?? player?.initial_total ?? '-')],
+    ['最大強化', (player?.maxUpgrade ?? player?.maxOverall ?? player?.max_total ?? '-')],
     ['ポリシー', player?.policy ?? '-'],
     ['プレイスタイル', psDisp ?? '-'],
     ['メインポジション', player?.position ?? player?.mainPosition ?? '-'],
