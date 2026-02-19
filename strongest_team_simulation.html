@@ -92,6 +92,13 @@
       <div class="ctrl">
         <div class="row">
           <div class="two">
+            <label>ポリシー</label>
+            <select id="policySel"></select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="two">
             <label>フォーメーションコンボ</label>
             <select id="comboSel"></select>
           </div>
@@ -164,8 +171,22 @@
     SLOTS   = (s||[]).filter(x=>x && x.comboId && x.slotNo);
 
     setStatus("");
+    rebuildPolicySelect();
     rebuildComboSelect();
 }
+
+  function rebuildPolicySelect(){
+    const sel = $("policySel");
+    if(!sel) return;
+    const set = new Set();
+    for(const p of PLAYERS){
+      const v = (p.policy ?? "").toString().trim();
+      if(v) set.add(v);
+    }
+    const list = [...set].sort((a,b)=>a.localeCompare(b,"ja"));
+    sel.innerHTML = `<option value="">（指定なし）</option>` + list.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join("");
+  }
+
 
   function rebuildComboSelect(){
     // Gold-only combos. Support variations like "金", "金ランク", etc.
@@ -198,15 +219,22 @@
     return m;
   }
 
-  function matchPlayerForSlot(player, combo, slotPos, reqMap, kw){
+  function matchPlayerForSlot(player, combo, slotPos, reqMap, kw, forcedPolicy){
     if(kw){
       const name = String(player.name||"");
       if(!name.includes(kw)) return false;
     }
-    // policy match if combo has policies
-    const cps = combo.combo_policys || combo.combo_policies || [];
-    if(Array.isArray(cps) && cps.length){
-      if(!cps.includes(player.policy)) return false;
+    // policy match:
+    // - if forcedPolicy is specified, use it
+    // - otherwise, if combo defines policies, require inclusion
+    const fp = (forcedPolicy ?? "").toString().trim();
+    if(fp){
+      if(String(player.policy) !== fp) return false;
+    }else{
+      const cps = combo.combo_policys || combo.combo_policies || [];
+      if(Array.isArray(cps) && cps.length){
+        if(!cps.includes(player.policy)) return false;
+      }
     }
     // position match
     if(String(player.mainPosition) !== String(slotPos)) return false;
@@ -224,6 +252,21 @@
     }
     return true;
   }
+
+  function isActivationMatch(player, slotPos, reqMap){
+    if(String(player.mainPosition) !== String(slotPos)) return false;
+    const reqs = reqMap.get(String(slotPos)) || [];
+    if(reqs.length){
+      return reqs.some(r=>{
+        if(String(player.playStyle) !== String(r.playStyle)) return false;
+        const needLv = Number(r.playStyleLv||0);
+        const haveLv = Number(player.playStyleLv||0);
+        return haveLv >= needLv;
+      });
+    }
+    return true;
+  }
+
 
   function pickBest(cands, usedSet, mode){
     const key = mode;
@@ -246,6 +289,7 @@
       return;
     }
     const mode = getMode();
+    const forcedPolicy = $("policySel") ? $("policySel").value : "";
     const kw = "";
 
     const slots = SLOTS.filter(s=>String(s.comboId)===String(comboId))
@@ -266,14 +310,14 @@
     for(const s of slots){
       const pos = s.position;
 
-      const matchCands = PLAYERS.filter(p=>matchPlayerForSlot(p, combo, pos, reqMap, kw));
+      const matchCands = PLAYERS.filter(p=>matchPlayerForSlot(p, combo, pos, reqMap, kw, forcedPolicy));
       const anyCands   = PLAYERS.filter(p=>String(p.mainPosition)===String(pos));
 
       const bestMatch = pickBest(matchCands, usedMatch, mode);
       const bestAny   = pickBest(anyCands, usedAny, mode);
 
-      const hitMatch = !!bestMatch && matchPlayerForSlot(bestMatch, combo, pos, reqMap, kw);
-      const hitAny = !!bestAny && matchPlayerForSlot(bestAny, combo, pos, reqMap, kw);
+      const hitMatch = !!bestMatch && isActivationMatch(bestMatch, pos, reqMap);
+      const hitAny = !!bestAny && isActivationMatch(bestAny, pos, reqMap);
       tbody.insertAdjacentHTML("beforeend", rowHtml(s.slotNo, pos, bestMatch, bestAny, mode, hitMatch, hitAny));
     }
 
