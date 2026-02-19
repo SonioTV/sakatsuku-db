@@ -1,442 +1,442 @@
 [
   {
-    "comboId": "C025",
-    "slotNo": 1,
+    "combo_id": "C025",
+    "slot_no": 1,
     "position": "GK"
   },
   {
-    "comboId": "C025",
-    "slotNo": 2,
+    "combo_id": "C025",
+    "slot_no": 2,
     "position": "CB"
   },
   {
-    "comboId": "C025",
-    "slotNo": 3,
+    "combo_id": "C025",
+    "slot_no": 3,
     "position": "CB"
   },
   {
-    "comboId": "C025",
-    "slotNo": 4,
+    "combo_id": "C025",
+    "slot_no": 4,
     "position": "LB"
   },
   {
-    "comboId": "C025",
-    "slotNo": 5,
+    "combo_id": "C025",
+    "slot_no": 5,
     "position": "RB"
   },
   {
-    "comboId": "C025",
-    "slotNo": 6,
+    "combo_id": "C025",
+    "slot_no": 6,
     "position": "DM"
   },
   {
-    "comboId": "C025",
-    "slotNo": 7,
+    "combo_id": "C025",
+    "slot_no": 7,
     "position": "AM"
   },
   {
-    "comboId": "C025",
-    "slotNo": 8,
+    "combo_id": "C025",
+    "slot_no": 8,
     "position": "AM"
   },
   {
-    "comboId": "C025",
-    "slotNo": 9,
+    "combo_id": "C025",
+    "slot_no": 9,
     "position": "AM"
   },
   {
-    "comboId": "C025",
-    "slotNo": 10,
+    "combo_id": "C025",
+    "slot_no": 10,
     "position": "CF"
   },
   {
-    "comboId": "C025",
-    "slotNo": 11,
+    "combo_id": "C025",
+    "slot_no": 11,
     "position": "CF"
   },
   {
-    "comboId": "C026",
-    "slotNo": 1,
+    "combo_id": "C026",
+    "slot_no": 1,
     "position": "GK"
   },
   {
-    "comboId": "C026",
-    "slotNo": 2,
+    "combo_id": "C026",
+    "slot_no": 2,
     "position": "CB"
   },
   {
-    "comboId": "C026",
-    "slotNo": 3,
+    "combo_id": "C026",
+    "slot_no": 3,
     "position": "CB"
   },
   {
-    "comboId": "C026",
-    "slotNo": 4,
+    "combo_id": "C026",
+    "slot_no": 4,
     "position": "CB"
   },
   {
-    "comboId": "C026",
-    "slotNo": 5,
+    "combo_id": "C026",
+    "slot_no": 5,
     "position": "DM"
   },
   {
-    "comboId": "C026",
-    "slotNo": 6,
+    "combo_id": "C026",
+    "slot_no": 6,
     "position": "DM"
   },
   {
-    "comboId": "C026",
-    "slotNo": 7,
+    "combo_id": "C026",
+    "slot_no": 7,
     "position": "AM"
   },
   {
-    "comboId": "C026",
-    "slotNo": 8,
+    "combo_id": "C026",
+    "slot_no": 8,
     "position": "AM"
   },
   {
-    "comboId": "C026",
-    "slotNo": 9,
+    "combo_id": "C026",
+    "slot_no": 9,
     "position": "LW"
   },
   {
-    "comboId": "C026",
-    "slotNo": 10,
+    "combo_id": "C026",
+    "slot_no": 10,
     "position": "RW"
   },
   {
-    "comboId": "C026",
-    "slotNo": 11,
+    "combo_id": "C026",
+    "slot_no": 11,
     "position": "CF"
   },
   {
-    "comboId": "C027",
-    "slotNo": 1,
+    "combo_id": "C027",
+    "slot_no": 1,
     "position": "GK"
   },
   {
-    "comboId": "C027",
-    "slotNo": 2,
+    "combo_id": "C027",
+    "slot_no": 2,
     "position": "CB"
   },
   {
-    "comboId": "C027",
-    "slotNo": 2,
+    "combo_id": "C027",
+    "slot_no": 3,
     "position": "CB"
   },
   {
-    "comboId": "C027",
-    "slotNo": 3,
-    "position": "CB"
-  },
-  {
-    "comboId": "C027",
-    "slotNo": 4,
+    "combo_id": "C027",
+    "slot_no": 4,
     "position": "LB"
   },
   {
-    "comboId": "C027",
-    "slotNo": 4,
-    "position": "CB"
-  },
-  {
-    "comboId": "C027",
-    "slotNo": 5,
+    "combo_id": "C027",
+    "slot_no": 5,
     "position": "RB"
   },
   {
-    "comboId": "C027",
-    "slotNo": 6,
+    "combo_id": "C027",
+    "slot_no": 6,
     "position": "DM"
   },
   {
-    "comboId": "C027",
-    "slotNo": 6,
+    "combo_id": "C027",
+    "slot_no": 7,
     "position": "DM"
   },
   {
-    "comboId": "C027",
-    "slotNo": 7,
+    "combo_id": "C027",
+    "slot_no": 8,
     "position": "DM"
   },
   {
-    "comboId": "C027",
-    "slotNo": 8,
-    "position": "DM"
-  },
-  {
-    "comboId": "C027",
-    "slotNo": 8,
-    "position": "RM"
-  },
-  {
-    "comboId": "C027",
-    "slotNo": 9,
+    "combo_id": "C027",
+    "slot_no": 9,
     "position": "AM"
   },
   {
-    "comboId": "C027",
-    "slotNo": 10,
+    "combo_id": "C027",
+    "slot_no": 10,
     "position": "CF"
   },
   {
-    "comboId": "C027",
-    "slotNo": 10,
+    "combo_id": "C027",
+    "slot_no": 11,
     "position": "CF"
   },
   {
-    "comboId": "C027",
-    "slotNo": 11,
-    "position": "CF"
-  },
-  {
-    "comboId": "C028",
-    "slotNo": 1,
+    "combo_id": "C028",
+    "slot_no": 1,
     "position": "GK"
   },
   {
-    "comboId": "C028",
-    "slotNo": 3,
+    "combo_id": "C028",
+    "slot_no": 2,
     "position": "CB"
   },
   {
-    "comboId": "C028",
-    "slotNo": 5,
+    "combo_id": "C028",
+    "slot_no": 3,
+    "position": "CB"
+  },
+  {
+    "combo_id": "C028",
+    "slot_no": 4,
+    "position": "CB"
+  },
+  {
+    "combo_id": "C028",
+    "slot_no": 5,
     "position": "DM"
   },
   {
-    "comboId": "C028",
-    "slotNo": 7,
-    "position": "LM"
-  },
-  {
-    "comboId": "C028",
-    "slotNo": 9,
-    "position": "AM"
-  },
-  {
-    "comboId": "C028",
-    "slotNo": 11,
-    "position": "CF"
-  },
-  {
-    "comboId": "C029",
-    "slotNo": 1,
-    "position": "GK"
-  },
-  {
-    "comboId": "C029",
-    "slotNo": 2,
-    "position": "CB"
-  },
-  {
-    "comboId": "C029",
-    "slotNo": 3,
-    "position": "CB"
-  },
-  {
-    "comboId": "C029",
-    "slotNo": 4,
-    "position": "CB"
-  },
-  {
-    "comboId": "C029",
-    "slotNo": 5,
+    "combo_id": "C028",
+    "slot_no": 6,
     "position": "DM"
   },
   {
-    "comboId": "C029",
-    "slotNo": 6,
+    "combo_id": "C028",
+    "slot_no": 7,
     "position": "LM"
   },
   {
-    "comboId": "C029",
-    "slotNo": 7,
+    "combo_id": "C028",
+    "slot_no": 8,
     "position": "RM"
   },
   {
-    "comboId": "C029",
-    "slotNo": 8,
+    "combo_id": "C028",
+    "slot_no": 9,
     "position": "AM"
   },
   {
-    "comboId": "C029",
-    "slotNo": 9,
+    "combo_id": "C028",
+    "slot_no": 10,
+    "position": "CF"
+  },
+  {
+    "combo_id": "C028",
+    "slot_no": 11,
+    "position": "CF"
+  },
+  {
+    "combo_id": "C029",
+    "slot_no": 1,
+    "position": "GK"
+  },
+  {
+    "combo_id": "C029",
+    "slot_no": 2,
+    "position": "CB"
+  },
+  {
+    "combo_id": "C029",
+    "slot_no": 3,
+    "position": "CB"
+  },
+  {
+    "combo_id": "C029",
+    "slot_no": 4,
+    "position": "CB"
+  },
+  {
+    "combo_id": "C029",
+    "slot_no": 5,
+    "position": "DM"
+  },
+  {
+    "combo_id": "C029",
+    "slot_no": 6,
+    "position": "LM"
+  },
+  {
+    "combo_id": "C029",
+    "slot_no": 7,
+    "position": "RM"
+  },
+  {
+    "combo_id": "C029",
+    "slot_no": 8,
+    "position": "AM"
+  },
+  {
+    "combo_id": "C029",
+    "slot_no": 9,
     "position": "LW"
   },
   {
-    "comboId": "C029",
-    "slotNo": 10,
+    "combo_id": "C029",
+    "slot_no": 10,
     "position": "RW"
   },
   {
-    "comboId": "C029",
-    "slotNo": 11,
+    "combo_id": "C029",
+    "slot_no": 11,
     "position": "CF"
   },
   {
-    "comboId": "C030",
-    "slotNo": 1,
+    "combo_id": "C030",
+    "slot_no": 1,
     "position": "GK"
   },
   {
-    "comboId": "C030",
-    "slotNo": 2,
+    "combo_id": "C030",
+    "slot_no": 2,
     "position": "CB"
   },
   {
-    "comboId": "C030",
-    "slotNo": 3,
+    "combo_id": "C030",
+    "slot_no": 3,
     "position": "CB"
   },
   {
-    "comboId": "C030",
-    "slotNo": 4,
+    "combo_id": "C030",
+    "slot_no": 4,
     "position": "LB"
   },
   {
-    "comboId": "C030",
-    "slotNo": 5,
+    "combo_id": "C030",
+    "slot_no": 5,
     "position": "RB"
   },
   {
-    "comboId": "C030",
-    "slotNo": 6,
+    "combo_id": "C030",
+    "slot_no": 6,
     "position": "DM"
   },
   {
-    "comboId": "C030",
-    "slotNo": 7,
+    "combo_id": "C030",
+    "slot_no": 7,
     "position": "LM"
   },
   {
-    "comboId": "C030",
-    "slotNo": 8,
+    "combo_id": "C030",
+    "slot_no": 8,
     "position": "RM"
   },
   {
-    "comboId": "C030",
-    "slotNo": 9,
+    "combo_id": "C030",
+    "slot_no": 9,
     "position": "AM"
   },
   {
-    "comboId": "C030",
-    "slotNo": 10,
+    "combo_id": "C030",
+    "slot_no": 10,
     "position": "CF"
   },
   {
-    "comboId": "C030",
-    "slotNo": 11,
+    "combo_id": "C030",
+    "slot_no": 11,
     "position": "CF"
   },
   {
-    "comboId": "C031",
-    "slotNo": 1,
+    "combo_id": "C031",
+    "slot_no": 1,
     "position": "GK"
   },
   {
-    "comboId": "C031",
-    "slotNo": 2,
+    "combo_id": "C031",
+    "slot_no": 2,
     "position": "CB"
   },
   {
-    "comboId": "C031",
-    "slotNo": 3,
+    "combo_id": "C031",
+    "slot_no": 3,
     "position": "CB"
   },
   {
-    "comboId": "C031",
-    "slotNo": 4,
+    "combo_id": "C031",
+    "slot_no": 4,
     "position": "CB"
   },
   {
-    "comboId": "C031",
-    "slotNo": 5,
+    "combo_id": "C031",
+    "slot_no": 5,
     "position": "DM"
   },
   {
-    "comboId": "C031",
-    "slotNo": 6,
+    "combo_id": "C031",
+    "slot_no": 6,
     "position": "DM"
   },
   {
-    "comboId": "C031",
-    "slotNo": 7,
+    "combo_id": "C031",
+    "slot_no": 7,
     "position": "LM"
   },
   {
-    "comboId": "C031",
-    "slotNo": 8,
+    "combo_id": "C031",
+    "slot_no": 8,
     "position": "RM"
   },
   {
-    "comboId": "C031",
-    "slotNo": 9,
+    "combo_id": "C031",
+    "slot_no": 9,
     "position": "LW"
   },
   {
-    "comboId": "C031",
-    "slotNo": 10,
+    "combo_id": "C031",
+    "slot_no": 10,
     "position": "RW"
   },
   {
-    "comboId": "C031",
-    "slotNo": 11,
+    "combo_id": "C031",
+    "slot_no": 11,
     "position": "CF"
   },
   {
-    "comboId": "C032",
-    "slotNo": 1,
+    "combo_id": "C032",
+    "slot_no": 1,
     "position": "GK"
   },
   {
-    "comboId": "C032",
-    "slotNo": 2,
+    "combo_id": "C032",
+    "slot_no": 2,
     "position": "CB"
   },
   {
-    "comboId": "C032",
-    "slotNo": 3,
+    "combo_id": "C032",
+    "slot_no": 3,
     "position": "CB"
   },
   {
-    "comboId": "C032",
-    "slotNo": 4,
+    "combo_id": "C032",
+    "slot_no": 4,
     "position": "LB"
   },
   {
-    "comboId": "C032",
-    "slotNo": 5,
+    "combo_id": "C032",
+    "slot_no": 5,
     "position": "RB"
   },
   {
-    "comboId": "C032",
-    "slotNo": 6,
+    "combo_id": "C032",
+    "slot_no": 6,
     "position": "DM"
   },
   {
-    "comboId": "C032",
-    "slotNo": 7,
+    "combo_id": "C032",
+    "slot_no": 7,
     "position": "DM"
   },
   {
-    "comboId": "C032",
-    "slotNo": 8,
+    "combo_id": "C032",
+    "slot_no": 8,
     "position": "AM"
   },
   {
-    "comboId": "C032",
-    "slotNo": 9,
+    "combo_id": "C032",
+    "slot_no": 9,
     "position": "LW"
   },
   {
-    "comboId": "C032",
-    "slotNo": 10,
+    "combo_id": "C032",
+    "slot_no": 10,
     "position": "RW"
   },
   {
-    "comboId": "C032",
-    "slotNo": 11,
+    "combo_id": "C032",
+    "slot_no": 11,
     "position": "CF"
   }
 ]
