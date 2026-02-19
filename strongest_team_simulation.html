@@ -163,6 +163,60 @@
 .modalTable .k{ color:#666; font-weight:700; }
 .modalTable .v{ color:#111; font-weight:800; word-break: break-word; }
 
+
+
+/* --- modal styles synced from index.html --- */
+.modalBack{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+    z-index:50;
+  }
+  .modalBack.show{ display:flex; }
+  .modal{
+    width:min(720px, 100%);
+    background:#fff;
+    border-radius:22px;
+    box-shadow:0 30px 60px rgba(0,0,0,.25);
+    overflow:hidden;
+  }
+  .modalHead{
+    padding:16px 18px;
+    background:#0b0b0b;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .modalHead .ttl{ font-size:18px; font-weight:900; }
+  .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; }
+  .modalHead button{
+    border:none;
+    background:transparent;
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+  }
+  .modalBody{ padding:16px 18px 18px; }
+  .modalBody .mLine{ margin:8px 0; }
+  .modalBody .mKey{ font-weight:900; display:inline-block; min-width:140px; color:#111; }
+  .modalBody .mVal{ color:#111; font-weight:700; }
+
+  
+/* --- end modal styles sync --- */
+
+/* --- result overflow fix (mobile) --- */
+#resultTable, #resultTable table { table-layout: fixed; width: 100%; }
+#resultTable th, #resultTable td { overflow: hidden; }
+#resultTable td { min-width: 0; }
+#resultTable th:first-child, #resultTable td:first-child { width: 48px; }
+#resultTable a.link { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* --- end overflow fix --- */
 </style>
 </head>
 <body>
@@ -218,6 +272,15 @@
 </div>
 
 <script>
+function escapeHtml(str){
+  return String(str)
+    .replaceAll('&','&amp;')
+    .replaceAll('<','&lt;')
+    .replaceAll('>','&gt;')
+    .replaceAll('"','&quot;')
+    .replaceAll("'",'&#39;');
+}
+
 (function(){
   const $ = (id)=>document.getElementById(id);
   const esc = (s)=>String(s??"").replace(/[&<>"']/g, m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
@@ -482,31 +545,50 @@
   $("modalBack").addEventListener("click", (e)=>{ if(e.target===$("modalBack")) closeModal(); });
   document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") closeModal(); });
 
-  function openPlayerModal(p){
-    if(!p){ openModal("選手詳細","",`<div class="mut">データなし</div>`); return; }
-    const lines = [
-      ["選手名", p.name],
-      ["ID", p.player_id || p.playerId],
-      ["カテゴリ", p.category || "-"],
-      ["ポリシー", p.policy || "-"],
-      ["ポジション", p.mainPosition || "-"],
-      ["プレイスタイル", `${p.playStyle||"-"} ${roman(p.playStyleLv||"")}`],
-      ["初期総合力", p.overall],
-      ["最大強化", p.maxUpgrade],
-      ["入手方法", p.acquisitionMethod || "-"],
-      ["入手場所", p.acquisitionPlace || "-"],
-      ["入手期間", p.availablePeriod || "-"],
-      ["メインスキル", p.mainSkill || "-"],
-      ["メイントレイト", p.mainTrait || "-"],
-    ];
-    const body = lines.map(([k,v])=>`
-      <div class="mLine">
-        <div class="mKey">${esc(k)}</div>
-        <div class="mVal">${esc(v ?? "-")}</div>
-      </div>
-    `).join("");
-    openModal("選手詳細", p.name, body);
-  }
+  function openPlayerModal(player){
+  const back = document.getElementById('modalBack');
+  const titleEl = document.getElementById('modalTitle');
+  const subEl = document.getElementById('modalSub');
+  const bodyEl = document.getElementById('modalBody');
+
+  if(!back || !titleEl || !subEl || !bodyEl) return;
+
+  // タイトル部（画像3/ index.html と同じ）
+  titleEl.textContent = player?.name ?? '-';
+  const nat = player?.nationality ?? '-';
+  const grow = player?.growthType ?? '-';
+  subEl.textContent = `国籍：${nat} / 成長タイプ：${grow}`;
+
+  // プレイスタイル表記（例: パサー II）
+  const psName = player?.playStyleName ?? player?.playStyle ?? '-';
+  const psLv = (player?.playStyleLv ?? '').toString().trim();
+  const psDisp = psLv ? `${psName} ${psLv}` : psName;
+
+  const lines = [
+    ['区分', player?.category ?? '-'],
+    ['入手方法', player?.acquisitionMethod ?? '-'],
+    ['入手場所', player?.acquisitionLocation ?? '-'],
+    ['入手可能期間', player?.acquisitionPeriod ?? '-'],
+    ['初期総合力', (player?.initialOverall ?? player?.initial_total ?? '-')],
+    ['最大強化', (player?.maxOverall ?? player?.max_total ?? '-')],
+    ['ポリシー', player?.policy ?? '-'],
+    ['プレイスタイル', psDisp ?? '-'],
+    ['メインポジション', player?.position ?? player?.mainPosition ?? '-'],
+    ['メインスキル', player?.mainSkill ?? '-'],
+    ['メイン特徴', player?.mainTrait ?? '-'],
+  ];
+
+  bodyEl.innerHTML = lines.map(([k,v]) => `
+    <div class="mLine">
+      <div class="mKey">${escapeHtml(k)}</div>
+      <div class="mVal">${escapeHtml(String(v ?? '-'))}</div>
+    </div>
+  `).join('');
+
+  // 表示
+  back.classList.add('show');
+  back.setAttribute('aria-hidden','false');
+}
 
   // events
   $("btnSim").addEventListener("click", simulate);
