@@ -297,6 +297,23 @@
     const usedMatch = new Set();
     const usedAny   = new Set();
 
+    // Highlight up to 3 players total (one per combo requirement), based on exact match to combo_requirements
+    const remainingReqs = Array.isArray(combo.combo_requirements) ? combo.combo_requirements.slice() : [];
+    const consumeRequirement = (player)=>{
+      if(!player) return false;
+      const pPos = String(player.mainPosition||"");
+      const pStyle = String(player.playStyle||"");
+      const pLv = String(player.playStyleLv||"");
+      for(let i=0;i<remainingReqs.length;i++){
+        const r = remainingReqs[i] || {};
+        if(String(r.position||"")===pPos && String(r.playStyle||"")===pStyle && String(r.playStyleLv||"")===pLv){
+          remainingReqs.splice(i,1);
+          return true;
+        }
+      }
+      return false;
+    };
+
     const tbody = $("tbody");
     tbody.innerHTML = "";
 
@@ -309,8 +326,9 @@
       const bestMatch = pickBest(matchCands, usedMatch, mode);
       const bestAny   = pickBest(anyCands, usedAny, mode);
 
-      const hitMatch = !!bestMatch && isActivationMatch(bestMatch, pos, reqMap);
-      const hitAny = !!bestAny && isActivationMatch(bestAny, pos, reqMap);
+      const hitMatch = consumeRequirement(bestMatch);
+      const hitAny = consumeRequirement(bestAny);
+
       tbody.insertAdjacentHTML("beforeend", rowHtml(s.slotNo, pos, bestMatch, bestAny, mode, hitMatch, hitAny));
     }
 
@@ -353,8 +371,13 @@
     $("modalBack").setAttribute("aria-hidden","false");
   }
   function closeModal(){
-    $("modalBack").classList.remove("show");
-    $("modalBack").setAttribute("aria-hidden","true");
+    const back = $("modalBack");
+    // Avoid aria-hidden warning: ensure focused element is not inside the modal when hiding
+    if(back && back.contains(document.activeElement)){
+      try{ document.activeElement.blur(); }catch(_){}
+    }
+    back.classList.remove("show");
+    back.setAttribute("aria-hidden","true");
   }
   $("modalClose").addEventListener("click", closeModal);
   $("modalBack").addEventListener("click", (e)=>{ if(e.target===$("modalBack")) closeModal(); });
