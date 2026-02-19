@@ -10,7 +10,7 @@
       --acc:#56a4ff; --good:#54d18a; --bad:#ff6b6b;
     }
     html,body{margin:0;background:linear-gradient(180deg,#081025,#071022);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;}
-    .wrap{max-width:980px;margin:0 auto;padding:18px 14px 60px;}
+    .wrap{max-width:420px;margin:0 auto;padding:18px 14px 60px;}
     h1{font-size:18px;margin:0 0 10px;font-weight:900;letter-spacing:.02em}
     .sub{color:var(--mut);font-size:12px;line-height:1.6;margin:0 0 14px}
     .card{background:rgba(15,26,46,.92);border:1px solid rgba(31,51,86,.9);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);padding:14px}
@@ -58,25 +58,30 @@
 <body>
   <div class="wrap">
     <h1>最強チームシミュレーション（サンプル）</h1>
-    <p class="sub">フォーメーションコンボを選ぶと、<span class="ok">条件完全一致（ポリシー+ポジション+プレイスタイル）</span>で各ポジションの最強選手と、<span class="ok">総合力最強（条件なし）</span>を11枠分表示します。<br>
-      ※このサンプルは <span class="tag">players.json</span> / <span class="tag">combos.json</span> / <span class="tag">formation_slots.json</span> を読み込みます。
-    </p>
+    
 
     <div class="card">
+      
       <div class="ctrl">
         <div class="row">
           <div class="two">
-            <label>フォーメーションコンボ</label>
+            <label>フォーメーションコンボ（金のみ）</label>
             <select id="comboSel"></select>
           </div>
 
           <div class="two">
             <label>総合力モード</label>
             <div class="row">
-              <label class="pill"><input type="radio" name="mode" value="overall" checked> 初期総合力</label>
-              <label class="pill"><input type="radio" name="mode" value="maxUpgrade"> 最大強化</label>
+              <label class="pill"><input type="radio" name="mode" value="overall" checked> 初期</label>
+              <label class="pill"><input type="radio" name="mode" value="maxUpgrade"> 最大</label>
             </div>
           </div>
+
+          <button class="btn" id="btnSim">シミュレーション</button>
+        </div>
+      </div>
+    </div>
+
         </div>
 
         <div class="row">
@@ -94,25 +99,20 @@
 
       <div class="grid" id="gridWrap" style="display:none">
         <table>
-          <thead>
-            <tr>
-              <th style="width:70px">枠</th>
-              <th style="width:90px">ポジ</th>
-              <th>条件完全一致（最強）</th>
-              <th>総合力最強（条件なし）</th>
-            </tr>
-          </thead>
+          
+    <thead>
+      <tr>
+        <th style="width:90px">ポジ</th>
+        <th>ポリシー染め</th>
+        <th>最強</th>
+      </tr>
+    </thead>
+
           <tbody id="tbody"></tbody>
         </table>
       </div>
 
-      <div class="note">
-        判定ルール（サンプル）：
-        <ul>
-          <li>「条件完全一致」＝ combo_policys にポリシー一致 かつ formation_slots のポジション一致（mainPosition）かつ（該当ポジに要求があれば）プレイスタイル一致 & Lv以上。</li>
-          <li>同一選手の重複配置は避ける（枠ごとに上から貪欲選択）。</li>
-        </ul>
-      </div>
+      
     </div>
   </div>
 
@@ -162,8 +162,9 @@
 
   function rebuildComboSelect(){
     const goldOnly = $("goldOnly").checked;
+    
     const list = COMBOS
-      .filter(c=>!goldOnly || c.rank==="金")
+      .filter(c=>c.rank==="金")
       .sort((a,b)=>String(a.name).localeCompare(String(b.name),"ja"));
 
     const sel = $("comboSel");
@@ -232,7 +233,7 @@
       return;
     }
     const mode = getMode();
-    const kw = ($("kw").value||"").trim();
+    const kw = "";
 
     const slots = SLOTS.filter(s=>String(s.comboId)===String(comboId))
                        .sort((a,b)=>Number(a.slotNo)-Number(b.slotNo));
@@ -275,24 +276,28 @@
     });
   }
 
+  
   function rowHtml(slotNo, pos, p1, p2, mode){
-    const cell = (p, label)=>{
+    const cell = (p)=>{
       if(!p) return `<div class="mut">-</div>`;
       const pid = p.player_id || p.playerId;
       const nm = p.name || "-";
-      const v = Number(p[mode]||0);
-      const ps = `${p.playStyle||"-"} ${roman(p.playStyleLv||"")}`;
-      return `
-        <div class="two">
-          <div><a href="#" class="link" data-player-id="${esc(pid)}">${esc(nm)}</a></div>
-          <div class="mut">${esc(label)}：<span class="v">${esc(v)}</span> / <span class="tag">${esc(p.policy||"-")}</span> <span class="tag">${esc(ps)}</span></div>
-        </div>
-      `;
+      return `<a href="#" class="link" data-player-id="${esc(pid)}">${esc(nm)}</a>`;
     };
 
     return `
       <tr>
-        <td class="mut">#${esc(slotNo)}</td>
+        <td class="pos">${esc(pos)}</td>
+        <td>${cell(p1)}</td>
+        <td>${cell(p2)}</td>
+      </tr>
+    `;
+  }
+;
+
+    return `
+      <tr>
+        
         <td class="pos">${esc(pos)}</td>
         <td>${cell(p1, "一致")}</td>
         <td>${cell(p2, "最強")}</td>
