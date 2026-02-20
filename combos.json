@@ -24,9 +24,9 @@
         "position": "DM",
         "playStyle": "パサー",
         "playStyleLv": 1,
+        "policy": "ポゼッション",
         "conditionNo": 1,
-        "slotNo": 7,
-        "positionPlace": "Left"
+        "condition_no": 1
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -58,9 +58,9 @@
         "position": "CF",
         "playStyle": "ラインブレーカー",
         "playStyleLv": 1,
+        "policy": "ポゼッション",
         "conditionNo": 1,
-        "slotNo": 10,
-        "positionPlace": "Right"
+        "condition_no": 1
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -92,9 +92,9 @@
         "position": "DM",
         "playStyle": "ハードマーカー",
         "playStyleLv": 1,
+        "policy": "カウンター",
         "conditionNo": 1,
-        "slotNo": 5,
-        "positionPlace": "Right"
+        "condition_no": 1
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -126,8 +126,9 @@
         "position": "RB",
         "playStyle": "攻撃的FB",
         "playStyleLv": 1,
+        "policy": "カウンター",
         "conditionNo": 1,
-        "slotNo": 5
+        "condition_no": 1
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -159,8 +160,9 @@
         "position": "GK",
         "playStyle": "オーソドックスGK",
         "playStyleLv": 1,
+        "policy": "リアクション",
         "conditionNo": 1,
-        "slotNo": 1
+        "condition_no": 1
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -192,8 +194,9 @@
         "position": "LB",
         "playStyle": "守備的FB",
         "playStyleLv": 1,
+        "policy": "ムービング",
         "conditionNo": 1,
-        "slotNo": 4
+        "condition_no": 1
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -225,9 +228,9 @@
         "position": "AM",
         "playStyle": "アタッカー",
         "playStyleLv": 1,
+        "policy": "ムービング",
         "conditionNo": 1,
-        "slotNo": 9,
-        "positionPlace": "Left"
+        "condition_no": 1
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -259,8 +262,9 @@
         "position": "CF",
         "playStyle": "ストライカー",
         "playStyleLv": 1,
+        "policy": "リアクション",
         "conditionNo": 1,
-        "slotNo": 11
+        "condition_no": 1
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -292,8 +296,9 @@
         "position": "GK",
         "playStyle": "スイーパーGK",
         "playStyleLv": 1,
+        "policy": "カウンター",
         "conditionNo": 1,
-        "slotNo": 1
+        "condition_no": 1
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -325,9 +330,9 @@
         "position": "CF",
         "playStyle": "ポストプレーヤー",
         "playStyleLv": 1,
+        "policy": "ポゼッション",
         "conditionNo": 1,
-        "slotNo": 10,
-        "positionPlace": "Right"
+        "condition_no": 1
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -356,12 +361,12 @@
     ],
     "combo_requirements": [
       {
-        "position": "DM",
+        "position": "AM",
         "playStyle": "セントラルMF",
         "playStyleLv": 1,
+        "policy": "リアクション",
         "conditionNo": 1,
-        "slotNo": 7,
-        "positionPlace": "Center"
+        "condition_no": 1
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -393,9 +398,9 @@
         "position": "CB",
         "playStyle": "組立CB",
         "playStyleLv": 1,
+        "policy": "ムービング",
         "conditionNo": 1,
-        "slotNo": 3,
-        "positionPlace": "Center"
+        "condition_no": 1
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -431,16 +436,17 @@
         "position": "CB",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 1,
-        "slotNo": 3,
-        "positionPlace": "Center"
+        "condition_no": 1
       },
       {
         "position": "LM",
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 2,
-        "slotNo": 7
+        "condition_no": 2
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -476,17 +482,17 @@
         "position": "DM",
         "playStyle": "ハードマーカー",
         "playStyleLv": 2,
+        "policy": "ムービング",
         "conditionNo": 1,
-        "slotNo": 6,
-        "positionPlace": "Left"
+        "condition_no": 1
       },
       {
         "position": "CF",
         "playStyle": "ラインブレーカー",
         "playStyleLv": 2,
+        "policy": "ムービング",
         "conditionNo": 2,
-        "slotNo": 10,
-        "positionPlace": "Right"
+        "condition_no": 2
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -522,16 +528,17 @@
         "position": "CB",
         "playStyle": "組立CB",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 1,
-        "slotNo": 2,
-        "positionPlace": "Right"
+        "condition_no": 1
       },
       {
         "position": "RW",
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 2,
-        "slotNo": 10
+        "condition_no": 2
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -567,15 +574,17 @@
         "position": "GK",
         "playStyle": "スイーパーGK",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 1,
-        "slotNo": 1
+        "condition_no": 1
       },
       {
         "position": "RB",
         "playStyle": "守備的FB",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 2,
-        "slotNo": 5
+        "condition_no": 2
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -611,17 +620,17 @@
         "position": "AM",
         "playStyle": "アタッカー",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 1,
-        "slotNo": 8,
-        "positionPlace": "Center"
+        "condition_no": 1
       },
       {
         "position": "AM",
         "playStyle": "パサー",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 2,
-        "slotNo": 9,
-        "positionPlace": "Left"
+        "condition_no": 2
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -657,16 +666,17 @@
         "position": "CB",
         "playStyle": "組立CB",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 1,
-        "slotNo": 2,
-        "positionPlace": "Right"
+        "condition_no": 1
       },
       {
         "position": "LM",
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 2,
-        "slotNo": 8
+        "condition_no": 2
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -702,17 +712,17 @@
         "position": "CB",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
+        "policy": "ムービング",
         "conditionNo": 1,
-        "slotNo": 3,
-        "positionPlace": "Center"
+        "condition_no": 1
       },
       {
         "position": "CF",
         "playStyle": "ストライカー",
         "playStyleLv": 2,
+        "policy": "ムービング",
         "conditionNo": 2,
-        "slotNo": 11,
-        "positionPlace": "Left"
+        "condition_no": 2
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -748,15 +758,17 @@
         "position": "RB",
         "playStyle": "攻撃的FB",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 1,
-        "slotNo": 6
+        "condition_no": 1
       },
       {
         "position": "CF",
         "playStyle": "ラインブレーカー",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 2,
-        "slotNo": 11
+        "condition_no": 2
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -792,23 +804,25 @@
         "position": "GK",
         "playStyle": "オーソドックスGK",
         "playStyleLv": 2,
+        "policy": "ムービング",
         "conditionNo": 1,
-        "slotNo": 1
+        "condition_no": 1
       },
       {
         "position": "DM",
         "playStyle": "パサー",
         "playStyleLv": 2,
+        "policy": "ムービング",
         "conditionNo": 2,
-        "slotNo": 7,
-        "positionPlace": "Left"
+        "condition_no": 2
       },
       {
         "position": "LW",
         "playStyle": "サイドアタッカー",
         "playStyleLv": 2,
+        "policy": "ムービング",
         "conditionNo": 3,
-        "slotNo": 9
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -844,23 +858,25 @@
         "position": "CB",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 1,
-        "slotNo": 4,
-        "positionPlace": "Left"
+        "condition_no": 1
       },
       {
         "position": "LW",
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 2,
-        "slotNo": 9
+        "condition_no": 2
       },
       {
         "position": "CF",
         "playStyle": "ストライカー",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 3,
-        "slotNo": 11
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -896,23 +912,25 @@
         "position": "LB",
         "playStyle": "守備的FB",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 1,
-        "slotNo": 4
+        "condition_no": 1
       },
       {
         "position": "AM",
         "playStyle": "アタッカー",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 2,
-        "slotNo": 9,
-        "positionPlace": "Right"
+        "condition_no": 2
       },
       {
         "position": "CF",
         "playStyle": "ポストプレーヤー",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 3,
-        "slotNo": 11
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -948,24 +966,25 @@
         "position": "DM",
         "playStyle": "セントラルMF",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 1,
-        "slotNo": 8,
-        "positionPlace": "Left"
+        "condition_no": 1
       },
       {
         "position": "AM",
         "playStyle": "アタッカー",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 2,
-        "slotNo": 9
+        "condition_no": 2
       },
       {
         "position": "CF",
         "playStyle": "ストライカー",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 3,
-        "slotNo": 10,
-        "positionPlace": "Right"
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -1003,27 +1022,27 @@
     "combo_requirements": [
       {
         "position": "AM",
-        "playStyle": "アタッカー",
+        "playStyle": "パサー",
         "playStyleLv": 2,
-        "conditionNo": 2,
-        "slotNo": 7,
-        "positionPlace": "Right"
+        "policy": "ムービング",
+        "conditionNo": 1,
+        "condition_no": 1
       },
       {
         "position": "AM",
-        "playStyle": "パサー",
+        "playStyle": "アタッカー",
         "playStyleLv": 2,
-        "conditionNo": 1,
-        "slotNo": 9,
-        "positionPlace": "Left"
+        "policy": "ムービング",
+        "conditionNo": 2,
+        "condition_no": 2
       },
       {
         "position": "CF",
         "playStyle": "ストライカー",
         "playStyleLv": 3,
+        "policy": "ムービング",
         "conditionNo": 3,
-        "slotNo": 11,
-        "positionPlace": "Left"
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -1063,25 +1082,25 @@
         "position": "CB",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 1,
-        "slotNo": 3,
-        "positionPlace": "Center"
-      },
-      {
-        "position": "DM",
-        "playStyle": "セントラルMF",
-        "playStyleLv": 3,
-        "conditionNo": 3,
-        "slotNo": 5,
-        "positionPlace": "Right"
+        "condition_no": 1
       },
       {
         "position": "DM",
         "playStyle": "ハードマーカー",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 2,
-        "slotNo": 6,
-        "positionPlace": "Left"
+        "condition_no": 2
+      },
+      {
+        "position": "DM",
+        "playStyle": "セントラルMF",
+        "playStyleLv": 3,
+        "policy": "リアクション",
+        "conditionNo": 3,
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -1121,23 +1140,25 @@
         "position": "LB",
         "playStyle": "守備的FB",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 1,
-        "slotNo": 4
+        "condition_no": 1
       },
       {
         "position": "AM",
         "playStyle": "セントラルMF",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 2,
-        "slotNo": 9
+        "condition_no": 2
       },
       {
         "position": "CF",
         "playStyle": "ストライカー",
         "playStyleLv": 3,
+        "policy": "カウンター",
         "conditionNo": 3,
-        "slotNo": 10,
-        "positionPlace": "Right"
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -1177,24 +1198,25 @@
         "position": "CB",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 1,
-        "slotNo": 3,
-        "positionPlace": "Center"
+        "condition_no": 1
       },
       {
         "position": "RM",
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 2,
-        "slotNo": 8
+        "condition_no": 2
       },
       {
         "position": "CF",
         "playStyle": "ラインブレーカー",
         "playStyleLv": 3,
+        "policy": "ポゼッション",
         "conditionNo": 3,
-        "slotNo": 11,
-        "positionPlace": "Left"
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -1234,23 +1256,25 @@
         "position": "CB",
         "playStyle": "組立CB",
         "playStyleLv": 2,
+        "policy": "ムービング",
         "conditionNo": 1,
-        "slotNo": 4,
-        "positionPlace": "Left"
+        "condition_no": 1
       },
       {
         "position": "LM",
         "playStyle": "サイドアタッカー",
         "playStyleLv": 3,
+        "policy": "ムービング",
         "conditionNo": 2,
-        "slotNo": 6
+        "condition_no": 2
       },
       {
         "position": "CF",
         "playStyle": "ストライカー",
         "playStyleLv": 2,
+        "policy": "ムービング",
         "conditionNo": 3,
-        "slotNo": 11
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -1290,23 +1314,25 @@
         "position": "LB",
         "playStyle": "攻撃的FB",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 1,
-        "slotNo": 4
+        "condition_no": 1
       },
       {
         "position": "LM",
         "playStyle": "サイドアタッカー",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 2,
-        "slotNo": 7
+        "condition_no": 2
       },
       {
         "position": "CF",
         "playStyle": "ストライカー",
         "playStyleLv": 3,
+        "policy": "リアクション",
         "conditionNo": 3,
-        "slotNo": 10,
-        "positionPlace": "Right"
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -1346,24 +1372,25 @@
         "position": "CB",
         "playStyle": "組立CB",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 1,
-        "slotNo": 2,
-        "positionPlace": "Right"
+        "condition_no": 1
       },
       {
         "position": "DM",
         "playStyle": "セントラルMF",
         "playStyleLv": 3,
+        "policy": "カウンター",
         "conditionNo": 2,
-        "slotNo": 5,
-        "positionPlace": "Right"
+        "condition_no": 2
       },
       {
         "position": "LW",
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 3,
-        "slotNo": 9
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -1403,23 +1430,25 @@
         "position": "RB",
         "playStyle": "攻撃的FB",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 1,
-        "slotNo": 5
+        "condition_no": 1
       },
       {
         "position": "DM",
         "playStyle": "パサー",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 2,
-        "slotNo": 6,
-        "positionPlace": "Right"
+        "condition_no": 2
       },
       {
         "position": "RW",
         "playStyle": "ドリブラー",
         "playStyleLv": 3,
+        "policy": "ポゼッション",
         "conditionNo": 3,
-        "slotNo": 10
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "コイン交換",
@@ -1455,23 +1484,25 @@
         "position": "GK",
         "playStyle": "オーソドックスGK",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 1,
-        "slotNo": 1
+        "condition_no": 1
       },
       {
         "position": "CB",
         "playStyle": "組立CB",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 2,
-        "slotNo": 4,
-        "positionPlace": "Left"
+        "condition_no": 2
       },
       {
         "position": "LM",
         "playStyle": "サイドアタッカー",
         "playStyleLv": 2,
+        "policy": "リアクション",
         "conditionNo": 3,
-        "slotNo": 7
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "報酬",
@@ -1507,23 +1538,25 @@
         "position": "GK",
         "playStyle": "オーソドックスGK",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 1,
-        "slotNo": 1
+        "condition_no": 1
       },
       {
         "position": "CB",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 2,
-        "slotNo": 3,
-        "positionPlace": "Left"
+        "condition_no": 2
       },
       {
         "position": "RB",
         "playStyle": "攻撃的FB",
         "playStyleLv": 2,
+        "policy": "カウンター",
         "conditionNo": 3,
-        "slotNo": 5
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "報酬",
@@ -1559,23 +1592,25 @@
         "position": "CB",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
+        "policy": "ムービング",
         "conditionNo": 1,
-        "slotNo": 3,
-        "positionPlace": "Left"
+        "condition_no": 1
       },
       {
         "position": "AM",
         "playStyle": "パサー",
         "playStyleLv": 2,
+        "policy": "ムービング",
         "conditionNo": 2,
-        "slotNo": 10
+        "condition_no": 2
       },
       {
         "position": "CF",
         "playStyle": "ストライカー",
         "playStyleLv": 2,
+        "policy": "ムービング",
         "conditionNo": 3,
-        "slotNo": 11
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "報酬",
@@ -1611,24 +1646,25 @@
         "position": "CB",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 1,
-        "slotNo": 3,
-        "positionPlace": "Center"
+        "condition_no": 1
       },
       {
         "position": "AM",
         "playStyle": "アタッカー",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 2,
-        "slotNo": 8,
-        "positionPlace": "Left"
+        "condition_no": 2
       },
       {
         "position": "LW",
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
+        "policy": "ポゼッション",
         "conditionNo": 3,
-        "slotNo": 9
+        "condition_no": 3
       }
     ],
     "acquisitionMethod": "報酬",

@@ -377,11 +377,12 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
           </thead>
           <tbody id="tbody"></tbody>
         </table>
-      
+      </div>
+
 <div id="pitchWrap" style="display:none;margin-top:12px">
   <div class="pitch" id="pitch" aria-label="pitch"></div>
 </div>
-</div>
+
         <div id="resultNote" class="resultNote" style="display:none">※名前が緑色の選手はフォーメーションコンボの発動条件を満たしています</div>
 </div>
   </div>
@@ -421,6 +422,8 @@ function escapeHtml(str){
   let PLAYERS = [];
   let COMBOS = [];
   let SLOTS = [];
+  let LAYOUT = []; // formation_layout.json (optional)
+  let LAYOUT_MAP = new Map(); // key: comboId|slotNo -> {x,y}
 
   let PLAYER_MAP = new Map();
 
@@ -514,8 +517,13 @@ function renderPitch(){
     const total = arr.length;
 
     const place = LAST.slotPlaceMap?.get(String(s.slotNo)) || ""; // Right/Left/Center (if provided)
-    const x = getX(k, place, idx, total);
-    const y = getY(k);
+
+    // Prefer exact coordinates from formation_layout.json when available
+    const key = `${String(LAST.comboId)}|${String(s.slotNo)}`;
+    const xy = LAST.layoutMap?.get(key);
+
+    const x = (xy && Number.isFinite(xy.x)) ? xy.x : getX(k, place, idx, total);
+    const y = (xy && Number.isFinite(xy.y)) ? xy.y : getY(k);
 
     const ok = LAST.highlightOK(player, s);
     const pid = String(player.player_id || player.playerId || "");
@@ -582,6 +590,14 @@ async function loadAll(){
     setStatus("formation_slots.json が見つかりません（コンボ選択は可能ですがシミュレーションは実行できません）", true);
   }
 
+  // formation_layout is optional (only used for pitch coordinates)
+  let fl = [];
+  try{
+    fl = await loadJson("./formation_layout.json");
+  }catch(e){
+    console.warn(e);
+  }
+
   PLAYERS = (p||[]).filter(x=>x && (x.player_id || x.playerId));
   
   // build quick lookup for player detail popup
@@ -595,6 +611,20 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
       position: x?.position
     }))
     .filter(x=>x && x.comboId && x.slotNo && x.position);
+
+  LAYOUT = (fl||[]);
+  // Normalize formation_layout rows (support snake_case / camelCase)
+  LAYOUT_MAP = new Map(
+    LAYOUT
+      .map(r=>({
+        comboId: r?.comboId ?? r?.combo_id,
+        slotNo:  r?.slotNo  ?? r?.slot_no,
+        x: r?.x,
+        y: r?.y
+      }))
+      .filter(r=>r && r.comboId && r.slotNo !== undefined && r.x !== undefined && r.y !== undefined)
+      .map(r=>[`${String(r.comboId)}|${String(r.slotNo)}`, {x:Number(r.x), y:Number(r.y)}])
+  );
 
   // clear status only if we didn't already show the missing-slots warning
   const cur = $("status")?.textContent?.trim();
@@ -799,7 +829,7 @@ function simulate(){
       .filter(r=>r && (r.slotNo!==undefined && r.slotNo!==null) && r.positionPlace)
       .map(r=>[String(r.slotNo), String(r.positionPlace)]));
 
-    LAST = { slots, picksA, picksB, highlightOK, slotPlaceMap };
+    LAST = { comboId: String(comboId), slots, picksA, picksB, highlightOK, slotPlaceMap, layoutMap: LAYOUT_MAP };
   renderPitch();
   updateView();
   setStatus("");
