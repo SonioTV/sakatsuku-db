@@ -252,6 +252,10 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
     text-decoration:none;
     font-weight:700;
   }
+/* ---- Results box (added) ---- */
+.resultsBox{padding:12px}
+/* ---- end results box ---- */
+
 /* ---- Layout tweaks (fix7) ---- */
 #comboSel{
   width:100%;
@@ -296,8 +300,8 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
   position:relative;
   width:100%;
   aspect-ratio: 3 / 4;
-  background: radial-gradient(120% 120% at 50% 15%, rgba(86,164,255,.18), rgba(0,0,0,0)),
-              linear-gradient(180deg, rgba(11,23,48,.25), rgba(11,23,48,.65));
+  background: radial-gradient(120% 120% at 50% 15%, rgba(84,209,138,.18), rgba(0,0,0,0)),
+              linear-gradient(180deg, rgba(10,60,25,.55), rgba(6,35,14,.92));
   border:1px solid rgba(31,51,86,.9);
   border-radius:16px;
   overflow:hidden;
@@ -348,6 +352,24 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
   text-overflow:ellipsis;
   white-space:nowrap;
 }
+
+/* ---- Pitch name pill (added) ---- */
+.pPlayer .playerLink{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  border:2px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.12);
+  color:#000;
+  font-weight:900;
+  text-decoration:none;
+}
+.pPlayer.pp-gk .playerLink{ border-color:#ff5a5a; background:rgba(255,90,90,.25); color:#000; }
+.pPlayer.pp-def .playerLink{ border-color:#56a4ff; background:rgba(86,164,255,.22); color:#000; }
+.pPlayer.pp-mid .playerLink{ border-color:#ffb347; background:rgba(255,179,71,.24); color:#000; }
+.pPlayer.pp-att .playerLink{ border-color:#54d18a; background:rgba(84,209,138,.24); color:#000; }
+/* ---- end pitch name pill ---- */
+
 /* ---- end pitch view ---- */
 
 </style>
@@ -359,16 +381,23 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
       <div class="ctrl">
 <div class="row">
           <div class="two">
+            <label>ランク選択</label>
+            <select id="rankSel"></select>
+          </div>
+          <div class="two">
+            <label>ポリシー選択</label>
+            <select id="policySel"></select>
+          </div>
+          <div class="two">
             <label>フォーメーションコンボ</label>
             <select id="comboSel"></select>
           </div>
+        </div>
 
+        <div class="row">
           <div class="two">
-            <label>総合力モード</label>
-            <div class="row">
-              <label class="pill"><input type="radio" name="mode" value="overall" checked> 初期総合力</label>
-              <label class="pill"><input type="radio" name="mode" value="maxUpgrade"> 最大強化</label>
-            </div>
+            <label>選手の入手場所</label>
+            <select id="acqSel"></select>
           </div>
         </div>
 
@@ -380,13 +409,13 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
   <label class="pill"><input type="radio" name="view" value="both"> 両方</label>
 </div>
 <div class="row" style="margin-top:-4px">
-  <span class="mini" style="margin-right:6px">ピッチ表示：</span>
   <label class="pill"><input type="radio" name="pitchTeam" value="dye" checked> ポリシー染め</label>
   <label class="pill"><input type="radio" name="pitchTeam" value="free"> ポリシー自由</label>
 </div>
       </div>
 
-      <div class="grid" id="gridWrap" style="display:none">
+      <div class="card resultsBox" id="resultsBox" style="margin-top:12px;display:none">
+<div class="grid" id="gridWrap" style="display:none">
         <table>
           <thead>
             <tr>
@@ -404,6 +433,7 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
 </div>
 
         <div id="resultNote" class="resultNote" style="display:none">※名前が緑色の選手はフォーメーションコンボの発動条件を満たしています</div>
+</div>
 </div>
   </div>
 
@@ -437,7 +467,10 @@ function escapeHtml(str){
   const $ = (id)=>document.getElementById(id);
   const esc = (s)=>String(s??"").replace(/[&<>"']/g, m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
   const roman = (n)=>({1:"Ⅰ",2:"Ⅱ",3:"Ⅲ"}[Number(n)]||String(n??""));
-  const getMode = ()=>document.querySelector('input[name="mode"]:checked')?.value || "overall";
+  const getMode = ()=>"maxUpgrade";
+  const getRank = ()=>$("rankSel")?.value || "";
+  const getPolicyFilter = ()=>$("policySel")?.value || "";
+  const getAcq = ()=>$("acqSel")?.value || "";
 
   let PLAYERS = [];
   let COMBOS = [];
@@ -547,7 +580,15 @@ function renderPitch(){
     const nm  = player.name || "-";
 
     const div = document.createElement("div");
-    div.className = "pPlayer" + (ok ? " hit" : "");
+    const g = (()=>{
+      const p = String(pos||"").toUpperCase();
+      if(p==="GK") return "pp-gk";
+      if(["CB","LB","RB"].includes(p)) return "pp-def";
+      if(["AM","DM","LM","RM"].includes(p)) return "pp-mid";
+      if(["CF","LW","RW"].includes(p)) return "pp-att";
+      return "";
+    })();
+    div.className = "pPlayer" + (g ? (" "+g) : "") + (ok ? " hit" : "");
     div.style.left = x + "%";
     div.style.top  = y + "%";
     div.innerHTML = `
@@ -565,6 +606,11 @@ function updateView(){
   const gridWrap = $("gridWrap");
   const pitchWrap = $("pitchWrap");
   const note = $("resultNote");
+  const box = $("resultsBox");
+
+  if(box){
+    box.style.display = has ? "" : "none";
+  }
 
   if(gridWrap){
     gridWrap.style.display = (has && (v==="table" || v==="both")) ? "" : "none";
@@ -629,7 +675,8 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
     setStatus("");
   }
 
-  rebuildPolicySelect();
+  rebuildRankPolicySelect();
+  rebuildAcqSelect();
   rebuildComboSelect();
 }
 
@@ -649,7 +696,18 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
   function rebuildComboSelect(){
     // Show all combos (rank can be 銅/銀/金 etc.). Keep UI minimal and stable.
     const slotSet = new Set((SLOTS||[]).map(s=>String(s.comboId)));
-    const base = (COMBOS || []).filter(c=>!slotSet.size || slotSet.has(String(c.comboId)));
+    const baseAll = (COMBOS || []).filter(c=>!slotSet.size || slotSet.has(String(c.comboId)));
+    const rSel = getRank();
+    const pSel = getPolicyFilter();
+    const base = baseAll.filter(c=>{
+      if(rSel && String(c.rank||"").trim() !== rSel) return false;
+      if(pSel){
+        const cps = c.combo_policys;
+        if(Array.isArray(cps)) return cps.map(x=>String(x).trim()).includes(pSel);
+        return String(cps||"").trim() === pSel;
+      }
+      return true;
+    });
     const list = base
       .slice()
       .sort((a,b)=>{
@@ -700,7 +758,7 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
     return { byPos, bySlot };
   }
 
-  function matchPlayerForSlot(player, combo, slotPos, reqMap, kw, forcedPolicy){
+  function matchPlayerForSlot(player, combo, slotPos, reqMap, kw, forcedPolicy, requiredAcq){
     // NOTE: Slot assignment should be based on position (+ optional policy/keyword) only.
     // combo_requirements is used for "強調表示" (highlight) separately.
     if(kw){
@@ -712,6 +770,12 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
     const pos = String(player?.mainPosition ?? '');
     if(pos !== slotPos) return false;
 
+    // AcquisitionPlace match (only when selected)
+    if(requiredAcq){
+      const ap = String(player?.acquisitionPlace ?? "");
+      if(ap !== requiredAcq) return false;
+    }
+
     // Policy match (only when forced)
     if(forcedPolicy){
       const pol = String(player?.policy ?? '');
@@ -720,6 +784,45 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
 
     return true;
   }
+function rebuildRankPolicySelect(){
+    const ranks = Array.from(new Set((COMBOS||[]).map(c=>String(c.rank||"").trim()).filter(Boolean)));
+    const order = (r)=>{
+      if(r.includes("金")) return 0;
+      if(r.includes("銀")) return 1;
+      if(r.includes("銅")) return 2;
+      return 3;
+    };
+    ranks.sort((a,b)=>{ const d=order(a)-order(b); return d!==0?d:a.localeCompare(b,"ja"); });
+
+    const policies = Array.from(new Set((COMBOS||[]).flatMap(c=>{
+      const cps=c.combo_policys;
+      if(Array.isArray(cps)) return cps.map(x=>String(x).trim()).filter(Boolean);
+      const s=String(cps||"").trim();
+      return s? [s] : [];
+    })));
+    policies.sort((a,b)=>a.localeCompare(b,"ja"));
+
+    const rankSel = $("rankSel");
+    const polSel = $("policySel");
+    if(rankSel){
+      rankSel.innerHTML = `<option value="">（全て）</option>` + ranks.map(r=>`<option value="${esc(r)}">${esc(r)}</option>`).join("");
+    }
+    if(polSel){
+      polSel.innerHTML = `<option value="">（全て）</option>` + policies.map(p=>`<option value="${esc(p)}">${esc(p)}</option>`).join("");
+    }
+
+    rankSel?.addEventListener("change", rebuildComboSelect);
+    polSel?.addEventListener("change", rebuildComboSelect);
+}
+
+function rebuildAcqSelect(){
+    const acqs = Array.from(new Set((PLAYERS||[]).map(p=>String(p.acquisitionPlace||"").trim()).filter(Boolean)));
+    acqs.sort((a,b)=>a.localeCompare(b,"ja"));
+    const sel = $("acqSel");
+    if(!sel) return;
+    sel.innerHTML = `<option value="">（指定なし）</option>` + acqs.map(a=>`<option value="${esc(a)}">${esc(a)}</option>`).join("");
+}
+
 
 function simulate(){
   if(!SLOTS.length){
@@ -733,7 +836,8 @@ function simulate(){
     return;
   }
 
-  const mode = getMode(); // overall / maxUpgrade
+  const mode = getMode(); // always maxUpgrade
+  const requiredAcq = getAcq();
   const slots = SLOTS
     .filter(s=>String(s.comboId)===String(comboId))
     .sort((a,b)=>Number(a.slotNo)-Number(b.slotNo));
@@ -751,7 +855,7 @@ function simulate(){
     let best = null;
     let bestVal = -Infinity;
     for(const p of available){
-      if(!matchPlayerForSlot(p, combo, slotPos, reqMap, "", forcePol)) continue;
+      if(!matchPlayerForSlot(p, combo, slotPos, reqMap, "", forcePol, requiredAcq)) continue;
       const v = Number(p?.[mode] ?? -Infinity);
       if(v > bestVal){
         bestVal = v;
