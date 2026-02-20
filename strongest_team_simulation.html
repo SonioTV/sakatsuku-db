@@ -312,8 +312,26 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
   position:absolute;
   transform:translate(-50%,-50%);
   text-align:center;
-  max-width:44%;
+  width:24%;
+  max-width:180px;
+  min-width:90px;
+  pointer-events:auto;
 }
+.pPlayer .pPos{
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:0.04em;
+  opacity:0.9;
+  margin-bottom:4px;
+  white-space:nowrap;
+}
+.pPlayer .playerLink{
+  display:block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
 .pPos{
   font-size:11px;
   color:var(--mut);
