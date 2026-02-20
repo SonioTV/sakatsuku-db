@@ -428,25 +428,51 @@ function escapeHtml(str){
 // ---- pitch view state ----
 let LAST = null;
 
-function getXY(position, idx){
-  const pos = String(position||"").toUpperCase();
-  // idx: 1..n occurrence in same position
-  if(pos==="GK") return [50, 90];
+// slotNo / positionPlace を使って、同一ポジション複数配置でも左右/中央を安定させる
+function getY(pos){
+  pos = String(pos||"").toUpperCase();
+  if(pos==="GK") return 90;
 
-  if(pos==="LB") return [18, 72];
-  if(pos==="RB") return [82, 72];
-  if(pos==="CB") return [idx===1 ? 40 : 60, 72];
+  // DF line
+  if(["LB","LWB"].includes(pos)) return 72;
+  if(["RB","RWB"].includes(pos)) return 72;
+  if(["CB","SB"].includes(pos)) return 72;
 
-  if(pos==="DM") return [idx===1 ? 38 : 62, 56];
-  if(pos==="AM") return [50, 40];
+  // MF lines
+  if(["DM"].includes(pos)) return 56;
+  if(["CM","CH","LM","RM"].includes(pos)) return 46;
+  if(["AM","OM"].includes(pos)) return 40;
 
-  if(pos==="LW") return [20, 24];
-  if(pos==="RW") return [80, 24];
-  if(pos==="CF") return [50, 14];
-  if(pos==="ST") return [50, 14];
+  // WF / FW
+  if(["LW","RW","LF","RF"].includes(pos)) return 26;
+  if(["CF","ST"].includes(pos)) return 14;
 
-  // fallback: stack down the middle
-  return [50, 50];
+  return 50;
+}
+
+function getX(pos, place, idx, total){
+  pos = String(pos||"").toUpperCase();
+  place = String(place||"");
+
+  // wide positions are anchored near the touchline
+  const isLeftWide = ["LB","LWB","LM","LW","LF"].includes(pos);
+  const isRightWide = ["RB","RWB","RM","RW","RF"].includes(pos);
+  if(isLeftWide) return 18;
+  if(isRightWide) return 82;
+
+  // explicit place from combos.json (Right/Left/Center)
+  if(place==="Left") return 32;
+  if(place==="Center") return 50;
+  if(place==="Right") return 68;
+
+  // fallback: distribute within central lane
+  const n = Math.max(1, Number(total)||1);
+  const i = Math.min(n, Math.max(1, Number(idx)||1));
+  if(n===1) return 50;
+  if(n===2) return i===1 ? 40 : 60;
+  if(n===3) return i===1 ? 34 : (i===2 ? 50 : 66);
+  if(n===4) return [30,43,57,70][i-1] || 50;
+  return 50;
 }
 
 function renderPitch(){
@@ -462,8 +488,17 @@ function renderPitch(){
   const team = document.querySelector('input[name="pitchTeam"]:checked')?.value || "dye";
   const picks = team === "free" ? LAST.picksB : LAST.picksA;
 
-  // count occurrences per position to place CB/DM etc.
-  const cnt = new Map();
+  // 同一ポジションのスロットを slotNo 昇順で並べて idx を決める
+  const byPos = new Map();
+  for(const s of LAST.slots){
+    const k = String(s.position||"").toUpperCase();
+    if(!byPos.has(k)) byPos.set(k, []);
+    byPos.get(k).push(s);
+  }
+  for(const [k, arr] of byPos){
+    arr.sort((a,b)=>Number(a.slotNo)-Number(b.slotNo));
+  }
+
   pitch.innerHTML = "";
 
   for(let i=0;i<LAST.slots.length;i++){
@@ -473,12 +508,16 @@ function renderPitch(){
 
     const pos = String(s.position||"");
     const k = pos.toUpperCase();
-    const next = (cnt.get(k) || 0) + 1;
-    cnt.set(k, next);
 
-    const [x,y] = getXY(k, next);
+    const arr = byPos.get(k) || [s];
+    const idx = arr.findIndex(x=>Number(x.slotNo)===Number(s.slotNo)) + 1;
+    const total = arr.length;
 
-    const ok = LAST.highlightOK(player, s.position);
+    const place = LAST.slotPlaceMap?.get(String(s.slotNo)) || ""; // Right/Left/Center (if provided)
+    const x = getX(k, place, idx, total);
+    const y = getY(k);
+
+    const ok = LAST.highlightOK(player, s);
     const pid = String(player.player_id || player.playerId || "");
     const nm  = player.name || "-";
 
@@ -616,14 +655,22 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
   }
 
   function buildRequirementMap(combo){
-    const m = new Map(); // position -> array of req
+    const byPos = new Map();   // position -> [req...]
+    const bySlot = new Map();  // slotNo(string) -> [req...]
     (combo.combo_requirements||[]).forEach(req=>{
       const pos = req.position;
-      if(!pos) return;
-      if(!m.has(pos)) m.set(pos, []);
-      m.get(pos).push(req);
+      if(pos){
+        if(!byPos.has(pos)) byPos.set(pos, []);
+        byPos.get(pos).push(req);
+      }
+      const sn = req.slotNo ?? req.slot_no;
+      if(sn!==undefined && sn!==null && sn!==""){
+        const key = String(sn);
+        if(!bySlot.has(key)) bySlot.set(key, []);
+        bySlot.get(key).push(req);
+      }
     });
-    return m;
+    return { byPos, bySlot };
   }
 
   function matchPlayerForSlot(player, combo, slotPos, reqMap, kw, forcedPolicy){
@@ -687,17 +734,19 @@ function simulate(){
     return best;
   };
 
-  const highlightOK = (player, slotPos)=>{
-    const reqs = reqMap.get(slotPos) || [];
-    if(!reqs.length) return false;
+  const highlightOK = (player, slot)=>{
+    if(!slot) return false;
+    const slotKey = String(slot.slotNo ?? slot.slot_no ?? "");
+    const reqs = (slotKey && reqMap.bySlot.get(slotKey)) ? reqMap.bySlot.get(slotKey) : (reqMap.byPos.get(slot.position) || []);
+    if(!reqs || !reqs.length) return false;
     const ps = String(player?.playStyle ?? "");
     const lv = Number(player?.playStyleLv ?? 0);
     return reqs.some(r=>String(r.playStyle??"")===ps && lv >= Number(r.playStyleLv ?? 0));
   };
 
-  const makeCell = (player, slotPos)=>{
+  const makeCell = (player, slot)=>{
     if(!player) return `<span class="mut">-</span>`;
-    const cls = highlightOK(player, slotPos) ? "hit" : "";
+    const cls = highlightOK(player, slot) ? "hit" : "";
     const pid = String(player.player_id || player.playerId || "");
     const nm  = player.name || "-";
     // player name is clickable -> opens detail popup (players.json)
@@ -740,13 +789,17 @@ function simulate(){
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td class="pos">${esc(s.position)}</td>
-      <td>${makeCell(a, s.position)}</td>
-      <td>${makeCell(b, s.position)}</td>
+      <td>${makeCell(a, s)}</td>
+      <td>${makeCell(b, s)}</td>
     `;
     tbody.appendChild(tr);
   }
 
-    LAST = { slots, picksA, picksB, highlightOK };
+        const slotPlaceMap = new Map((combo.combo_requirements||[])
+      .filter(r=>r && (r.slotNo!==undefined && r.slotNo!==null) && r.positionPlace)
+      .map(r=>[String(r.slotNo), String(r.positionPlace)]));
+
+    LAST = { slots, picksA, picksB, highlightOK, slotPlaceMap };
   renderPitch();
   updateView();
   setStatus("");
