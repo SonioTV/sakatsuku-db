@@ -565,6 +565,13 @@ function renderPitch(){
   const team = document.querySelector('input[name="pitchTeam"]:checked')?.value || "dye";
   const picks = team === "free" ? LAST.picksB : LAST.picksA;
 
+  // ★追加：slotNo -> player のMap（indexズレ対策）
+  const pickBySlot = new Map(
+    (picks || [])
+      .filter(x => x && x.slot && x.player)
+      .map(x => [String(x.slot.slotNo), x.player])
+  );
+
   // 同一ポジションのスロットを slotNo 昇順で並べて idx を決める
   const byPos = new Map();
   for(const s of LAST.slots){
@@ -580,7 +587,8 @@ function renderPitch(){
 
   for(let i=0;i<LAST.slots.length;i++){
     const s = LAST.slots[i];
-    const player = picks[i]?.player || null;
+    // ★変更：indexではなくslotNoで選手を取得
+    const player = pickBySlot.get(String(s.slotNo)) || null;
     if(!player) continue;
 
     const pos = String(s.position||"");
