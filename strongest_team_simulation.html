@@ -540,7 +540,7 @@ function renderPitch(){
 
     // Prefer exact coordinates from formation_layout.json when available
     const key = `${String(LAST.formationId)}|${String(s.slotNo)}`;
-    const xy = LAST.layoutMap?.get(key);
+    const xy = LAYOUT_MAP?.get(key);
 
     const x = (xy && Number.isFinite(xy.x)) ? xy.x : getX(k, place, idx, total);
     const y = (xy && Number.isFinite(xy.y)) ? xy.y : getY(k);
