@@ -290,6 +290,46 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
 }
 /* ---- end fix ---- */
 
+
+/* ---- Pitch view (added) ---- */
+.pitch{
+  position:relative;
+  width:100%;
+  aspect-ratio: 3 / 4;
+  background: radial-gradient(120% 120% at 50% 15%, rgba(86,164,255,.18), rgba(0,0,0,0)),
+              linear-gradient(180deg, rgba(11,23,48,.25), rgba(11,23,48,.65));
+  border:1px solid rgba(31,51,86,.9);
+  border-radius:16px;
+  overflow:hidden;
+}
+.pitch::before{
+  content:"";
+  position:absolute; inset:10px;
+  border:1px solid rgba(233,241,255,.12);
+  border-radius:12px;
+}
+.pPlayer{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  max-width:44%;
+}
+.pPos{
+  font-size:11px;
+  color:var(--mut);
+  font-weight:900;
+  letter-spacing:.03em;
+  margin-bottom:2px;
+}
+.pPlayer .playerLink{
+  display:block;
+  max-width:100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+/* ---- end pitch view ---- */
+
 </style>
 </head>
 <body>
@@ -313,6 +353,17 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
         </div>
 
         <div class="row"><button class="btn" id="btnSim">シミュレーション</button><div class="mini" id="status"></div></div>
+
+<div class="row" style="margin-top:6px">
+  <label class="pill"><input type="radio" name="view" value="table" checked> テーブル</label>
+  <label class="pill"><input type="radio" name="view" value="pitch"> ピッチ</label>
+  <label class="pill"><input type="radio" name="view" value="both"> 両方</label>
+</div>
+<div class="row" style="margin-top:-4px">
+  <span class="mini" style="margin-right:6px">ピッチ表示：</span>
+  <label class="pill"><input type="radio" name="pitchTeam" value="dye" checked> ポリシー染め</label>
+  <label class="pill"><input type="radio" name="pitchTeam" value="free"> ポリシー自由</label>
+</div>
       </div>
 
       <div class="grid" id="gridWrap" style="display:none">
@@ -326,7 +377,11 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
           </thead>
           <tbody id="tbody"></tbody>
         </table>
-      </div>
+      
+<div id="pitchWrap" style="display:none;margin-top:12px">
+  <div class="pitch" id="pitch" aria-label="pitch"></div>
+</div>
+</div>
         <div id="resultNote" class="resultNote" style="display:none">※名前が緑色の選手はフォーメーションコンボの発動条件を満たしています</div>
 </div>
   </div>
@@ -368,6 +423,96 @@ function escapeHtml(str){
   let SLOTS = [];
 
   let PLAYER_MAP = new Map();
+
+
+// ---- pitch view state ----
+let LAST = null;
+
+function getXY(position, idx){
+  const pos = String(position||"").toUpperCase();
+  // idx: 1..n occurrence in same position
+  if(pos==="GK") return [50, 90];
+
+  if(pos==="LB") return [18, 72];
+  if(pos==="RB") return [82, 72];
+  if(pos==="CB") return [idx===1 ? 40 : 60, 72];
+
+  if(pos==="DM") return [idx===1 ? 38 : 62, 56];
+  if(pos==="AM") return [50, 40];
+
+  if(pos==="LW") return [20, 24];
+  if(pos==="RW") return [80, 24];
+  if(pos==="CF") return [50, 14];
+  if(pos==="ST") return [50, 14];
+
+  // fallback: stack down the middle
+  return [50, 50];
+}
+
+function renderPitch(){
+  const pitchWrap = $("pitchWrap");
+  const pitch = $("pitch");
+  if(!pitchWrap || !pitch) return;
+
+  if(!LAST){
+    pitchWrap.style.display = "none";
+    return;
+  }
+
+  const team = document.querySelector('input[name="pitchTeam"]:checked')?.value || "dye";
+  const picks = team === "free" ? LAST.picksB : LAST.picksA;
+
+  // count occurrences per position to place CB/DM etc.
+  const cnt = new Map();
+  pitch.innerHTML = "";
+
+  for(let i=0;i<LAST.slots.length;i++){
+    const s = LAST.slots[i];
+    const player = picks[i]?.player || null;
+    if(!player) continue;
+
+    const pos = String(s.position||"");
+    const k = pos.toUpperCase();
+    const next = (cnt.get(k) || 0) + 1;
+    cnt.set(k, next);
+
+    const [x,y] = getXY(k, next);
+
+    const ok = LAST.highlightOK(player, s.position);
+    const pid = String(player.player_id || player.playerId || "");
+    const nm  = player.name || "-";
+
+    const div = document.createElement("div");
+    div.className = "pPlayer" + (ok ? " hit" : "");
+    div.style.left = x + "%";
+    div.style.top  = y + "%";
+    div.innerHTML = `
+      <div class="pPos">${esc(pos)}</div>
+      <a href="#" class="playerLink" data-pid="${esc(pid)}">${esc(nm)}</a>
+    `;
+    pitch.appendChild(div);
+  }
+}
+
+function updateView(){
+  const v = document.querySelector('input[name="view"]:checked')?.value || "table";
+  const has = !!LAST;
+
+  const gridWrap = $("gridWrap");
+  const pitchWrap = $("pitchWrap");
+  const note = $("resultNote");
+
+  if(gridWrap){
+    gridWrap.style.display = (has && (v==="table" || v==="both")) ? "" : "none";
+  }
+  if(pitchWrap){
+    pitchWrap.style.display = (has && (v==="pitch" || v==="both")) ? "" : "none";
+  }
+  if(note){
+    note.style.display = has ? "" : "none";
+  }
+}
+// ---- end pitch view state ----
 
   function setStatus(msg, isErr=false){
     $("status").innerHTML = isErr ? `<span class="err">${esc(msg)}</span>` : `<span class="mut">${esc(msg)}</span>`;
@@ -601,10 +746,12 @@ function simulate(){
     tbody.appendChild(tr);
   }
 
-  $("gridWrap").style.display = "";
-  $("resultNote").style.display = "";
+    LAST = { slots, picksA, picksB, highlightOK };
+  renderPitch();
+  updateView();
   setStatus("");
 }
+
 
 // ===== Player detail popup (reuse style from index.html) =====
 const modalBack = $("modalBack");
@@ -661,6 +808,26 @@ $("tbody").addEventListener("click", (e)=>{
   if(!a) return;
   e.preventDefault();
   showPlayerDetailById(a.dataset.pid);
+});
+
+
+// delegate: click player name in pitch
+const pitchEl = $("pitch");
+if(pitchEl){
+  pitchEl.addEventListener("click", (e)=>{
+    const a = e.target.closest("a.playerLink");
+    if(!a) return;
+    e.preventDefault();
+    showPlayerDetailById(a.dataset.pid);
+  });
+}
+
+// view toggles
+document.querySelectorAll('input[name="view"]').forEach(el=>{
+  el.addEventListener("change", ()=>{ updateView(); });
+});
+document.querySelectorAll('input[name="pitchTeam"]').forEach(el=>{
+  el.addEventListener("change", ()=>{ renderPitch(); updateView(); });
 });
 
   // events
