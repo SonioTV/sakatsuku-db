@@ -353,21 +353,24 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
   white-space:nowrap;
 }
 
-/* ---- Pitch name pill (added) ---- */
+/* ---- Pitch name pill (tuned) ---- */
 .pPlayer .playerLink{
   display:inline-block;
   padding:6px 10px;
   border-radius:999px;
   border:2px solid rgba(255,255,255,.25);
-  background:rgba(255,255,255,.12);
+  background:rgba(255,255,255,.14);
   color:#000;
   font-weight:900;
   text-decoration:none;
+  box-shadow:
+    0 2px 10px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.55);
 }
-.pPlayer.pp-gk .playerLink{ border-color:#ff5a5a; background:rgba(255,90,90,.25); color:#000; }
-.pPlayer.pp-def .playerLink{ border-color:#56a4ff; background:rgba(86,164,255,.22); color:#000; }
-.pPlayer.pp-mid .playerLink{ border-color:#ffb347; background:rgba(255,179,71,.24); color:#000; }
-.pPlayer.pp-att .playerLink{ border-color:#54d18a; background:rgba(84,209,138,.24); color:#000; }
+.pPlayer.pp-gk  .playerLink{ border-color:#ff3b30; background:rgba(255,59,48,.22); color:#000; }
+.pPlayer.pp-def .playerLink{ border-color:#0a84ff; background:rgba(10,132,255,.18); color:#000; }
+.pPlayer.pp-mid .playerLink{ border-color:#ff9f0a; background:rgba(255,159,10,.20); color:#000; }
+.pPlayer.pp-att .playerLink{ border-color:#34c759; background:rgba(52,199,89,.18); color:#000; }
 /* ---- end pitch name pill ---- */
 
 /* ---- end pitch view ---- */
@@ -467,6 +470,7 @@ function escapeHtml(str){
   const $ = (id)=>document.getElementById(id);
   const esc = (s)=>String(s??"").replace(/[&<>"']/g, m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
   const roman = (n)=>({1:"Ⅰ",2:"Ⅱ",3:"Ⅲ"}[Number(n)]||String(n??""));
+  const short2 = (s)=>String(s??"").slice(0,2);
   const getMode = ()=>"maxUpgrade";
   const getRank = ()=>$("rankSel")?.value || "";
   const getPolicyFilter = ()=>$("policySel")?.value || "";
@@ -577,7 +581,7 @@ function renderPitch(){
 
     const ok = LAST.highlightOK(player, s);
     const pid = String(player.player_id || player.playerId || "");
-    const nm  = player.name || "-";
+    const nm  = short2(player.name || "-");
 
     const div = document.createElement("div");
     const g = (()=>{
@@ -879,7 +883,7 @@ function simulate(){
     if(!player) return `<span class="mut">-</span>`;
     const cls = highlightOK(player, slot) ? "hit" : "";
     const pid = String(player.player_id || player.playerId || "");
-    const nm  = player.name || "-";
+    const nm  = short2(player.name || "-");
     // player name is clickable -> opens detail popup (players.json)
     return `<div class="two">
       <div class="${cls}"><a href="#" class="playerLink playerName" data-pid="${esc(pid)}">${esc(nm)}</a></div>
