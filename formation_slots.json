@@ -14,8 +14,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C001",
@@ -23,8 +23,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C001",
@@ -33,34 +33,34 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
-  },
-  {
-    "combo_id": "C001",
-    "slot_no": 5,
-    "position": "RB",
-    "position_place": null,
-    "condition_no": null,
-    "x": 85,
-    "y": 70
-  },
-  {
-    "combo_id": "C001",
-    "slot_no": 6,
-    "position": "DM",
-    "position_place": "Right",
-    "condition_no": null,
-    "x": 60,
     "y": 60
   },
   {
     "combo_id": "C001",
+    "slot_no": 5,
+    "position": "RB",
+    "position_place": null,
+    "condition_no": null,
+    "x": 85,
+    "y": 60
+  },
+  {
+    "combo_id": "C001",
+    "slot_no": 6,
+    "position": "DM",
+    "position_place": "Right",
+    "condition_no": null,
+    "x": 60,
+    "y": 50
+  },
+  {
+    "combo_id": "C001",
     "slot_no": 7,
     "position": "DM",
     "position_place": "Left",
     "condition_no": 1,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C001",
@@ -69,7 +69,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C001",
@@ -78,7 +78,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C001",
@@ -86,8 +86,8 @@
     "position": "CF",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C001",
@@ -95,8 +95,8 @@
     "position": "CF",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C002",
@@ -114,7 +114,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C002",
@@ -123,7 +123,7 @@
     "position_place": "Center",
     "condition_no": null,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C002",
@@ -132,7 +132,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C002",
@@ -141,25 +141,25 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 60
-  },
-  {
-    "combo_id": "C002",
-    "slot_no": 6,
-    "position": "LM",
-    "position_place": null,
-    "condition_no": null,
-    "x": 15,
     "y": 50
   },
   {
     "combo_id": "C002",
+    "slot_no": 6,
+    "position": "LM",
+    "position_place": null,
+    "condition_no": null,
+    "x": 15,
+    "y": 40
+  },
+  {
+    "combo_id": "C002",
     "slot_no": 7,
     "position": "RM",
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C002",
@@ -168,7 +168,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C002",
@@ -177,7 +177,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C002",
@@ -185,8 +185,8 @@
     "position": "CF",
     "position_place": "Right",
     "condition_no": 1,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C002",
@@ -194,8 +194,8 @@
     "position": "CF",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C003",
@@ -213,7 +213,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C003",
@@ -222,7 +222,7 @@
     "position_place": "Center",
     "condition_no": null,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C003",
@@ -231,7 +231,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C003",
@@ -240,34 +240,34 @@
     "position_place": "Right",
     "condition_no": 1,
     "x": 60,
-    "y": 60
-  },
-  {
-    "combo_id": "C003",
-    "slot_no": 6,
-    "position": "DM",
-    "position_place": "Left",
-    "condition_no": null,
-    "x": 40,
-    "y": 60
-  },
-  {
-    "combo_id": "C003",
-    "slot_no": 7,
-    "position": "LM",
-    "position_place": null,
-    "condition_no": null,
-    "x": 15,
     "y": 50
   },
   {
     "combo_id": "C003",
+    "slot_no": 6,
+    "position": "DM",
+    "position_place": "Left",
+    "condition_no": null,
+    "x": 40,
+    "y": 50
+  },
+  {
+    "combo_id": "C003",
+    "slot_no": 7,
+    "position": "LM",
+    "position_place": null,
+    "condition_no": null,
+    "x": 15,
+    "y": 40
+  },
+  {
+    "combo_id": "C003",
     "slot_no": 8,
     "position": "RM",
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C003",
@@ -276,7 +276,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C003",
@@ -285,7 +285,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C003",
@@ -294,7 +294,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C004",
@@ -311,8 +311,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C004",
@@ -320,8 +320,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C004",
@@ -330,7 +330,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C004",
@@ -339,7 +339,7 @@
     "position_place": null,
     "condition_no": 1,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C004",
@@ -348,7 +348,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C004",
@@ -357,7 +357,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C004",
@@ -366,7 +366,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C004",
@@ -375,7 +375,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C004",
@@ -384,7 +384,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C004",
@@ -393,7 +393,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C005",
@@ -410,8 +410,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C005",
@@ -419,8 +419,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C005",
@@ -429,7 +429,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C005",
@@ -438,7 +438,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C005",
@@ -447,7 +447,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C005",
@@ -456,7 +456,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C005",
@@ -465,7 +465,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C005",
@@ -474,7 +474,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C005",
@@ -483,7 +483,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C005",
@@ -492,7 +492,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C006",
@@ -509,8 +509,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C006",
@@ -518,8 +518,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C006",
@@ -528,7 +528,7 @@
     "position_place": null,
     "condition_no": 1,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C006",
@@ -537,7 +537,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C006",
@@ -546,7 +546,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C006",
@@ -555,7 +555,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C006",
@@ -564,7 +564,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C006",
@@ -573,7 +573,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C006",
@@ -581,8 +581,8 @@
     "position": "CF",
     "position_place": null,
     "condition_no": null,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C006",
@@ -590,8 +590,8 @@
     "position": "CF",
     "position_place": null,
     "condition_no": null,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C007",
@@ -608,8 +608,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C007",
@@ -617,8 +617,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C007",
@@ -627,7 +627,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C007",
@@ -636,7 +636,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C007",
@@ -645,7 +645,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C007",
@@ -654,7 +654,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C007",
@@ -663,7 +663,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C007",
@@ -672,7 +672,7 @@
     "position_place": "Left",
     "condition_no": 1,
     "x": 40,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C007",
@@ -680,8 +680,8 @@
     "position": "CF",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C007",
@@ -689,8 +689,8 @@
     "position": "CF",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C008",
@@ -707,8 +707,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C008",
@@ -716,8 +716,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C008",
@@ -726,7 +726,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C008",
@@ -735,7 +735,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C008",
@@ -744,7 +744,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C008",
@@ -753,7 +753,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C008",
@@ -762,7 +762,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C008",
@@ -771,7 +771,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C008",
@@ -780,7 +780,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C008",
@@ -789,7 +789,7 @@
     "position_place": null,
     "condition_no": 1,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C009",
@@ -807,7 +807,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C009",
@@ -816,7 +816,7 @@
     "position_place": "Center",
     "condition_no": null,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C009",
@@ -825,7 +825,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C009",
@@ -834,25 +834,25 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 60
-  },
-  {
-    "combo_id": "C009",
-    "slot_no": 6,
-    "position": "LM",
-    "position_place": null,
-    "condition_no": null,
-    "x": 15,
     "y": 50
   },
   {
     "combo_id": "C009",
+    "slot_no": 6,
+    "position": "LM",
+    "position_place": null,
+    "condition_no": null,
+    "x": 15,
+    "y": 40
+  },
+  {
+    "combo_id": "C009",
     "slot_no": 7,
     "position": "RM",
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C009",
@@ -861,7 +861,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C009",
@@ -870,7 +870,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C009",
@@ -879,7 +879,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C009",
@@ -888,7 +888,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C010",
@@ -906,7 +906,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C010",
@@ -915,7 +915,7 @@
     "position_place": "Center",
     "condition_no": null,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C010",
@@ -924,7 +924,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C010",
@@ -933,7 +933,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C010",
@@ -942,7 +942,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C010",
@@ -951,7 +951,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C010",
@@ -960,97 +960,97 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
+    "y": 40
+  },
+  {
+    "combo_id": "C010",
+    "slot_no": 9,
+    "position": "AM",
+    "position_place": null,
+    "condition_no": null,
+    "x": 50,
+    "y": 30
+  },
+  {
+    "combo_id": "C010",
+    "slot_no": 10,
+    "position": "CF",
+    "position_place": "Right",
+    "condition_no": 1,
+    "x": 65,
+    "y": 8
+  },
+  {
+    "combo_id": "C010",
+    "slot_no": 11,
+    "position": "CF",
+    "position_place": "Left",
+    "condition_no": null,
+    "x": 35,
+    "y": 8
+  },
+  {
+    "combo_id": "C011",
+    "slot_no": 1,
+    "position": "GK",
+    "position_place": null,
+    "condition_no": null,
+    "x": 50,
+    "y": 92
+  },
+  {
+    "combo_id": "C011",
+    "slot_no": 2,
+    "position": "CB",
+    "position_place": "Right",
+    "condition_no": null,
+    "x": 65,
+    "y": 75
+  },
+  {
+    "combo_id": "C011",
+    "slot_no": 3,
+    "position": "CB",
+    "position_place": "Left",
+    "condition_no": null,
+    "x": 35,
+    "y": 75
+  },
+  {
+    "combo_id": "C011",
+    "slot_no": 4,
+    "position": "LB",
+    "position_place": null,
+    "condition_no": null,
+    "x": 15,
+    "y": 60
+  },
+  {
+    "combo_id": "C011",
+    "slot_no": 5,
+    "position": "RB",
+    "position_place": null,
+    "condition_no": null,
+    "x": 85,
+    "y": 60
+  },
+  {
+    "combo_id": "C011",
+    "slot_no": 6,
+    "position": "DM",
+    "position_place": "Right",
+    "condition_no": null,
+    "x": 70,
     "y": 50
   },
   {
-    "combo_id": "C010",
-    "slot_no": 9,
-    "position": "AM",
-    "position_place": null,
-    "condition_no": null,
-    "x": 50,
-    "y": 40
-  },
-  {
-    "combo_id": "C010",
-    "slot_no": 10,
-    "position": "CF",
-    "position_place": "Right",
-    "condition_no": 1,
-    "x": 60,
-    "y": 18
-  },
-  {
-    "combo_id": "C010",
-    "slot_no": 11,
-    "position": "CF",
-    "position_place": "Left",
-    "condition_no": null,
-    "x": 40,
-    "y": 18
-  },
-  {
-    "combo_id": "C011",
-    "slot_no": 1,
-    "position": "GK",
-    "position_place": null,
-    "condition_no": null,
-    "x": 50,
-    "y": 92
-  },
-  {
-    "combo_id": "C011",
-    "slot_no": 2,
-    "position": "CB",
-    "position_place": "Right",
-    "condition_no": null,
-    "x": 60,
-    "y": 80
-  },
-  {
-    "combo_id": "C011",
-    "slot_no": 3,
-    "position": "CB",
-    "position_place": "Left",
-    "condition_no": null,
-    "x": 40,
-    "y": 80
-  },
-  {
-    "combo_id": "C011",
-    "slot_no": 4,
-    "position": "LB",
-    "position_place": null,
-    "condition_no": null,
-    "x": 15,
-    "y": 70
-  },
-  {
-    "combo_id": "C011",
-    "slot_no": 5,
-    "position": "RB",
-    "position_place": null,
-    "condition_no": null,
-    "x": 85,
-    "y": 70
-  },
-  {
-    "combo_id": "C011",
-    "slot_no": 6,
-    "position": "DM",
-    "position_place": "Right",
-    "condition_no": null,
-    "x": 70,
-    "y": 60
-  },
-  {
     "combo_id": "C011",
     "slot_no": 7,
     "position": "DM",
     "position_place": "Center",
     "condition_no": 1,
     "x": 50,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C011",
@@ -1059,7 +1059,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C011",
@@ -1068,7 +1068,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C011",
@@ -1076,8 +1076,8 @@
     "position": "CF",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C011",
@@ -1085,8 +1085,8 @@
     "position": "CF",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C012",
@@ -1104,7 +1104,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C012",
@@ -1113,7 +1113,7 @@
     "position_place": "Center",
     "condition_no": 1,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C012",
@@ -1122,7 +1122,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C012",
@@ -1131,7 +1131,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C012",
@@ -1140,7 +1140,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C012",
@@ -1149,7 +1149,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C012",
@@ -1158,7 +1158,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C012",
@@ -1167,7 +1167,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C012",
@@ -1176,7 +1176,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C012",
@@ -1185,7 +1185,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C013",
@@ -1203,7 +1203,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C013",
@@ -1212,7 +1212,7 @@
     "position_place": "Center",
     "condition_no": 1,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C013",
@@ -1221,7 +1221,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C013",
@@ -1230,7 +1230,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 50,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C013",
@@ -1239,7 +1239,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C013",
@@ -1248,7 +1248,7 @@
     "position_place": null,
     "condition_no": 2,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C013",
@@ -1257,7 +1257,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C013",
@@ -1266,7 +1266,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C013",
@@ -1275,7 +1275,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C013",
@@ -1284,7 +1284,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C014",
@@ -1302,7 +1302,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C014",
@@ -1311,7 +1311,7 @@
     "position_place": "Center",
     "condition_no": null,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C014",
@@ -1320,7 +1320,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C014",
@@ -1329,7 +1329,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C014",
@@ -1338,7 +1338,7 @@
     "position_place": "Left",
     "condition_no": 1,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C014",
@@ -1347,7 +1347,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C014",
@@ -1356,7 +1356,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C014",
@@ -1365,7 +1365,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C014",
@@ -1373,8 +1373,8 @@
     "position": "CF",
     "position_place": "Right",
     "condition_no": 2,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C014",
@@ -1382,8 +1382,8 @@
     "position": "CF",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C015",
@@ -1400,8 +1400,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": 1,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C015",
@@ -1409,8 +1409,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C015",
@@ -1419,7 +1419,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C015",
@@ -1428,7 +1428,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C015",
@@ -1437,7 +1437,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C015",
@@ -1446,7 +1446,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C015",
@@ -1455,7 +1455,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C015",
@@ -1464,7 +1464,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C015",
@@ -1473,7 +1473,7 @@
     "position_place": null,
     "condition_no": 2,
     "x": 85,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C015",
@@ -1482,7 +1482,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C016",
@@ -1499,8 +1499,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C016",
@@ -1508,8 +1508,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C016",
@@ -1518,7 +1518,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C016",
@@ -1527,7 +1527,7 @@
     "position_place": null,
     "condition_no": 2,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C016",
@@ -1536,7 +1536,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C016",
@@ -1545,7 +1545,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C016",
@@ -1554,7 +1554,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C016",
@@ -1563,7 +1563,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C016",
@@ -1571,8 +1571,8 @@
     "position": "CF",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C016",
@@ -1580,8 +1580,8 @@
     "position": "CF",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C017",
@@ -1598,8 +1598,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C017",
@@ -1607,8 +1607,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C017",
@@ -1617,7 +1617,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C017",
@@ -1626,7 +1626,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C017",
@@ -1635,7 +1635,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C017",
@@ -1644,7 +1644,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C017",
@@ -1653,7 +1653,7 @@
     "position_place": "Center",
     "condition_no": 1,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C017",
@@ -1662,7 +1662,7 @@
     "position_place": "Left",
     "condition_no": 2,
     "x": 30,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C017",
@@ -1670,8 +1670,8 @@
     "position": "CF",
     "position_place": null,
     "condition_no": null,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C017",
@@ -1679,8 +1679,8 @@
     "position": "CF",
     "position_place": null,
     "condition_no": null,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C018",
@@ -1697,8 +1697,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": 1,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C018",
@@ -1706,8 +1706,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C018",
@@ -1716,7 +1716,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C018",
@@ -1725,7 +1725,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C018",
@@ -1734,7 +1734,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C018",
@@ -1743,7 +1743,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C018",
@@ -1752,7 +1752,7 @@
     "position_place": null,
     "condition_no": 2,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C018",
@@ -1761,97 +1761,97 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
+    "y": 40
+  },
+  {
+    "combo_id": "C018",
+    "slot_no": 10,
+    "position": "AM",
+    "position_place": null,
+    "condition_no": null,
+    "x": 50,
+    "y": 30
+  },
+  {
+    "combo_id": "C018",
+    "slot_no": 11,
+    "position": "CF",
+    "position_place": null,
+    "condition_no": null,
+    "x": 50,
+    "y": 8
+  },
+  {
+    "combo_id": "C019",
+    "slot_no": 1,
+    "position": "GK",
+    "position_place": null,
+    "condition_no": null,
+    "x": 50,
+    "y": 92
+  },
+  {
+    "combo_id": "C019",
+    "slot_no": 2,
+    "position": "CB",
+    "position_place": "Right",
+    "condition_no": null,
+    "x": 70,
+    "y": 75
+  },
+  {
+    "combo_id": "C019",
+    "slot_no": 3,
+    "position": "CB",
+    "position_place": "Center",
+    "condition_no": 1,
+    "x": 50,
+    "y": 75
+  },
+  {
+    "combo_id": "C019",
+    "slot_no": 4,
+    "position": "CB",
+    "position_place": "Left",
+    "condition_no": null,
+    "x": 30,
+    "y": 75
+  },
+  {
+    "combo_id": "C019",
+    "slot_no": 5,
+    "position": "LB",
+    "position_place": null,
+    "condition_no": null,
+    "x": 15,
+    "y": 60
+  },
+  {
+    "combo_id": "C019",
+    "slot_no": 6,
+    "position": "RB",
+    "position_place": null,
+    "condition_no": null,
+    "x": 85,
+    "y": 60
+  },
+  {
+    "combo_id": "C019",
+    "slot_no": 7,
+    "position": "DM",
+    "position_place": null,
+    "condition_no": null,
+    "x": 50,
     "y": 50
   },
   {
-    "combo_id": "C018",
-    "slot_no": 10,
-    "position": "AM",
-    "position_place": null,
-    "condition_no": null,
-    "x": 50,
-    "y": 40
-  },
-  {
-    "combo_id": "C018",
-    "slot_no": 11,
-    "position": "CF",
-    "position_place": null,
-    "condition_no": null,
-    "x": 50,
-    "y": 18
-  },
-  {
-    "combo_id": "C019",
-    "slot_no": 1,
-    "position": "GK",
-    "position_place": null,
-    "condition_no": null,
-    "x": 50,
-    "y": 92
-  },
-  {
-    "combo_id": "C019",
-    "slot_no": 2,
-    "position": "CB",
-    "position_place": "Right",
-    "condition_no": null,
-    "x": 70,
-    "y": 80
-  },
-  {
-    "combo_id": "C019",
-    "slot_no": 3,
-    "position": "CB",
-    "position_place": "Center",
-    "condition_no": 1,
-    "x": 50,
-    "y": 80
-  },
-  {
-    "combo_id": "C019",
-    "slot_no": 4,
-    "position": "CB",
-    "position_place": "Left",
-    "condition_no": null,
-    "x": 30,
-    "y": 80
-  },
-  {
-    "combo_id": "C019",
-    "slot_no": 5,
-    "position": "LB",
-    "position_place": null,
-    "condition_no": null,
-    "x": 15,
-    "y": 70
-  },
-  {
-    "combo_id": "C019",
-    "slot_no": 6,
-    "position": "RB",
-    "position_place": null,
-    "condition_no": null,
-    "x": 85,
-    "y": 70
-  },
-  {
-    "combo_id": "C019",
-    "slot_no": 7,
-    "position": "DM",
-    "position_place": null,
-    "condition_no": null,
-    "x": 50,
-    "y": 60
-  },
-  {
     "combo_id": "C019",
     "slot_no": 8,
     "position": "AM",
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C019",
@@ -1860,7 +1860,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C019",
@@ -1868,8 +1868,8 @@
     "position": "CF",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C019",
@@ -1877,8 +1877,8 @@
     "position": "CF",
     "position_place": "Left",
     "condition_no": 2,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C020",
@@ -1896,7 +1896,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C020",
@@ -1905,7 +1905,7 @@
     "position_place": "Center",
     "condition_no": null,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C020",
@@ -1914,7 +1914,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C020",
@@ -1923,7 +1923,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C020",
@@ -1932,7 +1932,7 @@
     "position_place": null,
     "condition_no": 1,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C020",
@@ -1941,7 +1941,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C020",
@@ -1950,7 +1950,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C020",
@@ -1959,7 +1959,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C020",
@@ -1968,7 +1968,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C020",
@@ -1977,7 +1977,7 @@
     "position_place": null,
     "condition_no": 2,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C021",
@@ -1994,8 +1994,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C021",
@@ -2003,8 +2003,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C021",
@@ -2013,7 +2013,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C021",
@@ -2022,7 +2022,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C021",
@@ -2031,7 +2031,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C021",
@@ -2040,7 +2040,7 @@
     "position_place": "Left",
     "condition_no": 2,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C021",
@@ -2049,7 +2049,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C021",
@@ -2058,7 +2058,7 @@
     "position_place": null,
     "condition_no": 3,
     "x": 15,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C021",
@@ -2067,7 +2067,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C021",
@@ -2076,7 +2076,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C022",
@@ -2094,7 +2094,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C022",
@@ -2103,7 +2103,7 @@
     "position_place": "Center",
     "condition_no": null,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C022",
@@ -2112,7 +2112,7 @@
     "position_place": "Left",
     "condition_no": 1,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C022",
@@ -2121,7 +2121,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C022",
@@ -2130,7 +2130,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C022",
@@ -2139,7 +2139,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C022",
@@ -2148,7 +2148,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C022",
@@ -2157,7 +2157,7 @@
     "position_place": null,
     "condition_no": 2,
     "x": 15,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C022",
@@ -2166,7 +2166,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C022",
@@ -2175,7 +2175,7 @@
     "position_place": null,
     "condition_no": 3,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C023",
@@ -2192,8 +2192,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C023",
@@ -2201,8 +2201,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C023",
@@ -2211,7 +2211,7 @@
     "position_place": null,
     "condition_no": 1,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C023",
@@ -2220,7 +2220,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C023",
@@ -2229,7 +2229,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C023",
@@ -2238,7 +2238,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C023",
@@ -2247,7 +2247,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C023",
@@ -2256,7 +2256,7 @@
     "position_place": "Right",
     "condition_no": 2,
     "x": 60,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C023",
@@ -2265,7 +2265,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C023",
@@ -2274,7 +2274,7 @@
     "position_place": null,
     "condition_no": 3,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C024",
@@ -2292,7 +2292,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C024",
@@ -2301,7 +2301,7 @@
     "position_place": "Center",
     "condition_no": null,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C024",
@@ -2310,7 +2310,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C024",
@@ -2319,7 +2319,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C024",
@@ -2328,7 +2328,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C024",
@@ -2337,7 +2337,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C024",
@@ -2346,7 +2346,7 @@
     "position_place": "Left",
     "condition_no": 1,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C024",
@@ -2355,7 +2355,7 @@
     "position_place": null,
     "condition_no": 2,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C024",
@@ -2363,8 +2363,8 @@
     "position": "CF",
     "position_place": "Right",
     "condition_no": 3,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C024",
@@ -2372,8 +2372,8 @@
     "position": "CF",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C025",
@@ -2390,8 +2390,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C025",
@@ -2399,8 +2399,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C025",
@@ -2409,7 +2409,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C025",
@@ -2418,7 +2418,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C025",
@@ -2427,7 +2427,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C025",
@@ -2436,7 +2436,7 @@
     "position_place": "Right",
     "condition_no": 2,
     "x": 70,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C025",
@@ -2445,7 +2445,7 @@
     "position_place": "Center",
     "condition_no": null,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C025",
@@ -2454,7 +2454,7 @@
     "position_place": "Left",
     "condition_no": 1,
     "x": 30,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C025",
@@ -2462,8 +2462,8 @@
     "position": "CF",
     "position_place": "Right",
     "condition_no": null,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C025",
@@ -2471,8 +2471,8 @@
     "position": "CF",
     "position_place": "Left",
     "condition_no": 3,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C026",
@@ -2490,7 +2490,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C026",
@@ -2499,7 +2499,7 @@
     "position_place": "Center",
     "condition_no": 1,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C026",
@@ -2508,7 +2508,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C026",
@@ -2517,7 +2517,7 @@
     "position_place": "Right",
     "condition_no": 3,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C026",
@@ -2526,7 +2526,7 @@
     "position_place": "Left",
     "condition_no": 2,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C026",
@@ -2535,7 +2535,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C026",
@@ -2544,7 +2544,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C026",
@@ -2553,7 +2553,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C026",
@@ -2562,7 +2562,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C026",
@@ -2571,7 +2571,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C027",
@@ -2588,8 +2588,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C027",
@@ -2597,8 +2597,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C027",
@@ -2607,7 +2607,7 @@
     "position_place": null,
     "condition_no": 1,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C027",
@@ -2616,7 +2616,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C027",
@@ -2625,7 +2625,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C027",
@@ -2634,7 +2634,7 @@
     "position_place": "Center",
     "condition_no": null,
     "x": 50,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C027",
@@ -2643,7 +2643,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C027",
@@ -2652,7 +2652,7 @@
     "position_place": null,
     "condition_no": 2,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C027",
@@ -2660,8 +2660,8 @@
     "position": "CF",
     "position_place": "Right",
     "condition_no": 3,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C027",
@@ -2669,8 +2669,8 @@
     "position": "CF",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C028",
@@ -2688,7 +2688,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C028",
@@ -2697,7 +2697,7 @@
     "position_place": "Center",
     "condition_no": 1,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C028",
@@ -2706,7 +2706,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C028",
@@ -2715,7 +2715,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C028",
@@ -2724,7 +2724,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C028",
@@ -2733,7 +2733,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C028",
@@ -2742,7 +2742,7 @@
     "position_place": null,
     "condition_no": 2,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C028",
@@ -2751,7 +2751,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C028",
@@ -2759,8 +2759,8 @@
     "position": "CF",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C028",
@@ -2768,8 +2768,8 @@
     "position": "CF",
     "position_place": "Left",
     "condition_no": 3,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C029",
@@ -2787,7 +2787,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C029",
@@ -2796,7 +2796,7 @@
     "position_place": "Center",
     "condition_no": null,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C029",
@@ -2805,7 +2805,7 @@
     "position_place": "Left",
     "condition_no": 1,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C029",
@@ -2814,7 +2814,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C029",
@@ -2823,7 +2823,7 @@
     "position_place": null,
     "condition_no": 2,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C029",
@@ -2832,7 +2832,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C029",
@@ -2841,7 +2841,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C029",
@@ -2850,7 +2850,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C029",
@@ -2859,7 +2859,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C029",
@@ -2868,7 +2868,7 @@
     "position_place": null,
     "condition_no": 3,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C030",
@@ -2885,8 +2885,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C030",
@@ -2894,8 +2894,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C030",
@@ -2904,7 +2904,7 @@
     "position_place": null,
     "condition_no": 1,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C030",
@@ -2913,7 +2913,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C030",
@@ -2922,7 +2922,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C030",
@@ -2931,7 +2931,7 @@
     "position_place": null,
     "condition_no": 2,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C030",
@@ -2940,7 +2940,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C030",
@@ -2949,7 +2949,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C030",
@@ -2957,8 +2957,8 @@
     "position": "CF",
     "position_place": "Right",
     "condition_no": 3,
-    "x": 60,
-    "y": 18
+    "x": 65,
+    "y": 8
   },
   {
     "combo_id": "C030",
@@ -2966,8 +2966,8 @@
     "position": "CF",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 18
+    "x": 35,
+    "y": 8
   },
   {
     "combo_id": "C031",
@@ -2985,7 +2985,7 @@
     "position_place": "Right",
     "condition_no": 1,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C031",
@@ -2994,7 +2994,7 @@
     "position_place": "Center",
     "condition_no": null,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C031",
@@ -3003,7 +3003,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C031",
@@ -3012,7 +3012,7 @@
     "position_place": "Right",
     "condition_no": 2,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C031",
@@ -3021,7 +3021,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C031",
@@ -3030,7 +3030,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C031",
@@ -3039,7 +3039,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C031",
@@ -3048,7 +3048,7 @@
     "position_place": null,
     "condition_no": 3,
     "x": 15,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C031",
@@ -3057,7 +3057,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C031",
@@ -3066,7 +3066,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C032",
@@ -3083,8 +3083,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C032",
@@ -3092,8 +3092,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": null,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C032",
@@ -3102,7 +3102,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C032",
@@ -3111,7 +3111,7 @@
     "position_place": null,
     "condition_no": 1,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C032",
@@ -3120,7 +3120,7 @@
     "position_place": "Right",
     "condition_no": 2,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C032",
@@ -3129,7 +3129,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C032",
@@ -3138,7 +3138,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C032",
@@ -3147,7 +3147,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C032",
@@ -3156,7 +3156,7 @@
     "position_place": null,
     "condition_no": 3,
     "x": 85,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C032",
@@ -3165,7 +3165,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C033",
@@ -3183,7 +3183,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C033",
@@ -3192,7 +3192,7 @@
     "position_place": "Center",
     "condition_no": null,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C033",
@@ -3201,7 +3201,7 @@
     "position_place": "Left",
     "condition_no": 2,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C033",
@@ -3210,7 +3210,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C033",
@@ -3219,7 +3219,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C033",
@@ -3228,7 +3228,7 @@
     "position_place": null,
     "condition_no": 3,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C033",
@@ -3237,7 +3237,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C033",
@@ -3246,7 +3246,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C033",
@@ -3255,7 +3255,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C033",
@@ -3264,7 +3264,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C034",
@@ -3281,8 +3281,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C034",
@@ -3290,8 +3290,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": 2,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C034",
@@ -3300,7 +3300,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C034",
@@ -3309,7 +3309,7 @@
     "position_place": null,
     "condition_no": 3,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C034",
@@ -3318,7 +3318,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C034",
@@ -3327,7 +3327,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C034",
@@ -3336,7 +3336,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C034",
@@ -3345,7 +3345,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C034",
@@ -3354,7 +3354,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C034",
@@ -3363,7 +3363,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C035",
@@ -3380,8 +3380,8 @@
     "position": "CB",
     "position_place": "Right",
     "condition_no": null,
-    "x": 60,
-    "y": 80
+    "x": 65,
+    "y": 75
   },
   {
     "combo_id": "C035",
@@ -3389,8 +3389,8 @@
     "position": "CB",
     "position_place": "Left",
     "condition_no": 1,
-    "x": 40,
-    "y": 80
+    "x": 35,
+    "y": 75
   },
   {
     "combo_id": "C035",
@@ -3399,7 +3399,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C035",
@@ -3408,7 +3408,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 70
+    "y": 60
   },
   {
     "combo_id": "C035",
@@ -3417,7 +3417,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C035",
@@ -3426,7 +3426,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C035",
@@ -3435,7 +3435,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 15,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C035",
@@ -3444,7 +3444,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 50
+    "y": 40
   },
   {
     "combo_id": "C035",
@@ -3453,7 +3453,7 @@
     "position_place": null,
     "condition_no": 2,
     "x": 50,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C035",
@@ -3462,7 +3462,7 @@
     "position_place": null,
     "condition_no": 3,
     "x": 50,
-    "y": 18
+    "y": 8
   },
   {
     "combo_id": "C036",
@@ -3480,7 +3480,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 70,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C036",
@@ -3489,7 +3489,7 @@
     "position_place": "Center",
     "condition_no": 1,
     "x": 50,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C036",
@@ -3498,7 +3498,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 30,
-    "y": 80
+    "y": 75
   },
   {
     "combo_id": "C036",
@@ -3507,7 +3507,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C036",
@@ -3516,7 +3516,7 @@
     "position_place": "Left",
     "condition_no": null,
     "x": 40,
-    "y": 60
+    "y": 50
   },
   {
     "combo_id": "C036",
@@ -3525,7 +3525,7 @@
     "position_place": "Right",
     "condition_no": null,
     "x": 60,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C036",
@@ -3534,7 +3534,7 @@
     "position_place": "Left",
     "condition_no": 2,
     "x": 40,
-    "y": 40
+    "y": 30
   },
   {
     "combo_id": "C036",
@@ -3543,7 +3543,7 @@
     "position_place": null,
     "condition_no": 3,
     "x": 15,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C036",
@@ -3552,7 +3552,7 @@
     "position_place": null,
     "condition_no": null,
     "x": 85,
-    "y": 22
+    "y": 18
   },
   {
     "combo_id": "C036",
@@ -3561,6 +3561,6 @@
     "position_place": null,
     "condition_no": null,
     "x": 50,
-    "y": 18
+    "y": 8
   }
 ]
