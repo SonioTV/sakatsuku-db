@@ -696,7 +696,8 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
       slotNo:  x?.slotNo  ?? x?.slot_no,
       position: x?.position,
       x: x?.x,
-      y: x?.y
+      y: x?.y,
+      conditionNo: x?.conditionNo ?? x?.condition_no
     }))
     .filter(x=>x && x.comboId && x.slotNo && x.position);
 
@@ -882,11 +883,20 @@ function simulate(){
   const reqMap = buildRequirementMap(combo);
 
   // greedy pick (unique players)
-  const pickBest = (available, slotPos, forcePol)=>{
+  const pickBest = (available, slot, forcePol)=>{
     let best = null;
     let bestVal = -Infinity;
+    const slotPos = String(slot?.position ?? "");
+    const slotKey = String(slot?.slotNo ?? slot?.slot_no ?? "");
+    const reqs = (reqMap.bySlot && slotKey) ? (reqMap.bySlot.get(slotKey) || []) : [];
     for(const p of available){
       if(!matchPlayerForSlot(p, combo, slotPos, reqMap, "", forcePol, requiredAcq)) continue;
+      // If this slot is part of combo_requirements, enforce exact requirement match (playStyle & Lv)
+      if(reqs.length){
+        const ps = String(p?.playStyle ?? "");
+        const lv = Number(p?.playStyleLv ?? 0);
+        if(!reqs.some(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0))) continue;
+      }
       const v = Number(p?.[mode] ?? -Infinity);
       if(v > bestVal){
         bestVal = v;
@@ -899,11 +909,23 @@ function simulate(){
   const highlightOK = (player, slot)=>{
     if(!slot) return false;
     const slotKey = String(slot.slotNo ?? slot.slot_no ?? "");
-    const reqs = (slotKey && reqMap.bySlot.get(slotKey)) ? reqMap.bySlot.get(slotKey) : (reqMap.byPos.get(slot.position) || []);
+
+    // slotNo 指定要件が1つでもある場合は、slotNo一致のスロットのみ判定対象にする
+    const hasSlotReq = (reqMap.bySlot && reqMap.bySlot.size > 0);
+    if(hasSlotReq){
+      const reqs = reqMap.bySlot.get(slotKey) || [];
+      if(!reqs.length) return false;
+      const ps = String(player?.playStyle ?? "");
+      const lv = Number(player?.playStyleLv ?? 0);
+      return reqs.some(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
+    }
+
+    // slotNo 指定が無いコンボのみ、従来通り position 要件で判定
+    const reqs = (reqMap.byPos.get(slot.position) || []);
     if(!reqs || !reqs.length) return false;
     const ps = String(player?.playStyle ?? "");
     const lv = Number(player?.playStyleLv ?? 0);
-    return reqs.some(r=>String(r.playStyle??"")===ps && lv >= Number(r.playStyleLv ?? 0));
+    return reqs.some(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
   };
 
   const makeCell = (player, slot)=>{
@@ -924,7 +946,7 @@ function simulate(){
   const availA = [...PLAYERS];
   const picksA = [];
   for(const s of slots){
-    const p = pickBest(availA, s.position, forcedPolicy || "");
+    const p = pickBest(availA, s, forcedPolicy || "");
     picksA.push({slot:s, player:p});
     if(p){
       const idx = availA.indexOf(p);
@@ -936,7 +958,7 @@ function simulate(){
   const availB = [...PLAYERS];
   const picksB = [];
   for(const s of slots){
-    const p = pickBest(availB, s.position, "");
+    const p = pickBest(availB, s, "");
     picksB.push({slot:s, player:p});
     if(p){
       const idx = availB.indexOf(p);
