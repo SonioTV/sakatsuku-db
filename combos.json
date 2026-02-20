@@ -4,7 +4,13 @@
     "name": "4-4-2Bポゼッションスタイル",
     "formation": "4-4-2B",
     "rank": "銅",
+    "combo_policys": [
+      "ポゼッション"
+    ],
     "requiredPlayers": 1,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "ジャンプ、走力が30%アップ",
     "effects": [
       {
@@ -16,29 +22,29 @@
         "value": 30
       }
     ],
-    "combo_policys": [
-      "ポゼッション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 7,
         "position": "DM",
+        "positionPlace": "Left",
         "playStyle": "パサー",
         "playStyleLv": 1,
-        "policy": "ポゼッション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C002",
     "name": "3-5-2Aポゼッションスタイル",
     "formation": "3-5-2A",
     "rank": "銅",
+    "combo_policys": [
+      "ポゼッション"
+    ],
     "requiredPlayers": 1,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "ロングパス、パスカットが30%アップ",
     "effects": [
       {
@@ -50,29 +56,29 @@
         "value": 30
       }
     ],
-    "combo_policys": [
-      "ポゼッション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 10,
         "position": "CF",
+        "positionPlace": "Right",
         "playStyle": "ラインブレーカー",
         "playStyleLv": 1,
-        "policy": "ポゼッション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C003",
     "name": "3-6-1Aカウンタースタイル",
     "formation": "3-6-1A",
     "rank": "銅",
+    "combo_policys": [
+      "カウンター"
+    ],
     "requiredPlayers": 1,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "キープ力、コンタクトが30%アップ",
     "effects": [
       {
@@ -84,29 +90,29 @@
         "value": 30
       }
     ],
-    "combo_policys": [
-      "カウンター"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 5,
         "position": "DM",
+        "positionPlace": "Right",
         "playStyle": "ハードマーカー",
         "playStyleLv": 1,
-        "policy": "カウンター",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C004",
     "name": "4-3-3Aカウンタースタイル",
     "formation": "4-3-3A",
     "rank": "銅",
+    "combo_policys": [
+      "カウンター"
+    ],
     "requiredPlayers": 1,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "パスカット、コンタクトが30%アップ",
     "effects": [
       {
@@ -118,29 +124,29 @@
         "value": 30
       }
     ],
-    "combo_policys": [
-      "カウンター"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 5,
         "position": "RB",
+        "positionPlace": null,
         "playStyle": "攻撃的FB",
         "playStyleLv": 1,
-        "policy": "カウンター",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C005",
     "name": "4-3-3Bリアクションスタイル",
     "formation": "4-3-3B",
     "rank": "銅",
+    "combo_policys": [
+      "リアクション"
+    ],
     "requiredPlayers": 1,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "キック精度、コンタクトが30%アップ",
     "effects": [
       {
@@ -152,29 +158,29 @@
         "value": 30
       }
     ],
-    "combo_policys": [
-      "リアクション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 1,
         "position": "GK",
+        "positionPlace": null,
         "playStyle": "オーソドックスGK",
         "playStyleLv": 1,
-        "policy": "リアクション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C006",
     "name": "4-4-2Bムービングスタイル",
     "formation": "4-4-2B",
     "rank": "銅",
+    "combo_policys": [
+      "ムービング"
+    ],
     "requiredPlayers": 1,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "ロングパス、キック精度が30%アップ",
     "effects": [
       {
@@ -186,29 +192,29 @@
         "value": 30
       }
     ],
-    "combo_policys": [
-      "ムービング"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 4,
         "position": "LB",
+        "positionPlace": null,
         "playStyle": "守備的FB",
         "playStyleLv": 1,
-        "policy": "ムービング",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C007",
     "name": "4-4-2Cムービングスタイル",
     "formation": "4-4-2C",
     "rank": "銅",
+    "combo_policys": [
+      "ムービング"
+    ],
     "requiredPlayers": 1,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "ロングパス、キープ力が30%アップ",
     "effects": [
       {
@@ -220,29 +226,29 @@
         "value": 30
       }
     ],
-    "combo_policys": [
-      "ムービング"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 9,
         "position": "AM",
+        "positionPlace": "Left",
         "playStyle": "アタッカー",
         "playStyleLv": 1,
-        "policy": "ムービング",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C008",
     "name": "4-5-1Bリアクションスタイル",
     "formation": "4-5-1B",
     "rank": "銅",
+    "combo_policys": [
+      "リアクション"
+    ],
     "requiredPlayers": 1,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "パスカット、敏捷性が30%アップ",
     "effects": [
       {
@@ -254,29 +260,29 @@
         "value": 30
       }
     ],
-    "combo_policys": [
-      "リアクション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 11,
         "position": "CF",
+        "positionPlace": null,
         "playStyle": "ストライカー",
         "playStyleLv": 1,
-        "policy": "リアクション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C009",
     "name": "チームメッリ'97",
     "formation": "3-4-3A",
     "rank": "銅",
+    "combo_policys": [
+      "カウンター"
+    ],
     "requiredPlayers": 1,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "キック力、ロングパスが50%アップ",
     "effects": [
       {
@@ -288,29 +294,29 @@
         "value": 50
       }
     ],
-    "combo_policys": [
-      "カウンター"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 1,
         "position": "GK",
+        "positionPlace": null,
         "playStyle": "スイーパーGK",
         "playStyleLv": 1,
-        "policy": "カウンター",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C010",
     "name": "シュヴァルツ・ゲルベン'97",
     "formation": "3-5-2B",
     "rank": "銅",
+    "combo_policys": [
+      "ポゼッション"
+    ],
     "requiredPlayers": 1,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "冷静さ、マークが50%アップ",
     "effects": [
       {
@@ -322,29 +328,29 @@
         "value": 50
       }
     ],
-    "combo_policys": [
-      "ポゼッション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 10,
         "position": "CF",
+        "positionPlace": "Right",
         "playStyle": "ポストプレーヤー",
         "playStyleLv": 1,
-        "policy": "ポゼッション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C011",
     "name": "ディー・ヴェルフェ'09",
     "formation": "4-4-2D",
     "rank": "銅",
+    "combo_policys": [
+      "リアクション"
+    ],
     "requiredPlayers": 1,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "冷静さ、ボールタッチが50%アップ",
     "effects": [
       {
@@ -356,29 +362,29 @@
         "value": 50
       }
     ],
-    "combo_policys": [
-      "リアクション"
-    ],
     "combo_requirements": [
       {
-        "position": "AM",
+        "slotNo": 7,
+        "position": "DM",
+        "positionPlace": "Center",
         "playStyle": "セントラルMF",
         "playStyleLv": 1,
-        "policy": "リアクション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C012",
     "name": "ロス・グアラニエス'02",
     "formation": "5-4-1A",
     "rank": "銅",
+    "combo_policys": [
+      "ムービング"
+    ],
     "requiredPlayers": 1,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "キック力、マークが50%アップ",
     "effects": [
       {
@@ -390,29 +396,29 @@
         "value": 50
       }
     ],
-    "combo_policys": [
-      "ムービング"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 3,
         "position": "CB",
+        "positionPlace": "Center",
         "playStyle": "組立CB",
         "playStyleLv": 1,
-        "policy": "ムービング",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C013",
     "name": "太極戦士'02",
     "formation": "3-4-3A",
     "rank": "銀",
+    "combo_policys": [
+      "ポゼッション"
+    ],
     "requiredPlayers": 2,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "キック精度、キープ力、ジャンプが60%アップ",
     "effects": [
       {
@@ -428,37 +434,37 @@
         "value": 60
       }
     ],
-    "combo_policys": [
-      "ポゼッション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 3,
         "position": "CB",
+        "positionPlace": "Center",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 7,
         "position": "LM",
+        "positionPlace": null,
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C014",
     "name": "ダニッシュ・ダイナマイト'86",
     "formation": "3-5-2B",
     "rank": "銀",
+    "combo_policys": [
+      "ムービング"
+    ],
     "requiredPlayers": 2,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "突破力、セービング、ジャンプが60%アップ",
     "effects": [
       {
@@ -474,37 +480,37 @@
         "value": 60
       }
     ],
-    "combo_policys": [
-      "ムービング"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 6,
         "position": "DM",
+        "positionPlace": "Left",
         "playStyle": "ハードマーカー",
         "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 10,
         "position": "CF",
+        "positionPlace": "Right",
         "playStyle": "ラインブレーカー",
         "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C015",
     "name": "ディアブル・ルージュ'18",
     "formation": "4-3-3A",
     "rank": "銀",
+    "combo_policys": [
+      "ポゼッション"
+    ],
     "requiredPlayers": 2,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "キープ力、ジャンプ、スタミナが60%アップ",
     "effects": [
       {
@@ -520,37 +526,37 @@
         "value": 60
       }
     ],
-    "combo_policys": [
-      "ポゼッション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 2,
         "position": "CB",
+        "positionPlace": "Right",
         "playStyle": "組立CB",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 10,
         "position": "RW",
+        "positionPlace": null,
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C016",
     "name": "ロス・プロス’01",
     "formation": "4-4-2A",
     "rank": "銀",
+    "combo_policys": [
+      "カウンター"
+    ],
     "requiredPlayers": 2,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "突破力、キープ力、ジャンプが60%アップ",
     "effects": [
       {
@@ -566,37 +572,37 @@
         "value": 60
       }
     ],
-    "combo_policys": [
-      "カウンター"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 1,
         "position": "GK",
+        "positionPlace": null,
         "playStyle": "スイーパーGK",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 5,
         "position": "RB",
+        "positionPlace": null,
         "playStyle": "守備的FB",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C017",
     "name": "ラ・ブランキロハ'82",
     "formation": "4-4-2E",
     "rank": "銀",
+    "combo_policys": [
+      "カウンター"
+    ],
     "requiredPlayers": 2,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "突破力、セービング、コンタクトが60%アップ",
     "effects": [
       {
@@ -612,37 +618,37 @@
         "value": 60
       }
     ],
-    "combo_policys": [
-      "カウンター"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 8,
         "position": "AM",
+        "positionPlace": "Center",
         "playStyle": "アタッカー",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 9,
         "position": "AM",
+        "positionPlace": "Left",
         "playStyle": "パサー",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C018",
     "name": "アズーリ’06",
     "formation": "4-5-1B",
     "rank": "銀",
+    "combo_policys": [
+      "リアクション"
+    ],
     "requiredPlayers": 2,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "突破力、ジャンプ、敏捷性が60%アップ",
     "effects": [
       {
@@ -658,37 +664,37 @@
         "value": 60
       }
     ],
-    "combo_policys": [
-      "リアクション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 2,
         "position": "CB",
+        "positionPlace": "Right",
         "playStyle": "組立CB",
         "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 8,
         "position": "LM",
+        "positionPlace": null,
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C019",
     "name": "ヴァルデ・アマレーラ'02",
     "formation": "5-3-2A",
     "rank": "銀",
+    "combo_policys": [
+      "ムービング"
+    ],
     "requiredPlayers": 2,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "パスカット、ジャンプ、コンタクトが60%アップ",
     "effects": [
       {
@@ -704,37 +710,37 @@
         "value": 60
       }
     ],
-    "combo_policys": [
-      "ムービング"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 3,
         "position": "CB",
+        "positionPlace": "Center",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 11,
         "position": "CF",
+        "positionPlace": "Left",
         "playStyle": "ストライカー",
         "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C020",
     "name": "FCハリウッド'01",
     "formation": "5-4-1A",
     "rank": "銀",
+    "combo_policys": [
+      "リアクション"
+    ],
     "requiredPlayers": 2,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "キープ力、パスカット、コンタクトが60%アップ",
     "effects": [
       {
@@ -750,37 +756,37 @@
         "value": 60
       }
     ],
-    "combo_policys": [
-      "リアクション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 6,
         "position": "RB",
+        "positionPlace": null,
         "playStyle": "攻撃的FB",
         "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 11,
         "position": "CF",
+        "positionPlace": null,
         "playStyle": "ラインブレーカー",
         "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C021",
     "name": "レ・ルージュ・エ・ブラン'04",
     "formation": "4-3-3B",
     "rank": "銀",
+    "combo_policys": [
+      "ムービング"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "決定力、キープ力、パスカットが60%アップ",
     "effects": [
       {
@@ -796,45 +802,45 @@
         "value": 60
       }
     ],
-    "combo_policys": [
-      "ムービング"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 1,
         "position": "GK",
+        "positionPlace": null,
         "playStyle": "オーソドックスGK",
         "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 7,
         "position": "DM",
+        "positionPlace": "Left",
         "playStyle": "パサー",
         "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 9,
         "position": "LW",
+        "positionPlace": null,
         "playStyle": "サイドアタッカー",
         "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C022",
     "name": "ヒノマルスタイル'68",
     "formation": "3-4-3C",
     "rank": "銀",
+    "combo_policys": [
+      "カウンター"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "決定力、ショートパス、キック精度が80%アップ",
     "effects": [
       {
@@ -850,45 +856,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "カウンター"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 4,
         "position": "CB",
+        "positionPlace": "Left",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 9,
         "position": "LW",
+        "positionPlace": null,
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 11,
         "position": "CF",
+        "positionPlace": null,
         "playStyle": "ストライカー",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C023",
     "name": "ウルチカ'03",
     "formation": "4-5-1A",
     "rank": "銀",
+    "combo_policys": [
+      "ポゼッション"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "決定力、ロングパス、キープ力が80%アップ",
     "effects": [
       {
@@ -904,45 +910,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "ポゼッション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 4,
         "position": "LB",
+        "positionPlace": null,
         "playStyle": "守備的FB",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 9,
         "position": "AM",
+        "positionPlace": "Right",
         "playStyle": "アタッカー",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 11,
         "position": "CF",
+        "positionPlace": null,
         "playStyle": "ポストプレーヤー",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C024",
     "name": "クロチャ＾ティ'99",
     "formation": "5-3-2B",
     "rank": "銀",
+    "combo_policys": [
+      "リアクション"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "決定力、パスカット、ジャンプが80%アップ",
     "effects": [
       {
@@ -958,45 +964,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "リアクション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 8,
         "position": "DM",
+        "positionPlace": "Left",
         "playStyle": "セントラルMF",
         "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 9,
         "position": "AM",
+        "positionPlace": null,
         "playStyle": "アタッカー",
         "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 10,
         "position": "CF",
+        "positionPlace": "Right",
         "playStyle": "ストライカー",
         "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C025",
     "name": "ソベラーノ'94",
     "formation": "4-4-2E",
     "rank": "金",
+    "combo_policys": [
+      "ムービング"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "キック力、突破力、コンタクト、スタミナが80%アップ",
     "effects": [
       {
@@ -1016,45 +1022,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "ムービング"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 7,
         "position": "AM",
-        "playStyle": "パサー",
-        "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 1,
-        "condition_no": 1
-      },
-      {
-        "position": "AM",
+        "positionPlace": "Right",
         "playStyle": "アタッカー",
         "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 9,
+        "position": "AM",
+        "positionPlace": "Left",
+        "playStyle": "パサー",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 11,
         "position": "CF",
+        "positionPlace": "Left",
         "playStyle": "ストライカー",
         "playStyleLv": 3,
-        "policy": "ムービング",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C026",
     "name": "ゴーデンゾーネン'95",
     "formation": "3-4-3C",
     "rank": "金",
+    "combo_policys": [
+      "リアクション"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "キック精度、突破力、コンタクト、スタミナが80%アップ",
     "effects": [
       {
@@ -1074,45 +1080,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "リアクション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 3,
         "position": "CB",
+        "positionPlace": "Center",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 5,
         "position": "DM",
-        "playStyle": "ハードマーカー",
-        "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 2,
-        "condition_no": 2
-      },
-      {
-        "position": "DM",
+        "positionPlace": "Right",
         "playStyle": "セントラルMF",
         "playStyleLv": 3,
-        "policy": "リアクション",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
+      },
+      {
+        "slotNo": 6,
+        "position": "DM",
+        "positionPlace": "Left",
+        "playStyle": "ハードマーカー",
+        "playStyleLv": 2,
+        "conditionNo": 2
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C027",
     "name": "レ・ブルー'98",
     "formation": "4-4-2D",
     "rank": "金",
+    "combo_policys": [
+      "カウンター"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "キック力、ジャンプ、コンタクト、敏捷性が80%アップ",
     "effects": [
       {
@@ -1132,45 +1138,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "カウンター"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 4,
         "position": "LB",
+        "positionPlace": null,
         "playStyle": "守備的FB",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 9,
         "position": "AM",
+        "positionPlace": null,
         "playStyle": "セントラルMF",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 10,
         "position": "CF",
+        "positionPlace": "Right",
         "playStyle": "ストライカー",
         "playStyleLv": 3,
-        "policy": "カウンター",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C028",
     "name": "ラ・デア'22",
     "formation": "3-5-2B",
     "rank": "金",
+    "combo_policys": [
+      "ポゼッション"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "冷静さ、パスカット、ジャンプ、コンタクトが80%アップ",
     "effects": [
       {
@@ -1190,45 +1196,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "ポゼッション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 3,
         "position": "CB",
+        "positionPlace": "Center",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 8,
         "position": "RM",
+        "positionPlace": null,
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 11,
         "position": "CF",
+        "positionPlace": "Left",
         "playStyle": "ラインブレーカー",
         "playStyleLv": 3,
-        "policy": "ポゼッション",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C029",
     "name": "アルビセレステ'01",
     "formation": "3-4-3A",
     "rank": "金",
+    "combo_policys": [
+      "ムービング"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "ジャンプ、コンタクト、走力、敏捷性が80%アップ",
     "effects": [
       {
@@ -1248,45 +1254,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "ムービング"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 4,
         "position": "CB",
+        "positionPlace": "Left",
         "playStyle": "組立CB",
         "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 6,
         "position": "LM",
+        "positionPlace": null,
         "playStyle": "サイドアタッカー",
         "playStyleLv": 3,
-        "policy": "ムービング",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 11,
         "position": "CF",
+        "positionPlace": null,
         "playStyle": "ストライカー",
         "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C030",
     "name": "セレソン・ダス・キナス'16",
     "formation": "4-4-2A",
     "rank": "金",
+    "combo_policys": [
+      "リアクション"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "パスカット、ジャンプ、コンタクト、走力が80%アップ",
     "effects": [
       {
@@ -1306,45 +1312,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "リアクション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 4,
         "position": "LB",
+        "positionPlace": null,
         "playStyle": "攻撃的FB",
         "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 7,
         "position": "LM",
+        "positionPlace": null,
         "playStyle": "サイドアタッカー",
         "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 10,
         "position": "CF",
+        "positionPlace": "Right",
         "playStyle": "ストライカー",
         "playStyleLv": 3,
-        "policy": "リアクション",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C031",
     "name": "ディアボロ・ディ・ミラノ'99",
     "formation": "3-4-3B",
     "rank": "金",
+    "combo_policys": [
+      "カウンター"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "キック力、突破力、ジャンプ、コンタクトが80%アップ",
     "effects": [
       {
@@ -1364,45 +1370,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "カウンター"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 2,
         "position": "CB",
+        "positionPlace": "Right",
         "playStyle": "組立CB",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 5,
         "position": "DM",
+        "positionPlace": "Right",
         "playStyle": "セントラルMF",
         "playStyleLv": 3,
-        "policy": "カウンター",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 9,
         "position": "LW",
+        "positionPlace": null,
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C032",
     "name": "ラ・ロハ'24",
     "formation": "4-3-3B",
     "rank": "金",
+    "combo_policys": [
+      "ポゼッション"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
     "effect": "冷静さ、キック精度、パスカット、コンタクトが80%アップ",
     "effects": [
       {
@@ -1422,45 +1428,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "ポゼッション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 5,
         "position": "RB",
+        "positionPlace": null,
         "playStyle": "攻撃的FB",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 6,
         "position": "DM",
+        "positionPlace": "Right",
         "playStyle": "パサー",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 10,
         "position": "RW",
+        "positionPlace": null,
         "playStyle": "ドリブラー",
         "playStyleLv": 3,
-        "policy": "ポゼッション",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "コイン交換",
-    "acquisitionPlace": "交換所",
-    "availablePeriod": "終了日未定"
+    ]
   },
   {
     "comboId": "C033",
     "name": "イ・フリウラーニ’98",
     "formation": "3-4-3B",
     "rank": "銀",
+    "combo_policys": [
+      "リアクション"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "報酬",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年2月27日まで",
     "effect": "パスカット、キープ力、敏捷性が80%アップ",
     "effects": [
       {
@@ -1476,45 +1482,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "リアクション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 1,
         "position": "GK",
+        "positionPlace": null,
         "playStyle": "オーソドックスGK",
         "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 4,
         "position": "CB",
+        "positionPlace": "Left",
         "playStyle": "組立CB",
         "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 7,
         "position": "LM",
+        "positionPlace": null,
         "playStyle": "サイドアタッカー",
         "playStyleLv": 2,
-        "policy": "リアクション",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "報酬",
-    "acquisitionPlace": "WPSコンテスト",
-    "availablePeriod": "2026年2月27日まで"
+    ]
   },
   {
     "comboId": "C034",
     "name": "シュヴァルツ・ゲルベン'16",
     "formation": "4-5-1A",
     "rank": "銀",
+    "combo_policys": [
+      "カウンター"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "報酬",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年2月27日まで",
     "effect": "コンタクト、走力、キック精度が80%アップ",
     "effects": [
       {
@@ -1530,45 +1536,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "カウンター"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 1,
         "position": "GK",
+        "positionPlace": null,
         "playStyle": "オーソドックスGK",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 3,
         "position": "CB",
+        "positionPlace": "Left",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 5,
         "position": "RB",
+        "positionPlace": null,
         "playStyle": "攻撃的FB",
         "playStyleLv": 2,
-        "policy": "カウンター",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "報酬",
-    "acquisitionPlace": "WPSコンテスト",
-    "availablePeriod": "2026年2月27日まで"
+    ]
   },
   {
     "comboId": "C035",
     "name": "ダニッシュ・ダイナマイト'18",
     "formation": "4-5-1B",
     "rank": "銀",
+    "combo_policys": [
+      "ムービング"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "報酬",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年2月27日まで",
     "effect": "コンタクト、走力、キープ力が80%アップ",
     "effects": [
       {
@@ -1584,45 +1590,45 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "ムービング"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 3,
         "position": "CB",
+        "positionPlace": "Left",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 10,
         "position": "AM",
+        "positionPlace": null,
         "playStyle": "パサー",
         "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 11,
         "position": "CF",
+        "positionPlace": null,
         "playStyle": "ストライカー",
         "playStyleLv": 2,
-        "policy": "ムービング",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "報酬",
-    "acquisitionPlace": "WPSコンテスト",
-    "availablePeriod": "2026年2月27日まで"
+    ]
   },
   {
     "comboId": "C036",
     "name": "エル・レオン'70",
     "formation": "3-4-3C",
     "rank": "銀",
+    "combo_policys": [
+      "ポゼッション"
+    ],
     "requiredPlayers": 3,
+    "acquisitionMethod": "報酬",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年2月27日まで",
     "effect": "ロングパス、コンタクト、キープ力が80%アップ",
     "effects": [
       {
@@ -1638,37 +1644,31 @@
         "value": 80
       }
     ],
-    "combo_policys": [
-      "ポゼッション"
-    ],
     "combo_requirements": [
       {
+        "slotNo": 3,
         "position": "CB",
+        "positionPlace": "Center",
         "playStyle": "ストッパー",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 1,
-        "condition_no": 1
+        "conditionNo": 1
       },
       {
+        "slotNo": 8,
         "position": "AM",
+        "positionPlace": "Left",
         "playStyle": "アタッカー",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 2,
-        "condition_no": 2
+        "conditionNo": 2
       },
       {
+        "slotNo": 9,
         "position": "LW",
+        "positionPlace": null,
         "playStyle": "ドリブラー",
         "playStyleLv": 2,
-        "policy": "ポゼッション",
-        "conditionNo": 3,
-        "condition_no": 3
+        "conditionNo": 3
       }
-    ],
-    "acquisitionMethod": "報酬",
-    "acquisitionPlace": "WPSコンテスト",
-    "availablePeriod": "2026年2月27日まで"
+    ]
   }
 ]
