@@ -441,13 +441,9 @@ function escapeHtml(str){
 
   let PLAYERS = [];
   let COMBOS = [];
-  let SLOTS = [];
-  let LAYOUT = []; // formation_layout.json (optional)
-  let LAYOUT_MAP = new Map(); // key: formationId|slotNo -> {x,y}
-  let LAYOUT_POS_MAP = new Map(); // key: formationId|POS|idx -> {x,y}
+  let SLOTS = []; // formation_slots.json (x,y を含む)
 
   let PLAYER_MAP = new Map();
-
 
 // ---- pitch view state ----
 let LAST = null;
@@ -539,30 +535,12 @@ function renderPitch(){
 
     const place = LAST.slotPlaceMap?.get(String(s.slotNo)) || ""; // Right/Left/Center (if provided)
 
-    // Prefer exact coordinates from formation_layout.json when available
-    const fid = String(LAST.formationId||"").replace(/\s+/g,"");
-    const pickIdx = (()=>{
-      const p = String(place||"").toLowerCase();
-      if(total<=1) return 1;
-      if(p==="left") return 1;
-      if(p==="right") return total;
-      if(p==="center") return Math.ceil(total/2);
-      return idx;
-    })();
 
-    // 1) position+index (left->right by x)
-    const keyPos = `${fid}|${k}|${String(pickIdx)}`;
-    const xyPos = LAYOUT_POS_MAP?.get(keyPos);
+    // Prefer exact coordinates from formation_slots.json (x,y) when available
+    const xy = LAST.slotCoordMap?.get(String(s.slotNo)) || null;
 
-    // 2) slotNo (fallback)
-    const keySlot = `${fid}|${String(s.slotNo)}`;
-    const xySlot = LAYOUT_MAP?.get(keySlot);
-
-    const xy = (xyPos && Number.isFinite(xyPos.x) && Number.isFinite(xyPos.y)) ? xyPos :
-               (xySlot && Number.isFinite(xySlot.x) && Number.isFinite(xySlot.y)) ? xySlot : null;
-
-    const x = xy ? xy.x : getX(k, place, idx, total);
-    const y = xy ? xy.y : getY(k);
+    const x = (xy && Number.isFinite(xy.x)) ? xy.x : getX(k, place, idx, total);
+    const y = (xy && Number.isFinite(xy.y)) ? xy.y : getY(k);
 
     const ok = LAST.highlightOK(player, s);
     const pid = String(player.player_id || player.playerId || "");
@@ -629,14 +607,6 @@ async function loadAll(){
     setStatus("formation_slots.json が見つかりません（コンボ選択は可能ですがシミュレーションは実行できません）", true);
   }
 
-  // formation_layout is optional (only used for pitch coordinates)
-  let fl = [];
-  try{
-    fl = await loadJson("./formation_layout.json");
-  }catch(e){
-    console.warn(e);
-  }
-
   PLAYERS = (p||[]).filter(x=>x && (x.player_id || x.playerId));
   
   // build quick lookup for player detail popup
@@ -647,51 +617,11 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
     .map(x=>({
       comboId: x?.comboId ?? x?.combo_id,
       slotNo:  x?.slotNo  ?? x?.slot_no,
-      position: x?.position
+      position: x?.position,
+      x: x?.x,
+      y: x?.y
     }))
     .filter(x=>x && x.comboId && x.slotNo && x.position);
-
-  LAYOUT = (fl||[]);
-  // Normalize formation_layout rows (support snake_case / camelCase)
-  // formation_layout.json is keyed by formation (e.g. "3-4-3 A") and/or formationId (e.g. "3-4-3A")
-  const normForm = (s)=>String(s??"").replace(/\s+/g,"");
-  const normPos  = (p)=>String(p??"").toUpperCase();
-
-  // 1) slotNo -> (x,y) map (kept for backward compatibility)
-  LAYOUT_MAP = new Map(
-    (LAYOUT||[])
-      .map(r=>({
-        formationId: normForm(r?.formationId ?? r?.formation_id ?? r?.formation ?? ""),
-        slotNo:  r?.slotNo  ?? r?.slot_no,
-        x: r?.x,
-        y: r?.y
-      }))
-      .filter(r=>r && r.formationId && r.slotNo !== undefined && r.x !== undefined && r.y !== undefined)
-      .map(r=>[`${String(r.formationId)}|${String(r.slotNo)}`, {x:Number(r.x), y:Number(r.y)}])
-  );
-
-  // 2) position+index (left->right by x) -> (x,y) map
-  // NOTE: formation_slots.json の slotNo/position の対応と formation_layout.json の slotNo が一致しないケースがあるため、
-  // 位置は "formationId + position + 同一ポジション内の並び順" を優先する
-  const tmp = new Map(); // key: formationId|POS -> [{x,y}]
-  for(const r of (LAYOUT||[])){
-    const fid = normForm(r?.formationId ?? r?.formation_id ?? r?.formation ?? "");
-    const pos = normPos(r?.position);
-    const x = r?.x, y = r?.y;
-    if(!fid || !pos) continue;
-    if(x===undefined || y===undefined) continue;
-    const k = `${fid}|${pos}`;
-    if(!tmp.has(k)) tmp.set(k, []);
-    tmp.get(k).push({x:Number(x), y:Number(y)});
-  }
-  LAYOUT_POS_MAP = new Map();
-  for(const [k, arr] of tmp){
-    arr.sort((a,b)=>a.x-b.x); // left -> right
-    for(let i=0;i<arr.length;i++){
-      const idx = i+1;
-      LAYOUT_POS_MAP.set(`${k}|${idx}`, arr[i]);
-    }
-  }
 
   // clear status only if we didn't already show the missing-slots warning
   const cur = $("status")?.textContent?.trim();
@@ -898,7 +828,14 @@ function simulate(){
 
     const formationId = String(combo.formation ?? "").replace(/\s+/g,"");
 
-    LAST = { comboId: String(comboId), formationId, slots, picksA, picksB, highlightOK, slotPlaceMap, layoutMap: LAYOUT_MAP };
+    // slotNo -> (x,y) map from formation_slots.json for the selected combo
+    const slotCoordMap = new Map(
+      (slots||[])
+        .filter(s=>s && s.x!==undefined && s.y!==undefined && Number.isFinite(Number(s.x)) && Number.isFinite(Number(s.y)))
+        .map(s=>[String(s.slotNo), {x:Number(s.x), y:Number(s.y)}])
+    );
+
+    LAST = { comboId: String(comboId), formationId, slots, picksA, picksB, highlightOK, slotPlaceMap, slotCoordMap };
   renderPitch();
   updateView();
   setStatus("");
