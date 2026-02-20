@@ -423,7 +423,7 @@ function escapeHtml(str){
   let COMBOS = [];
   let SLOTS = [];
   let LAYOUT = []; // formation_layout.json (optional)
-  let LAYOUT_MAP = new Map(); // key: comboId|slotNo -> {x,y}
+  let LAYOUT_MAP = new Map(); // key: formationId|slotNo -> {x,y}
 
   let PLAYER_MAP = new Map();
 
@@ -519,7 +519,7 @@ function renderPitch(){
     const place = LAST.slotPlaceMap?.get(String(s.slotNo)) || ""; // Right/Left/Center (if provided)
 
     // Prefer exact coordinates from formation_layout.json when available
-    const key = `${String(LAST.comboId)}|${String(s.slotNo)}`;
+    const key = `${String(LAST.formationId)}|${String(s.slotNo)}`;
     const xy = LAST.layoutMap?.get(key);
 
     const x = (xy && Number.isFinite(xy.x)) ? xy.x : getX(k, place, idx, total);
@@ -614,16 +614,18 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
 
   LAYOUT = (fl||[]);
   // Normalize formation_layout rows (support snake_case / camelCase)
+  // formation_layout.json is keyed by formation (e.g. "3-4-3 A") and/or formationId (e.g. "3-4-3A")
+  const normForm = (s)=>String(s??"").replace(/\s+/g,"");
   LAYOUT_MAP = new Map(
     LAYOUT
       .map(r=>({
-        comboId: r?.comboId ?? r?.combo_id,
+        formationId: normForm(r?.formationId ?? r?.formation_id ?? r?.formation ?? ""),
         slotNo:  r?.slotNo  ?? r?.slot_no,
         x: r?.x,
         y: r?.y
       }))
-      .filter(r=>r && r.comboId && r.slotNo !== undefined && r.x !== undefined && r.y !== undefined)
-      .map(r=>[`${String(r.comboId)}|${String(r.slotNo)}`, {x:Number(r.x), y:Number(r.y)}])
+      .filter(r=>r && r.formationId && r.slotNo !== undefined && r.x !== undefined && r.y !== undefined)
+      .map(r=>[`${String(r.formationId)}|${String(r.slotNo)}`, {x:Number(r.x), y:Number(r.y)}])
   );
 
   // clear status only if we didn't already show the missing-slots warning
@@ -829,7 +831,9 @@ function simulate(){
       .filter(r=>r && (r.slotNo!==undefined && r.slotNo!==null) && r.positionPlace)
       .map(r=>[String(r.slotNo), String(r.positionPlace)]));
 
-    LAST = { comboId: String(comboId), slots, picksA, picksB, highlightOK, slotPlaceMap, layoutMap: LAYOUT_MAP };
+    const formationId = String(combo.formation ?? "").replace(/\s+/g,"");
+
+    LAST = { comboId: String(comboId), formationId, slots, picksA, picksB, highlightOK, slotPlaceMap, layoutMap: LAYOUT_MAP };
   renderPitch();
   updateView();
   setStatus("");
