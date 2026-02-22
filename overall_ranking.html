@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>サカつく2026攻略DB｜総合力ランキング</title>
+
+  <style>
+    :root{
+      --blue:#1e88ff;
+      --blue2:#0b5bd3;
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111;
+      --muted:#666;
+      --line:#d7dbe6;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:18px;
+    }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+    .site-banner{ width:100%; display:flex; justify-content:center; align-items:center; padding: 10px 12px 4px; }
+    .title-img{ width:min(1100px, 100%); height:auto; display:block; border-radius: 14px; }
+    @media (max-width: 480px){
+      .site-banner{ padding: 8px 10px 2px; }
+      .title-img{ border-radius: 12px; }
+    }
+
+    .wrap{ max-width:920px; margin:0 auto; padding:18px 14px 90px; }
+    h1{ margin:10px 0 12px; font-size:34px; letter-spacing:.02em; text-align:center; }
+
+    .card{
+      background:var(--card);
+      border:1px solid #e7e9f0;
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:18px;
+      margin-bottom:18px;
+    }
+    .sectionTitle{
+      font-size:28px;
+      font-weight:900;
+      text-align:center;
+      margin:12px 0 12px;
+    }
+    .note{
+      color:var(--muted);
+      text-align:center;
+      line-height:1.5;
+      margin:10px 0 14px;
+      font-size:16px;
+    }
+    .resultGroupTitle{
+      font-size:20px;
+      font-weight:900;
+      margin:18px 0 10px;
+    }
+
+    /* おまけ：ランキング表（indexと同系） */
+    .tableWrap{ overflow-x:auto; }
+    table.rankTable{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      min-width:540px;
+      margin:10px 0 18px;
+      font-size:16px;
+    }
+    .rankTable th, .rankTable td{
+      padding:10px 12px;
+      border-bottom:1px solid #e7e9f0;
+      text-align:left;
+      white-space:nowrap;
+    }
+    .rankTable th{
+      background:#f1f3f8;
+      font-weight:900;
+    }
+    .rankTable td:nth-child(1){ width:56px; text-align:right; }
+    .rankTable td:nth-child(3){ width:110px; text-align:right; }
+    .rankTable td:nth-child(4){ width:70px; text-align:center; }
+    .rankLink{
+      color:#0b63d1;
+      text-decoration:underline;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    select.bigSelect{
+      width:min(720px, 96%);
+      font-size:26px;
+      font-weight:900;
+      border-radius:22px;
+      border:2px solid #e1e5ef;
+      padding:14px 16px;
+      background:#ececec;
+      color:var(--blue2);
+      outline:none;
+    }
+
+    /* 割合バー */
+    .barList{ margin-top:6px; }
+    .barRow{
+      display:grid;
+      grid-template-columns: 1fr 180px 64px;
+      gap:12px;
+      align-items:center;
+      margin:10px 0;
+    }
+    .barName{ font-weight:900; white-space:nowrap; }
+    .barTrack{
+      height:16px;
+      border-radius:999px;
+      background:#e1e1e1;
+      overflow:hidden;
+    }
+    .barFill{
+      height:100%;
+      background:#4a90e2;
+      width:0%;
+      border-radius:999px;
+    }
+    .barPct{
+      text-align:right;
+      font-weight:900;
+      white-space:nowrap;
+      font-size:14px;
+    }
+
+    /* モーダル（indexと同系） */
+    .modalBack{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:50;
+    }
+    .modalBack.show{ display:flex; }
+    .modal{
+      width:min(720px, 100%);
+      background:#fff;
+      border-radius:22px;
+      box-shadow:0 30px 60px rgba(0,0,0,.25);
+      overflow:hidden;
+    }
+    .modalHead{
+      padding:16px 18px;
+      background:#0b0b0b;
+      color:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+    }
+    .modalHead .ttl{ font-size:18px; font-weight:900; }
+    .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; }
+    .modalHead button{
+      border:none;
+      background:transparent;
+      color:#fff;
+      font-size:22px;
+      cursor:pointer;
+    }
+    .modalBody{ padding:16px 18px 18px; }
+    .modalBody .mLine{ margin:8px 0; }
+    .modalBody .mKey{ font-weight:900; display:inline-block; min-width:140px; color:#111; }
+    .modalBody .mVal{ color:#111; font-weight:700; }
+
+    /* 右下トップへ戻る */
+    .toTop{
+      position:fixed;
+      right:16px;
+      bottom:22px;
+      width:62px;
+      height:62px;
+      border-radius:16px;
+      border:1px solid rgba(0,0,0,.12);
+      background:rgba(255,255,255,.92);
+      box-shadow:0 14px 30px rgba(0,0,0,.18);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      opacity:0;
+      transform: translateY(12px);
+      pointer-events:none;
+      transition: opacity .2s ease, transform .25s ease;
+      z-index:60;
+    }
+    .toTop.show{
+      opacity:1;
+      transform: translateY(0);
+      pointer-events:auto;
+    }
+    .toTop::before{
+      content:"▲";
+      font-weight:900;
+      color:#455a64;
+      font-size:24px;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 480px){
+      h1{ font-size:30px; }
+      .sectionTitle{ font-size:24px; }
+      .note{ font-size:14px; }
+      select.bigSelect{ font-size:20px; }
+      .barRow{ grid-template-columns: 1fr 140px 58px; gap:10px; }
+      .barPct{ font-size:13px; }
+    }
+
+    .topLinks{
+      text-align:center;
+      margin:10px 0 16px;
+      font-weight:900;
+    }
+    .topLinks a{
+      text-decoration:none;
+      color:#0b63d1;
+    }
+    .topLinks a:hover{ text-decoration:underline; }
+  </style>
+</head>
+
+<body>
+  <div class="site-banner">
+    <img src="img/title.png" alt="ソニオTVの サカつく攻略データベース" class="title-img">
+  </div>
+
+  <div class="wrap">
+    <h1>総合力ランキング</h1>
+    <div class="topLinks">
+      <a href="index.html#panelBonus">← index.html（おまけ）に戻る</a>
+    </div>
+
+    <!-- ① 初期総合力TOP10 -->
+    <section id="overall" class="card">
+      <div class="sectionTitle" style="text-align:left;">① 初期総合力 TOP10</div>
+      <div class="note" style="text-align:left;margin-top:-4px;">※横スクロールできます</div>
+      <div class="tableWrap"><table id="tblOverall" class="rankTable"></table></div>
+    </section>
+
+    <!-- ② 最大強化TOP10 -->
+    <section id="max" class="card">
+      <div class="sectionTitle" style="text-align:left;">② 最大強化 TOP10</div>
+      <div class="note" style="text-align:left;margin-top:-4px;">※横スクロールできます</div>
+      <div class="tableWrap"><table id="tblMaxUp" class="rankTable"></table></div>
+    </section>
+
+    <!-- ③ 総合フィルターランキングTOP5 -->
+    <section id="filter" class="card">
+      <div class="sectionTitle" style="text-align:left;">③ 総合フィルターランキング TOP5</div>
+      <div class="note" style="text-align:left;margin-top:6px;">
+        ポリシー / メインポジション / プレイスタイル / 参照値 / 入手場所 を組み合わせてTOP5を表示します。
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0 8px;">
+        <select id="fPolicy" class="bigSelect" style="flex:1;min-width:240px;"></select>
+        <select id="fPos" class="bigSelect" style="flex:1;min-width:240px;"></select>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0 8px;">
+        <select id="fStyle" class="bigSelect" style="flex:1;min-width:240px;"></select>
+        <select id="fMetric" class="bigSelect" style="flex:1;min-width:240px;"></select>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0 8px;">
+        <select id="fPlace" class="bigSelect" style="flex:1;min-width:240px;"></select>
+
+        <button id="btnResetFilters" type="button"
+          style="padding:14px 18px;border:none;border-radius:18px;font-weight:900;font-size:18px;
+                 background:#9aa0aa;color:#fff;cursor:pointer;box-shadow:0 10px 20px rgba(0,0,0,.12);">
+          リセット
+        </button>
+      </div>
+
+      <div class="tableWrap"><table id="tblFiltered" class="rankTable"></table></div>
+    </section>
+
+    <!-- ④ SP選手の割合 -->
+    <section id="sp" class="card">
+      <div class="sectionTitle" style="text-align:left;">④ SP選手の割合</div>
+      <div class="note" style="text-align:left;margin-top:-4px;">
+        ※「players.json」に存在する選手データを母数にして割合を表示します
+      </div>
+
+      <div class="resultGroupTitle">ポリシー別</div>
+      <div id="barsPolicy" class="barList"></div>
+
+      <div class="resultGroupTitle">プレイスタイル別</div>
+      <div id="barsStyle" class="barList"></div>
+
+      <div class="resultGroupTitle">メインポジション別</div>
+      <div id="barsPos" class="barList"></div>
+    </section>
+  </div>
+
+  <!-- モーダル -->
+  <div id="modalBack" class="modalBack" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modalHead">
+        <div>
+          <div id="modalTitle" class="ttl">-</div>
+          <div id="modalSub" class="subttl"></div>
+        </div>
+        <button id="btnCloseModal" type="button" aria-label="close">×</button>
+      </div>
+      <div id="modalBody" class="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="toTop" class="toTop" title="トップへ"></div>
+
+<script>
+/* =========================
+   共有ユーティリティ（index準拠）
+========================= */
+const safeStr = (v)=> (v==null ? "" : String(v));
+const nvl = (v, d="-") => (v==null || v==="" ? d : v);
+const esc = (s)=> safeStr(s)
+  .replaceAll("&","&amp;")
+  .replaceAll("<","&lt;")
+  .replaceAll(">","&gt;")
+  .replaceAll('"',"&quot;")
+  .replaceAll("'","&#39;");
+
+function romanLv(v){
+  const n = Number(v);
+  if(!Number.isFinite(n) || n<=0) return "";
+  const map = ["","Ⅰ","Ⅱ","Ⅲ","Ⅳ","Ⅴ","Ⅵ","Ⅶ","Ⅷ","Ⅸ","Ⅹ"];
+  if(n < map.length) return map[n];
+  return String(n);
+}
+function getPlayerId(p){
+  return p?.player_id || p?.playerId || p?.id || "";
+}
+
+/* =========================
+   データ
+========================= */
+let PLAYERS = [];
+let playerById = new Map();
+
+/* =========================
+   モーダル（index準拠：項目順）
+========================= */
+function openPlayerModal(p){
+  if(!p) return;
+  const title = nvl(p.name,"-");
+  document.getElementById("modalTitle").textContent = title;
+
+  const nat = nvl(p.nationality, "-");
+  const gt = nvl(p.growthType || p.growth_type, "-");
+  const sub = (nat!=="-" || gt!=="-") ? `国籍：${nat} / 成長タイプ：${gt}` : "";
+  const subEl = document.getElementById("modalSub");
+  if(subEl) subEl.textContent = sub;
+
+  const ps = nvl(p.playStyle, "-");
+  const lv = romanLv(p.playStyleLv);
+
+  const lines = [];
+  // ※ indexのコメントにある順（区分,入手方法,入手場所,入手可能期間,初期総合力,最大強化,ポリシー,プレイスタイル,メインポジション,...）
+  lines.push(["区分", nvl(p.category, "-")]);
+  lines.push(["入手方法", nvl(p.acquisitionMethod || p.acquisition_method, "-")]);
+  lines.push(["入手場所", nvl(p.acquisitionPlace || p.acquisition_place, "-")]);
+  lines.push(["入手可能期間", nvl(p.availablePeriod || p.available_period, "-")]);
+  lines.push(["初期総合力", nvl(p.overall, "-")]);
+  lines.push(["最大強化", nvl(p.maxUpgrade || p.max_upgrade, "-")]);
+  lines.push(["ポリシー", nvl(p.policy, "-")]);
+  lines.push(["プレイスタイル", ps + (lv ? (" " + lv) : "")]);
+  lines.push(["メインポジション", nvl(p.mainPosition || p.main_position, "-")]);
+
+  // あれば表示（index側の拡張に合わせて柔軟）
+  if(p.mainSkill || p.main_skill) lines.push(["メインスキル", nvl(p.mainSkill || p.main_skill, "-")]);
+  if(p.mainTrait || p.main_trait) lines.push(["メイントレイト", nvl(p.mainTrait || p.main_trait, "-")]);
+
+  const body = document.getElementById("modalBody");
+  body.innerHTML = lines.map(([k,v])=>{
+    return `<div class="mLine"><span class="mKey">${esc(k)}</span><span class="mVal">${esc(v)}</span></div>`;
+  }).join("");
+
+  const back = document.getElementById("modalBack");
+  back.classList.add("show");
+  back.setAttribute("aria-hidden","false");
+}
+
+function setupModalClose(){
+  const back = document.getElementById("modalBack");
+  const btn = document.getElementById("btnCloseModal");
+  const close = ()=>{
+    back.classList.remove("show");
+    back.setAttribute("aria-hidden","true");
+  };
+  btn.addEventListener("click", close);
+  back.addEventListener("click", (e)=>{
+    if(e.target === back) close();
+  });
+  window.addEventListener("keydown", (e)=>{
+    if(e.key === "Escape" && back.classList.contains("show")) close();
+  });
+}
+
+/* =========================
+   右下トップへ戻る
+========================= */
+function setupToTop(){
+  const btn = document.getElementById("toTop");
+  const onScroll = ()=>{
+    const y = window.scrollY || document.documentElement.scrollTop;
+    btn.classList.toggle("show", y > 450);
+  };
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener("click", ()=>{
+    try{ window.scrollTo({ top: 0, behavior: "smooth" }); }
+    catch(e){ window.scrollTo(0, 0); }
+  });
+}
+
+/* =========================
+   ランキング（index準拠ロジック）
+========================= */
+function renderTopTables(){
+  const topOverall = [...PLAYERS].sort((a,b)=>(b.overall||0)-(a.overall||0)).slice(0,10);
+  const topMax = [...PLAYERS]
+    .filter(p=>Number.isFinite(Number(p.maxUpgrade)))
+    .sort((a,b)=>(b.maxUpgrade||0)-(a.maxUpgrade||0))
+    .slice(0,10);
+
+  renderRankTable(document.getElementById("tblOverall"), topOverall, "overall", "初期総合力");
+  renderRankTable(document.getElementById("tblMaxUp"), topMax, "maxUpgrade", "最大総合力");
+}
+
+function renderRankTable(tbl, arr, field, scoreLabel){
+  const head = `
+    <tr>
+      <th>順位</th>
+      <th>選手名</th>
+      <th>${esc(scoreLabel)}</th>
+      <th>ポジション</th>
+    </tr>`;
+
+  const rows = arr.map((p,i)=>{
+    const v = (p && p[field] != null) ? p[field] : "-";
+    const pos = (p && p.mainPosition) ? p.mainPosition : "-";
+    const pid = esc(getPlayerId(p));
+    const nm  = esc(p?.name || "-");
+
+    return `
+      <tr>
+        <td>${i+1}</td>
+        <td><span class="rankLink" data-player-id="${pid}">${nm}</span></td>
+        <td>${esc(v)}</td>
+        <td>${esc(pos)}</td>
+      </tr>`;
+  }).join("");
+
+  tbl.innerHTML = `<thead>${head}</thead><tbody>${rows}</tbody>`;
+
+  tbl.querySelectorAll("[data-player-id]").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      openPlayerModal(playerById.get(el.dataset.playerId));
+    });
+  });
+}
+
+function setupFilterUI(){
+  const fPolicy = document.getElementById("fPolicy");
+  const fPos = document.getElementById("fPos");
+  const fStyle = document.getElementById("fStyle");
+  const fMetric = document.getElementById("fMetric");
+  const fPlace = document.getElementById("fPlace");
+
+  const uniq = (arr)=>[...new Set(arr.filter(Boolean))];
+  const policies = uniq(PLAYERS.map(p=>p.policy)).sort((a,b)=>a.localeCompare(b,"ja"));
+  const pos = uniq(PLAYERS.map(p=>p.mainPosition)).sort((a,b)=>a.localeCompare(b,"ja"));
+  const styles = uniq(PLAYERS.map(p=>p.playStyle)).sort((a,b)=>a.localeCompare(b,"ja"));
+  const places = uniq(PLAYERS.map(p=>p.acquisitionPlace)).sort((a,b)=>a.localeCompare(b,"ja"));
+
+  fPolicy.innerHTML = `<option value="">（ポリシー）</option>` + policies.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+  fPos.innerHTML = `<option value="">（ポジション）</option>` + pos.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+  fStyle.innerHTML = `<option value="">（プレイスタイル）</option>` + styles.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+  fMetric.innerHTML = `<option value="overall">（参照値：初期総合力）</option><option value="maxUpgrade">（参照値：最大強化）</option>`;
+  fPlace.innerHTML = `<option value="">（入手場所）</option>` + places.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+
+  const rerender = ()=>{
+    const fp = fPolicy.value;
+    const fpo = fPos.value;
+    const fs = fStyle.value;
+    const fpl = fPlace.value;
+
+    let arr = [...PLAYERS];
+    if(fp) arr = arr.filter(p=>p.policy===fp);
+    if(fpo) arr = arr.filter(p=>p.mainPosition===fpo);
+    if(fs) arr = arr.filter(p=>p.playStyle===fs);
+    if(fpl) arr = arr.filter(p=>p.acquisitionPlace===fpl);
+
+    const fm = (fMetric && fMetric.value) ? fMetric.value : "overall";
+    arr = arr.sort((a,b)=>((b[fm]||0)-(a[fm]||0))).slice(0,5);
+
+    const metricLabel = (fm==="maxUpgrade") ? "最大強化" : "初期総合力";
+    const tbl = document.getElementById("tblFiltered");
+
+    if(!arr.length){
+      tbl.innerHTML =
+        `<thead><tr><th>順位</th><th>選手名</th><th>${metricLabel}</th><th>ポジション</th></tr></thead>`+
+        `<tbody><tr><td colspan="4" style="text-align:center;padding:12px;">対象なし</td></tr></tbody>`;
+      return;
+    }
+    renderRankTable(tbl, arr, fm, metricLabel);
+  };
+
+  fPolicy.addEventListener("change", rerender);
+  fPos.addEventListener("change", rerender);
+  fStyle.addEventListener("change", rerender);
+  if(fMetric) fMetric.addEventListener("change", rerender);
+  fPlace.addEventListener("change", rerender);
+
+  document.getElementById("btnResetFilters").addEventListener("click", ()=>{
+    fPolicy.value=""; fPos.value=""; fStyle.value=""; if(fMetric) fMetric.value="overall"; fPlace.value="";
+    rerender();
+  });
+
+  rerender();
+}
+
+/* =========================
+   SP選手の割合（index準拠ロジック）
+========================= */
+const ORDER_POLICY = ["ポゼッション","カウンター","ムービング","リアクション"];
+const ORDER_STYLE = [
+  "アタッカー","サイドアタッカー","ストライカー","チャンスメイカー","ドリブラー",
+  "レジスタ","ゲームメーカー","トップ下","アンカー","ハードマーカー",
+  "ストッパー","組立CB","守備的FB","攻撃的FB","組立GK"
+];
+const ORDER_POS = ["GK","CB","SB","LB","RB","DM","CM","SM","AM","RM","LM","RW","LW","CF","FW"];
+
+function renderShareBars(){
+  const total = PLAYERS.length || 1;
+
+  const countBy = (keyFn)=>{
+    const m = new Map();
+    for(const p of PLAYERS){
+      const k = keyFn(p);
+      if(!k) continue;
+      m.set(k, (m.get(k)||0)+1);
+    }
+    return m;
+  };
+
+  const mPol = countBy(p=>p.policy);
+  const mSty = countBy(p=>p.playStyle);
+  const mPos = countBy(p=>p.mainPosition);
+
+  renderBarsInOrder(document.getElementById("barsPolicy"), ORDER_POLICY, mPol, total);
+  renderBarsInOrder(document.getElementById("barsStyle"), ORDER_STYLE, mSty, total);
+  renderBarsInOrder(document.getElementById("barsPos"), ORDER_POS, mPos, total);
+}
+
+function renderBarsInOrder(container, order, map, total){
+  container.innerHTML = "";
+  order.forEach(name=>{
+    const cnt = map.get(name) || 0;
+    const pct = (cnt/total)*100;
+    const row = document.createElement("div");
+    row.className = "barRow";
+    row.innerHTML = `
+      <div class="barName">${esc(name)}</div>
+      <div class="barTrack"><div class="barFill" style="width:${pct.toFixed(1)}%"></div></div>
+      <div class="barPct">${pct.toFixed(1)}%</div>
+    `;
+    container.appendChild(row);
+  });
+}
+
+/* =========================
+   初期化
+========================= */
+(async function(){
+  try{
+    const res = await fetch("players.json", {cache:"no-store"});
+    const json = await res.json();
+    PLAYERS = Array.isArray(json) ? json : (Array.isArray(json?.players) ? json.players : []);
+  }catch(e){
+    PLAYERS = [];
+  }
+
+  playerById = new Map(PLAYERS.map(p => [getPlayerId(p), p]).filter(([id])=>id));
+
+  setupModalClose();
+  setupToTop();
+
+  renderTopTables();
+  setupFilterUI();
+  renderShareBars();
+
+  // ハッシュ遷移時：少し上に余白を作る（見切れ防止）
+  if(location.hash){
+    setTimeout(()=>{
+      try{
+        const el = document.querySelector(location.hash);
+        if(el){
+          const y = el.getBoundingClientRect().top + window.scrollY - 10;
+          window.scrollTo(0, y);
+        }
+      }catch(_){}
+    }, 0);
+  }
+})();
+</script>
+</body>
+</html>

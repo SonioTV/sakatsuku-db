@@ -929,46 +929,73 @@
 
 </div>
 
+<!-- ▼ 追加：総合力ランキング（分離ページ）へのショートカット -->
+<div style="margin-top:6px;">
+  <a href="overall_ranking.html#overall"
+     style="display:inline-block;
+            padding:12px 20px;
+            margin:10px;
+            font-size:16px;
+            font-weight:900;
+            background:#4a90e2;
+            color:#fff;
+            border-radius:16px;
+            text-decoration:none;
+            white-space:nowrap;
+            box-shadow:0 10px 20px rgba(0,0,0,.15);">
+    初期総合力TOP10
+  </a>
+
+  <a href="overall_ranking.html#max"
+     style="display:inline-block;
+            padding:12px 20px;
+            margin:10px;
+            font-size:16px;
+            font-weight:900;
+            background:#111827;
+            color:#fff;
+            border-radius:16px;
+            text-decoration:none;
+            white-space:nowrap;
+            box-shadow:0 10px 20px rgba(0,0,0,.15);">
+    最大強化TOP10
+  </a>
+
+  <a href="overall_ranking.html#filter"
+     style="display:inline-block;
+            padding:12px 20px;
+            margin:10px;
+            font-size:16px;
+            font-weight:900;
+            background:#f59e0b;
+            color:#fff;
+            border-radius:16px;
+            text-decoration:none;
+            white-space:nowrap;
+            box-shadow:0 10px 20px rgba(0,0,0,.15);">
+    総合フィルターランキングTOP5
+  </a>
+
+  <a href="overall_ranking.html#sp"
+     style="display:inline-block;
+            padding:12px 20px;
+            margin:10px;
+            font-size:16px;
+            font-weight:900;
+            background:#10b981;
+            color:#fff;
+            border-radius:16px;
+            text-decoration:none;
+            white-space:nowrap;
+            box-shadow:0 10px 20px rgba(0,0,0,.15);">
+    SP選手の割合
+  </a>
+</div>
+<!-- ▲ 追加ここまで -->
+
       </div>
     </div>
 
-<div class="card">
-      <div class="sectionTitle" style="text-align:left;">総合力ランキング</div>
-
-      <div class="note" style="text-align:left;margin-top:-4px;">※横スクロールできます</div>
-      <div class="resultGroupTitle">① 初期総合力 TOP10</div>
-      <div class="tableWrap"><table id="tblOverall" class="rankTable"></table></div>
-
-      <div class="resultGroupTitle">② 最大強化 TOP10</div>
-      <div class="tableWrap"><table id="tblMaxUp" class="rankTable"></table></div>
-
-      <div class="resultGroupTitle" style="margin-top:22px;">複合フィルターランキング TOP5</div>
-      <div class="note" style="text-align:left;margin-top:6px;">
-        ポリシー / メインポジション / プレイスタイル / 入手場所 を組み合わせてTOP5を表示します。
-      </div>
-
-      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0 8px;">
-        <select id="fPolicy" class="bigSelect" style="width:240px;font-size:18px;padding:10px 12px;"></select>
-        <select id="fPos" class="bigSelect" style="width:200px;font-size:18px;padding:10px 12px;"></select>
-        <select id="fStyle" class="bigSelect" style="width:240px;font-size:18px;padding:10px 12px;"></select>
-        <select id="fMetric" class="bigSelect" style="width:240px;font-size:18px;padding:10px 12px;"></select>
-        <select id="fPlace" class="bigSelect" style="width:240px;font-size:18px;padding:10px 12px;"></select>
-        <button id="btnResetFilters" class="tile" type="button" style="min-height:44px;font-size:16px;padding:10px 12px;">リセット</button>
-      </div>
-
-      <div class="tableWrap"><table id="tblFiltered" class="rankTable"></table></div>
-
-      <div class="resultGroupTitle" style="margin-top:20px;">SP選手の割合</div>
-
-      <div class="resultGroupTitle" style="margin-top:14px;">① ポリシー割合</div>
-      <div id="barsPolicy" class="barList"></div>
-
-      <div class="resultGroupTitle" style="margin-top:18px;">② プレイスタイル割合</div>
-      <div id="barsStyle" class="barList"></div>
-
-      <div class="resultGroupTitle" style="margin-top:18px;">③ メインポジション割合</div>
-      <div id="barsPos" class="barList"></div>
-    </div>
   </section>
 
 
