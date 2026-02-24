@@ -1998,6 +1998,7 @@ renderRankTable(document.getElementById("tblMaxUp"), topMax, "maxUpgrade", "最�
 }
 
 function renderRankTable(tbl, arr, field, scoreLabel){
+  if(!tbl) return; // 要素が無い場合は何もしない（他機能を壊さない）
   const head = `
     <tr>
       <th>順位</th>
