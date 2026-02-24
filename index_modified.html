@@ -316,6 +316,17 @@
     font-weight:900;
     margin:18px 0 10px;
   }
+  .resultGroupTitle.clickable{
+    cursor:pointer;
+    color:#0b63d1;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  #listModalBody{
+    max-height:min(70vh, 520px);
+    overflow:auto;
+  }
+
   .comboCard{
     border:1px solid var(--line);
     border-left:6px solid #2e7d32;
@@ -697,10 +708,6 @@
   text-decoration:none;
 }
 
-
-  /* 選手検索：全件モーダル */
-  #groupModalBody{ max-height:70vh; overflow:auto; }
-
 </style>
 <!-- Google AdSense (replace ca-pub-XXXXXXXXXXXXXXX with your publisher ID) -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
@@ -962,25 +969,24 @@
         <div id="modalTitle" class="ttl">詳細</div>
         <div id="modalSub" class="subttl"></div>
       </div>
-      
-
-<!-- グループ一覧モーダル（選手検索：全件表示） -->
-<div id="groupModalBack" class="modalBack" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="modal">
-    <div class="modalHead">
-      <div>
-        <div id="groupModalTitle" class="ttl">一覧</div>
-        <div id="groupModalSub" class="subttl"></div>
-      </div>
-      <button id="groupModalClose" type="button" aria-label="close">✕</button>
+      <button id="modalClose" type="button" aria-label="close">✕</button>
     </div>
-    <div id="groupModalBody" class="modalBody"></div>
+    <div id="modalBody" class="modalBody"></div>
   </div>
 </div>
 
-<button id="modalClose" type="button" aria-label="close">✕</button>
+
+<!-- グループ全件表示モーダル（タブ2：選手検索の一覧用） -->
+<div id="listModalBack" class="modalBack" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal">
+    <div class="modalHead">
+      <div>
+        <div id="listModalTitle" class="ttl">一覧</div>
+        <div id="listModalSub" class="subttl"></div>
+      </div>
+      <button id="listModalClose" type="button" aria-label="close">✕</button>
     </div>
-    <div id="modalBody" class="modalBody"></div>
+    <div id="listModalBody" class="modalBody"></div>
   </div>
 </div>
 
@@ -1174,67 +1180,6 @@ function setupModal(){
   });
 }
 setupModal();
-
-/* =========================
-   選手検索：グループ全件モーダル
-========================= */
-let PLAYER_GROUP_CACHE = new Map(); // key: `${condIdx}:${group}`, value: array of playerId
-
-function closeGroupModal(){
-  const back = document.getElementById("groupModalBack");
-  if(!back) return;
-  back.classList.remove("show");
-  back.setAttribute("aria-hidden","true");
-}
-
-function openGroupModal(title, ids){
-  const back = document.getElementById("groupModalBack");
-  if(!back) return;
-  document.getElementById("groupModalTitle").textContent = title || "一覧";
-  const subEl = document.getElementById("groupModalSub");
-  if(subEl) subEl.textContent = `件数：${(ids||[]).length}人`;
-
-  const body = document.getElementById("groupModalBody");
-  if(!ids || ids.length===0){
-    body.innerHTML = `<div class="note" style="text-align:left;margin:6px 0;">なし</div>`;
-  }else{
-    body.innerHTML = ids.map(pid=>{
-      const p = playerById.get(pid);
-      const nm = p ? (p.name || "-") : "-";
-      return `<div class="playerRow"><a href="#" data-player-id="${esc(pid)}">${esc(nm)}</a></div>`;
-    }).join("");
-  }
-
-  // click handlers (open detail modal)
-  body.querySelectorAll("[data-player-id]").forEach(a=>{
-    a.addEventListener("click", (e)=>{
-      e.preventDefault();
-      const pid = a.dataset.playerId;
-      const p = playerById.get(pid);
-      if(!p) return;
-      closeGroupModal();
-      openPlayerModal(p);
-    });
-  });
-
-  back.classList.add("show");
-  back.setAttribute("aria-hidden","false");
-}
-
-function setupGroupModal(){
-  const back = document.getElementById("groupModalBack");
-  if(!back) return;
-  const close = document.getElementById("groupModalClose");
-  close.addEventListener("click", closeGroupModal);
-  back.addEventListener("click", (e)=>{
-    if(e.target === back) closeGroupModal();
-  });
-  document.addEventListener("keydown", (e)=>{
-    if(e.key==="Escape" && back.classList.contains("show")) closeGroupModal();
-  });
-}
-setupGroupModal();
-
 </script>
 
 <script>
@@ -1630,6 +1575,61 @@ function runComboSearch(){
 /* =========================
    タブ2：選手検索（コンボ→対応選手）
 ========================= */
+// --- タブ2：グループ全件モーダル用（一覧） ---
+const __groupStore = new Map();
+let __groupSeq = 0;
+function __storeGroup(players){
+  const k = String(++__groupSeq);
+  __groupStore.set(k, players || []);
+  return k;
+}
+function __openListModal(title, players){
+  const back = document.getElementById("listModalBack");
+  const ttl  = document.getElementById("listModalTitle");
+  const sub  = document.getElementById("listModalSub");
+  const body = document.getElementById("listModalBody");
+  if(!back || !ttl || !body) return;
+
+  ttl.textContent = title || "一覧";
+  sub.textContent = `（${(players||[]).length}人）`;
+
+  if(!players || players.length===0){
+    body.innerHTML = `<div class="note" style="text-align:left;margin:6px 0;">なし</div>`;
+  }else{
+    body.innerHTML = players.map(p=>{
+      const pid = esc(getPlayerId(p));
+      return `<div class="playerRow"><a href="#" data-player-id="${pid}">${esc(p.name || "-")}</a></div>`;
+    }).join("");
+    // クリックで既存詳細モーダルを再利用
+    body.querySelectorAll("[data-player-id]").forEach(a=>{
+      a.addEventListener("click",(e)=>{
+        e.preventDefault();
+        const pid = a.dataset.playerId;
+        openPlayerModal(playerById.get(pid));
+      });
+    });
+  }
+
+  back.classList.add("show");
+  back.setAttribute("aria-hidden","false");
+}
+function __closeListModal(){
+  const back = document.getElementById("listModalBack");
+  if(!back) return;
+  back.classList.remove("show");
+  back.setAttribute("aria-hidden","true");
+}
+document.addEventListener("click",(e)=>{
+  const t = e.target;
+  if(!t) return;
+  if(t.id==="listModalClose") __closeListModal();
+  const back = document.getElementById("listModalBack");
+  if(back && t===back) __closeListModal();
+});
+document.addEventListener("keydown",(e)=>{
+  if(e.key==="Escape") __closeListModal();
+});
+
 let selectedRanks = new Set(); // 金/銀/銅
 let selectedPlayerPolicy = null; // ポリシー（未選択=null）
 
@@ -1821,7 +1821,6 @@ function renderPlayersForCombo(){
   const c = getSelectedCombo();
   const out = document.getElementById("playerResult");
   out.innerHTML = "";
-  PLAYER_GROUP_CACHE = new Map();
   if(!c) return;
 
   const comboPolicys = getComboPolicys(c);
@@ -1831,114 +1830,108 @@ function renderPlayersForCombo(){
     return;
   }
 
-  // 1コンボ内に複数条件がある前提。各条件ごとに 完全一致 / ポリシー違い / ポジション違い を表示
+  const LIMIT = 3;
+
+  // 1コンボ内に複数条件がある前提。各条件ごとに ①完全一致/②ポリシー違い/③ポジション違い を表示
   conds.forEach((cond, idx)=>{
     const matchedFull = [];
     const matchedPolDiff = [];
     const matchedPosDiff = [];
 
+    const posReq = normalizePos(getComboField(cond, ["position","pos","ポジション"], ""));
+    const styleReq = normalizeStyle(getComboField(cond, ["playStyle","style","プレイスタイル"], ""));
+    const lvReqRaw = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], null);
+    const lvReq = (lvReqRaw===null || lvReqRaw===undefined || lvReqRaw==="") ? null : parseLvReq(lvReqRaw);
+
+    const polReqs = Array.isArray(comboPolicys) ? comboPolicys.filter(Boolean) : [];
+
     for(const p of PLAYERS){
-      const m = playerMatchesCondition(p, cond, comboPolicys);
+      const pPos = normalizePos(getComboField(p, ["position","pos","ポジション"], ""));
+      const pStyle = normalizeStyle(getComboField(p, ["playStyle","style","プレイスタイル"], ""));
+      const pLv = parseLvReq(getComboField(p, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], null));
 
-      // pos/style/lv は cond 側、policy は combo 側
-      const posReq   = getComboField(cond, ["pos","position","ポジション"], null);
-      const styleReq = getComboField(cond, ["playStyle","play_style","style","プレイスタイル","PS"], null);
-      const lvReqRaw = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], null);
-      const lvReq = (lvReqRaw===null || lvReqRaw===undefined || lvReqRaw==="") ? null : Number(lvReqRaw);
-
-      const pPos   = getComboField(p, ["mainPosition","main_position","position","ポジション","メインポジション"], "");
-      const pStyle = getComboField(p, ["playStyle","play_style","style","プレイスタイル"], "");
-      const pLvRaw = getComboField(p, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "");
-      const pLv = (pLvRaw===null || pLvRaw===undefined || pLvRaw==="") ? null : Number(pLvRaw);
-
-      const posOk   = !posReq   || pPos   === posReq;
+      const posOk = !posReq || pPos === posReq;
       const styleOk = !styleReq || pStyle === styleReq;
-      const lvOk    = (lvReq===null) || (pLv!==null && pLv>=lvReq);
+      const lvOk = (lvReq===null) || (pLv!==null && pLv>=lvReq);
 
-      if(m.ok){
-        matchedFull.push(p);
-      }else if(m.core && !m.polOk){
-        matchedPolDiff.push(p);
-      }else if(!posOk && styleOk && lvOk && m.polOk){
-        // プレイスタイル/Lv は一致、ポリシーOK、ただしポジションが違う
-        matchedPosDiff.push(p);
-      }
+      const core = posOk && styleOk && lvOk;
+
+      const pPol = getComboField(p, ["policy","ポリシー"], "");
+      const polOk = (polReqs.length===0) ? true : polReqs.includes(pPol);
+
+      if(core && polOk) matchedFull.push(p);
+      else if(core && !polOk) matchedPolDiff.push(p);
+      else if(!posOk && styleOk && lvOk && polOk) matchedPosDiff.push(p);
     }
-
-    // cache (for modal)
-    const toIds = (arr)=>arr.map(pp=>getPlayerId(pp)).filter(Boolean);
-    PLAYER_GROUP_CACHE.set(`${idx}:full`, toIds(matchedFull));
-    PLAYER_GROUP_CACHE.set(`${idx}:pol`,  toIds(matchedPolDiff));
-    PLAYER_GROUP_CACHE.set(`${idx}:pos`,  toIds(matchedPosDiff));
 
     const pos = normalizePos(getComboField(cond, ["position","pos","ポジション"], "-"));
     const style = normalizeStyle(getComboField(cond, ["playStyle","style","プレイスタイル"], "-"));
-    const lvReq = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "-");
+    const lvTxt = romanLv(parseLvReq(lvReqRaw) || lvReqRaw || "-");
 
     const card = document.createElement("div");
     card.className="card";
     card.style.marginTop="14px";
     card.style.boxShadow="none";
     card.style.border="1px solid var(--line)";
+
+    const fullKey = __storeGroup(matchedFull);
+    const polKey  = __storeGroup(matchedPolDiff);
+    const posKey  = __storeGroup(matchedPosDiff);
+
     card.innerHTML = `
       <div style="font-weight:900;font-size:20px;margin-bottom:10px;">条件${idx+1}</div>
       <div class="kv" style="grid-template-columns:110px 1fr;">
         <div class="k">ポジション</div><div class="v">${esc(pos)}</div>
-        <div class="k">プレイスタイル</div><div class="v">${esc(style)}${lvReq ? " " + esc(romanLv(lvReq)) : ""}</div>
+        <div class="k">PS</div><div class="v">${esc(style)}${lvTxt ? " " + esc(lvTxt) : ""}</div>
       </div>
-      <div style="margin-top:12px;">
-        <div style="font-weight:900;font-size:18px;margin:10px 0 8px;">
-          <span class="rankLink" data-group-link="1" data-cond-idx="${idx}" data-group="full">完全一致（${matchedFull.length}人）</span>
-        </div>
-        ${renderPlayerNameOnlyList(matchedFull, 3)}
 
-        <div style="font-weight:900;font-size:18px;margin:14px 0 8px;">
-          <span class="rankLink" data-group-link="1" data-cond-idx="${idx}" data-group="pol">ポリシー違い（${matchedPolDiff.length}人）</span>
-        </div>
-        ${renderPlayerNameOnlyList(matchedPolDiff, 3)}
+      <div class="resultGroupTitle clickable" data-group-key="${fullKey}" data-group-title="完全一致">完全一致（${matchedFull.length}人）</div>
+      <div class="playerList">
+        ${renderPlayerNameOnlyList(matchedFull.slice(0, LIMIT))}
+      </div>
 
-        <div style="font-weight:900;font-size:18px;margin:14px 0 8px;">
-          <span class="rankLink" data-group-link="1" data-cond-idx="${idx}" data-group="pos">ポジション違い（${matchedPosDiff.length}人）</span>
-        </div>
-        ${renderPlayerNameOnlyList(matchedPosDiff, 3)}
+      <div class="resultGroupTitle clickable" data-group-key="${polKey}" data-group-title="ポリシー違い">ポリシー違い（${matchedPolDiff.length}人）</div>
+      <div class="playerList">
+        ${renderPlayerNameOnlyList(matchedPolDiff.slice(0, LIMIT))}
+      </div>
+
+      <div class="resultGroupTitle clickable" data-group-key="${posKey}" data-group-title="ポジション違い">ポジション違い（${matchedPosDiff.length}人）</div>
+      <div class="playerList">
+        ${renderPlayerNameOnlyList(matchedPosDiff.slice(0, LIMIT))}
       </div>
     `;
     out.appendChild(card);
   });
 
-  // player detail handlers (existing modalBack)
+  // link handlers (通常表示)
   out.querySelectorAll("[data-player-id]").forEach(a=>{
     a.addEventListener("click", (e)=>{
       e.preventDefault();
       const pid = a.dataset.playerId;
-      const p = playerById.get(pid);
-      if(!p) return;
-      openPlayerModal(p);
+      openPlayerModal(playerById.get(pid));
     });
   });
 
-  // group title handlers (full list modal)
-  out.querySelectorAll("[data-group-link]").forEach(el=>{
-    el.addEventListener("click", ()=>{
-      const idx = Number(el.dataset.condIdx);
-      const grp = el.dataset.group;
-      const key = `${idx}:${grp}`;
-      const ids = PLAYER_GROUP_CACHE.get(key) || [];
-      openGroupModal(el.textContent || "一覧", ids);
+  // group title handlers（全件表示モーダル）
+  out.querySelectorAll(".resultGroupTitle.clickable").forEach(h=>{
+    h.addEventListener("click", ()=>{
+      const key = h.dataset.groupKey;
+      const title = h.dataset.groupTitle || h.textContent || "一覧";
+      const players = __groupStore.get(String(key)) || [];
+      __openListModal(title, players);
     });
   });
 }
 
-function renderPlayerNameOnlyList(arr, limit=Infinity){
+function renderPlayerNameOnlyList(arr){
   if(!arr || arr.length===0) return `<div class="note" style="text-align:left;margin:6px 0;">なし</div>`;
-  const lim = (limit===null || limit===undefined) ? Infinity : Number(limit);
-  const slice = (Number.isFinite(lim) && lim>=0) ? arr.slice(0, lim) : arr;
   // ★要望：検索結果は選手名のみに変更
-  return slice.map(p=>{
+  return arr.map(p=>{
     const pid = esc(getPlayerId(p));
     return `<div class="playerRow"><a href="#" data-player-id="${pid}">${esc(p.name || "-")}</a></div>`;
   }).join("");
-}</script>
+}
+</script>
 
 
 
