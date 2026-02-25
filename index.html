@@ -991,6 +991,22 @@ function esc(s){
   return safeStr(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 }
 
+function normalizeAcquisitionMethod(v){
+  const s = safeStr(v).trim();
+  if(!s) return "-";
+
+  // 旧表記 → 新表記へ寄せる
+  if(s === "常設ガチャ") return "ガチャ";
+
+  // 新表記そのまま
+  if(s === "ガチャ") return "ガチャ";
+  if(s === "期間限定ガチャ") return "期間限定ガチャ";
+  if(s === "その他") return "その他";
+
+  // 想定外はすべて「その他」扱い
+  return "その他";
+}
+
 async function loadJson(url){
   const res = await fetch(url, {cache:"no-store"});
   if(!res.ok) throw new Error("fetch failed: " + url);
@@ -1116,7 +1132,7 @@ function openPlayerModal(p){
   const lines = [];
   // ※ 要望の順：区分,入手方法,入手場所,入手可能期間,初期総合力,最大強化,ポリシー,プレイスタイル,メインポジション,メインスキル,メイン特徴
   lines.push(`<div class="mLine"><span class="mKey">区分</span><span class="mVal">${esc(nvl(p.category,"-"))}</span></div>`);
-  lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class="mVal">${esc(nvl(p.acquisitionMethod,"-"))}</span></div>`);
+lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class="mVal">${esc(normalizeAcquisitionMethod(p.acquisitionMethod))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手場所</span><span class="mVal">${esc(nvl(p.acquisitionPlace,"-"))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手可能期間</span><span class="mVal">${esc(nvl(p.availablePeriod,"-"))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">初期総合力</span><span class="mVal">${esc(nvl(p.overall,"-"))}</span></div>`);
@@ -1492,7 +1508,7 @@ function runComboSearch(){
       const effect = getComboField(combo, ["effect","効果"], "-");
       const need = getComboField(combo, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
 
-      const acqMethod = getComboField(combo, ["acquisitionMethod","入手方法"], "-");
+const acqMethod = getComboField(combo, ["acquisitionMethod","入手方法"], "-");
       const acqPlace  = getComboField(combo, ["acquisitionPlace","入手場所"], "-");
       const acqPeriod = getComboField(combo, ["availablePeriod","入手可能期間"], "-");
 
@@ -1662,7 +1678,7 @@ function renderComboDetail(){
   const policy = policyArr.length ? policyArr.join(" / ") : "-";
   const effect = getComboField(c, ["effect","効果"], "-");
   const need = getComboField(c, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
-  const acqMethod = getComboField(c, ["acquisitionMethod","入手方法"], "-");
+const acqMethod = normalizeAcquisitionMethod(getComboField(c, ["acquisitionMethod","入手方法"], "-"));
   const acqPlace  = getComboField(c, ["acquisitionPlace","入手場所"], "-");
   const acqPeriod = getComboField(c, ["availablePeriod","入手可能期間"], "-");
 

@@ -1464,7 +1464,7 @@
       "リアクション"
     ],
     "requiredPlayers": 3,
-    "acquisitionMethod": "報酬",
+    "acquisitionMethod": "その他",
     "acquisitionPlace": "WPSコンテスト",
     "availablePeriod": "2026年2月27日まで",
     "effect": "パスカット、キープ力、敏捷性が80%アップ",
@@ -1518,7 +1518,7 @@
       "カウンター"
     ],
     "requiredPlayers": 3,
-    "acquisitionMethod": "報酬",
+    "acquisitionMethod": "その他",
     "acquisitionPlace": "WPSコンテスト",
     "availablePeriod": "2026年2月27日まで",
     "effect": "コンタクト、走力、キック精度が80%アップ",
@@ -1572,7 +1572,7 @@
       "ムービング"
     ],
     "requiredPlayers": 3,
-    "acquisitionMethod": "報酬",
+    "acquisitionMethod": "その他",
     "acquisitionPlace": "WPSコンテスト",
     "availablePeriod": "2026年2月27日まで",
     "effect": "コンタクト、走力、キープ力が80%アップ",
@@ -1626,7 +1626,7 @@
       "ポゼッション"
     ],
     "requiredPlayers": 3,
-    "acquisitionMethod": "報酬",
+    "acquisitionMethod": "その他",
     "acquisitionPlace": "WPSコンテスト",
     "availablePeriod": "2026年2月27日まで",
     "effect": "ロングパス、コンタクト、キープ力が80%アップ",
