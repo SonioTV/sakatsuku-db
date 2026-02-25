@@ -344,6 +344,17 @@
 
   /* ===== Layout tweak (iPhone16): shift contents slightly left & keep fixed positions ===== */
   #resultArea .hdr, #resultArea .row{ padding-left:6px !important; padding-right:4px !important; }
+/* === Player top summary: 4 columns (Name / Rarity / Overall / Max) === */
+#resultArea .hdr.topCols4,
+#resultArea .row.topCols4{
+  grid-template-columns: 120px 74px 1fr 1fr !important;
+}
+@media (max-width: 420px){
+  #resultArea .hdr.topCols4,
+  #resultArea .row.topCols4{
+    grid-template-columns: 110px 62px 1fr 1fr !important;
+  }
+}
   #resultArea .hdr{ grid-template-columns: 120px 1fr 1fr !important; }
   #resultArea .row{ grid-template-columns: 120px 1fr 1fr !important; }
   #resultArea .hdr.blue{ grid-template-columns: 120px 1fr 1fr !important; }
@@ -968,6 +979,13 @@ function openComboList(title, combos){
 /* ===== Render ===== */
 function renderResult(target){
   const nm = normalize(target.name || target.player_name || "（不明）");
+const rarityRaw = (target && (target.rarity ?? target["レアリティ"])) ?? "";
+let rarityDisp = "-";
+if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !== "") {
+  const n = parseInt(rarityRaw, 10);
+  rarityDisp = Number.isFinite(n) ? `★${n}` : String(rarityRaw);
+  if (!rarityDisp.includes("★") && Number.isFinite(n)) rarityDisp = `★${n}`;
+}
   const overall = toNum(target.overall);
   const maxUp   = toNum(target.maxUpgrade);
   const pol = normalize(target.policy);
@@ -987,25 +1005,21 @@ function renderResult(target){
 
   const out = $("resultArea");
 
+  // Header summary + ①〜③ を全部 “1つのテンプレ文字列” に入れる
   out.innerHTML = `
     <!-- Header summary -->
-    <div class="block" style="border-color:#2e7d32;">
-      <div class="hdr" style="grid-template-columns: 1fr 150px 150px;">
-        <div>選手名</div><div class="center">初期総合力</div><div class="center">最大強化</div>
+    <div class="block">
+      <div class="hdr green topCols4">
+        <div>選手名</div>
+        <div>レアリティ</div>
+        <div>初期総合力</div>
+        <div>最大強化</div>
       </div>
-      <div class="row" style="grid-template-columns: 1fr 150px 150px;">
-        <div class="center">${esc(nm)}</div>
-        <div class="center">${overall!=null?esc(overall):"-"}</div>
-        <div class="center">${maxUp!=null?esc(maxUp):"-"}</div>
-      </div>
-
-      <div class="hdr" style="grid-template-columns: 1fr 150px 150px;">
-        <div>ポリシー</div><div class="center">ポジション</div><div class="center">プレイスタイル</div>
-      </div>
-      <div class="row" style="grid-template-columns: 1fr 150px 150px;">
-        <div class="center">${esc(pol||"-")}</div>
-        <div class="center">${esc(pos||"-")}</div>
-        <div class="center">${styShow}</div>
+      <div class="row topCols4">
+        <div>${esc(nm)}</div>
+        <div>${esc(rarityDisp)}</div>
+        <div>${overall!=null ? esc(overall) : "-"}</div>
+        <div>${maxUp!=null ? esc(maxUp) : "-"}</div>
       </div>
     </div>
 
