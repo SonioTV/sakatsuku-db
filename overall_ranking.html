@@ -161,8 +161,8 @@
       align-items:center;
       gap:12px;
     }
-    .modalHead .ttl{ font-size:18px; font-weight:900; }
-    .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; }
+    .modalHead .ttl{ font-size:18px; font-weight:900; color:#ffd400; }
+    .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; color:#ffd400; }
     .modalHead button{
       border:none;
       background:transparent;
@@ -377,6 +377,7 @@ function openPlayerModal(p){
   const lines = [];
   // ※ indexのコメントにある順（区分,入手方法,入手場所,入手可能期間,初期総合力,最大強化,ポリシー,プレイスタイル,メインポジション,...）
   lines.push(["区分", nvl(p.category, "-")]);
+lines.push(["レアリティ", (p.rarity!=null && String(p.rarity)!=="") ? ("★" + String(p.rarity).replace(/^★/,"")) : "-"]);
   lines.push(["入手方法", nvl(p.acquisitionMethod || p.acquisition_method, "-")]);
   lines.push(["入手場所", nvl(p.acquisitionPlace || p.acquisition_place, "-")]);
   lines.push(["入手可能期間", nvl(p.availablePeriod || p.available_period, "-")]);

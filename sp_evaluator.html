@@ -409,8 +409,8 @@
     align-items:center;
     gap:12px;
   }
-  .pmodalHead .ttl{ font-size:18px; font-weight:900; }
-  .pmodalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; }
+  .pmodalHead .ttl{ font-size:18px; font-weight:900; color:#ffd400; }
+  .pmodalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; color:#ffd400; }
   .pmodalHead button{
     border:none;
     background:transparent;
@@ -1217,6 +1217,7 @@ function openPlayerModal(p){
 
   const lines = [];
   lines.push(`<div class="mLine"><span class="mKey">区分</span><span class="mVal">${esc2(p.category ?? "-")}</span></div>`);
+lines.push(`<div class="mLine"><span class="mKey">レアリティ</span><span class="mVal">${esc2((p.rarity!=null && String(p.rarity)!=="") ? ("★" + String(p.rarity).replace(/^★/,"")) : "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class="mVal">${esc2(p.acquisitionMethod ?? "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手場所</span><span class="mVal">${esc2(p.acquisitionPlace ?? "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手可能期間</span><span class="mVal">${esc2(p.availablePeriod ?? "-")}</span></div>`);

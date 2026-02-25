@@ -73,8 +73,8 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
     align-items:flex-start;
     gap:12px;
   }
-  .modalHead .ttl{ font-size:18px; font-weight:900; line-height:1.2; }
-  .modalHead .subttl{ font-size:12px; font-weight:700; opacity:.85; margin-top:4px; }
+  .modalHead .ttl{font-size:18px; font-weight:900; line-height:1.2; color:#ffd400; }
+  .modalHead .subttl{ color:#ffd400; font-size:12px; font-weight:700; opacity:.85; margin-top:4px;  color:#ffd400; }
   .modalHead button{
     border:2px solid rgba(255,255,255,.25);
     background:transparent;
@@ -198,8 +198,8 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
     align-items:center;
     gap:12px;
   }
-  .modalHead .ttl{ font-size:18px; font-weight:900; }
-  .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; }
+  .modalHead .ttl{ font-size:18px; font-weight:900; color:#ffd400; }
+  .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; color:#ffd400; }
   .modalHead button{
     border:none;
     background:transparent;
@@ -1027,6 +1027,7 @@ function showPlayerDetailById(pid){
   const ps = p.playStyle ? `${p.playStyle} ${roman(p.playStyleLv)}` : "-";
   const rows = [
     ["区分", p.category],
+["レアリティ", (p.rarity!=null && String(p.rarity)!=="") ? ("★" + String(p.rarity).replace(/^★/,"")) : "-"],
     ["入手方法", p.acquisitionMethod],
     ["入手場所", p.acquisitionPlace],
     ["入手可能期間", p.availablePeriod],

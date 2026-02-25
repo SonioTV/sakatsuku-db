@@ -502,8 +502,8 @@
     align-items:center;
     gap:12px;
   }
-  .modalHead .ttl{ font-size:18px; font-weight:900; }
-  .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; }
+  .modalHead .ttl{ font-size:18px; font-weight:900; color:#ffd400; }
+  .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; color:#ffd400; }
   .modalHead button{
     border:none;
     background:transparent;
@@ -1132,6 +1132,7 @@ function openPlayerModal(p){
   const lines = [];
   // ※ 要望の順：区分,入手方法,入手場所,入手可能期間,初期総合力,最大強化,ポリシー,プレイスタイル,メインポジション,メインスキル,メイン特徴
   lines.push(`<div class="mLine"><span class="mKey">区分</span><span class="mVal">${esc(nvl(p.category,"-"))}</span></div>`);
+lines.push(`<div class="mLine"><span class="mKey">レアリティ</span><span class="mVal">${esc((p.rarity!=null && String(p.rarity)!=="") ? ("★" + String(p.rarity).replace(/^★/,"")) : "-")}</span></div>`);
 lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class="mVal">${esc(normalizeAcquisitionMethod(p.acquisitionMethod))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手場所</span><span class="mVal">${esc(nvl(p.acquisitionPlace,"-"))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手可能期間</span><span class="mVal">${esc(nvl(p.availablePeriod,"-"))}</span></div>`);
