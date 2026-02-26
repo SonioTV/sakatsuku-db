@@ -1021,6 +1021,14 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
         <div>${overall!=null ? esc(overall) : "-"}</div>
         <div>${maxUp!=null ? esc(maxUp) : "-"}</div>
       </div>
+<div class="hdr">
+  <div>ポリシー</div><div class="center">ポジション</div><div class="center">プレイスタイル</div>
+</div>
+<div class="row">
+  <div class="center">${esc(pol||"-")}</div>
+  <div class="center">${esc(pos||"-")}</div>
+  <div class="center">${styShow}</div>
+</div>
     </div>
 
     <!-- ① Rankings -->
