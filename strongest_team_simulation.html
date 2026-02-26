@@ -91,8 +91,25 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
   }
   .modalBody{ padding:16px 18px 18px; }
   .modalBody .mLine{ margin:8px 0; }
-  .modalBody .mKey{ font-weight:900; display:inline-block; min-width:140px; color:#111; }
-  .modalBody .mVal{ color:#111; font-weight:700; }
+.modalBody .mLine{
+  margin:8px 0;
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+}
+.modalBody .mKey{
+  font-weight:900;
+  flex:0 0 140px;     /* ← 左列幅固定（=折り返し位置が揃う） */
+  color:#111;
+}
+.modalBody .mVal{
+  color:#111;
+  font-weight:700;
+  flex:1 1 auto;
+  min-width:0;
+  overflow-wrap:anywhere; /* 長い文字でも自然に折り返し */
+  word-break:break-word;
+}
 
   
 /* --- end modal styles sync --- */
