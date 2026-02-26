@@ -61,7 +61,7 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
     align-items:center;
     justify-content:center;
     padding:18px;
-    z-index:9999;
+    z-index:50;
   }
   .modalBack.show{ display:flex; }
   .modal{
@@ -897,7 +897,7 @@ function openModal(){
   modalBack.setAttribute("aria-hidden","false");
 }
 function makeRow(k,v){
-  return `<div class="mLine"><div class="mKey">${esc(k)}</div><div class="mVal">${esc(v||"-")}</div></div>`;
+  return `<div class="mLine"><span class="mKey">${esc(k)}</span><span class="mVal">${esc(v||"-")}</span></div>`;
 }
 function showPlayerDetailById(pid){
   const p = PLAYER_MAP.get(String(pid));
