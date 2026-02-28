@@ -690,8 +690,11 @@ function updateStyleOptionsByPos(){
       .map(p => p.playStyle)
   );
 
-  fillSelect($("fStyle"), styles);
-  if(cur && !styles.includes(cur)) $("fStyle").value = "";
+fillSelect($("fStyle"), styles);
+if(cur && styles.includes(cur)){
+  $("fStyle").value = cur;   // ★互換があるなら復元
+}else{
+  $("fStyle").value = "";    // ★互換がないなら空
 }
 
 /* ★追加：Style -> Pos cascading */
@@ -713,8 +716,11 @@ function updatePosOptionsByStyle(){
       .map(p => p.mainPosition)
   );
 
-  fillSelect($("fPos"), poses);
-  if(cur && !poses.includes(cur)) $("fPos").value = "";
+fillSelect($("fPos"), poses);
+if(cur && poses.includes(cur)){
+  $("fPos").value = cur;     // ★互換があるなら復元
+}else{
+  $("fPos").value = "";      // ★互換がないなら空
 }
 
 // ポジション変更で即反映
