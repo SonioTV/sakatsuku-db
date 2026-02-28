@@ -265,7 +265,7 @@
       <div class="tableWrap"><table id="tblMaxUp" class="rankTable"></table></div>
     </section>
 
-    <!-- ③ 総合フィルターランキングTOP5 -->
+    <!-- ③ フィルターランキングTOP5 -->
     <section id="filter" class="card">
       <div class="sectionTitle" style="text-align:left;">③ 総合フィルターランキング TOP5</div>
       <div class="note" style="text-align:left;margin-top:6px;">
@@ -297,7 +297,7 @@
     <section id="sp" class="card">
       <div class="sectionTitle" style="text-align:left;">④ SP選手の割合</div>
       <div class="note" style="text-align:left;margin-top:-4px;">
-        ※「players.json」に存在する選手データを母数にして割合を表示します
+        ※当サイトに登録選手データを母数にして割合を表示します
       </div>
 
       <div class="resultGroupTitle">ポリシー別</div>
@@ -546,11 +546,11 @@ function setupFilterUI(){
 ========================= */
 const ORDER_POLICY = ["ポゼッション","カウンター","ムービング","リアクション"];
 const ORDER_STYLE = [
-  "アタッカー","サイドアタッカー","ストライカー","チャンスメイカー","ドリブラー",
-  "レジスタ","ゲームメーカー","トップ下","アンカー","ハードマーカー",
-  "ストッパー","組立CB","守備的FB","攻撃的FB","組立GK"
+  "ストライカー","ラインブレーカー","ポストプレーヤー","サイドアタッカー","ドリブラー",
+  "アタッカー","パサー","セントラルMF","ハードマーカー","ストッパー",
+  "組立CB","攻撃的FB","守備的FB","オーソドックスGK","スイーパーGK"
 ];
-const ORDER_POS = ["GK","CB","SB","LB","RB","DM","CM","SM","AM","RM","LM","RW","LW","CF","FW"];
+const ORDER_POS = ["GK","CB","LB","RB","DM","LM","RM","AM","RW","LW","CF"];
 
 function renderShareBars(){
   const total = PLAYERS.length || 1;
