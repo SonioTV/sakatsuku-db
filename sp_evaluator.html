@@ -585,7 +585,9 @@ function lvInclusiveMatch(reqLv, playerLv){
 
 /* ===== UI setup ===== */
 function uniqueSorted(arr){
-  return [...new Set(arr.filter(v=>normalize(v)!==""))].sort((a,b)=>String(a).localeCompare(String(b), "ja"));
+  // 値の比較/保持を normalize 後で統一（空白や表記ゆれで includes が失敗しないようにする）
+  return [...new Set(arr.map(normalize).filter(v=>v!==""))]
+    .sort((a,b)=>String(a).localeCompare(String(b), "ja"));
 }
 
 function fillSelect(sel, items){
