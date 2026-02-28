@@ -667,7 +667,7 @@ function findPlayerById(pid){
   return SP_PLAYERS.find(p=>(p.player_id===pid || p.playerId===pid)) || null;
 }
 
-/* ===== Position -> Style cascading ===== */
+/* ===== Position <-> Style cascading ===== */
 let ALL_STYLES = [];
 let ALL_POS = [];
 
@@ -675,12 +675,14 @@ let CASCADE_LOCK = false;
 
 function updateStyleOptionsByPos(){
   if(CASCADE_LOCK) return;
-  const pos = normalize($("fPos").value);
-  const cur = normalize($("fStyle").value);
 
+  const pos = normalize($("fPos").value);
+  const curStyle = normalize($("fStyle").value);
+
+  // ポジション未選択なら全スタイル
   if(!pos){
     fillSelect($("fStyle"), ALL_STYLES);
-    if(cur && ALL_STYLES.includes(cur)) $("fStyle").value = cur;
+    if(curStyle && ALL_STYLES.includes(curStyle)) $("fStyle").value = curStyle;
     return;
   }
 
@@ -690,23 +692,26 @@ function updateStyleOptionsByPos(){
       .map(p => p.playStyle)
   );
 
-fillSelect($("fStyle"), styles);
-if(cur && styles.includes(cur)){
-  $("fStyle").value = cur;   // ★互換があるなら復元
-}else{
-  $("fStyle").value = "";    // ★互換がないなら空
+  fillSelect($("fStyle"), styles);
+
+  // 互換があるなら維持、なければ（指定なし）
+  if(curStyle && styles.includes(curStyle)){
+    $("fStyle").value = curStyle;
+  }else{
+    $("fStyle").value = "";
+  }
 }
 
-/* ★追加：Style -> Pos cascading */
 function updatePosOptionsByStyle(){
   if(CASCADE_LOCK) return;
+
   const sty = normalize($("fStyle").value);
-  const cur = normalize($("fPos").value);
+  const curPos = normalize($("fPos").value);
 
   // スタイル未選択なら全ポジション
   if(!sty){
     fillSelect($("fPos"), ALL_POS);
-    if(cur && ALL_POS.includes(cur)) $("fPos").value = cur;
+    if(curPos && ALL_POS.includes(curPos)) $("fPos").value = curPos;
     return;
   }
 
@@ -716,18 +721,22 @@ function updatePosOptionsByStyle(){
       .map(p => p.mainPosition)
   );
 
-fillSelect($("fPos"), poses);
-if(cur && poses.includes(cur)){
-  $("fPos").value = cur;     // ★互換があるなら復元
-}else{
-  $("fPos").value = "";      // ★互換がないなら空
+  fillSelect($("fPos"), poses);
+
+  // 互換があるなら維持、なければ（指定なし）
+  if(curPos && poses.includes(curPos)){
+    $("fPos").value = curPos;
+  }else{
+    $("fPos").value = "";
+  }
 }
 
-// ポジション変更で即反映
+// ポジション変更 → スタイル候補を更新
 $("fPos").addEventListener("change", ()=>{
   updateStyleOptionsByPos();
 });
 
+// スタイル変更 → ポジション候補を更新
 $("fStyle").addEventListener("change", ()=>{
   updatePosOptionsByStyle();
 });
