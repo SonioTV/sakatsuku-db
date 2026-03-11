@@ -677,15 +677,6 @@ function filterCandidates(){
 }
 
   // 表示は「選手名のみ」
-  sel.innerHTML = list.map(p=>{
-    const id = p.player_id || p.playerId || "";
-    const nm = p.name || p.player_name || id;
-    return `<option value="${esc(id)}">${esc(nm)}</option>`;
-  }).join("");
-  sel.value = (list[0].player_id || list[0].playerId || "");
-  return { list, message: `候補：${list.length}人` };
-}
-
 function findPlayerById(pid){
   return SP_PLAYERS.find(p=>(p.player_id===pid || p.playerId===pid)) || null;
 }
@@ -1276,8 +1267,8 @@ function resetAll(){
   $("fPolicy").value="";
   $("fPos").value="";
   $("fStyle").value="";
-　$("fAcqMethod").value = "";
-　$("fAcqPlace").value = "";
+  $("fAcqMethod").value = "";
+  $("fAcqPlace").value = "";
   $("fKw").value="";
   $("playerPick").innerHTML = `<option value="">（先に候補を表示してください）</option>`;
   $("resultArea").innerHTML = `<div class="note" style="margin-top:4px;">左側で候補を出して、評価したい選手を選択してください。</div>`;
