@@ -772,6 +772,7 @@ function calcRankings(target){
 
   return [
     make(SP_PLAYERS, "SP選手全体", ""),
+    make(SP_PLAYERS.filter(p=>normalize(p.acquisitionPlace)===normalize(target.acquisitionPlace)), "入手場所別", normalize(target.acquisitionPlace)),
     make(SP_PLAYERS.filter(p=>normalize(p.policy)===normalize(target.policy)), "ポリシー", normalize(target.policy)),
     make(SP_PLAYERS.filter(p=>normalize(p.mainPosition)===normalize(target.mainPosition)), "ポジション", normalize(target.mainPosition)),
     make(SP_PLAYERS.filter(p=>normalize(p.playStyle)===normalize(target.playStyle)), "プレイスタイル", normalize(target.playStyle)),
