@@ -466,6 +466,14 @@
           <select id="fStyle"><option value="">（指定なし）</option></select>
         </div>
         <div>
+          <label for="fAcqMethod">入手方法</label>
+          <select id="fAcqMethod"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
+          <label for="fAcqPlace">入手場所</label>
+          <select id="fAcqPlace"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
           <label>キーワード（選手名）</label>
           <input id="fKw" type="text" placeholder="例：サカ / ロナウド" />
         </div>
@@ -614,6 +622,8 @@ async function loadData(){
 fillSelect($("fPolicy"), uniqueSorted(SP_PLAYERS.map(p=>p.policy)));
 fillSelect($("fPos"), uniqueSorted(SP_PLAYERS.map(p=>p.mainPosition)));
 fillSelect($("fStyle"), uniqueSorted(SP_PLAYERS.map(p=>p.playStyle)));
+fillSelect($("fAcqMethod"), uniqueSorted(SP_PLAYERS.map(p=>p.acquisitionMethod)));
+fillSelect($("fAcqPlace"), uniqueSorted(SP_PLAYERS.map(p=>p.acquisitionPlace)));
 
 ALL_POS    = uniqueSorted(SP_PLAYERS.map(p=>p.mainPosition));
 ALL_STYLES = uniqueSorted(SP_PLAYERS.map(p=>p.playStyle));
@@ -624,12 +634,16 @@ function filterCandidates(){
   const pol = normalize($("fPolicy").value);
   const pos = normalize($("fPos").value);
   const sty = normalize($("fStyle").value);
+  const acqMethod = normalize($("fAcqMethod").value);
+  const acqPlace  = normalize($("fAcqPlace").value);
   const kw  = normalize($("fKw").value).toLowerCase();
 
   let list = SP_PLAYERS.filter(p=>{
     if(pol && normalize(p.policy)!==pol) return false;
     if(pos && normalize(p.mainPosition)!==pos) return false;
     if(sty && normalize(p.playStyle)!==sty) return false;
+    if(acqMethod && normalize(p.acquisitionMethod)!==acqMethod) return false;
+    if(acqPlace && normalize(p.acquisitionPlace)!==acqPlace) return false;
     if(kw){
       const name = normalize(p.name || p.player_name || "");
       if(!name.toLowerCase().includes(kw)) return false;
@@ -652,6 +666,15 @@ function filterCandidates(){
     sel.innerHTML = `<option value="">（該当なし）</option>`;
     return { list: [], message: "条件に一致するSP選手が見つかりませんでした。" };
   }
+
+  sel.innerHTML = list.map(p=>{
+    const pid = normalize(p.player_id || p.playerId || "");
+    const name = esc(p.name || p.player_name || "(名称不明)");
+    return `<option value="${esc(pid)}">${name}</option>`;
+  }).join("");
+
+  return { list, message: `${list.length}人の候補が見つかりました。` };
+}
 
   // 表示は「選手名のみ」
   sel.innerHTML = list.map(p=>{
@@ -1253,6 +1276,8 @@ function resetAll(){
   $("fPolicy").value="";
   $("fPos").value="";
   $("fStyle").value="";
+　$("fAcqMethod").value = "";
+　$("fAcqPlace").value = "";
   $("fKw").value="";
   $("playerPick").innerHTML = `<option value="">（先に候補を表示してください）</option>`;
   $("resultArea").innerHTML = `<div class="note" style="margin-top:4px;">左側で候補を出して、評価したい選手を選択してください。</div>`;
