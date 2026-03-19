@@ -714,10 +714,6 @@
 }
 
 </style>
-<!-- Google AdSense (replace ca-pub-XXXXXXXXXXXXXXX with your publisher ID) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
-        crossorigin="anonymous"></script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -757,6 +753,19 @@
   </small>
 </div>
 
+<div class="card" style="margin-bottom:20px;">
+  <div class="sectionTitle">サイトについて</div>
+  <div style="text-align:left; line-height:1.8; font-size:14px; padding:10px 6px;">
+    本サイトは「サカつく2026」の攻略・データベースサイトです。<br><br>
+
+    フォーメーションコンボ、選手検索、期限付き移籍などの情報を、
+    実際のゲームプレイおよび検証データをもとに整理しています。<br><br>
+
+    「どの選手を使えばいいか」「どのコンボを狙うべきか」を
+    分かりやすく判断できるように設計しており、
+    初心者から上級者まで活用できる内容になっています。
+  </div>
+</div>
 
   <!-- Site pages (About/Policy/Contact etc.) -->
   
@@ -764,8 +773,14 @@
 
 <!-- ===== 更新履歴 ===== -->
 
-
-
+<div class="card" style="margin-bottom:20px;">
+  <div class="sectionTitle">更新履歴</div>
+  <div style="text-align:left; font-size:14px; line-height:1.8;">
+    <div id="latestChangelogTop">
+      <div>最新の更新履歴を読み込み中です...</div>
+    </div>
+  </div>
+</div>
 
   <div class="tabs">
     <button id="tabCombo" class="tabbtn active" type="button">コンボ検索</button>
@@ -1919,16 +1934,7 @@ function renderPlayerNameOnlyList(arr){
 
 
 
-<!-- ===== 更新履歴 / サイト情報（ページ下部表示） ===== -->
-<section class="card updateCard" id="changelog">
-  <div class="sectionTitle" style="text-align:left;">
-    <a href="changelog.html" style="color:inherit;text-decoration:none;">更新履歴</a>
-  </div>
-  <div id="latestChangelog" class="updateItem">
-    <div class="updateDate">読み込み中…</div>
-    <div class="updateText">更新履歴を取得しています。</div>
-  </div>
-</section>
+<!-- ===== サイト情報（ページ下部表示） ===== -->
 <section class="card" id="site-pages" aria-label="サイト情報ページ">
     <h2 style="margin:0 0 10px;">サイト情報</h2>
     <table class="site-pages-table">
@@ -1947,12 +1953,12 @@ function renderPlayerNameOnlyList(arr){
 <!-- ===== AdSense: footer / safe placement ===== -->
 <div class="adWrap" aria-label="広告">
   <div class="adLabel">スポンサーリンク</div>
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
-       data-ad-slot="1234567890"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7589811048145654"
+     data-ad-slot="1234567890"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
@@ -2117,11 +2123,11 @@ function renderBarsInOrder(container, order, map, total){
 
 <script>
 (function(){
-  const target = document.getElementById("latestChangelog");
+  const target = document.getElementById("latestChangelogTop");
   if(!target) return;
 
   function setFallback(msg){
-    target.innerHTML = '<div class="updateDate">更新履歴</div><div class="updateText">'+msg+'</div>';
+    target.innerHTML = '<div class="updateText">'+msg+'</div>';
   }
 
   fetch("changelog.html", { cache: "no-store" })
