@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>期限付き移籍マッチングツール | サカつく2026 DB</title>
+  <style>
+    :root{
+      --bg1:#08121f;
+      --bg2:#102238;
+      --panel:#12263f;
+      --panel2:#183250;
+      --line:#d7b45b;
+      --line-soft:rgba(215,180,91,.45);
+      --text:#eef5ff;
+      --muted:#aabbd1;
+      --accent:#7ed0ff;
+      --accent2:#8ff0c4;
+      --danger:#ff8f8f;
+      --shadow:0 12px 28px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:
+      radial-gradient(circle at top, rgba(57,115,189,.20), transparent 26%),
+      linear-gradient(180deg,var(--bg2),var(--bg1) 42%,#060d16 100%);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+    }
+    a{color:var(--accent)}
+    .wrap{max-width:1280px;margin:0 auto;padding:24px 16px 48px}
+    .hero{
+      border:1px solid var(--line-soft);
+      background:linear-gradient(180deg,rgba(23,49,80,.92),rgba(11,25,42,.92));
+      box-shadow:var(--shadow);
+      border-radius:20px;
+      padding:22px 18px;
+      margin-bottom:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;inset:auto -120px -120px auto;
+      width:300px;height:300px;border-radius:50%;
+      background:radial-gradient(circle, rgba(215,180,91,.22), rgba(215,180,91,0) 70%);
+      pointer-events:none;
+    }
+    .title{
+      margin:0 0 8px;
+      font-size:clamp(1.6rem,2.8vw,2.4rem);
+      font-weight:800;
+      letter-spacing:.03em;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:.98rem;
+    }
+
+    .controls{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+      padding:18px;
+      border-radius:20px;
+      background:rgba(10,21,35,.82);
+      border:1px solid var(--line-soft);
+      box-shadow:var(--shadow);
+      position:sticky;
+      top:10px;
+      z-index:5;
+      backdrop-filter: blur(8px);
+    }
+    .field{display:flex;flex-direction:column;gap:7px}
+    .field label{
+      font-size:.92rem;
+      font-weight:700;
+      color:#ffe29c;
+      letter-spacing:.02em;
+    }
+    select,button,input{
+      appearance:none;
+      width:100%;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(180deg,#1c3554,#152842);
+      color:var(--text);
+      padding:12px 14px;
+      font-size:.97rem;
+      min-height:46px;
+      outline:none;
+    }
+    select:focus,button:focus,input:focus{
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(126,208,255,.18);
+    }
+    .actions{display:flex;align-items:end;gap:10px}
+    .btn{
+      cursor:pointer;
+      font-weight:800;
+      letter-spacing:.03em;
+      transition:transform .15s ease, opacity .15s ease, border-color .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{
+      background:linear-gradient(180deg,#1e6aa1,#154f7a);
+      border-color:rgba(126,208,255,.55);
+    }
+    .btn-sub{
+      background:linear-gradient(180deg,#3d2f16,#2a2110);
+      border-color:rgba(215,180,91,.45);
+    }
+
+    .summary{
+      margin:16px 0 14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(18,38,63,.82);
+      border-radius:999px;
+      padding:8px 12px;
+      color:#dce9f8;
+      font-size:.92rem;
+    }
+    .pill strong{color:#fff}
+    .count{
+      margin-left:auto;
+      color:#ffe29c;
+      font-weight:800;
+    }
+
+    .note{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.7;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+    }
+    .card{
+      background:linear-gradient(180deg,rgba(25,49,78,.96),rgba(15,30,48,.96));
+      border:1px solid var(--line-soft);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .cardHead{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 16px;
+      background:
+        linear-gradient(180deg,rgba(215,180,91,.14),rgba(215,180,91,.05)),
+        linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,0));
+      border-bottom:1px solid var(--line-soft);
+    }
+    .headLeft{
+      display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:46px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.83rem;
+      font-weight:800;
+      line-height:1;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.08);
+    }
+    .tag.slot{
+      color:#17212f;
+      background:linear-gradient(180deg,#f5d88b,#d7b45b);
+      border-color:rgba(255,232,171,.65);
+    }
+    .headScore{
+      text-align:right;
+      font-size:.86rem;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+    .headScore strong{
+      display:block;
+      color:#fff;
+      font-size:1.05rem;
+      margin-top:2px;
+    }
+
+    .club{
+      padding:14px 16px 4px;
+      font-size:1.55rem;
+      font-weight:900;
+      letter-spacing:.02em;
+      line-height:1.25;
+    }
+
+    .reasonRow{
+      padding:0 16px 10px;
+      display:flex;gap:8px;flex-wrap:wrap;
+    }
+    .reason{
+      font-size:.78rem;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(126,208,255,.28);
+      background:rgba(126,208,255,.10);
+      color:#dff3ff;
+    }
+    .reason.cap{
+      border-color:rgba(143,240,196,.32);
+      background:rgba(143,240,196,.10);
+      color:#dffff3;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1.12fr 1.88fr;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .row{display:contents}
+    .th,.td{
+      padding:12px 14px;
+      border-top:1px solid rgba(255,255,255,.08);
+      min-height:52px;
+      display:flex;
+      align-items:center;
+    }
+    .th{
+      background:rgba(255,255,255,.04);
+      color:#ffe29c;
+      font-weight:800;
+    }
+    .td{
+      background:rgba(9,18,31,.14);
+      font-weight:700;
+    }
+    .td.dual{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      align-items:stretch;
+    }
+    .miniCell{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:12px;
+      padding:10px 8px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      min-height:40px;
+    }
+    .stars{
+      letter-spacing:.18em;
+      color:#ffd96b;
+      text-shadow:0 0 8px rgba(255,217,107,.16);
+      font-size:1.02rem;
+      white-space:nowrap;
+    }
+    .empty{
+      color:#7f93ad;
+      font-weight:600;
+    }
+    .emptyState{
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius:20px;
+      padding:28px 18px;
+      text-align:center;
+      color:var(--muted);
+      background:rgba(10,21,35,.55);
+    }
+
+    .footerNote{
+      margin-top:18px;
+      color:#90a6c3;
+      font-size:.88rem;
+      line-height:1.7;
+    }
+
+    @media (max-width: 1024px){
+      .controls{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .cards{grid-template-columns:1fr}
+    }
+    @media (max-width: 640px){
+      .wrap{padding:16px 10px 34px}
+      .controls{grid-template-columns:1fr; padding:14px}
+      .actions{flex-direction:column}
+      .club{font-size:1.28rem}
+      .grid{grid-template-columns:1fr 1.35fr}
+      .th,.td{padding:10px 10px; min-height:46px}
+      .td.dual{grid-template-columns:1fr}
+      .count{margin-left:0;width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1 class="title">期限付き移籍マッチングツール</h1>
+      <p class="lead">
+        選手の <strong>プレイスタイル</strong>・<strong>移籍期間</strong>・<strong>伸ばしたい成長項目</strong> から、
+        相性の良い期限付き移籍先を自動で抽出します。<br>
+        上限系の成長項目は通常成長より高く評価し、同条件内では移籍スコアが高いクラブを上位表示します。
+      </p>
+    </section>
+
+    <section class="controls" aria-label="検索条件">
+      <div class="field">
+        <label for="playStyleSelect">① 選手のプレイスタイル</label>
+        <select id="playStyleSelect"></select>
+      </div>
+      <div class="field">
+        <label for="durationSelect">② 移籍期間</label>
+        <select id="durationSelect"></select>
+      </div>
+      <div class="field">
+        <label for="growthSelect">③ 伸ばしたい成長項目</label>
+        <select id="growthSelect"></select>
+      </div>
+      <div class="actions">
+        <button id="searchBtn" class="btn btn-primary" type="button">おすすめを表示</button>
+        <button id="resetBtn" class="btn btn-sub" type="button">リセット</button>
+      </div>
+    </section>
+
+    <div class="summary" id="summary"></div>
+    <p class="note" id="noteText">
+      条件未入力でも全件表示できます。プレイスタイルは一致クラブのみ、成長項目は通常成長と上限成長をまとめて判定します。
+    </p>
+
+    <section id="results"></section>
+
+    <p class="footerNote">
+      判定ルール：成長項目で <strong>DEF</strong> を選ぶと <strong>DEF</strong> / <strong>DEF(上限)</strong> の両方を候補化し、
+      並び順では <strong>(上限)</strong> を高評価します。<strong>覚醒pt</strong> と <strong>スキル/特徴</strong> も個別に判定します。
+    </p>
+  </div>
+
+  <script>
+    const DURATION_OPTIONS = ["", "6ヶ月", "12ヶ月", "18ヶ月", "24ヶ月"];
+    const GROWTH_OPTIONS = ["", "ALL", "SHO", "SPD", "PHY", "PAS", "DRB", "DEF", "覚醒pt", "スキル/特徴"];
+    let rawLoans = [];
+    let activeResults = [];
+
+    const els = {
+      playStyle: document.getElementById("playStyleSelect"),
+      duration: document.getElementById("durationSelect"),
+      growth: document.getElementById("growthSelect"),
+      searchBtn: document.getElementById("searchBtn"),
+      resetBtn: document.getElementById("resetBtn"),
+      results: document.getElementById("results"),
+      summary: document.getElementById("summary"),
+      noteText: document.getElementById("noteText")
+    };
+
+    function safeNumber(value) {
+      if (value === null || value === undefined || value === "") return 0;
+      const n = Number(value);
+      return Number.isFinite(n) ? n : 0;
+    }
+
+    function emptyToDash(value) {
+      return value === null || value === undefined || value === "" ? "—" : String(value);
+    }
+
+    function toStars(value) {
+      const num = safeNumber(value);
+      return num > 0 ? "★".repeat(num) : "—";
+    }
+
+    function normalizeGrowthLabel(value) {
+      if (!value) return { raw: null, base: null, isCap: false, category: null };
+      const raw = String(value).trim();
+      if (raw === "特徴" || raw === "スキル") {
+        return { raw, base: raw, isCap: false, category: "スキル/特徴" };
+      }
+      const isCap = raw.includes("(上限)");
+      const base = raw.replace("(上限)", "");
+      return { raw, base, isCap, category: base };
+    }
+
+    function parseLoan(entry) {
+      const effect1 = safeNumber(entry["効果1"]);
+      const effect2 = safeNumber(entry["効果2"]);
+      const effect3 = safeNumber(entry["効果3"]);
+      const score1 = safeNumber(entry["スコア1"]);
+      const score2 = safeNumber(entry["スコア2"]);
+      const score3 = safeNumber(entry["スコア3"]);
+      const score4 = safeNumber(entry["スコア4"]);
+
+      const g1 = normalizeGrowthLabel(entry["成長項目1"]);
+      const g2 = normalizeGrowthLabel(entry["成長項目2"]);
+      const g3 = normalizeGrowthLabel(entry["成長項目3"]);
+      const g4 = normalizeGrowthLabel(entry["成長項目4"]);
+
+      return {
+        ...entry,
+        _score: safeNumber(entry["移籍スコア"]),
+        _growthMeta: [
+          { ...g1, effect: effect1, score: score1, value: entry["効果1"] },
+          { ...g2, effect: effect2, score: score2, value: entry["効果2"] },
+          { ...g3, effect: effect3, score: score3, value: entry["効果3"] },
+          { ...g4, effect: 0,       score: score4, value: entry["効果4"] }
+        ]
+      };
+    }
+
+    function isUsable(entry) {
+      return !!(entry["クラブ名"] && entry["移籍期間"] && entry["playStyle"]);
+    }
+
+    function buildSelect(selectEl, options, placeholder) {
+      selectEl.innerHTML = "";
+      const frag = document.createDocumentFragment();
+      const ph = document.createElement("option");
+      ph.value = "";
+      ph.textContent = placeholder;
+      frag.appendChild(ph);
+
+      options.forEach(value => {
+        if (!value) return;
+        const opt = document.createElement("option");
+        opt.value = value;
+        opt.textContent = value;
+        frag.appendChild(opt);
+      });
+      selectEl.appendChild(frag);
+    }
+
+    function getFilters() {
+      return {
+        playStyle: els.playStyle.value.trim(),
+        duration: els.duration.value.trim(),
+        growth: els.growth.value.trim()
+      };
+    }
+
+    function getGrowthMatchInfo(entry, selectedGrowth) {
+      if (!selectedGrowth) {
+        return { matched: true, total: 0, hasCap: false, reasons: [] };
+      }
+
+      const matches = entry._growthMeta.filter(item => {
+        if (!item.raw) return false;
+        if (selectedGrowth === "スキル/特徴") {
+          return item.category === "スキル/特徴";
+        }
+        if (selectedGrowth === "覚醒pt") {
+          return item.category === "覚醒pt";
+        }
+        return item.base === selectedGrowth;
+      });
+
+      if (!matches.length) {
+        return { matched: false, total: 0, hasCap: false, reasons: [] };
+      }
+
+      const hasCap = matches.some(item => item.isCap);
+      const total = matches.reduce((sum, item) => sum + safeNumber(item.score), 0) + (hasCap ? 1 : 0);
+      const reasons = [];
+      if (hasCap) reasons.push("上限育成");
+      if (selectedGrowth === "覚醒pt") reasons.push("覚醒pt対象");
+      if (selectedGrowth === "スキル/特徴") reasons.push("スキル/特徴あり");
+
+      return { matched: true, total, hasCap, reasons };
+    }
+
+    function filterAndRank() {
+      const { playStyle, duration, growth } = getFilters();
+
+      const rows = rawLoans
+        .filter(isUsable)
+        .filter(entry => !playStyle || entry["playStyle"] === playStyle)
+        .filter(entry => !duration || entry["移籍期間"] === duration)
+        .map(entry => {
+          const growthInfo = getGrowthMatchInfo(entry, growth);
+          return {
+            ...entry,
+            _matchedGrowth: growthInfo.matched,
+            _growthScore: growthInfo.total,
+            _hasCapGrowth: growthInfo.hasCap,
+            _reasons: growthInfo.reasons,
+            _recommendationScore: (entry._score * 100) + (growthInfo.total * 10)
+          };
+        })
+        .filter(entry => entry._matchedGrowth)
+        .sort((a, b) => {
+          if (b._recommendationScore !== a._recommendationScore) return b._recommendationScore - a._recommendationScore;
+          if (b._score !== a._score) return b._score - a._score;
+          if ((b._hasCapGrowth ? 1 : 0) !== (a._hasCapGrowth ? 1 : 0)) return (b._hasCapGrowth ? 1 : 0) - (a._hasCapGrowth ? 1 : 0);
+          return String(a["loan_id"]).localeCompare(String(b["loan_id"]), "ja");
+        });
+
+      return rows;
+    }
+
+    function renderSummary(list) {
+      const { playStyle, duration, growth } = getFilters();
+      const pills = [];
+      pills.push(`<span class="pill"><strong>プレイスタイル</strong> ${playStyle || "未指定"}</span>`);
+      pills.push(`<span class="pill"><strong>移籍期間</strong> ${duration || "未指定"}</span>`);
+      pills.push(`<span class="pill"><strong>成長項目</strong> ${growth || "未指定"}</span>`);
+      pills.push(`<span class="pill count">表示件数：${list.length}件</span>`);
+      els.summary.innerHTML = pills.join("");
+    }
+
+    function buildReasons(entry) {
+      const reasons = [];
+      if (els.playStyle.value) reasons.push("プレイスタイル一致");
+      if (entry._hasCapGrowth) reasons.push("上限成長あり");
+      reasons.push(...entry._reasons);
+      return [...new Set(reasons)];
+    }
+
+    function renderCards(list) {
+      if (!list.length) {
+        els.results.innerHTML = `
+          <div class="emptyState">
+            条件に一致する移籍先がありません。<br>
+            プレイスタイル・移籍期間・成長項目のいずれかを緩めて再検索してください。
+          </div>`;
+        return;
+      }
+
+      const html = list.map(entry => {
+        const reasons = buildReasons(entry)
+          .map(label => `<span class="reason ${label.includes("上限") ? "cap" : ""}">${label}</span>`)
+          .join("");
+
+        return `
+          <article class="card">
+            <div class="cardHead">
+              <div class="headLeft">
+                <span class="tag">${emptyToDash(entry["リーグ名"])}</span>
+                <span class="tag slot">枠 ${emptyToDash(entry["移籍枠"])}</span>
+              </div>
+              <div class="headScore">
+                移籍スコア
+                <strong>${emptyToDash(entry["移籍スコア"])}</strong>
+              </div>
+            </div>
+
+            <div class="club">${emptyToDash(entry["クラブ名"])}</div>
+            <div class="reasonRow">${reasons || `<span class="reason">候補</span>`}</div>
+
+            <div class="grid">
+              <div class="row">
+                <div class="th">追加方法</div>
+                <div class="td">${emptyToDash(entry["追加方法"])}</div>
+              </div>
+
+              <div class="row">
+                <div class="th">移籍期間 / 費用</div>
+                <div class="td dual">
+                  <span class="miniCell">${emptyToDash(entry["移籍期間"])}</span>
+                  <span class="miniCell">${emptyToDash(entry["移籍費用"])}</span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="th">推奨総合力</div>
+                <div class="td">${emptyToDash(entry["推奨総合力"])}</div>
+              </div>
+
+              <div class="row">
+                <div class="th">プレイスタイル</div>
+                <div class="td">${emptyToDash(entry["playStyle"])}</div>
+              </div>
+
+              <div class="row">
+                <div class="th">成長項目1</div>
+                <div class="td dual">
+                  <span class="miniCell">${emptyToDash(entry["成長項目1"])}</span>
+                  <span class="miniCell stars">${toStars(entry["効果1"])}</span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="th">成長項目2</div>
+                <div class="td dual">
+                  <span class="miniCell ${entry["成長項目2"] ? "" : "empty"}">${emptyToDash(entry["成長項目2"])}</span>
+                  <span class="miniCell stars ${entry["効果2"] ? "" : "empty"}">${toStars(entry["効果2"])}</span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="th">成長項目3</div>
+                <div class="td dual">
+                  <span class="miniCell ${entry["成長項目3"] ? "" : "empty"}">${emptyToDash(entry["成長項目3"])}</span>
+                  <span class="miniCell stars ${entry["効果3"] ? "" : "empty"}">${toStars(entry["効果3"])}</span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="th">成長項目4</div>
+                <div class="td dual">
+                  <span class="miniCell ${entry["成長項目4"] ? "" : "empty"}">${emptyToDash(entry["成長項目4"])}</span>
+                  <span class="miniCell ${entry["効果4"] ? "" : "empty"}">${emptyToDash(entry["効果4"])}</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      els.results.innerHTML = `<div class="cards">${html}</div>`;
+    }
+
+    function render() {
+      activeResults = filterAndRank();
+      renderSummary(activeResults);
+      renderCards(activeResults);
+    }
+
+    function resetFilters() {
+      els.playStyle.value = "";
+      els.duration.value = "";
+      els.growth.value = "";
+      render();
+    }
+
+    async function loadData() {
+      try {
+        const res = await fetch("./loan_master.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("loan_master.json の読み込みに失敗しました。");
+        const json = await res.json();
+        rawLoans = Array.isArray(json) ? json.map(parseLoan) : [];
+        initUI();
+        render();
+      } catch (error) {
+        console.error(error);
+        els.results.innerHTML = `
+          <div class="emptyState">
+            loan_master.json を読み込めませんでした。<br>
+            このHTMLと同じ階層に <strong>loan_master.json</strong> を配置してください。
+          </div>`;
+      }
+    }
+
+    function initUI() {
+      const playStyles = [...new Set(rawLoans.filter(isUsable).map(item => item["playStyle"]))].sort((a, b) => a.localeCompare(b, "ja"));
+      buildSelect(els.playStyle, playStyles, "プレイスタイルを選択");
+      buildSelect(els.duration, DURATION_OPTIONS, "移籍期間を選択");
+      buildSelect(els.growth, GROWTH_OPTIONS, "成長項目を選択");
+
+      els.searchBtn.addEventListener("click", render);
+      els.resetBtn.addEventListener("click", resetFilters);
+      els.playStyle.addEventListener("change", render);
+      els.duration.addEventListener("change", render);
+      els.growth.addEventListener("change", render);
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
