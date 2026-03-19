@@ -744,15 +744,6 @@
 
 <div class="wrap">
 <h1>サカつく2026 検索ツール</h1>
-
-<div class="note" style="max-width:min(720px,96%);margin:6px auto 12px;text-align:center;">
-  サカつく2026のフォーメーションコンボ検索・選手検索ができる攻略データベース。<br>
-  ポリシーやプレイスタイルからコンボを簡単に確認できます。<br>
-  <small style="display:block;margin-top:6px;opacity:.75;">
-    このサイトはソニオTVとChatGPTが共同開発しました
-  </small>
-</div>
-
 <div class="card" style="margin-bottom:20px;">
   <div class="sectionTitle">サイトについて</div>
   <div style="text-align:left; line-height:1.8; font-size:14px; padding:10px 6px;">
@@ -764,6 +755,10 @@
     「どの選手を使えばいいか」「どのコンボを狙うべきか」を
     分かりやすく判断できるように設計しており、
     初心者から上級者まで活用できる内容になっています。
+
+  <small style="display:block;margin-top:6px;opacity:.75;">
+    このサイトはソニオTVとChatGPTが共同開発しました
+  </small>
   </div>
 </div>
 
@@ -773,11 +768,11 @@
 
 <!-- ===== 更新履歴 ===== -->
 
-<div class="card" style="margin-bottom:20px;">
+<div class="card updateCard" style="margin-bottom:20px;">
   <div class="sectionTitle">更新履歴</div>
-  <div style="text-align:left; font-size:14px; line-height:1.8;">
-    <div id="latestChangelogTop">
-      <div>最新の更新履歴を読み込み中です...</div>
+  <div id="latestChangelogTop">
+    <div class="updateItem">
+      <div class="updateText">最新の更新履歴を読み込み中です...</div>
     </div>
   </div>
 </div>
@@ -2126,9 +2121,16 @@ function renderBarsInOrder(container, order, map, total){
   const target = document.getElementById("latestChangelogTop");
   if(!target) return;
 
-  function setFallback(msg){
-    target.innerHTML = '<div class="updateText">'+msg+'</div>';
-  }
+function setFallback(msg){
+  target.innerHTML = `
+    <div class="updateItem">
+      <div class="updateText">${msg}</div>
+    </div>
+    <div class="updateItem">
+      <div class="updateText"><a href="changelog.html">更新履歴ページを開く</a></div>
+    </div>
+  `;
+}
 
   fetch("changelog.html", { cache: "no-store" })
     .then(r => r.text())
@@ -2140,10 +2142,15 @@ function renderBarsInOrder(container, order, map, total){
       const date = (first.querySelector(".date")?.textContent || "").trim();
       const items = Array.from(first.querySelectorAll("ul li")).map(li => li.textContent.trim()).filter(Boolean);
 
-      const html = [
-        '<div class="updateDate">'+(date || "更新")+'</div>',
-        '<div class="updateText">'+(items.length ? "・"+items.join("<br>・") : "更新内容がありません")+'</div>'
-      ].join("");
+const html = `
+  <div class="updateItem">
+    <div class="updateDate">${date || "更新"}</div>
+    <div class="updateText">${items.length ? "・"+items.join("<br>・") : "更新内容がありません"}</div>
+  </div>
+  <div class="updateItem">
+    <div class="updateText"><a href="changelog.html">更新履歴をもっと見る</a></div>
+  </div>
+`;
 
       target.innerHTML = html;
     })
