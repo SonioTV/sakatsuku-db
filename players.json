@@ -4113,7 +4113,7 @@
     "nationality": "ジョージア",
     "growthType": "超早熟",
     "implementedDate": "2026-03-18",
-    "rarity": null
+    "rarity": "★3"
   },
   {
     "player_id": "P0197",
@@ -4134,7 +4134,7 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-03-18",
-    "rarity": null
+    "rarity": "★3"
   },
   {
     "player_id": "P0198",
@@ -4155,7 +4155,7 @@
     "nationality": "ウルグアイ",
     "growthType": "超早熟",
     "implementedDate": "2026-03-18",
-    "rarity": null
+    "rarity": "★3"
   },
   {
     "player_id": "P0199",
@@ -4176,6 +4176,6 @@
     "nationality": "パラグアイ",
     "growthType": "超早熟",
     "implementedDate": "2026-03-18",
-    "rarity": null
+    "rarity": "★3"
   }
 ]
