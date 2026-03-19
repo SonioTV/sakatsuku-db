@@ -861,7 +861,6 @@
       <div id="playerResult" class="playerList"></div>
     </div>
   </section>
-
   <!-- ===== タブ3：おまけ ===== -->
 <section id="panelBonus" class="panel">
 
@@ -934,19 +933,55 @@
   <!-- 攻略関連 -->
   <div class="card" style="margin-bottom:20px;">
     <div class="sectionTitle" style="text-align:left;">攻略関連</div>
-    <div style="display:flex; flex-direction:column; align-items:center; margin-top:14px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px; margin-top:14px;">
 
-      <a href="articles.html"
-         style="display:inline-block; padding:14px 28px; margin:10px; font-size:20px; font-weight:900;
-                background:#4a90e2; color:#fff; border-radius:18px; text-decoration:none;
-                box-shadow:0 12px 24px rgba(0,0,0,.18);">
-        攻略記事一覧
-      </a>
+      <article style="background:#fff; border:1px solid #e7e9f0; border-radius:18px; padding:16px; box-shadow:0 10px 20px rgba(0,0,0,.08);">
+        <div style="display:inline-block; margin-bottom:8px; padding:4px 10px; font-size:12px; font-weight:900; background:#e8f1ff; color:#0b5bd3; border-radius:999px;">
+          記事一覧
+        </div>
+        <div style="font-size:20px; font-weight:900; line-height:1.5; margin-bottom:8px;">
+          攻略記事一覧
+        </div>
+        <div style="font-size:14px; color:#555; line-height:1.7; margin-bottom:12px;">
+          公開中の攻略記事をまとめて確認できます。初心者向け、コンボ、育成など今後追加する記事の入口です。
+        </div>
+        <a href="articles.html"
+           style="display:inline-block; padding:10px 16px; background:#4a90e2; color:#fff; border-radius:12px; text-decoration:none; font-weight:900;">
+          記事一覧を見る
+        </a>
+      </article>
 
-      <!-- 今後ここに記事追加していく -->
-      <!-- 例：
-      <a href="beginner_guide.html">初心者ガイド</a>
-      -->
+      <article style="background:#fff; border:1px solid #e7e9f0; border-radius:18px; padding:16px; box-shadow:0 10px 20px rgba(0,0,0,.08);">
+        <div style="display:inline-block; margin-bottom:8px; padding:4px 10px; font-size:12px; font-weight:900; background:#eaf7ea; color:#2e7d32; border-radius:999px;">
+          初心者向け
+        </div>
+        <div style="font-size:20px; font-weight:900; line-height:1.5; margin-bottom:8px;">
+          初心者が最初にやるべき育成手順
+        </div>
+        <div style="font-size:14px; color:#555; line-height:1.7; margin-bottom:12px;">
+          序盤で何から進めるべきかを、選手整理・コンボ確認・期限付き移籍の流れで分かりやすく解説しています。
+        </div>
+        <a href="beginner_guide.html"
+           style="display:inline-block; padding:10px 16px; background:#2e7d32; color:#fff; border-radius:12px; text-decoration:none; font-weight:900;">
+          記事を読む
+        </a>
+      </article>
+
+      <article style="background:#fff; border:1px solid #e7e9f0; border-radius:18px; padding:16px; box-shadow:0 10px 20px rgba(0,0,0,.08);">
+        <div style="display:inline-block; margin-bottom:8px; padding:4px 10px; font-size:12px; font-weight:900; background:#fff3e7; color:#c96b10; border-radius:999px;">
+          期限付き移籍
+        </div>
+        <div style="font-size:20px; font-weight:900; line-height:1.5; margin-bottom:8px;">
+          期限付き移籍のおすすめと最適な選び方
+        </div>
+        <div style="font-size:14px; color:#555; line-height:1.7; margin-bottom:12px;">
+          期限付き移籍の選び方や、選択する時のポイントをまとめた攻略記事です。
+        </div>
+        <a href="loan_recommend.html"
+           style="display:inline-block; padding:10px 16px; background:#f59e0b; color:#fff; border-radius:12px; text-decoration:none; font-weight:900;">
+          記事を読む
+        </a>
+      </article>
 
     </div>
   </div>
