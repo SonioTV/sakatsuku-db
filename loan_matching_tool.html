@@ -53,7 +53,7 @@
   .note{
     text-align:center;
     color:var(--muted);
-    margin:0 0 13px;
+    margin:0 0 14px;
     line-height:1.5;
     font-weight:800;
   }
@@ -166,6 +166,27 @@
     gap:12px;
     align-items:center;
   }
+  .leagueInfo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
+  }
+  .leagueIcon{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+    flex:0 0 40px;
+    background:#fff;
+    border-radius:8px;
+    padding:2px;
+  }
+  .leagueNameText{
+    min-width:0;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
   .slotBadge{
     display:inline-block;
     border-radius:999px;
@@ -219,6 +240,7 @@
     .row{ grid-template-columns:108px 1fr; font-size:14px; }
     .clubName{ font-size:20px; }
     .leagueRow{ grid-template-columns:minmax(0,1fr) auto; gap:10px; }
+    .leagueIcon{ width:34px; height:34px; flex:0 0 34px; }
     .slotBadge{ min-width:78px; padding:5px 12px; }
   }
 </style>
@@ -272,7 +294,7 @@
         <div class="emptyState">左側の条件を選んで「おすすめを表示」を押してください。</div>
       </div>
       <div class="footerNote">
-        並び順は、条件一致を前提に「成長項目との相性」→「上限育成」→「覚醒pt / スキル・特徴」→「loan_id」の順で調整しています。<br>
+        並び順は、条件一致を前提に「成長項目との相性」→「上限育成」→「覚醒pt / スキル・特徴」の順で調整しています。<br>
         効果1〜3は★表示、効果4はテキストをそのまま表示します。
       </div>
     </div>
@@ -282,6 +304,24 @@
 <script>
 const DURATION_OPTIONS = ["6ヶ月", "12ヶ月", "18ヶ月", "24ヶ月"];
 const GROWTH_OPTIONS = ["ALL", "SHO", "SPD", "PHY", "PAS", "DRB", "DEF", "覚醒pt", "スキル/特徴"];
+const LEAGUE_ICON_MAP = {
+  "ベルギーリーグ":"./img/league/Belgium.png",
+  "イングランドリーグ":"./img/league/England_1.png",
+  "イングランドリーグ2":"./img/league/England_2.png",
+  "フランスリーグ":"./img/league/France.png",
+  "ドイツリーグ":"./img/league/Germany.png",
+  "オランダリーグ":"./img/league/Holland.png",
+  "香港リーグ":"./img/league/Hong_Kong.png",
+  "イタリアリーグ":"./img/league/Italy.png",
+  "J1リーグ":"./img/league/J_1.png",
+  "J2リーグ":"./img/league/J_2.png",
+  "J3リーグ":"./img/league/J_3.png",
+  "韓国リーグ":"./img/league/Korea.png",
+  "ポルトガルリーグ":"./img/league/Portugal.png",
+  "東南アジアリーグ":"./img/league/Southeast_Asia.png",
+  "スペインリーグ":"./img/league/Spain.png",
+  "トルコリーグ":"./img/league/Turkey.png"
+};
 let rawLoans = [];
 
 const els = {
@@ -305,6 +345,10 @@ function safeNumber(value){
 }
 function emptyToDash(value){
   return value === null || value === undefined || value === "" ? "—" : String(value);
+}
+function getLeagueIconPath(leagueName){
+  const key = String(leagueName || "").trim();
+  return LEAGUE_ICON_MAP[key] || "";
 }
 function toStars(value){
   const n = safeNumber(value);
@@ -421,11 +465,16 @@ function buildTagList(entry){
 }
 function cardHtml(entry){
   const tags = buildTagList(entry).map(t => `<span class="tag">${esc(t)}</span>`).join("");
+  const leagueName = emptyToDash(entry["リーグ名"]);
+  const leagueIcon = getLeagueIconPath(entry["リーグ名"]);
   return `
     <div class="block">
       <div class="hdr blue">
         <div class="leagueRow">
-          <span>${esc(emptyToDash(entry["リーグ名"]))}</span>
+          <div class="leagueInfo">
+            ${leagueIcon ? `<img class="leagueIcon" src="${esc(leagueIcon)}" alt="${esc(leagueName)}">` : ""}
+            <span class="leagueNameText">${esc(leagueName)}</span>
+          </div>
           <span class="slotBadge">枠${esc(emptyToDash(entry["移籍枠"]))}</span>
         </div>
       </div>
