@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>期限付き移籍マッチングツール | サカつく2026 DB</title>
+<link rel="canonical" href="https://sakatsuku2026-db.com/loan_matching_tool.html">
+<style>
+  :root{
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --text:#111;
+    --muted:#666;
+    --line:#d7dbe6;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+    --radius:18px;
+    --green:#4aa52a;
+    --blue:#155f80;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+  }
+  .wrap{ max-width:980px; margin:0 auto; padding:18px 14px 80px; }
+  .topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+    flex-wrap:wrap;
+  }
+  .back{
+    text-decoration:none;
+    font-weight:900;
+    color:#0b3d0f;
+    background:#fff;
+    border:1px solid rgba(0,0,0,.12);
+    padding:10px 14px;
+    border-radius:12px;
+    display:inline-block;
+  }
+  h1{
+    margin:8px 0 10px;
+    font-size:30px;
+    letter-spacing:.02em;
+    text-align:center;
+  }
+  .note{
+    text-align:center;
+    color:var(--muted);
+    margin:0 0 14px;
+    line-height:1.5;
+    font-weight:800;
+  }
+  .note-sub{
+    font-size:11px;
+    color:#9ca3af;
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid #e7e9f0;
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    padding:16px;
+    overflow:hidden;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  @media (min-width: 900px){
+    .grid{ grid-template-columns:360px 1fr; }
+  }
+
+  .ctrlRow{ display:grid; gap:10px; }
+  .ctrlRow label{ font-weight:900; font-size:14px; color:#223; display:block; margin:2px 0 4px; }
+  .ctrlRow select, .ctrlRow input{
+    width:100%;
+    font-size:16px;
+    font-weight:800;
+    border-radius:14px;
+    border:2px solid #e1e5ef;
+    padding:10px 12px;
+    background:#fff;
+    outline:none;
+    color:#111;
+  }
+  .btnRow{ display:flex; gap:10px; margin-top:10px; }
+  .btn{
+    flex:1;
+    border:none;
+    border-radius:16px;
+    padding:12px 14px;
+    font-weight:900;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 12px 20px rgba(0,0,0,.10);
+  }
+  .btn.primary{ background:#f59e0b; color:#fff; }
+  .btn.gray{ background:#9aa0aa; color:#fff; }
+  .err{
+    display:none;
+    margin-top:10px;
+    color:#d11;
+    font-weight:900;
+    line-height:1.4;
+  }
+  .summary{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:10px;
+  }
+  .pill{
+    display:inline-block;
+    padding:6px 10px;
+    border-radius:999px;
+    border:1px solid rgba(21,95,128,.18);
+    background:rgba(21,95,128,.06);
+    font-size:13px;
+    font-weight:900;
+    color:#0b3d50;
+  }
+
+  .block{
+    border:3px solid var(--blue);
+    border-radius:16px;
+    overflow:hidden;
+    background:#fff;
+    margin-top:14px;
+  }
+  .hdr{
+    background:var(--green);
+    color:#fff;
+    font-weight:900;
+    padding:12px 14px;
+    font-size:18px;
+    display:block;
+  }
+  .hdr.blue{ background:var(--blue); }
+  .row{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:10px;
+    padding:12px 14px;
+    border-top:1px solid #d8e3ea;
+    align-items:center;
+    font-weight:900;
+    font-size:16px;
+  }
+  .row:nth-child(even){ background:#fbfcff; }
+  .row .center{ text-align:center; }
+  .row.span2, .hdr.span2{
+    grid-template-columns:1fr 1fr;
+  }
+  .leagueRow{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:12px;
+    align-items:center;
+  }
+  .leagueInfo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
+  }
+  .leagueIcon{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+    flex:0 0 40px;
+    background:#fff;
+    border-radius:8px;
+    padding:2px;
+  }
+  .leagueNameText{
+    min-width:0;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .slotBadge{
+    display:inline-block;
+    border-radius:999px;
+    padding:6px 16px;
+    background:#f0f6f9;
+    border:1px solid #d8e3ea;
+    text-align:center;
+    color:#111;
+    min-width:92px;
+  }
+  .clubName{
+    font-size:22px;
+    font-weight:900;
+    padding:14px 14px 6px;
+  }
+  .tagRow{
+    padding:0 14px 12px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .tag{
+    display:inline-block;
+    font-size:12px;
+    font-weight:900;
+    background:rgba(74,165,42,.10);
+    border:1px solid rgba(74,165,42,.25);
+    color:#205e10;
+    padding:4px 8px;
+    border-radius:999px;
+  }
+  .stars{ letter-spacing:.12em; color:#c98a00; }
+  .emptyState{
+    border:2px dashed #cfd6e3;
+    border-radius:16px;
+    padding:22px 14px;
+    text-align:center;
+    color:#667;
+    font-weight:900;
+    background:#fff;
+  }
+  .footerNote{
+    margin-top:14px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.6;
+    font-weight:800;
+  }
+  @media (max-width: 640px){
+    .btnRow{ flex-direction:column; }
+    .row{ grid-template-columns:108px 1fr; font-size:14px; }
+    .clubName{ font-size:20px; }
+    .leagueRow{ grid-template-columns:minmax(0,1fr) auto; gap:10px; }
+    .leagueIcon{ width:34px; height:34px; flex:0 0 34px; }
+    .slotBadge{ min-width:78px; padding:5px 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="back" href="index.html">← サイトに戻る</a>
+  </div>
+
+  <h1>期限付き移籍マッチングツール</h1>
+  <div class="note">
+    プレイスタイル・移籍期間・伸ばしたい成長項目から、条件に合うおすすめの期限付き移籍先を表示します。<br>
+　 <span class="note-sub">※シーズン毎の昇降格によってリーグ名は変動する可能性があります</span>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div style="font-weight:900;font-size:18px;margin-bottom:10px;">① 検索条件</div>
+      <div class="ctrlRow">
+        <div>
+          <label for="playStyleSelect">選手のプレイスタイル</label>
+          <select id="playStyleSelect">
+            <option value="">（指定なし）</option>
+          </select>
+        </div>
+        <div>
+          <label for="durationSelect">移籍期間</label>
+          <select id="durationSelect">
+            <option value="">（指定なし）</option>
+          </select>
+        </div>
+        <div>
+          <label for="growthSelect">伸ばしたい成長項目</label>
+          <select id="growthSelect">
+            <option value="">（指定なし）</option>
+          </select>
+        </div>
+        <div class="btnRow">
+          <button class="btn primary" id="searchBtn" type="button">おすすめを表示</button>
+          <button class="btn gray" id="resetBtn" type="button">リセット</button>
+        </div>
+        <div id="err" class="err"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="font-weight:900;font-size:18px;margin-bottom:10px;">② おすすめ移籍先</div>
+      <div id="summary" class="summary"></div>
+      <div id="results">
+        <div class="emptyState">左側の条件を選んで「おすすめを表示」を押してください。</div>
+      </div>
+      <div class="footerNote">
+        並び順は、条件一致を前提に「成長項目との相性」→「上限育成」→「覚醒pt / スキル・特徴」の順で調整しています。<br>
+        効果1〜3は★表示、効果4はテキストをそのまま表示します。
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DURATION_OPTIONS = ["6ヶ月", "12ヶ月", "18ヶ月", "24ヶ月"];
+const GROWTH_OPTIONS = ["ALL", "SHO", "SPD", "PHY", "PAS", "DRB", "DEF", "覚醒pt", "スキル/特徴"];
+const LEAGUE_ICON_MAP = {
+  "ベルギーリーグ":"./img/league/Belgium.png",
+  "イングランドリーグ":"./img/league/England_1.png",
+  "イングランドリーグ2":"./img/league/England_2.png",
+  "フランスリーグ":"./img/league/France.png",
+  "ドイツリーグ":"./img/league/Germany.png",
+  "オランダリーグ":"./img/league/Holland.png",
+  "香港リーグ":"./img/league/Hong_Kong.png",
+  "イタリアリーグ":"./img/league/Italy.png",
+  "J1リーグ":"./img/league/J_1.png",
+  "J2リーグ":"./img/league/J_2.png",
+  "J3リーグ":"./img/league/J_3.png",
+  "韓国リーグ":"./img/league/Korea.png",
+  "ポルトガルリーグ":"./img/league/Portugal.png",
+  "東南アジアリーグ":"./img/league/Southeast_Asia.png",
+  "スペインリーグ":"./img/league/Spain.png",
+  "トルコリーグ":"./img/league/Turkey.png"
+};
+let rawLoans = [];
+
+const els = {
+  playStyle: document.getElementById("playStyleSelect"),
+  duration: document.getElementById("durationSelect"),
+  growth: document.getElementById("growthSelect"),
+  searchBtn: document.getElementById("searchBtn"),
+  resetBtn: document.getElementById("resetBtn"),
+  summary: document.getElementById("summary"),
+  results: document.getElementById("results"),
+  err: document.getElementById("err")
+};
+
+function esc(s){
+  return String(s ?? "").replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+}
+function safeNumber(value){
+  if(value === null || value === undefined || value === "") return 0;
+  const n = Number(String(value).replace(/[^\d.-]/g, ""));
+  return Number.isFinite(n) ? n : 0;
+}
+function emptyToDash(value){
+  return value === null || value === undefined || value === "" ? "—" : String(value);
+}
+function getLeagueIconPath(leagueName){
+  const key = String(leagueName || "").trim();
+  return LEAGUE_ICON_MAP[key] || "";
+}
+function toStars(value){
+  const n = safeNumber(value);
+  return n > 0 ? "★".repeat(n) : "—";
+}
+function normalizeGrowthLabel(value){
+  if(!value) return { raw:null, base:null, isCap:false, category:null };
+  const raw = String(value).trim();
+  if(raw === "特徴" || raw === "スキル" || raw === "スキル/特徴"){
+    return { raw, base:raw, isCap:false, category:"スキル/特徴" };
+  }
+  const isCap = raw.includes("(上限)");
+  const base = raw.replace("(上限)", "");
+  return { raw, base, isCap, category:base };
+}
+function isUsable(entry){
+  return !!(entry && entry["クラブ名"] && entry["移籍期間"] && entry["playStyle"]);
+}
+function uniqueSorted(values){
+  return [...new Set(values.map(v => String(v ?? "").trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ja"));
+}
+function setError(msg){
+  if(!msg){ els.err.style.display = "none"; els.err.textContent = ""; return; }
+  els.err.style.display = "block";
+  els.err.textContent = msg;
+}
+function buildSelect(selectEl, options, placeholder){
+  const current = selectEl.value;
+  const list = [`<option value="">${esc(placeholder)}</option>`]
+    .concat(options.map(v => `<option value="${esc(v)}">${esc(v)}</option>`));
+  selectEl.innerHTML = list.join("");
+  if(options.includes(current)) selectEl.value = current;
+}
+function parseLoan(entry){
+  const g1 = normalizeGrowthLabel(entry["成長項目1"]);
+  const g2 = normalizeGrowthLabel(entry["成長項目2"]);
+  const g3 = normalizeGrowthLabel(entry["成長項目3"]);
+  const g4 = normalizeGrowthLabel(entry["成長項目4"]);
+  return {
+    ...entry,
+    _growthMeta: [
+      { ...g1, effect:safeNumber(entry["効果1"]), score:safeNumber(entry["スコア1"]), value:entry["効果1"] },
+      { ...g2, effect:safeNumber(entry["効果2"]), score:safeNumber(entry["スコア2"]), value:entry["効果2"] },
+      { ...g3, effect:safeNumber(entry["効果3"]), score:safeNumber(entry["スコア3"]), value:entry["効果3"] },
+      { ...g4, effect:0, score:safeNumber(entry["スコア4"]), value:entry["効果4"] }
+    ]
+  };
+}
+function getFilters(){
+  return {
+    playStyle: String(els.playStyle.value || "").trim(),
+    duration: String(els.duration.value || "").trim(),
+    growth: String(els.growth.value || "").trim()
+  };
+}
+function getGrowthMatchInfo(entry, selectedGrowth){
+  if(!selectedGrowth) return { matched:true, total:0, hasCap:false, reasons:[] };
+  const matches = entry._growthMeta.filter(item => {
+    if(!item.raw) return false;
+    if(selectedGrowth === "スキル/特徴") return item.category === "スキル/特徴";
+    if(selectedGrowth === "覚醒pt") return item.category === "覚醒pt";
+    return item.base === selectedGrowth;
+  });
+  if(!matches.length) return { matched:false, total:0, hasCap:false, reasons:[] };
+  const hasCap = matches.some(item => item.isCap);
+  const total = matches.reduce((sum, item) => sum + safeNumber(item.score), 0) + (hasCap ? 1 : 0);
+  const reasons = [];
+  if(hasCap) reasons.push("上限育成あり");
+  if(selectedGrowth === "覚醒pt") reasons.push("覚醒pt対象");
+  if(selectedGrowth === "スキル/特徴") reasons.push("スキル/特徴あり");
+  return { matched:true, total, hasCap, reasons };
+}
+function filterAndRank(){
+  const { playStyle, duration, growth } = getFilters();
+  return rawLoans
+    .filter(isUsable)
+    .filter(entry => !playStyle || String(entry["playStyle"]).trim() === playStyle)
+    .filter(entry => !duration || String(entry["移籍期間"]).trim() === duration)
+    .map(entry => {
+      const growthInfo = getGrowthMatchInfo(entry, growth);
+      return {
+        ...entry,
+        _matchedGrowth:growthInfo.matched,
+        _growthScore:growthInfo.total,
+        _hasCapGrowth:growthInfo.hasCap,
+        _reasons:growthInfo.reasons
+      };
+    })
+    .filter(entry => entry._matchedGrowth)
+    .sort((a,b) => {
+      if(b._growthScore !== a._growthScore) return b._growthScore - a._growthScore;
+      if((b._hasCapGrowth ? 1 : 0) !== (a._hasCapGrowth ? 1 : 0)) return (b._hasCapGrowth ? 1 : 0) - (a._hasCapGrowth ? 1 : 0);
+      const aEff = safeNumber(a["効果1"]) + safeNumber(a["効果2"]) + safeNumber(a["効果3"]);
+      const bEff = safeNumber(b["効果1"]) + safeNumber(b["効果2"]) + safeNumber(b["効果3"]);
+      if(bEff !== aEff) return bEff - aEff;
+      return String(a["loan_id"] || "").localeCompare(String(b["loan_id"] || ""), "ja");
+    });
+}
+function renderSummary(list){
+  const { playStyle, duration, growth } = getFilters();
+  els.summary.innerHTML = [
+    `<span class="pill">プレイスタイル：${esc(playStyle || "未指定")}</span>`,
+    `<span class="pill">移籍期間：${esc(duration || "未指定")}</span>`,
+    `<span class="pill">成長項目：${esc(growth || "未指定")}</span>`,
+    `<span class="pill">表示件数：${list.length}件</span>`
+  ].join("");
+}
+function buildTagList(entry){
+  const tags = [];
+  if(getFilters().playStyle) tags.push("プレイスタイル一致");
+  tags.push(...(entry._reasons || []));
+  if(!tags.length) tags.push("候補");
+  return [...new Set(tags)];
+}
+function cardHtml(entry){
+  const tags = buildTagList(entry).map(t => `<span class="tag">${esc(t)}</span>`).join("");
+  const leagueName = emptyToDash(entry["リーグ名"]);
+  const leagueIcon = getLeagueIconPath(entry["リーグ名"]);
+  return `
+    <div class="block">
+      <div class="hdr blue">
+        <div class="leagueRow">
+          <div class="leagueInfo">
+            ${leagueIcon ? `<img class="leagueIcon" src="${esc(leagueIcon)}" alt="${esc(leagueName)}">` : ""}
+            <span class="leagueNameText">${esc(leagueName)}</span>
+          </div>
+          <span class="slotBadge">枠${esc(emptyToDash(entry["移籍枠"]))}</span>
+        </div>
+      </div>
+      <div class="clubName">${esc(emptyToDash(entry["クラブ名"]))}</div>
+      <div class="tagRow">${tags}</div>
+      <div class="row"><div>移籍期間</div><div>${esc(emptyToDash(entry["移籍期間"]))}</div></div>
+      <div class="row"><div>移籍費用</div><div>${esc(emptyToDash(entry["移籍費用"]))}</div></div>
+      <div class="row"><div>推奨総合力</div><div>${esc(emptyToDash(entry["推奨総合力"]))}</div></div>
+      <div class="row"><div>プレイスタイル</div><div>${esc(emptyToDash(entry["playStyle"]))}</div></div>
+      <div class="row"><div>成長項目1</div><div>${esc(emptyToDash(entry["成長項目1"]))} / <span class="stars">${esc(toStars(entry["効果1"]))}</span></div></div>
+      <div class="row"><div>成長項目2</div><div>${esc(emptyToDash(entry["成長項目2"]))} / <span class="stars">${esc(toStars(entry["効果2"]))}</span></div></div>
+      <div class="row"><div>成長項目3</div><div>${esc(emptyToDash(entry["成長項目3"]))} / <span class="stars">${esc(toStars(entry["効果3"]))}</span></div></div>
+      <div class="row"><div>成長項目4</div><div>${esc(emptyToDash(entry["成長項目4"]))} / ${esc(emptyToDash(entry["効果4"]))}</div></div>
+    </div>
+  `;
+}
+function render(){
+  const list = filterAndRank();
+  renderSummary(list);
+  if(!list.length){
+    els.results.innerHTML = `<div class="emptyState">条件に一致する移籍先がありません。</div>`;
+    return;
+  }
+  els.results.innerHTML = list.map(cardHtml).join("");
+}
+function resetFilters(){
+  els.playStyle.value = "";
+  els.duration.value = "";
+  els.growth.value = "";
+  render();
+}
+function initUI(){
+  const usable = rawLoans.filter(isUsable);
+  buildSelect(els.playStyle, uniqueSorted(usable.map(item => item["playStyle"])), "（指定なし）");
+  buildSelect(els.duration, DURATION_OPTIONS, "（指定なし）");
+  buildSelect(els.growth, GROWTH_OPTIONS, "（指定なし）");
+
+  els.searchBtn.addEventListener("click", render);
+  els.resetBtn.addEventListener("click", resetFilters);
+}
+async function loadData(){
+  try{
+    const res = await fetch("./loan_master.json", { cache:"no-store" });
+    if(!res.ok) throw new Error("loan_master.json の読み込みに失敗しました。");
+    const json = await res.json();
+    const source = Array.isArray(json) ? json : (Array.isArray(json.data) ? json.data : []);
+    rawLoans = source.map(parseLoan);
+    initUI();
+    render();
+  }catch(error){
+    console.error(error);
+    setError(String(error && error.message ? error.message : error));
+    els.results.innerHTML = `
+      <div class="emptyState">
+        loan_master.json を読み込めませんでした。<br>
+        このHTMLと同じ階層に <strong>loan_master.json</strong> を配置してください。
+      </div>`;
+  }
+}
+loadData();
+</script>
+</body>
+</html>
