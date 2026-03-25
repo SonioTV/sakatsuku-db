@@ -93,6 +93,28 @@
     color:#111;
   }
   .btnRow{ display:flex; gap:10px; margin-top:10px; }
+
+  .checkWrap{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    width:100%;
+    font-size:16px;
+    font-weight:800;
+    border-radius:14px;
+    border:2px solid #e1e5ef;
+    padding:10px 12px;
+    background:#fff;
+    color:#111;
+  }
+  .checkWrap input[type="checkbox"]{
+    width:20px;
+    height:20px;
+    margin:0;
+    accent-color: var(--green);
+    flex:0 0 auto;
+  }
+
   .btn{
     flex:1;
     border:none;
@@ -279,6 +301,13 @@
             <option value="">（指定なし）</option>
           </select>
         </div>
+        <div>
+          <label>上限の有無</label>
+          <label class="checkWrap">
+            <input type="checkbox" id="capOnlyCheck">
+            <span>上限育成ありのみ表示</span>
+          </label>
+        </div>
         <div class="btnRow">
           <button class="btn primary" id="searchBtn" type="button">おすすめを表示</button>
           <button class="btn gray" id="resetBtn" type="button">リセット</button>
@@ -328,6 +357,7 @@ const els = {
   playStyle: document.getElementById("playStyleSelect"),
   duration: document.getElementById("durationSelect"),
   growth: document.getElementById("growthSelect"),
+  capOnly: document.getElementById("capOnlyCheck"),
   searchBtn: document.getElementById("searchBtn"),
   resetBtn: document.getElementById("resetBtn"),
   summary: document.getElementById("summary"),
@@ -401,11 +431,21 @@ function getFilters(){
   return {
     playStyle: String(els.playStyle.value || "").trim(),
     duration: String(els.duration.value || "").trim(),
-    growth: String(els.growth.value || "").trim()
+    growth: String(els.growth.value || "").trim(),
+    capOnly: !!els.capOnly.checked
   };
 }
 function getGrowthMatchInfo(entry, selectedGrowth){
-  if(!selectedGrowth) return { matched:true, total:0, hasCap:false, reasons:[] };
+  if(!selectedGrowth){
+    const hasCap = entry._growthMeta.some(item => item.raw && item.isCap);
+    return {
+      matched: true,
+      total: 0,
+      hasCap,
+      reasons: hasCap ? ["上限育成あり"] : []
+    };
+  }
+
   const matches = entry._growthMeta.filter(item => {
     if(!item.raw) return false;
     if(selectedGrowth === "スキル/特徴") return item.category === "スキル/特徴";
@@ -422,7 +462,7 @@ function getGrowthMatchInfo(entry, selectedGrowth){
   return { matched:true, total, hasCap, reasons };
 }
 function filterAndRank(){
-  const { playStyle, duration, growth } = getFilters();
+  const { playStyle, duration, growth, capOnly } = getFilters();
   return rawLoans
     .filter(isUsable)
     .filter(entry => !playStyle || String(entry["playStyle"]).trim() === playStyle)
@@ -438,6 +478,7 @@ function filterAndRank(){
       };
     })
     .filter(entry => entry._matchedGrowth)
+    .filter(entry => !capOnly || entry._hasCapGrowth)
     .sort((a,b) => {
       if(b._growthScore !== a._growthScore) return b._growthScore - a._growthScore;
       if((b._hasCapGrowth ? 1 : 0) !== (a._hasCapGrowth ? 1 : 0)) return (b._hasCapGrowth ? 1 : 0) - (a._hasCapGrowth ? 1 : 0);
@@ -448,11 +489,12 @@ function filterAndRank(){
     });
 }
 function renderSummary(list){
-  const { playStyle, duration, growth } = getFilters();
+  const { playStyle, duration, growth, capOnly } = getFilters();
   els.summary.innerHTML = [
     `<span class="pill">プレイスタイル：${esc(playStyle || "未指定")}</span>`,
     `<span class="pill">移籍期間：${esc(duration || "未指定")}</span>`,
     `<span class="pill">成長項目：${esc(growth || "未指定")}</span>`,
+    `<span class="pill">上限：${esc(capOnly ? "ありのみ" : "指定なし")}</span>`,
     `<span class="pill">表示件数：${list.length}件</span>`
   ].join("");
 }
@@ -504,6 +546,7 @@ function resetFilters(){
   els.playStyle.value = "";
   els.duration.value = "";
   els.growth.value = "";
+  els.capOnly.checked = false;
   render();
 }
 function initUI(){
