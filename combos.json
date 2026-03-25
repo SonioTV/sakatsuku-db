@@ -365,8 +365,8 @@
     "combo_requirements": [
       {
         "slotNo": 7,
-        "position": "DM",
-        "positionPlace": "Center",
+        "position": "AM",
+        "positionPlace": null,
         "playStyle": "セントラルMF",
         "playStyleLv": 1,
         "conditionNo": 1
@@ -1027,22 +1027,22 @@
         "slotNo": 7,
         "position": "AM",
         "positionPlace": "Right",
-        "playStyle": "アタッカー",
-        "playStyleLv": 2,
-        "conditionNo": 2
-      },
-      {
-        "slotNo": 9,
-        "position": "AM",
-        "positionPlace": "Left",
         "playStyle": "パサー",
         "playStyleLv": 2,
         "conditionNo": 1
       },
       {
+        "slotNo": 9,
+        "position": "AM",
+        "positionPlace": "Left",
+        "playStyle": "アタッカー",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
         "slotNo": 11,
         "position": "CF",
-        "positionPlace": "Left",
+        "positionPlace": "Right",
         "playStyle": "ストライカー",
         "playStyleLv": 3,
         "conditionNo": 3
@@ -1093,17 +1093,17 @@
         "slotNo": 5,
         "position": "DM",
         "positionPlace": "Right",
-        "playStyle": "セントラルMF",
-        "playStyleLv": 3,
-        "conditionNo": 3
+        "playStyle": "ハードマーカー",
+        "playStyleLv": 2,
+        "conditionNo": 2
       },
       {
         "slotNo": 6,
         "position": "DM",
         "positionPlace": "Left",
-        "playStyle": "ハードマーカー",
-        "playStyleLv": 2,
-        "conditionNo": 2
+        "playStyle": "セントラルMF",
+        "playStyleLv": 3,
+        "conditionNo": 3
       }
     ]
   },
@@ -1666,6 +1666,222 @@
         "position": "LW",
         "positionPlace": null,
         "playStyle": "ドリブラー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C037",
+    "name": "アズーリ’14",
+    "formation": "3-5-2B",
+    "rank": "銀",
+    "combo_policys": [
+      "リアクション"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年3月31日まで",
+    "effect": "冷静さ、コンタクト、ジャンプが80%アップ",
+    "effects": [
+      {
+        "status": "冷静さ",
+        "value": 80
+      },
+      {
+        "status": "コンタクト",
+        "value": 80
+      },
+      {
+        "status": "ジャンプ",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 1,
+        "position": "GK",
+        "positionPlace": null,
+        "playStyle": "オーソドックスGK",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 6,
+        "position": "DM",
+        "positionPlace": "Left",
+        "playStyle": "セントラルMF",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 9,
+        "position": "AM",
+        "positionPlace": null,
+        "playStyle": "アタッカー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C038",
+    "name": "ヒノマルスタイル'93",
+    "formation": "4-3-3B",
+    "rank": "銀",
+    "combo_policys": [
+      "カウンター"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年3月31日まで",
+    "effect": "ロングパス、突破力、走力が80%アップ",
+    "effects": [
+      {
+        "status": "ロングパス",
+        "value": 80
+      },
+      {
+        "status": "突破力",
+        "value": 80
+      },
+      {
+        "status": "走力",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 4,
+        "position": "LB",
+        "positionPlace": null,
+        "playStyle": "守備的FB",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 7,
+        "position": "DM",
+        "positionPlace": "Left",
+        "playStyle": "セントラルMF",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 10,
+        "position": "RW",
+        "positionPlace": null,
+        "playStyle": "ドリブラー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C039",
+    "name": "ブルー・ガル’22",
+    "formation": "3-6-1B",
+    "rank": "銀",
+    "combo_policys": [
+      "ムービング"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年3月31日まで",
+    "effect": "コンタクト、パスカット、キック精度が80%アップ",
+    "effects": [
+      {
+        "status": "コンタクト",
+        "value": 80
+      },
+      {
+        "status": "パスカット",
+        "value": 80
+      },
+      {
+        "status": "キック精度",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 2,
+        "position": "CB",
+        "positionPlace": "Right",
+        "playStyle": "ストッパー",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 4,
+        "position": "CB",
+        "positionPlace": "Left",
+        "playStyle": "組立CB",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 6,
+        "position": "DM",
+        "positionPlace": "Center",
+        "playStyle": "セントラルMF",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C040",
+    "name": "ラ・ロハ'02",
+    "formation": "4-4-2B",
+    "rank": "銀",
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年3月31日まで",
+    "effect": "コンタクト、ジャンプ、パスカットが80%アップ",
+    "effects": [
+      {
+        "status": "コンタクト",
+        "value": 80
+      },
+      {
+        "status": "ジャンプ",
+        "value": 80
+      },
+      {
+        "status": "パスカット",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 1,
+        "position": "GK",
+        "positionPlace": null,
+        "playStyle": "オーソドックスGK",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 3,
+        "position": "CB",
+        "positionPlace": "Left",
+        "playStyle": "ストッパー",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 11,
+        "position": "CF",
+        "positionPlace": "Left",
+        "playStyle": "ラインブレーカー",
         "playStyleLv": 2,
         "conditionNo": 3
       }
