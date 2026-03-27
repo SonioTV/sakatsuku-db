@@ -712,18 +712,12 @@ function filterPlayers(){
     if(f.mainPosition && p.mainPosition !== f.mainPosition) return false;
     if(f.favoriteOnly && !isFavoritePlayer(p)) return false;
     return true;
-  }).sort((a,b)=>{
-    const af = isFavoritePlayer(a) ? 1 : 0;
-    const bf = isFavoritePlayer(b) ? 1 : 0;
-    if(bf !== af) return bf - af;
-    const ao = toNum(a.overall) ?? -Infinity;
-    const bo = toNum(b.overall) ?? -Infinity;
-    if(bo !== ao) return bo - ao;
-    const am = toNum(a.maxUpgrade) ?? -Infinity;
-    const bm = toNum(b.maxUpgrade) ?? -Infinity;
-    if(bm !== am) return bm - am;
-    return a.name.localeCompare(b.name, "ja");
-  });
+  })
+.sort((a,b)=>{
+  const aid = String(a.playerId || "");
+  const bid = String(b.playerId || "");
+  return aid.localeCompare(bid, "ja", { numeric:true });
+});
 }
 
 function renderCurrentFilters(){
@@ -761,26 +755,25 @@ function renderCatalog(list){
     const favoriteLabel = isFavorite ? "お気に入り解除" : "お気に入り登録";
     return `
       <div class="playerCard">
-        <div class="playerHead">
-          <div class="playerHeadMain">
-            <button
-              type="button"
-              class="favBtn ${isFavorite ? "is-active" : ""}"
-              data-favorite-id="${esc(p.playerId || "")}"
-              aria-pressed="${isFavorite ? "true" : "false"}"
-              aria-label="${esc((p.name || "選手") + "を" + favoriteLabel)}"
-              title="${esc(favoriteLabel)}"
-            >
-              ${isFavorite ? "★" : "☆"}
-              <span class="favText">${esc(favoriteLabel)}</span>
-            </button>
-            <div class="playerHeadText">
-              <div class="playerName">${esc(p.name || "（名称不明）")}</div>
-            </div>
-          </div>
-          <div class="rarity">${esc(showRarity(p.rarity))}</div>
-        </div>
-        <div class="playerBody">
+<div class="playerHead">
+  <div class="playerHeadMain">
+    <button
+      type="button"
+      class="favBtn ${isFavorite ? "is-active" : ""}"
+      data-favorite-id="${esc(p.playerId || "")}"
+      aria-pressed="${isFavorite ? "true" : "false"}"
+      aria-label="${esc((p.name || "選手") + "を" + favoriteLabel)}"
+      title="${esc(favoriteLabel)}"
+    >
+      ${isFavorite ? "★" : "☆"}
+      <span class="favText">${esc(favoriteLabel)}</span>
+    </button>
+    <div class="playerHeadText">
+      <div class="playerName">${esc(p.name || "（名称不明）")}</div>
+    </div>
+  </div>
+</div>
+<div class="playerBody">
           <div class="stats">
             <div class="stat">
               <span class="k">初期総合力</span>
@@ -792,15 +785,16 @@ function renderCatalog(list){
             </div>
           </div>
 
-          <div class="meta">
-            <div class="k">国籍</div><div class="v">${esc(p.nationality || "-")}</div>
-            <div class="k">成長タイプ</div><div class="v">${esc(p.growthType || "-")}</div>
-            <div class="k">ポリシー</div><div class="v">${esc(p.policy || "-")}</div>
-            <div class="k">プレイスタイル</div><div class="v">${esc(styleDisplay)}</div>
-            <div class="k">ポジション</div><div class="v">${esc(p.mainPosition || "-")}</div>
-            <div class="k">入手方法</div><div class="v">${esc(p.acquisitionMethod || "-")}</div>
-            <div class="k">入手場所</div><div class="v">${esc(p.acquisitionPlace || "-")}</div>
-          </div>
+<div class="meta">
+  <div class="k">レアリティ</div><div class="v">${esc(showRarity(p.rarity))}</div>
+  <div class="k">国籍</div><div class="v">${esc(p.nationality || "-")}</div>
+  <div class="k">成長タイプ</div><div class="v">${esc(p.growthType || "-")}</div>
+  <div class="k">ポリシー</div><div class="v">${esc(p.policy || "-")}</div>
+  <div class="k">プレイスタイル</div><div class="v">${esc(styleDisplay)}</div>
+  <div class="k">ポジション</div><div class="v">${esc(p.mainPosition || "-")}</div>
+  <div class="k">入手方法</div><div class="v">${esc(p.acquisitionMethod || "-")}</div>
+  <div class="k">入手場所</div><div class="v">${esc(p.acquisitionPlace || "-")}</div>
+</div>
 
           <div class="chipRow">
             ${p.category ? `<span class="chip">${esc(p.category)}</span>` : ``}
