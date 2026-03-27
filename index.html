@@ -713,6 +713,47 @@
   text-decoration:none;
 }
 
+
+/* ===== 攻略・ツール一覧：バナー表示 ===== */
+.bannerList{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  margin-top:14px;
+}
+.bannerLink{
+  display:block;
+  width:min(760px, 96%);
+  text-decoration:none;
+}
+.bannerLink img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:22px;
+}
+.bannerSpacer{
+  height:10px;
+}
+.plainLinkBtn{
+  display:inline-block;
+  width:min(680px,96%);
+  padding:14px 20px;
+  margin:2px 0;
+  font-size:18px;
+  font-weight:900;
+  border-radius:16px;
+  text-decoration:none;
+  text-align:center;
+  box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+@media (max-width: 480px){
+  .bannerLink{ width:min(760px, 98%); }
+  .bannerLink img{ border-radius:18px; }
+  .plainLinkBtn{ font-size:17px; }
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -865,83 +906,70 @@
 
   <div class="card" style="margin-bottom:20px;">
     <div class="sectionTitle" style="text-align:left;">攻略・ツール一覧</div>
-    <div style="display:flex; flex-direction:column; align-items:center; margin-top:14px;">
+    <div class="bannerList">
 
-      <a href="sonio_tv_matome.html"
-         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
-                background:#2e7d32; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
-                box-shadow:0 10px 20px rgba(0,0,0,.15);">
-        ソニオTVのサカつく2026動画まとめ
+      <a class="bannerLink" href="sonio_tv_matome.html">
+        <img src="img/label/sonio_tv_matome.png" alt="ソニオTVのサカつく2026動画まとめ">
       </a>
 
-      <a href="loan_recommend.html"
-         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
-                background:#f59e0b; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
-                box-shadow:0 10px 20px rgba(0,0,0,.15);">
-        期限付き移籍のおすすめと最適な選び方
+      <a class="bannerLink" href="reroll_method_timing.html">
+        <img src="img/label/reroll_method_timing.png" alt="リセマラの方法と終了タイミング">
+      </a>
+
+      <a class="bannerLink" href="training_menu_recommend.html">
+        <img src="img/label/training_menu_recommend.png" alt="練習メニューのおすすめ">
+      </a>
+
+      <a class="bannerLink" href="investment_recommend.html">
+        <img src="img/label/investment_recommend.png" alt="投資選択のおすすめ">
+      </a>
+
+      <a class="bannerLink" href="loan_recommend.html">
+        <img src="img/label/loan_recommend.png" alt="期限付き移籍のおすすめと選び方">
       </a>
 
       <a href="articles.html"
-         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
-                background:#4a90e2; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
-                box-shadow:0 10px 20px rgba(0,0,0,.15);">
+         class="plainLinkBtn"
+         style="background:#4a90e2; color:#fff;">
         その他の攻略記事一覧
       </a>
 
-      <a href="player_catalog.html"
-         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
-                background:#7c3aed; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
-                box-shadow:0 10px 20px rgba(0,0,0,.15);">
-        選手図鑑
+      <div class="bannerSpacer"></div>
+
+      <a class="bannerLink" href="player_catalog.html">
+        <img src="img/label/player_catalog.png" alt="選手図鑑">
       </a>
 
-      <a href="stadium.html"
-         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
-                background:#4a90e2; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
-                box-shadow:0 10px 20px rgba(0,0,0,.15);">
-        スタジアム設備一覧
+      <a class="bannerLink" href="sp_evaluator.html">
+        <img src="img/label/sp_evaluator.png" alt="選手評価ツール">
       </a>
 
-      <a href="clubhouse.html"
-         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
-                background:#2e7d32; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
-                box-shadow:0 10px 20px rgba(0,0,0,.15);">
-        クラブハウス設備一覧
+      <a class="bannerLink" href="overall_ranking.html">
+        <img src="img/label/overall_ranking.png" alt="総合力ランキング">
       </a>
 
-      <a href="loan_matching_tool.html"
-         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
-                background:#0f766e; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
-                box-shadow:0 10px 20px rgba(0,0,0,.15);">
-        期限付き移籍マッチングツール
+      <a class="bannerLink" href="loan_matching_tool.html">
+        <img src="img/label/loan_matching_tool.png" alt="期限付き移籍マッチングツール">
       </a>
 
-      <a href="sp_evaluator.html"
-         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
-                background:#f59e0b; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
-                box-shadow:0 10px 20px rgba(0,0,0,.15);">
-        選手評価ツール
+      <a class="bannerLink" href="strongest_team_simulation.html">
+        <img src="img/label/strongest_team_simulation.png" alt="最強チームシミュレーション">
       </a>
 
-      <a href="strongest_team_simulation.html"
-         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
-                background:#111827; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
-                box-shadow:0 10px 20px rgba(0,0,0,.15);">
-        最強チームシミュレーション
+      <a class="bannerLink" href="stadium.html">
+        <img src="img/label/stadium.png" alt="スタジアム設備一覧">
       </a>
 
-      <a href="overall_ranking.html"
-         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
-                background:#4a90e2; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
-                box-shadow:0 10px 20px rgba(0,0,0,.15);">
-        総合力ランキング
+      <a class="bannerLink" href="clubhouse.html">
+        <img src="img/label/clubhouse.png" alt="クラブハウス施設一覧">
       </a>
+
+      <div class="bannerSpacer"></div>
 
       <a href="https://forms.gle/TLRL3Qy9qzftd5zZ7"
          target="_blank" rel="noopener noreferrer"
-         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
-                background:#10b981; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
-                box-shadow:0 10px 20px rgba(0,0,0,.15);">
+         class="plainLinkBtn"
+         style="background:#10b981; color:#fff;">
         選手情報の提供はこちら
       </a>
 
