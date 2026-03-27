@@ -569,7 +569,7 @@
   /* ===== スマホ調整 ===== */
   @media (max-width: 480px){
     h1{ font-size:30px; }
-    .tabbtn{ min-width:0; width: 33%; font-size:16px; padding:12px 10px; }
+    .tabbtn{ min-width:0; width: 48%; font-size:16px; padding:12px 10px; }
     .sectionTitle{ font-size:24px; }
     .note{ font-size:14px; }
     .imgGrid{ grid-template-columns: repeat(3, minmax(0, 1fr)); gap:10px; }
@@ -780,7 +780,6 @@
   <div class="tabs">
     <button id="tabCombo" class="tabbtn active" type="button">コンボ検索</button>
     <button id="tabPlayer" class="tabbtn" type="button">選手検索</button>
-    <button id="tabBonus" class="tabbtn" type="button">おまけ</button>
   </div>
 
   <!-- ===== タブ1：コンボ検索 ===== -->
@@ -861,127 +860,90 @@
       <div id="playerResult" class="playerList"></div>
     </div>
   </section>
-  <!-- ===== タブ3：おまけ ===== -->
-<section id="panelBonus" class="panel">
+  <!-- ===== トップ表示リンク群 ===== -->
+<section id="panelBonus" style="margin-top:20px;">
 
-  <!-- ホームタウン関連 -->
   <div class="card" style="margin-bottom:20px;">
-    <div class="sectionTitle" style="text-align:left;">ホームタウン関連</div>
+    <div class="sectionTitle" style="text-align:left;">攻略・ツール一覧</div>
     <div style="display:flex; flex-direction:column; align-items:center; margin-top:14px;">
 
-      <a href="stadium.html"
-         style="display:inline-block; padding:12px 20px; margin:10px; font-size:18px; font-weight:900;
-                background:#4a90e2; color:#fff; border-radius:16px; text-decoration:none;
+      <a href="sonio_tv_matome.html"
+         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
+                background:#2e7d32; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
                 box-shadow:0 10px 20px rgba(0,0,0,.15);">
-        スタジアム施設一覧
+        ソニオTVのサカつく2026動画まとめ
+      </a>
+
+      <a href="loan_recommend.html"
+         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
+                background:#f59e0b; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
+                box-shadow:0 10px 20px rgba(0,0,0,.15);">
+        期限付き移籍のおすすめと最適な選び方
+      </a>
+
+      <a href="articles.html"
+         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
+                background:#4a90e2; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
+                box-shadow:0 10px 20px rgba(0,0,0,.15);">
+        その他の攻略記事一覧
+      </a>
+
+      <a href="player_catalog.html"
+         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
+                background:#7c3aed; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
+                box-shadow:0 10px 20px rgba(0,0,0,.15);">
+        選手図鑑
+      </a>
+
+      <a href="stadium.html"
+         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
+                background:#4a90e2; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
+                box-shadow:0 10px 20px rgba(0,0,0,.15);">
+        スタジアム設備一覧
       </a>
 
       <a href="clubhouse.html"
-         style="display:inline-block; padding:12px 20px; margin:10px; font-size:18px; font-weight:900;
-                background:#2e7d32; color:#fff; border-radius:16px; text-decoration:none;
+         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
+                background:#2e7d32; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
                 box-shadow:0 10px 20px rgba(0,0,0,.15);">
         クラブハウス設備一覧
       </a>
 
-    </div>
-  </div>
-
-  <!-- 選手関連 -->
-  <div class="card" style="margin-bottom:20px;">
-    <div class="sectionTitle" style="text-align:left;">選手関連</div>
-    <div style="display:flex; flex-direction:column; align-items:center; margin-top:14px;">
-
       <a href="loan_matching_tool.html"
-         style="display:inline-block; padding:12px 20px; margin:10px; font-size:18px; font-weight:900;
-                background:#0f766e; color:#fff; border-radius:16px; text-decoration:none;
+         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
+                background:#0f766e; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
                 box-shadow:0 10px 20px rgba(0,0,0,.15);">
         期限付き移籍マッチングツール
       </a>
 
       <a href="sp_evaluator.html"
-         style="display:inline-block; padding:12px 20px; margin:10px; font-size:18px; font-weight:900;
-                background:#f59e0b; color:#fff; border-radius:16px; text-decoration:none;
+         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
+                background:#f59e0b; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
                 box-shadow:0 10px 20px rgba(0,0,0,.15);">
         選手評価ツール
       </a>
 
       <a href="strongest_team_simulation.html"
-         style="display:inline-block; padding:12px 20px; margin:10px; font-size:18px; font-weight:900;
-                background:#111827; color:#fff; border-radius:16px; text-decoration:none;
+         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
+                background:#111827; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
                 box-shadow:0 10px 20px rgba(0,0,0,.15);">
-        最強チームシミュレーションツール
+        最強チームシミュレーション
       </a>
 
       <a href="overall_ranking.html"
-         style="display:inline-block; padding:12px 20px; margin:10px; font-size:16px; font-weight:900;
-                background:#4a90e2; color:#fff; border-radius:16px; text-decoration:none;
+         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
+                background:#4a90e2; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
                 box-shadow:0 10px 20px rgba(0,0,0,.15);">
         総合力ランキング
       </a>
 
       <a href="https://forms.gle/TLRL3Qy9qzftd5zZ7"
          target="_blank" rel="noopener noreferrer"
-         style="display:inline-block; padding:12px 20px; margin:10px; font-size:16px; font-weight:900;
-                background:#10b981; color:#fff; border-radius:16px; text-decoration:none;
+         style="display:inline-block; width:min(680px,96%); padding:14px 20px; margin:8px 0; font-size:18px; font-weight:900;
+                background:#10b981; color:#fff; border-radius:16px; text-decoration:none; text-align:center;
                 box-shadow:0 10px 20px rgba(0,0,0,.15);">
         選手情報の提供はこちら
       </a>
-
-    </div>
-  </div>
-
-  <!-- 攻略関連 -->
-  <div class="card" style="margin-bottom:20px;">
-    <div class="sectionTitle" style="text-align:left;">攻略関連</div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px; margin-top:14px;">
-
-      <article style="background:#fff; border:1px solid #e7e9f0; border-radius:18px; padding:16px; box-shadow:0 10px 20px rgba(0,0,0,.08);">
-        <div style="display:inline-block; margin-bottom:8px; padding:4px 10px; font-size:12px; font-weight:900; background:#e8f1ff; color:#0b5bd3; border-radius:999px;">
-          記事一覧
-        </div>
-        <div style="font-size:20px; font-weight:900; line-height:1.5; margin-bottom:8px;">
-          攻略記事一覧
-        </div>
-        <div style="font-size:14px; color:#555; line-height:1.7; margin-bottom:12px;">
-          公開中の攻略記事をまとめて確認できます。初心者向け、コンボ、育成など今後追加する記事の入口です。
-        </div>
-        <a href="articles.html"
-           style="display:inline-block; padding:10px 16px; background:#4a90e2; color:#fff; border-radius:12px; text-decoration:none; font-weight:900;">
-          記事一覧を見る
-        </a>
-      </article>
-
-      <article style="background:#fff; border:1px solid #e7e9f0; border-radius:18px; padding:16px; box-shadow:0 10px 20px rgba(0,0,0,.08);">
-        <div style="display:inline-block; margin-bottom:8px; padding:4px 10px; font-size:12px; font-weight:900; background:#eaf7ea; color:#2e7d32; border-radius:999px;">
-          YouTube
-        </div>
-        <div style="font-size:20px; font-weight:900; line-height:1.5; margin-bottom:8px;">
-          ソニオTVのサカつく2026動画まとめ
-        </div>
-        <div style="font-size:14px; color:#555; line-height:1.7; margin-bottom:12px;">
-          ソニオTVで公開されているサカつく2026関連動画の要点を記事としてまとめています。
-        </div>
-        <a href="sonio_tv_matome.html"
-           style="display:inline-block; padding:10px 16px; background:#2e7d32; color:#fff; border-radius:12px; text-decoration:none; font-weight:900;">
-          記事を読む
-        </a>
-      </article>
-
-      <article style="background:#fff; border:1px solid #e7e9f0; border-radius:18px; padding:16px; box-shadow:0 10px 20px rgba(0,0,0,.08);">
-        <div style="display:inline-block; margin-bottom:8px; padding:4px 10px; font-size:12px; font-weight:900; background:#fff3e7; color:#c96b10; border-radius:999px;">
-          期限付き移籍
-        </div>
-        <div style="font-size:20px; font-weight:900; line-height:1.5; margin-bottom:8px;">
-          期限付き移籍のおすすめと最適な選び方
-        </div>
-        <div style="font-size:14px; color:#555; line-height:1.7; margin-bottom:12px;">
-          期限付き移籍の選び方や、選択する時のポイントをまとめた攻略記事です。
-        </div>
-        <a href="loan_recommend.html"
-           style="display:inline-block; padding:10px 16px; background:#f59e0b; color:#fff; border-radius:12px; text-decoration:none; font-weight:900;">
-          記事を読む
-        </a>
-      </article>
 
     </div>
   </div>
@@ -1073,7 +1035,6 @@ async function loadJson(url){
 
   setupComboSearchUI();
   setupPlayerSearchUI();
-  setupBonusUI();
 
   // 初期
   refreshComboSelect();
@@ -1088,7 +1049,6 @@ function setupTabs(){
   const map = [
     ["tabCombo","panelCombo"],
     ["tabPlayer","panelPlayer"],
-    ["tabBonus","panelBonus"],
   ];
   map.forEach(([btnId, panelId])=>{
     document.getElementById(btnId).addEventListener("click", ()=>{

@@ -477,7 +477,12 @@
           <label>キーワード（選手名）</label>
           <input id="fKw" type="text" placeholder="例：サカ / ロナウド" />
         </div>
-
+<div>
+  <label style="display:flex;align-items:center;gap:8px;">
+    <input id="favOnly" type="checkbox" style="width:18px;height:18px;margin:0;">
+    <span>お気に入り選手のみ表示</span>
+  </label>
+</div>
         <div class="btnRow">
           <button class="btn primary" id="btnFilter">候補を表示</button>
           <button class="btn gray" id="btnReset">リセット</button>
@@ -539,6 +544,8 @@
 let PLAYERS = [];
 let COMBOS = [];
 let SP_PLAYERS = [];
+const FAVORITES_STORAGE_KEY = "sakatsuku2026_player_catalog_favorites";
+let favoritePlayerIds = new Set();
 
 const $ = (id)=>document.getElementById(id);
 const esc = (s)=>String(s??"").replace(/[&<>"']/g, m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
@@ -603,6 +610,24 @@ function fillSelect(sel, items){
   sel.innerHTML = keepFirst + items.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join("");
 }
 
+function loadFavoritePlayerIds(){
+  try{
+    const raw = localStorage.getItem(FAVORITES_STORAGE_KEY);
+    if(!raw) return new Set();
+    const parsed = JSON.parse(raw);
+    if(!Array.isArray(parsed)) return new Set();
+    return new Set(parsed.map(v => String(v ?? "").trim()).filter(Boolean));
+  }catch(error){
+    console.warn("お気に入りデータの読み込みに失敗しました。", error);
+    return new Set();
+  }
+}
+
+function isFavoritePlayer(player){
+  const pid = String(player?.player_id ?? player?.playerId ?? "").trim();
+  return !!(pid && favoritePlayerIds.has(pid));
+}
+
 async function loadData(){
   const [pRes, cRes] = await Promise.all([
     fetch("players.json", {cache:"no-store"}),
@@ -637,6 +662,7 @@ function filterCandidates(){
   const acqMethod = normalize($("fAcqMethod").value);
   const acqPlace  = normalize($("fAcqPlace").value);
   const kw  = normalize($("fKw").value).toLowerCase();
+  const favOnly = !!$("favOnly").checked;
 
   let list = SP_PLAYERS.filter(p=>{
     if(pol && normalize(p.policy)!==pol) return false;
@@ -644,6 +670,7 @@ function filterCandidates(){
     if(sty && normalize(p.playStyle)!==sty) return false;
     if(acqMethod && normalize(p.acquisitionMethod)!==acqMethod) return false;
     if(acqPlace && normalize(p.acquisitionPlace)!==acqPlace) return false;
+    if(favOnly && !isFavoritePlayer(p)) return false;
     if(kw){
       const name = normalize(p.name || p.player_name || "");
       if(!name.toLowerCase().includes(kw)) return false;
@@ -1271,6 +1298,7 @@ function resetAll(){
   $("fAcqMethod").value = "";
   $("fAcqPlace").value = "";
   $("fKw").value="";
+  $("favOnly").checked = false;
   $("playerPick").innerHTML = `<option value="">（先に候補を表示してください）</option>`;
   $("resultArea").innerHTML = `<div class="note" style="margin-top:4px;">左側で候補を出して、評価したい選手を選択してください。</div>`;
   setErr("");
@@ -1306,6 +1334,7 @@ $("btnEvaluate").addEventListener("click", ()=>{
 /* init */
 (async ()=>{
   try{
+    favoritePlayerIds = loadFavoritePlayerIds();
     await loadData();
   }catch(e){
     setErr(String(e && e.message ? e.message : e));
