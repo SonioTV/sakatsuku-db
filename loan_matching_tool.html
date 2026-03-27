@@ -265,6 +265,25 @@
     .leagueIcon{ width:34px; height:34px; flex:0 0 34px; }
     .slotBadge{ min-width:78px; padding:5px 12px; }
   }
+/* 上部に戻るボタン */
+.toTop{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  z-index:999;
+  border:none;
+  border-radius:999px;
+  background:#4aa52a;
+  color:#fff;
+  font-weight:900;
+  padding:14px 16px;
+  box-shadow:0 12px 20px rgba(0,0,0,.18);
+  cursor:pointer;
+  display:none;
+}
+.toTop.show{
+  display:block;
+}
 </style>
 </head>
 <body>
@@ -329,7 +348,7 @@
     </div>
   </div>
 </div>
-
+<button id="toTopBtn" class="toTop">▲</button>
 <script>
 const DURATION_OPTIONS = ["6ヶ月", "12ヶ月", "18ヶ月", "24ヶ月"];
 const GROWTH_OPTIONS = ["ALL", "SHO", "SPD", "PHY", "PAS", "DRB", "DEF", "覚醒pt", "スキル/特徴"];
@@ -578,6 +597,23 @@ async function loadData(){
   }
 }
 loadData();
+// 上部に戻るボタン制御
+const toTopBtn = document.getElementById("toTopBtn");
+
+window.addEventListener("scroll", () => {
+  if(window.scrollY > 300){
+    toTopBtn.classList.add("show");
+  }else{
+    toTopBtn.classList.remove("show");
+  }
+});
+
+toTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
 </script>
 </body>
 </html>
