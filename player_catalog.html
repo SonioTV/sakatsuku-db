@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>選手図鑑 | サカつく2026 DB</title>
+<link rel="canonical" href="https://sakatsuku2026-db.com/player_catalog.html">
+<style>
+  :root{
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --text:#111;
+    --muted:#666;
+    --line:#d7dbe6;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+    --radius:18px;
+
+    --green:#4aa52a;
+    --green-dark:#34761d;
+    --blue:#155f80;
+    --orange:#f59e0b;
+    --gray:#9aa0aa;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+  }
+  .wrap{ max-width:1180px; margin:0 auto; padding:18px 14px 90px; }
+  .topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+    flex-wrap:wrap;
+  }
+  .back{
+    text-decoration:none;
+    font-weight:900;
+    color:#0b3d0f;
+    background:#fff;
+    border:1px solid rgba(0,0,0,.12);
+    padding:10px 14px;
+    border-radius:12px;
+    display:inline-block;
+    box-shadow:0 6px 14px rgba(0,0,0,.06);
+  }
+  h1{
+    margin:8px 0 10px;
+    font-size:30px;
+    letter-spacing:.02em;
+    text-align:center;
+  }
+  .note{
+    text-align:center;
+    color:var(--muted);
+    margin:0 0 14px;
+    line-height:1.6;
+    font-weight:800;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:14px;
+  }
+  @media (min-width: 980px){
+    .grid{ grid-template-columns: 360px 1fr; align-items:start; }
+  }
+  .card{
+    background:var(--card);
+    border:1px solid #e7e9f0;
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    padding:16px;
+    overflow:hidden;
+  }
+  .sticky{
+    position:sticky;
+    top:12px;
+  }
+  .sectionTitle{
+    font-weight:900;
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .ctrlGrid{
+    display:grid;
+    gap:10px;
+  }
+  .ctrlGrid label{
+    font-weight:900;
+    font-size:14px;
+    color:#223;
+    display:block;
+    margin:2px 0 4px;
+  }
+  .ctrlGrid input, .ctrlGrid select{
+    width:100%;
+    font-size:16px;
+    font-weight:800;
+    border-radius:14px;
+    border:2px solid #e1e5ef;
+    padding:10px 12px;
+    background:#fff;
+    outline:none;
+  }
+  .btnRow{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+  }
+  .btn{
+    flex:1;
+    border:none;
+    border-radius:16px;
+    padding:12px 14px;
+    font-weight:900;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 12px 20px rgba(0,0,0,.10);
+  }
+  .btn.primary{ background:var(--orange); color:#fff; }
+  .btn.gray{ background:var(--gray); color:#fff; }
+
+  .summary{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:12px;
+  }
+  .summaryBadge{
+    display:inline-block;
+    background:#eef7ea;
+    color:var(--green-dark);
+    border:1px solid rgba(74,165,42,.25);
+    padding:8px 12px;
+    border-radius:999px;
+    font-weight:900;
+    font-size:14px;
+  }
+  .currentFilters{
+    margin:10px 0 2px;
+    padding:10px 12px;
+    border-radius:14px;
+    background:#fbfcff;
+    border:1px solid #e2e6f0;
+    font-weight:800;
+    line-height:1.7;
+    font-size:14px;
+  }
+  .currentFilters strong{ font-weight:900; }
+
+  .catalog{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  @media (min-width: 740px){
+    .catalog{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+  .playerCard{
+    border:3px solid var(--blue);
+    border-radius:18px;
+    overflow:hidden;
+    background:#fff;
+  }
+  .playerHead{
+    background:var(--green);
+    color:#fff;
+    padding:10px 12px;
+    display:grid;
+    grid-template-columns: 1fr auto;
+    gap:10px;
+    align-items:center;
+  }
+  .playerName{
+    font-weight:900;
+    font-size:18px;
+    line-height:1.35;
+    word-break:break-word;
+  }
+  .rarity{
+    display:inline-block;
+    background:#fff;
+    color:#111;
+    border-radius:999px;
+    padding:4px 9px;
+    font-size:12px;
+    font-weight:900;
+    border:1px solid rgba(0,0,0,.12);
+    white-space:nowrap;
+  }
+  .playerBody{
+    padding:12px;
+  }
+  .stats{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap:8px;
+    margin-bottom:10px;
+  }
+  .stat{
+    border:1px solid #e0e6ef;
+    border-radius:14px;
+    padding:10px 10px 9px;
+    background:#fbfcff;
+    text-align:center;
+  }
+  .stat .k{
+    display:block;
+    color:#4a5568;
+    font-weight:900;
+    font-size:12px;
+    margin-bottom:4px;
+  }
+  .stat .v{
+    display:block;
+    font-weight:900;
+    font-size:18px;
+    color:#111;
+  }
+  .meta{
+    display:grid;
+    grid-template-columns: 118px 1fr;
+    gap:7px 10px;
+    align-items:start;
+    font-size:14px;
+    line-height:1.5;
+  }
+  .meta .k{
+    color:#223;
+    opacity:.9;
+    font-weight:900;
+  }
+  .meta .v{
+    color:#111;
+    font-weight:800;
+    word-break:break-word;
+  }
+  .playerFoot{
+    margin-top:12px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .miniBtn{
+    appearance:none;
+    border:none;
+    background:#155f80;
+    color:#fff;
+    border-radius:12px;
+    padding:9px 12px;
+    font-weight:900;
+    cursor:pointer;
+    font-size:14px;
+  }
+  .chipRow{
+    margin-top:10px;
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+  }
+  .chip{
+    display:inline-block;
+    font-size:12px;
+    font-weight:900;
+    background:rgba(21,95,128,.08);
+    border:1px solid rgba(21,95,128,.20);
+    color:#0b3d50;
+    padding:4px 8px;
+    border-radius:999px;
+    line-height:1.3;
+  }
+  .empty{
+    text-align:center;
+    padding:30px 14px;
+    border:2px dashed #d4dae6;
+    border-radius:18px;
+    color:#555;
+    font-weight:900;
+    background:#fff;
+  }
+
+  .toTop{
+    position:fixed;
+    right:16px;
+    bottom:16px;
+    z-index:999;
+    border:none;
+    border-radius:999px;
+    background:var(--green);
+    color:#fff;
+    font-weight:900;
+    padding:14px 16px;
+    box-shadow:0 12px 20px rgba(0,0,0,.18);
+    cursor:pointer;
+    display:none;
+  }
+  .toTop.show{ display:block; }
+
+  /* Modal */
+  .modalBack{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+    z-index:10000;
+  }
+  .modalBack.show{ display:flex; }
+  .modal{
+    width:min(760px, 100%);
+    background:#fff;
+    border-radius:22px;
+    box-shadow:0 30px 60px rgba(0,0,0,.25);
+    overflow:hidden;
+    border:1px solid rgba(0,0,0,.12);
+  }
+  .modalHead{
+    padding:16px 18px;
+    background:#0b0b0b;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .modalHead .ttl{
+    font-size:18px;
+    font-weight:900;
+    color:#ffd400;
+    line-height:1.4;
+  }
+  .modalHead .subttl{
+    font-size:13px;
+    font-weight:800;
+    opacity:.95;
+    margin-top:4px;
+    color:#ffd400;
+    line-height:1.5;
+  }
+  .modalHead button{
+    border:none;
+    background:transparent;
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+  }
+  .modalBody{
+    padding:16px 18px 18px;
+  }
+  .mLine{
+    margin:8px 0;
+    line-height:1.6;
+  }
+  .mKey{
+    font-weight:900;
+    display:inline-block;
+    min-width:140px;
+    color:#111;
+    vertical-align:top;
+  }
+  .mVal{
+    color:#111;
+    font-weight:700;
+    word-break:break-word;
+  }
+
+  @media (max-width: 520px){
+    .wrap{ padding-left:10px; padding-right:10px; }
+    h1{ font-size:26px; }
+    .playerHead{ grid-template-columns:1fr; }
+    .playerName{ font-size:17px; }
+    .stats{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .meta{ grid-template-columns: 100px 1fr; font-size:13px; }
+    .mKey{ min-width:110px; display:block; margin-bottom:2px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap" id="pageTop">
+  <div class="topbar">
+    <a class="back" href="index.html">← サイトに戻る</a>
+  </div>
+
+  <h1>選手図鑑</h1>
+  <div class="note">
+    全選手を一覧で確認できます。<br>
+    選手名・国籍・成長タイプ・レアリティ・入手方法・入手場所・ポリシー・プレイスタイル・ポジションで絞り込み可能です。
+  </div>
+
+  <div class="grid">
+    <div class="card sticky">
+      <div class="sectionTitle">絞り込み条件</div>
+
+      <div class="ctrlGrid">
+        <div>
+          <label for="fName">選手名</label>
+          <input id="fName" type="text" placeholder="例：ロナウド / サカ" />
+        </div>
+        <div>
+          <label for="fNationality">国籍</label>
+          <select id="fNationality"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
+          <label for="fGrowthType">成長タイプ</label>
+          <select id="fGrowthType"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
+          <label for="fRarity">レアリティ</label>
+          <select id="fRarity"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
+          <label for="fAcqMethod">入手方法</label>
+          <select id="fAcqMethod"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
+          <label for="fAcqPlace">入手場所</label>
+          <select id="fAcqPlace"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
+          <label for="fPolicy">ポリシー</label>
+          <select id="fPolicy"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
+          <label for="fStyle">プレイスタイル</label>
+          <select id="fStyle"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
+          <label for="fPosition">ポジション</label>
+          <select id="fPosition"><option value="">（指定なし）</option></select>
+        </div>
+
+        <div class="btnRow">
+          <button class="btn primary" id="btnApply">絞り込み</button>
+          <button class="btn gray" id="btnReset">リセット</button>
+        </div>
+      </div>
+
+      <div class="currentFilters" id="currentFilters">
+        <strong>現在の条件：</strong> 全選手表示
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="summary">
+        <div class="sectionTitle" style="margin-bottom:0;">選手一覧</div>
+        <div class="summaryBadge" id="resultCount">読み込み中...</div>
+      </div>
+
+      <div id="catalog" class="catalog">
+        <div class="empty">players.json を読み込み中です…</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button id="toTopBtn" class="toTop" type="button" aria-label="ページ上部に戻る">↑ 上部へ</button>
+
+<div id="playerModalBack" class="modalBack" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="playerModalTitle">
+    <div class="modalHead">
+      <div>
+        <div id="playerModalTitle" class="ttl">詳細</div>
+        <div id="playerModalSub" class="subttl"></div>
+      </div>
+      <button id="playerModalClose" aria-label="閉じる">×</button>
+    </div>
+    <div id="playerModalBody" class="modalBody"></div>
+  </div>
+</div>
+
+<script>
+let PLAYERS = [];
+
+const $ = (id)=>document.getElementById(id);
+const esc = (s)=>String(s ?? "").replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const normalize = (s)=>String(s ?? "").trim();
+const toNum = (v)=>{
+  const n = Number(v);
+  return Number.isFinite(n) ? n : null;
+};
+
+function romanLv(n){
+  const v = toNum(n);
+  if(v === 1) return "Ⅰ";
+  if(v === 2) return "Ⅱ";
+  if(v === 3) return "Ⅲ";
+  return "";
+}
+function showRarity(v){
+  const raw = normalize(v);
+  if(!raw) return "-";
+  if(raw.includes("★")) return raw;
+  const n = parseInt(raw, 10);
+  return Number.isFinite(n) ? `★${n}` : raw;
+}
+function pick(obj, keys, fallback=""){
+  for(const k of keys){
+    if(obj && obj[k] !== undefined && obj[k] !== null && String(obj[k]).trim() !== "") return obj[k];
+  }
+  return fallback;
+}
+function uniqueSorted(values){
+  return [...new Set(values.map(normalize).filter(Boolean))]
+    .sort((a,b)=>String(a).localeCompare(String(b), "ja"));
+}
+function fillSelect(selectEl, values, formatter=null){
+  const first = selectEl.options.length ? selectEl.options[0].outerHTML : '<option value="">（指定なし）</option>';
+  selectEl.innerHTML = first + values.map(v=>{
+    const label = formatter ? formatter(v) : v;
+    return `<option value="${esc(v)}">${esc(label)}</option>`;
+  }).join("");
+}
+function getPlayerCore(p){
+  const name = normalize(pick(p, ["name","player_name"], ""));
+  const nationality = normalize(pick(p, ["nationality","国籍"], ""));
+  const growthType = normalize(pick(p, ["growthType","growth_type","成長タイプ"], ""));
+  const rarity = normalize(pick(p, ["rarity","レアリティ"], ""));
+  const acquisitionMethod = normalize(pick(p, ["acquisitionMethod","acquisition_method","入手方法"], ""));
+  const acquisitionPlace = normalize(pick(p, ["acquisitionPlace","acquisition_place","入手場所"], ""));
+  const availablePeriod = normalize(pick(p, ["availablePeriod","available_period","入手可能期間"], ""));
+  const policy = normalize(pick(p, ["policy","ポリシー"], ""));
+  const playStyle = normalize(pick(p, ["playStyle","プレイスタイル"], ""));
+  const playStyleLv = pick(p, ["playStyleLv","play_style_lv","Lv","level","プレイスタイルLv"], "");
+  const mainPosition = normalize(pick(p, ["mainPosition","position","ポジション"], ""));
+  const overall = pick(p, ["overall","初期総合力"], "");
+  const maxUpgrade = pick(p, ["maxUpgrade","最大強化"], "");
+  const category = normalize(pick(p, ["category","区分"], ""));
+  const mainSkill = normalize(pick(p, ["mainSkill","main_skill","メインスキル"], ""));
+  const mainTrait = normalize(pick(p, ["mainTrait","main_trait","メイン特徴"], ""));
+  const playerId = normalize(pick(p, ["player_id","playerId","id"], ""));
+
+  return {
+    raw:p,
+    playerId,
+    name,
+    nationality,
+    growthType,
+    rarity,
+    acquisitionMethod,
+    acquisitionPlace,
+    availablePeriod,
+    policy,
+    playStyle,
+    playStyleLv,
+    mainPosition,
+    overall,
+    maxUpgrade,
+    category,
+    mainSkill,
+    mainTrait
+  };
+}
+
+function loadOptions(){
+  const rows = PLAYERS.map(getPlayerCore);
+  fillSelect($("fNationality"), uniqueSorted(rows.map(r=>r.nationality)));
+  fillSelect($("fGrowthType"), uniqueSorted(rows.map(r=>r.growthType)));
+  fillSelect($("fRarity"), uniqueSorted(rows.map(r=>r.rarity)), showRarity);
+  fillSelect($("fAcqMethod"), uniqueSorted(rows.map(r=>r.acquisitionMethod)));
+  fillSelect($("fAcqPlace"), uniqueSorted(rows.map(r=>r.acquisitionPlace)));
+  fillSelect($("fPolicy"), uniqueSorted(rows.map(r=>r.policy)));
+  fillSelect($("fStyle"), uniqueSorted(rows.map(r=>r.playStyle)));
+  fillSelect($("fPosition"), uniqueSorted(rows.map(r=>r.mainPosition)));
+}
+
+function currentFilterState(){
+  return {
+    name: normalize($("fName").value).toLowerCase(),
+    nationality: normalize($("fNationality").value),
+    growthType: normalize($("fGrowthType").value),
+    rarity: normalize($("fRarity").value),
+    acquisitionMethod: normalize($("fAcqMethod").value),
+    acquisitionPlace: normalize($("fAcqPlace").value),
+    policy: normalize($("fPolicy").value),
+    playStyle: normalize($("fStyle").value),
+    mainPosition: normalize($("fPosition").value),
+  };
+}
+
+function filterPlayers(){
+  const f = currentFilterState();
+  return PLAYERS.map(getPlayerCore).filter(p=>{
+    if(f.name && !p.name.toLowerCase().includes(f.name)) return false;
+    if(f.nationality && p.nationality !== f.nationality) return false;
+    if(f.growthType && p.growthType !== f.growthType) return false;
+    if(f.rarity && p.rarity !== f.rarity) return false;
+    if(f.acquisitionMethod && p.acquisitionMethod !== f.acquisitionMethod) return false;
+    if(f.acquisitionPlace && p.acquisitionPlace !== f.acquisitionPlace) return false;
+    if(f.policy && p.policy !== f.policy) return false;
+    if(f.playStyle && p.playStyle !== f.playStyle) return false;
+    if(f.mainPosition && p.mainPosition !== f.mainPosition) return false;
+    return true;
+  }).sort((a,b)=>{
+    const ao = toNum(a.overall) ?? -Infinity;
+    const bo = toNum(b.overall) ?? -Infinity;
+    if(bo !== ao) return bo - ao;
+    const am = toNum(a.maxUpgrade) ?? -Infinity;
+    const bm = toNum(b.maxUpgrade) ?? -Infinity;
+    if(bm !== am) return bm - am;
+    return a.name.localeCompare(b.name, "ja");
+  });
+}
+
+function renderCurrentFilters(){
+  const f = currentFilterState();
+  const parts = [];
+  if(f.name) parts.push(`選手名：${esc($("fName").value.trim())}`);
+  if(f.nationality) parts.push(`国籍：${esc(f.nationality)}`);
+  if(f.growthType) parts.push(`成長タイプ：${esc(f.growthType)}`);
+  if(f.rarity) parts.push(`レアリティ：${esc(showRarity(f.rarity))}`);
+  if(f.acquisitionMethod) parts.push(`入手方法：${esc(f.acquisitionMethod)}`);
+  if(f.acquisitionPlace) parts.push(`入手場所：${esc(f.acquisitionPlace)}`);
+  if(f.policy) parts.push(`ポリシー：${esc(f.policy)}`);
+  if(f.playStyle) parts.push(`プレイスタイル：${esc(f.playStyle)}`);
+  if(f.mainPosition) parts.push(`ポジション：${esc(f.mainPosition)}`);
+
+  $("currentFilters").innerHTML = parts.length
+    ? `<strong>現在の条件：</strong> ${parts.join(" / ")}`
+    : `<strong>現在の条件：</strong> 全選手表示`;
+}
+
+function renderCatalog(list){
+  $("resultCount").textContent = `${list.length}人表示`;
+  const root = $("catalog");
+
+  if(!list.length){
+    root.innerHTML = `<div class="empty">条件に一致する選手が見つかりませんでした。</div>`;
+    return;
+  }
+
+  root.innerHTML = list.map((p, idx)=>{
+    const lvRoman = romanLv(p.playStyleLv);
+    const styleDisplay = p.playStyle ? `${p.playStyle}${lvRoman ? " " + lvRoman : ""}` : "-";
+    return `
+      <div class="playerCard">
+        <div class="playerHead">
+          <div class="playerName">${esc(p.name || "（名称不明）")}</div>
+          <div class="rarity">${esc(showRarity(p.rarity))}</div>
+        </div>
+        <div class="playerBody">
+          <div class="stats">
+            <div class="stat">
+              <span class="k">初期総合力</span>
+              <span class="v">${p.overall !== "" ? esc(p.overall) : "-"}</span>
+            </div>
+            <div class="stat">
+              <span class="k">最大強化</span>
+              <span class="v">${p.maxUpgrade !== "" ? esc(p.maxUpgrade) : "-"}</span>
+            </div>
+          </div>
+
+          <div class="meta">
+            <div class="k">国籍</div><div class="v">${esc(p.nationality || "-")}</div>
+            <div class="k">成長タイプ</div><div class="v">${esc(p.growthType || "-")}</div>
+            <div class="k">ポリシー</div><div class="v">${esc(p.policy || "-")}</div>
+            <div class="k">プレイスタイル</div><div class="v">${esc(styleDisplay)}</div>
+            <div class="k">ポジション</div><div class="v">${esc(p.mainPosition || "-")}</div>
+            <div class="k">入手方法</div><div class="v">${esc(p.acquisitionMethod || "-")}</div>
+            <div class="k">入手場所</div><div class="v">${esc(p.acquisitionPlace || "-")}</div>
+          </div>
+
+          <div class="chipRow">
+            ${p.category ? `<span class="chip">${esc(p.category)}</span>` : ``}
+            ${p.availablePeriod ? `<span class="chip">${esc(p.availablePeriod)}</span>` : ``}
+          </div>
+
+          <div class="playerFoot">
+            <button type="button" class="miniBtn" data-index="${idx}">詳細を見る</button>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  const buttons = root.querySelectorAll("[data-index]");
+  buttons.forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const idx = Number(btn.getAttribute("data-index"));
+      openPlayerModal(list[idx]);
+    });
+  });
+}
+
+function applyFilters(){
+  renderCurrentFilters();
+  renderCatalog(filterPlayers());
+}
+
+function resetFilters(){
+  $("fName").value = "";
+  $("fNationality").value = "";
+  $("fGrowthType").value = "";
+  $("fRarity").value = "";
+  $("fAcqMethod").value = "";
+  $("fAcqPlace").value = "";
+  $("fPolicy").value = "";
+  $("fStyle").value = "";
+  $("fPosition").value = "";
+  applyFilters();
+}
+
+function openPlayerModal(p){
+  if(!p) return;
+  $("playerModalTitle").textContent = p.name || "詳細";
+  const sub = [];
+  if(p.nationality) sub.push(`国籍：${p.nationality}`);
+  if(p.growthType) sub.push(`成長タイプ：${p.growthType}`);
+  $("playerModalSub").textContent = sub.join(" / ");
+
+  const lvRoman = romanLv(p.playStyleLv);
+  const styleDisplay = p.playStyle ? `${p.playStyle}${lvRoman ? " " + lvRoman : ""}` : "-";
+
+  const lines = [];
+  lines.push(`<div class="mLine"><span class="mKey">区分</span><span class="mVal">${esc(p.category || "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">レアリティ</span><span class="mVal">${esc(showRarity(p.rarity))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">初期総合力</span><span class="mVal">${p.overall !== "" ? esc(p.overall) : "-"}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">最大強化</span><span class="mVal">${p.maxUpgrade !== "" ? esc(p.maxUpgrade) : "-"}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">ポリシー</span><span class="mVal">${esc(p.policy || "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">プレイスタイル</span><span class="mVal">${esc(styleDisplay)}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">ポジション</span><span class="mVal">${esc(p.mainPosition || "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">国籍</span><span class="mVal">${esc(p.nationality || "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">成長タイプ</span><span class="mVal">${esc(p.growthType || "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class="mVal">${esc(p.acquisitionMethod || "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">入手場所</span><span class="mVal">${esc(p.acquisitionPlace || "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">入手可能期間</span><span class="mVal">${esc(p.availablePeriod || "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">メインスキル</span><span class="mVal">${esc(p.mainSkill || "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">メイン特徴</span><span class="mVal">${esc(p.mainTrait || "-")}</span></div>`);
+  if(p.playerId){
+    lines.push(`<div class="mLine"><span class="mKey">player_id</span><span class="mVal">${esc(p.playerId)}</span></div>`);
+  }
+
+  $("playerModalBody").innerHTML = lines.join("");
+  $("playerModalBack").classList.add("show");
+  $("playerModalBack").setAttribute("aria-hidden","false");
+}
+function closePlayerModal(){
+  $("playerModalBack").classList.remove("show");
+  $("playerModalBack").setAttribute("aria-hidden","true");
+}
+$("playerModalClose").addEventListener("click", closePlayerModal);
+$("playerModalBack").addEventListener("click", (e)=>{
+  if(e.target === $("playerModalBack")) closePlayerModal();
+});
+document.addEventListener("keydown", (e)=>{
+  if(e.key === "Escape") closePlayerModal();
+});
+
+function setupToTopButton(){
+  const btn = $("toTopBtn");
+  const toggle = ()=>{
+    if(window.scrollY > 300) btn.classList.add("show");
+    else btn.classList.remove("show");
+  };
+  window.addEventListener("scroll", toggle, { passive:true });
+  toggle();
+  btn.addEventListener("click", ()=>{
+    window.scrollTo({ top:0, behavior:"smooth" });
+  });
+}
+
+async function init(){
+  try{
+    const res = await fetch("players.json", { cache:"no-store" });
+    if(!res.ok) throw new Error("players.json の読み込みに失敗しました。");
+    PLAYERS = await res.json();
+    if(!Array.isArray(PLAYERS)) throw new Error("players.json の形式が不正です。");
+    loadOptions();
+    applyFilters();
+  }catch(err){
+    $("resultCount").textContent = "読み込み失敗";
+    $("catalog").innerHTML = `<div class="empty">${esc(err && err.message ? err.message : String(err))}</div>`;
+  }
+}
+
+$("btnApply").addEventListener("click", applyFilters);
+$("btnReset").addEventListener("click", resetFilters);
+
+// Enterキーでも絞り込み実行
+$("fName").addEventListener("keydown", (e)=>{
+  if(e.key === "Enter"){
+    e.preventDefault();
+    applyFilters();
+  }
+});
+
+setupToTopButton();
+init();
+</script>
+</body>
+</html>
