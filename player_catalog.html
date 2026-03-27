@@ -144,6 +144,31 @@
     font-weight:900;
     font-size:14px;
   }
+  .summaryActions{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .favOnlyWrap{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#fff7d6;
+    border:1px solid rgba(201,138,0,.25);
+    color:#6e5200;
+    padding:8px 12px;
+    border-radius:999px;
+    font-weight:900;
+    font-size:14px;
+  }
+  .favOnlyWrap input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    margin:0;
+    accent-color:#c98a00;
+    flex:0 0 auto;
+  }
   .currentFilters{
     margin:10px 0 2px;
     padding:10px 12px;
@@ -184,6 +209,49 @@
     font-size:18px;
     line-height:1.35;
     word-break:break-word;
+  }
+  .playerHeadMain{
+    min-width:0;
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .playerHeadText{
+    min-width:0;
+    flex:1 1 auto;
+  }
+  .favBtn{
+    appearance:none;
+    border:1px solid rgba(0,0,0,.15);
+    background:#fff;
+    color:#c98a00;
+    border-radius:999px;
+    min-width:42px;
+    height:42px;
+    padding:0 10px;
+    font-size:20px;
+    font-weight:900;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+    flex:0 0 auto;
+  }
+  .favBtn.is-active{
+    background:#fff0b8;
+    border-color:rgba(201,138,0,.4);
+  }
+  .favBtn .favText{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
   }
   .rarity{
     display:inline-block;
@@ -457,7 +525,13 @@
     <div class="card">
       <div class="summary">
         <div class="sectionTitle" style="margin-bottom:0;">選手一覧</div>
-        <div class="summaryBadge" id="resultCount">読み込み中...</div>
+        <div class="summaryActions">
+          <label class="favOnlyWrap">
+            <input type="checkbox" id="favoriteOnlyCheck">
+            <span>お気に入りのみ表示</span>
+          </label>
+          <div class="summaryBadge" id="resultCount">読み込み中...</div>
+        </div>
       </div>
 
       <div id="catalog" class="catalog">
@@ -484,6 +558,8 @@
 
 <script>
 let PLAYERS = [];
+const FAVORITES_STORAGE_KEY = "sakatsuku2026_player_catalog_favorites";
+let favoritePlayerIds = new Set();
 
 const $ = (id)=>document.getElementById(id);
 const esc = (s)=>String(s ?? "").replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
@@ -565,6 +641,36 @@ function getPlayerCore(p){
   };
 }
 
+function loadFavoritePlayerIds(){
+  try{
+    const raw = localStorage.getItem(FAVORITES_STORAGE_KEY);
+    if(!raw) return new Set();
+    const parsed = JSON.parse(raw);
+    if(!Array.isArray(parsed)) return new Set();
+    return new Set(parsed.map(v => String(v ?? "").trim()).filter(Boolean));
+  }catch(error){
+    console.warn("お気に入りデータの読み込みに失敗しました。", error);
+    return new Set();
+  }
+}
+function saveFavoritePlayerIds(){
+  try{
+    localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify([...favoritePlayerIds]));
+  }catch(error){
+    console.warn("お気に入りデータの保存に失敗しました。", error);
+  }
+}
+function isFavoritePlayer(player){
+  return !!(player && player.playerId && favoritePlayerIds.has(String(player.playerId)));
+}
+function toggleFavoritePlayer(playerId){
+  const id = String(playerId ?? "").trim();
+  if(!id) return;
+  if(favoritePlayerIds.has(id)) favoritePlayerIds.delete(id);
+  else favoritePlayerIds.add(id);
+  saveFavoritePlayerIds();
+  applyFilters();
+}
 function loadOptions(){
   const rows = PLAYERS.map(getPlayerCore);
   fillSelect($("fNationality"), uniqueSorted(rows.map(r=>r.nationality)));
@@ -588,6 +694,7 @@ function currentFilterState(){
     policy: normalize($("fPolicy").value),
     playStyle: normalize($("fStyle").value),
     mainPosition: normalize($("fPosition").value),
+    favoriteOnly: $("favoriteOnlyCheck") ? !!$("favoriteOnlyCheck").checked : false,
   };
 }
 
@@ -603,8 +710,12 @@ function filterPlayers(){
     if(f.policy && p.policy !== f.policy) return false;
     if(f.playStyle && p.playStyle !== f.playStyle) return false;
     if(f.mainPosition && p.mainPosition !== f.mainPosition) return false;
+    if(f.favoriteOnly && !isFavoritePlayer(p)) return false;
     return true;
   }).sort((a,b)=>{
+    const af = isFavoritePlayer(a) ? 1 : 0;
+    const bf = isFavoritePlayer(b) ? 1 : 0;
+    if(bf !== af) return bf - af;
     const ao = toNum(a.overall) ?? -Infinity;
     const bo = toNum(b.overall) ?? -Infinity;
     if(bo !== ao) return bo - ao;
@@ -627,6 +738,7 @@ function renderCurrentFilters(){
   if(f.policy) parts.push(`ポリシー：${esc(f.policy)}`);
   if(f.playStyle) parts.push(`プレイスタイル：${esc(f.playStyle)}`);
   if(f.mainPosition) parts.push(`ポジション：${esc(f.mainPosition)}`);
+  if(f.favoriteOnly) parts.push(`お気に入り：のみ表示`);
 
   $("currentFilters").innerHTML = parts.length
     ? `<strong>現在の条件：</strong> ${parts.join(" / ")}`
@@ -645,10 +757,27 @@ function renderCatalog(list){
   root.innerHTML = list.map((p, idx)=>{
     const lvRoman = romanLv(p.playStyleLv);
     const styleDisplay = p.playStyle ? `${p.playStyle}${lvRoman ? " " + lvRoman : ""}` : "-";
+    const isFavorite = isFavoritePlayer(p);
+    const favoriteLabel = isFavorite ? "お気に入り解除" : "お気に入り登録";
     return `
       <div class="playerCard">
         <div class="playerHead">
-          <div class="playerName">${esc(p.name || "（名称不明）")}</div>
+          <div class="playerHeadMain">
+            <button
+              type="button"
+              class="favBtn ${isFavorite ? "is-active" : ""}"
+              data-favorite-id="${esc(p.playerId || "")}"
+              aria-pressed="${isFavorite ? "true" : "false"}"
+              aria-label="${esc((p.name || "選手") + "を" + favoriteLabel)}"
+              title="${esc(favoriteLabel)}"
+            >
+              ${isFavorite ? "★" : "☆"}
+              <span class="favText">${esc(favoriteLabel)}</span>
+            </button>
+            <div class="playerHeadText">
+              <div class="playerName">${esc(p.name || "（名称不明）")}</div>
+            </div>
+          </div>
           <div class="rarity">${esc(showRarity(p.rarity))}</div>
         </div>
         <div class="playerBody">
@@ -678,19 +807,17 @@ function renderCatalog(list){
             ${p.availablePeriod ? `<span class="chip">${esc(p.availablePeriod)}</span>` : ``}
           </div>
 
-          <div class="playerFoot">
-            <button type="button" class="miniBtn" data-index="${idx}">詳細を見る</button>
-          </div>
         </div>
       </div>
     `;
   }).join("");
 
-  const buttons = root.querySelectorAll("[data-index]");
-  buttons.forEach(btn=>{
+  const favoriteButtons = root.querySelectorAll("[data-favorite-id]");
+  favoriteButtons.forEach(btn=>{
     btn.addEventListener("click", ()=>{
-      const idx = Number(btn.getAttribute("data-index"));
-      openPlayerModal(list[idx]);
+      const playerId = btn.getAttribute("data-favorite-id");
+      if(!playerId) return;
+      toggleFavoritePlayer(playerId);
     });
   });
 }
@@ -710,6 +837,7 @@ function resetFilters(){
   $("fPolicy").value = "";
   $("fStyle").value = "";
   $("fPosition").value = "";
+  if($("favoriteOnlyCheck")) $("favoriteOnlyCheck").checked = false;
   applyFilters();
 }
 
@@ -774,6 +902,7 @@ function setupToTopButton(){
 
 async function init(){
   try{
+    favoritePlayerIds = loadFavoritePlayerIds();
     const res = await fetch("players.json", { cache:"no-store" });
     if(!res.ok) throw new Error("players.json の読み込みに失敗しました。");
     PLAYERS = await res.json();
@@ -788,6 +917,7 @@ async function init(){
 
 $("btnApply").addEventListener("click", applyFilters);
 $("btnReset").addEventListener("click", resetFilters);
+$("favoriteOnlyCheck").addEventListener("change", applyFilters);
 
 // Enterキーでも絞り込み実行
 $("fName").addEventListener("keydown", (e)=>{
