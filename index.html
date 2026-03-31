@@ -775,6 +775,50 @@
   transform:scale(.97);
 }
 
+/* ===== SNSリンク ===== */
+.snsLinks{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.snsBtn{
+  display:inline-block;
+  min-width:220px;
+  padding:14px 18px;
+  border-radius:16px;
+  font-weight:900;
+  font-size:18px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  box-shadow:0 12px 20px rgba(0,0,0,.15);
+  transition:.15s;
+}
+
+/* YouTube */
+.snsBtn.youtube{
+  background:#ff0000;
+}
+
+/* X */
+.snsBtn.x{
+  background:#111;
+}
+
+.snsBtn:active{
+  transform:scale(.97);
+}
+
+/* スマホ */
+@media (max-width:480px){
+  .snsBtn{
+    width:90%;
+    font-size:17px;
+  }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -1007,6 +1051,27 @@
   </div>
 
 </section>
+
+<!-- ===== SNSリンク ===== -->
+<div class="card" style="margin-bottom:20px;">
+  <div class="sectionTitle" style="text-align:left;">公式SNS</div>
+
+  <div class="snsLinks">
+
+    <a href="https://www.youtube.com/channel/UCROtbE7z4zRAdzBy-xdEiNw?view_as=subscriber"
+       target="_blank" rel="noopener noreferrer"
+       class="snsBtn youtube">
+      ▶ YouTubeチャンネル
+    </a>
+
+    <a href="https://x.com/Dice_Ke_sun"
+       target="_blank" rel="noopener noreferrer"
+       class="snsBtn x">
+      ✕ X（旧Twitter）
+    </a>
+
+  </div>
+</div>
 
 </div>
 
