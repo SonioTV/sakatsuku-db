@@ -1182,6 +1182,12 @@ lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class
 }
 
 // ===== 追加：残り選手を「一覧モーダル」で表示 =====
+function formatPlayerListLabel(p){
+  const rarity = safeStr(p && p.rarity).trim();
+  const rarityLabel = rarity ? `${rarity} ` : "";
+  return `${rarityLabel}${safeStr((p && p.name) || "-")}`;
+}
+
 function openPlayerListModal(title, players){
   document.getElementById("modalTitle").textContent = title || "選手一覧";
 
@@ -1192,12 +1198,12 @@ function openPlayerListModal(title, players){
   if(!players || players.length===0){
     body.innerHTML = `<div class="note" style="text-align:left;margin:6px 0;">なし</div>`;
   }else{
-    body.innerHTML = players.map(p=>{
+    const sorted = [...players].sort((a,b)=> (Number(b?.overall)||0) - (Number(a?.overall)||0));
+    body.innerHTML = sorted.map(p=>{
       const pid = esc(getPlayerId(p));
-      return `<div class="playerRow"><a href="#" data-player-id="${pid}">${esc(p.name || "-")}</a></div>`;
+      return `<div class="playerRow"><a href="#" data-player-id="${pid}">${esc(formatPlayerListLabel(p))}</a></div>`;
     }).join("");
 
-    // 一覧内のクリックで「選手詳細」を開く（既存挙動と統一）
     body.querySelectorAll("[data-player-id]").forEach(a=>{
       a.addEventListener("click", (e)=>{
         e.preventDefault();
@@ -1893,18 +1899,18 @@ function renderPlayersForCombo(){
 function renderPlayerNameOnlyList(arr){
   if(!arr || arr.length===0) return `<div class="note" style="text-align:left;margin:6px 0;">なし</div>`;
 
+  const sorted = [...arr].sort((a,b)=> (Number(b?.overall)||0) - (Number(a?.overall)||0));
   const MAX = 3;
-  const head = arr.slice(0, MAX);
-  const rest = arr.slice(MAX);
+  const head = sorted.slice(0, MAX);
+  const rest = sorted.slice(MAX);
 
   const headHtml = head.map(p=>{
     const pid = esc(getPlayerId(p));
-    return `<div class="playerRow"><a href="#" data-player-id="${pid}">${esc(p.name || "-")}</a></div>`;
+    return `<div class="playerRow"><a href="#" data-player-id="${pid}">${esc(formatPlayerListLabel(p))}</a></div>`;
   }).join("");
 
   if(rest.length===0) return headHtml;
 
-  // 残りは「他◯人を見る」→ 同じモーダルで一覧表示
   const restPids = rest.map(p=>esc(getPlayerId(p))).join(",");
   const moreBtn = `
     <div class="playerRow" style="margin-top:6px;">
