@@ -14,115 +14,124 @@
   --border:rgba(17,24,39,.12);
   --shadow:0 18px 50px rgba(0,0,0,.10);
   --radius:24px;
+  --blue:#0b5bd3;
+  --blue-soft:#bcd2ff;
+  --orange:#f59e0b;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,Arial,sans-serif;}
 .wrap{max-width:980px;margin:0 auto;padding:26px 16px 40px;}
-h1{font-size:42px;line-height:1.1;margin:10px 0 10px;text-align:center;font-weight:900;letter-spacing:.02em;}
+h1{font-size:36px;line-height:1.15;margin:10px 0 10px;text-align:center;font-weight:900;letter-spacing:.01em;}
 .nav{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:18px 0 18px;}
-.nav a{display:inline-block;padding:14px 22px;border-radius:22px;border:3px solid #bcd2ff;background:#fff;color:#0b5bd3;font-weight:900;text-decoration:none;font-size:22px;}
+.nav a{display:inline-block;padding:14px 22px;border-radius:22px;border:3px solid var(--blue-soft);background:#fff;color:var(--blue);font-weight:900;text-decoration:none;font-size:22px;}
 .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 18px;border:1px solid var(--border);}
 .sectionTitle{font-size:34px;font-weight:900;text-align:center;margin:8px 0 12px;}
-.bigSelect{width:min(720px,100%);font-size:30px;font-weight:900;border-radius:20px;border:3px solid rgba(17,24,39,.18);padding:18px 16px;outline:none;background:#e9e9e9;color:#0b5bd3;}
-.bigBtn{width:min(720px,100%);display:block;margin:16px auto 0;border:none;border-radius:28px;padding:22px 18px;font-size:38px;font-weight:900;background:#f59e0b;color:#fff;box-shadow:0 20px 40px rgba(245,158,11,.30);}
+.bigSelect{width:min(720px,100%);font-size:30px;font-weight:900;border-radius:20px;border:3px solid rgba(17,24,39,.18);padding:18px 16px;outline:none;background:#e9e9e9;color:var(--blue);}
+.bigBtn{width:min(720px,100%);display:block;margin:16px auto 0;border:none;border-radius:28px;padding:22px 18px;font-size:38px;font-weight:900;background:var(--orange);color:#fff;box-shadow:0 20px 40px rgba(245,158,11,.30);}
 .hr{height:2px;background:rgba(17,24,39,.10);margin:18px 0;}
-.resultTitle{font-size:28px;font-weight:900;text-align:center;margin:10px 0 14px;}
-/* list cards */
+.resultTitle{font-size:18px;font-weight:900;text-align:center;line-height:1.25;margin:10px 0 14px;}
 .list{display:grid;gap:14px;}
-.item{border:2px solid rgba(17,24,39,.10);border-radius:24px;padding:18px 14px;background:#fff;}
-.itemName{font-size:34px;font-weight:900;text-align:center;margin:0 0 10px;word-break:break-word;}
-.itemMeta{font-size:22px;font-weight:900;text-align:center;margin:0 0 10px;color:#111827;}
-.itemEff{font-size:22px;font-weight:900;text-align:center;margin:0;word-break:break-word;}
-.count{text-align:center;color:var(--muted);font-weight:900;margin-top:10px;font-size:20px;}
-@media (max-width:520px){
-  h1{font-size:40px;}
-  .nav a{font-size:22px;}
-  .sectionTitle{font-size:34px;}
-  .bigSelect{font-size:28px;}
-  .bigBtn{font-size:40px;}
-  .resultTitle{font-size:24px;}
-  .itemName{font-size:30px;}
-  .itemMeta,.itemEff{font-size:20px;}
-}
-
-/* ===== 施設/設備 一覧表示：見やすさ重視（横スクロール無し） ===== */
-h1{
-  font-size:36px;
-  line-height:1.15;
-  letter-spacing:.01em;
-}
-
-.resultTitle{
-  font-size:18px !important;
-  line-height:1.25 !important;
-  margin:10px 0 12px !important;
-}
-
-.list{ gap:12px; }
-
 .item{
-  padding:14px 12px !important;
-  border-radius:22px;
+  border:2px solid rgba(17,24,39,.10);
+  border-radius:24px;
+  padding:14px;
+  background:#fff;
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:14px;
+  align-items:center;
 }
-
-.itemName{
-  font-size:22px !important;
-  line-height:1.25 !important;
-  margin:0 0 8px !important;
-  letter-spacing:.01em;
+.itemImageWrap{
+  width:140px;
+  height:140px;
+  border-radius:20px;
+  background:linear-gradient(180deg,#f8fafc,#eef2f7);
+  border:1px solid rgba(17,24,39,.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
 }
-
-.itemMeta{
-  font-size:14px !important;
-  font-weight:800 !important;
-  line-height:1.35 !important;
-  margin:0 0 6px !important;
-  white-space:normal !important;    /* 折り返しOK */
-  overflow:visible !important;      /* 行内スクロール禁止 */
+.itemImage{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
 }
-
-.itemEff{
-  font-size:14px !important;
-  font-weight:800 !important;
-  line-height:1.35 !important;
-  margin:0 !important;
-  white-space:normal !important;    /* 折り返しOK */
-  overflow:visible !important;      /* 行内スクロール禁止 */
-  word-break:keep-all;              /* 日本語/英数混在でも過剰分割を抑える */
-}
-
-.count{
-  font-size:13px !important;
-  font-weight:800 !important;
-  margin-top:10px !important;
-}
-
-@media (max-width:520px){
-  h1{ font-size:30px; }
-  .sectionTitle{ font-size:26px; }
-  .bigSelect{ font-size:22px; padding:14px 14px; border-radius:18px; }
-  .bigBtn{ font-size:26px; padding:16px 16px; border-radius:22px; }
-  .resultTitle{ font-size:16px !important; }
-  .itemName{ font-size:20px !important; }
-  .itemMeta,.itemEff{ font-size:13px !important; }
-}
-
-/* ===== タイトル画像 ===== */
-.pageTitleImg{
+.itemImagePlaceholder{
+  font-size:14px;
+  font-weight:800;
+  color:var(--muted);
   text-align:center;
-  margin:10px 0 6px;
+  line-height:1.4;
+  padding:10px;
 }
-.pageTitleImg img{
-  max-width:100%;
-  height:auto;
-  width:420px;      /* PC表示サイズ */
+.itemBody{min-width:0;}
+.itemHeader{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  margin-bottom:8px;
 }
+.itemName{
+  font-size:28px;
+  font-weight:900;
+  line-height:1.25;
+  margin:0;
+  letter-spacing:.01em;
+  word-break:break-word;
+}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:#eef4ff;
+  color:var(--blue);
+  font-size:14px;
+  font-weight:900;
+  line-height:1.2;
+  border:1px solid rgba(11,91,211,.14);
+}
+.itemEff{
+  font-size:15px;
+  font-weight:800;
+  line-height:1.5;
+  margin:0;
+  white-space:normal;
+  overflow:visible;
+}
+.itemEff{color:#111827;word-break:keep-all;}
+.count{text-align:center;color:var(--muted);font-weight:900;margin-top:10px;font-size:13px;}
+.pageTitleImg{text-align:center;margin:10px 0 6px;}
+.pageTitleImg img{max-width:100%;height:auto;width:420px;}
 @media (max-width:520px){
-  .pageTitleImg img{
-    width:85%;
+  h1{font-size:30px;}
+  .nav a{font-size:22px;}
+  .sectionTitle{font-size:26px;}
+  .bigSelect{font-size:22px;padding:14px 14px;border-radius:18px;}
+  .bigBtn{font-size:26px;padding:16px 16px;border-radius:22px;}
+  .resultTitle{font-size:16px;}
+  .item{
+    grid-template-columns:104px 1fr;
+    gap:12px;
+    padding:12px;
+    align-items:center;
   }
+  .itemImageWrap{
+    width:104px;
+    height:104px;
+    margin:0;
+    border-radius:16px;
+  }
+  .itemName{font-size:19px;line-height:1.2;}
+  .badge{font-size:13px;padding:6px 10px;min-height:32px;}
+  .pageTitleImg img{width:85%;}
 }
-
 </style>
 </head>
 <body>
@@ -136,7 +145,7 @@ h1{
 
   <div class="nav">
     <a href="index.html">検索ツールへ戻る</a>
-    <a href="stadium.html">スタジアム編へ</a>
+    <a href="stadium.html">スタジアム施設へ</a>
   </div>
 
   <div class="card">
@@ -170,9 +179,13 @@ h1{
 
 <script>
 const JSON_PATH = "club_facilities.json";
+const IMAGE_BASE = "img/club_facilities/";
+const IMAGE_EXTS = ["png","jpg","jpeg","webp"];
+
 function norm(s){
   return (s ?? "").toString().trim();
 }
+
 function effectsToString(item){
   const parts=[];
   for (let i=1;i<=3;i++) {
@@ -183,8 +196,8 @@ function effectsToString(item){
   }
   return parts.join(" / ");
 }
+
 function selectedValue(item, selected){
-  // return the total value contributed to selected category (for sorting)
   let sum=0;
   for (let i=1;i<=3;i++) {
     const e = norm(item["effect"+i]);
@@ -192,6 +205,38 @@ function selectedValue(item, selected){
     if (e === selected) sum += v;
   }
   return sum;
+}
+
+function escapeHtml(str){
+  return String(str).replace(/[&<>\"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+}
+
+function createFacilityImage(facilityId, facilityName){
+  const wrap = document.createElement('div');
+  wrap.className = 'itemImageWrap';
+
+  const img = document.createElement('img');
+  img.className = 'itemImage';
+  img.alt = facilityName;
+  img.dataset.index = '0';
+
+  const trySetSrc = (index) => {
+    if (index >= IMAGE_EXTS.length) {
+      wrap.innerHTML = `<div class="itemImagePlaceholder">画像準備中<br>${escapeHtml(facilityId)}</div>`;
+      return;
+    }
+    img.dataset.index = String(index);
+    img.src = `${IMAGE_BASE}${facilityId}.${IMAGE_EXTS[index]}`;
+  };
+
+  img.addEventListener('error', () => {
+    const nextIndex = Number(img.dataset.index || '0') + 1;
+    trySetSrc(nextIndex);
+  });
+
+  wrap.appendChild(img);
+  trySetSrc(0);
+  return wrap;
 }
 
 let facilities = [];
@@ -214,6 +259,7 @@ function render(){
     }
     return false;
   });
+
   hit.sort((a,b)=> {
     const av = selectedValue(a, sel);
     const bv = selectedValue(b, sel);
@@ -221,26 +267,46 @@ function render(){
     const ac = Number(a.cost ?? 0);
     const bc = Number(b.cost ?? 0);
     if (ac !== bc) return ac-bc;
+    const ai = Number(String(a.install_level ?? '').replace(/[^0-9.-]/g, ''));
+    const bi = Number(String(b.install_level ?? '').replace(/[^0-9.-]/g, ''));
+    if (ai !== bi) return ai-bi;
     return norm(a.facility_name).localeCompare(norm(b.facility_name), "ja");
   });
 
   const list = document.getElementById("list");
   list.innerHTML = "";
+
   hit.forEach(it => {
     const div = document.createElement("div");
     div.className = "item";
+
     const name = norm(it.facility_name);
-    const cat = norm(it.category); // ★ここが修正点：選択カテゴリではなく施設/設備のcategory列
-    const cost = it.cost ?? "";
+    const facilityId = norm(it.facility_id);
+    const cat = norm(it.category);
+    const cost = it.cost ?? "-";
+    const installLevel = it.install_level ?? "-";
     const eff = effectsToString(it);
 
-    div.innerHTML = `
-      <div class="itemName">${name}</div>
-      <div class="itemMeta">カテゴリ：${cat} / 設置コスト：${cost}</div>
-      <div class="itemEff">上昇効果：${eff || "-"}</div>
+    const image = createFacilityImage(facilityId, name);
+    const body = document.createElement('div');
+    body.className = 'itemBody';
+    body.innerHTML = `
+      <div class="itemHeader">
+        <div class="itemName">${escapeHtml(name)}</div>
+      </div>
+      <div class="badges">
+        <span class="badge">カテゴリ：${escapeHtml(cat)}</span>
+        <span class="badge">設置コスト：${escapeHtml(cost)}</span>
+        <span class="badge">設置可能Lv：${escapeHtml(installLevel)}</span>
+        <span class="badge">上昇効果：${escapeHtml(eff || "-")}</span>
+      </div>
     `;
+
+    div.appendChild(image);
+    div.appendChild(body);
     list.appendChild(div);
   });
+
   document.getElementById("count").textContent = `表示件数：${hit.length}`;
   document.getElementById("outArea").style.display = "block";
 }
