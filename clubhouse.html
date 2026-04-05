@@ -37,16 +37,14 @@ h1{font-size:36px;line-height:1.15;margin:10px 0 10px;text-align:center;font-wei
   padding:14px;
   background:#fff;
   display:grid;
-  grid-template-columns:140px 1fr;
+  grid-template-columns:210px 1fr;
   gap:14px;
   align-items:center;
 }
 .itemImageWrap{
-  width:140px;
-  height:140px;
-  border-radius:20px;
-  background:linear-gradient(180deg,#f8fafc,#eef2f7);
-  border:1px solid rgba(17,24,39,.08);
+  width:156px;
+  height:117px;
+  background:transparent;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -55,7 +53,7 @@ h1{font-size:36px;line-height:1.15;margin:10px 0 10px;text-align:center;font-wei
 .itemImage{
   width:100%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
   display:block;
 }
 .itemImagePlaceholder{
@@ -117,14 +115,14 @@ h1{font-size:36px;line-height:1.15;margin:10px 0 10px;text-align:center;font-wei
   .bigBtn{font-size:26px;padding:16px 16px;border-radius:22px;}
   .resultTitle{font-size:16px;}
   .item{
-    grid-template-columns:104px 1fr;
+    grid-template-columns:156px 1fr;
     gap:12px;
     padding:12px;
     align-items:center;
   }
   .itemImageWrap{
-    width:104px;
-    height:104px;
+    width:156px;
+    height:156px;
     margin:0;
     border-radius:16px;
   }
@@ -291,9 +289,6 @@ function render(){
     const body = document.createElement('div');
     body.className = 'itemBody';
     body.innerHTML = `
-      <div class="itemHeader">
-        <div class="itemName">${escapeHtml(name)}</div>
-      </div>
       <div class="badges">
         <span class="badge">カテゴリ：${escapeHtml(cat)}</span>
         <span class="badge">設置コスト：${escapeHtml(cost)}</span>
