@@ -1,0 +1,194 @@
+[
+  {
+    "expansion_id": "CE0001",
+    "hometown_name": "クラブハウス",
+    "level": 1,
+    "expansion_condition": "-",
+    "fund": "-",
+    "facility_space": 4
+  },
+  {
+    "expansion_id": "CE0002",
+    "hometown_name": "クラブハウス",
+    "level": 2,
+    "expansion_condition": "スタジアムレベル2以上",
+    "fund": "6250万円",
+    "facility_space": 5
+  },
+  {
+    "expansion_id": "CE0003",
+    "hometown_name": "クラブハウス",
+    "level": 3,
+    "expansion_condition": "スタジアムレベル3以上",
+    "fund": "1億2500万円",
+    "facility_space": 6
+  },
+  {
+    "expansion_id": "CE0004",
+    "hometown_name": "クラブハウス",
+    "level": 4,
+    "expansion_condition": "スタジアムレベル4以上",
+    "fund": "1億8750万円",
+    "facility_space": 7
+  },
+  {
+    "expansion_id": "CE0005",
+    "hometown_name": "クラブハウス",
+    "level": 5,
+    "expansion_condition": "スタジアムレベル5以上",
+    "fund": "2億5000万円",
+    "facility_space": 8
+  },
+  {
+    "expansion_id": "CE0006",
+    "hometown_name": "クラブハウス",
+    "level": 6,
+    "expansion_condition": "スタジアムレベル6以上",
+    "fund": "3億1250万円",
+    "facility_space": 9
+  },
+  {
+    "expansion_id": "CE0007",
+    "hometown_name": "クラブハウス",
+    "level": 7,
+    "expansion_condition": "スタジアムレベル7以上",
+    "fund": "3億7500万円",
+    "facility_space": 10
+  },
+  {
+    "expansion_id": "CE0008",
+    "hometown_name": "クラブハウス",
+    "level": 8,
+    "expansion_condition": "スタジアムレベル8以上",
+    "fund": "5億0000万円",
+    "facility_space": 11
+  },
+  {
+    "expansion_id": "CE0009",
+    "hometown_name": "クラブハウス",
+    "level": 9,
+    "expansion_condition": "スタジアムレベル9以上",
+    "fund": "6億2500万円",
+    "facility_space": 12
+  },
+  {
+    "expansion_id": "CE0010",
+    "hometown_name": "クラブハウス",
+    "level": 10,
+    "expansion_condition": "スタジアムレベル10以上",
+    "fund": "7億5000万円",
+    "facility_space": 13
+  },
+  {
+    "expansion_id": "CE0011",
+    "hometown_name": "クラブハウス",
+    "level": 11,
+    "expansion_condition": "スタジアムレベル11以上",
+    "fund": "8億7500万円",
+    "facility_space": 14
+  },
+  {
+    "expansion_id": "CE0012",
+    "hometown_name": "クラブハウス",
+    "level": 12,
+    "expansion_condition": "スタジアムレベル12以上",
+    "fund": "10億0000万円",
+    "facility_space": 15
+  },
+  {
+    "expansion_id": "CE0013",
+    "hometown_name": "クラブハウス",
+    "level": 13,
+    "expansion_condition": "スタジアムレベル13以上",
+    "fund": "11億2500万円",
+    "facility_space": 16
+  },
+  {
+    "expansion_id": "CE0014",
+    "hometown_name": "クラブハウス",
+    "level": 14,
+    "expansion_condition": "スタジアムレベル14以上",
+    "fund": "13億1250万円",
+    "facility_space": 17
+  },
+  {
+    "expansion_id": "CE0015",
+    "hometown_name": "クラブハウス",
+    "level": 15,
+    "expansion_condition": "スタジアムレベル15以上",
+    "fund": "15億0000万円",
+    "facility_space": 18
+  },
+  {
+    "expansion_id": "CE0016",
+    "hometown_name": "クラブハウス",
+    "level": 16,
+    "expansion_condition": "スタジアムレベル16以上",
+    "fund": "17億5000万円",
+    "facility_space": 19
+  },
+  {
+    "expansion_id": "CE0017",
+    "hometown_name": "クラブハウス",
+    "level": 17,
+    "expansion_condition": "スタジアムレベル17以上",
+    "fund": "20憶0000万円",
+    "facility_space": 20
+  },
+  {
+    "expansion_id": "CE0018",
+    "hometown_name": "クラブハウス",
+    "level": 18,
+    "expansion_condition": "スタジアムレベル18以上",
+    "fund": "22億5000万円",
+    "facility_space": 21
+  },
+  {
+    "expansion_id": "CE0019",
+    "hometown_name": "クラブハウス",
+    "level": 19,
+    "expansion_condition": "スタジアムレベル19以上",
+    "fund": "37億5000万円",
+    "facility_space": 22
+  },
+  {
+    "expansion_id": "CE0020",
+    "hometown_name": "クラブハウス",
+    "level": 20,
+    "expansion_condition": "スタジアムレベル20以上",
+    "fund": "56億2500万円",
+    "facility_space": 24
+  },
+  {
+    "expansion_id": "CE0021",
+    "hometown_name": "クラブハウス",
+    "level": 21,
+    "expansion_condition": "スタジアムレベル21以上",
+    "fund": "75億0000万円",
+    "facility_space": 26
+  },
+  {
+    "expansion_id": "CE0022",
+    "hometown_name": "クラブハウス",
+    "level": 22,
+    "expansion_condition": "スタジアムレベル22以上",
+    "fund": "93億7500万円",
+    "facility_space": 28
+  },
+  {
+    "expansion_id": "CE0023",
+    "hometown_name": "クラブハウス",
+    "level": 23,
+    "expansion_condition": "スタジアムレベル23以上",
+    "fund": "112億5000万円",
+    "facility_space": 30
+  },
+  {
+    "expansion_id": "CE0024",
+    "hometown_name": "クラブハウス",
+    "level": 24,
+    "expansion_condition": "スタジアムレベル24以上",
+    "fund": "131億2500万円",
+    "facility_space": 32
+  }
+]
