@@ -101,7 +101,7 @@ h1{
 }
 .itemTop{
   display:grid;
-  grid-template-columns:270px 1fr;
+  grid-template-columns:156px 1fr;
   gap:14px;
   align-items:center;
 }
@@ -194,6 +194,26 @@ h1{
   }
   .pageTitleImg img{width:85%;}
 }
+#scrollTopBtn{
+  position:fixed;
+  right:16px;
+  bottom:20px;
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:50%;
+  background:#0b5bd3;
+  color:#fff;
+  font-size:20px;
+  font-weight:900;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
+  cursor:pointer;
+  display:none;
+  z-index:999;
+}
+#scrollTopBtn:hover{
+  opacity:.9;
+}
 </style>
 </head>
 <body>
@@ -237,7 +257,7 @@ h1{
     </div>
 
     <div class="noteBox">
-      ・選択した<strong>クラブハウスLv</strong>に応じて、を上限コストを設定。<br>
+      ・選択した<strong>クラブハウスLv</strong>に応じて上限コストを設定。<br>
       ・設置可能設備は、選択したクラブハウスLvを参照してシミュレーション。<br>
       ・同点時は、合計コストが低い構成を優先します。
     </div>
@@ -656,6 +676,21 @@ document.getElementById("clubhouseLevel").addEventListener("change", () => {
   document.getElementById("outArea").style.display = "none";
 });
 init();
+
+</script>
+
+<button id="scrollTopBtn">▲</button>
+
+<script>
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 </script>
 </body>
 </html>
