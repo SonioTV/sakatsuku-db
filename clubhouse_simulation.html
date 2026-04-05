@@ -472,7 +472,6 @@ function renderResult(first, second, third, result){
     const body = document.createElement("div");
     body.className = "itemBody";
     body.innerHTML = `
-      <h3 class="itemName">${escapeHtml(norm(item.facility_name))}</h3>
       <div class="itemSub">
         <span class="badge">カテゴリ：${escapeHtml(norm(item.category))}</span>
         <span class="badge">設置コスト：${escapeHtml(item.cost ?? "-")}</span>
