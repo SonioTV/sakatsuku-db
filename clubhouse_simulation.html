@@ -44,7 +44,7 @@ h1{
   font-size:32px;font-weight:900;text-align:center;margin:8px 0 18px;
 }
 .grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:end;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:end;
 }
 .field label{
   display:block;font-size:17px;font-weight:900;margin:0 0 8px;
@@ -225,6 +225,10 @@ h1{
         <label for="thirdEffect">3番目に伸ばしたい効果</label>
         <select id="thirdEffect" class="bigSelect"></select>
       </div>
+      <div class="field">
+        <label for="clubhouseLevel">クラブハウスLv</label>
+        <select id="clubhouseLevel" class="bigSelect"></select>
+      </div>
     </div>
 
     <div class="actions">
@@ -233,8 +237,8 @@ h1{
     </div>
 
     <div class="noteBox">
-      ・クラブハウスLvは <strong>最大(Lv24)</strong> を想定して表示。<br>
-      ・全体の設置コストは <strong>32以下</strong> です。<br>
+      ・選択した<strong>クラブハウスLv</strong>に応じて、を上限コストを設定。<br>
+      ・設置可能設備は、選択したクラブハウスLvを参照してシミュレーション。<br>
       ・同点時は、合計コストが低い構成を優先します。
     </div>
 
@@ -278,14 +282,17 @@ h1{
 
 <script>
 const JSON_PATH = "club_facilities.json";
+const EXPANSIONS_PATH = "clubhouse_expansions.json";
 const IMAGE_BASE = "img/club_facilities/";
 const IMAGE_EXTS = ["png","jpg","jpeg","webp"];
-const MAX_COST = 32;
+let currentMaxCost = 32;
 
 const EFFECT_ORDER = ["DEF","DRB","PAS","PHY","SHO","SPD","ユース練習効果アップ","休息","怪我早期回復","怪我率ダウン","連携値アップ"];
 const effectPriority = new Map(EFFECT_ORDER.map((v,i)=>[v,i]));
 
 let facilities = [];
+let expansions = [];
+let availableFacilities = [];
 let effects = [];
 
 function norm(v){
@@ -348,7 +355,29 @@ function populateSelects(){
     sel.innerHTML = effects.map(e=>`<option value="${escapeHtml(e)}">${escapeHtml(e)}</option>`).join("");
     sel.selectedIndex = idx < effects.length ? idx : 0;
   });
+
+  const levelSelect = document.getElementById("clubhouseLevel");
+  levelSelect.innerHTML = expansions
+    .sort((a,b)=>num(a.level)-num(b.level))
+    .map(row=>`<option value="${num(row.level)}">クラブハウスLv ${num(row.level)}</option>`)
+    .join("");
+  const maxLevelIndex = Math.max(expansions.length - 1, 0);
+  levelSelect.selectedIndex = maxLevelIndex;
+  updateAvailableFacilities();
 }
+function getSelectedLevel(){
+  return num(document.getElementById("clubhouseLevel")?.value || 0);
+}
+function getExpansionByLevel(level){
+  return expansions.find(row => num(row.level) === num(level)) || null;
+}
+function updateAvailableFacilities(){
+  const selectedLevel = getSelectedLevel();
+  const expansion = getExpansionByLevel(selectedLevel);
+  currentMaxCost = expansion ? num(expansion.facility_space) : 32;
+  availableFacilities = facilities.filter(item => num(item.install_level) <= selectedLevel);
+}
+
 function showError(msg){
   const box = document.getElementById("errorBox");
   box.textContent = msg;
@@ -417,30 +446,30 @@ function categoryOptionsFor(categoryItems, first, second, third){
       }
     }
   }
-  return options.filter(opt => opt.cost <= MAX_COST);
+  return options.filter(opt => opt.cost <= currentMaxCost);
 }
 function solveSimulation(first, second, third){
   const groups = new Map();
-  facilities.forEach(item=>{
+  availableFacilities.forEach(item=>{
     const cat = norm(item.category);
     if (!groups.has(cat)) groups.set(cat, []);
     groups.get(cat).push(item);
   });
 
-  let states = new Array(MAX_COST + 1).fill(null);
+  let states = new Array(currentMaxCost + 1).fill(null);
   states[0] = {cost:0, score1:0, score2:0, score3:0, count:0, items:[]};
 
   Array.from(groups.values()).forEach(categoryItems=>{
     const opts = categoryOptionsFor(categoryItems, first, second, third);
-    const nextStates = new Array(MAX_COST + 1).fill(null);
+    const nextStates = new Array(currentMaxCost + 1).fill(null);
 
-    for (let currentCost=0; currentCost<=MAX_COST; currentCost++){
+    for (let currentCost=0; currentCost<=currentMaxCost; currentCost++){
       const base = states[currentCost];
       if (!base) continue;
 
       for (const opt of opts){
         const newCost = currentCost + opt.cost;
-        if (newCost > MAX_COST) continue;
+        if (newCost > currentMaxCost) continue;
 
         const candidate = {
           cost: newCost,
@@ -495,7 +524,7 @@ function renderResult(first, second, third, result){
   const summaryBadges = document.getElementById("summaryBadges");
   summaryBadges.innerHTML = `
     <span class="badge">採用設備数：${best.items.length}</span>
-    <span class="badge">合計コスト：${best.cost}</span>
+    <span class="badge">合計コスト：${best.cost} / ${currentMaxCost}</span>
     <span class="badge">${escapeHtml(first)} 合計：${best.score1}</span>
     <span class="badge">${escapeHtml(second)} 合計：${best.score2}</span>
     <span class="badge">${escapeHtml(third)} 合計：${best.score3}</span>
@@ -560,14 +589,17 @@ function renderResult(first, second, third, result){
     compareText.textContent = "";
   }
 
+  const selectedLevel = getSelectedLevel();
   document.getElementById("footerNote").textContent =
-    `採用カテゴリ数：${new Set(best.items.map(v=>norm(v.category))).size} / 総設備数：${best.items.length}`;
+    `クラブハウスLv：${selectedLevel} / 上限コスト：${currentMaxCost} / 採用カテゴリ数：${new Set(best.items.map(v=>norm(v.category))).size} / 総設備数：${best.items.length}`;
 }
 function runSimulation(){
   clearError();
+  updateAvailableFacilities();
   const first = norm(document.getElementById("firstEffect").value);
   const second = norm(document.getElementById("secondEffect").value);
   const third = norm(document.getElementById("thirdEffect").value);
+  const selectedLevel = getSelectedLevel();
 
   if (!first || !second || !third){
     showError("3つの効果をすべて選択してください。");
@@ -576,6 +608,15 @@ function runSimulation(){
   const uniq = new Set([first, second, third]);
   if (uniq.size < 3){
     showError("1番目・2番目・3番目はすべて別の効果を選択してください。");
+    return;
+  }
+
+  if (!selectedLevel){
+    showError("クラブハウスLvを選択してください。");
+    return;
+  }
+  if (!availableFacilities.length){
+    showError("選択したクラブハウスLvで設置可能な設備がありません。");
     return;
   }
 
@@ -593,18 +634,27 @@ function resetSelections(){
 }
 async function init(){
   try{
-    const res = await fetch(JSON_PATH, {cache:"no-store"});
-    facilities = await res.json();
+    const [facilitiesRes, expansionsRes] = await Promise.all([
+      fetch(JSON_PATH, {cache:"no-store"}),
+      fetch(EXPANSIONS_PATH, {cache:"no-store"})
+    ]);
+    facilities = await facilitiesRes.json();
+    expansions = await expansionsRes.json();
     effects = buildEffects(facilities);
     populateSelects();
   }catch(e){
     console.error(e);
-    showError("データの読み込みに失敗しました。club_facilities.json の配置を確認してください。");
+    showError("データの読み込みに失敗しました。club_facilities.json / clubhouse_expansions.json の配置を確認してください。");
   }
 }
 
 document.getElementById("runBtn").addEventListener("click", runSimulation);
 document.getElementById("resetBtn").addEventListener("click", resetSelections);
+document.getElementById("clubhouseLevel").addEventListener("change", () => {
+  updateAvailableFacilities();
+  clearError();
+  document.getElementById("outArea").style.display = "none";
+});
 init();
 </script>
 </body>
