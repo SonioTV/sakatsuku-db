@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ティア表メーカー | サカつく2026 DB</title>
+  <style>
+    :root{
+      --bg:#0f172a;
+      --panel:#111827;
+      --panel-2:#1f2937;
+      --line:#334155;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --accent:#22c55e;
+      --accent-2:#16a34a;
+      --danger:#ef4444;
+      --shadow:0 12px 32px rgba(0,0,0,.28);
+      --card-w:96px;
+      --card-h:86px;
+      --label-w:74px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:linear-gradient(180deg,#0b1120 0%,#0f172a 100%);
+      color:var(--text);
+    }
+    a{color:inherit;text-decoration:none}
+    .page{
+      max-width:1280px;
+      margin:0 auto;
+      padding:16px;
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+      flex-wrap:wrap;
+    }
+    .title-wrap h1{
+      margin:0;
+      font-size:28px;
+      line-height:1.2;
+      letter-spacing:.02em;
+    }
+    .title-wrap p{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .back-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:0 14px;
+      border-radius:12px;
+      border:1px solid #4b5563;
+      background:#111827;
+      font-weight:700;
+      box-shadow:var(--shadow);
+    }
+    .controls{
+      display:grid;
+      grid-template-columns:1.3fr 1fr 1fr auto auto auto auto;
+      gap:10px;
+      padding:14px;
+      border:1px solid var(--line);
+      background:rgba(17,24,39,.9);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      margin-bottom:14px;
+    }
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      min-width:0;
+    }
+    .field label{
+      font-size:12px;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .field input,
+    .field select{
+      width:100%;
+      height:44px;
+      border-radius:12px;
+      border:1px solid #475569;
+      background:#0f172a;
+      color:var(--text);
+      padding:0 12px;
+      font-size:14px;
+    }
+    .btn{
+      height:44px;
+      border:none;
+      border-radius:12px;
+      padding:0 14px;
+      font-size:14px;
+      font-weight:800;
+      cursor:pointer;
+      white-space:nowrap;
+      box-shadow:var(--shadow);
+    }
+    .btn-main{background:var(--accent); color:#052e16;}
+    .btn-sub{background:#1f2937; color:var(--text); border:1px solid #475569;}
+    .btn-danger{background:#7f1d1d; color:#fee2e2; border:1px solid #b91c1c;}
+
+    .layout{
+      display:grid;
+      grid-template-columns:340px 1fr;
+      gap:14px;
+      align-items:start;
+    }
+
+    .panel{
+      border:1px solid var(--line);
+      background:rgba(17,24,39,.92);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .panel-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:14px 16px;
+      border-bottom:1px solid rgba(71,85,105,.7);
+    }
+    .panel-head h2{
+      margin:0;
+      font-size:18px;
+    }
+    .panel-head .sub{
+      color:var(--muted);
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .pool-wrap{
+      padding:12px;
+      min-height:760px;
+      max-height:calc(100vh - 230px);
+      overflow:auto;
+      background:
+        linear-gradient(180deg, rgba(34,197,94,.05), transparent 18%),
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    }
+    .pool-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+      align-items:start;
+    }
+    .empty-note{
+      padding:26px 12px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .board-wrap{
+      padding:12px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      min-height:900px;
+    }
+
+    .tier-zone{
+      position:relative;
+      min-height:210px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      overflow:hidden;
+      padding-left:calc(var(--label-w) + 12px);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)),
+        radial-gradient(circle at top left, rgba(255,255,255,.06), transparent 28%);
+    }
+    .tier-zone[data-tier="S"]{background-color:rgba(127,29,29,.55)}
+    .tier-zone[data-tier="A"]{background-color:rgba(133,77,14,.52)}
+    .tier-zone[data-tier="B"]{background-color:rgba(20,83,45,.52)}
+    .tier-zone[data-tier="C"]{background-color:rgba(30,64,175,.45)}
+
+    .tier-label{
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:var(--label-w);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      border-right:1px solid rgba(255,255,255,.12);
+      background:rgba(15,23,42,.52);
+      backdrop-filter:blur(4px);
+    }
+    .tier-label .grade{
+      font-size:32px;
+      line-height:1;
+      font-weight:900;
+    }
+    .tier-label .count{
+      margin-top:8px;
+      font-size:12px;
+      color:#e2e8f0;
+      font-weight:800;
+    }
+
+    .zone-canvas{
+      position:relative;
+      min-height:210px;
+      width:100%;
+    }
+
+    .player-card{
+      width:var(--card-w);
+      user-select:none;
+      touch-action:none;
+      cursor:grab;
+    }
+    .player-card.dragging{
+      cursor:grabbing;
+      z-index:9999;
+      box-shadow:0 18px 48px rgba(0,0,0,.45);
+    }
+    .pool-grid .player-card{
+      position:relative !important;
+      left:auto !important;
+      top:auto !important;
+    }
+    .player-card img{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,.16);
+      background:#0f172a;
+      box-shadow:0 6px 16px rgba(0,0,0,.25);
+      pointer-events:none;
+    }
+    .meta{
+      margin-top:4px;
+      background:rgba(15,23,42,.92);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:8px;
+      padding:5px 6px;
+      box-shadow:0 4px 10px rgba(0,0,0,.18);
+    }
+    .name{
+      font-size:11px;
+      font-weight:800;
+      line-height:1.25;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .tags{
+      margin-top:3px;
+      display:flex;
+      gap:4px;
+      flex-wrap:wrap;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      min-height:18px;
+      padding:0 6px;
+      border-radius:999px;
+      font-size:10px;
+      font-weight:800;
+      color:#e5e7eb;
+      background:#334155;
+      max-width:100%;
+      white-space:nowrap;
+    }
+
+    .tier-canvas .player-card{
+      position:absolute;
+    }
+    .tier-canvas{
+      position:relative;
+      min-height:210px;
+    }
+
+    .drop-highlight{
+      outline:2px dashed rgba(255,255,255,.55);
+      outline-offset:-6px;
+    }
+
+    .footer-note{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.7;
+      text-align:right;
+    }
+
+    .capture-mode .controls,
+    .capture-mode .left-col,
+    .capture-mode .back-btn,
+    .capture-mode .footer-note{
+      display:none !important;
+    }
+    .capture-mode .page{
+      max-width:1280px;
+      padding:12px;
+    }
+    .capture-mode .topbar{
+      margin-bottom:10px;
+      justify-content:center;
+    }
+    .capture-mode .title-wrap{
+      text-align:center;
+    }
+    .capture-mode .layout{
+      display:block;
+    }
+    .capture-mode .board-wrap{
+      padding:0;
+      gap:8px;
+      min-height:auto;
+    }
+    .capture-mode .tier-zone{
+      min-height:220px;
+    }
+    .capture-mode .panel{
+      background:transparent;
+      border:none;
+      box-shadow:none;
+    }
+    .capture-mode .panel-head{
+      display:none;
+    }
+
+    @media (max-width:1100px){
+      .controls{
+        grid-template-columns:1fr 1fr 1fr;
+      }
+      .layout{
+        grid-template-columns:1fr;
+      }
+      .pool-wrap{
+        min-height:auto;
+        max-height:none;
+      }
+    }
+    @media (max-width:640px){
+      .controls{
+        grid-template-columns:1fr;
+      }
+      .pool-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+      .title-wrap h1{
+        font-size:23px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div class="title-wrap">
+        <h1>サカつく2026 ティア表メーカー</h1>
+        <p>選手画像をドラッグして S / A / B / C に自由配置できます。配置は自動保存されます。</p>
+      </div>
+      <a href="index.html" class="back-btn">← サイトに戻る</a>
+    </div>
+
+    <div class="controls">
+      <div class="field">
+        <label for="keywordInput">選手名検索</label>
+        <input id="keywordInput" type="text" placeholder="例：ロナウド、メッシ" />
+      </div>
+      <div class="field">
+        <label for="policySelect">ポリシー</label>
+        <select id="policySelect">
+          <option value="">全て</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="positionSelect">ポジション</label>
+        <select id="positionSelect">
+          <option value="">全て</option>
+        </select>
+      </div>
+      <button id="resetFiltersBtn" class="btn btn-sub" type="button">絞り込み解除</button>
+      <button id="captureBtn" class="btn btn-main" type="button">スクショモード</button>
+      <button id="autoArrangeBtn" class="btn btn-sub" type="button">未配置を整列</button>
+      <button id="clearSaveBtn" class="btn btn-danger" type="button">保存データ削除</button>
+    </div>
+
+    <div class="layout">
+      <div class="left-col">
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>未配置選手</h2>
+              <div class="sub">player_id順で表示</div>
+            </div>
+            <div class="sub"><span id="poolCount">0</span>人</div>
+          </div>
+          <div id="poolWrap" class="pool-wrap" data-drop-zone="pool">
+            <div id="poolGrid" class="pool-grid"></div>
+            <div id="poolEmpty" class="empty-note" style="display:none;">絞り込み条件に一致する未配置選手はいません。</div>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>ティア表</h2>
+            <div class="sub">ドラッグで自由配置 / 各ティア内は位置保存</div>
+          </div>
+          <div class="sub">推奨スクショ幅：1280px</div>
+        </div>
+        <div class="board-wrap">
+          <div class="tier-zone" data-drop-zone="S" data-tier="S">
+            <div class="tier-label"><div class="grade">S</div><div class="count" id="count-S">0人</div></div>
+            <div class="zone-canvas tier-canvas" id="canvas-S"></div>
+          </div>
+          <div class="tier-zone" data-drop-zone="A" data-tier="A">
+            <div class="tier-label"><div class="grade">A</div><div class="count" id="count-A">0人</div></div>
+            <div class="zone-canvas tier-canvas" id="canvas-A"></div>
+          </div>
+          <div class="tier-zone" data-drop-zone="B" data-tier="B">
+            <div class="tier-label"><div class="grade">B</div><div class="count" id="count-B">0人</div></div>
+            <div class="zone-canvas tier-canvas" id="canvas-B"></div>
+          </div>
+          <div class="tier-zone" data-drop-zone="C" data-tier="C">
+            <div class="tier-label"><div class="grade">C</div><div class="count" id="count-C">0人</div></div>
+            <div class="zone-canvas tier-canvas" id="canvas-C"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="footer-note">
+      画像参照先：<code>img/players/{player_id}.png</code> / データ参照先：<code>players.json</code>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const STORAGE_KEY = "sakatsuku2026_tier_list_v1";
+      const IMAGE_BASE = "img/players/";
+      const TIERS = ["S", "A", "B", "C"];
+      const CARD_WIDTH = 96;
+      const CARD_HEIGHT = 134;
+
+      const state = {
+        players: [],
+        placement: {},
+        filter: {
+          keyword: "",
+          policy: "",
+          position: ""
+        },
+        dragging: null,
+        captureMode: false
+      };
+
+      const els = {
+        keywordInput: document.getElementById("keywordInput"),
+        policySelect: document.getElementById("policySelect"),
+        positionSelect: document.getElementById("positionSelect"),
+        poolGrid: document.getElementById("poolGrid"),
+        poolWrap: document.getElementById("poolWrap"),
+        poolEmpty: document.getElementById("poolEmpty"),
+        poolCount: document.getElementById("poolCount"),
+        resetFiltersBtn: document.getElementById("resetFiltersBtn"),
+        captureBtn: document.getElementById("captureBtn"),
+        autoArrangeBtn: document.getElementById("autoArrangeBtn"),
+        clearSaveBtn: document.getElementById("clearSaveBtn"),
+        canvases: {
+          S: document.getElementById("canvas-S"),
+          A: document.getElementById("canvas-A"),
+          B: document.getElementById("canvas-B"),
+          C: document.getElementById("canvas-C")
+        },
+        counts: {
+          S: document.getElementById("count-S"),
+          A: document.getElementById("count-A"),
+          B: document.getElementById("count-B"),
+          C: document.getElementById("count-C")
+        }
+      };
+
+      function normalizePlayer(player) {
+        return {
+          player_id: player.player_id || player.playerId || "",
+          name: player.name || "",
+          policy: player.policy || "",
+          mainPosition: player.mainPosition || "",
+          rarity: player.rarity || "",
+          overall: player.overall ?? "",
+        };
+      }
+
+      function loadPlacement() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          return raw ? JSON.parse(raw) : {};
+        } catch {
+          return {};
+        }
+      }
+
+      function savePlacement() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.placement));
+      }
+
+      function ensurePlacement(playerId) {
+        if (!state.placement[playerId]) {
+          state.placement[playerId] = { zone: "pool" };
+        }
+        return state.placement[playerId];
+      }
+
+      function getVisiblePoolPlayers() {
+        const keyword = state.filter.keyword.trim().toLowerCase();
+        return state.players.filter((p) => {
+          const placement = ensurePlacement(p.player_id);
+          if (placement.zone !== "pool") return false;
+          if (keyword && !p.name.toLowerCase().includes(keyword)) return false;
+          if (state.filter.policy && p.policy !== state.filter.policy) return false;
+          if (state.filter.position && p.mainPosition !== state.filter.position) return false;
+          return true;
+        });
+      }
+
+      function createCard(player) {
+        const card = document.createElement("div");
+        card.className = "player-card";
+        card.dataset.playerId = player.player_id;
+        card.innerHTML = `
+          <img src="${IMAGE_BASE}${player.player_id}.png" alt="${escapeHtml(player.name)}" loading="lazy">
+          <div class="meta">
+            <div class="name">${escapeHtml(player.name)}</div>
+            <div class="tags">
+              <span class="tag">${escapeHtml(player.mainPosition || "-")}</span>
+              <span class="tag">${escapeHtml(player.policy || "-")}</span>
+            </div>
+          </div>
+        `;
+        card.addEventListener("pointerdown", startDrag);
+        return card;
+      }
+
+      function renderPool() {
+        const players = getVisiblePoolPlayers();
+        els.poolGrid.innerHTML = "";
+        players.forEach((player) => {
+          els.poolGrid.appendChild(createCard(player));
+        });
+        els.poolCount.textContent = String(players.length);
+        els.poolEmpty.style.display = players.length ? "none" : "block";
+      }
+
+      function renderTiers() {
+        TIERS.forEach((tier) => {
+          const canvas = els.canvases[tier];
+          canvas.innerHTML = "";
+          let count = 0;
+          state.players.forEach((player) => {
+            const placement = ensurePlacement(player.player_id);
+            if (placement.zone !== tier) return;
+            count += 1;
+            const card = createCard(player);
+            card.style.left = `${Number(placement.x || 0)}px`;
+            card.style.top = `${Number(placement.y || 0)}px`;
+            canvas.appendChild(card);
+          });
+          els.counts[tier].textContent = `${count}人`;
+        });
+      }
+
+      function renderAll() {
+        renderPool();
+        renderTiers();
+      }
+
+      function populateFilters() {
+        const policies = [...new Set(state.players.map(p => p.policy).filter(Boolean))];
+        const positions = [...new Set(state.players.map(p => p.mainPosition).filter(Boolean))];
+
+        policies.forEach((policy) => {
+          const opt = document.createElement("option");
+          opt.value = policy;
+          opt.textContent = policy;
+          els.policySelect.appendChild(opt);
+        });
+
+        positions.forEach((position) => {
+          const opt = document.createElement("option");
+          opt.value = position;
+          opt.textContent = position;
+          els.positionSelect.appendChild(opt);
+        });
+      }
+
+      function autoArrangeTier(tier) {
+        const canvas = els.canvases[tier];
+        const width = canvas.clientWidth || 900;
+        const cols = Math.max(1, Math.floor((width - 8) / (CARD_WIDTH + 8)));
+        let index = 0;
+        state.players.forEach((player) => {
+          const placement = ensurePlacement(player.player_id);
+          if (placement.zone !== tier) return;
+          const col = index % cols;
+          const row = Math.floor(index / cols);
+          placement.x = col * (CARD_WIDTH + 8);
+          placement.y = row * (CARD_HEIGHT + 10) + 8;
+          index += 1;
+        });
+      }
+
+      function autoArrangeAllTiers() {
+        TIERS.forEach(autoArrangeTier);
+        savePlacement();
+        renderAll();
+      }
+
+      function returnToPool(playerId) {
+        state.placement[playerId] = { zone: "pool" };
+        savePlacement();
+        renderAll();
+      }
+
+      function placeInTier(playerId, tier, x, y) {
+        const canvas = els.canvases[tier];
+        const maxX = Math.max(0, canvas.clientWidth - CARD_WIDTH - 6);
+        const maxY = Math.max(0, canvas.clientHeight - CARD_HEIGHT - 6);
+        state.placement[playerId] = {
+          zone: tier,
+          x: clamp(x, 0, maxX),
+          y: clamp(y, 0, maxY)
+        };
+        savePlacement();
+        renderAll();
+      }
+
+      function startDrag(event) {
+        const card = event.currentTarget;
+        const playerId = card.dataset.playerId;
+        const rect = card.getBoundingClientRect();
+        const offsetX = event.clientX - rect.left;
+        const offsetY = event.clientY - rect.top;
+        const ghost = card.cloneNode(true);
+
+        ghost.classList.add("dragging");
+        ghost.style.position = "fixed";
+        ghost.style.left = rect.left + "px";
+        ghost.style.top = rect.top + "px";
+        ghost.style.width = rect.width + "px";
+        ghost.style.zIndex = "9999";
+        document.body.appendChild(ghost);
+
+        state.dragging = { playerId, ghost, offsetX, offsetY };
+        updateGhost(event.clientX, event.clientY);
+
+        document.addEventListener("pointermove", onPointerMove);
+        document.addEventListener("pointerup", onPointerUp, { once: true });
+      }
+
+      function updateGhost(clientX, clientY) {
+        if (!state.dragging) return;
+        const { ghost, offsetX, offsetY } = state.dragging;
+        ghost.style.left = (clientX - offsetX) + "px";
+        ghost.style.top = (clientY - offsetY) + "px";
+      }
+
+      function clearDropHighlights() {
+        document.querySelectorAll("[data-drop-zone]").forEach(el => el.classList.remove("drop-highlight"));
+      }
+
+      function getDropZone(clientX, clientY) {
+        const targets = document.elementsFromPoint(clientX, clientY);
+        return targets.find(el => el?.dataset?.dropZone);
+      }
+
+      function onPointerMove(event) {
+        updateGhost(event.clientX, event.clientY);
+        clearDropHighlights();
+        const zone = getDropZone(event.clientX, event.clientY);
+        if (zone) zone.classList.add("drop-highlight");
+      }
+
+      function onPointerUp(event) {
+        document.removeEventListener("pointermove", onPointerMove);
+        clearDropHighlights();
+
+        if (!state.dragging) return;
+        const { playerId, ghost, offsetX, offsetY } = state.dragging;
+        const zone = getDropZone(event.clientX, event.clientY);
+
+        ghost.remove();
+        state.dragging = null;
+
+        if (!zone) return;
+
+        const dropZone = zone.dataset.dropZone;
+        if (dropZone === "pool") {
+          returnToPool(playerId);
+          return;
+        }
+
+        if (TIERS.includes(dropZone)) {
+          const canvas = els.canvases[dropZone];
+          const rect = canvas.getBoundingClientRect();
+          const x = event.clientX - rect.left - offsetX;
+          const y = event.clientY - rect.top - offsetY;
+          placeInTier(playerId, dropZone, x, y);
+        }
+      }
+
+      function clamp(value, min, max) {
+        return Math.min(max, Math.max(min, value));
+      }
+
+      function escapeHtml(text) {
+        return String(text)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#39;");
+      }
+
+      function bindEvents() {
+        els.keywordInput.addEventListener("input", (e) => {
+          state.filter.keyword = e.target.value || "";
+          renderPool();
+        });
+        els.policySelect.addEventListener("change", (e) => {
+          state.filter.policy = e.target.value || "";
+          renderPool();
+        });
+        els.positionSelect.addEventListener("change", (e) => {
+          state.filter.position = e.target.value || "";
+          renderPool();
+        });
+        els.resetFiltersBtn.addEventListener("click", () => {
+          state.filter.keyword = "";
+          state.filter.policy = "";
+          state.filter.position = "";
+          els.keywordInput.value = "";
+          els.policySelect.value = "";
+          els.positionSelect.value = "";
+          renderPool();
+        });
+        els.captureBtn.addEventListener("click", () => {
+          state.captureMode = !state.captureMode;
+          document.body.classList.toggle("capture-mode", state.captureMode);
+          els.captureBtn.textContent = state.captureMode ? "通常表示に戻す" : "スクショモード";
+        });
+        els.autoArrangeBtn.addEventListener("click", autoArrangeAllTiers);
+        els.clearSaveBtn.addEventListener("click", () => {
+          const ok = confirm("保存済みのティア配置を削除します。よろしいですか？");
+          if (!ok) return;
+          localStorage.removeItem(STORAGE_KEY);
+          state.placement = {};
+          state.players.forEach((p) => ensurePlacement(p.player_id));
+          renderAll();
+        });
+        window.addEventListener("resize", () => {
+          TIERS.forEach((tier) => {
+            const canvas = els.canvases[tier];
+            const maxX = Math.max(0, canvas.clientWidth - CARD_WIDTH - 6);
+            const maxY = Math.max(0, canvas.clientHeight - CARD_HEIGHT - 6);
+            state.players.forEach((player) => {
+              const placement = ensurePlacement(player.player_id);
+              if (placement.zone !== tier) return;
+              placement.x = clamp(Number(placement.x || 0), 0, maxX);
+              placement.y = clamp(Number(placement.y || 0), 0, maxY);
+            });
+          });
+          savePlacement();
+          renderAll();
+        });
+      }
+
+      async function init() {
+        try {
+          const res = await fetch("players.json", { cache: "no-store" });
+          if (!res.ok) throw new Error("players.json の読み込みに失敗しました。");
+          const json = await res.json();
+
+          state.players = (Array.isArray(json) ? json : [])
+            .map(normalizePlayer)
+            .filter(p => p.player_id)
+            .sort((a, b) => a.player_id.localeCompare(b.player_id, "ja"));
+
+          state.placement = loadPlacement();
+          state.players.forEach((player) => ensurePlacement(player.player_id));
+
+          populateFilters();
+          bindEvents();
+          renderAll();
+        } catch (error) {
+          console.error(error);
+          document.querySelector(".page").innerHTML = `
+            <div style="max-width:760px;margin:60px auto;padding:24px;border:1px solid #7f1d1d;background:#111827;border-radius:16px;">
+              <h1 style="margin-top:0;">読み込みエラー</h1>
+              <p>players.json を読み込めませんでした。</p>
+              <p style="color:#94a3b8;">このHTMLと同じ階層に players.json があるか確認してください。</p>
+            </div>
+          `;
+        }
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>
