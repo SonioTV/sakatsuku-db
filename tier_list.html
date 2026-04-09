@@ -666,6 +666,11 @@ els.keywordInput.addEventListener("input", (e) => {
 });
 els.policySelect.addEventListener("change", (e) => {
   state.filter.policy = e.target.value || "";
+  console.log("selected policy:", state.filter.policy);
+  console.log(
+    "pool players after filter:",
+    getVisiblePoolPlayers().map(p => `${p.name}:${p.policy}`)
+  );
   renderAll();
 });
 els.positionSelect.addEventListener("change", (e) => {
