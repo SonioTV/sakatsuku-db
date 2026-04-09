@@ -8,16 +8,13 @@
     :root{
       --bg:#0f172a;
       --panel:#111827;
-      --panel-2:#1f2937;
       --line:#334155;
       --text:#e5e7eb;
       --muted:#94a3b8;
       --accent:#22c55e;
-      --accent-2:#16a34a;
       --danger:#ef4444;
       --shadow:0 12px 32px rgba(0,0,0,.28);
       --card-w:96px;
-      --card-h:86px;
       --label-w:74px;
     }
     *{box-sizing:border-box}
@@ -66,11 +63,11 @@
     }
     .controls{
       display:grid;
-      grid-template-columns:1.3fr 1fr 1fr auto auto auto auto;
+      grid-template-columns:1.2fr 1fr 1fr 1.2fr auto auto auto;
       gap:10px;
       padding:14px;
       border:1px solid var(--line);
-      background:rgba(17,24,39,.9);
+      background:rgba(17,24,39,.92);
       border-radius:18px;
       box-shadow:var(--shadow);
       margin-bottom:14px;
@@ -112,11 +109,10 @@
     .btn-sub{background:#1f2937; color:var(--text); border:1px solid #475569;}
     .btn-danger{background:#7f1d1d; color:#fee2e2; border:1px solid #b91c1c;}
 
-    .layout{
-      display:grid;
-      grid-template-columns:340px 1fr;
+    .stack{
+      display:flex;
+      flex-direction:column;
       gap:14px;
-      align-items:start;
     }
 
     .panel{
@@ -126,7 +122,6 @@
       box-shadow:var(--shadow);
       overflow:hidden;
     }
-
     .panel-head{
       display:flex;
       align-items:center;
@@ -145,39 +140,15 @@
       font-weight:700;
     }
 
-    .pool-wrap{
-      padding:12px;
-      min-height:760px;
-      max-height:calc(100vh - 230px);
-      overflow:auto;
-      background:
-        linear-gradient(180deg, rgba(34,197,94,.05), transparent 18%),
-        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
-    }
-    .pool-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:10px;
-      align-items:start;
-    }
-    .empty-note{
-      padding:26px 12px;
-      text-align:center;
-      color:var(--muted);
-      font-size:14px;
-    }
-
     .board-wrap{
       padding:12px;
       display:flex;
       flex-direction:column;
       gap:12px;
-      min-height:900px;
     }
-
     .tier-zone{
       position:relative;
-      min-height:210px;
+      min-height:180px;
       border-radius:18px;
       border:1px solid rgba(255,255,255,.08);
       overflow:hidden;
@@ -190,7 +161,6 @@
     .tier-zone[data-tier="A"]{background-color:rgba(133,77,14,.52)}
     .tier-zone[data-tier="B"]{background-color:rgba(20,83,45,.52)}
     .tier-zone[data-tier="C"]{background-color:rgba(30,64,175,.45)}
-
     .tier-label{
       position:absolute;
       left:0;
@@ -216,15 +186,42 @@
       color:#e2e8f0;
       font-weight:800;
     }
+    .tier-canvas{
+      min-height:180px;
+      padding:10px;
+      display:flex;
+      flex-wrap:wrap;
+      align-content:flex-start;
+      gap:10px;
+    }
 
-    .zone-canvas{
-      position:relative;
-      min-height:210px;
-      width:100%;
+    .pool-wrap{
+      padding:12px;
+      overflow-x:auto;
+      overflow-y:hidden;
+      background:
+        linear-gradient(180deg, rgba(34,197,94,.05), transparent 18%),
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    }
+    .pool-row{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      min-height:152px;
+      width:max-content;
+      min-width:100%;
+    }
+
+    .empty-note{
+      padding:26px 12px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
     }
 
     .player-card{
       width:var(--card-w);
+      flex:0 0 var(--card-w);
       user-select:none;
       touch-action:none;
       cursor:grab;
@@ -233,11 +230,6 @@
       cursor:grabbing;
       z-index:9999;
       box-shadow:0 18px 48px rgba(0,0,0,.45);
-    }
-    .pool-grid .player-card{
-      position:relative !important;
-      left:auto !important;
-      top:auto !important;
     }
     .player-card img{
       display:block;
@@ -285,14 +277,6 @@
       white-space:nowrap;
     }
 
-    .tier-canvas .player-card{
-      position:absolute;
-    }
-    .tier-canvas{
-      position:relative;
-      min-height:210px;
-    }
-
     .drop-highlight{
       outline:2px dashed rgba(255,255,255,.55);
       outline-offset:-6px;
@@ -307,7 +291,7 @@
     }
 
     .capture-mode .controls,
-    .capture-mode .left-col,
+    .capture-mode .pool-panel,
     .capture-mode .back-btn,
     .capture-mode .footer-note{
       display:none !important;
@@ -323,17 +307,6 @@
     .capture-mode .title-wrap{
       text-align:center;
     }
-    .capture-mode .layout{
-      display:block;
-    }
-    .capture-mode .board-wrap{
-      padding:0;
-      gap:8px;
-      min-height:auto;
-    }
-    .capture-mode .tier-zone{
-      min-height:220px;
-    }
     .capture-mode .panel{
       background:transparent;
       border:none;
@@ -342,25 +315,18 @@
     .capture-mode .panel-head{
       display:none;
     }
+    .capture-mode .board-wrap{
+      padding:0;
+    }
 
-    @media (max-width:1100px){
+    @media (max-width:1200px){
       .controls{
-        grid-template-columns:1fr 1fr 1fr;
-      }
-      .layout{
-        grid-template-columns:1fr;
-      }
-      .pool-wrap{
-        min-height:auto;
-        max-height:none;
+        grid-template-columns:1fr 1fr 1fr 1fr;
       }
     }
-    @media (max-width:640px){
+    @media (max-width:760px){
       .controls{
         grid-template-columns:1fr;
-      }
-      .pool-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
       }
       .title-wrap h1{
         font-size:23px;
@@ -373,7 +339,7 @@
     <div class="topbar">
       <div class="title-wrap">
         <h1>サカつく2026 ティア表メーカー</h1>
-        <p>選手画像をドラッグして S / A / B / C に自由配置できます。配置は自動保存されます。</p>
+        <p>画像がある選手のみ表示。ドラッグで S / A / B / C に配置でき、ティア内は左から自動整列されます。</p>
       </div>
       <a href="index.html" class="back-btn">← サイトに戻る</a>
     </div>
@@ -395,54 +361,57 @@
           <option value="">全て</option>
         </select>
       </div>
+      <div class="field">
+        <label for="placeSelect">入手場所</label>
+        <select id="placeSelect">
+          <option value="">全て</option>
+        </select>
+      </div>
       <button id="resetFiltersBtn" class="btn btn-sub" type="button">絞り込み解除</button>
       <button id="captureBtn" class="btn btn-main" type="button">スクショモード</button>
-      <button id="autoArrangeBtn" class="btn btn-sub" type="button">未配置を整列</button>
       <button id="clearSaveBtn" class="btn btn-danger" type="button">保存データ削除</button>
     </div>
 
-    <div class="layout">
-      <div class="left-col">
-        <section class="panel">
-          <div class="panel-head">
-            <div>
-              <h2>未配置選手</h2>
-              <div class="sub">player_id順で表示</div>
-            </div>
-            <div class="sub"><span id="poolCount">0</span>人</div>
-          </div>
-          <div id="poolWrap" class="pool-wrap" data-drop-zone="pool">
-            <div id="poolGrid" class="pool-grid"></div>
-            <div id="poolEmpty" class="empty-note" style="display:none;">絞り込み条件に一致する未配置選手はいません。</div>
-          </div>
-        </section>
-      </div>
-
-      <section class="panel">
+    <div class="stack">
+      <section class="panel board-panel">
         <div class="panel-head">
           <div>
             <h2>ティア表</h2>
-            <div class="sub">ドラッグで自由配置 / 各ティア内は位置保存</div>
+            <div class="sub">ドラッグで移動 / 各ティア内は左から自動整列</div>
           </div>
           <div class="sub">推奨スクショ幅：1280px</div>
         </div>
         <div class="board-wrap">
           <div class="tier-zone" data-drop-zone="S" data-tier="S">
             <div class="tier-label"><div class="grade">S</div><div class="count" id="count-S">0人</div></div>
-            <div class="zone-canvas tier-canvas" id="canvas-S"></div>
+            <div class="tier-canvas" id="canvas-S"></div>
           </div>
           <div class="tier-zone" data-drop-zone="A" data-tier="A">
             <div class="tier-label"><div class="grade">A</div><div class="count" id="count-A">0人</div></div>
-            <div class="zone-canvas tier-canvas" id="canvas-A"></div>
+            <div class="tier-canvas" id="canvas-A"></div>
           </div>
           <div class="tier-zone" data-drop-zone="B" data-tier="B">
             <div class="tier-label"><div class="grade">B</div><div class="count" id="count-B">0人</div></div>
-            <div class="zone-canvas tier-canvas" id="canvas-B"></div>
+            <div class="tier-canvas" id="canvas-B"></div>
           </div>
           <div class="tier-zone" data-drop-zone="C" data-tier="C">
             <div class="tier-label"><div class="grade">C</div><div class="count" id="count-C">0人</div></div>
-            <div class="zone-canvas tier-canvas" id="canvas-C"></div>
+            <div class="tier-canvas" id="canvas-C"></div>
           </div>
+        </div>
+      </section>
+
+      <section class="panel pool-panel">
+        <div class="panel-head">
+          <div>
+            <h2>未配置選手</h2>
+            <div class="sub">横スクロール / player_id順</div>
+          </div>
+          <div class="sub"><span id="poolCount">0</span>人</div>
+        </div>
+        <div id="poolWrap" class="pool-wrap" data-drop-zone="pool">
+          <div id="poolRow" class="pool-row"></div>
+          <div id="poolEmpty" class="empty-note" style="display:none;">絞り込み条件に一致する未配置選手はいません。</div>
         </div>
       </section>
     </div>
@@ -454,11 +423,9 @@
 
   <script>
     (() => {
-      const STORAGE_KEY = "sakatsuku2026_tier_list_v1";
+      const STORAGE_KEY = "sakatsuku2026_tier_list_v2";
       const IMAGE_BASE = "img/players/";
       const TIERS = ["S", "A", "B", "C"];
-      const CARD_WIDTH = 96;
-      const CARD_HEIGHT = 134;
 
       const state = {
         players: [],
@@ -466,7 +433,8 @@
         filter: {
           keyword: "",
           policy: "",
-          position: ""
+          position: "",
+          acquisitionPlace: ""
         },
         dragging: null,
         captureMode: false
@@ -476,13 +444,13 @@
         keywordInput: document.getElementById("keywordInput"),
         policySelect: document.getElementById("policySelect"),
         positionSelect: document.getElementById("positionSelect"),
-        poolGrid: document.getElementById("poolGrid"),
+        placeSelect: document.getElementById("placeSelect"),
+        poolRow: document.getElementById("poolRow"),
         poolWrap: document.getElementById("poolWrap"),
         poolEmpty: document.getElementById("poolEmpty"),
         poolCount: document.getElementById("poolCount"),
         resetFiltersBtn: document.getElementById("resetFiltersBtn"),
         captureBtn: document.getElementById("captureBtn"),
-        autoArrangeBtn: document.getElementById("autoArrangeBtn"),
         clearSaveBtn: document.getElementById("clearSaveBtn"),
         canvases: {
           S: document.getElementById("canvas-S"),
@@ -504,15 +472,18 @@
           name: player.name || "",
           policy: player.policy || "",
           mainPosition: player.mainPosition || "",
+          acquisitionPlace: player.acquisitionPlace || "",
           rarity: player.rarity || "",
-          overall: player.overall ?? "",
+          overall: player.overall ?? ""
         };
       }
 
       function loadPlacement() {
         try {
           const raw = localStorage.getItem(STORAGE_KEY);
-          return raw ? JSON.parse(raw) : {};
+          const parsed = raw ? JSON.parse(raw) : {};
+          if (!parsed || typeof parsed !== "object") return {};
+          return parsed;
         } catch {
           return {};
         }
@@ -529,6 +500,10 @@
         return state.placement[playerId];
       }
 
+      function getZonePlayers(zone) {
+        return state.players.filter((p) => ensurePlacement(p.player_id).zone === zone);
+      }
+
       function getVisiblePoolPlayers() {
         const keyword = state.filter.keyword.trim().toLowerCase();
         return state.players.filter((p) => {
@@ -537,6 +512,7 @@
           if (keyword && !p.name.toLowerCase().includes(keyword)) return false;
           if (state.filter.policy && p.policy !== state.filter.policy) return false;
           if (state.filter.position && p.mainPosition !== state.filter.position) return false;
+          if (state.filter.acquisitionPlace && p.acquisitionPlace !== state.filter.acquisitionPlace) return false;
           return true;
         });
       }
@@ -561,9 +537,9 @@
 
       function renderPool() {
         const players = getVisiblePoolPlayers();
-        els.poolGrid.innerHTML = "";
+        els.poolRow.innerHTML = "";
         players.forEach((player) => {
-          els.poolGrid.appendChild(createCard(player));
+          els.poolRow.appendChild(createCard(player));
         });
         els.poolCount.textContent = String(players.length);
         els.poolEmpty.style.display = players.length ? "none" : "block";
@@ -572,18 +548,12 @@
       function renderTiers() {
         TIERS.forEach((tier) => {
           const canvas = els.canvases[tier];
+          const players = getZonePlayers(tier);
           canvas.innerHTML = "";
-          let count = 0;
-          state.players.forEach((player) => {
-            const placement = ensurePlacement(player.player_id);
-            if (placement.zone !== tier) return;
-            count += 1;
-            const card = createCard(player);
-            card.style.left = `${Number(placement.x || 0)}px`;
-            card.style.top = `${Number(placement.y || 0)}px`;
-            canvas.appendChild(card);
+          players.forEach((player) => {
+            canvas.appendChild(createCard(player));
           });
-          els.counts[tier].textContent = `${count}人`;
+          els.counts[tier].textContent = `${players.length}人`;
         });
       }
 
@@ -593,63 +563,43 @@
       }
 
       function populateFilters() {
-        const policies = [...new Set(state.players.map(p => p.policy).filter(Boolean))];
-        const positions = [...new Set(state.players.map(p => p.mainPosition).filter(Boolean))];
+        const policies = [...new Set(state.players.map(p => p.policy).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ja"));
+        const positions = [...new Set(state.players.map(p => p.mainPosition).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ja"));
+        const places = [...new Set(state.players.map(p => p.acquisitionPlace).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ja"));
 
-        policies.forEach((policy) => {
+        for (const policy of policies) {
           const opt = document.createElement("option");
           opt.value = policy;
           opt.textContent = policy;
           els.policySelect.appendChild(opt);
-        });
-
-        positions.forEach((position) => {
+        }
+        for (const position of positions) {
           const opt = document.createElement("option");
           opt.value = position;
           opt.textContent = position;
           els.positionSelect.appendChild(opt);
-        });
+        }
+        for (const place of places) {
+          const opt = document.createElement("option");
+          opt.value = place;
+          opt.textContent = place;
+          els.placeSelect.appendChild(opt);
+        }
       }
 
-      function autoArrangeTier(tier) {
-        const canvas = els.canvases[tier];
-        const width = canvas.clientWidth || 900;
-        const cols = Math.max(1, Math.floor((width - 8) / (CARD_WIDTH + 8)));
-        let index = 0;
-        state.players.forEach((player) => {
-          const placement = ensurePlacement(player.player_id);
-          if (placement.zone !== tier) return;
-          const col = index % cols;
-          const row = Math.floor(index / cols);
-          placement.x = col * (CARD_WIDTH + 8);
-          placement.y = row * (CARD_HEIGHT + 10) + 8;
-          index += 1;
-        });
-      }
-
-      function autoArrangeAllTiers() {
-        TIERS.forEach(autoArrangeTier);
+      function moveToZone(playerId, zone) {
+        ensurePlacement(playerId).zone = zone;
         savePlacement();
         renderAll();
       }
 
-      function returnToPool(playerId) {
-        state.placement[playerId] = { zone: "pool" };
-        savePlacement();
-        renderAll();
+      function clearDropHighlights() {
+        document.querySelectorAll("[data-drop-zone]").forEach(el => el.classList.remove("drop-highlight"));
       }
 
-      function placeInTier(playerId, tier, x, y) {
-        const canvas = els.canvases[tier];
-        const maxX = Math.max(0, canvas.clientWidth - CARD_WIDTH - 6);
-        const maxY = Math.max(0, canvas.clientHeight - CARD_HEIGHT - 6);
-        state.placement[playerId] = {
-          zone: tier,
-          x: clamp(x, 0, maxX),
-          y: clamp(y, 0, maxY)
-        };
-        savePlacement();
-        renderAll();
+      function getDropZone(clientX, clientY) {
+        const targets = document.elementsFromPoint(clientX, clientY);
+        return targets.find(el => el?.dataset?.dropZone);
       }
 
       function startDrag(event) {
@@ -682,15 +632,6 @@
         ghost.style.top = (clientY - offsetY) + "px";
       }
 
-      function clearDropHighlights() {
-        document.querySelectorAll("[data-drop-zone]").forEach(el => el.classList.remove("drop-highlight"));
-      }
-
-      function getDropZone(clientX, clientY) {
-        const targets = document.elementsFromPoint(clientX, clientY);
-        return targets.find(el => el?.dataset?.dropZone);
-      }
-
       function onPointerMove(event) {
         updateGhost(event.clientX, event.clientY);
         clearDropHighlights();
@@ -703,7 +644,7 @@
         clearDropHighlights();
 
         if (!state.dragging) return;
-        const { playerId, ghost, offsetX, offsetY } = state.dragging;
+        const { playerId, ghost } = state.dragging;
         const zone = getDropZone(event.clientX, event.clientY);
 
         ghost.remove();
@@ -712,22 +653,9 @@
         if (!zone) return;
 
         const dropZone = zone.dataset.dropZone;
-        if (dropZone === "pool") {
-          returnToPool(playerId);
-          return;
+        if (dropZone === "pool" || TIERS.includes(dropZone)) {
+          moveToZone(playerId, dropZone);
         }
-
-        if (TIERS.includes(dropZone)) {
-          const canvas = els.canvases[dropZone];
-          const rect = canvas.getBoundingClientRect();
-          const x = event.clientX - rect.left - offsetX;
-          const y = event.clientY - rect.top - offsetY;
-          placeInTier(playerId, dropZone, x, y);
-        }
-      }
-
-      function clamp(value, min, max) {
-        return Math.min(max, Math.max(min, value));
       }
 
       function escapeHtml(text) {
@@ -752,13 +680,19 @@
           state.filter.position = e.target.value || "";
           renderPool();
         });
+        els.placeSelect.addEventListener("change", (e) => {
+          state.filter.acquisitionPlace = e.target.value || "";
+          renderPool();
+        });
         els.resetFiltersBtn.addEventListener("click", () => {
           state.filter.keyword = "";
           state.filter.policy = "";
           state.filter.position = "";
+          state.filter.acquisitionPlace = "";
           els.keywordInput.value = "";
           els.policySelect.value = "";
           els.positionSelect.value = "";
+          els.placeSelect.value = "";
           renderPool();
         });
         els.captureBtn.addEventListener("click", () => {
@@ -766,7 +700,6 @@
           document.body.classList.toggle("capture-mode", state.captureMode);
           els.captureBtn.textContent = state.captureMode ? "通常表示に戻す" : "スクショモード";
         });
-        els.autoArrangeBtn.addEventListener("click", autoArrangeAllTiers);
         els.clearSaveBtn.addEventListener("click", () => {
           const ok = confirm("保存済みのティア配置を削除します。よろしいですか？");
           if (!ok) return;
@@ -775,21 +708,25 @@
           state.players.forEach((p) => ensurePlacement(p.player_id));
           renderAll();
         });
-        window.addEventListener("resize", () => {
-          TIERS.forEach((tier) => {
-            const canvas = els.canvases[tier];
-            const maxX = Math.max(0, canvas.clientWidth - CARD_WIDTH - 6);
-            const maxY = Math.max(0, canvas.clientHeight - CARD_HEIGHT - 6);
-            state.players.forEach((player) => {
-              const placement = ensurePlacement(player.player_id);
-              if (placement.zone !== tier) return;
-              placement.x = clamp(Number(placement.x || 0), 0, maxX);
-              placement.y = clamp(Number(placement.y || 0), 0, maxY);
-            });
-          });
-          savePlacement();
-          renderAll();
+      }
+
+      function checkImageExists(playerId) {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.onload = () => resolve(true);
+          img.onerror = () => resolve(false);
+          img.src = `${IMAGE_BASE}${playerId}.png`;
         });
+      }
+
+      async function filterPlayersWithImages(players) {
+        const checks = await Promise.all(
+          players.map(async (player) => ({
+            player,
+            ok: await checkImageExists(player.player_id)
+          }))
+        );
+        return checks.filter(item => item.ok).map(item => item.player);
       }
 
       async function init() {
@@ -798,12 +735,18 @@
           if (!res.ok) throw new Error("players.json の読み込みに失敗しました。");
           const json = await res.json();
 
-          state.players = (Array.isArray(json) ? json : [])
+          const loadedPlayers = (Array.isArray(json) ? json : [])
             .map(normalizePlayer)
             .filter(p => p.player_id)
             .sort((a, b) => a.player_id.localeCompare(b.player_id, "ja"));
 
+          state.players = await filterPlayersWithImages(loadedPlayers);
+
           state.placement = loadPlacement();
+          const validIds = new Set(state.players.map(p => p.player_id));
+          state.placement = Object.fromEntries(
+            Object.entries(state.placement).filter(([playerId]) => validIds.has(playerId))
+          );
           state.players.forEach((player) => ensurePlacement(player.player_id));
 
           populateFilters();
