@@ -371,6 +371,20 @@
     </div>
 
     <div class="stack">
+      <section class="panel pool-panel">
+        <div class="panel-head">
+          <div>
+            <h2>未配置選手</h2>
+            <div class="sub">横スクロール / player_id順</div>
+          </div>
+          <div class="sub"><span id="poolCount">0</span>人</div>
+        </div>
+        <div id="poolWrap" class="pool-wrap" data-drop-zone="pool">
+          <div id="poolRow" class="pool-row"></div>
+          <div id="poolEmpty" class="empty-note" style="display:none;">絞り込み条件に一致する未配置選手はいません。</div>
+        </div>
+      </section>
+
       <section class="panel board-panel">
         <div class="panel-head">
           <div>
@@ -396,20 +410,6 @@
             <div class="tier-label"><div class="grade">C</div><div class="count" id="count-C">0人</div></div>
             <div class="tier-canvas" id="canvas-C"></div>
           </div>
-        </div>
-      </section>
-
-      <section class="panel pool-panel">
-        <div class="panel-head">
-          <div>
-            <h2>未配置選手</h2>
-            <div class="sub">横スクロール / player_id順</div>
-          </div>
-          <div class="sub"><span id="poolCount">0</span>人</div>
-        </div>
-        <div id="poolWrap" class="pool-wrap" data-drop-zone="pool">
-          <div id="poolRow" class="pool-row"></div>
-          <div id="poolEmpty" class="empty-note" style="display:none;">絞り込み条件に一致する未配置選手はいません。</div>
         </div>
       </section>
     </div>
