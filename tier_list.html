@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ティア表メーカー | サカつく2026 DB</title>
   <style>
-    :root{
-      --bg:#0f172a;
-      --panel:#111827;
-      --line:#334155;
-      --text:#e5e7eb;
-      --muted:#94a3b8;
-      --accent:#22c55e;
-      --danger:#ef4444;
-      --shadow:0 10px 24px rgba(0,0,0,.24);
-      --card-w:72px;
-      --label-w:58px;
-      --gap:6px;
-    }
+:root{
+  --bg:#0f172a;
+  --panel:#111827;
+  --line:#334155;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --accent:#22c55e;
+  --danger:#ef4444;
+  --shadow:0 10px 24px rgba(0,0,0,.24);
+  --card-w:60px;
+  --label-w:46px;
+  --gap:4px;
+}
     *{box-sizing:border-box}
     body{
       margin:0;
@@ -148,13 +148,13 @@
       flex-direction:column;
       gap:8px;
     }
-    .tier-zone{
-      position:relative;
-      min-height:112px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.08);
-      overflow:hidden;
-      padding-left:calc(var(--label-w) + 8px);
+.tier-zone{
+  position:relative;
+  min-height:112px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.08);
+  overflow:hidden;
+  padding-left:calc(var(--label-w) + 5px);
       background:
         linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)),
         radial-gradient(circle at top left, rgba(255,255,255,.06), transparent 28%);
@@ -188,14 +188,14 @@
       color:#e2e8f0;
       font-weight:800;
     }
-    .tier-canvas{
-      min-height:112px;
-      padding:8px;
-      display:flex;
-      flex-wrap:wrap;
-      align-content:flex-start;
-      gap:var(--gap);
-    }
+.tier-canvas{
+  min-height:112px;
+  padding:5px;
+  display:flex;
+  flex-wrap:wrap;
+  align-content:flex-start;
+  gap:var(--gap);
+}
 
     .pool-wrap{
       padding:8px;
@@ -292,39 +292,39 @@
         grid-template-columns:1fr 1fr 1fr 1fr;
       }
     }
-    @media (max-width:760px){
-      :root{
-        --card-w:62px;
-        --label-w:50px;
-        --gap:5px;
-      }
-      .page{padding:8px}
-      .controls{
-        grid-template-columns:1fr 1fr;
-      }
-      .title-wrap h1{
-        font-size:18px;
-      }
-      .title-wrap p{
-        font-size:10px;
-      }
-      .panel-head h2{
-        font-size:13px;
-      }
-      .tier-zone{
-        min-height:96px;
-      }
-      .tier-canvas{
-        min-height:96px;
-        padding:6px;
-      }
-      .tier-label .grade{
-        font-size:20px;
-      }
-      .pool-row{
-        min-height:74px;
-      }
-    }
+@media (max-width:760px){
+  :root{
+    --card-w:52px;
+    --label-w:40px;
+    --gap:4px;
+  }
+  .page{padding:8px}
+  .controls{
+    grid-template-columns:1fr 1fr;
+  }
+  .title-wrap h1{
+    font-size:18px;
+  }
+  .title-wrap p{
+    font-size:10px;
+  }
+  .panel-head h2{
+    font-size:13px;
+  }
+  .tier-zone{
+    min-height:90px;
+  }
+  .tier-canvas{
+    min-height:90px;
+    padding:5px;
+  }
+  .tier-label .grade{
+    font-size:18px;
+  }
+  .pool-row{
+    min-height:62px;
+  }
+}
     @media (max-width:520px){
       .controls{
         grid-template-columns:1fr;
@@ -337,7 +337,7 @@
     <div class="topbar">
       <div class="title-wrap">
         <h1>サカつく2026 ティア表メーカー</h1>
-        <p>画像がある選手のみ表示。ドラッグで S / A / B / C に配置でき、ティア内は左から自動整列されます。</p>
+        <p>ドラッグで S / A / B / C に配置でき、ティア内は左から自動整列されます。（スクショモードはリロードで元画面に戻ります）</p>
       </div>
       <a href="index.html" class="back-btn">← サイトに戻る</a>
     </div>
@@ -367,15 +367,14 @@
       </div>
       <button id="resetFiltersBtn" class="btn btn-sub" type="button">絞り込み解除</button>
       <button id="captureBtn" class="btn btn-main" type="button">スクショモード</button>
-      <button id="clearSaveBtn" class="btn btn-danger" type="button">保存データ削除</button>
+      <button id="clearSaveBtn" class="btn btn-danger" type="button">最初からやり直す</button>
     </div>
 
     <div class="stack">
       <section class="panel pool-panel">
         <div class="panel-head">
           <div>
-            <h2>未配置選手</h2>
-            <div class="sub">横スクロール / player_id順</div>
+            <h2>未配置選手※横スクロールできます※</h2>
           </div>
           <div class="sub"><span id="poolCount">0</span>人</div>
         </div>
@@ -391,7 +390,6 @@
             <h2>ティア表</h2>
             <div class="sub">ドラッグで移動 / 各ティア内は左から自動整列</div>
           </div>
-          <div class="sub">小さめ表示</div>
         </div>
         <div class="board-wrap">
           <div class="tier-zone" data-drop-zone="S" data-tier="S">
@@ -414,9 +412,6 @@
       </section>
     </div>
 
-    <div class="footer-note">
-      画像参照先：<code>img/players/{player_id}.png</code> / データ参照先：<code>players.json</code>
-    </div>
   </div>
 
   <script>
@@ -496,22 +491,32 @@
         return state.placement[playerId];
       }
 
-      function getZonePlayers(zone) {
-        return state.players.filter((p) => ensurePlacement(p.player_id).zone === zone);
-      }
+function matchesFilters(player) {
+  const keyword = state.filter.keyword.trim().toLowerCase();
 
-      function getVisiblePoolPlayers() {
-        const keyword = state.filter.keyword.trim().toLowerCase();
-        return state.players.filter((p) => {
-          const placement = ensurePlacement(p.player_id);
-          if (placement.zone !== "pool") return false;
-          if (keyword && !p.name.toLowerCase().includes(keyword)) return false;
-          if (state.filter.policy && p.policy !== state.filter.policy) return false;
-          if (state.filter.position && p.mainPosition !== state.filter.position) return false;
-          if (state.filter.acquisitionPlace && p.acquisitionPlace !== state.filter.acquisitionPlace) return false;
-          return true;
-        });
-      }
+  if (keyword && !player.name.toLowerCase().includes(keyword)) return false;
+  if (state.filter.policy && player.policy !== state.filter.policy) return false;
+  if (state.filter.position && player.mainPosition !== state.filter.position) return false;
+  if (state.filter.acquisitionPlace && player.acquisitionPlace !== state.filter.acquisitionPlace) return false;
+
+  return true;
+}
+
+function getZonePlayers(zone) {
+  return state.players.filter((p) => {
+    const placement = ensurePlacement(p.player_id);
+    if (placement.zone !== zone) return false;
+    return matchesFilters(p);
+  });
+}
+
+function getVisiblePoolPlayers() {
+  return state.players.filter((p) => {
+    const placement = ensurePlacement(p.player_id);
+    if (placement.zone !== "pool") return false;
+    return matchesFilters(p);
+  });
+}
 
       function createCard(player) {
         const card = document.createElement("div");
@@ -655,33 +660,35 @@
       }
 
       function bindEvents() {
-        els.keywordInput.addEventListener("input", (e) => {
-          state.filter.keyword = e.target.value || "";
-          renderPool();
-        });
-        els.policySelect.addEventListener("change", (e) => {
-          state.filter.policy = e.target.value || "";
-          renderPool();
-        });
-        els.positionSelect.addEventListener("change", (e) => {
-          state.filter.position = e.target.value || "";
-          renderPool();
-        });
-        els.placeSelect.addEventListener("change", (e) => {
-          state.filter.acquisitionPlace = e.target.value || "";
-          renderPool();
-        });
-        els.resetFiltersBtn.addEventListener("click", () => {
-          state.filter.keyword = "";
-          state.filter.policy = "";
-          state.filter.position = "";
-          state.filter.acquisitionPlace = "";
-          els.keywordInput.value = "";
-          els.policySelect.value = "";
-          els.positionSelect.value = "";
-          els.placeSelect.value = "";
-          renderPool();
-        });
+els.keywordInput.addEventListener("input", (e) => {
+  state.filter.keyword = e.target.value || "";
+  renderAll();
+});
+els.policySelect.addEventListener("change", (e) => {
+  state.filter.policy = e.target.value || "";
+  renderAll();
+});
+els.positionSelect.addEventListener("change", (e) => {
+  state.filter.position = e.target.value || "";
+  renderAll();
+});
+
+els.placeSelect.addEventListener("change", (e) => {
+  state.filter.acquisitionPlace = e.target.value || "";
+  renderAll();
+});
+
+els.resetFiltersBtn.addEventListener("click", () => {
+  state.filter.keyword = "";
+  state.filter.policy = "";
+  state.filter.position = "";
+  state.filter.acquisitionPlace = "";
+  els.keywordInput.value = "";
+  els.policySelect.value = "";
+  els.positionSelect.value = "";
+  els.placeSelect.value = "";
+  renderAll();
+});
         els.captureBtn.addEventListener("click", () => {
           state.captureMode = !state.captureMode;
           document.body.classList.toggle("capture-mode", state.captureMode);
