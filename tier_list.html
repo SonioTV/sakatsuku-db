@@ -5,26 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ティア表メーカー | サカつく2026 DB</title>
   <style>
-    :root{
-      --bg:#0f172a;
-      --panel:#111827;
-      --line:#334155;
-      --text:#e5e7eb;
-      --muted:#94a3b8;
-      --accent:#22c55e;
-      --danger:#ef4444;
-      --shadow:0 10px 24px rgba(0,0,0,.24);
-
-      --card-w:60px;
-      --card-h:38px;
-      --label-w:46px;
-      --gap:2px;
-      --board-gap:4px;
-      --board-pad:4px;
-      --tier-pad:2px;
-      --tier-left-gap:2px;
-    }
-
+:root{
+  --bg:#0f172a;
+  --panel:#111827;
+  --line:#334155;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --accent:#22c55e;
+  --danger:#ef4444;
+  --shadow:0 10px 24px rgba(0,0,0,.24);
+  --card-w:70px;
+  --label-w:46px;
+  --gap:4px;
+}
     *{box-sizing:border-box}
     body{
       margin:0;
@@ -33,13 +26,11 @@
       color:var(--text);
     }
     a{color:inherit;text-decoration:none}
-
     .page{
-      max-width:1120px;
+      max-width:720px;
       margin:0 auto;
       padding:10px;
     }
-
     .topbar{
       display:flex;
       align-items:center;
@@ -152,28 +143,26 @@
     }
 
     .board-wrap{
-      padding:var(--board-pad);
+      padding:8px;
       display:flex;
       flex-direction:column;
-      gap:var(--board-gap);
+      gap:8px;
     }
-
-    .tier-zone{
-      position:relative;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.08);
-      overflow:hidden;
-      padding-left:calc(var(--label-w) + var(--tier-left-gap));
+.tier-zone{
+  position:relative;
+  min-height:auto;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.08);
+  overflow:hidden;
+  padding-left:calc(var(--label-w) + 5px);
       background:
         linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)),
         radial-gradient(circle at top left, rgba(255,255,255,.06), transparent 28%);
-      min-height:calc(var(--card-h) + (var(--tier-pad) * 2) + 2px);
     }
     .tier-zone[data-tier="S"]{background-color:rgba(127,29,29,.55)}
     .tier-zone[data-tier="A"]{background-color:rgba(133,77,14,.52)}
     .tier-zone[data-tier="B"]{background-color:rgba(20,83,45,.52)}
     .tier-zone[data-tier="C"]{background-color:rgba(30,64,175,.45)}
-
     .tier-label{
       position:absolute;
       left:0;
@@ -199,15 +188,14 @@
       color:#e2e8f0;
       font-weight:800;
     }
-
-    .tier-canvas{
-      padding:var(--tier-pad);
-      display:flex;
-      flex-wrap:wrap;
-      align-content:flex-start;
-      gap:var(--gap);
-      min-height:calc(var(--card-h) + (var(--tier-pad) * 2));
-    }
+.tier-canvas{
+  min-height:auto;
+  padding:1px;
+  display:flex;
+  flex-wrap:wrap;
+  align-content:flex-start;
+  gap:1px;
+}
 
     .pool-wrap{
       padding:8px;
@@ -221,7 +209,7 @@
       display:flex;
       gap:var(--gap);
       align-items:flex-start;
-      min-height:calc(var(--card-h) + 6px);
+      min-height:86px;
       width:max-content;
       min-width:100%;
     }
@@ -235,25 +223,21 @@
 
     .player-card{
       width:var(--card-w);
-      height:var(--card-h);
       flex:0 0 var(--card-w);
       user-select:none;
       touch-action:none;
       cursor:grab;
       line-height:0;
-      position:relative;
     }
     .player-card.dragging{
       cursor:grabbing;
       z-index:9999;
       box-shadow:0 18px 48px rgba(0,0,0,.45);
-      opacity:.92;
     }
     .player-card img{
       display:block;
       width:100%;
-      height:100%;
-      object-fit:cover;
+      height:auto;
       border-radius:6px;
       border:1px solid rgba(255,255,255,.16);
       background:#0f172a;
@@ -266,9 +250,18 @@
       outline-offset:-4px;
     }
 
+    .footer-note{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.6;
+      text-align:right;
+    }
+
     .capture-mode .controls,
     .capture-mode .pool-panel,
-    .capture-mode .back-btn{
+    .capture-mode .back-btn,
+    .capture-mode .footer-note{
       display:none !important;
     }
     .capture-mode .page{
@@ -292,7 +285,6 @@
     }
     .capture-mode .board-wrap{
       padding:0;
-      gap:2px;
     }
 
     @media (max-width:1100px){
@@ -300,36 +292,39 @@
         grid-template-columns:1fr 1fr 1fr 1fr;
       }
     }
-
-    @media (max-width:760px){
-      :root{
-        --card-w:52px;
-        --card-h:33px;
-        --label-w:40px;
-        --gap:2px;
-        --board-gap:3px;
-        --board-pad:3px;
-        --tier-pad:2px;
-        --tier-left-gap:2px;
-      }
-      .page{padding:8px}
-      .controls{
-        grid-template-columns:1fr 1fr;
-      }
-      .title-wrap h1{
-        font-size:18px;
-      }
-      .title-wrap p{
-        font-size:10px;
-      }
-      .panel-head h2{
-        font-size:13px;
-      }
-      .tier-label .grade{
-        font-size:18px;
-      }
-    }
-
+@media (max-width:760px){
+  :root{
+    --card-w:52px;
+    --label-w:40px;
+    --gap:4px;
+  }
+  .page{padding:8px}
+  .controls{
+    grid-template-columns:1fr 1fr;
+  }
+  .title-wrap h1{
+    font-size:18px;
+  }
+  .title-wrap p{
+    font-size:10px;
+  }
+  .panel-head h2{
+    font-size:13px;
+  }
+  .tier-zone{
+    min-height:auto;
+  }
+  .tier-canvas{
+    min-height:autopx;
+    padding:1px;
+  }
+  .tier-label .grade{
+    font-size:18px;
+  }
+  .pool-row{
+    min-height:62px;
+  }
+}
     @media (max-width:520px){
       .controls{
         grid-template-columns:1fr;
@@ -342,7 +337,7 @@
     <div class="topbar">
       <div class="title-wrap">
         <h1>サカつく2026 ティア表メーカー</h1>
-        <p>ドラッグで S / A / B / C に配置可能。ティア内は自動整列され、同じティア内で自由に並び替えできます。</p>
+        <p>ドラッグで S / A / B / C に配置でき、ティア内は左から自動整列されます。（スクショモードはリロードで元画面に戻ります）</p>
       </div>
       <a href="index.html" class="back-btn">← サイトに戻る</a>
     </div>
@@ -378,7 +373,9 @@
     <div class="stack">
       <section class="panel pool-panel">
         <div class="panel-head">
-          <div><h2>未配置選手※横スクロールできます※</h2></div>
+          <div>
+            <h2>未配置選手※横スクロールできます※</h2>
+          </div>
           <div class="sub"><span id="poolCount">0</span>人</div>
         </div>
         <div id="poolWrap" class="pool-wrap" data-drop-zone="pool">
@@ -391,7 +388,7 @@
         <div class="panel-head">
           <div>
             <h2>ティア表</h2>
-            <div class="sub">ドラッグで移動 / 同一ティア内で並び替え可能 / 画像サイズに合わせて高さ自動調整</div>
+            <div class="sub">ドラッグで移動 / 各ティア内は左から自動整列</div>
           </div>
         </div>
         <div class="board-wrap">
@@ -414,11 +411,12 @@
         </div>
       </section>
     </div>
+
   </div>
 
   <script>
     (() => {
-      const STORAGE_KEY = "sakatsuku2026_tier_list_v4";
+      const STORAGE_KEY = "sakatsuku2026_tier_list_v3";
       const IMAGE_BASE = "img/players/";
       const TIERS = ["S", "A", "B", "C"];
 
@@ -486,54 +484,54 @@
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state.placement));
       }
 
-      function ensurePlacement(playerId) {
-        if (!state.placement[playerId]) {
-          state.placement[playerId] = { zone: "pool", order: 999999 };
-        }
-        if (typeof state.placement[playerId].order !== "number") {
-          state.placement[playerId].order = 999999;
-        }
-        return state.placement[playerId];
-      }
+function ensurePlacement(playerId) {
+  if (!state.placement[playerId]) {
+    state.placement[playerId] = { zone: "pool", order: 999999 };
+  }
+  if (typeof state.placement[playerId].order !== "number") {
+    state.placement[playerId].order = 999999;
+  }
+  return state.placement[playerId];
+}
 
-      function matchesFilters(player) {
-        const keyword = state.filter.keyword.trim().toLowerCase();
+function matchesFilters(player) {
+  const keyword = state.filter.keyword.trim().toLowerCase();
 
-        if (keyword && !player.name.toLowerCase().includes(keyword)) return false;
-        if (state.filter.policy && player.policy !== state.filter.policy) return false;
-        if (state.filter.position && player.mainPosition !== state.filter.position) return false;
-        if (state.filter.acquisitionPlace && player.acquisitionPlace !== state.filter.acquisitionPlace) return false;
+  if (keyword && !player.name.toLowerCase().includes(keyword)) return false;
+  if (state.filter.policy && player.policy !== state.filter.policy) return false;
+  if (state.filter.position && player.mainPosition !== state.filter.position) return false;
+  if (state.filter.acquisitionPlace && player.acquisitionPlace !== state.filter.acquisitionPlace) return false;
 
-        return true;
-      }
+  return true;
+}
 
-      function getZonePlayers(zone) {
-        return state.players
-          .filter((p) => {
-            const placement = ensurePlacement(p.player_id);
-            if (placement.zone !== zone) return false;
-            return matchesFilters(p);
-          })
-          .sort((a, b) => {
-            const pa = ensurePlacement(a.player_id);
-            const pb = ensurePlacement(b.player_id);
-            return pa.order - pb.order;
-          });
-      }
+function getZonePlayers(zone) {
+  return state.players
+    .filter((p) => {
+      const placement = ensurePlacement(p.player_id);
+      if (placement.zone !== zone) return false;
+      return matchesFilters(p);
+    })
+    .sort((a, b) => {
+      const pa = ensurePlacement(a.player_id);
+      const pb = ensurePlacement(b.player_id);
+      return pa.order - pb.order;
+    });
+}
 
-      function getVisiblePoolPlayers() {
-        return state.players
-          .filter((p) => {
-            const placement = ensurePlacement(p.player_id);
-            if (placement.zone !== "pool") return false;
-            return matchesFilters(p);
-          })
-          .sort((a, b) => {
-            const pa = ensurePlacement(a.player_id);
-            const pb = ensurePlacement(b.player_id);
-            return pa.order - pb.order;
-          });
-      }
+function getVisiblePoolPlayers() {
+  return state.players
+    .filter((p) => {
+      const placement = ensurePlacement(p.player_id);
+      if (placement.zone !== "pool") return false;
+      return matchesFilters(p);
+    })
+    .sort((a, b) => {
+      const pa = ensurePlacement(a.player_id);
+      const pb = ensurePlacement(b.player_id);
+      return pa.order - pb.order;
+    });
+}
 
       function createCard(player) {
         const card = document.createElement("div");
@@ -596,66 +594,66 @@
         }
       }
 
-      function getNextOrder(zone) {
-        const orders = state.players
-          .map((p) => ensurePlacement(p.player_id))
-          .filter((pl) => pl.zone === zone)
-          .map((pl) => pl.order);
+function getNextOrder(zone) {
+  const orders = state.players
+    .map((p) => ensurePlacement(p.player_id))
+    .filter((pl) => pl.zone === zone)
+    .map((pl) => pl.order);
 
-        return orders.length ? Math.max(...orders) + 1 : 0;
-      }
+  return orders.length ? Math.max(...orders) + 1 : 0;
+}
 
-      function normalizeZoneOrder(zone) {
-        const zonePlayers = state.players
-          .filter((p) => ensurePlacement(p.player_id).zone === zone)
-          .sort((a, b) => ensurePlacement(a.player_id).order - ensurePlacement(b.player_id).order);
+function normalizeZoneOrder(zone) {
+  const zonePlayers = state.players
+    .filter((p) => ensurePlacement(p.player_id).zone === zone)
+    .sort((a, b) => ensurePlacement(a.player_id).order - ensurePlacement(b.player_id).order);
 
-        zonePlayers.forEach((player, index) => {
-          ensurePlacement(player.player_id).order = index;
-        });
-      }
+  zonePlayers.forEach((player, index) => {
+    ensurePlacement(player.player_id).order = index;
+  });
+}
 
-      function moveToZone(playerId, zone) {
-        const placement = ensurePlacement(playerId);
-        placement.zone = zone;
-        placement.order = getNextOrder(zone);
-        normalizeZoneOrder(zone);
-        savePlacement();
-        renderAll();
-      }
+function reorderWithinZone(playerId, zone, clientX, clientY) {
+  const container = zone === "pool" ? els.poolRow : els.canvases[zone];
+  const cards = [...container.querySelectorAll(".player-card")]
+    .filter((card) => card.dataset.playerId !== playerId);
 
-      function reorderWithinZone(playerId, zone, clientX, clientY) {
-        const container = zone === "pool" ? els.poolRow : els.canvases[zone];
-        const cards = [...container.querySelectorAll(".player-card")]
-          .filter((card) => card.dataset.playerId !== playerId);
+  let insertIndex = cards.length;
 
-        let insertIndex = cards.length;
+  for (let i = 0; i < cards.length; i++) {
+    const rect = cards[i].getBoundingClientRect();
+    const beforeThisCard =
+      clientY < rect.top + rect.height ||
+      (clientY <= rect.bottom && clientX < rect.left + rect.width / 2);
 
-        for (let i = 0; i < cards.length; i++) {
-          const rect = cards[i].getBoundingClientRect();
-          const beforeThisCard =
-            clientY < rect.top + rect.height ||
-            (clientY <= rect.bottom && clientX < rect.left + rect.width / 2);
+    if (beforeThisCard) {
+      insertIndex = i;
+      break;
+    }
+  }
 
-          if (beforeThisCard) {
-            insertIndex = i;
-            break;
-          }
-        }
+  const movingPlayer = state.players.find((p) => p.player_id === playerId);
+  const zonePlayers = state.players
+    .filter((p) => ensurePlacement(p.player_id).zone === zone && p.player_id !== playerId)
+    .sort((a, b) => ensurePlacement(a.player_id).order - ensurePlacement(b.player_id).order);
 
-        const movingPlayer = state.players.find((p) => p.player_id === playerId);
-        const zonePlayers = state.players
-          .filter((p) => ensurePlacement(p.player_id).zone === zone && p.player_id !== playerId)
-          .sort((a, b) => ensurePlacement(a.player_id).order - ensurePlacement(b.player_id).order);
+  zonePlayers.splice(insertIndex, 0, movingPlayer);
 
-        zonePlayers.splice(insertIndex, 0, movingPlayer);
+  zonePlayers.forEach((player, index) => {
+    const placement = ensurePlacement(player.player_id);
+    placement.zone = zone;
+    placement.order = index;
+  });
+}
 
-        zonePlayers.forEach((player, index) => {
-          const placement = ensurePlacement(player.player_id);
-          placement.zone = zone;
-          placement.order = index;
-        });
-      }
+function moveToZone(playerId, zone) {
+  const placement = ensurePlacement(playerId);
+  placement.zone = zone;
+  placement.order = getNextOrder(zone);
+  normalizeZoneOrder(zone);
+  savePlacement();
+  renderAll();
+}
 
       function clearDropHighlights() {
         document.querySelectorAll("[data-drop-zone]").forEach(el => el.classList.remove("drop-highlight"));
@@ -679,7 +677,6 @@
         ghost.style.left = rect.left + "px";
         ghost.style.top = rect.top + "px";
         ghost.style.width = rect.width + "px";
-        ghost.style.height = rect.height + "px";
         ghost.style.zIndex = "9999";
         document.body.appendChild(ghost);
 
@@ -704,48 +701,56 @@
         if (zone) zone.classList.add("drop-highlight");
       }
 
-      function onPointerUp(event) {
-        document.removeEventListener("pointermove", onPointerMove);
-        clearDropHighlights();
+function onPointerUp(event) {
+  document.removeEventListener("pointermove", onPointerMove);
+  clearDropHighlights();
 
-        if (!state.dragging) return;
-        const { playerId, ghost } = state.dragging;
-        const zone = getDropZone(event.clientX, event.clientY);
+  if (!state.dragging) return;
+  const { playerId, ghost } = state.dragging;
+  const zone = getDropZone(event.clientX, event.clientY);
 
-        ghost.remove();
-        state.dragging = null;
+  ghost.remove();
+  state.dragging = null;
 
-        if (!zone) return;
+  if (!zone) return;
 
-        const dropZone = zone.dataset.dropZone;
-        const currentZone = ensurePlacement(playerId).zone;
+  const dropZone = zone.dataset.dropZone;
+  const currentZone = ensurePlacement(playerId).zone;
 
-        if (dropZone === "pool") {
-          if (currentZone !== "pool") {
-            ensurePlacement(playerId).zone = "pool";
-            ensurePlacement(playerId).order = getNextOrder("pool");
-          }
-          reorderWithinZone(playerId, "pool", event.clientX, event.clientY);
-          normalizeZoneOrder("pool");
-          if (currentZone !== "pool" && TIERS.includes(currentZone)) normalizeZoneOrder(currentZone);
-          savePlacement();
-          renderAll();
-          return;
-        }
+  if (dropZone === "pool") {
+    if (currentZone !== "pool") {
+      ensurePlacement(playerId).zone = "pool";
+      ensurePlacement(playerId).order = getNextOrder("pool");
+    }
+    reorderWithinZone(playerId, "pool", event.clientX, event.clientY);
+    normalizeZoneOrder("pool");
+    if (currentZone !== "pool" && TIERS.includes(currentZone)) {
+      normalizeZoneOrder(currentZone);
+    }
+    savePlacement();
+    renderAll();
+    return;
+  }
 
-        if (TIERS.includes(dropZone)) {
-          if (currentZone !== dropZone) {
-            ensurePlacement(playerId).zone = dropZone;
-            ensurePlacement(playerId).order = getNextOrder(dropZone);
-          }
-          reorderWithinZone(playerId, dropZone, event.clientX, event.clientY);
-          normalizeZoneOrder(dropZone);
-          if (currentZone !== dropZone && currentZone === "pool") normalizeZoneOrder("pool");
-          if (currentZone !== dropZone && TIERS.includes(currentZone)) normalizeZoneOrder(currentZone);
-          savePlacement();
-          renderAll();
-        }
-      }
+  if (TIERS.includes(dropZone)) {
+    if (currentZone !== dropZone) {
+      ensurePlacement(playerId).zone = dropZone;
+      ensurePlacement(playerId).order = getNextOrder(dropZone);
+    }
+    reorderWithinZone(playerId, dropZone, event.clientX, event.clientY);
+    normalizeZoneOrder(dropZone);
+
+    if (currentZone !== dropZone && currentZone === "pool") {
+      normalizeZoneOrder("pool");
+    }
+    if (currentZone !== dropZone && TIERS.includes(currentZone)) {
+      normalizeZoneOrder(currentZone);
+    }
+
+    savePlacement();
+    renderAll();
+  }
+}
 
       function escapeHtml(text) {
         return String(text)
@@ -757,48 +762,55 @@
       }
 
       function bindEvents() {
-        els.keywordInput.addEventListener("input", (e) => {
-          state.filter.keyword = e.target.value || "";
-          renderAll();
-        });
-        els.policySelect.addEventListener("change", (e) => {
-          state.filter.policy = e.target.value || "";
-          renderAll();
-        });
-        els.positionSelect.addEventListener("change", (e) => {
-          state.filter.position = e.target.value || "";
-          renderAll();
-        });
-        els.placeSelect.addEventListener("change", (e) => {
-          state.filter.acquisitionPlace = e.target.value || "";
-          renderAll();
-        });
-        els.resetFiltersBtn.addEventListener("click", () => {
-          state.filter.keyword = "";
-          state.filter.policy = "";
-          state.filter.position = "";
-          state.filter.acquisitionPlace = "";
-          els.keywordInput.value = "";
-          els.policySelect.value = "";
-          els.positionSelect.value = "";
-          els.placeSelect.value = "";
-          renderAll();
-        });
+els.keywordInput.addEventListener("input", (e) => {
+  state.filter.keyword = e.target.value || "";
+  renderAll();
+});
+els.policySelect.addEventListener("change", (e) => {
+  state.filter.policy = e.target.value || "";
+  console.log("selected policy:", state.filter.policy);
+  console.log(
+    "pool players after filter:",
+    getVisiblePoolPlayers().map(p => `${p.name}:${p.policy}`)
+  );
+  renderAll();
+});
+els.positionSelect.addEventListener("change", (e) => {
+  state.filter.position = e.target.value || "";
+  renderAll();
+});
+
+els.placeSelect.addEventListener("change", (e) => {
+  state.filter.acquisitionPlace = e.target.value || "";
+  renderAll();
+});
+
+els.resetFiltersBtn.addEventListener("click", () => {
+  state.filter.keyword = "";
+  state.filter.policy = "";
+  state.filter.position = "";
+  state.filter.acquisitionPlace = "";
+  els.keywordInput.value = "";
+  els.policySelect.value = "";
+  els.positionSelect.value = "";
+  els.placeSelect.value = "";
+  renderAll();
+});
         els.captureBtn.addEventListener("click", () => {
           state.captureMode = !state.captureMode;
           document.body.classList.toggle("capture-mode", state.captureMode);
           els.captureBtn.textContent = state.captureMode ? "通常表示に戻す" : "スクショモード";
         });
-        els.clearSaveBtn.addEventListener("click", () => {
-          const ok = confirm("保存済みのティア配置を削除します。よろしいですか？");
-          if (!ok) return;
-          localStorage.removeItem(STORAGE_KEY);
-          state.placement = {};
-          state.players.forEach((player, index) => {
-            state.placement[player.player_id] = { zone: "pool", order: index };
-          });
-          renderAll();
-        });
+els.clearSaveBtn.addEventListener("click", () => {
+  const ok = confirm("保存済みのティア配置を削除します。よろしいですか？");
+  if (!ok) return;
+  localStorage.removeItem(STORAGE_KEY);
+  state.placement = {};
+  state.players.forEach((player, index) => {
+    state.placement[player.player_id] = { zone: "pool", order: index };
+  });
+  renderAll();
+});
       }
 
       function checkImageExists(playerId) {
@@ -833,25 +845,26 @@
 
           state.players = await filterPlayersWithImages(loadedPlayers);
 
-          state.placement = loadPlacement();
-          const validIds = new Set(state.players.map(p => p.player_id));
-          state.placement = Object.fromEntries(
-            Object.entries(state.placement).filter(([playerId]) => validIds.has(playerId))
-          );
+state.placement = loadPlacement();
+const validIds = new Set(state.players.map(p => p.player_id));
+state.placement = Object.fromEntries(
+  Object.entries(state.placement).filter(([playerId]) => validIds.has(playerId))
+);
 
-          state.players.forEach((player, index) => {
-            const placement = ensurePlacement(player.player_id);
-            if (placement.zone === "pool" && placement.order === 999999) {
-              placement.order = index;
-            }
-          });
+state.players.forEach((player, index) => {
+  const placement = ensurePlacement(player.player_id);
+  if (placement.zone === "pool" && placement.order === 999999) {
+    placement.order = index;
+  }
+});
 
-          normalizeZoneOrder("pool");
-          TIERS.forEach(normalizeZoneOrder);
+normalizeZoneOrder("pool");
+TIERS.forEach(normalizeZoneOrder);
 
-          populateFilters();
-          bindEvents();
-          renderAll();
+populateFilters();
+bindEvents();
+renderAll();
+
         } catch (error) {
           console.error(error);
           document.querySelector(".page").innerHTML = `
