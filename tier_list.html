@@ -622,11 +622,14 @@ function reorderWithinZone(playerId, zone, clientX, clientY) {
 
   for (let i = 0; i < cards.length; i++) {
     const rect = cards[i].getBoundingClientRect();
-    const beforeThisCard =
-      clientY < rect.top + rect.height ||
-      (clientY <= rect.bottom && clientX < rect.left + rect.width / 2);
+    const rowTop = rect.top;
+    const rowBottom = rect.bottom;
+    const centerX = rect.left + rect.width / 2;
 
-    if (beforeThisCard) {
+    const isAboveThisRow = clientY < rowTop;
+    const isSameRow = clientY >= rowTop && clientY <= rowBottom;
+
+    if (isAboveThisRow || (isSameRow && clientX < centerX)) {
       insertIndex = i;
       break;
     }
