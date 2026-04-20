@@ -242,7 +242,7 @@
     "facility_name": "メガストア",
     "category": "収入力",
     "cost": 5,
-    "install_level": null,
+    "install_level": 23,
     "effect1": "満足度",
     "effect_value1": 1,
     "effect2": "収入力",
