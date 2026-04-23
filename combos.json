@@ -1886,5 +1886,453 @@
         "conditionNo": 3
       }
     ]
+  },
+  {
+    "comboId": "C041",
+    "name": "ロス・ミリョナリオス'86",
+    "formation": "4-4-2D",
+    "rank": "銀",
+    "combo_policys": [
+      "ムービング"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年4月30日まで",
+    "effect": "コンタクト、走力、冷静さが80%アップ",
+    "effects": [
+      {
+        "status": "コンタクト",
+        "value": 80
+      },
+      {
+        "status": "走力",
+        "value": 80
+      },
+      {
+        "status": "冷静さ",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 3,
+        "position": "CB",
+        "positionPlace": "Left",
+        "playStyle": "ストッパー",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 9,
+        "position": "AM",
+        "positionPlace": null,
+        "playStyle": "アタッカー",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 11,
+        "position": "CF",
+        "positionPlace": "Left",
+        "playStyle": "ストライカー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C042",
+    "name": "ヴィオラ'99",
+    "formation": "4-5-1B",
+    "rank": "銀",
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年4月30日まで",
+    "effect": "ボールタッチ、走力、ジャンプが80%アップ",
+    "effects": [
+      {
+        "status": "ボールタッチ",
+        "value": 80
+      },
+      {
+        "status": "走力",
+        "value": 80
+      },
+      {
+        "status": "ジャンプ",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 1,
+        "position": "GK",
+        "positionPlace": null,
+        "playStyle": "オーソドックスGK",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 5,
+        "position": "RB",
+        "positionPlace": null,
+        "playStyle": "攻撃的FB",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 10,
+        "position": "AM",
+        "positionPlace": null,
+        "playStyle": "パサー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C043",
+    "name": "グリフォーニ'99",
+    "formation": "4-4-2C",
+    "rank": "銀",
+    "combo_policys": [
+      "リアクション"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年4月30日まで",
+    "effect": "キック力、ロングパス、ジャンプが80%アップ",
+    "effects": [
+      {
+        "status": "キック力",
+        "value": 80
+      },
+      {
+        "status": "ロングパス",
+        "value": 80
+      },
+      {
+        "status": "ジャンプ",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 5,
+        "position": "RB",
+        "positionPlace": null,
+        "playStyle": "守備的FB",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 9,
+        "position": "AM",
+        "positionPlace": "Left",
+        "playStyle": "アタッカー",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 10,
+        "position": "CF",
+        "positionPlace": "Right",
+        "playStyle": "ポストプレーヤー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C044",
+    "name": "オルロヴィ'24",
+    "formation": "4-4-2B",
+    "rank": "銀",
+    "combo_policys": [
+      "カウンター"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年4月30日まで",
+    "effect": "冷静さ、コンタクト、ジャンプが80%アップ",
+    "effects": [
+      {
+        "status": "冷静さ",
+        "value": 80
+      },
+      {
+        "status": "コンタクト",
+        "value": 80
+      },
+      {
+        "status": "ジャンプ",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 1,
+        "position": "GK",
+        "positionPlace": null,
+        "playStyle": "オーソドックスGK",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 7,
+        "position": "DM",
+        "positionPlace": "Left",
+        "playStyle": "セントラルMF",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 11,
+        "position": "CF",
+        "positionPlace": "Left",
+        "playStyle": "ストライカー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C045",
+    "name": "カナリア軍団'06",
+    "formation": "4-4-2C",
+    "rank": "金",
+    "combo_policys": [
+      "ムービング"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "ミッション",
+    "acquisitionPlace": "ノーマルミッション",
+    "availablePeriod": "監督Lv10以上",
+    "effect": "パスカット、マーク、走力、敏捷性が80%アップ",
+    "effects": [
+      {
+        "status": "パスカット",
+        "value": 80
+      },
+      {
+        "status": "マーク",
+        "value": 80
+      },
+      {
+        "status": "走力",
+        "value": 80
+      },
+      {
+        "status": "敏捷性",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 2,
+        "position": "CB",
+        "positionPlace": "Right",
+        "playStyle": "ストッパー",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 7,
+        "position": "DM",
+        "positionPlace": "Left",
+        "playStyle": "ハードマーカー",
+        "playStyleLv": 3,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 10,
+        "position": "CF",
+        "positionPlace": "Right",
+        "playStyle": "ストライカー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C046",
+    "name": "エンカルナードス'23",
+    "formation": "4-3-3B",
+    "rank": "金",
+    "combo_policys": [
+      "リアクション"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "ミッション",
+    "acquisitionPlace": "ノーマルミッション",
+    "availablePeriod": "監督Lv10以上",
+    "effect": "冷静さ、パスカット、マーク、ジャンプが80%アップ",
+    "effects": [
+      {
+        "status": "冷静さ",
+        "value": 80
+      },
+      {
+        "status": "パスカット",
+        "value": 80
+      },
+      {
+        "status": "マーク",
+        "value": 80
+      },
+      {
+        "status": "ジャンプ",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 2,
+        "position": "CB",
+        "positionPlace": "Right",
+        "playStyle": "組立CB",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 7,
+        "position": "DM",
+        "positionPlace": "Left",
+        "playStyle": "セントラルMF",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 8,
+        "position": "AM",
+        "positionPlace": null,
+        "playStyle": "アタッカー",
+        "playStyleLv": 3,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C047",
+    "name": "リーベル'18",
+    "formation": "4-3-3B",
+    "rank": "金",
+    "combo_policys": [
+      "カウンター"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "ミッション",
+    "acquisitionPlace": "ノーマルミッション",
+    "availablePeriod": "監督Lv10以上",
+    "effect": "キック力、パスカット、マーク、ジャンプが80%アップ",
+    "effects": [
+      {
+        "status": "キック力",
+        "value": 80
+      },
+      {
+        "status": "パスカット",
+        "value": 80
+      },
+      {
+        "status": "マーク",
+        "value": 80
+      },
+      {
+        "status": "ジャンプ",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 7,
+        "position": "DM",
+        "positionPlace": "Left",
+        "playStyle": "ハードマーカー",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 9,
+        "position": "LW",
+        "positionPlace": null,
+        "playStyle": "ドリブラー",
+        "playStyleLv": 3,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 10,
+        "position": "RW",
+        "positionPlace": null,
+        "playStyle": "ドリブラー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C048",
+    "name": "ロス・カフェテロス'94",
+    "formation": "4-4-2D",
+    "rank": "金",
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "ミッション",
+    "acquisitionPlace": "ノーマルミッション",
+    "availablePeriod": "監督Lv10以上",
+    "effect": "キック力、パスカット、マーク、走力が80%アップ",
+    "effects": [
+      {
+        "status": "キック力",
+        "value": 80
+      },
+      {
+        "status": "パスカット",
+        "value": 80
+      },
+      {
+        "status": "マーク",
+        "value": 80
+      },
+      {
+        "status": "走力",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 3,
+        "position": "CB",
+        "positionPlace": "Left",
+        "playStyle": "ストッパー",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 8,
+        "position": "DM",
+        "positionPlace": "Left",
+        "playStyle": "セントラルMF",
+        "playStyleLv": 3,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 10,
+        "position": "CF",
+        "positionPlace": "Right",
+        "playStyle": "ストライカー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
   }
 ]
