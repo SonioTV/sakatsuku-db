@@ -116,6 +116,53 @@
       font-weight: 700;
       word-break: break-all;
     }
+    .video-thumb-link {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      margin-top: 10px;
+      border: 1px solid #cbd5e1;
+      background: #000;
+      text-decoration: none;
+    }
+    .video-thumb-link img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .video-thumb-link:hover img {
+      transform: scale(1.02);
+      opacity: .88;
+    }
+    .play-badge {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 50px;
+      border-radius: 14px;
+      background: rgba(220, 38, 38, .92);
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    }
+    .play-badge::before {
+      content: "";
+      position: absolute;
+      left: 29px;
+      top: 14px;
+      border-left: 18px solid #fff;
+      border-top: 11px solid transparent;
+      border-bottom: 11px solid transparent;
+    }
+    .video-title {
+      margin-top: 10px;
+      font-weight: 800;
+      color: #0f766e;
+    }
     .summary-table {
       width: 100%;
       border-collapse: collapse;
@@ -200,8 +247,14 @@
       </p>
 
       <div class="video-box">
-        元動画：
-        <a href="https://www.youtube.com/watch?v=2eU-8wbJHHA" target="_blank" rel="noopener">YouTubeで動画を見る</a>
+        <div>元動画：</div>
+        <a class="video-thumb-link" href="https://www.youtube.com/watch?v=2eU-8wbJHHA" target="_blank" rel="noopener" aria-label="YouTubeで動画を見る">
+          <img src="https://img.youtube.com/vi/2eU-8wbJHHA/maxresdefault.jpg" alt="Jリーグ・KリーグSP選手メダルおすすめ交換選手8選の動画サムネイル" loading="lazy">
+          <span class="play-badge" aria-hidden="true"></span>
+        </a>
+        <div class="video-title">
+          <a href="https://www.youtube.com/watch?v=2eU-8wbJHHA" target="_blank" rel="noopener">YouTubeで動画を見る</a>
+        </div>
       </div>
 
       <h2>まず結論：交換は少し待つのがおすすめ</h2>
