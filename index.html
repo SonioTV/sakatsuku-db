@@ -819,6 +819,58 @@
     font-size:17px;
   }
 }
+
+/* ===== 最新攻略記事 ===== */
+.latestArticleCard{
+  max-width:920px;
+  margin:16px auto 18px;
+  padding:16px;
+}
+
+.latestArticleList{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.latestArticleItem{
+  display:block;
+  padding:14px 16px;
+  border-radius:16px;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  text-decoration:none;
+  box-shadow:0 8px 16px rgba(0,0,0,.06);
+}
+
+.latestArticleItem:active{
+  transform:scale(.98);
+}
+
+.latestArticleDate{
+  font-size:14px;
+  font-weight:900;
+  color:#2e7d32;
+  margin-bottom:5px;
+}
+
+.latestArticleTitle{
+  font-size:17px;
+  font-weight:900;
+  color:#0b63d1;
+  line-height:1.45;
+}
+
+@media (max-width:480px){
+  .latestArticleCard{
+    margin:14px 10px 16px;
+    padding:14px;
+  }
+  .latestArticleTitle{
+    font-size:16px;
+  }
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -853,6 +905,29 @@
   </a>
 </div>
 
+<!-- ===== 最新攻略記事 ===== -->
+<div class="card latestArticleCard">
+  <div class="sectionTitle">最新の攻略記事</div>
+
+  <div class="latestArticleList">
+
+    <a href="levandowski_gacha_review.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/04/28</div>
+      <div class="latestArticleTitle">レヴァンドフスキのピックアップガチャは引くべき？新SP選手4名を徹底評価</div>
+    </a>
+
+    <a href="manchester_city_sp_scout_review.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/04/23</div>
+      <div class="latestArticleTitle">マンチェスター・シティ記念ガチャは引くべき？新SP選手性能解説</div>
+    </a>
+
+    <a href="jleague_kleague_select_sp_recommend_article.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/04/07</div>
+      <div class="latestArticleTitle">Jリーグ・KリーグSP選手メダルは誰と交換すべき？おすすめ交換選手8選</div>
+    </a>
+
+  </div>
+</div>
 
 <div class="wrap">
 <h1>サカつく2026 検索ツール</h1>
