@@ -44,7 +44,7 @@ h1{
   font-size:32px;font-weight:900;text-align:center;margin:8px 0 18px;
 }
 .grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:end;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:14px;align-items:end;
 }
 .field label{
   display:block;font-size:17px;font-weight:900;margin:0 0 8px;
@@ -76,7 +76,7 @@ h1{
 }
 .outArea{display:none;margin-top:8px;}
 .kpiGrid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px;
 }
 .kpi{
   background:#fff;border:2px solid rgba(17,24,39,.08);border-radius:20px;padding:14px;text-align:center;
@@ -246,6 +246,10 @@ h1{
         <select id="thirdEffect" class="bigSelect"></select>
       </div>
       <div class="field">
+        <label for="fourthEffect">4番目に伸ばしたい効果</label>
+        <select id="fourthEffect" class="bigSelect"></select>
+      </div>
+      <div class="field">
         <label for="clubhouseLevel">クラブハウスLv</label>
         <select id="clubhouseLevel" class="bigSelect"></select>
       </div>
@@ -283,6 +287,10 @@ h1{
         <div class="kpi">
           <div id="thirdLabel" class="kpiLabel">3番目</div>
           <div id="thirdValue" class="kpiValue">0</div>
+        </div>
+        <div class="kpi">
+          <div id="fourthLabel" class="kpiLabel">4番目</div>
+          <div id="fourthValue" class="kpiValue">0</div>
         </div>
       </div>
 
@@ -330,6 +338,7 @@ function cmpScore(a, b){
   if (a.score1 !== b.score1) return a.score1 - b.score1;
   if (a.score2 !== b.score2) return a.score2 - b.score2;
   if (a.score3 !== b.score3) return a.score3 - b.score3;
+  if (a.score4 !== b.score4) return a.score4 - b.score4;
   if (a.cost !== b.cost) return b.cost - a.cost; // low cost wins
   if (a.count !== b.count) return a.count - b.count; // more facilities wins
   return 0;
@@ -369,7 +378,8 @@ function populateSelects(){
   const selects = [
     document.getElementById("firstEffect"),
     document.getElementById("secondEffect"),
-    document.getElementById("thirdEffect")
+    document.getElementById("thirdEffect"),
+    document.getElementById("fourthEffect")
   ];
   selects.forEach((sel, idx)=>{
     sel.innerHTML = effects.map(e=>`<option value="${escapeHtml(e)}">${escapeHtml(e)}</option>`).join("");
@@ -435,7 +445,7 @@ function createFacilityImage(facilityId, facilityName){
   trySetSrc(0);
   return wrap;
 }
-function categoryOptionsFor(categoryItems, first, second, third){
+function categoryOptionsFor(categoryItems, first, second, third, fourth){
   const maxInCategory = Math.max(...categoryItems.map(v => num(v.stack_group || 0)), 0);
   const options = [];
   const n = categoryItems.length;
@@ -448,6 +458,7 @@ function categoryOptionsFor(categoryItems, first, second, third){
       score1: chosen.reduce((s,v)=>s+facilityEffectValue(v, first), 0),
       score2: chosen.reduce((s,v)=>s+facilityEffectValue(v, second), 0),
       score3: chosen.reduce((s,v)=>s+facilityEffectValue(v, third), 0),
+      score4: chosen.reduce((s,v)=>s+facilityEffectValue(v, fourth), 0),
       count: chosen.length
     });
   }
@@ -468,7 +479,7 @@ function categoryOptionsFor(categoryItems, first, second, third){
   }
   return options.filter(opt => opt.cost <= currentMaxCost);
 }
-function solveSimulation(first, second, third){
+function solveSimulation(first, second, third, fourth){
   const groups = new Map();
   availableFacilities.forEach(item=>{
     const cat = norm(item.category);
@@ -477,10 +488,10 @@ function solveSimulation(first, second, third){
   });
 
   let states = new Array(currentMaxCost + 1).fill(null);
-  states[0] = {cost:0, score1:0, score2:0, score3:0, count:0, items:[]};
+  states[0] = {cost:0, score1:0, score2:0, score3:0, score4:0, count:0, items:[]};
 
   Array.from(groups.values()).forEach(categoryItems=>{
-    const opts = categoryOptionsFor(categoryItems, first, second, third);
+    const opts = categoryOptionsFor(categoryItems, first, second, third, fourth);
     const nextStates = new Array(currentMaxCost + 1).fill(null);
 
     for (let currentCost=0; currentCost<=currentMaxCost; currentCost++){
@@ -496,6 +507,7 @@ function solveSimulation(first, second, third){
           score1: base.score1 + opt.score1,
           score2: base.score2 + opt.score2,
           score3: base.score3 + opt.score3,
+          score4: base.score4 + opt.score4,
           count: base.count + opt.count,
           items: base.items.concat(opt.items)
         };
@@ -522,6 +534,7 @@ function solveSimulation(first, second, third){
         state.score1 === best.score1 &&
         state.score2 === best.score2 &&
         state.score3 === best.score3 &&
+        state.score4 === best.score4 &&
         state.items.map(v=>v.facility_id).sort().join(",") === best.items.map(v=>v.facility_id).sort().join(",");
       if (!sameAsBest) secondBest = state;
     }
@@ -529,7 +542,7 @@ function solveSimulation(first, second, third){
 
   return {best, secondBest};
 }
-function renderResult(first, second, third, result){
+function renderResult(first, second, third, fourth, result){
   const {best, secondBest} = result;
   document.getElementById("outArea").style.display = "block";
 
@@ -540,6 +553,8 @@ function renderResult(first, second, third, result){
   document.getElementById("secondValue").textContent = best.score2;
   document.getElementById("thirdLabel").textContent = `3番目：${third}`;
   document.getElementById("thirdValue").textContent = best.score3;
+  document.getElementById("fourthLabel").textContent = `4番目：${fourth}`;
+  document.getElementById("fourthValue").textContent = best.score4;
 
   const summaryBadges = document.getElementById("summaryBadges");
   summaryBadges.innerHTML = `
@@ -548,6 +563,7 @@ function renderResult(first, second, third, result){
     <span class="badge">${escapeHtml(first)} 合計：${best.score1}</span>
     <span class="badge">${escapeHtml(second)} 合計：${best.score2}</span>
     <span class="badge">${escapeHtml(third)} 合計：${best.score3}</span>
+    <span class="badge">${escapeHtml(fourth)} 合計：${best.score4}</span>
   `;
 
   const sortedItems = [...best.items].sort((a,b)=>{
@@ -560,6 +576,9 @@ function renderResult(first, second, third, result){
     const at = facilityEffectValue(a, third);
     const bt = facilityEffectValue(b, third);
     if (bt !== at) return bt - at;
+    const af = facilityEffectValue(a, fourth);
+    const bf = facilityEffectValue(b, fourth);
+    if (bf !== af) return bf - af;
     if (num(a.cost) !== num(b.cost)) return num(a.cost) - num(b.cost);
     return norm(a.facility_name).localeCompare(norm(b.facility_name), "ja");
   });
@@ -602,8 +621,8 @@ function renderResult(first, second, third, result){
   if (secondBest){
     compareArea.style.display = "block";
     compareText.textContent =
-      `次点構成は「${first}=${secondBest.score1}、${second}=${secondBest.score2}、${third}=${secondBest.score3}、コスト=${secondBest.cost}」でした。` +
-      ` 現在表示中の構成は、優先順位どおり 1番目 → 2番目 → 3番目 の順で最も有利な組み合わせです。`;
+      `次点構成は「${first}=${secondBest.score1}、${second}=${secondBest.score2}、${third}=${secondBest.score3}、${fourth}=${secondBest.score4}、コスト=${secondBest.cost}」でした。` +
+      ` 現在表示中の構成は、優先順位どおり 1番目 → 2番目 → 3番目 → 4番目 の順で最も有利な組み合わせです。`;
   } else {
     compareArea.style.display = "none";
     compareText.textContent = "";
@@ -619,15 +638,16 @@ function runSimulation(){
   const first = norm(document.getElementById("firstEffect").value);
   const second = norm(document.getElementById("secondEffect").value);
   const third = norm(document.getElementById("thirdEffect").value);
+  const fourth = norm(document.getElementById("fourthEffect").value);
   const selectedLevel = getSelectedLevel();
 
-  if (!first || !second || !third){
-    showError("3つの効果をすべて選択してください。");
+  if (!first || !second || !third || !fourth){
+    showError("4つの効果をすべて選択してください。");
     return;
   }
-  const uniq = new Set([first, second, third]);
-  if (uniq.size < 3){
-    showError("1番目・2番目・3番目はすべて別の効果を選択してください。");
+  const uniq = new Set([first, second, third, fourth]);
+  if (uniq.size < 4){
+    showError("1番目・2番目・3番目・4番目はすべて別の効果を選択してください。");
     return;
   }
 
@@ -640,12 +660,12 @@ function runSimulation(){
     return;
   }
 
-  const result = solveSimulation(first, second, third);
+  const result = solveSimulation(first, second, third, fourth);
   if (!result.best){
     showError("条件に合う構成が見つかりませんでした。");
     return;
   }
-  renderResult(first, second, third, result);
+  renderResult(first, second, third, fourth, result);
 }
 function resetSelections(){
   populateSelects();
