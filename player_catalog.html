@@ -466,7 +466,7 @@
   <h1>選手図鑑</h1>
   <div class="note">
     全選手を一覧で確認できます。<br>
-    選手名・国籍・成長タイプ・レアリティ・入手方法・入手場所・ポリシー・プレイスタイル・ポジションで絞り込み可能です。<br>
+    選手名・国籍・成長タイプ・レアリティ・入手方法・入手場所・ポリシー・プレイスタイル・プレイスタイルLv・ポジションで絞り込み可能です。<br>
     お気に入り選手登録すると「選手評価ツール」で性能をチェックする事が出来ます。
   </div>
 
@@ -506,6 +506,10 @@
         <div>
           <label for="fStyle">プレイスタイル</label>
           <select id="fStyle"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
+          <label for="fStyleLv">プレイスタイルLv</label>
+          <select id="fStyleLv"><option value="">（指定なし）</option></select>
         </div>
         <div>
           <label for="fPosition">ポジション</label>
@@ -681,6 +685,7 @@ function loadOptions(){
   fillSelect($("fAcqPlace"), uniqueSorted(rows.map(r=>r.acquisitionPlace)));
   fillSelect($("fPolicy"), uniqueSorted(rows.map(r=>r.policy)));
   fillSelect($("fStyle"), uniqueSorted(rows.map(r=>r.playStyle)));
+  fillSelect($("fStyleLv"), uniqueSorted(rows.map(r=>String(r.playStyleLv || ""))), romanLv);
   fillSelect($("fPosition"), uniqueSorted(rows.map(r=>r.mainPosition)));
 }
 
@@ -694,6 +699,7 @@ function currentFilterState(){
     acquisitionPlace: normalize($("fAcqPlace").value),
     policy: normalize($("fPolicy").value),
     playStyle: normalize($("fStyle").value),
+    playStyleLv: normalize($("fStyleLv").value),
     mainPosition: normalize($("fPosition").value),
     favoriteOnly: $("favoriteOnlyCheck") ? !!$("favoriteOnlyCheck").checked : false,
   };
@@ -710,6 +716,7 @@ function filterPlayers(){
     if(f.acquisitionPlace && p.acquisitionPlace !== f.acquisitionPlace) return false;
     if(f.policy && p.policy !== f.policy) return false;
     if(f.playStyle && p.playStyle !== f.playStyle) return false;
+    if(f.playStyleLv && String(p.playStyleLv) !== String(f.playStyleLv)) return false;
     if(f.mainPosition && p.mainPosition !== f.mainPosition) return false;
     if(f.favoriteOnly && !isFavoritePlayer(p)) return false;
     return true;
@@ -732,6 +739,7 @@ function renderCurrentFilters(){
   if(f.acquisitionPlace) parts.push(`入手場所：${esc(f.acquisitionPlace)}`);
   if(f.policy) parts.push(`ポリシー：${esc(f.policy)}`);
   if(f.playStyle) parts.push(`プレイスタイル：${esc(f.playStyle)}`);
+  if(f.playStyleLv) parts.push(`プレイスタイルLv：${esc(romanLv(f.playStyleLv))}`);
   if(f.mainPosition) parts.push(`ポジション：${esc(f.mainPosition)}`);
   if(f.favoriteOnly) parts.push(`お気に入り：のみ表示`);
 
@@ -831,6 +839,7 @@ function resetFilters(){
   $("fAcqPlace").value = "";
   $("fPolicy").value = "";
   $("fStyle").value = "";
+  $("fStyleLv").value = "";
   $("fPosition").value = "";
   if($("favoriteOnlyCheck")) $("favoriteOnlyCheck").checked = false;
   applyFilters();
