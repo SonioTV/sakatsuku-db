@@ -871,6 +871,37 @@
   }
 }
 
+.latestArticleScroll{
+  max-height:174px;
+  overflow-y:auto;
+  padding-right:6px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.latestArticleScroll::-webkit-scrollbar{
+  width:8px;
+}
+
+.latestArticleScroll::-webkit-scrollbar-thumb{
+  background:#b7d7bf;
+  border-radius:999px;
+}
+
+.latestArticleScroll::-webkit-scrollbar-track{
+  background:#eef7f0;
+  border-radius:999px;
+}
+
+.latestArticleScrollTitle{
+  margin:4px 0 2px;
+  font-size:13px;
+  font-weight:900;
+  color:#2e7d32;
+  text-align:center;
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -909,7 +940,8 @@
 <div class="card latestArticleCard">
   <div class="sectionTitle">最新の攻略記事</div>
 
-  <div class="latestArticleList">
+  <!-- 1件目から全てスクロール対象。高さは「記事2件分くらい」で固定 -->
+  <div class="latestArticleList latestArticleScroll">
 
     <a href="mctominay_pickup_sp_scout_review.html" class="latestArticleItem">
       <div class="latestArticleDate">2026/05/15</div>
