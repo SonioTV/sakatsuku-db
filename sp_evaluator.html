@@ -1331,11 +1331,36 @@ $("btnEvaluate").addEventListener("click", ()=>{
   renderResult(p);
 });
 
+/* URL指定で選手を自動評価 */
+function autoEvaluateFromUrl(){
+  const params = new URLSearchParams(window.location.search);
+  const pid = normalize(params.get("player") || "");
+
+  if(!pid) return;
+
+  const p = findPlayerById(pid);
+  if(!p){
+    setErr("URLで指定された選手データが見つかりませんでした。");
+    return;
+  }
+
+  // 候補プルダウンに該当選手を入れて選択状態にする
+  $("playerPick").innerHTML = `<option value="${esc(pid)}">${esc(p.name || p.player_name || pid)}</option>`;
+  $("playerPick").value = pid;
+
+  // 評価結果を自動表示
+  renderResult(p);
+
+  // 結果エリアへ少しスクロール
+  $("resultArea").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 /* init */
 (async ()=>{
   try{
     favoritePlayerIds = loadFavoritePlayerIds();
     await loadData();
+    autoEvaluateFromUrl();
   }catch(e){
     setErr(String(e && e.message ? e.message : e));
   }
