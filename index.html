@@ -512,6 +512,39 @@
     cursor:pointer;
   }
   .modalBody{ padding:16px 18px 18px; }
+
+
+/* ===== 選手詳細モーダル：画像・評価ツールリンク ===== */
+.modalPlayerImgWrap{
+  text-align:center;
+  margin:4px 0 18px;
+}
+.modalPlayerImg{
+  width:160px;
+  max-width:70%;
+  height:auto;
+  border-radius:14px;
+  border:1px solid #e7e7e7;
+  background:#fafafa;
+  padding:6px;
+}
+.modalEvalLinkWrap{
+  text-align:center;
+  margin:18px 0 4px;
+}
+.modalEvalLink{
+  display:inline-block;
+  padding:12px 16px;
+  border-radius:14px;
+  background:#2e7d32;
+  color:#fff;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 10px 18px rgba(0,0,0,.14);
+}
+.modalEvalLink:active{
+  transform:scale(.98);
+}
 .modalBody .mLine{
   margin:8px 0;
   display:flex;
@@ -1416,6 +1449,7 @@ function openPlayerModal(p){
   const title = nvl(p.name,"-");
   document.getElementById("modalTitle").textContent = title;
 
+  const playerId = getPlayerId(p);
   const nat = nvl(p.nationality, "-");
   const gt = nvl(p.growthType || p.growth_type, "-");
   const sub = (nat!=="-" || gt!=="-") ? `国籍：${nat} / 成長タイプ：${gt}` : "";
@@ -1426,10 +1460,16 @@ function openPlayerModal(p){
   const lv = romanLv(p.playStyleLv);
 
   const lines = [];
+
+  // 攻略記事と同じ仕組み：img/players/{player_id}.png を表示
+  if(playerId){
+    lines.push(`<div class="modalPlayerImgWrap"><img class="modalPlayerImg" src="img/players/${esc(playerId)}.png" alt="${esc(title)}" loading="lazy" onerror="this.closest('.modalPlayerImgWrap').style.display='none';"></div>`);
+  }
+
   // ※ 要望の順：区分,入手方法,入手場所,入手可能期間,初期総合力,最大強化,ポリシー,プレイスタイル,メインポジション,メインスキル,メイン特徴
   lines.push(`<div class="mLine"><span class="mKey">区分</span><span class="mVal">${esc(nvl(p.category,"-"))}</span></div>`);
-lines.push(`<div class="mLine"><span class="mKey">レアリティ</span><span class="mVal">${esc((p.rarity!=null && String(p.rarity)!=="") ? ("★" + String(p.rarity).replace(/^★/,"")) : "-")}</span></div>`);
-lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class="mVal">${esc(normalizeAcquisitionMethod(p.acquisitionMethod))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">レアリティ</span><span class="mVal">${esc((p.rarity!=null && String(p.rarity)!=="") ? ("★" + String(p.rarity).replace(/^★/,"")) : "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class="mVal">${esc(normalizeAcquisitionMethod(p.acquisitionMethod))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手場所</span><span class="mVal">${esc(nvl(p.acquisitionPlace,"-"))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手可能期間</span><span class="mVal">${esc(nvl(p.availablePeriod,"-"))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">初期総合力</span><span class="mVal">${esc(nvl(p.overall,"-"))}</span></div>`);
@@ -1439,6 +1479,11 @@ lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class
   lines.push(`<div class="mLine"><span class="mKey">メインポジション</span><span class="mVal">${esc(nvl(p.mainPosition,"-"))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">メインスキル</span><span class="mVal">${esc(nvl(p.mainSkill,"-"))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">メイン特徴</span><span class="mVal">${esc(nvl(p.mainTrait,"-"))}</span></div>`);
+
+  // 攻略記事と同じ仕組み：sp_evaluator.html?player={player_id} へ遷移
+  if(playerId){
+    lines.push(`<div class="modalEvalLinkWrap"><a class="modalEvalLink" href="sp_evaluator.html?player=${encodeURIComponent(playerId)}">選手評価ツールで詳しく見る</a></div>`);
+  }
 
   document.getElementById("modalBody").innerHTML = lines.join("");
   const back = document.getElementById("modalBack");
