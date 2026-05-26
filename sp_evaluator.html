@@ -434,6 +434,45 @@
   .pmodalBody .mKey{ font-weight:900; display:inline-block; min-width:140px; color:#111; }
   .pmodalBody .mVal{ color:#111; font-weight:700; }
 
+
+
+  /* ===== Combo rank filter / badge ===== */
+  .comboRankFilter{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    font-weight:900;
+    line-height:1.3;
+    user-select:none;
+  }
+  .comboRankFilter input{
+    width:16px;
+    height:16px;
+    margin:0;
+    accent-color:#f59e0b;
+  }
+  .rankMiniBadge{
+    display:inline-block;
+    margin-left:4px;
+    padding:1px 6px;
+    border-radius:999px;
+    font-size:9px;
+    font-weight:900;
+    line-height:1.35;
+    vertical-align:middle;
+    border:1px solid rgba(0,0,0,.18);
+    color:#111;
+    background:#fff;
+    white-space:nowrap;
+  }
+  .rankMiniBadge.rankGold{
+    background:linear-gradient(180deg,var(--gold1),var(--gold2));
+  }
+  .rankMiniBadge.rankSilver{
+    background:linear-gradient(180deg,var(--silver1),var(--silver2));
+  }
+
 </style>
 </head>
 <body>
@@ -827,20 +866,21 @@ function getReqField(req, keys, def=""){
   return def;
 }
 
-/* ===== Combo aptitude (Gold only) ===== */
-function calcGoldCombos(target){
+/* ===== Combo aptitude (Gold + Silver / Gold only toggle) ===== */
+function calcRankCombos(target, goldOnly=false){
   const pPol = normalize(target.policy);
   const pPos = normalize(target.mainPosition);
   const pSty = normalize(target.playStyle);
   const pLv  = toNum(target.playStyleLv);
 
-  const gold = COMBOS.filter(c=>getComboRank(c)==="金");
+  const targetRanks = goldOnly ? ["金"] : ["金", "銀"];
+  const rankCombos = COMBOS.filter(c=>targetRanks.includes(getComboRank(c)));
 
   const full = [];
   const polDiff = [];
   const posDiff = [];
 
-  for(const c of gold){
+  for(const c of rankCombos){
     const pols = getComboPolicies(c);
     const polOk = (pols.length===0) ? true : pols.includes(pPol);
     const reqs = getComboReqs(c);
@@ -1077,9 +1117,12 @@ function openComboList(title, combos){
         ${list.map(c=>{
           const cid = getComboId(c);
           const nm  = getComboName(c);
+          const rank = getComboRank(c);
+          const rankClass = rank === "金" ? "rankGold" : (rank === "銀" ? "rankSilver" : "");
+          const badge = rank ? `<span class="rankMiniBadge ${rankClass}" style="font-size:.55em;">${esc(rank)}</span>` : "";
           return `<div style="margin:8px 0;">
                     <a href="#" class="tagBtn" data-combo-id="${esc(cid)}" style="font-size:1.5em;font-weight:900;color:#0b3d50;text-decoration:underline;text-underline-offset:3px;">
-                      ${esc(nm)}
+                      ${esc(nm)}${badge}
                     </a>
                   </div>`;
         }).join("")}
@@ -1116,7 +1159,8 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
   const styShow = `${esc(sty||"-")}${lv!=null?` ${esc(romanLv(lv))}`:""}`;
 
   const rankRows = calcRankings(target);
-  const combos = calcGoldCombos(target);
+  const goldOnly = $("goldOnlyCombos") ? !!$("goldOnlyCombos").checked : false;
+  const combos = calcRankCombos(target, goldOnly);
   const compat = calcCompat(target);
 
   const compatPickFull = pickOnePlayer(compat.full);
@@ -1172,7 +1216,13 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
     <!-- ② Combo aptitude -->
     <div class="block">
       <div class="hdr blue" style="grid-template-columns: 1fr 1fr;">
-        <div>フォメコン適性<br>（金ランクのみ）</div>
+        <div>
+          フォメコン適性<br>
+          <label class="comboRankFilter">
+            <input id="goldOnlyCombos" type="checkbox" ${goldOnly ? "checked" : ""}>
+            <span>金ランクのみ</span>
+          </label>
+        </div>
         <div class="center">コンボ名</div>
       </div>
 
@@ -1194,6 +1244,11 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
       ${renderCompatLine("プレイスタイル違い", compat.styleDiff, compatPickSty, "compat_style")}
     </div>
   `;
+
+  const goldOnlyBox = $("goldOnlyCombos");
+  if(goldOnlyBox){
+    goldOnlyBox.addEventListener("change", ()=>renderResult(target));
+  }
 
   // attach combo click handlers
   out.querySelectorAll("[data-combo-id]").forEach(el=>{
@@ -1249,7 +1304,10 @@ function renderComboLine(label, combos, comboKey){
     const first = sorted[0];
     const cid = getComboId(first);
     const nm = getComboName(first);
-    right = `<a href="#" class="tag tagBtn" data-combo-id="${esc(cid)}">${esc(nm)}</a>`;
+    const rank = getComboRank(first);
+    const rankClass = rank === "金" ? "rankGold" : (rank === "銀" ? "rankSilver" : "");
+    const badge = rank ? `<span class="rankMiniBadge ${rankClass}">${esc(rank)}</span>` : "";
+    right = `<a href="#" class="tag tagBtn" data-combo-id="${esc(cid)}">${esc(nm)}${badge}</a>`;
     if(count>1){
       right += `<span class="resultMore circPill" data-combo-key="${esc(comboKey)}">他${count-1}個</span>`;
     }
