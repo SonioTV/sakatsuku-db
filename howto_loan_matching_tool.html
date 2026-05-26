@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="サカつく2026攻略DBの期限付き移籍マッチングツールの使い方を解説。伸ばしたい能力・プレイスタイル・移籍期間からおすすめの移籍先を探す方法と活用ポイントを紹介。">
+<title>期限付き移籍マッチングツールの使い方｜育成目的に合う移籍先を探す方法【サカつく2026攻略DB】</title>
+<link rel="canonical" href="https://sakatsuku2026-db.com/howto_loan_matching_tool.html">
+
+<style>
+:root{
+  --green:#22c55e; --green-dark:#15803d; --green-soft:#ecfdf3;
+  --blue:#0b63d1; --blue-soft:#eef6ff; --orange:#f59e0b;
+  --text:#111827; --muted:#5f6368; --line:#e5e7eb;
+  --bg:#f6f7fb; --card:#ffffff; --shadow:0 10px 26px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.85;background:var(--bg);color:var(--text)}
+main{max-width:920px;margin:0 auto;padding:18px 14px 60px}
+.hero{background:linear-gradient(180deg,#ffffff,#f0fff5);border:1px solid #dff3e5;border-left:7px solid var(--green);border-radius:22px;box-shadow:var(--shadow);padding:22px 18px;margin-bottom:18px}
+h1{font-size:28px;line-height:1.35;margin:0 0 10px}
+.lead{font-size:16px;color:#263238;margin:10px 0 0}
+.update{color:var(--muted);font-size:13px;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:18px;margin:16px 0}
+h2{font-size:22px;line-height:1.4;margin:0 0 12px;padding-left:10px;border-left:6px solid var(--green)}
+h3{font-size:18px;margin:18px 0 8px}
+p{margin:10px 0}
+ul,ol{padding-left:22px}
+li{margin:7px 0}
+strong{background:linear-gradient(transparent 62%,#d9fbe4 62%)}
+.badge{display:inline-block;padding:3px 9px;border-radius:999px;background:var(--green-soft);color:var(--green-dark);font-size:12px;font-weight:900;vertical-align:middle}
+.pointList{display:grid;gap:10px;margin-top:12px}
+.point{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:13px 14px}
+.point b{display:block;color:var(--green-dark);margin-bottom:3px}
+.stepBox{counter-reset:step;display:grid;gap:12px}
+.step{position:relative;background:#fff;border:1px solid #dfe8e2;border-radius:16px;padding:14px 14px 14px 54px}
+.step::before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:16px;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
+.note{background:#fff8e6;border:1px solid #f5d28a;border-left:6px solid var(--orange);border-radius:16px;padding:14px}
+.example{background:var(--blue-soft);border:1px solid #d5e8ff;border-left:6px solid #4a90e2;border-radius:16px;padding:14px}
+.tipGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tip{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:13px}
+.tip b{display:block;color:var(--green-dark)}
+.linkBox{display:grid;gap:10px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:900;border-radius:16px;padding:14px 16px;box-shadow:0 10px 20px rgba(0,0,0,.12)}
+.btn-main{background:var(--green);color:#fff}
+.btn-sub{background:#4a90e2;color:#fff}
+.btn-gray{background:#fff;color:var(--blue);border:1px solid var(--line);box-shadow:none}
+.related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.related a{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px;text-decoration:none;color:var(--blue);font-weight:900}
+.faq dt{font-weight:900;color:var(--green-dark);margin-top:14px}
+.faq dd{margin:6px 0 12px 0;padding:0 0 0 12px;border-left:3px solid #d9fbe4}
+.footerLink{text-align:center;margin-top:24px}
+@media(max-width:560px){
+  main{padding:14px 10px 44px}
+  h1{font-size:24px}
+  h2{font-size:20px}
+  .card,.hero{padding:16px}
+  .related,.tipGrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<main>
+
+<section class="hero">
+  <div class="update">最終更新日：2026-05-20</div>
+  <h1>期限付き移籍マッチングツールの使い方｜育成目的に合う移籍先を探す方法</h1>
+  <p class="lead">
+    サカつく2026攻略DBの「期限付き移籍マッチングツール」は、選手のプレイスタイルや伸ばしたい能力に合わせて、
+    <strong>どの期限付き移籍先を選ぶべきか</strong>を探すための育成補助ツールです。
+    なんとなく移籍先を選ぶのではなく、目的に合ったリーグや条件を選ぶことで、育成効率を高めやすくなります。
+  </p>
+</section>
+
+<section class="card">
+  <h2>このツールを使う</h2>
+  <div class="linkBox">
+    <a class="btn btn-main" href="loan_matching_tool.html">期限付き移籍マッチングツールを使う</a>
+    <a class="btn btn-sub" href="index.html">サカつく2026攻略DBトップへ</a>
+  </div>
+</section>
+
+<section class="card">
+  <h2>期限付き移籍マッチングツールでできること <span class="badge">育成補助</span></h2>
+  <p>
+    期限付き移籍は、選手を強化するうえで重要な育成要素です。
+    このツールでは、<strong>伸ばしたい能力・プレイスタイル・移籍期間</strong>をもとに、候補となる移籍先を探せます。
+  </p>
+
+  <div class="pointList">
+    <div class="point"><b>① プレイスタイルに合う移籍先を探せる</b>ストライカー、パサー、組立CBなど、選手の役割に合わせて候補を確認できます。</div>
+    <div class="point"><b>② 伸ばしたい能力から逆引きできる</b>シュート、パス、守備、フィジカルなど、育成目的に合わせて移籍先を選びやすくなります。</div>
+    <div class="point"><b>③ 移籍期間で絞り込める</b>短期・中期・長期など、今の育成計画に合わせて候補を絞ることができます。</div>
+    <div class="point"><b>④ 上限条件も考慮しやすい</b>能力の上限を意識したい時にも、条件を見ながら移籍先を選びやすくなります。</div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>基本的な使い方</h2>
+
+  <div class="stepBox">
+    <div class="step">
+      <h3>プレイスタイルを選ぶ</h3>
+      <p>
+        まずは育成したい選手のプレイスタイルを選びます。
+        プレイスタイルによって伸ばしたい能力や向いている育成方針が変わるため、最初に正しく選ぶことが大切です。
+      </p>
+    </div>
+
+    <div class="step">
+      <h3>移籍期間を選ぶ</h3>
+      <p>
+        次に、期限付き移籍の期間を選択します。
+        すぐに戦力化したい場合は短め、じっくり育成したい場合は長めの候補を確認するなど、育成方針に合わせて選びましょう。
+      </p>
+    </div>
+
+    <div class="step">
+      <h3>伸ばしたい成長項目を選ぶ</h3>
+      <p>
+        選手に強化したい能力を選びます。
+        例えばFWならシュートやドリブル、MFならパスやテクニック、DFなら守備やフィジカルなど、役割に合わせて選ぶのがおすすめです。
+      </p>
+    </div>
+
+    <div class="step">
+      <h3>候補の移籍先を確認する</h3>
+      <p>
+        条件に合う移籍先が表示されます。
+        リーグ名、対象能力、期間、条件を見ながら、育成したい選手に最も合う候補を選びましょう。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>結果画面の見方</h2>
+
+  <h3>リーグ名・移籍先</h3>
+  <p>
+    条件に合う移籍先が表示されます。
+    リーグ名はゲーム内のシーズンや昇格・降格などの影響で表記が変わる場合があるため、近い条件の移籍先として確認しましょう。
+  </p>
+
+  <h3>伸ばせる能力</h3>
+  <p>
+    その移籍先で伸ばしやすい能力を確認します。
+    選手の役割に合った能力を伸ばせるかどうかが、移籍先選びで最も重要です。
+  </p>
+
+  <h3>移籍期間</h3>
+  <p>
+    移籍に必要な期間を確認します。
+    すぐに使いたい主力選手を長期間出すと戦力が落ちることもあるため、チーム状況に合わせて判断しましょう。
+  </p>
+
+  <h3>上限条件</h3>
+  <p>
+    能力の上限を意識する場合は、上限条件も確認しましょう。
+    特定能力をさらに伸ばしたい時や、育成の仕上げ段階では特に重要になります。
+  </p>
+</section>
+
+<section class="card">
+  <h2>おすすめの使い方</h2>
+
+  <h3>① 選手の役割から伸ばす能力を決める</h3>
+  <p>
+    まずは選手の役割を考えましょう。
+    FWなら得点力、MFならチャンスメイク、DFなら守備力、GKならセービング関連を重視すると、育成方針が決めやすくなります。
+  </p>
+
+  <h3>② 弱点補強ではなく長所強化を意識する</h3>
+  <p>
+    期限付き移籍では、弱点を少し埋めるよりも、その選手の長所をさらに伸ばした方が使いやすくなることがあります。
+    例えばストライカーならシュート系、パサーならパス系を伸ばすなど、役割に合う強化がおすすめです。
+  </p>
+
+  <h3>③ 主力選手は期間に注意する</h3>
+  <p>
+    主力選手を長期間移籍に出すと、その間チームから外れる場合があります。
+    すぐに試合で使いたい選手は、短めの期間から候補を探すと運用しやすいです。
+  </p>
+
+  <h3>④ 育成前に選手評価ツールで価値を確認する</h3>
+  <p>
+    育成素材や時間を使う前に、選手評価ツールでその選手の順位やコンボ適性を確認しましょう。
+    育てる価値が高い選手を優先すると、育成効率が上がります。
+  </p>
+</section>
+
+<section class="card">
+  <h2>プレイスタイル別の考え方</h2>
+
+  <div class="tipGrid">
+    <div class="tip"><b>FW系</b>ストライカー、ラインブレーカー、ポストプレーヤーなどは、シュート・ドリブル・フィジカル系を優先すると役割を活かしやすいです。</div>
+    <div class="tip"><b>MF系</b>パサー、アタッカー、セントラルMFなどは、パス・テクニック・展開力に関わる能力を伸ばすと使いやすくなります。</div>
+    <div class="tip"><b>DF系</b>ストッパー、ハードマーカー、組立CB、サイドバック系は、守備・フィジカル・パス系を目的に合わせて選びましょう。</div>
+    <div class="tip"><b>GK系</b>オーソドックスGK、スイーパーGKは、守備系やGK能力を意識して移籍先を選ぶのがおすすめです。</div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>具体的な活用例</h2>
+
+  <div class="example">
+    <h3>例：ストライカーのSP選手を育てたい場合</h3>
+    <ol>
+      <li>期限付き移籍マッチングツールを開く</li>
+      <li>プレイスタイルで「ストライカー」を選ぶ</li>
+      <li>伸ばしたい能力でシュート系を選ぶ</li>
+      <li>移籍期間を選ぶ</li>
+      <li>表示された候補から、育成方針に合う移籍先を確認する</li>
+      <li>移籍後は選手評価ツールや編成ツールで再確認する</li>
+    </ol>
+    <p>
+      この流れで使うと、なんとなく移籍先を選ぶよりも、
+      <strong>選手の役割に合った育成</strong>がしやすくなります。
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>初心者におすすめの使い方</h2>
+
+  <p>
+    はじめて使う場合は、細かく考えすぎず、次の3ステップで使うのがおすすめです。
+  </p>
+
+  <ol>
+    <li><strong>その選手の役割を決める：</strong>点を取る、守る、パスを出すなど</li>
+    <li><strong>役割に合う能力を選ぶ：</strong>FWならシュート、DFなら守備など</li>
+    <li><strong>無理のない移籍期間を選ぶ：</strong>主力なら短め、育成枠なら長めも候補</li>
+  </ol>
+
+  <p>
+    この考え方だけでも、期限付き移籍の失敗をかなり減らせます。
+  </p>
+</section>
+
+<section class="card">
+  <h2>よくある失敗と注意点</h2>
+
+  <h3>なんとなく移籍先を選んでしまう</h3>
+  <p>
+    期限付き移籍は、選手の育成方向に大きく影響します。
+    適当に選ぶのではなく、伸ばしたい能力と選手の役割を合わせて選びましょう。
+  </p>
+
+  <h3>短所を補うことばかり考える</h3>
+  <p>
+    弱点補強も大切ですが、選手の長所を伸ばした方が結果的に使いやすいことがあります。
+    特に役割がはっきりした選手は、長所強化を優先するのがおすすめです。
+  </p>
+
+  <h3>主力を長期間出してしまう</h3>
+  <p>
+    主力選手を長期間移籍に出すと、試合で使えない期間が発生する場合があります。
+    チーム状況と移籍期間を見ながら判断しましょう。
+  </p>
+
+  <h3>育成する価値を確認しない</h3>
+  <p>
+    育成には時間やリソースが必要です。
+    期限付き移籍に出す前に、選手評価ツールや総合力ランキングで育成優先度を確認すると失敗しにくくなります。
+  </p>
+
+  <div class="note">
+    <strong>ポイント：</strong>
+    期限付き移籍マッチングツールは「どこに出すか」を決めるだけでなく、
+    「どんな選手に育てたいか」を整理するためにも使えます。
+  </div>
+</section>
+
+<section class="card">
+  <h2>関連ツール・関連記事</h2>
+  <div class="related">
+    <a href="howto_sp_evaluator.html">選手評価ツールの使い方</a>
+    <a href="howto_overall_ranking.html">総合力ランキングの使い方</a>
+    <a href="howto_strongest_team_simulation.html">最強チームシミュレーションの使い方</a>
+    <a href="howto_combo_search.html">コンボ検索の使い方</a>
+  </div>
+</section>
+
+<section class="card">
+  <h2>よくある質問</h2>
+  <dl class="faq">
+    <dt>Q. 期限付き移籍マッチングツールはどんな時に使えばいい？</dt>
+    <dd>選手を育成したいけど、どの移籍先を選べばいいか迷った時に使うのがおすすめです。特にSP選手の育成前に便利です。</dd>
+
+    <dt>Q. 伸ばす能力はどう決めればいい？</dt>
+    <dd>選手の役割から考えるのが基本です。FWなら得点力、MFならパスやテクニック、DFなら守備やフィジカルを意識すると選びやすいです。</dd>
+
+    <dt>Q. 移籍期間は長い方がいい？</dt>
+    <dd>必ずしも長い方が良いとは限りません。主力選手なら短め、育成枠なら長めも候補になります。チーム状況に合わせて選びましょう。</dd>
+
+    <dt>Q. 上限条件は見た方がいい？</dt>
+    <dd>育成の仕上げ段階や特定能力をさらに伸ばしたい時は重要です。最初は伸ばしたい能力を優先し、慣れてきたら上限条件も確認しましょう。</dd>
+
+    <dt>Q. 選手評価ツールと併用した方がいい？</dt>
+    <dd>はい。期限付き移籍に出す前に、その選手が育成する価値の高い選手か確認すると、育成リソースを無駄にしにくくなります。</dd>
+  </dl>
+</section>
+
+<p class="footerLink">
+  <a class="btn btn-gray" href="index.html">← サイトトップに戻る</a>
+</p>
+
+</main>
+</body>
+</html>

@@ -935,6 +935,84 @@
   text-align:center;
 }
 
+
+/* ===== サイトについて：使い方もくじ ===== */
+.aboutGuideBox{
+  margin-top:18px;
+  padding:16px;
+  border-radius:18px;
+  background:#f1faf3;
+  border:1px solid #d8eadc;
+}
+.aboutGuideTitle{
+  text-align:center;
+  font-size:22px;
+  font-weight:900;
+  color:#14532d;
+  margin:0 0 12px;
+}
+.aboutGuideGrid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+.aboutGuideItem{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:86px;
+  padding:12px 10px;
+  border-radius:16px;
+  background:#fff;
+  border:1px solid #dfe8e2;
+  text-decoration:none;
+  color:#111;
+  box-shadow:0 8px 16px rgba(0,0,0,.06);
+  transition:.12s;
+}
+.aboutGuideItem:active{
+  transform:scale(.98);
+}
+.aboutGuideItem strong{
+  display:block;
+  font-size:17px;
+  line-height:1.3;
+  color:#0b63d1;
+  text-align:center;
+}
+.aboutGuideItem span{
+  display:block;
+  margin-top:6px;
+  font-size:12px;
+  line-height:1.45;
+  color:#555;
+  font-weight:800;
+  text-align:center;
+}
+@media (max-width:700px){
+  .aboutGuideGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media (max-width:480px){
+  .aboutGuideBox{
+    padding:12px;
+  }
+  .aboutGuideTitle{
+    font-size:19px;
+  }
+  .aboutGuideGrid{
+    grid-template-columns:1fr;
+  }
+  .aboutGuideItem{
+    min-height:70px;
+    padding:12px;
+  }
+  .aboutGuideItem strong{
+    font-size:16px;
+  }
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -1026,7 +1104,37 @@
     分かりやすく判断できるように設計しており、
     初心者から上級者まで活用できる内容になっています。
 
-  <small style="display:block;margin-top:6px;opacity:.75;">
+    <div class="aboutGuideBox">
+      <div class="aboutGuideTitle">サカつく2026攻略DBもくじ</div>
+      <div class="aboutGuideGrid">
+        <a class="aboutGuideItem" href="howto_combo_search.html">
+          <strong>コンボ検索</strong>
+          <span>選手から発動候補のコンボを探す</span>
+        </a>
+        <a class="aboutGuideItem" href="howto_player_search.html">
+          <strong>選手検索</strong>
+          <span>コンボから対応SP選手を逆引き</span>
+        </a>
+        <a class="aboutGuideItem" href="howto_sp_evaluator.html">
+          <strong>選手評価ツール</strong>
+          <span>順位・性能・金コンボ適性を確認</span>
+        </a>
+        <a class="aboutGuideItem" href="howto_overall_ranking.html">
+          <strong>総合力ランキング</strong>
+          <span>初期総合力・最大強化を比較</span>
+        </a>
+        <a class="aboutGuideItem" href="howto_loan_matching_tool.html">
+          <strong>期限付き移籍<br>マッチングツール</strong>
+          <span>育成目的に合う移籍先を探す</span>
+        </a>
+        <a class="aboutGuideItem" href="howto_strongest_team_simulation.html">
+          <strong>最強チーム<br>シミュレーション</strong>
+          <span>コンボ軸の理想編成を確認</span>
+        </a>
+      </div>
+    </div>
+
+  <small style="display:block;margin-top:10px;opacity:.75;">
     このサイトはソニオTVとChatGPTが共同開発しました
   </small>
   </div>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="サカつく2026攻略DBの選手評価ツールの使い方を解説。SP選手の総合力・最大強化・ポリシー別順位・ポジション別順位・コンボ適性を確認する方法とおすすめの使い方を紹介。">
+<title>選手評価ツールの使い方｜SP選手の強さとコンボ適性を調べる方法【サカつく2026攻略DB】</title>
+<link rel="canonical" href="https://sakatsuku2026-db.com/howto_sp_evaluator.html">
+
+<style>
+:root{
+  --green:#22c55e; --green-dark:#15803d; --green-soft:#ecfdf3;
+  --blue:#0b63d1; --blue-soft:#eef6ff; --orange:#f59e0b;
+  --text:#111827; --muted:#5f6368; --line:#e5e7eb;
+  --bg:#f6f7fb; --card:#ffffff; --shadow:0 10px 26px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.85;background:var(--bg);color:var(--text)}
+main{max-width:920px;margin:0 auto;padding:18px 14px 60px}
+.hero{background:linear-gradient(180deg,#ffffff,#f0fff5);border:1px solid #dff3e5;border-left:7px solid var(--green);border-radius:22px;box-shadow:var(--shadow);padding:22px 18px;margin-bottom:18px}
+h1{font-size:28px;line-height:1.35;margin:0 0 10px}
+.lead{font-size:16px;color:#263238;margin:10px 0 0}
+.update{color:var(--muted);font-size:13px;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:18px;margin:16px 0}
+h2{font-size:22px;line-height:1.4;margin:0 0 12px;padding-left:10px;border-left:6px solid var(--green)}
+h3{font-size:18px;margin:18px 0 8px}
+p{margin:10px 0}
+ul,ol{padding-left:22px}
+li{margin:7px 0}
+strong{background:linear-gradient(transparent 62%,#d9fbe4 62%)}
+.badge{display:inline-block;padding:3px 9px;border-radius:999px;background:var(--green-soft);color:var(--green-dark);font-size:12px;font-weight:900;vertical-align:middle}
+.pointList{display:grid;gap:10px;margin-top:12px}
+.point{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:13px 14px}
+.point b{display:block;color:var(--green-dark);margin-bottom:3px}
+.stepBox{counter-reset:step;display:grid;gap:12px}
+.step{position:relative;background:#fff;border:1px solid #dfe8e2;border-radius:16px;padding:14px 14px 14px 54px}
+.step::before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:16px;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
+.note{background:#fff8e6;border:1px solid #f5d28a;border-left:6px solid var(--orange);border-radius:16px;padding:14px}
+.example{background:var(--blue-soft);border:1px solid #d5e8ff;border-left:6px solid #4a90e2;border-radius:16px;padding:14px}
+.linkBox{display:grid;gap:10px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:900;border-radius:16px;padding:14px 16px;box-shadow:0 10px 20px rgba(0,0,0,.12)}
+.btn-main{background:var(--green);color:#fff}
+.btn-sub{background:#4a90e2;color:#fff}
+.btn-gray{background:#fff;color:var(--blue);border:1px solid var(--line);box-shadow:none}
+.related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.related a{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px;text-decoration:none;color:var(--blue);font-weight:900}
+.faq dt{font-weight:900;color:var(--green-dark);margin-top:14px}
+.faq dd{margin:6px 0 12px 0;padding:0 0 0 12px;border-left:3px solid #d9fbe4}
+.footerLink{text-align:center;margin-top:24px}
+@media(max-width:560px){
+  main{padding:14px 10px 44px}
+  h1{font-size:24px}
+  h2{font-size:20px}
+  .card,.hero{padding:16px}
+  .related{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<main>
+
+<section class="hero">
+  <div class="update">最終更新日：2026-05-20</div>
+  <h1>選手評価ツールの使い方｜SP選手の強さとコンボ適性を調べる方法</h1>
+  <p class="lead">
+    サカつく2026攻略DBの「選手評価ツール」は、気になるSP選手が
+    <strong>全体でどのくらい強いのか、同じポジション内で上位なのか、どの金コンボに向いているのか</strong>
+    をまとめて確認できる機能です。
+    ガチャを引くべきか、育成するべきか、編成に入れるべきかを判断したい時に役立ちます。
+  </p>
+</section>
+
+<section class="card">
+  <h2>このツールを使う</h2>
+  <div class="linkBox">
+    <a class="btn btn-main" href="sp_evaluator.html">選手評価ツールを使う</a>
+    <a class="btn btn-sub" href="index.html">サカつく2026攻略DBトップへ</a>
+  </div>
+</section>
+
+<section class="card">
+  <h2>選手評価ツールでできること <span class="badge">性能チェック</span></h2>
+  <p>
+    選手評価ツールは、単に選手の総合力を見るだけではなく、
+    <strong>その選手がどの条件で強いのか</strong>を確認するためのツールです。
+  </p>
+
+  <div class="pointList">
+    <div class="point"><b>① SP選手の総合力順位を確認できる</b>選択したSP選手が、全SP選手の中でどのくらいの位置にいるのかを確認できます。</div>
+    <div class="point"><b>② 最大強化後の評価を確認できる</b>初期総合力だけでなく、最大強化後の数値も比較できるため、育成後の伸びも判断できます。</div>
+    <div class="point"><b>③ ポリシー別・ポジション別の順位がわかる</b>同じポリシー内、同じメインポジション内、同じプレイスタイル内での評価を確認できます。</div>
+    <div class="point"><b>④ 金ランクコンボへの適性を確認できる</b>選手がどの金コンボ条件に合うのかを確認できるので、編成の軸を決める時に便利です。</div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>基本的な使い方</h2>
+
+  <div class="stepBox">
+    <div class="step">
+      <h3>検索条件を入力する</h3>
+      <p>ポリシー、ポジション、プレイスタイル、選手名などから調べたいSP選手を探します。選手名の一部だけでも検索できるため、フルネームを覚えていなくても使いやすいです。</p>
+    </div>
+
+    <div class="step">
+      <h3>評価したい選手を選ぶ</h3>
+      <p>候補に表示された選手の中から、評価を見たい選手を選びます。新しく入手した選手や、ガチャで狙うか迷っている選手を選ぶのがおすすめです。</p>
+    </div>
+
+    <div class="step">
+      <h3>順位・性能を確認する</h3>
+      <p>選手を選ぶと、全体順位、ポリシー別順位、ポジション別順位、プレイスタイル別順位などが表示されます。これにより、その選手がどのカテゴリで強いのかが見えやすくなります。</p>
+    </div>
+
+    <div class="step">
+      <h3>コンボ適性を確認する</h3>
+      <p>金ランクコンボへの適性を確認します。強い選手でも、狙っているコンボに合わない場合は編成優先度が下がることがあります。</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>評価結果の見方</h2>
+
+  <h3>全体順位</h3>
+  <p>全SP選手の中で、その選手がどのくらい上位にいるかを確認できます。まず最初に見るべき基本指標です。</p>
+
+  <h3>最大強化順位</h3>
+  <p>最大まで強化した時の評価です。初期総合力が高くても伸びが控えめな選手、逆に育成後に大きく評価が上がる選手がいるため、<strong>長く使う予定なら最大強化順位も重要</strong>です。</p>
+
+  <h3>ポリシー別順位</h3>
+  <p>同じポリシーの選手だけで比較した順位です。カウンター染め、ポゼッション染めなど、チーム方針を決めている場合は特に重要になります。</p>
+
+  <h3>ポジション別順位</h3>
+  <p>同じメインポジション内での順位です。例えばCF、CB、GKなど、特定ポジションの補強候補を比較したい時に役立ちます。</p>
+
+  <h3>プレイスタイル別順位</h3>
+  <p>同じプレイスタイル内での評価です。コンボ発動条件ではプレイスタイルが重要になるため、「同じ役割の中で誰が強いか」を見る時に便利です。</p>
+</section>
+
+<section class="card">
+  <h2>おすすめの使い方</h2>
+
+  <h3>① ガチャを引く前の判断に使う</h3>
+  <p>新SP選手が登場した時、まず選手評価ツールで性能を確認しましょう。全体順位だけでなく、ポジション別・プレイスタイル別で上位なら、実戦で使いやすい可能性が高いです。</p>
+
+  <h3>② 育成優先度を決める</h3>
+  <p>育成素材や資金が限られている場合、すべてのSP選手を育てるのは難しいです。最大強化後の順位やコンボ適性を見て、優先して育てる選手を決めましょう。</p>
+
+  <h3>③ コンボ編成の候補を探す</h3>
+  <p>選手評価ツールでは、選手がどの金コンボに関係するかを確認できます。気になる選手が強いだけでなく、強力なコンボに絡めるなら編成価値はさらに高くなります。</p>
+
+  <h3>④ 所持選手の再評価に使う</h3>
+  <p>以前に入手した選手でも、新しいコンボや環境の変化によって評価が上がることがあります。手持ちのSP選手を定期的に確認すると、思わぬ活躍候補が見つかることがあります。</p>
+</section>
+
+<section class="card">
+  <h2>具体的な活用例</h2>
+
+  <div class="example">
+    <h3>例：新しいCFのSP選手を入手した場合</h3>
+    <ol>
+      <li>選手評価ツールでその選手を検索する</li>
+      <li>全体順位と最大強化順位を見る</li>
+      <li>CF内でのポジション別順位を見る</li>
+      <li>プレイスタイル別順位を見る</li>
+      <li>金コンボにどれだけ絡めるか確認する</li>
+    </ol>
+    <p>この流れで確認すると、単純に「強い・弱い」だけではなく、<strong>自分のチームで使う価値があるか</strong>まで判断しやすくなります。</p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>初心者におすすめの見方</h2>
+
+  <p>はじめて使う場合は、すべての項目を細かく見るよりも、まずは次の3つを確認するのがおすすめです。</p>
+
+  <ol>
+    <li><strong>全体順位：</strong>SP選手全体でどのくらい強いか</li>
+    <li><strong>ポジション別順位：</strong>そのポジションで上位か</li>
+    <li><strong>金コンボ適性：</strong>強いコンボに関われるか</li>
+  </ol>
+
+  <p>この3つが良ければ、育成や編成で使う価値が高い選手と判断しやすいです。</p>
+</section>
+
+<section class="card">
+  <h2>よくある失敗と注意点</h2>
+
+  <h3>全体順位だけで判断してしまう</h3>
+  <p>全体順位が高い選手は強力ですが、編成ではポジションやコンボ適性も重要です。特にサカつく2026ではコンボ発動がチーム強化に大きく関わるため、順位だけで判断しないようにしましょう。</p>
+
+  <h3>最大強化を見落とす</h3>
+  <p>初期総合力が高くても、最大強化後の伸びが控えめな選手もいます。長期的に使う予定なら、最大強化後の評価も必ず確認しましょう。</p>
+
+  <h3>コンボ適性を無視する</h3>
+  <p>強い選手でも、発動したいコンボ条件に合わなければ編成に入れにくい場合があります。選手評価ツールでは、性能とコンボ適性をセットで見るのがおすすめです。</p>
+
+  <div class="note">
+    <strong>ポイント：</strong>
+    選手評価ツールは「ガチャ評価」「育成判断」「編成判断」の3つに使えます。
+    新選手が登場した時だけでなく、手持ち整理にも活用しましょう。
+  </div>
+</section>
+
+<section class="card">
+  <h2>関連ツール・関連記事</h2>
+  <div class="related">
+    <a href="howto_combo_search.html">コンボ検索の使い方</a>
+    <a href="howto_player_search.html">選手検索の使い方</a>
+    <a href="howto_strongest_team_simulation.html">最強チームシミュレーションの使い方</a>
+    <a href="overall_ranking.html">総合力ランキングを見る</a>
+  </div>
+</section>
+
+<section class="card">
+  <h2>よくある質問</h2>
+  <dl class="faq">
+    <dt>Q. 選手評価ツールはどんな時に使えばいい？</dt>
+    <dd>新SP選手を引くか迷っている時、育成する選手を決めたい時、編成に入れる選手を比較したい時に使うのがおすすめです。</dd>
+
+    <dt>Q. 全体順位が高ければ必ず強い？</dt>
+    <dd>基本的には強力な候補ですが、実際の編成ではポジション、ポリシー、プレイスタイル、コンボ適性も重要です。</dd>
+
+    <dt>Q. 最大強化順位も見る必要がある？</dt>
+    <dd>長く使う予定の選手なら必ず確認した方が良いです。育成後に評価が大きく変わる選手もいます。</dd>
+
+    <dt>Q. コンボ検索や選手検索との違いは？</dt>
+    <dd>コンボ検索・選手検索はコンボ条件を探すための機能、選手評価ツールは選手単体の強さや適性を確認するための機能です。</dd>
+  </dl>
+</section>
+
+<p class="footerLink">
+  <a class="btn btn-gray" href="index.html">← サイトトップに戻る</a>
+</p>
+
+</main>
+</body>
+</html>
