@@ -2334,5 +2334,221 @@
         "conditionNo": 3
       }
     ]
+  },
+  {
+    "comboId": "C049",
+    "name": "サブマリーノ・アマリーリョ'06",
+    "formation": "4-4-2A",
+    "rank": "銀",
+    "combo_policys": [
+      "ムービング"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "その後",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年5月31日まで",
+    "effect": "走力、パスカット、ジャンプが80%アップ",
+    "effects": [
+      {
+        "status": "走力",
+        "value": 80
+      },
+      {
+        "status": "パスカット",
+        "value": 80
+      },
+      {
+        "status": "ジャンプ",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 1,
+        "position": "GK",
+        "positionPlace": null,
+        "playStyle": "オーソドックスGK",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 8,
+        "position": "RM",
+        "positionPlace": null,
+        "playStyle": "サイドアタッカー",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 11,
+        "position": "CF",
+        "positionPlace": "Left",
+        "playStyle": "ポストプレーヤー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C050",
+    "name": "ディー・アドラー'24",
+    "formation": "5-4-1A",
+    "rank": "銀",
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "その後",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年5月31日まで",
+    "effect": "ロングパス、コンタクト、走力が80%アップ",
+    "effects": [
+      {
+        "status": "ロングパス",
+        "value": 80
+      },
+      {
+        "status": "コンタクト",
+        "value": 80
+      },
+      {
+        "status": "走力",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 3,
+        "position": "CB",
+        "positionPlace": "Center",
+        "playStyle": "ストッパー",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 7,
+        "position": "DM",
+        "positionPlace": "Right",
+        "playStyle": "パサー",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 11,
+        "position": "CF",
+        "positionPlace": null,
+        "playStyle": "ラインブレーカー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C051",
+    "name": "ブロ・グルト'94",
+    "formation": "5-2-3A",
+    "rank": "銀",
+    "combo_policys": [
+      "リアクション"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "その後",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年5月31日まで",
+    "effect": "コンタクト、走力、キック力が80%アップ",
+    "effects": [
+      {
+        "status": "コンタクト",
+        "value": 80
+      },
+      {
+        "status": "走力",
+        "value": 80
+      },
+      {
+        "status": "キック力",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 3,
+        "position": "CB",
+        "positionPlace": "Center",
+        "playStyle": "ストッパー",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 5,
+        "position": "LB",
+        "positionPlace": null,
+        "playStyle": "攻撃的FB",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 10,
+        "position": "RW",
+        "positionPlace": null,
+        "playStyle": "ドリブラー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C052",
+    "name": "グリーン・ファルコンズ'98",
+    "formation": "4-5-1B",
+    "rank": "銀",
+    "combo_policys": [
+      "カウンター"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "その後",
+    "acquisitionPlace": "WPSコンテスト",
+    "availablePeriod": "2026年5月31日まで",
+    "effect": "ロングパス、冷静さ、敏捷性が80%アップ",
+    "effects": [
+      {
+        "status": "ロングパス",
+        "value": 80
+      },
+      {
+        "status": "冷静さ",
+        "value": 80
+      },
+      {
+        "status": "敏捷性",
+        "value": 80
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 3,
+        "position": "CB",
+        "positionPlace": "Left",
+        "playStyle": "組立CB",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 5,
+        "position": "RB",
+        "positionPlace": null,
+        "playStyle": "守備的FB",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 8,
+        "position": "LM",
+        "positionPlace": null,
+        "playStyle": "ドリブラー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
   }
 ]
