@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>【サカつくTV #8】サカつく2026Ver2.0大型アップデート公式番組まとめ｜MLS・日本代表ライセンス・新プレスタ・新ガチャ情報</title>
+<meta content="サカつくTV #8で発表されたVer2.0大型アップデート情報を要約。MLS/Kリーグ2追加、日本代表公式ライセンス、新プレースタイル、監督ノート、フォメコン追加、ミッション更新、ガチャ・キャンペーン情報まで整理。" name="description"/>
+<style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --blue: #2563eb;
+      --blue-soft: #eff6ff;
+      --green: #059669;
+      --green-soft: #ecfdf5;
+      --red: #dc2626;
+      --red-soft: #fef2f2;
+      --yellow: #f59e0b;
+      --yellow-soft: #fffbeb;
+      --purple: #7c3aed;
+      --purple-soft: #f5f3ff;
+      --dark: #111827;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.85;
+      letter-spacing: 0.02em;
+      font-size: 16px;
+    }
+    a { color: var(--blue); text-decoration: none; font-weight: 700; }
+    a:hover { text-decoration: underline; }
+    header {
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      color: #fff;
+      padding: 22px 16px 28px;
+      text-align: center;
+    }
+    header .site-title { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; opacity: .95; }
+    header h1 {
+      max-width: 980px;
+      margin: 0 auto;
+      font-size: clamp(1.45rem, 4.8vw, 2.35rem);
+      line-height: 1.35;
+      font-weight: 900;
+      letter-spacing: .02em;
+    }
+    nav {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav .nav-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 10px 12px;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      color: #374151;
+      font-size: .88rem;
+      flex: 0 0 auto;
+    }
+    main {
+      max-width: 980px;
+      margin: 22px auto 44px;
+      padding: 0 14px;
+    }
+    .article-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 8px 26px rgba(15, 23, 42, .06);
+      overflow: hidden;
+    }
+    .article-body { padding: clamp(18px, 4vw, 34px); }
+    .lead {
+      font-size: 1.04rem;
+      background: var(--blue-soft);
+      border-left: 6px solid var(--blue);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 0 0 16px;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: .92rem;
+      margin: 0 0 22px;
+    }
+    h2 {
+      margin: 34px 0 14px;
+      padding: 12px 14px;
+      font-size: 1.35rem;
+      line-height: 1.45;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #dbeafe, #fff);
+      border-left: 7px solid var(--blue);
+      color: var(--dark);
+    }
+    h3 {
+      margin: 26px 0 10px;
+      font-size: 1.12rem;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 6px;
+      color: var(--dark);
+    }
+    p { margin: 0 0 1.1em; }
+    strong { color: #0f172a; background: linear-gradient(transparent 62%, #fde68a 62%); font-weight: 900; }
+    ul { padding-left: 1.25em; margin: 8px 0 0; }
+    li { margin: 7px 0; }
+    .article-image { margin: 16px 0 22px; }
+    .article-image img,
+    .hero-img,
+    .article-img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #f9fafb;
+      margin: 16px auto 22px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, .06);
+    }
+    figcaption { color: var(--muted); font-size: .86rem; margin-top: -12px; margin-bottom: 18px; text-align: center; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 14px 0 24px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, .04);
+    }
+    .card h3 { margin-top: 0; }
+    .card .article-image { margin: 10px 0 14px; }
+    .card .article-image img { margin: 0 auto 12px; }
+    .card figcaption { margin-top: -4px; }
+    .summary-box,
+    .point-box,
+    .warning-box,
+    .toc,
+    .link-box {
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin: 18px 0 24px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .summary-box { background: var(--red-soft); border-left: 7px solid var(--red); }
+    .point-box { background: var(--green-soft); border-left: 7px solid var(--green); }
+    .warning-box { background: var(--yellow-soft); border-left: 7px solid var(--yellow); }
+    .toc { background: #f8fafc; }
+    .toc strong,
+    .summary-box strong,
+    .point-box strong,
+    .warning-box strong { color: #0f172a; }
+    .link-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .link-card {
+      display: block;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #f9fafb;
+      color: #111827;
+      font-weight: 900;
+    }
+    .small { font-size: .9rem; color: var(--muted); }
+    hr { border: 0; border-top: 1px solid var(--line); margin: 34px 0; }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: .86rem;
+      padding: 26px 14px 38px;
+    }
+    footer p { margin: 0 0 .4em; }
+    @media (max-width: 720px) {
+      body { font-size: 15.5px; line-height: 1.85; }
+      main { margin: 16px auto 36px; padding: 0 10px; }
+      .article-body { padding: 18px 15px 24px; }
+      h2 { font-size: 1.18rem; padding: 10px 12px; margin-top: 30px; }
+      h3 { font-size: 1.04rem; }
+      .lead, .summary-box, .point-box, .warning-box, .toc, .link-box, .card { padding: 14px 15px; }
+      .grid, .link-cards { grid-template-columns: 1fr; }
+      .article-image img, .hero-img, .article-img { border-radius: 12px; }
+      figcaption { font-size: .8rem; }
+    }
+</style>
+</head>
+<body><header><div class="site-title">サカつく2026攻略DB</div><h1>【サカつくTV #8】サカつく2026Ver2.0大型アップデート公式番組まとめ｜MLS・日本代表ライセンス・新プレスタ・新ガチャ情報</h1></header><nav><div class="nav-inner"><a href="index.html">トップ</a><a href="articles.html">攻略記事一覧</a><a href="player_catalog.html">選手図鑑</a><a href="sp_evaluator.html">選手評価ツール</a><a href="combo_search.html">コンボ検索</a><a href="sonio_tv_matome.html">動画まとめ</a></div></nav><main><article class="article-card"><div class="article-body"><p class="lead">
+        公式番組「サカつくTV #8」で発表された<strong>Ver2.0大型アップデート情報</strong>を、攻略サイト向けに整理しました。
+        文字起こしベースの内容をそのまま並べるのではなく、プレイヤーが確認しておきたい変更点を中心にまとめています。
+      </p><p class="meta">アップデート予定日：2026年6月9日（火）／内容は番組発表時点の情報です。</p>
+
+<figure class="article-image"><img alt="サカつくTV #8 本日の放送お題目" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/01_agenda.png"/><figcaption>サカつくTV #8 本日の放送お題目</figcaption></figure>
+<div class="summary-box">
+<p><strong>結論：</strong>Ver2.0は、単なるロスター更新ではなく、サカつくモードの育成効率・リーグ選択・フォーメーション環境・選手入手機会まで大きく変わるアップデートです。</p>
+<ul>
+<li><strong>MLS・Kリーグ2が追加</strong>され、選手・リーグ・ミッションの幅が拡大</li>
+<li><strong>日本代表公式ライセンス取得</strong>でキービジュアルも更新</li>
+<li><strong>新プレースタイル3種</strong>と<strong>新フォメコン4種</strong>が追加</li>
+<li><strong>監督ノート</strong>で攻略TIPSをゲーム内から確認可能に</li>
+<li><strong>デイリー/ウィークリーミッション更新</strong>でJ・Kリーグ選手の入手機会が増加</li>
+</ul>
+</div>
+<div class="toc">
+<strong>この記事で分かること</strong>
+<ul>
+<li>Ver2.0アップデートの重要ポイント</li>
+<li>新リーグ・新クラブ・新プレースタイルの内容</li>
+<li>育成環境やフォメコン環境がどう変わるか</li>
+<li>新ガチャ・パック・キャンペーン情報</li>
+<li>攻略サイト運営目線で更新が必要になりそうなポイント</li>
+</ul>
+</div>
+<h2>Ver2.0アップデート情報まとめ</h2>
+<figure class="article-image"><img alt="MLSとKリーグ2が新リーグとして追加" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/13_league_addition.png"/><figcaption>MLSとKリーグ2が新リーグとして追加</figcaption></figure>
+<p>
+      Ver2.0の大きな目玉は、<strong>Major League Soccer（MLS）</strong>と<strong>K LEAGUE2</strong>の追加です。
+      番組内では、MLSについて「東西に分かれたリーグ構造やプレーオフなど、特殊なレギュレーションをできる限り再現している」と説明されました。
+    </p>
+<p>
+      これにより、単に所属選手が増えるだけではなく、サカつくモードの攻略対象リーグやミッション、スカウト対象の幅も広がります。
+      特にMLSは有名選手の実装にもつながるため、ガチャ面・育成面の両方で注目度が高いアップデートです。
+    </p>
+<div class="grid">
+<div class="card">
+<h3>MLS公式ライセンス</h3>
+<figure class="article-image"><img alt="MLS公式ライセンス取得" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/14_mls_license.png"/><figcaption>MLS公式ライセンス取得</figcaption></figure>
+<p>海外版のキービジュアルにもMLS選手が登場。MLS実装記念SP選手スカウトも発表されました。</p>
+</div>
+<div class="card">
+<h3>日本代表公式ライセンス</h3>
+<figure class="article-image"><img alt="日本代表公式ライセンス取得" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/15_japan_license.png"/><figcaption>日本代表公式ライセンス取得</figcaption></figure>
+<p>日本版では日本代表の新キービジュアルが展開。日本代表選手の存在感がさらに強まりそうです。</p>
+</div>
+</div>
+<h2>新機能：監督ノート（攻略TIPS）が実装</h2>
+<figure class="article-image"><img alt="監督ノート（攻略TIPS）の実装" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/02_coach_note.png"/><figcaption>監督ノート（攻略TIPS）の実装</figcaption></figure>
+<p>
+      新機能として<strong>監督ノート</strong>が実装されます。
+      サカつくモードのトップ画面やショートカットメニューから確認できる攻略TIPSで、ゲーム内の各要素を項目別に読み返せる機能です。
+    </p>
+<p>
+      チュートリアル中に流してしまった説明や、試合中の仕様、スキルコンボなど、後から確認したい情報をゲーム内で見直せるのは大きな改善です。
+      初心者はもちろん、既存プレイヤーにとっても<strong>「この仕様ってどういう意味だった？」を確認できる場所</strong>として役立ちそうです。
+    </p>
+<h2>日程進行に高速化モードが追加</h2>
+<figure class="article-image"><img alt="新たな日程進行速度の追加" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/17_schedule_speed.png"/><figcaption>新たな日程進行速度の追加</figcaption></figure>
+<p>
+      日程進行には、新たな高速化モードが追加されます。
+      番組内では、従来スキップ対象ではなかった<strong>優勝演出やリザルト演出もスキップ対象</strong>となり、ざっくり<strong>約1.5倍ほど早くなる</strong>と説明されました。
+    </p>
+<p>
+      周回育成をするプレイヤーにとって、日程進行の短縮はかなり大きいです。
+      端末や通信環境に左右される部分はあるものの、リーグ周回の快適性は明確に上がりそうです。
+    </p>
+<h2>メインストーリー外伝とHistory演出が追加</h2>
+<div class="grid">
+<div class="card">
+<h3>メインストーリー外伝</h3>
+<figure class="article-image"><img alt="メインストーリー外伝の追加" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/18_extra_story.png"/><figcaption>メインストーリー外伝の追加</figcaption></figure>
+<p>
+          メインストーリー5章クリア後に解放される新コンテンツ。
+          例として、リーグLv5以上でSP選手6人以下にして優勝するような制限付きミッションが紹介されました。
+        </p>
+</div>
+<div class="card">
+<h3>History演出</h3>
+<figure class="article-image"><img alt="History演出の追加" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/19_history_stats.png"/><figcaption>History演出の追加</figcaption></figure>
+<p>
+          ロスターアップデート後、これまでのプレイ履歴を振り返る演出が追加。
+          SNSシェアにも対応し、自分の監督歴を見返せます。
+        </p>
+</div>
+</div>
+<h2>サカつくモードの大型調整</h2>
+<figure class="article-image"><img alt="サカつくモードとサカつくモード以外の大型調整一覧" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/04_major_adjustment_list.png"/><figcaption>サカつくモードとサカつくモード以外の大型調整一覧</figcaption></figure>
+<p>
+      Ver2.0では、サカつくモード内外で多くの調整が入ります。
+      特に重要なのは、<strong>クラブ追加、成長タイプ追加、新プレースタイル、リーグLv上限追加、フォメコン追加、ミッション更新</strong>です。
+    </p>
+<h3>新クラブ追加：バイエルン、BGパトゥム、レイラック滋賀</h3>
+<figure class="article-image"><img alt="バイエルン・ミュンヘン、BGパトゥム・ユナイテッド、レイラック滋賀が追加" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/05_new_clubs.png"/><figcaption>バイエルン・ミュンヘン、BGパトゥム・ユナイテッド、レイラック滋賀が追加</figcaption></figure>
+<p>
+      サカつくモードには、<strong>バイエルン・ミュンヘン</strong>、<strong>BGパトゥム・ユナイテッド</strong>、<strong>レイラック滋賀</strong>が新たに登場します。
+      なお、番組内ではマンチェスター・シティについても継続実装されると説明されていました。
+    </p>
+<h3>安定期後に再び成長期へ移る選手が追加</h3>
+<figure class="article-image"><img alt="安定期後に再び成長期へ移る選手を追加" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/06_second_growth_phase.png"/><figcaption>安定期後に再び成長期へ移る選手を追加</figcaption></figure>
+<p>
+      新たな成長タイプとして、安定期を挟んだ後に再び成長期へ入る選手が追加されます。
+      従来の選手は成長期が3年という説明でしたが、今回のタイプではそこからさらに<strong>追加で1年成長できる</strong>形になります。
+    </p>
+<p>
+      <strong>まずはサカつくモード内の選手から実装</strong>し、どのような選手に実装されているか探してみてほしいそう。
+      フォメコン要員やプレースタイル要員として使う選手が、より長期間育成対象になる可能性があります。
+    </p>
+<h3>新プレースタイル3種が追加</h3>
+<figure class="article-image"><img alt="ワイドストライカー、スプリントCB、クリエイティブFBが追加" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/07_new_playstyles.png"/><figcaption>ワイドストライカー、スプリントCB、クリエイティブFBが追加</figcaption></figure>
+<p>
+      新プレースタイルとして、<strong>ワイドストライカー</strong>、<strong>スプリントCB</strong>、<strong>クリエイティブFB</strong>の3種類が追加されます。
+      番組では、試合中の動きや意識付けにも関わる要素として説明されていました。
+    </p>
+<div class="point-box">
+<p><strong>攻略目線の注目点：</strong>新プレースタイルの追加により、フォメコン検索や選手評価ツール側でもデータ更新が必要になります。特にクリエイティブFBは、サイドバック系の起用幅を広げる可能性があります。</p>
+</div>
+<h3>各リーグLvの上限追加で育成周回の選択肢が増える</h3>
+<figure class="article-image"><img alt="各リーグLvの上限追加" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/08_league_level_cap.png"/><figcaption>各リーグLvの上限追加</figcaption></figure>
+<p>
+      各リーグLvの上限も追加されます。
+      番組では、全リーグに1段階以上の追加が入り、リーグLvを上げることで<strong>試合で獲得できるパラメーター経験値が上昇</strong>するようになると説明されました。
+    </p>
+<p>
+      これまでは効率面で特定リーグ周回に寄りがちでしたが、Ver2.0以降はJリーグなどでもリーグLvを上げることで育成効率を高められる可能性があります。
+      好きなリーグで遊びながら育成する選択肢が増えるのは、かなり良い調整です。
+    </p>
+<h2>フォーメーションコンボ追加と3バック環境の見直し</h2>
+<figure class="article-image"><img alt="フォーメーションコイン交換所に新フォーメーションコンボを追加" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/10_formation_combo_addition.png"/><figcaption>フォーメーションコイン交換所に新フォーメーションコンボを追加</figcaption></figure>
+<p>
+      フォーメーションコイン交換所には、新たに4つのフォーメーションコンボが追加されます。
+      画面上では、<strong>ネラッズーロ'10</strong>、<strong>ブラウ・グラーナ'15</strong>、<strong>アルヴィネグロ・プライアーノ'11</strong>、<strong>エウスカルドゥナク'12</strong>が確認できます。
+    </p>
+<p>
+      さらに番組内では、3バックに関する見直しも入ると説明されました。
+      これまで3バック系フォメコンを使いにくいと感じていた人も、Ver2.0後は改めて試す価値がありそうです。
+    </p>
+
+<h2>デイリー・ウィークリーミッション更新</h2>
+<div class="grid">
+<div class="card">
+<h3>デイリーミッション</h3>
+<figure class="article-image"><img alt="デイリーミッションの更新" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/11_daily_mission_update.png"/><figcaption>デイリーミッションの更新</figcaption></figure>
+<p>Jリーグ/KリーグのSP選手スカウトチケットBOXが毎日もらえるようになります。</p>
+</div>
+<div class="card">
+<h3>ウィークリーミッション</h3>
+<figure class="article-image"><img alt="ウィークリーミッションの更新" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/12_weekly_mission_update.png"/><figcaption>ウィークリーミッションの更新</figcaption></figure>
+<p>SP選手引換券が追加。毎週★3選手を選べる仕組みとして紹介されました。</p>
+</div>
+</div>
+<p>
+      特にウィークリーミッションのSP選手引換券は大きな変更です。
+      番組内では、1週間のウィークリーミッションで<strong>2個入手</strong>でき、同じ選手を選べば<strong>1.5週間で完凸</strong>を目指せると説明されました。（交換対象選手は★3→★4→★5の3段階強化の特別仕様との事）
+    </p>
+<figure class="article-image"><img alt="ウィークリーミッションで獲得できるSP選手候補" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/21_weekly_mission_players.png"/><figcaption>ウィークリーミッションで獲得できるSP選手候補</figcaption></figure>
+<h2>その他アップデート：説明改善・NGワード対応・SP選手ソート追加</h2>
+<div class="grid">
+<div class="card">
+<h3>スキル/特徴説明改修</h3>
+<figure class="article-image"><img alt="スキル/特徴説明改修" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/23_skill_description_update.png"/><figcaption>スキル/特徴説明改修</figcaption></figure>
+<p>発動条件や対象ポジションなどが分かりやすくなり、スキルコンボを考えやすくなります。</p>
+</div>
+<div class="card">
+<h3>MCOチャット改善</h3>
+<figure class="article-image"><img alt="MCOチャットでNGワードを伏せ字にする対応" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/24_mco_ngword.png"/><figcaption>MCOチャットでNGワードを伏せ字にする対応</figcaption></figure>
+<p>NGワードが含まれる場合、投稿不可ではなく伏せ字で投稿されるようになります。</p>
+</div>
+<div class="card">
+<h3>SP選手ソート追加</h3>
+<figure class="article-image"><img alt="SP選手ソート追加" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/25_sp_sort_added.png"/><figcaption>SP選手ソート追加</figcaption></figure>
+<p>SP選手画面の使い勝手が改善され、育成最大値表示やフォメコン確認ボタンが追加されます。</p>
+</div>
+<div class="card">
+<h3>ソート・絞り込み追加</h3>
+<figure class="article-image"><img alt="総合力、育成最大値、強化ステップ数ソート追加" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/26_sp_sort_filters.png"/><figcaption>総合力、育成最大値、強化ステップ数ソート追加</figcaption></figure>
+<p>総合力初期値、総合力育成最大値、強化ステップ数などでソートできるようになります。</p>
+</div>
+</div>
+<h2>新ガチャ・パック情報</h2>
+<h3>MLS実装記念SP選手スカウト</h3>
+<figure class="article-image"><img alt="MLS実装記念SP選手スカウト" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/27_mls_sp_scout.png"/><figcaption>MLS実装記念SP選手スカウト</figcaption></figure>
+<p>
+      MLS実装記念SP選手スカウトでは、マルコ・ロイス、ソン・フンミン、トーマス・ミュラー、クリスチャン・ロルダンなどが紹介されました。
+      番組内では、ここに表示されている4人が全てではなく、追加情報も今後出る予定と説明されています。
+    </p>
+<h3>Jリーグ/Kリーグ セレクトSP選手スカウト</h3>
+<figure class="article-image"><img alt="Jリーグ・Kリーグ セレクトSP選手スカウト" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/28_j_k_select_sp_scout.png"/><figcaption>Jリーグ・Kリーグ セレクトSP選手スカウト</figcaption></figure>
+<p>
+      Jリーグ・KリーグのセレクトSP選手スカウトも更新されます。
+      ロスターアップデート後は選手内容が切り替わるため、既存メダルの扱いには注意が必要です。</p>
+<p>
+      番組内では、ロスター前のメダルは新しいものに変わるため、<strong>既存のJリーグスカウト/Kリーグ1スカウトのメダルは事前に使っておくよう</strong>案内されていました。
+    </p>
+<h3>月1育成パックがリニューアル</h3>
+<figure class="article-image"><img alt="月1育成パック リニューアル" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/29_monthly_growth_pack.png"/><figcaption>月1育成パック リニューアル</figcaption></figure>
+<p>
+      月1育成パックは内容が大幅に強化されます。
+      選手強化Pt、強化シューズ、ゴールデンシューズ、トレーナー強化Pt、ランクアップミサンガなどの数量が増加。
+      ワールドプレミアシップ報酬などの調整に合わせ、パック価値を見直す意図が説明されました。
+    </p>
+<h2>イベント・キャンペーン情報</h2>
+<h3>新ロスタースタートダッシュミッション</h3>
+<figure class="article-image"><img alt="新ロスタースタートダッシュミッション" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/30_roster_start_dash.png"/><figcaption>新ロスタースタートダッシュミッション</figcaption></figure>
+<p>
+      ロスターアップデート後の新シーズンに向けて、スタートダッシュミッションが開催されます。
+      Jリーグ/KリーグのSP選手スカウトチケットBOXを<strong>最大100個</strong>獲得できる内容として紹介されました。
+    </p>
+<h3>特別練習カードのガチャ広告が追加</h3>
+<figure class="article-image"><img alt="特別練習カード ガチャ広告" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/31_training_card_ad.png"/><figcaption>特別練習カード ガチャ広告</figcaption></figure>
+<p>
+      期間限定で、特別練習カードにも<strong>「広告ガチャ」</strong>が実装されます。
+      期間は<strong>Ver2.0アップデート後から2026年7月16日（木）まで</strong>と案内されました。</p>
+<p>
+特連カードガチャのSSR排出率は5%なので、<strong>仮に期間中合計30回引く事ができれば、SSRが1枚以上当たる確率は約78％と非常に高い</strong>ですし、<strong>広告ガチャ1回でも天井メダルを獲得</strong>する事ができます。必ず毎日ログインして神引きしましょう。
+    </p>
+<h3>カムバックログインボーナス</h3>
+<figure class="article-image"><img alt="カムバックログインボーナス" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/32_comeback_bonus.png"/><figcaption>カムバックログインボーナス</figcaption></figure>
+<p>
+      30日間ログインしていない監督向けに、カムバックログインボーナスが実施されています。
+      最大3000GB、★3確定SP選手スカウトチケット、SSR確定特別練習カードチケットなどが獲得可能で、これは<strong>アプデ前の現時点で受け取り可能</strong>との事です。アプデに向けて今から復帰しましょう！
+    </p>
+<h3>公式ストアVer2.0記念キャンペーン</h3>
+<figure class="article-image"><img alt="サカつく2026公式ストア Ver2.0記念キャンペーン" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/33_store_campaign.png"/><figcaption>サカつく2026公式ストア Ver2.0記念キャンペーン</figcaption></figure>
+<p>
+      日本限定で、公式ストアのVer2.0記念キャンペーンも実施されます。
+      利用額に応じたゲーム内アイテムの配布に加え、抽選で<strong>総額100万円分のAmazonギフトコード</strong>が当たるキャンペーンが紹介されました。
+    </p>
+<h3>香港レジェンド2選手の特別練習カード配布</h3>
+<figure class="article-image"><img alt="香港レジェンド2選手、特別練習カード配布" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/34_hk_legend_cards.png"/><figcaption>香港レジェンド2選手、特別練習カード配布</figcaption></figure>
+<p>
+      香港レジェンドとして、<strong>李 健和 / Lee Kin Wo</strong>、<strong>欧 偉倫 / Au Wai Lun</strong>の特別練習カード配布も発表されました。
+      日本のプレイヤーには馴染みが薄いかもしれませんが、香港サッカー界を代表する存在として紹介されています。
+    </p>
+<h2>オフラインイベント・SNSキャンペーン情報</h2>
+<figure class="article-image"><img alt="第1回サカつく2026最強監督決定戦 in JAPAN" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/35_offline_event.png"/><figcaption>第1回サカつく2026最強監督決定戦 in JAPAN</figcaption></figure>
+<p>
+      2026年6月7日（日）には、セガ大崎本社で<strong>第1回サカつく2026最強監督決定戦 in JAPAN</strong>が開催されます。
+      準決勝以降は15時頃からサカつくチャンネルで生配信予定。
+      大会賞品として、サカつくモードにオリジナル選手として登場できる権利も発表されました。
+    </p>
+<figure class="article-image"><img alt="最強監督決定戦の出演者" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/36_offline_event_cast.png"/><figcaption>最強監督決定戦の出演者</figcaption></figure>
+<figure class="article-image"><img alt="香港大会の出張報告" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/37_hongkong_report.png"/><figcaption>香港大会の出張報告</figcaption></figure>
+<h3>SNSキャンペーン</h3>
+<figure class="article-image"><img alt="ロスターアップデート直前キャンペーン" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/39_roster_before_campaign.png"/><figcaption>ロスターアップデート直前キャンペーン</figcaption></figure>
+<p>
+      ロスターアップデート直前キャンペーンも実施。
+      公式Xアカウントのフォローと対象投稿のリポストで参加でき、参加人数に応じてランクアップミサンガや特別練習カードチケット、MLS実装記念SP選手スカウトチケットなどが配布される内容です。
+    </p>
+<h2>攻略サイト目線での注目ポイント</h2>
+<div class="point-box">
+<p><strong>今回のアップデートで特に重要なのは、データベース更新が必要な項目が多いことです。</strong></p>
+<ul>
+<li>新リーグ：MLS、Kリーグ2</li>
+<li>新クラブ：バイエルン、BGパトゥム、レイラック滋賀</li>
+<li>新プレースタイル：ワイドストライカー、スプリントCB、クリエイティブFB</li>
+<li>新フォーメーションコンボ4種</li>
+<li>SP選手ソート・評価基準の変化</li>
+<li>J/Kリーグ選手の入手機会増加による育成優先度の変化</li>
+</ul>
+</div>
+<p>
+      特に<strong>リーグLv上限追加</strong>と<strong>投資内容の見直し</strong>は、育成周回の最適解を大きく変える可能性があります。
+      これまで「とりあえず特定リーグを周回」だった人も、Ver2.0後はリーグLv・投資内容・育成したいポジションを見ながら周回先を選ぶ流れになりそうです。
+    </p>
+<h2>まとめ：Ver2.0は復帰勢にも現役勢にも大きな節目</h2>
+<figure class="article-image"><img alt="次回のサカつくTVは2026年7月配信予定" loading="lazy" src="img/articles/sakatsuku_tv8_ver2_update_summary/40_next_sakatsuku_tv.png"/><figcaption>次回のサカつくTVは2026年7月配信予定</figcaption></figure>
+<p>
+      Ver2.0大型アップデートは、ロスター更新だけでなく、ゲーム全体の遊びやすさと育成環境に大きく手が入る内容です。
+      監督ノートや高速化モードのような快適性改善に加えて、リーグLv上限、新プレースタイル、新フォメコン、ミッション更新など、攻略面の変化も多く含まれています。
+    </p>
+<p>
+      現役プレイヤーはもちろん、カムバックログインボーナスやスタートダッシュミッションもあるため、しばらく離れていた人が復帰するタイミングとしてもかなり良さそうです。
+      公式番組では、次回のサカつくTVは<strong>2026年7月配信予定</strong>と発表されました。
+    </p>
+<div class="warning-box">
+<p><strong>注意：</strong>この記事は公式番組の文字起こしと番組内スライドをもとに作成しています。実装時に仕様・期間・報酬内容が変更される可能性があるため、最終確認はゲーム内お知らせや公式サイトで行ってください。</p>
+</div>
+<hr/>
+<div class="link-cards"><a class="link-card" href="articles.html">サカつく2026攻略記事一覧</a><a class="link-card" href="sp_evaluator.html">選手評価ツールでSP選手を確認する</a><a class="link-card" href="combo_search.html">フォーメーションコンボ検索を使う</a><a class="link-card" href="index.html">サカつく2026攻略DBトップへ戻る</a></div>
+</div></article></main><footer><p>© サカつく2026攻略DB / ソニオTV</p><p><a href="https://www.youtube.com/@SonhoTV">YouTube</a> / <a href="https://x.com/Dice_Ke_sun">X</a></p></footer></body>
+</html>
