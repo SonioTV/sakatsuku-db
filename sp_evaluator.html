@@ -822,9 +822,19 @@ $("fStyle").addEventListener("change", ()=>{
 });
 
 /* ===== Ranking calculations ===== */
-function calcRankings(target){
+function isSpPlayer(p){
+  return normalize(p && p.category) === "SP選手";
+}
+
+function getRankingPool(spOnly=true){
+  return spOnly ? SP_PLAYERS : PLAYERS;
+}
+
+function calcRankings(target, spOnly=true){
   const overall = toNum(target.overall);
   const maxUp   = toNum(target.maxUpgrade);
+  const poolBase = getRankingPool(spOnly);
+  const wholeLabel = spOnly ? "SP選手全体" : "全選手全体";
 
   const make = (pool, labelKey, labelVal)=>{
     const oVals = pool.map(p=>toNum(p.overall)).filter(v=>v!=null).sort((a,b)=>b-a);
@@ -837,11 +847,11 @@ function calcRankings(target){
   };
 
   return [
-    make(SP_PLAYERS, "SP選手全体", ""),
-    make(SP_PLAYERS.filter(p=>normalize(p.acquisitionPlace)===normalize(target.acquisitionPlace)), "入手場所別", normalize(target.acquisitionPlace)),
-    make(SP_PLAYERS.filter(p=>normalize(p.policy)===normalize(target.policy)), "ポリシー", normalize(target.policy)),
-    make(SP_PLAYERS.filter(p=>normalize(p.mainPosition)===normalize(target.mainPosition)), "ポジション", normalize(target.mainPosition)),
-    make(SP_PLAYERS.filter(p=>normalize(p.playStyle)===normalize(target.playStyle)), "プレイスタイル", normalize(target.playStyle)),
+    make(poolBase, wholeLabel, ""),
+    make(poolBase.filter(p=>normalize(p.acquisitionPlace)===normalize(target.acquisitionPlace)), "入手場所別", normalize(target.acquisitionPlace)),
+    make(poolBase.filter(p=>normalize(p.policy)===normalize(target.policy)), "ポリシー", normalize(target.policy)),
+    make(poolBase.filter(p=>normalize(p.mainPosition)===normalize(target.mainPosition)), "ポジション", normalize(target.mainPosition)),
+    make(poolBase.filter(p=>normalize(p.playStyle)===normalize(target.playStyle)), "プレイスタイル", normalize(target.playStyle)),
   ];
 }
 
@@ -1158,7 +1168,8 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
   const lv  = toNum(target.playStyleLv);
   const styShow = `${esc(sty||"-")}${lv!=null?` ${esc(romanLv(lv))}`:""}`;
 
-  const rankRows = calcRankings(target);
+  const rankingSpOnly = $("rankingSpOnly") ? !!$("rankingSpOnly").checked : true;
+  const rankRows = calcRankings(target, rankingSpOnly);
   const goldOnly = $("goldOnlyCombos") ? !!$("goldOnlyCombos").checked : false;
   const combos = calcRankCombos(target, goldOnly);
   const compat = calcCompat(target);
@@ -1199,7 +1210,14 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
     <!-- ① Rankings -->
     <div class="block">
       <div class="hdr blue">
-        <div class="center">総合ランキング</div><div class="center">初期総合力</div><div class="center">最大強化</div>
+        <div class="center">
+          <label class="comboRankFilter">
+            <input id="rankingSpOnly" type="checkbox" ${rankingSpOnly ? "checked" : ""}>
+            <span>SP選手のみ</span>
+          </label>
+        </div>
+        <div class="center">初期総合力</div>
+        <div class="center">最大強化</div>
       </div>
       ${rankRows.map(r=>{
         const left = `${esc(r.labelKey)}`;
@@ -1244,6 +1262,11 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
       ${renderCompatLine("プレイスタイル違い", compat.styleDiff, compatPickSty, "compat_style")}
     </div>
   `;
+
+  const rankingSpOnlyBox = $("rankingSpOnly");
+  if(rankingSpOnlyBox){
+    rankingSpOnlyBox.addEventListener("change", ()=>renderResult(target));
+  }
 
   const goldOnlyBox = $("goldOnlyCombos");
   if(goldOnlyBox){
