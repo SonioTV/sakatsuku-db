@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リオネル・メッシのMLS実装記念SP選手スカウトは引くべき？新SP選手5名を徹底評価｜サカつく2026攻略DB</title>
+  <meta name="description" content="サカつく2026のMLS実装記念SP選手スカウトは引くべきかを解説。リオネル・メッシ、ソン・フンミン、トーマス・ミュラー、マルコ・ロイス、クリスティアン・ロルダンの性能・おすすめ度・ガチャの注意点を攻略目線で評価します。">
+  <link rel="canonical" href="https://sakatsuku2026-db.com/mls_sp_scout_review_20260609.html">
+  <style>
+    :root {
+      --main: #0aa36f;
+      --main-dark: #06734f;
+      --main-light: #e9fff6;
+      --accent: #ffb000;
+      --accent-light: #fff5d8;
+      --danger: #d94848;
+      --blue: #246bfe;
+      --text: #222;
+      --muted: #666;
+      --line: #d8e7df;
+      --bg: #f5f7f6;
+      --card: #fff;
+      --gold: #f2a900;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
+      background: radial-gradient(circle at top, #ecfff6 0, #f5f7f6 340px);
+      color: var(--text);
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+    }
+
+    a { color: var(--main-dark); text-decoration: none; font-weight: 800; }
+    a:hover { text-decoration: underline; }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.96);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbarInner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand { font-weight: 900; white-space: nowrap; }
+    .brand a { color: var(--text); text-decoration: none; }
+
+    .nav { display: flex; gap: 12px; align-items: center; font-size: .92rem; }
+    .nav a { color: var(--main-dark); text-decoration: none; font-weight: 800; }
+
+    .container { width: min(960px, calc(100% - 24px)); margin: 18px auto 48px; }
+
+    .article {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 8px 26px rgba(0,0,0,.08);
+      overflow: hidden;
+    }
+
+    .breadcrumb { margin: 0 0 14px; color: var(--muted); font-size: .9rem; }
+
+    h1 {
+      margin: 8px 0 14px;
+      font-size: clamp(1.45rem, 4.4vw, 2.15rem);
+      line-height: 1.45;
+      color: #15382d;
+      border-left: 8px solid var(--main);
+      padding-left: 14px;
+    }
+
+    h2 {
+      margin: 36px 0 14px;
+      padding: 11px 15px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--main-dark), var(--main));
+      border-radius: 14px;
+      font-size: 1.28rem;
+      line-height: 1.45;
+      box-shadow: 0 4px 14px rgba(10,163,111,.18);
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      padding: 8px 12px;
+      border-left: 6px solid var(--accent);
+      background: #fff9e7;
+      border-radius: 10px;
+      font-size: 1.12rem;
+      line-height: 1.5;
+    }
+
+    h4 { margin: 20px 0 8px; font-size: 1rem; color: var(--main-dark); }
+    p { margin: 0 0 1em; }
+    ul, ol { margin: 0 0 1em; padding-left: 1.25em; }
+    li { margin: .28em 0; }
+
+    .lead {
+      font-size: 1.02rem;
+      background: linear-gradient(135deg, var(--main-light), #fff);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+
+    .article-img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 14px auto 18px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      box-shadow: 0 3px 12px rgba(0,0,0,.10);
+      background: #fff;
+    }
+
+    .playerImg {
+      width: 160px;
+      max-width: 70%;
+      height: auto;
+      display: block;
+      margin: 14px auto 18px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #fafafa;
+      padding: 6px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    }
+
+    .emphasis {
+      font-weight: 900;
+      color: var(--main-dark);
+      background: linear-gradient(transparent 62%, #c9f7df 62%);
+      padding: 0 .08em;
+    }
+
+    .hero-note {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 14px 0 18px;
+    }
+
+    .mini-card {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fcfffd;
+      text-align: center;
+    }
+
+    .mini-card strong { display: block; color: var(--main-dark); font-size: 1.05rem; }
+    .mini-card span { display: block; color: var(--muted); font-size: .88rem; }
+
+    .player-card {
+      margin: 30px 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fcfffd 0%, #fff 100%);
+      box-shadow: 0 3px 14px rgba(0,0,0,.04);
+    }
+
+    .summary-box, .point-box, .warning-box, .verdict-box, .compare-box {
+      border-radius: 16px;
+      padding: 15px;
+      margin: 16px 0;
+    }
+
+    .summary-box { background: #f3fff9; border: 1px solid #bde8d4; }
+    .point-box { background: #fffaf0; border: 1px solid #f5d58a; }
+    .warning-box { background: #fff4f4; border: 1px solid #efb8b8; }
+    .verdict-box { background: #f1f7ff; border: 1px solid #bfd7ff; }
+    .compare-box { background: #fafafa; border: 1px solid #ddd; }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: var(--main-light);
+      border: 1px solid #bde8d4;
+      padding: 4px 10px;
+      font-size: .9rem;
+      font-weight: 800;
+      color: #07593e;
+    }
+
+    .rating { color: var(--gold); font-weight: 900; letter-spacing: .06em; white-space: nowrap; }
+    .rank-good { color: var(--main-dark); font-weight: 900; }
+    .rank-normal { color: #815b00; font-weight: 900; }
+    .rank-low { color: var(--danger); font-weight: 900; }
+
+    .rating-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .rating-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .rating-item b { display: block; font-size: .95rem; }
+    .rating-item span { display: block; font-size: .88rem; }
+
+    .tool-link { margin: 18px 0 2px; }
+    .tool-link a {
+      display: inline-block;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: var(--main);
+      color: #fff;
+      box-shadow: 0 3px 10px rgba(10,163,111,.22);
+    }
+
+    .back-link { margin-top: 28px; text-align: center; }
+    .back-link a {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--main);
+      color: #fff;
+      box-shadow: 0 3px 10px rgba(10,163,111,.22);
+    }
+
+    .site-footer {
+      margin-top: 34px;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--line);
+      font-size: .92rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 760px) {
+      .hero-note, .rating-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 16px, 960px); margin-top: 10px; }
+      .article { padding: 14px; border-radius: 14px; }
+      .topbarInner { padding: 10px 12px; }
+      .nav { display: none; }
+      h1 { font-size: 1.32rem; padding-left: 10px; }
+      h2 { font-size: 1.12rem; }
+      .player-card { padding: 12px; }
+      .article-img { border-radius: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbarInner">
+      <div class="brand"><a href="index.html">サカつく2026攻略DB</a></div>
+      <nav class="nav" aria-label="サイト内ナビゲーション">
+        <a href="index.html">トップ</a>
+        <a href="articles.html">攻略記事一覧</a>
+        <a href="sp_evaluator.html">選手評価ツール</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="article">
+      <p class="breadcrumb"><a href="index.html">トップ</a> ＞ <a href="articles.html">攻略記事一覧</a> ＞ MLS実装記念SP選手スカウト評価</p>
+
+      <h1>これはインフレスタータパック!? リオネル・メッシのMLS実装記念SP選手スカウトは引くべき？新SP選手5名を徹底評価</h1>
+
+      <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/top.png" alt="MLS実装記念SP選手スカウト">
+
+      <p class="lead">
+        2026年6月9日更新の<strong>MLS実装記念SP選手スカウト</strong>では、リオネル・メッシ、ソン・フンミン、トーマス・ミュラー、マルコ・ロイス、クリスティアン・ロルダンの新SP選手5名が登場しました。<br>
+        今回は単なる有名選手追加ではなく、<strong class="emphasis">全SP選手360人中1位のメッシ</strong>を筆頭に、ムービング編成と新金フォーメーションコンボ「ネラッズーロ'10」に直結する選手が含まれています。<br>
+        しかも開催期間終了後に恒常ガチャへ追加されないため、性能面だけでなく、入手機会の少なさも含めて判断が必要なガチャです。
+      </p>
+
+      <div class="hero-note">
+        <div class="mini-card"><strong>★3排出率 5%</strong><span>通常タブで新選手がピックアップ</span></div>
+        <div class="mini-card"><strong>恒常追加なし</strong><span>期間終了後の入手難度に注意</span></div>
+        <div class="mini-card"><strong>メッシは総合力1位</strong><span>現環境トップのインパクト</span></div>
+      </div>
+
+      <div class="summary-box">
+        <h2>結論：メッシ狙いなら引く価値はかなり高い。ムービング勢は特に注目</h2>
+        <p>
+          今回の最大の当たりは、間違いなく<strong class="emphasis">リオネル・メッシ</strong>です。初期総合力7154は全SP選手360人中1位で、RW、ムービング、ワイドストライカーのすべての比較軸でトップ。さらに新プレイスタイル「ワイドストライカーⅢ」を持つ唯一無二の選手です。
+        </p>
+        <p>
+          次点で、メッシと同じく新金フォーメーションコンボ「ネラッズーロ'10」のキー選手になれる<strong>ソン・フンミン</strong>と<strong>クリスティアン・ロルダン</strong>も重要です。特に<strong class="emphasis">マンチェスター・シティガチャ</strong>でハーランドやオマル、アケを獲得している監督にとっては、<strong class="emphasis">最強のネラッズーロ'10構成</strong>を組むことができ、メッシを引けた場合のソン・フンミンとロルダンの価値が一気にハネ上がります。
+        </p>
+        <p>
+          一方で、トーマス・ミュラーはポゼッションAMとして非常に強力ですが、現時点では発動条件に完全一致する金コンボがないため、ポゼッション編成の強化枠という立ち位置。マルコ・ロイスは総合力こそ高いものの、リアクションAMではグリーズマンの存在が大きく、深追いは慎重に判断したい選手です。
+        </p>
+      </div>
+
+      <h2>ガシャの注目ポイント</h2>
+      <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/pickup.png" alt="MLS実装記念SP選手スカウトのピックアップ選手">
+
+      <ul>
+        <li>★3の排出率は5%。</li>
+        <li>排出される★3選手は、2026年5月15日までに登場した選手のみ。</li>
+        <li>RB1回限定★3確定10連はピックアップ確定ではなく、全61種の★3SP選手の排出確率が同じ。</li>
+        <li>新SP選手がピックアップ確率で引けるのは「通常」タブの3000GBで引けるガチャ。</li>
+        <li>開催期間終了後、恒常ガチャ「SP選手スカウト」には追加されない。</li>
+        <li>「MLS実装記念SP選手スカウトメダル」は、期間終了後に1枚につき「エクストラコイン」5枚へ変換される。</li>
+      </ul>
+
+      <div class="warning-box">
+        <h3>RB1回限定★3確定10連の注意点</h3>
+        <p>
+          RB1回限定の★3確定10連は魅力的ですが、<strong>メッシやソン・フンミンが確定で出るガチャではありません。</strong><br>
+          ★3確定枠では全61種の★3SP選手が同じ確率で並んでいるため、今回の新SP選手をピンポイントで狙うには向いていません。
+        </p>
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/offer_rate_RB.png" alt="RB1回限定10連の提供割合">
+        <p>
+          新SP選手を狙うなら、基本的には<strong class="emphasis">通常タブの3000GBガチャ</strong>でピックアップ確率を確認してから引くのがおすすめです。
+
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/offer_rate_GB.png" alt="通常3000GBガチャの提供割合">
+        <p>
+ちなみに、ピックアップ確率0.8％は「<strong class="emphasis">200連で1体も出ない確率が約20%</strong>」と、<strong class="emphasis">5人に1人は200連メッシ0体</strong>を経験する事になります。要注意です。
+        </p>
+      </div>
+
+      <h2>おすすめ度早見表</h2>
+      <div class="rating-grid">
+        <div class="rating-item"><b>メッシ</b><span class="rating">★★★★★</span><span>必須級</span></div>
+        <div class="rating-item"><b>ソン</b><span class="rating">★★★★☆</span><span>メッシとセットで強い</span></div>
+        <div class="rating-item"><b>ミュラー</b><span class="rating">★★★★☆</span><span>ポゼッションAM最強格</span></div>
+        <div class="rating-item"><b>ロルダン</b><span class="rating">★★★☆☆</span><span>ネラッズーロ要員</span></div>
+        <div class="rating-item"><b>ロイス</b><span class="rating">★★☆☆☆</span><span>競合が強い</span></div>
+      </div>
+
+      <h2>新SP選手5名の性能評価</h2>
+
+      <section class="player-card">
+        <h3>リオネル・メッシ</h3>
+        <img class="playerImg" src="img/players/P0232.png" alt="リオネル・メッシ">
+        <div class="tag-row">
+          <span class="tag">RW</span><span class="tag">ムービング</span><span class="tag">ワイドストライカーⅢ</span><span class="tag">初期総合力 7154</span><span class="tag">最大強化 15809</span>
+        </div>
+
+        <h4>基本性能</h4>
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0232_info.png" alt="リオネル・メッシの基本性能">
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0232_status.png" alt="リオネル・メッシのステータス">
+        <p>
+          メッシは、今回のガチャどころか<strong class="emphasis">現時点のSP選手全体で見ても最上位</strong>の選手です。総合力は全SP選手360人中1位、ムービング85人中1位、RW22人中1位、ワイドストライカー10人中1位。ランキング面では文句なしの頂点です。
+        </p>
+        <p>
+          さらに新プレイスタイル「ワイドストライカーⅢ」を所有しており、SP選手では現状唯一無二。Ver2.0で追加された金フォーメーションコンボ「ネラッズーロ'10」の発動条件「RWワイドストライカーⅢ」を満たせるキー選手として採用できます。
+        </p>
+
+        <h4>スキル・特徴評価</h4>
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0232_skill.png" alt="リオネル・メッシのスキルと特徴">
+        <p>
+          新スキル「アンストッパブルショット」を所有している点も非常に強力です。RW登録ではありますが、中央寄りに配置できるフォメコンや布陣で使えば、ダイレクトシュートなど得点に直結する動きにも期待できます。
+        </p>
+        <p>
+          所持特徴も「好調トリガー2つ、絶好調トリガー1つ」と扱いやすく、継承枠も3つ。高総合力、唯一性、フォメコン適性、育成自由度のすべてが高水準で、まさに今回の目玉です。
+        </p>
+
+        <div class="verdict-box">
+          <p><strong>おすすめ度：</strong><span class="rating">★★★★★</span></p>
+          <p>
+            メッシは<strong>必須級</strong>と評価していい選手です。全SP選手で最も高い初期総合力を持ち、しかも恒常化されないため、取り逃がした場合の再入手機会が読みにくい点も大きな判断材料になります。ムービング編成を使うなら最優先、ムービングを使っていない人でも確保を検討したいレベルです。
+          </p>
+        </div>
+        <p class="tool-link"><a href="sp_evaluator.html?player=P0232">▶ リオネル・メッシを選手評価ツールで詳しく見る</a></p>
+      </section>
+
+      <section class="player-card">
+        <h3>ソン・フンミン</h3>
+        <img class="playerImg" src="img/players/P0233.png" alt="ソン・フンミン">
+        <div class="tag-row">
+          <span class="tag">LW</span><span class="tag">ムービング</span><span class="tag">サイドアタッカーⅡ</span><span class="tag">初期総合力 6999</span><span class="tag">最大強化 15658</span>
+        </div>
+
+        <h4>基本性能</h4>
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0233_info.png" alt="ソン・フンミンの基本性能">
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0233_status.png" alt="ソン・フンミンのステータス">
+        <p>
+          ソン・フンミンは、総合力が全SP選手360人中5位、ムービング85人中2位、LW24人中1位、サイドアタッカー24人中1位。LW枠としては現状トップクラスどころか、明確に最強候補です。
+        </p>
+        <p>
+          ムービングポリシーのLWサイドアタッカーは、ソン・フンミンと第2弾JリーグSP「カルリーニョス・ジュニオ」の2名のみ。さらに金フォーメーションコンボ「ネラッズーロ'10」の発動条件「LWサイドアタッカーⅡ」を満たせるため、メッシを引いた人ほど価値が上がります。
+        </p>
+
+        <h4>スキル・特徴評価</h4>
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0233_skill.png" alt="ソン・フンミンのスキルと特徴">
+        <p>
+          所持特徴はメッシと同じく「好調トリガー2つ、絶好調トリガー1つ」で扱いやすく、継承枠も3つ。サイドアタッカーとしての完成度が高く、ムービング編成の左サイドを一気に更新できる選手です。
+        </p>
+
+        <div class="compare-box">
+          <h4>カルリーニョス・ジュニオで代用できる？</h4>
+          <p>
+            「ネラッズーロ'10」の発動だけを目的にするなら、カルリーニョス・ジュニオでも代用可能です。ただし、総合力・特徴・育成自由度まで含めると、ソン・フンミンは明確な上位候補。メッシを中心に最強チームを組みたいなら、ソンもセットで狙いたい選手です。
+          </p>
+        </div>
+
+        <div class="verdict-box">
+          <p><strong>おすすめ度：</strong><span class="rating">★★★★☆</span></p>
+          <p>
+            LWポジション全体で見てもトップクラスの性能で、恒常化されない点を考えると確保優先度は高めです。特にメッシを獲得した場合は、ネラッズーロ'10の完成度を高めるためにソン・フンミンも欲しくなります。
+          </p>
+        </div>
+        <p class="tool-link"><a href="sp_evaluator.html?player=P0233">▶ ソン・フンミンを選手評価ツールで詳しく見る</a></p>
+      </section>
+
+      <section class="player-card">
+        <h3>トーマス・ミュラー</h3>
+        <img class="playerImg" src="img/players/P0234.png" alt="トーマス・ミュラー">
+        <div class="tag-row">
+          <span class="tag">AM</span><span class="tag">ポゼッション</span><span class="tag">アタッカーⅡ</span><span class="tag">初期総合力 7100</span><span class="tag">最大強化 15558</span>
+        </div>
+
+        <h4>基本性能</h4>
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0234_info.png" alt="トーマス・ミュラーの基本性能">
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0234_status.png" alt="トーマス・ミュラーのステータス">
+        <p>
+          ミュラーは、総合力が全SP選手360人中2位、ポゼッション90人中1位、AM44人中1位、アタッカー31人中1位。メッシに次ぐ初期総合力を持つ、今回のもう一人のインフレ枠です。
+        </p>
+        <p>
+          ポゼッションAMアタッカーはこれで6人目ですが、これまで第一弾J/KリーグSP中心だった枠に、圧倒的な総合力を持つミュラーが追加された形です。現時点で発動条件を完全に満たせる金フォメコンはありませんが、「ロス・カフェテロス'94」や新コンボ「ブラウ・グラーナ'15」の強化枠として起用できます。
+        </p>
+
+        <h4>スキル・特徴評価</h4>
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0234_skill.png" alt="トーマス・ミュラーのスキルと特徴">
+        <p>
+          所持特徴は「好調トリガー1つ、絶好調トリガー1つ」に加えて、途中交代トリガーの金特徴を持つ構成。スタメンで使うだけでなく、試合後半に投入する最強クラスの交代枠としても面白い存在です。
+        </p>
+
+        <div class="verdict-box">
+          <p><strong>おすすめ度：</strong><span class="rating">★★★★☆</span></p>
+          <p>
+            ポゼッション推しの監督なら、AM更新候補としてかなり魅力的です。ただし、第一弾JリーグSPの香川真司や宇佐美貴史の限界突破が進んでいる場合は、手持ち次第で優先度が下がります。強いことは間違いありませんが、メッシほど「今すぐ必須」とまでは言い切れない評価です。
+          </p>
+        </div>
+        <p class="tool-link"><a href="sp_evaluator.html?player=P0234">▶ トーマス・ミュラーを選手評価ツールで詳しく見る</a></p>
+      </section>
+
+      <section class="player-card">
+        <h3>マルコ・ロイス</h3>
+        <img class="playerImg" src="img/players/P0235.png" alt="マルコ・ロイス">
+        <div class="tag-row">
+          <span class="tag">AM</span><span class="tag">リアクション</span><span class="tag">アタッカーⅡ</span><span class="tag">初期総合力 7024</span><span class="tag">最大強化 15496</span>
+        </div>
+
+        <h4>基本性能</h4>
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0235_info.png" alt="マルコ・ロイスの基本性能">
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0235_status.png" alt="マルコ・ロイスのステータス">
+        <p>
+          ロイスは、総合力が全SP選手360人中3位、リアクション89人中1位、AM44人中2位、アタッカー31人中2位。数字だけ見れば非常に強力なリアクションAMです。
+        </p>
+        <p>
+          ただし評価が難しいのは、同じリアクションAMにアントワーヌ・グリーズマンが存在することです。グリーズマンは総合力こそロイスよりわずかに低いものの、プレイスタイルがアタッカーⅢで、さらに今後の恒常化も予定されています。限界突破の狙いやすさまで考えると、グリーズマンの方が扱いやすい場面が多くなります。
+        </p>
+
+        <h4>スキル・特徴評価</h4>
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0235_skill.png" alt="マルコ・ロイスのスキルと特徴">
+        <p>
+          新コンボ「アルヴィネグロ・プライアーノ'11」の強化枠として使える点は魅力です。一方で、現状「エンカルナードス'23」を採用している場合、AM枠にアタッカーⅢが求められるため、ロイスを起用するとコンボが発動しない点には注意が必要です。
+        </p>
+
+        <div class="compare-box">
+          <h4>グリーズマンと比べるとどう？</h4>
+          <p>
+            ロイスは総合力では優秀ですが、リアクションAMの実用面ではグリーズマンの壁がかなり高いです。特に「エンカルナードス'23」ではグリーズマンが発動条件に直結するため、ロイスは最強というより、AM3枚起用の「アルヴィネグロ・プライアーノ'11」でグリーズマンと並べる補強枠と考えるのが自然です。
+          </p>
+        </div>
+
+        <div class="verdict-box">
+          <p><strong>おすすめ度：</strong><span class="rating">★★☆☆☆</span></p>
+          <p>
+            弱い選手ではなく、むしろ総合力だけならトップクラスです。ただし、グリーズマン、ジョアン・ペドロなど競合が強く、性能目的でロイスだけを深追いするのは慎重に判断したいところ。リアクションAMを複数枚使う編成を本気で組む人向けです。
+          </p>
+        </div>
+        <p class="tool-link"><a href="sp_evaluator.html?player=P0235">▶ マルコ・ロイスを選手評価ツールで詳しく見る</a></p>
+      </section>
+
+      <section class="player-card">
+        <h3>クリスティアン・ロルダン</h3>
+        <img class="playerImg" src="img/players/P0236.png" alt="クリスティアン・ロルダン">
+        <div class="tag-row">
+          <span class="tag">DM</span><span class="tag">ムービング</span><span class="tag">セントラルMFⅡ</span><span class="tag">初期総合力 6750</span><span class="tag">最大強化 15253</span>
+        </div>
+
+        <h4>基本性能</h4>
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0236_info.png" alt="クリスティアン・ロルダンの基本性能">
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0236_status.png" alt="クリスティアン・ロルダンのステータス">
+        <p>
+          ロルダンは、総合力が全SP選手360人中29位、ムービング85人中10位、DM48人中8位、セントラルMF25人中5位。メッシやミュラーのような超上位ではありませんが、ムービングDMセントラルMFとして見ると現状最強です。
+        </p>
+        <p>
+          さらに、メッシやソン・フンミンと同様に、金フォーメーションコンボ「ネラッズーロ'10」の発動条件キー選手として起用可能。ここがロルダン最大の価値です。
+        </p>
+
+        <h4>スキル・特徴評価</h4>
+        <img class="article-img" src="img/articles/20260609_MLS実装記念SP選手スカウト_review/P0236_skill.png" alt="クリスティアン・ロルダンのスキルと特徴">
+        <p>
+          ムービングDM全体で見ると、スコット・マクトミネイやケヴィン・デ・ブライネが強力な競合になります。特に「カナリア軍団'06」ではDM2枚の布陣なので、マクトミネイとケヴィンの2枚起用が最強候補。「アルビセレステ'01」や「ソベラーノ'94」ではDM1枚のため、マクトミネイが優先されやすいです。
+        </p>
+        <p>
+          ただし、ロルダンは「好調トリガー2つ、絶好調トリガー1つ」と扱いやすく、途中交代トリガーの特徴を継承すれば現状のムービング最強構成にも組み込みやすくなります。
+        </p>
+
+        <div class="compare-box">
+          <h4>マクトミネイ・ケヴィンとの差</h4>
+          <p>
+            汎用的なムービングDMとしては、マクトミネイやケヴィンの方が優先される編成もあります。ただし「ネラッズーロ'10」を使うなら、ロルダンは発動条件に関わる重要なピースです。恒常★3SPショーン・ロングスタッフの上位存在として見れば、ムービング推しには十分価値があります。
+          </p>
+        </div>
+
+        <div class="verdict-box">
+          <p><strong>おすすめ度：</strong><span class="rating">★★★☆☆</span></p>
+          <p>
+            単体性能だけなら超大当たり枠ではありませんが、ネラッズーロ'10を組むなら評価は一段上がります。メッシとソンを引けた人にとっては、最後のパーツとしてロルダンも欲しくなる選手です。ムービング推しなら狙う価値あり、ムービングを使わないなら無理に深追いしなくてもいい評価です。
+          </p>
+        </div>
+        <p class="tool-link"><a href="sp_evaluator.html?player=P0236">▶ クリスティアン・ロルダンを選手評価ツールで詳しく見る</a></p>
+      </section>
+
+      <h2>今回のガチャは誰が引くべき？</h2>
+      <div class="point-box">
+        <h3>引くべき人</h3>
+        <ul>
+          <li>リオネル・メッシを確保したい人。</li>
+          <li>ムービング編成をメインで使っている人。</li>
+          <li>新金フォーメーションコンボ「ネラッズーロ'10」を本気で組みたい人。</li>
+          <li>ソン・フンミン、ロルダンも含めてムービングのキー選手を揃えたい人。</li>
+          <li>マンチェスター・シティガチャをコンプしたムービング推しの人。</li>
+        </ul>
+
+        <h3>様子見でもいい人</h3>
+        <ul>
+          <li>ムービング編成をほとんど使っていない人。</li>
+          <li>メッシ以外を引いた時に満足しにくい人。</li>
+          <li>リアクションAMはグリーズマンで十分と考えている人。</li>
+          <li>ポゼッションAMの手持ちがすでに充実している人。</li>
+          <li>GBやRBに余裕がなく、次回ガチャに備えたい人。</li>
+        </ul>
+      </div>
+
+      <h2>おすすめ度ランキング</h2>
+      <ol>
+        <li><span class="rank-good">リオネル・メッシ</span>：全SP選手360人中1位。ワイドストライカーⅢ唯一で、ネラッズーロ'10の最重要パーツ。</li>
+        <li><span class="rank-good">ソン・フンミン</span>：LW最強候補。メッシとセットでムービング編成の価値が大きく上がる。</li>
+        <li><span class="rank-good">トーマス・ミュラー</span>：ポゼッションAM最強格。手持ち次第では即戦力。</li>
+        <li><span class="rank-normal">クリスティアン・ロルダン</span>：単体では中堅寄りだが、ネラッズーロ'10の発動要員として重要。</li>
+        <li><span class="rank-low">マルコ・ロイス</span>：総合力は高いが、グリーズマンとの競合が厳しい。</li>
+      </ol>
+
+      <h2>まとめ</h2>
+      <p>
+        MLS実装記念SP選手スカウトは、<strong class="emphasis">メッシを狙う価値が非常に高いガチャ</strong>です。全SP選手360人中1位の初期総合力、新プレイスタイル「ワイドストライカーⅢ」、金フォーメーションコンボ「ネラッズーロ'10」のキー選手、そして恒常化なし。これだけ条件が揃っているため、ムービング編成を使う人にとってはかなり重要なガチャと言えます。
+      </p>
+      <p>
+        ただし、メッシ1点狙うは非常に危険です。ピックアップ確率0.8％は「<strong class="emphasis">200連で1体も出ない確率が約20%</strong>」と、<strong class="emphasis">5人に1人は200連メッシ0体</strong>を経験します。これは忘れないでください。
+      </p>
+      <p>
+        総合的には、ムービングを強化したい人、ネラッズーロ'10を使いたい人、メッシを逃したくない人は引く価値あり。一方で、ムービングを使わない人や、グリーズマン・既存AMなどで手持ちが十分な人は、深追いせずに様子見でも問題ありません。
+      </p>
+
+      <div class="summary-box">
+        <h2>選手評価ツールも活用しよう</h2>
+        <p>
+          各選手のポジション別順位、ポリシー別順位、プレイスタイル別順位、対応フォーメーションコンボを詳しく確認したい場合は、サイト内の「選手評価ツール」もおすすめです。記事内の評価とあわせて、自分の手持ちや使いたいフォメコンに合うかチェックしてみてください。
+        </p>
+        <p><a href="sp_evaluator.html">▶ 選手評価ツールはこちら</a></p>
+      </div>
+
+      <div class="back-link"><a href="articles.html">← 攻略記事一覧に戻る</a></div>
+
+      <footer class="site-footer">
+        <a href="index.html">トップページ</a> / <a href="articles.html">攻略記事一覧</a> / <a href="contact.html">お問い合わせ</a>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
