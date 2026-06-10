@@ -1040,7 +1040,7 @@
         "conditionNo": 2
       },
       {
-        "slotNo": 11,
+        "slotNo": 10,
         "position": "CF",
         "positionPlace": "Right",
         "playStyle": "ストライカー",
@@ -2546,6 +2546,238 @@
         "position": "LM",
         "positionPlace": null,
         "playStyle": "ドリブラー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C053",
+    "name": "ネラッズーロ'10",
+    "formation": "4-3-3B",
+    "rank": "金",
+    "combo_policys": [
+      "ムービング"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
+    "effect": "タックルが60%アップ、マークが80%アップ、決定力が80%アップ、コンタクトが100%アップ",
+    "effects": [
+      {
+        "status": "タックル",
+        "value": 60
+      },
+      {
+        "status": "マーク",
+        "value": 80
+      },
+      {
+        "status": "決定力",
+        "value": 80
+      },
+      {
+        "status": "コンタクト",
+        "value": 100
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 6,
+        "position": "DM",
+        "positionPlace": "Right",
+        "playStyle": "セントラルMF",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 9,
+        "position": "LW",
+        "positionPlace": null,
+        "playStyle": "サイドアタッカー",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 10,
+        "position": "RW",
+        "positionPlace": null,
+        "playStyle": "ワイドストライカー",
+        "playStyleLv": 3,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C054",
+    "name": "ブラウ・グラーナ'15",
+    "formation": "4-3-3A",
+    "rank": "金",
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
+    "effect": "タックルが60%アップ、マークが80%アップ、決定力が80%アップ、キック精度が100%アップ",
+    "effects": [
+      {
+        "status": "タックル",
+        "value": 60
+      },
+      {
+        "status": "マーク",
+        "value": 80
+      },
+      {
+        "status": "決定力",
+        "value": 80
+      },
+      {
+        "status": "キック精度",
+        "value": 100
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 2,
+        "position": "CB",
+        "positionPlace": "Right",
+        "playStyle": "組立CB",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 7,
+        "position": "AM",
+        "positionPlace": "Right",
+        "playStyle": "セントラルMF",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 11,
+        "position": "CF",
+        "positionPlace": null,
+        "playStyle": "ストライカー",
+        "playStyleLv": 3,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C055",
+    "name": "アルヴィネグロ・プライアーノ'11",
+    "formation": "4-4-2E",
+    "rank": "金",
+    "combo_policys": [
+      "リアクション"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
+    "effect": "タックルが60%アップ、マークが80%アップ、決定力が80%アップ、キック力が100%アップ",
+    "effects": [
+      {
+        "status": "タックル",
+        "value": 60
+      },
+      {
+        "status": "マーク",
+        "value": 80
+      },
+      {
+        "status": "決定力",
+        "value": 80
+      },
+      {
+        "status": "キック力",
+        "value": 100
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 5,
+        "position": "RB",
+        "positionPlace": null,
+        "playStyle": "攻撃的FB",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 8,
+        "position": "AM",
+        "positionPlace": "Center",
+        "playStyle": "パサー",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 10,
+        "position": "CF",
+        "positionPlace": "Right",
+        "playStyle": "ラインブレーカー",
+        "playStyleLv": 3,
+        "conditionNo": 3
+      }
+    ]
+  },
+  {
+    "comboId": "C056",
+    "name": "エウスカルドゥナク'12",
+    "formation": "3-4-3C",
+    "rank": "金",
+    "combo_policys": [
+      "カウンター"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "コイン交換",
+    "acquisitionPlace": "交換所",
+    "availablePeriod": "終了日未定",
+    "effect": "タックルが60%アップ、マークが80%アップ、決定力が80%アップ、冷静さが100%アップ",
+    "effects": [
+      {
+        "status": "タックル",
+        "value": 60
+      },
+      {
+        "status": "マーク",
+        "value": 80
+      },
+      {
+        "status": "決定力",
+        "value": 80
+      },
+      {
+        "status": "冷静さ",
+        "value": 100
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 3,
+        "position": "CB",
+        "positionPlace": "Center",
+        "playStyle": "ストッパー",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 8,
+        "position": "AM",
+        "positionPlace": "Left",
+        "playStyle": "アタッカー",
+        "playStyleLv": 3,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 11,
+        "position": "CF",
+        "positionPlace": null,
+        "playStyle": "ストライカー",
         "playStyleLv": 2,
         "conditionNo": 3
       }
