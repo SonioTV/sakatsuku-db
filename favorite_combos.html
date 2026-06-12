@@ -128,7 +128,6 @@
       <div>
         <div class="heroTitle">お気に入り選手からフォメコンを逆引き</div>
         <div class="heroText">
-          このページは <strong>players.json</strong>、<strong>combos.json</strong>、選手図鑑のお気に入りデータを参照します。<br>
           お気に入り登録を変更した場合は、このページを再読み込みすると最新状態で診断できます。
         </div>
       </div>
@@ -435,9 +434,16 @@ function renderOneAway(list){
     root.innerHTML = `<div class="empty">条件に一致する「あと1名」コンボはありません。</div>`;
     return;
   }
-  root.innerHTML = list.map(({combo, missingIndex, candidates})=>{
+  root.innerHTML = list.map(({combo, assignment, missingIndex, candidates})=>{
     const base = comboBaseHtml(combo);
     const cond = comboConditions(combo)[missingIndex] || {};
+    const members = assignment.map((player, idx)=>{
+      if(!player) return "";
+      const core = getPlayerCore(player);
+      const cond = comboConditions(combo)[idx] || {};
+      const pos = normalize(comboField(cond, ["position","pos","ポジション"], core.mainPosition || "-"));
+      return `<span class="memberChip">${esc(pos)}：${esc(core.name || core.playerId || "選手")}</span>`;
+    }).filter(Boolean).join("");
     const candidateHtml = candidates.map(p=>{
       const core = getPlayerCore(p);
       const lv = romanLv(core.playStyleLv);
@@ -462,6 +468,7 @@ function renderOneAway(list){
           <div class="k">ポリシー</div><div class="v">${esc(base.policies)}</div>
           <div class="k">効果</div><div class="v">${esc(base.effect)}</div>
         </div>
+        <div class="memberList">${members}</div>
         <div class="missingBox">
           <div class="missingTitle">不足条件：${esc(conditionText(cond))}</div>
           <div class="candidateList">${candidateHtml}</div>

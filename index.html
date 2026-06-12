@@ -1278,6 +1278,12 @@
         <select id="comboSelect" class="bigSelect"></select>
       </div>
 
+      <div class="sectionTitle" style="font-size:24px;margin-top:14px;margin-bottom:6px;">入手場所を絞り込み</div>
+      <div class="centerBlock">
+        <select id="playerAcquisitionPlaceFilter" class="bigSelect"></select>
+        <div class="note" style="margin-top:6px;">※未選択の場合は「すべて」を表示します</div>
+      </div>
+
       <button id="btnShowPlayers" class="bigBtn" type="button" style="width:min(560px,96%);font-size:32px;">対応選手を表示</button>
       <div class="note" style="margin-top:8px;">
         ※選手名横は（入手方法：入手場所）<br/>
@@ -1338,10 +1344,10 @@
       </a>
 <a href="player_catalog.html">選手図鑑</a>
 
-      <a class="bannerLink" href="tier_list.html">
-        <img src="img/label/tier_list.png" alt="サカつく2026ティア表メーカー">
+      <a class="bannerLink" href="favorite_combos.html">
+        <img src="img/label/favorite_combos.png" alt="フォメコン診断">
       </a>
-<a href="tier_list.html">サカつく2026ティア表メーカー</a>
+<a href="favorite_combos.html">フォメコン診断</a>
 
       <a class="bannerLink" href="sp_evaluator.html">
         <img src="img/label/sp_evaluator.png" alt="選手評価ツール">
@@ -1382,6 +1388,11 @@
         <img src="img/label/clubhouse_simulation.png" alt="クラブハウス設備シミュレーション">
       </a>
 <a href="clubhouse_simulation.html">クラブハウス設備シミュレーション</a>
+
+      <a class="bannerLink" href="tier_list.html">
+        <img src="img/label/tier_list.png" alt="サカつく2026ティア表メーカー">
+      </a>
+<a href="tier_list.html">サカつく2026ティア表メーカー</a>
 
       <a href="https://forms.gle/TLRL3Qy9qzftd5zZ7"
          target="_blank" rel="noopener noreferrer"
@@ -2127,6 +2138,7 @@ const acqMethod = getComboField(combo, ["acquisitionMethod","入手方法"], "-"
 ========================= */
 let selectedRanks = new Set(); // 金/銀/銅
 let selectedPlayerPolicy = null; // ポリシー（未選択=null）
+let selectedPlayerAcquisitionPlace = ""; // 入手場所（未選択=""）
 
 function setupPlayerSearchUI(){
   // policy tiles (player search)
@@ -2166,10 +2178,35 @@ function setupPlayerSearchUI(){
     document.getElementById("playerResult").innerHTML = "";
   });
 
+  setupPlayerAcquisitionPlaceFilter();
+
   document.getElementById("btnShowPlayers").addEventListener("click", ()=>{
     renderComboDetail();
     renderPlayersForCombo();
   });
+}
+
+
+function setupPlayerAcquisitionPlaceFilter(){
+  const sel = document.getElementById("playerAcquisitionPlaceFilter");
+  if(!sel) return;
+
+  const places = [...new Set(PLAYERS.map(p=>safeStr(p.acquisitionPlace).trim()).filter(Boolean))]
+    .sort((a,b)=>a.localeCompare(b,"ja"));
+
+  sel.innerHTML = `<option value="">（すべての入手場所）</option>` +
+    places.map(place=>`<option value="${esc(place)}">${esc(place)}</option>`).join("");
+
+  sel.addEventListener("change", ()=>{
+    selectedPlayerAcquisitionPlace = sel.value;
+    document.getElementById("playerResult").innerHTML = "";
+  });
+}
+
+function filterPlayersBySelectedAcquisitionPlace(players){
+  const place = safeStr(selectedPlayerAcquisitionPlace).trim();
+  if(!place) return players;
+  return players.filter(p => safeStr(p.acquisitionPlace).trim() === place);
 }
 
 function refreshComboSelect(){
@@ -2330,7 +2367,8 @@ function renderPlayersForCombo(){
     const matchedFull = [];
     const matchedPolDiff = [];
 
-    for(const p of PLAYERS){
+    const targetPlayers = filterPlayersBySelectedAcquisitionPlace(PLAYERS);
+    for(const p of targetPlayers){
       const m = playerMatchesCondition(p, cond, comboPolicys);
       if(m.ok) matchedFull.push(p);
       else if(m.core && !m.polOk) matchedPolDiff.push(p);
