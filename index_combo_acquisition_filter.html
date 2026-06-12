@@ -1,0 +1,2669 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7589811048145654"
+     crossorigin="anonymous"></script>
+
+<title>サカつく2026攻略DB｜最強フォーメーションコンボ検索・最強選手データ</title>
+
+<meta name="description" content="サカつく2026のフォーメーションコンボ検索・選手検索ができる攻略データベース。ポリシーやプレイスタイルからコンボを簡単に確認できます。">
+<meta name="keywords" content="サカつく2026,コンボ,攻略,選手,フォーメーション,データベース,最強,ポリシー,ランキング,ガチャ,リセマラ">
+<meta property="og:title" content="サカつく2026攻略DB｜フォーメーションコンボ検索・選手データ">
+<meta property="og:description" content="サカつく2026のフォーメーションコンボ検索・選手検索ができる攻略データベース。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sakatsuku2026-db.com/">
+
+<link rel="canonical" href="https://sakatsuku2026-db.com/">
+<style>
+  :root{
+    --blue:#1e88ff;
+    --blue2:#0b5bd3;
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --text:#111;
+    --muted:#666;
+    --line:#d7dbe6;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+    --radius:18px;
+
+    --gold1:#f6df7b; --gold2:#d2b451;
+    --silver1:#e9e9e9; --silver2:#b7b7b7;
+    --bronze1:#f0c39a; --bronze2:#c8894a;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+  }
+  .wrap{ max-width:920px; margin:0 auto; padding:18px 14px 90px; }
+  h1{ margin:10px 0 12px; font-size:34px; letter-spacing:.02em; text-align:center; }
+  .tabs{
+    display:flex; gap:12px;
+    justify-content:center;
+    margin:18px 0 20px;
+  }
+  .tabbtn{
+    border:2px solid var(--line);
+    background:#e8e8e8;
+    color:var(--blue2);
+    padding:14px 18px;
+    border-radius:16px;
+    font-weight:800;
+    font-size:18px;
+    min-width:160px;
+    cursor:pointer;
+    transition:.15s;
+  }
+  .tabbtn.active{
+    background:#4a90e2;
+    color:#fff;
+    border-color:#4a90e2;
+    box-shadow:0 10px 18px rgba(74,144,226,.25);
+  }
+
+  .panel{ display:none; }
+  .panel.active{ display:block; }
+
+  /* 共通カード */
+  .card{
+    background:var(--card);
+    border:1px solid #e7e9f0;
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    padding:18px;
+  }
+  .sectionTitle{
+    font-size:28px;
+    font-weight:900;
+    text-align:center;
+    margin:12px 0 12px;
+  }
+  .note{
+    color:var(--muted);
+    text-align:center;
+    line-height:1.5;
+    margin:10px 0 14px;
+    font-size:16px;
+  }
+
+  /* タイル共通 */
+  .tile{
+    user-select:none;
+    cursor:pointer;
+    border:3px solid #bfc6d6;
+    background:#fff;
+    border-radius:18px;
+    padding:12px 10px;
+    min-height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    font-size:20px;
+    box-shadow:0 8px 18px rgba(0,0,0,.06);
+    transition: transform .08s, box-shadow .12s, border-color .12s;
+  }
+  .tile:active{ transform:scale(.98); }
+  .tile.selected{
+    border-color:#111;
+    box-shadow:0 14px 24px rgba(0,0,0,.14);
+  }
+
+  /* 画像タイル（ポリシー/プレイスタイル） */
+  .imgGrid{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap:8px;
+    justify-items:center;
+    margin:10px auto 6px;
+    max-width:720px;
+  }
+
+  /* policy grid: 2x2 (Counter/Moving, Reaction/Possession) */
+  #policyGrid.imgGrid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width:520px;
+  }
+
+
+  /* ▼ player search policy grid: horizontal (no wrap) */
+  #playerPolicyGrid.imgGrid{
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:stretch;
+    gap:12px;
+    overflow-x:auto;
+    max-width:720px;
+    padding:0 6px 4px;
+  }
+  #playerPolicyGrid .imgTile{
+    width:150px;
+    flex:0 0 auto;
+  }
+  #playerPolicyGrid .imgTile .lbl{
+    display:block;
+    max-width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap; /* keep */
+  }
+  @media (max-width:420px){
+    #playerPolicyGrid{ gap:10px; }
+    #playerPolicyGrid .imgTile{ width:120px; }
+    #playerPolicyGrid .imgTile img{ width:96px; height:64px; }
+  }
+  /* ▲ player search policy grid */
+  .imgTile{
+    width:180px;
+    padding:10px 10px 8px;
+    border-radius:18px;
+    border:3px solid #bfc6d6;
+    background:#fff;
+    cursor:pointer;
+    text-align:center;
+    box-shadow:0 8px 18px rgba(0,0,0,.06);
+    transition:.12s;
+  }
+  .imgTile.selected{
+    border-color:#111;
+    box-shadow:0 14px 24px rgba(0,0,0,.14);
+  }
+  .imgTile img{
+    width:120px;
+    height:80px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 8px;
+  }
+  .imgTile .lbl{
+    font-weight:900;
+    font-size:16px;
+    line-height:1.15;
+    white-space:nowrap;
+  }
+
+  /* ポジション選択 */
+  .posWrap{
+    display:flex;
+    justify-content:center;
+    margin-top:10px;
+  }
+  .posBoard{
+    background:#efeff2;
+    border-radius:16px;
+    padding:12px;
+    display:grid;
+    grid-template-columns: repeat(3, 76px);
+    gap:10px;
+  }
+  .posBtn{
+    width:76px; height:54px;
+    border-radius:14px;
+    background:#606267;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    border:3px solid transparent;
+    cursor:pointer;
+    user-select:none;
+  }
+  .posBtn.selected{ background:#1f2937; }
+  
+  .posBtn.tall{
+    grid-row: span 2;
+    height:118px; /* 54*2 + gap(10) */
+  }
+.posBtn[data-color="green"]{ border-color:#41c95a; }
+  .posBtn[data-color="yellow"]{ border-color:#f1c40f; }
+  .posBtn[data-color="blue"]{ border-color:#4aa3ff; }
+  .posBtn[data-color="red"]{ border-color:#ff3b30; }
+  .posBtn.selected[data-color="green"]{ background:#41c95a; }
+  .posBtn.selected[data-color="yellow"]{ background:#f1c40f; color:#111; }
+  .posBtn.selected[data-color="blue"]{ background:#4aa3ff; }
+  .posBtn.selected[data-color="red"]{ background:#ff3b30; }
+
+  /* Lv選択（横長） */
+  .lvBoard{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin:12px 0 6px;
+  }
+  .lvTile{
+    width:140px;
+    height:54px;
+    border-radius:16px;
+    border:3px solid #bfc6d6;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    font-size:20px;
+    cursor:pointer;
+    box-shadow:0 8px 18px rgba(0,0,0,.06);
+  }
+  .lvTile.selected{ border-color:var(--blue); background:#e7f2ff; }
+
+  /* ボタン */
+  .bigBtn{
+    width:min(520px, 92%);
+    display:block;
+    margin:16px auto 6px;
+    padding:18px 18px;
+    font-size:34px;
+    font-weight:900;
+    border-radius:20px;
+    border:none;
+    cursor:pointer;
+    background:#f59e0b;
+    color:#fff;
+    box-shadow:0 16px 26px rgba(245,158,11,.25);
+  }
+  .bigBtn:active{ transform:scale(.99); }
+
+  .error{
+    text-align:center;
+    color:#d11;
+    font-weight:900;
+    margin:10px 0 0;
+    display:none;
+  }
+
+.comboBtnRow{
+  width:min(560px, 92%);
+  margin:16px auto 6px;
+  display:flex;
+  gap:12px;
+  align-items:stretch;
+}
+.comboBtnRow .bigBtn{
+  margin:0;           /* 既存.bigBtnのmarginを行内だけ無効化 */
+  width:auto;
+  flex:1;
+}
+.comboClearBtn{
+  width:160px;
+  border:none;
+  border-radius:20px;
+  font-weight:900;
+  font-size:26px;
+  cursor:pointer;
+  background:#9aa0aa;
+  color:#fff;
+  box-shadow:0 16px 26px rgba(0,0,0,.12);
+}
+.comboClearBtn:active{ transform:scale(.99); }
+
+@media (max-width: 480px){
+  .comboBtnRow{ width:min(560px, 96%); gap:10px; }
+  .comboClearBtn{ width:120px; font-size:20px; }
+}
+
+  /* 結果 */
+  .resultArea{ margin-top:16px; }
+  .resultGroupTitle{
+    font-size:20px;
+    font-weight:900;
+    margin:18px 0 10px;
+  }
+  .comboCard{
+    border:1px solid var(--line);
+    border-left:6px solid #2e7d32;
+    border-radius:16px;
+    background:#e9f7ed;
+    padding:14px;
+    margin:10px 0;
+  }
+  .comboCard.blue{ border-left-color:#1565c0; background:#e8f1ff; }
+  .comboCard.gray{ border-left-color:#9aa0aa; background:#f3f4f6; }
+  
+/* ランク別（コンボ検索の結果枠色） */
+.comboCard.rank-gold{
+  border-left-color:#d2b451;
+  background:#fff9e2;
+}
+.comboCard.rank-silver{
+  border-left-color:#b7b7b7;
+  background:#f6f6f6;
+}
+.comboCard.rank-bronze{
+  border-left-color:#c8894a;
+  background:#fff3e7;
+}
+.comboName{ font-size:20px; font-weight:900; margin:0 0 8px; }
+  .kv{ display:grid; grid-template-columns: 108px 1fr; gap:6px 10px; }
+  .k{ color:#000; font-weight:900; }
+  .v{ 
+  color:#111; 
+  overflow-wrap:break-word; 
+  word-break:normal;
+}
+
+  .needNote{ margin-top:10px; color:#111; font-weight:900; }
+
+  /* 選手検索：ランクタイル */
+  .rankBoard{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin:10px auto 8px;
+  }
+  .rankTile{
+    width:100px; height:100px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    font-weight:900;
+    border:3px solid transparent;
+    cursor:pointer;
+    box-shadow:0 10px 18px rgba(0,0,0,.10);
+    transition:.12s;
+  }
+  .rankTile.gold{ background:linear-gradient(180deg,var(--gold1),var(--gold2)); border-color:#a2872f; }
+  .rankTile.silver{ background:linear-gradient(180deg,var(--silver1),var(--silver2)); border-color:#8d8d8d; }
+  .rankTile.bronze{ background:linear-gradient(180deg,var(--bronze1),var(--bronze2)); border-color:#8a5a2d; }
+  .rankTile.selected{
+    outline:6px solid #111;
+    outline-offset:2px;
+    box-shadow:0 16px 26px rgba(0,0,0,.18);
+    transform: translateY(-2px);
+  }
+
+  .centerBlock{ text-align:center; }
+
+  select.bigSelect{
+    width:min(720px, 96%);
+    font-size:26px;
+    font-weight:900;
+    border-radius:22px;
+    border:2px solid #e1e5ef;
+    padding:14px 16px;
+    background:#ececec;
+    color:var(--blue2);
+    outline:none;
+  }
+
+  /* 選手リスト（選手名のみ） */
+  .playerList{ margin-top:16px; }
+  .playerRow{
+    background:#fff;
+    border:1px solid #eceef5;
+    border-radius:16px;
+    padding:14px 16px;
+    margin:10px 0;
+    box-shadow:0 10px 18px rgba(0,0,0,.06);
+  }
+  .playerRow a{
+    font-size:22px;
+    font-weight:900;
+    color:#0b63d1;
+    text-decoration:underline;
+  }
+
+  /* おまけ：ランキング表 */
+  .tableWrap{ overflow-x:auto; }
+  table.rankTable{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    min-width:540px;
+    margin:10px 0 18px;
+    font-size:16px;
+  }
+  .rankTable th, .rankTable td{
+    padding:10px 12px;
+    border-bottom:1px solid #e7e9f0;
+    text-align:left;
+    white-space:nowrap;
+  }
+  .rankTable th{
+    background:#f1f3f8;
+    font-weight:900;
+  }
+  .rankTable td:nth-child(1){ width:56px; text-align:right; }
+  .rankTable td:nth-child(3){ width:110px; text-align:right; }
+  .rankTable td:nth-child(4){ width:70px; text-align:center; }
+  .rankLink{
+    color:#0b63d1;
+    text-decoration:underline;
+    font-weight:900;
+    cursor:pointer;
+  }
+
+  /* 割合バー */
+  .barList{ margin-top:6px; }
+  .barRow{
+    display:grid;
+    grid-template-columns: 1fr 180px 64px;
+    gap:12px;
+    align-items:center;
+    margin:10px 0;
+  }
+  .barName{
+    font-weight:900;
+    white-space:nowrap; /* 折り返し防止 */
+  }
+  .barTrack{
+    height:16px;
+    border-radius:999px;
+    background:#e1e1e1;
+    overflow:hidden;
+  }
+  .barFill{
+    height:100%;
+    background:#4a90e2;
+    width:0%;
+    border-radius:999px;
+  }
+  .barPct{
+    text-align:right;
+    font-weight:900;
+    white-space:nowrap;
+    font-size:14px;
+  }
+
+  /* モーダル */
+  .modalBack{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+    z-index:50;
+  }
+  .modalBack.show{ display:flex; }
+  .modal{
+    width:min(720px, 100%);
+    background:#fff;
+    border-radius:22px;
+    box-shadow:0 30px 60px rgba(0,0,0,.25);
+    overflow:hidden;
+  }
+  .modalHead{
+    padding:16px 18px;
+    background:#0b0b0b;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .modalHead .ttl{ font-size:18px; font-weight:900; color:#ffd400; }
+  .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; color:#ffd400; }
+  .modalHead button{
+    border:none;
+    background:transparent;
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+  }
+  .modalBody{ padding:16px 18px 18px; }
+
+
+/* ===== 選手詳細モーダル：画像・評価ツールリンク ===== */
+.modalPlayerImgWrap{
+  text-align:center;
+  margin:4px 0 18px;
+}
+.modalPlayerImg{
+  width:160px;
+  max-width:70%;
+  height:auto;
+  border-radius:14px;
+  border:1px solid #e7e7e7;
+  background:#fafafa;
+  padding:6px;
+}
+.modalEvalLinkWrap{
+  text-align:center;
+  margin:18px 0 4px;
+}
+.modalEvalLink{
+  display:inline-block;
+  padding:12px 16px;
+  border-radius:14px;
+  background:#2e7d32;
+  color:#fff;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 10px 18px rgba(0,0,0,.14);
+}
+.modalEvalLink:active{
+  transform:scale(.98);
+}
+.modalBody .mLine{
+  margin:8px 0;
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+}
+.modalBody .mKey{
+  font-weight:900;
+  flex:0 0 140px;     /* ← 左列幅固定（=折り返し位置が揃う） */
+  color:#111;
+}
+.modalBody .mVal{
+  color:#111;
+  font-weight:700;
+  flex:1 1 auto;
+  min-width:0;
+  overflow-wrap:anywhere; /* 長い文字でも自然に折り返し */
+  word-break:break-word;
+}
+
+  /* 右下トップへ戻る */
+  .toTop{
+    position:fixed;
+    right:16px;
+    bottom:22px;
+    width:62px;
+    height:62px;
+    border-radius:16px;
+    border:1px solid rgba(0,0,0,.12);
+    background:rgba(255,255,255,.92);
+    box-shadow:0 14px 30px rgba(0,0,0,.18);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    opacity:0;
+    transform: translateY(12px);
+    pointer-events:none;
+    transition: opacity .2s ease, transform .25s ease;
+    z-index:60;
+  }
+  .toTop.show{
+    opacity:1;
+    transform: translateY(0);
+    pointer-events:auto;
+  }
+  .toTop::before{
+    content:"▲";
+    font-weight:900;
+    color:#455a64;
+    font-size:24px;
+    transform: translateY(-2px);
+  }
+
+  /* ===== スマホ調整 ===== */
+  @media (max-width: 480px){
+    h1{ font-size:30px; }
+    .tabbtn{ min-width:0; width: 48%; font-size:16px; padding:12px 10px; }
+    .sectionTitle{ font-size:24px; }
+    .note{ font-size:14px; }
+    .imgGrid{ grid-template-columns: repeat(3, minmax(0, 1fr)); gap:10px; }
+    .imgTile{ width:110px; padding:8px 8px 6px; }
+    .imgTile img{ width:84px; height:56px; margin-bottom:6px; }
+    .imgTile .lbl{ font-size:13px; }
+    .posBoard{ grid-template-columns: repeat(3, 72px); gap:8px; }
+    .posBtn{ width:72px; height:52px; font-size:18px; }
+    
+    .posBtn.tall{ height:112px; } /* 52*2 + gap(8) */
+.lvTile{ width:110px; height:50px; font-size:18px; }
+    .bigBtn{ font-size:30px; padding:16px; }
+    select.bigSelect{ font-size:20px; }
+    .playerRow a{ font-size:20px; }
+    .barRow{ grid-template-columns: 1fr 140px 58px; gap:10px; }
+    .barPct{ font-size:13px; }
+  }
+
+    /* ===== タイトル画像 ===== */
+    .site-banner{ width:100%; display:flex; justify-content:center; align-items:center; padding: 10px 12px 4px; }
+    .title-img{ width:min(1100px, 100%); height:auto; display:block; border-radius: 14px; }
+    @media (max-width: 480px){
+      .site-banner{ padding: 8px 10px 2px; }
+      .title-img{ border-radius: 12px; }
+    }
+
+
+/* --- combo conditions (structured) --- */
+.condList{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  max-width:100%;
+}
+.condBox{
+  background:rgba(255,255,255,.65);
+  border:1px solid rgba(0,0,0,.10);
+  border-radius:14px;
+  padding:10px 12px;
+  max-width:100%;
+}
+.condRow{
+  display:flex;
+  align-items:baseline;
+  gap:4px;          /* 小さく */
+}
+.condKey{
+  font-weight:900;
+  color:#111;
+  min-width:88px;          /* 「ポジション：」「PS：」の「：」を揃える */
+}
+.condVal{
+  font-weight:900;
+  color:#111;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+
+@media (max-width: 480px){
+  .condKey{ min-width:78px; font-size:13px; }
+  .condVal{ font-size:13px; }
+  .condBox{ padding:9px 10px; }
+}
+/* ===== 更新履歴UI（緑系） ===== */
+.updateCard{
+  margin-top:28px;
+  border-left:6px solid #2e7d32;
+  background:#f1faf3;
+}
+.updateItem{
+  padding:14px 6px;
+  border-bottom:1px solid #dce8dd;
+}
+.updateItem:last-child{ border-bottom:none; }
+.updateDate{
+  font-weight:900;
+  color:#2e7d32;
+  font-size:16px;
+  margin-bottom:6px;
+}
+.updateText{
+  font-size:15px;
+  line-height:1.6;
+}
+
+  /* --- Site pages table --- */
+  #site-pages{ margin:14px auto 18px; }
+  .site-pages-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .site-pages-table th,
+  .site-pages-table td{
+    padding:10px 8px;
+    border-bottom:1px solid #e7e9f0;
+    vertical-align:top;
+  }
+  .site-pages-table th{
+    text-align:left;
+    color:var(--muted);
+    font-weight:800;
+    letter-spacing:.02em;
+    white-space:nowrap;
+  }
+  .site-pages-table td:first-child{
+    width:34%;
+    white-space:nowrap;
+  }
+  .site-pages-table a{
+    color:var(--green-dark);
+    text-decoration:none;
+    font-weight:800;
+  }
+  .site-pages-table a:hover{ text-decoration:underline; }
+
+
+  /* ===== Ads ===== */
+  .adWrap{
+    max-width:min(720px,96%);
+    margin:14px auto;
+    padding:10px;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 12px 22px rgba(0,0,0,.08);
+  }
+  .adWrap .adLabel{
+    font-weight:900;
+    font-size:14px;
+    opacity:.65;
+    margin:0 0 6px 4px;
+  }
+
+/* HowTo link (non-intrusive) */
+.howtoLink{
+  text-align:center;
+  margin:10px auto 6px;
+  font-weight:900;
+}
+.howtoLink a{
+  text-decoration:none;
+}
+
+
+/* ===== 攻略・ツール一覧：バナー表示 ===== */
+.bannerList{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  margin-top:14px;
+}
+.bannerLink{
+  display:block;
+  width:min(760px, 96%);
+  text-decoration:none;
+}
+.bannerLink img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:22px;
+}
+.bannerSpacer{
+  height:10px;
+}
+.plainLinkBtn{
+  display:inline-block;
+  width:min(680px,96%);
+  padding:14px 20px;
+  margin:2px 0;
+  font-size:18px;
+  font-weight:900;
+  border-radius:16px;
+  text-decoration:none;
+  text-align:center;
+  box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+@media (max-width: 480px){
+  .bannerLink{ width:min(760px, 98%); }
+  .bannerLink img{ border-radius:18px; }
+  .plainLinkBtn{ font-size:17px; }
+}
+.officialLink{
+  text-align:center;
+  margin:10px auto;
+  font-weight:900;
+}
+.officialLink a{
+  text-decoration:none;
+  color:#FFFFFF;
+}
+.officialBtn{
+  display:inline-block;
+  background:#22c55e;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:14px;
+  font-size:16px;
+  box-shadow:0 10px 18px rgba(0,0,0,.15);
+}
+.officialBtn:active{
+  transform:scale(.97);
+}
+
+/* ===== SNSリンク ===== */
+.snsLinks{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.snsBtn{
+  display:inline-block;
+  min-width:220px;
+  padding:14px 18px;
+  border-radius:16px;
+  font-weight:900;
+  font-size:18px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  box-shadow:0 12px 20px rgba(0,0,0,.15);
+  transition:.15s;
+}
+
+/* YouTube */
+.snsBtn.youtube{
+  background:#ff0000;
+}
+
+/* X */
+.snsBtn.x{
+  background:#111;
+}
+
+.snsBtn:active{
+  transform:scale(.97);
+}
+
+/* スマホ */
+@media (max-width:480px){
+  .snsBtn{
+    width:90%;
+    font-size:17px;
+  }
+}
+
+/* ===== 最新攻略記事 ===== */
+.latestArticleCard{
+  max-width:920px;
+  margin:16px auto 18px;
+  padding:16px;
+}
+
+.latestArticleList{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.latestArticleItem{
+  display:block;
+  padding:14px 16px;
+  border-radius:16px;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  text-decoration:none;
+  box-shadow:0 8px 16px rgba(0,0,0,.06);
+}
+
+.latestArticleItem:active{
+  transform:scale(.98);
+}
+
+.latestArticleDate{
+  font-size:14px;
+  font-weight:900;
+  color:#2e7d32;
+  margin-bottom:5px;
+}
+
+.latestArticleTitle{
+  font-size:17px;
+  font-weight:900;
+  color:#0b63d1;
+  line-height:1.45;
+}
+
+@media (max-width:480px){
+  .latestArticleCard{
+    margin:14px 10px 16px;
+    padding:14px;
+  }
+  .latestArticleTitle{
+    font-size:16px;
+  }
+}
+
+.latestArticleScroll{
+  max-height:260px;
+  overflow-y:auto;
+  padding-right:6px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.latestArticleScroll::-webkit-scrollbar{
+  width:8px;
+}
+
+.latestArticleScroll::-webkit-scrollbar-thumb{
+  background:#b7d7bf;
+  border-radius:999px;
+}
+
+.latestArticleScroll::-webkit-scrollbar-track{
+  background:#eef7f0;
+  border-radius:999px;
+}
+
+.latestArticleScrollTitle{
+  margin:4px 0 2px;
+  font-size:13px;
+  font-weight:900;
+  color:#2e7d32;
+  text-align:center;
+}
+
+
+/* ===== サイトについて：使い方もくじ ===== */
+.aboutGuideBox{
+  margin-top:18px;
+  padding:16px;
+  border-radius:18px;
+  background:#f1faf3;
+  border:1px solid #d8eadc;
+}
+.aboutGuideTitle{
+  text-align:center;
+  font-size:22px;
+  font-weight:900;
+  color:#14532d;
+  margin:0 0 12px;
+}
+.aboutGuideGrid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+.aboutGuideItem{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:86px;
+  padding:12px 10px;
+  border-radius:16px;
+  background:#fff;
+  border:1px solid #dfe8e2;
+  text-decoration:none;
+  color:#111;
+  box-shadow:0 8px 16px rgba(0,0,0,.06);
+  transition:.12s;
+}
+.aboutGuideItem:active{
+  transform:scale(.98);
+}
+.aboutGuideItem strong{
+  display:block;
+  font-size:17px;
+  line-height:1.3;
+  color:#0b63d1;
+  text-align:center;
+}
+.aboutGuideItem span{
+  display:block;
+  margin-top:6px;
+  font-size:12px;
+  line-height:1.45;
+  color:#555;
+  font-weight:800;
+  text-align:center;
+}
+@media (max-width:700px){
+  .aboutGuideGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media (max-width:480px){
+  .aboutGuideBox{
+    padding:12px;
+    border-radius:18px;
+  }
+  .aboutGuideTitle{
+    font-size:19px;
+    line-height:1.35;
+    margin-bottom:10px;
+  }
+  .aboutGuideGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr)); /* iPhoneでは横2×縦3 */
+    gap:8px;
+  }
+  .aboutGuideItem{
+    min-height:88px;
+    padding:10px 6px;
+    border-radius:15px;
+  }
+  .aboutGuideItem strong{
+    font-size:clamp(13px, 3.45vw, 15px);
+    line-height:1.28;
+    letter-spacing:-.03em;
+  }
+  .aboutGuideItem span{
+    margin-top:5px;
+    font-size:clamp(10px, 2.65vw, 11.5px);
+    line-height:1.35;
+    letter-spacing:-.03em;
+  }
+}
+@media (max-width:360px){
+  .aboutGuideItem{
+    min-height:84px;
+    padding:9px 5px;
+  }
+  .aboutGuideItem strong{
+    font-size:12.5px;
+  }
+  .aboutGuideItem span{
+    font-size:9.8px;
+  }
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "サカつく2026攻略DB",
+  "url": "https://sakatsuku2026-db.com/",
+  "description": "サカつく2026のフォーメーションコンボ検索・選手検索ができる攻略データベース。"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "サカつく2026攻略DB",
+  "url": "https://sakatsuku2026-db.com/"
+}
+</script>
+
+</head>
+<body>
+  <div class="site-banner"><img src="img/title.png" alt="ソニオTVの サカつく攻略データベース" class="title-img"></div>
+
+<div class="howtoLink">
+  <a href="howto.html">📖 このサイトの遊び方はこちら（初めての方向け）</a>
+</div>
+
+<div class="officialLink">
+  <a href="https://segafcchampions.sega.com/ja/" target="_blank" rel="noopener noreferrer" class="officialBtn">
+    ⚽ サカつく2026公式HP⚽
+  </a>
+</div>
+
+<!-- ===== 最新攻略記事 ===== -->
+<div class="card latestArticleCard">
+<div class="sectionTitle">最新の攻略記事</div>
+
+<div class="note" style="margin-top:-4px; margin-bottom:10px; font-size:13px; font-weight:900;">
+  ※スクロールで過去記事を確認できます※
+</div>
+
+  <!-- 1件目から全てスクロール対象。高さは「記事2件分くらい」で固定 -->
+  <div class="latestArticleList latestArticleScroll">
+
+    <a href="mls_sp_scout_review_20260609.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/06/10</div>
+      <div class="latestArticleTitle">これはインフレスタータパック!? リオネル・メッシのMLS実装記念SP選手スカウトは引くべき？新SP選手5名を徹底評価</div>
+    </a>
+
+    <a href="sakatsuku_tv8_ver2_update_summary.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/06/05</div>
+      <div class="latestArticleTitle">【サカつくTV #8】サカつく2026Ver2.0大型アップデート公式番組まとめ｜MLS・日本代表ライセンス・新プレスタ・新ガチャ情報</div>
+    </a>
+
+    <a href="300万DL記念パック_review.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/06/01</div>
+      <div class="latestArticleTitle">【4800円のお得パック】「300万DL記念パック」は買うべき？当たる★3SP選手とSSR特連カードから徹底解説！</div>
+    </a>
+
+    <a href="pickup_sp_scout_review_20260529.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/05/29</div>
+      <div class="latestArticleTitle">ついにカウンター最強時代!?モハメド・サラーのピックアップSP選手スカウトは引くべき？新SP選手4名を徹底評価</div>
+    </a>
+
+    <a href="formation_combo_review_20260526.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/05/26</div>
+      <div class="latestArticleTitle">ついに5-2-3にコンボ追加！新フォーメーションコンボ「ブロ・グルト'94」を含む4種を徹底評価</div>
+    </a>
+
+    <a href="jleague_veteran_sp_scout_review.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/05/20</div>
+      <div class="latestArticleTitle">★３排出確率2倍!!Jリーグ歴戦の猛者SP選手スカウトは引くべき？新SP選手4名を徹底評価</div>
+    </a>
+
+    <a href="mctominay_pickup_sp_scout_review.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/05/15</div>
+      <div class="latestArticleTitle">待望のプレスタ実装!!スコット・マクトミネイのピックアップガチャは引くべき？新SP選手4名を徹底評価</div>
+    </a>
+
+    <a href="goalden_sp_scout_review.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/05/07</div>
+      <div class="latestArticleTitle">サカつくGOAL!DEN SP選手スカウトは引くべき？新SP選手5名を徹底評価</div>
+    </a>
+
+    <a href="lewandowski_pickup_sp_scout_review.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/04/28</div>
+      <div class="latestArticleTitle">レヴァンドフスキのピックアップガチャは引くべき？新SP選手4名を徹底評価</div>
+    </a>
+
+    <a href="manchester_city_sp_scout_review.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/04/23</div>
+      <div class="latestArticleTitle">マンチェスター・シティ記念ガチャは引くべき？新SP選手性能解説</div>
+    </a>
+
+    <a href="jleague_kleague_select_sp_recommend_article.html" class="latestArticleItem">
+      <div class="latestArticleDate">2026/04/07</div>
+      <div class="latestArticleTitle">Jリーグ・KリーグSP選手メダルは誰と交換すべき？おすすめ交換選手8選</div>
+    </a>
+</div>
+</div>
+
+<div class="wrap">
+<h1>サカつく2026攻略DB</h1>
+<div class="card" style="margin-bottom:20px;">
+  <div class="sectionTitle">サイトについて</div>
+  <div style="text-align:left; line-height:1.8; font-size:14px; padding:10px 6px;">
+    本サイトは「サカつく2026」の攻略・データベースサイトです。<br><br>
+
+    フォーメーションコンボ、選手検索、期限付き移籍などの情報を、
+    実際のゲームプレイおよび検証データをもとに整理しています。<br><br>
+
+    「どの選手を使えばいいか」「どのコンボを狙うべきか」を
+    分かりやすく判断できるように設計しており、
+    初心者から上級者まで活用できる内容になっています。
+
+    <div class="aboutGuideBox">
+      <div class="aboutGuideTitle">サカつく2026攻略DBもくじ</div>
+      <div class="aboutGuideGrid">
+        <a class="aboutGuideItem" href="howto_combo_search.html">
+          <strong>コンボ検索</strong>
+          <span>選手から発動候補のコンボを探す</span>
+        </a>
+        <a class="aboutGuideItem" href="howto_player_search.html">
+          <strong>選手検索</strong>
+          <span>コンボから対応SP選手を逆引き</span>
+        </a>
+        <a class="aboutGuideItem" href="howto_sp_evaluator.html">
+          <strong>選手評価ツール</strong>
+          <span>順位・性能・金コンボ適性を確認</span>
+        </a>
+        <a class="aboutGuideItem" href="howto_overall_ranking.html">
+          <strong>総合力ランキング</strong>
+          <span>初期総合力・最大強化を比較</span>
+        </a>
+        <a class="aboutGuideItem" href="howto_loan_matching_tool.html">
+          <strong>期限付き移籍<br>マッチングツール</strong>
+          <span>育成目的に合う移籍先を探す</span>
+        </a>
+        <a class="aboutGuideItem" href="howto_strongest_team_simulation.html">
+          <strong>最強チーム<br>シミュレーション</strong>
+          <span>コンボ軸の理想編成を確認</span>
+        </a>
+      </div>
+    </div>
+
+  <small style="display:block;margin-top:10px;opacity:.75;">
+    このサイトはソニオTVとChatGPTが共同開発しました
+  </small>
+  </div>
+</div>
+
+  <!-- Site pages (About/Policy/Contact etc.) -->
+  
+
+
+<!-- ===== 更新履歴 ===== -->
+
+<div class="card updateCard" style="margin-bottom:20px;">
+  <div class="sectionTitle">更新履歴</div>
+  <div id="latestChangelogTop">
+    <div class="updateItem">
+      <div class="updateText">最新の更新履歴を読み込み中です...</div>
+    </div>
+  </div>
+</div>
+
+  <div class="tabs">
+    <button id="tabCombo" class="tabbtn active" type="button">コンボ検索</button>
+    <button id="tabPlayer" class="tabbtn" type="button">選手検索</button>
+  </div>
+
+  <!-- ===== タブ1：コンボ検索 ===== -->
+  <section id="panelCombo" class="panel active">
+    <div class="card">
+      <div class="sectionTitle">フォーメーションコンボ検索</div>
+      <div class="note">
+        検索したい選手の情報を入力してください<br/>
+        ※ポジションは赤適正の場所を全て選択してください。
+      </div>
+
+      <div class="sectionTitle" style="font-size:22px;margin-top:2px;">【ポリシー】</div>
+      <div id="policyGrid" class="imgGrid" aria-label="policy grid"></div>
+
+      <div class="sectionTitle" style="font-size:22px;margin-top:10px;">【ポジション（複数可）】</div>
+      <div class="posWrap">
+        <div id="posBoard" class="posBoard" aria-label="position board"></div>
+      </div>
+
+      <div class="sectionTitle" style="font-size:22px;margin-top:14px;">【プレイスタイル】</div>
+      <div id="playStyleGrid" class="imgGrid" aria-label="playstyle grid"></div>
+
+      <div class="sectionTitle" style="font-size:22px;margin-top:10px;">【プレイスタイルのLv選択】</div>
+      <div id="lvBoard" class="lvBoard" aria-label="lv board"></div>
+
+<div class="comboBtnRow">
+  <button id="btnSearchCombo" class="bigBtn" type="button">検索</button>
+  <button id="btnClearCombo" class="comboClearBtn" type="button">クリア</button>
+</div>
+
+<div id="comboErr" class="error">ポリシーを選択してください</div>
+
+<!-- ★ここに追加 -->
+<div id="comboSelectedCond" class="note" style="text-align:left;max-width:min(720px,96%);margin:10px auto 0;">
+  <div style="font-weight:900;margin-bottom:6px;">【選択した検索条件】</div>
+  <div id="comboSelectedCondText" style="font-weight:900;">（未選択）</div>
+</div>
+
+<div id="comboResult" class="resultArea"></div>
+
+    </div>
+  </section>
+
+  <!-- ===== タブ2：選手検索（コンボから） ===== -->
+  <section id="panelPlayer" class="panel">
+    <div class="card">
+      <div class="sectionTitle">コンボから選手を探す</div>
+
+      <div class="sectionTitle" style="font-size:24px;margin-bottom:6px;">ランクを選択（複数可）</div>
+      <div class="centerBlock">
+        <div id="rankBoard" class="rankBoard" aria-label="rank board">
+          <div class="rankTile gold" data-rank="金">金</div>
+          <div class="rankTile silver" data-rank="銀">銀</div>
+          <div class="rankTile bronze" data-rank="銅">銅</div>
+        </div>
+        <div class="note" style="margin-top:6px;">※未選択の場合は「すべて」を表示します</div>
+      </div>
+
+      
+      <div class="sectionTitle" style="font-size:24px;margin-top:10px;margin-bottom:6px;">ポリシーを選択</div>
+      <div class="centerBlock">
+        <div id="playerPolicyGrid" class="imgGrid" aria-label="player policy grid"></div>
+        <div class="note" style="margin-top:6px;">※未選択の場合は「すべて」を表示します</div>
+      </div>
+
+<div class="sectionTitle" style="font-size:24px;margin-top:6px;">フォーメーションコンボを選択</div>
+      <div class="centerBlock">
+        <select id="comboSelect" class="bigSelect"></select>
+      </div>
+
+      <div class="sectionTitle" style="font-size:24px;margin-top:14px;margin-bottom:6px;">入手場所を絞り込み</div>
+      <div class="centerBlock">
+        <select id="playerAcquisitionPlaceFilter" class="bigSelect"></select>
+        <div class="note" style="margin-top:6px;">※未選択の場合は「すべて」を表示します</div>
+      </div>
+
+      <button id="btnShowPlayers" class="bigBtn" type="button" style="width:min(560px,96%);font-size:32px;">対応選手を表示</button>
+      <div class="note" style="margin-top:8px;">
+        ※選手名横は（入手方法：入手場所）<br/>
+        ※表示される選手はSP選手のみです
+      </div>
+
+      <div id="comboDetail"></div>
+      <div id="playerResult" class="playerList"></div>
+    </div>
+  </section>
+  <!-- ===== トップ表示リンク群 ===== -->
+<section id="panelBonus" style="margin-top:20px;">
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="sectionTitle" style="text-align:left;">攻略記事一覧</div>
+    <div class="bannerList">
+
+      <a class="bannerLink" href="sonio_tv_matome.html">
+        <img src="img/label/sonio_tv_matome.png" alt="ソニオTVのサカつく2026動画まとめ">
+      </a>
+<a href="sonio_tv_matome.html">ソニオTVのサカつく2026動画まとめ</a>
+
+      <a class="bannerLink" href="reroll_method_timing.html">
+        <img src="img/label/reroll_method_timing.png" alt="リセマラの方法と終了タイミング">
+      </a>
+<a href="reroll_method_timing.html">リセマラの方法と終了タイミング</a>
+
+      <a class="bannerLink" href="training_menu_recommend.html">
+        <img src="img/label/training_menu_recommend.png" alt="練習メニューのおすすめ">
+      </a>
+<a href="training_menu_recommend.html">練習メニューのおすすめ</a>
+
+      <a class="bannerLink" href="investment_recommend.html">
+        <img src="img/label/investment_recommend.png" alt="投資選択のおすすめ">
+      </a>
+<a href="investment_recommend.html">投資選択のおすすめ</a>
+
+      <a class="bannerLink" href="loan_recommend.html">
+        <img src="img/label/loan_recommend.png" alt="期限付き移籍のおすすめと選び方">
+      </a>
+<a href="loan_recommend.html">期限付き移籍のおすすめと選び方</a>
+
+      <a href="articles.html"
+         class="plainLinkBtn"
+         style="background:#4a90e2; color:#fff;">
+        その他の攻略記事一覧
+      </a>
+
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="sectionTitle" style="text-align:left;">ツール一覧</div>
+      <div class="bannerList">
+
+      <a class="bannerLink" href="player_catalog.html">
+        <img src="img/label/player_catalog.png" alt="選手図鑑">
+      </a>
+<a href="player_catalog.html">選手図鑑</a>
+
+      <a class="bannerLink" href="tier_list.html">
+        <img src="img/label/tier_list.png" alt="サカつく2026ティア表メーカー">
+      </a>
+<a href="tier_list.html">サカつく2026ティア表メーカー</a>
+
+      <a class="bannerLink" href="sp_evaluator.html">
+        <img src="img/label/sp_evaluator.png" alt="選手評価ツール">
+      </a>
+<a href="sp_evaluator.html">選手評価ツール</a>
+
+      <a class="bannerLink" href="overall_ranking.html">
+        <img src="img/label/overall_ranking.png" alt="総合力ランキング">
+      </a>
+<a href="overall_ranking.html">総合力ランキング</a>
+
+      <a class="bannerLink" href="loan_matching_tool.html">
+        <img src="img/label/loan_matching_tool.png" alt="期限付き移籍マッチングツール">
+      </a>
+<a href="loan_matching_tool.html">期限付き移籍マッチングツール</a>
+
+      <a class="bannerLink" href="strongest_team_simulation.html">
+        <img src="img/label/strongest_team_simulation.png" alt="最強チームシミュレーション">
+      </a>
+<a href="strongest_team_simulation.html">最強チームシミュレーション</a>
+
+      <a class="bannerLink" href="stadium.html">
+        <img src="img/label/stadium.png" alt="スタジアム施設一覧">
+      </a>
+<a href="stadium.html">スタジアム施設一覧</a>
+
+      <a class="bannerLink" href="stadium_simulation">
+        <img src="img/label/stadium_simulation.png" alt="スタジアム施設シミュレーション">
+      </a>
+<a href="stadium_simulation">スタジアム施設シミュレーション</a>
+
+      <a class="bannerLink" href="clubhouse.html">
+        <img src="img/label/clubhouse.png" alt="クラブハウス設備一覧">
+      </a>
+<a href="clubhouse.html">クラブハウス設備一覧</a>
+
+      <a class="bannerLink" href="clubhouse_simulation.html">
+        <img src="img/label/clubhouse_simulation.png" alt="クラブハウス設備シミュレーション">
+      </a>
+<a href="clubhouse_simulation.html">クラブハウス設備シミュレーション</a>
+
+      <a href="https://forms.gle/TLRL3Qy9qzftd5zZ7"
+         target="_blank" rel="noopener noreferrer"
+         class="plainLinkBtn"
+         style="background:#10b981; color:#fff;">
+        選手情報の提供はこちら
+      </a>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== SNSリンク ===== -->
+<!-- ===== SNSリンク ===== -->
+<div class="card" style="margin-bottom:20px;">
+  <div class="sectionTitle" style="text-align:left;">SNS関連</div>
+
+  <!-- 自分 -->
+  <div class="note" style="margin-top:4px;">ソニオTV</div>
+  <div class="snsLinks">
+
+    <a href="https://www.youtube.com/channel/UCROtbE7z4zRAdzBy-xdEiNw?view_as=subscriber"
+       target="_blank" rel="noopener noreferrer"
+       class="snsBtn youtube">
+      ▶ YouTube（ソニオTV）
+    </a>
+
+    <a href="https://x.com/Dice_Ke_sun"
+       target="_blank" rel="noopener noreferrer"
+       class="snsBtn x">
+      ✕ X（ソニオTV）
+    </a>
+
+  </div>
+
+  <!-- 公式 -->
+  <div class="note" style="margin-top:16px;">サカつく2026公式</div>
+  <div class="snsLinks">
+
+    <a href="https://www.youtube.com/@segafcchampions"
+       target="_blank" rel="noopener noreferrer"
+       class="snsBtn youtube">
+      ▶ YouTube（公式）
+    </a>
+
+    <a href="https://x.com/sakatsuku20xx"
+       target="_blank" rel="noopener noreferrer"
+       class="snsBtn x">
+      ✕ X（公式）
+    </a>
+
+  </div>
+
+</div>
+</div>
+
+<!-- モーダル -->
+<div id="modalBack" class="modalBack" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal">
+    <div class="modalHead">
+      <div>
+        <div id="modalTitle" class="ttl">詳細</div>
+        <div id="modalSub" class="subttl"></div>
+      </div>
+      <button id="modalClose" type="button" aria-label="close">✕</button>
+    </div>
+    <div id="modalBody" class="modalBody"></div>
+  </div>
+</div>
+
+<!-- トップへ -->
+<div id="toTop" class="toTop" title="トップへ"></div>
+
+<script>
+/* =========================
+   データ読み込み
+========================= */
+let PLAYERS = [];
+let COMBOS = [];
+let playerById = new Map();
+
+function safeStr(v){ return (v===null || v===undefined) ? "" : String(v); }
+function nvl(v, d=""){ return (v===null || v===undefined || v==="") ? d : v; }
+
+function getPlayerId(p){ return safeStr((p && (p.playerId ?? p.player_id ?? p.player_id ?? p.playerID ?? p.player_id)) || ""); }
+
+function romanLv(lv){
+  const n = Number(lv);
+  if(n===1) return "Ⅰ";
+  if(n===2) return "Ⅱ";
+  if(n===3) return "Ⅲ";
+  return safeStr(lv);
+}
+function esc(s){
+  return safeStr(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+function normalizeAcquisitionMethod(v){
+  const s = safeStr(v).trim();
+  if(!s) return "-";
+
+  // 旧表記 → 新表記へ寄せる
+  if(s === "常設ガチャ") return "ガチャ";
+
+  // 新表記そのまま
+  if(s === "ガチャ") return "ガチャ";
+  if(s === "期間限定ガチャ") return "期間限定ガチャ";
+  if(s === "その他") return "その他";
+
+  // 想定外はすべて「その他」扱い
+  return "その他";
+}
+
+async function loadJson(url){
+  const res = await fetch(url, {cache:"no-store"});
+  if(!res.ok) throw new Error("fetch failed: " + url);
+  return await res.json();
+}
+
+(async function init(){
+  try{
+    PLAYERS = await loadJson("players.json");
+  }catch(e){
+    console.error(e);
+    PLAYERS = [];
+  }
+  try{
+    COMBOS = await loadJson("combos.json");
+  }catch(e){
+    console.error(e);
+    COMBOS = [];
+  }
+
+  playerById = new Map(PLAYERS.map(p => [getPlayerId(p), p]).filter(([id])=>id));
+  setupTabs();
+  setupToTop();
+
+  setupComboSearchUI();
+  setupPlayerSearchUI();
+
+  // 初期
+  refreshComboSelect();
+})();
+</script>
+
+<script>
+/* =========================
+   タブ切り替え
+========================= */
+function setupTabs(){
+  const map = [
+    ["tabCombo","panelCombo"],
+    ["tabPlayer","panelPlayer"],
+  ];
+  map.forEach(([btnId, panelId])=>{
+    document.getElementById(btnId).addEventListener("click", ()=>{
+      map.forEach(([b,p])=>{
+        document.getElementById(b).classList.toggle("active", b===btnId);
+        document.getElementById(p).classList.toggle("active", p===panelId);
+      });
+});
+  });
+}
+
+function resetComboSelections(){
+  selPolicy = null;
+  selPlayStyle = null;
+  selLv = null;
+  selPositions = new Set();
+
+  // UI反映：policy/playstyle
+  document.querySelectorAll("#policyGrid .imgTile").forEach(t=>t.classList.remove("selected"));
+  document.querySelectorAll("#playStyleGrid .imgTile").forEach(t=>t.classList.remove("selected"));
+
+  // UI反映：positions
+  document.querySelectorAll("#posBoard .posBtn").forEach(b=>b.classList.remove("selected"));
+
+  // UI反映：lv
+  document.querySelectorAll("#lvBoard .lvTile").forEach(t=>t.classList.remove("selected"));
+
+  // エラー/結果をクリア
+  const err = document.getElementById("comboErr");
+  if(err) err.style.display = "none";
+  const res = document.getElementById("comboResult");
+  if(res) res.innerHTML = "";
+
+  renderSelectedConditions();
+}
+
+</script>
+
+<script>
+/* =========================
+   右下トップへ戻る
+========================= */
+function setupToTop(){
+  const btn = document.getElementById("toTop");
+  const onScroll = ()=>{
+    const y = window.scrollY || document.documentElement.scrollTop;
+    btn.classList.toggle("show", y > 450);
+  };
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+  btn.addEventListener("click", ()=>{
+    // スムーズにページ上部へ
+    try{
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }catch(e){
+      // 古いブラウザ向けフォールバック
+      window.scrollTo(0, 0);
+    }
+  });
+
+}
+</script>
+
+<script>
+/* =========================
+   モーダル
+========================= */
+function openPlayerModal(p){
+  const title = nvl(p.name,"-");
+  document.getElementById("modalTitle").textContent = title;
+
+  const playerId = getPlayerId(p);
+  const nat = nvl(p.nationality, "-");
+  const gt = nvl(p.growthType || p.growth_type, "-");
+  const sub = (nat!=="-" || gt!=="-") ? `国籍：${nat} / 成長タイプ：${gt}` : "";
+  const subEl = document.getElementById("modalSub");
+  if(subEl) subEl.textContent = sub;
+
+  const ps = nvl(p.playStyle, "-");
+  const lv = romanLv(p.playStyleLv);
+
+  const lines = [];
+
+  // 攻略記事と同じ仕組み：img/players/{player_id}.png を表示
+  if(playerId){
+    lines.push(`<div class="modalPlayerImgWrap"><img class="modalPlayerImg" src="img/players/${esc(playerId)}.png" alt="${esc(title)}" loading="lazy" onerror="this.closest('.modalPlayerImgWrap').style.display='none';"></div>`);
+  }
+
+  // ※ 要望の順：区分,入手方法,入手場所,入手可能期間,初期総合力,最大強化,ポリシー,プレイスタイル,メインポジション,メインスキル,メイン特徴
+  lines.push(`<div class="mLine"><span class="mKey">区分</span><span class="mVal">${esc(nvl(p.category,"-"))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">レアリティ</span><span class="mVal">${esc((p.rarity!=null && String(p.rarity)!=="") ? ("★" + String(p.rarity).replace(/^★/,"")) : "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class="mVal">${esc(normalizeAcquisitionMethod(p.acquisitionMethod))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">入手場所</span><span class="mVal">${esc(nvl(p.acquisitionPlace,"-"))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">入手可能期間</span><span class="mVal">${esc(nvl(p.availablePeriod,"-"))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">初期総合力</span><span class="mVal">${esc(nvl(p.overall,"-"))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">最大強化</span><span class="mVal">${esc(nvl(p.maxUpgrade,"-"))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">ポリシー</span><span class="mVal">${esc(nvl(p.policy,"-"))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">プレイスタイル</span><span class="mVal">${esc(ps)} ${esc(lv)}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">メインポジション</span><span class="mVal">${esc(nvl(p.mainPosition,"-"))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">メインスキル</span><span class="mVal">${esc(nvl(p.mainSkill,"-"))}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">メイン特徴</span><span class="mVal">${esc(nvl(p.mainTrait,"-"))}</span></div>`);
+
+  // 攻略記事と同じ仕組み：sp_evaluator.html?player={player_id} へ遷移
+  if(playerId){
+    lines.push(`<div class="modalEvalLinkWrap"><a class="modalEvalLink" href="sp_evaluator.html?player=${encodeURIComponent(playerId)}">選手評価ツールで詳しく見る</a></div>`);
+  }
+
+  document.getElementById("modalBody").innerHTML = lines.join("");
+  const back = document.getElementById("modalBack");
+  back.classList.add("show");
+  back.setAttribute("aria-hidden","false");
+}
+
+// ===== 追加：残り選手を「一覧モーダル」で表示 =====
+function formatPlayerListLabel(p){
+  const rarity = safeStr(p && p.rarity).trim();
+  const rarityLabel = rarity ? `${rarity} ` : "";
+  return `${rarityLabel}${safeStr((p && p.name) || "-")}`;
+}
+
+function openPlayerListModal(title, players){
+  document.getElementById("modalTitle").textContent = title || "選手一覧";
+
+  const subEl = document.getElementById("modalSub");
+  if(subEl) subEl.textContent = "";
+
+  const body = document.getElementById("modalBody");
+  if(!players || players.length===0){
+    body.innerHTML = `<div class="note" style="text-align:left;margin:6px 0;">なし</div>`;
+  }else{
+    const sorted = [...players].sort((a,b)=> (Number(b?.overall)||0) - (Number(a?.overall)||0));
+    body.innerHTML = sorted.map(p=>{
+      const pid = esc(getPlayerId(p));
+      return `<div class="playerRow"><a href="#" data-player-id="${pid}">${esc(formatPlayerListLabel(p))}</a></div>`;
+    }).join("");
+
+    body.querySelectorAll("[data-player-id]").forEach(a=>{
+      a.addEventListener("click", (e)=>{
+        e.preventDefault();
+        const pid = a.dataset.playerId;
+        openPlayerModal(playerById.get(pid));
+      });
+    });
+  }
+
+  const back = document.getElementById("modalBack");
+  back.classList.add("show");
+  back.setAttribute("aria-hidden","false");
+}
+
+// ページ全体で「他◯人を見る」クリックを拾う（描画後に再バインド不要）
+document.addEventListener("click", (e)=>{
+  const btn = e.target.closest("[data-more-pids]");
+  if(!btn) return;
+  e.preventDefault();
+
+  const pids = String(btn.dataset.morePids || "")
+    .split(",")
+    .map(s=>s.trim())
+    .filter(Boolean);
+
+  const list = pids.map(pid=>playerById.get(pid)).filter(Boolean);
+  openPlayerListModal(btn.dataset.moreTitle || "選手一覧", list);
+});
+
+function setupModal(){
+  const back = document.getElementById("modalBack");
+  const close = document.getElementById("modalClose");
+  close.addEventListener("click", ()=> {
+    back.classList.remove("show");
+    back.setAttribute("aria-hidden","true");
+  });
+  back.addEventListener("click", (e)=>{
+    if(e.target === back){
+      back.classList.remove("show");
+      back.setAttribute("aria-hidden","true");
+    }
+  });
+  document.addEventListener("keydown", (e)=>{
+    if(e.key==="Escape" && back.classList.contains("show")){
+      back.classList.remove("show");
+      back.setAttribute("aria-hidden","true");
+    }
+  });
+}
+setupModal();
+</script>
+
+<script>
+/* =========================
+   タブ1：コンボ検索 UI
+========================= */
+const POLICIES = [
+  {key:"カウンター", img:"img/policy/counter.png", fallback:"img/counter.png"},
+  {key:"ムービング", img:"img/policy/moving.png", fallback:"img/moving.png"},
+  {key:"リアクション", img:"img/policy/reaction.png", fallback:"img/reaction.png"},
+  {key:"ポゼッション", img:"img/policy/possession.png", fallback:"img/possession.png"},
+];
+
+const PLAYSTYLES = [
+  {key:"ストライカー", img:"img/style/striker.png"},
+  {key:"ラインブレーカー", img:"img/style/linebreaker.png"},
+  {key:"ポストプレーヤー", img:"img/style/postplayer.png"},
+
+  {key:"ワイドストライカー", img:"img/style/widestriker.png"},
+  {key:"サイドアタッカー", img:"img/style/sideattacker.png"},
+  {key:"ドリブラー", img:"img/style/dribbler.png"},
+
+  {key:"アタッカー", img:"img/style/attacker.png"},
+  {key:"パサー", img:"img/style/passer.png"},
+  {key:"セントラルMF", img:"img/style/centralmf.png"},
+
+  {key:"ハードマーカー", img:"img/style/hardmarker.png"},
+  {key:"ストッパー", img:"img/style/stopper.png"},
+  {key:"組立CB", img:"img/style/buildupcb.png"},
+
+  {key:"スプリントCB", img:"img/style/sprintcb.png"},
+  {key:"攻撃的FB", img:"img/style/attackfb.png"},
+  {key:"守備的FB", img:"img/style/defensefb.png"},
+
+  {key:"クリエイティブFB", img:"img/style/creativefb.png"},
+  {key:"オーソドックスGK", img:"img/style/orthodoxgk.png"},
+  {key:"スイーパーGK", img:"img/style/sweepergk.png"},
+];
+
+const POS_LAYOUT = [
+  ["LW","CF","RW"],
+  ["LM","AM","RM"],
+  ["","DM",""],
+  ["LB","CB","RB"],
+  ["","GK",""],
+];
+
+// 色は適当にゲームの枠色に寄せる（FW=green, MF=yellow, DF=blue, GK=red）
+const POS_COLOR = {
+  LW:"green", CF:"green", RW:"green",
+  LM:"yellow", AM:"yellow", RM:"yellow", DM:"yellow",
+  LB:"blue", CB:"blue", RB:"blue",
+  GK:"red",
+};
+
+let selPolicy = null;
+let selPlayStyle = null;
+let selLv = null;
+let selPositions = new Set();
+
+function renderSelectedConditions(){
+  const pol = selPolicy ? selPolicy : "（未選択）";
+  const pos = (selPositions && selPositions.size)
+    ? [...selPositions].join(" / ")
+    : "（未選択）";
+  const ps  = selPlayStyle ? selPlayStyle : "（未選択）";
+  const lv  = selLv ? `Lv${selLv}` : "（未選択）";
+
+  const text = `${pol} / ${pos} / ${ps} ${lv}`;
+  const el = document.getElementById("comboSelectedCondText");
+  if(el) el.textContent = text;
+}
+
+function setupComboSearchUI(){
+  // policy tiles
+  const pg = document.getElementById("policyGrid");
+  pg.innerHTML = POLICIES.map(p=>`
+    <div class="imgTile" data-policy="${esc(p.key)}" role="button" tabindex="0">
+      <img src="${esc(p.img)}" onerror="this.onerror=null;this.src='${esc(p.fallback||p.img)}';" alt="${esc(p.key)}">
+      <div class="lbl">${esc(p.key)}</div>
+    </div>
+  `).join("");
+
+  pg.querySelectorAll(".imgTile").forEach(tile=>{
+    tile.addEventListener("click", ()=>{
+      selPolicy = tile.dataset.policy;
+      pg.querySelectorAll(".imgTile").forEach(t=>t.classList.toggle("selected", t===tile));
+renderSelectedConditions();
+    });
+  });
+
+  // playstyle tiles
+  const sg = document.getElementById("playStyleGrid");
+  sg.innerHTML = PLAYSTYLES.map(s=>`
+    <div class="imgTile" data-style="${esc(s.key)}" role="button" tabindex="0">
+      <img src="${esc(s.img)}" alt="${esc(s.key)}">
+      <div class="lbl">${esc(s.key)}</div>
+    </div>
+  `).join("");
+  sg.querySelectorAll(".imgTile").forEach(tile=>{
+    tile.addEventListener("click", ()=>{
+      selPlayStyle = tile.dataset.style;
+      sg.querySelectorAll(".imgTile").forEach(t=>t.classList.toggle("selected", t===tile));
+renderSelectedConditions();
+    });
+  });
+
+  // positions
+  const pb = document.getElementById("posBoard");
+  pb.innerHTML = "";
+  POS_LAYOUT.forEach((row, rIdx)=>{
+    row.forEach((pos, cIdx)=>{
+      // LM/RM を縦長（AM+DM と同じ高さ）にするため、下段セルは生成しない（span で占有）
+      const isCoveredByTall = (rIdx===2 && (cIdx===0 || cIdx===2)); // row3 col1/col3 are covered by LM/RM
+      if(!pos){
+        if(isCoveredByTall) return; // ここは LM/RM の span に任せる
+        const spacer = document.createElement("div");
+        spacer.style.width="76px";
+        spacer.style.height="54px";
+        spacer.style.opacity="0";
+        pb.appendChild(spacer);
+        return;
+      }
+      const d = document.createElement("div");
+      d.className="posBtn";
+      d.textContent=pos;
+      d.dataset.pos=pos;
+      d.dataset.color=POS_COLOR[pos] || "yellow";
+
+      // 縦長にしたいポジション（LM/RM）
+      if(pos==="LM" || pos==="RM"){
+        d.classList.add("tall");
+      }
+
+      d.addEventListener("click", ()=>{
+        if(selPositions.has(pos)) selPositions.delete(pos);
+        else selPositions.add(pos);
+        d.classList.toggle("selected", selPositions.has(pos));
+        renderSelectedConditions();
+      });
+      pb.appendChild(d);
+    });
+  });
+
+  // LV
+  const lb = document.getElementById("lvBoard");
+  lb.innerHTML = [1,2,3].map(n=>`<div class="lvTile ${selLv===n?"selected":""}" data-lv="${n}">Lv${n}</div>`).join("");
+  lb.querySelectorAll(".lvTile").forEach(tile=>{
+    tile.addEventListener("click", ()=>{
+      selLv = Number(tile.dataset.lv);
+      lb.querySelectorAll(".lvTile").forEach(t=>t.classList.toggle("selected", t===tile));
+renderSelectedConditions();
+    });
+  });
+
+  // search
+// search
+document.getElementById("btnSearchCombo").addEventListener("click", runComboSearch);
+
+document.getElementById("btnClearCombo").addEventListener("click", resetComboSelections);
+
+// ★初期表示を反映（推奨）
+renderSelectedConditions();
+
+}
+
+function getComboField(c, keys, def=""){
+  for(const k of keys){
+    if(c && c[k] !== undefined && c[k] !== null && c[k] !== "") return c[k];
+  }
+  return def;
+}
+function getComboConditions(c){
+  // combo_master: combo_requirements（推奨）/ 旧: conditions
+  const v = getComboField(c, ["combo_requirements","comboRequirements","requirements","reqs","conditions","conditionList"], []);
+  return Array.isArray(v) ? v : [];
+}
+function getComboPolicys(c){
+  // combo_master: combo_policys（推奨） / 旧: conditions[].policy
+  const v = getComboField(c, ["combo_policys","comboPolicies","policies"], null);
+  if(Array.isArray(v)) return v.map(normalizePolicy).filter(Boolean);
+  if(typeof v === "string" && v.trim() !== "") return [normalizePolicy(v)];
+  // fallback（旧フォーマット）
+  const conds = getComboField(c, ["conditions","conditionList"], []);
+  const set = new Set();
+  if(Array.isArray(conds)){
+    for(const cond of conds){
+      const p = normalizePolicy(getComboField(cond, ["policy","ポリシー"], ""));
+      if(p) set.add(p);
+    }
+  }
+  return [...set];
+}
+function normalizeRank(r){
+  const s = safeStr(r);
+  if(s.includes("金")) return "金";
+  if(s.includes("銀")) return "銀";
+  if(s.includes("銅")) return "銅";
+  return s;
+}
+function normalizePolicy(p){
+  // フィールドが "policy" だけでなく "ポリシー" などでも来る場合に備える
+  return safeStr(p).trim();
+}
+function normalizePos(p){
+  return safeStr(p).trim().toUpperCase();
+}
+function normalizeStyle(s){
+  return safeStr(s).trim();
+}
+function parseLvReq(x){
+  // "Lv2以上" や "2" 等を吸収
+  const s = safeStr(x);
+  const m = s.match(/(\d)/);
+  return m ? Number(m[1]) : (Number.isFinite(Number(x)) ? Number(x) : 0);
+}
+
+function conditionMatch(cond){
+  // cond: {position, playStyle, playStyleLv}（policy は combo_policys に移動）
+  const cpos = normalizePos(getComboField(cond, ["position","pos","ポジション"], ""));
+  const cstyle = normalizeStyle(getComboField(cond, ["playStyle","style","プレイスタイル"], ""));
+  const clv = parseLvReq(getComboField(cond, ["playStyleLv","lv","level","Lv","プレイスタイルLv"], 0));
+
+  const posOk = selPositions.size===0 ? true : selPositions.has(cpos);
+  const styleOk = !selPlayStyle ? true : (cstyle===selPlayStyle || cstyle.includes(selPlayStyle));
+  const lvOk = !clv ? true : (selLv >= clv);
+
+  return {posOk, styleOk, lvOk};
+}
+
+
+function scrollSectionToCenter(el){
+  if(!el) return;
+  // できるだけ中央に来るようにスムーズスクロール
+  try{
+    el.scrollIntoView({ behavior:"smooth", block:"center", inline:"nearest" });
+  }catch(e){
+    const rect = el.getBoundingClientRect();
+    const y = (window.pageYOffset || document.documentElement.scrollTop || 0)
+            + rect.top - (window.innerHeight/2) + (rect.height/2);
+    window.scrollTo(0, Math.max(0, y));
+  }
+}
+
+function runComboSearch(){
+  const err = document.getElementById("comboErr");
+  // 必須選択チェック
+  if(!selPolicy){
+    err.textContent = "ポリシーを選択してください";
+    err.style.display="block";
+    scrollSectionToCenter(document.getElementById("policyGrid"));
+    return;
+  }
+  if(selPositions.size===0){
+    err.textContent = "ポジションを1つ以上選択してください";
+    err.style.display="block";
+    scrollSectionToCenter(document.getElementById("posBoard"));
+    return;
+  }
+  if(!selPlayStyle){
+    err.textContent = "プレイスタイルを選択してください";
+    err.style.display="block";
+    scrollSectionToCenter(document.getElementById("playStyleGrid"));
+    return;
+  }
+  if(!selLv){
+    err.textContent = "プレイスタイルLvを選択してください";
+    err.style.display="block";
+    scrollSectionToCenter(document.getElementById("lvBoard"));
+    return;
+  }
+  err.style.display="none";
+
+  const result = document.getElementById("comboResult");
+  result.innerHTML = "";
+
+  const matches = [];
+  for(const c of COMBOS){
+    const conds = getComboConditions(c);
+    if(!conds.length) continue;
+
+    // 条件マッチ判定
+    // ①完全一致: (ポジションOK && PS/Lv OK) かつ ポリシーOK
+    // ②ポリシー違い: (ポジションOK && PS/Lv OK) かつ ポリシーNG
+    // ③ポジション違い: (ポジションNG && PS/Lv OK) かつ ポリシーOK
+    const comboPolicys = getComboPolicys(c);
+    const comboPolOk = !selPolicy ? true : comboPolicys.includes(selPolicy);
+
+    let anyFull = false;
+    let anyPolicyMismatch = false;
+    let anyPosMismatch = false;
+    let anyStyleLv = false;
+
+    const hasPosFilter = selPositions.size > 0;
+
+    for(const cond of conds){
+      const {posOk, styleOk, lvOk} = conditionMatch(cond);
+
+      if(styleOk && lvOk){
+        anyStyleLv = true;
+
+        if(posOk){
+          if(comboPolOk) anyFull = true;
+          else anyPolicyMismatch = true;
+        }else{
+          if(comboPolOk && hasPosFilter) anyPosMismatch = true;
+        }
+      }
+    }
+
+    if(anyStyleLv){
+      // ③は「①が無い」時だけ出したいので、後でフィルタ側でも anyFull を優先
+      matches.push({combo:c, anyFull, anyPolicyMismatch, anyPosMismatch});
+    }
+  }
+
+  const full = matches.filter(m=>m.anyFull);
+  const polDiff = matches.filter(m=>!m.anyFull && m.anyPolicyMismatch);
+  const posDiff = matches.filter(m=>!m.anyFull && !m.anyPolicyMismatch && m.anyPosMismatch);
+
+  const renderGroup = (title, arr, cls)=>{
+    const h = document.createElement("div");
+    h.className="resultGroupTitle";
+    h.textContent = title + `（${arr.length}件）`;
+    result.appendChild(h);
+    if(arr.length===0){
+      const p = document.createElement("div");
+      p.className="note";
+      p.style.textAlign="left";
+      p.textContent="なし";
+      result.appendChild(p);
+      return;
+    }
+    arr.forEach(({combo})=>{
+      const card = document.createElement("div");
+      card.className = "comboCard" + (cls ? (" " + cls) : "");
+
+      const name = getComboField(combo, ["name","comboName","formationName","title"], "名称なし");
+      const formation = getComboField(combo, ["formation","formationCode","フォーメーション"], "-");
+      const rank = normalizeRank(getComboField(combo, ["rank","ランク"], "-"));
+  const rankKey = (rank==="金") ? "gold" : (rank==="銀") ? "silver" : (rank==="銅") ? "bronze" : "";
+  if(rankKey) card.classList.add("rank-"+rankKey);
+      const policy = (getComboPolicys(combo).filter(Boolean).join(" / ")) || getComboField(combo, ["policy","ポリシー"], "-");
+      const effect = getComboField(combo, ["effect","効果"], "-");
+      const need = getComboField(combo, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
+
+const acqMethod = getComboField(combo, ["acquisitionMethod","入手方法"], "-");
+      const acqPlace  = getComboField(combo, ["acquisitionPlace","入手場所"], "-");
+      const acqPeriod = getComboField(combo, ["availablePeriod","入手可能期間"], "-");
+
+      const condHtml = getComboConditions(combo).map(cond => {
+        const p = getComboField(cond, ["position","pos","ポジション"], "-");
+        const s = getComboField(cond, ["playStyle","style","プレイスタイル"], "-");
+        const lvRaw = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "");
+        const lv = romanLv(parseLvReq(lvRaw) || lvRaw);
+
+        const styleText = (lv && safeStr(lv) !== "0" && safeStr(lv) !== "-")
+          ? `${esc(s)} ${esc(lv)}`
+          : `${esc(s)}`;
+
+        return `
+  <div class="condBox">
+    <div class="condRow">
+      <span class="condKey">ポジション：</span>
+      <span class="condVal">${esc(p)}</span>
+    </div>
+    <div class="condRow">
+      <span class="condKey">PS：</span>
+      <span class="condVal">${esc(s)}${lv ? " " + esc(lv) : ""}</span>
+    </div>
+  </div>`;
+      }).join("");
+
+      const condBlock = `<div class="condList">${condHtml || `<div class="note" style="text-align:left;margin:0;">-</div>`}</div>`;
+
+      card.innerHTML = `
+        <div class="comboName">${esc(name)}</div>
+        <div class="kv">
+          <div class="k">フォーメーション</div><div class="v">${esc(formation)}</div>
+          <div class="k">ランク</div><div class="v">${esc(rank)}</div>
+          <div class="k">ポリシー</div><div class="v">${esc(policy)}</div>
+          <div class="k">効果</div><div class="v">${esc(effect)}</div>
+          <div class="k">必要人数</div><div class="v">${esc(need)}</div>
+          <div class="k">入手方法</div><div class="v">${esc(acqMethod)}</div>
+          <div class="k">入手場所</div><div class="v">${esc(acqPlace)}</div>
+          <div class="k">入手可能期間</div><div class="v">${esc(acqPeriod)}</div>
+          <div class="k">条件</div><div class="v">${condBlock}</div>
+        </div>
+      `;
+      result.appendChild(card);
+    });
+  };
+
+  renderGroup("① 完全一致", full, "");
+  renderGroup("② ポリシー違い", polDiff, "blue");
+  renderGroup("③ ポジション違い", posDiff, "gray");
+}
+</script>
+
+<script>
+/* =========================
+   タブ2：選手検索（コンボ→対応選手）
+========================= */
+let selectedRanks = new Set(); // 金/銀/銅
+let selectedPlayerPolicy = null; // ポリシー（未選択=null）
+let selectedPlayerAcquisitionPlace = ""; // 入手場所（未選択=""）
+
+function setupPlayerSearchUI(){
+  // policy tiles (player search)
+  const ppg = document.getElementById("playerPolicyGrid");
+  if(ppg){
+    ppg.innerHTML = POLICIES.map(p=>`
+      <div class="imgTile" data-policy="${esc(p.key)}" role="button" tabindex="0">
+        <img src="${esc(p.img)}" onerror="this.onerror=null;this.src='${esc(p.fallback||p.img)}';" alt="${esc(p.key)}">
+        <div class="lbl">${esc(p.key)}</div>
+      </div>
+    `).join("");
+
+    ppg.querySelectorAll(".imgTile").forEach(tile=>{
+      tile.addEventListener("click", ()=>{
+        const pol = tile.dataset.policy || null;
+        // toggle off if same
+        selectedPlayerPolicy = (selectedPlayerPolicy===pol) ? null : pol;
+        ppg.querySelectorAll(".imgTile").forEach(t=>t.classList.toggle("selected", (t.dataset.policy||"")===safeStr(selectedPlayerPolicy)));
+        refreshComboSelect();
+      });
+    });
+  }
+
+  const board = document.getElementById("rankBoard");
+  board.querySelectorAll(".rankTile").forEach(tile=>{
+    tile.addEventListener("click", ()=>{
+      const r = tile.dataset.rank;
+      if(selectedRanks.has(r)) selectedRanks.delete(r);
+      else selectedRanks.add(r);
+      tile.classList.toggle("selected", selectedRanks.has(r));
+      refreshComboSelect();
+    });
+  });
+
+  document.getElementById("comboSelect").addEventListener("change", ()=>{
+    renderComboDetail();
+    document.getElementById("playerResult").innerHTML = "";
+  });
+
+  setupPlayerAcquisitionPlaceFilter();
+
+  document.getElementById("btnShowPlayers").addEventListener("click", ()=>{
+    renderComboDetail();
+    renderPlayersForCombo();
+  });
+}
+
+
+function setupPlayerAcquisitionPlaceFilter(){
+  const sel = document.getElementById("playerAcquisitionPlaceFilter");
+  if(!sel) return;
+
+  const places = [...new Set(PLAYERS.map(p=>safeStr(p.acquisitionPlace).trim()).filter(Boolean))]
+    .sort((a,b)=>a.localeCompare(b,"ja"));
+
+  sel.innerHTML = `<option value="">（すべての入手場所）</option>` +
+    places.map(place=>`<option value="${esc(place)}">${esc(place)}</option>`).join("");
+
+  sel.addEventListener("change", ()=>{
+    selectedPlayerAcquisitionPlace = sel.value;
+    document.getElementById("playerResult").innerHTML = "";
+  });
+}
+
+function filterPlayersBySelectedAcquisitionPlace(players){
+  const place = safeStr(selectedPlayerAcquisitionPlace).trim();
+  if(!place) return players;
+  return players.filter(p => safeStr(p.acquisitionPlace).trim() === place);
+}
+
+function refreshComboSelect(){
+  const sel = document.getElementById("comboSelect");
+  const before = sel.value;
+
+  const ranks = selectedRanks;
+  const list = COMBOS
+    .filter(c=>{
+      const rOk = (ranks.size===0) ? true : ranks.has(normalizeRank(getComboField(c,["rank","ランク"],"")));
+      const pSel = safeStr(selectedPlayerPolicy);
+      const pOk = (!pSel) ? true : (getComboPolicys(c).some(pol => normalizePolicy(pol) === pSel));
+      return rOk && pOk;
+    })
+    .map(c=>{
+      const id = safeStr(getComboField(c,["comboId","id","ID"],""));
+      const name = getComboField(c, ["name","comboName","formationName","title"], "名称なし");
+      const formation = getComboField(c, ["formation","formationCode","フォーメーション"], "");
+      const rank = normalizeRank(getComboField(c, ["rank","ランク"], ""));
+      const label = `${name}${rank?('（'+rank+'）'):''}`;
+      return {id: id || label, label, combo:c};
+    });
+
+  sel.innerHTML = "";
+  if(list.length===0){
+    sel.innerHTML = `<option value="">（該当なし）</option>`;
+    renderComboDetail();
+    return;
+  }
+  list.forEach(item=>{
+    const opt = document.createElement("option");
+    opt.value = item.id;
+    opt.textContent = item.label;
+    opt.dataset.comboIndex = String(COMBOS.indexOf(item.combo));
+    sel.appendChild(opt);
+  });
+
+  // restore selection
+  const toSet = [...sel.options].some(o=>o.value===before) ? before : sel.options[0].value;
+  sel.value = toSet;
+  renderComboDetail();
+}
+
+function getSelectedCombo(){
+  const sel = document.getElementById("comboSelect");
+  const opt = sel.selectedOptions && sel.selectedOptions[0];
+  if(!opt) return null;
+  const idx = Number(opt.dataset.comboIndex);
+  if(Number.isFinite(idx) && idx>=0) return COMBOS[idx];
+  // fallback: find by id/label
+  const v = sel.value;
+  return COMBOS.find(c => safeStr(getComboField(c,["comboId","id","ID"],"")) === v) || null;
+}
+
+function renderComboDetail(){
+  const box = document.getElementById("comboDetail");
+  const c = getSelectedCombo();
+  if(!c){
+    box.innerHTML = "";
+    return;
+  }
+  const name = getComboField(c, ["name","comboName","formationName","title"], "名称なし");
+  const formation = getComboField(c, ["formation","formationCode","フォーメーション"], "-");
+  const rank = normalizeRank(getComboField(c, ["rank","ランク"], "-"));
+  const policyArr = getComboPolicys(c);
+  const policy = policyArr.length ? policyArr.join(" / ") : "-";
+  const effect = getComboField(c, ["effect","効果"], "-");
+  const need = getComboField(c, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
+const acqMethod = normalizeAcquisitionMethod(getComboField(c, ["acquisitionMethod","入手方法"], "-"));
+  const acqPlace  = getComboField(c, ["acquisitionPlace","入手場所"], "-");
+  const acqPeriod = getComboField(c, ["availablePeriod","入手可能期間"], "-");
+
+  // 条件（表示のみ整形：既存検索ロジックには影響なし）
+  const condHtml = getComboConditions(c).map(cond => {
+    const p = getComboField(cond, ["position","pos","ポジション"], "-");
+    const s = getComboField(cond, ["playStyle","style","プレイスタイル"], "-");
+    const lvRaw = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "");
+    const lv = romanLv(parseLvReq(lvRaw) || lvRaw);
+
+    return `
+      <div class="condBox">
+        <div class="condRow">
+          <span class="condKey">ポジション：</span>
+          <span class="condVal">${esc(p)}</span>
+        </div>
+        <div class="condRow">
+          <span class="condKey">PS：</span>
+          <span class="condVal">${esc(s)}${(lv && safeStr(lv)!=="0" && safeStr(lv)!=="-") ? (" " + esc(lv)) : ""}</span>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  const condBlock = `<div class="condList">${condHtml || `<div class="note" style="text-align:left;margin:0;">-</div>`}</div>`;
+
+  box.innerHTML = `
+    <div class="comboCard" style="margin-top:16px;">
+      <div class="comboName">${esc(name)}</div>
+      <div class="kv">
+        <div class="k">フォーメーション</div><div class="v">${esc(formation)}</div>
+        <div class="k">ランク</div><div class="v">${esc(rank)}</div>
+        <div class="k">ポリシー</div><div class="v">${esc(policy)}</div>
+        <div class="k">効果</div><div class="v">${esc(effect)}</div>
+        <div class="k">必要人数</div><div class="v">${esc(need)}</div>
+        <div class="k">入手方法</div><div class="v">${esc(acqMethod)}</div>
+        <div class="k">入手場所</div><div class="v">${esc(acqPlace)}</div>
+        <div class="k">入手可能期間</div><div class="v">${esc(acqPeriod)}</div>
+        <div class="k">条件</div><div class="v">${condBlock}</div>
+      </div>
+    </div>
+  `;
+}
+
+function playerMatchesCondition(p, cond, comboPolicys){
+      const posReq   = getComboField(cond, ["pos","position","ポジション"], null);
+      const styleReq = getComboField(cond, ["playStyle","play_style","style","プレイスタイル","PS"], null);
+
+      // Lv はデータ側の揺れがあるので複数キーを許容
+      const lvReqRaw = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], null);
+      const lvReq = (lvReqRaw===null || lvReqRaw===undefined || lvReqRaw==="") ? null : Number(lvReqRaw);
+
+      const pPos   = getComboField(p, ["mainPosition","main_position","position","ポジション","メインポジション"], "");
+      const pStyle = getComboField(p, ["playStyle","play_style","style","プレイスタイル"], "");
+      const pLvRaw = getComboField(p, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "");
+      const pLv = (pLvRaw===null || pLvRaw===undefined || pLvRaw==="") ? null : Number(pLvRaw);
+
+      const posOk   = !posReq   || pPos   === posReq;
+      const styleOk = !styleReq || pStyle === styleReq;
+      const lvOk    = (lvReq===null) || (pLv!==null && pLv>=lvReq);
+
+      const core = posOk && styleOk && lvOk;
+
+      // combo のポリシー要件（条件側ではなく combo 側で管理）
+      const polReqs = Array.isArray(comboPolicys) ? comboPolicys.filter(Boolean) : [];
+      const pPol = getComboField(p, ["policy","ポリシー"], "");
+
+      const polOk = (polReqs.length===0) ? true : polReqs.includes(pPol);
+
+      return { ok: core && polOk, core, polOk };
+    }
+
+
+function renderPlayersForCombo(){
+  const c = getSelectedCombo();
+  const out = document.getElementById("playerResult");
+  out.innerHTML = "";
+  if(!c) return;
+  const comboPolicys = getComboPolicys(c);
+
+  const conds = getComboConditions(c);
+  if(!conds.length){
+    out.innerHTML = `<div class="note" style="text-align:left;">条件が見つかりませんでした。</div>`;
+    return;
+  }
+
+  // 1コンボ内に複数条件がある前提。各条件ごとに完全一致/ポリシー違い を表示（ポジション違いは今回は省略）
+  conds.forEach((cond, idx)=>{
+    const matchedFull = [];
+    const matchedPolDiff = [];
+
+    const targetPlayers = filterPlayersBySelectedAcquisitionPlace(PLAYERS);
+    for(const p of targetPlayers){
+      const m = playerMatchesCondition(p, cond, comboPolicys);
+      if(m.ok) matchedFull.push(p);
+      else if(m.core && !m.polOk) matchedPolDiff.push(p);
+    }
+
+    const pos = normalizePos(getComboField(cond, ["position","pos","ポジション"], "-"));
+    const style = normalizeStyle(getComboField(cond, ["playStyle","style","プレイスタイル"], "-"));
+    const lvReq = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "-");
+    const pol = normalizePolicy(getComboField(cond, ["policy","ポリシー"], "-"));
+
+    const card = document.createElement("div");
+    card.className="card";
+    card.style.marginTop="14px";
+    card.style.boxShadow="none";
+    card.style.border="1px solid var(--line)";
+    card.innerHTML = `
+      <div style="font-weight:900;font-size:20px;margin-bottom:10px;">条件${idx+1}</div>
+      <div class="kv" style="grid-template-columns:110px 1fr;">
+        <div class="k">ポジション</div><div class="v">${esc(pos)}</div>
+        <div class="k">プレイスタイル</div><div class="v">${esc(style)}${lvReq ? " " + esc(romanLv(lvReq)) : ""}</div>
+      </div>
+      <div style="margin-top:12px;">
+        <div style="font-weight:900;font-size:18px;margin:10px 0 8px;">完全一致（${matchedFull.length}人）</div>
+        ${renderPlayerNameOnlyList(matchedFull)}
+        <div style="font-weight:900;font-size:18px;margin:14px 0 8px;">ポリシー違い（${matchedPolDiff.length}人）</div>
+        ${renderPlayerNameOnlyList(matchedPolDiff)}
+      </div>
+    `;
+    out.appendChild(card);
+  });
+
+  // link handlers
+  out.querySelectorAll("[data-player-id]").forEach(a=>{
+    a.addEventListener("click", (e)=>{
+      e.preventDefault();
+      const pid = a.dataset.playerId;
+      openPlayerModal(playerById.get(pid));
+    });
+  });
+}
+
+function renderPlayerNameOnlyList(arr){
+  if(!arr || arr.length===0) return `<div class="note" style="text-align:left;margin:6px 0;">なし</div>`;
+
+  const sorted = [...arr].sort((a,b)=> (Number(b?.overall)||0) - (Number(a?.overall)||0));
+  const MAX = 3;
+  const head = sorted.slice(0, MAX);
+  const rest = sorted.slice(MAX);
+
+  const headHtml = head.map(p=>{
+    const pid = esc(getPlayerId(p));
+    return `<div class="playerRow"><a href="#" data-player-id="${pid}">${esc(formatPlayerListLabel(p))}</a></div>`;
+  }).join("");
+
+  if(rest.length===0) return headHtml;
+
+  const restPids = rest.map(p=>esc(getPlayerId(p))).join(",");
+  const moreBtn = `
+    <div class="playerRow" style="margin-top:6px;">
+      <a href="#" data-more-pids="${restPids}" data-more-title="選手一覧"
+         style="display:inline-block;font-weight:900;text-decoration:underline;">
+        他${rest.length}人を見る
+      </a>
+    </div>
+  `;
+
+  return headHtml + moreBtn;
+}
+</script>
+
+
+
+<!-- ===== サイト情報（ページ下部表示） ===== -->
+<section class="card" id="site-pages" aria-label="サイト情報ページ">
+    <h2 style="margin:0 0 10px;">サイト情報</h2>
+    <table class="site-pages-table">
+      <thead>
+        <tr><th></th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="about.html">このサイトについて</a></td><td>概要・目的</td></tr>
+        <tr><td><a href="privacy.html">プライバシーポリシー</a></td><td>個人情報の取り扱い</td></tr>
+        <tr><td><a href="terms.html">利用規約</a></td><td>ご利用上のルール</td></tr>
+        <tr><td><a href="disclosure.html">運営者情報・広告/免責</a></td><td>広告・免責・収益化</td></tr>
+        <tr><td><a href="contact.html">お問い合わせ</a></td><td>X / Googleフォーム</td></tr>
+      </tbody>
+    </table>
+  </section>
+<!-- ===== AdSense: footer / safe placement ===== -->
+<div class="adWrap" aria-label="広告">
+  <div class="adLabel">スポンサーリンク</div>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7589811048145654"
+     data-ad-slot="1234567890"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+<script>
+/* =========================
+   タブ3：おまけ（ランキング/割合）
+========================= */
+const ORDER_POLICY = ["ムービング","ポゼッション","リアクション","カウンター"];
+const ORDER_STYLE = [
+  "ストライカー","ラインブレーカー","ポストプレーヤー","サイドアタッカー","ドリブラー","アタッカー","パサー",
+  "セントラルMF","ハードマーカー","ストッパー","組立CB","攻撃的FB","守備的FB","オーソドックスGK","スイーパーGK"
+];
+const ORDER_POS = ["CF","RW","LW","AM","RM","LM","DM","CB","RB","LB","GK"];
+
+function setupBonusUI(){
+  // 新しいおまけ機能
+}
+
+function renderTopTables(){
+  const topOverall = [...PLAYERS].sort((a,b)=>(b.overall||0)-(a.overall||0)).slice(0,10);
+  const topMax = [...PLAYERS].filter(p=>Number.isFinite(Number(p.maxUpgrade))).sort((a,b)=>(b.maxUpgrade||0)-(a.maxUpgrade||0)).slice(0,10);
+renderRankTable(document.getElementById("tblOverall"), topOverall, "overall", "初期総合力");
+renderRankTable(document.getElementById("tblMaxUp"), topMax, "maxUpgrade", "最大総合力");
+}
+
+function renderRankTable(tbl, arr, field, scoreLabel){
+  const head = `
+    <tr>
+      <th>順位</th>
+      <th>選手名</th>
+      <th>${esc(scoreLabel)}</th>
+      <th>ポジション</th>
+    </tr>`;
+
+  const rows = arr.map((p,i)=>{
+    // field が "overall" なら初期総合力、"maxUpgrade" なら最大総合力 を想定
+    const v = (p && p[field] != null) ? p[field] : "-";
+    const pos = (p && p.mainPosition) ? p.mainPosition : "-";
+    const pid = esc(getPlayerId(p));
+    const nm  = esc(p?.name || "-");
+
+    return `
+      <tr>
+        <td>${i+1}</td>
+        <td><span class="rankLink" data-player-id="${pid}">${nm}</span></td>
+        <td>${esc(v)}</td>
+        <td>${esc(pos)}</td>
+      </tr>`;
+  }).join("");
+
+  // thead/tbody を明示（レイアウト崩れ＆CSS当たり方の事故を減らす）
+  tbl.innerHTML = `<thead>${head}</thead><tbody>${rows}</tbody>`;
+
+  // クリックで選手モーダル
+  tbl.querySelectorAll("[data-player-id]").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      openPlayerModal(playerById.get(el.dataset.playerId));
+    });
+  });
+}
+
+function setupFilterUI(){
+  const fPolicy = document.getElementById("fPolicy");
+  const fPos = document.getElementById("fPos");
+  const fStyle = document.getElementById("fStyle");
+  const fMetric = document.getElementById("fMetric");
+  const fPlace = document.getElementById("fPlace");
+
+  const uniq = (arr)=>[...new Set(arr.filter(Boolean))];
+  const policies = uniq(PLAYERS.map(p=>p.policy)).sort((a,b)=>a.localeCompare(b,"ja"));
+  const pos = uniq(PLAYERS.map(p=>p.mainPosition)).sort((a,b)=>a.localeCompare(b,"ja"));
+  const styles = uniq(PLAYERS.map(p=>p.playStyle)).sort((a,b)=>a.localeCompare(b,"ja"));
+  const places = uniq(PLAYERS.map(p=>p.acquisitionPlace)).sort((a,b)=>a.localeCompare(b,"ja"));
+
+  fPolicy.innerHTML = `<option value="">（ポリシー）</option>` + policies.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+  fPos.innerHTML = `<option value="">（ポジション）</option>` + pos.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+  fStyle.innerHTML = `<option value="">（プレイスタイル）</option>` + styles.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+  fMetric.innerHTML = `<option value="overall">（参照値：初期総合力）</option><option value="maxUpgrade">（参照値：最大強化）</option>`;
+  fPlace.innerHTML = `<option value="">（入手場所）</option>` + places.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+
+  const rerender = ()=>{
+    const fp = fPolicy.value;
+    const fpo = fPos.value;
+    const fs = fStyle.value;
+    const fpl = fPlace.value;
+
+    let arr = [...PLAYERS];
+    if(fp) arr = arr.filter(p=>p.policy===fp);
+    if(fpo) arr = arr.filter(p=>p.mainPosition===fpo);
+    if(fs) arr = arr.filter(p=>p.playStyle===fs);
+    if(fpl) arr = arr.filter(p=>p.acquisitionPlace===fpl);
+
+    const fm = (fMetric && fMetric.value) ? fMetric.value : "overall";
+
+    arr = arr.sort((a,b)=>((b[fm]||0)-(a[fm]||0))).slice(0,5);
+
+    const metricLabel = (fm==="maxUpgrade") ? "最大強化" : "初期総合力";
+
+    const tbl = document.getElementById("tblFiltered");
+    if(!arr.length){
+      tbl.innerHTML = `<thead><tr><th>順位</th><th>選手名</th><th>${metricLabel}</th><th>ポジション</th></tr></thead><tbody><tr><td colspan="4" style="text-align:center;padding:12px;">対象なし</td></tr></tbody>`;
+      return;
+    }
+    renderRankTable(tbl, arr, fm, metricLabel);
+  };
+
+  fPolicy.addEventListener("change", rerender);
+  fPos.addEventListener("change", rerender);
+  fStyle.addEventListener("change", rerender);
+  if(fMetric) fMetric.addEventListener("change", rerender);
+  fPlace.addEventListener("change", rerender);
+
+  document.getElementById("btnResetFilters").addEventListener("click", ()=>{
+    fPolicy.value=""; fPos.value=""; fStyle.value=""; if(fMetric) fMetric.value="overall"; fPlace.value="";
+    rerender();
+  });
+
+  rerender();
+}
+
+function renderShareBars(){
+  // counts
+  const total = PLAYERS.length || 1;
+
+  const countBy = (keyFn)=>{
+    const m = new Map();
+    for(const p of PLAYERS){
+      const k = keyFn(p);
+      if(!k) continue;
+      m.set(k, (m.get(k)||0)+1);
+    }
+    return m;
+  };
+
+  const mPol = countBy(p=>p.policy);
+  const mSty = countBy(p=>p.playStyle);
+  const mPos = countBy(p=>p.mainPosition);
+
+  // fixed order render (要望：降順ではなく指定順)
+  renderBarsInOrder(document.getElementById("barsPolicy"), ORDER_POLICY, mPol, total);
+  renderBarsInOrder(document.getElementById("barsStyle"), ORDER_STYLE, mSty, total);
+  renderBarsInOrder(document.getElementById("barsPos"), ORDER_POS, mPos, total);
+}
+
+function renderBarsInOrder(container, order, map, total){
+  container.innerHTML = "";
+  order.forEach(name=>{
+    const cnt = map.get(name) || 0;
+    const pct = (cnt/total)*100;
+    const row = document.createElement("div");
+    row.className = "barRow";
+    row.innerHTML = `
+      <div class="barName">${esc(name)}</div>
+      <div class="barTrack"><div class="barFill" style="width:${pct.toFixed(1)}%"></div></div>
+      <div class="barPct">${pct.toFixed(1)}%</div>
+    `;
+    container.appendChild(row);
+  });
+}
+</script>
+
+<script>
+(function(){
+  const target = document.getElementById("latestChangelogTop");
+  if(!target) return;
+
+function setFallback(msg){
+  target.innerHTML = `
+    <div class="updateItem">
+      <div class="updateText">${msg}</div>
+    </div>
+    <div class="updateItem">
+      <div class="updateText"><a href="changelog.html">更新履歴ページを開く</a></div>
+    </div>
+  `;
+}
+
+  fetch("changelog.html", { cache: "no-store" })
+    .then(r => r.text())
+    .then(txt => {
+      const doc = new DOMParser().parseFromString(txt, "text/html");
+      const first = doc.querySelector(".log-card");
+      if(!first){ setFallback('更新履歴を取得できませんでした。<br><a href="changelog.html">changelog.html を開く</a>'); return; }
+
+      const date = (first.querySelector(".date")?.textContent || "").trim();
+      const items = Array.from(first.querySelectorAll("ul li")).map(li => li.textContent.trim()).filter(Boolean);
+
+const html = `
+  <div class="updateItem">
+    <div class="updateDate">${date || "更新"}</div>
+    <div class="updateText">${items.length ? "・"+items.join("<br>・") : "更新内容がありません"}</div>
+  </div>
+  <div class="updateItem">
+    <div class="updateText"><a href="changelog.html">更新履歴をもっと見る</a></div>
+  </div>
+`;
+
+      target.innerHTML = html;
+    })
+    .catch(() => setFallback('更新履歴を取得できませんでした。<br><a href="changelog.html">changelog.html を開く</a>'));
+})();
+</script>
+
+</body>
+</html>
