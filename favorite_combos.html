@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>フォメコン診断 | サカつく2026 DB</title>
+<link rel="canonical" href="https://sakatsuku2026-db.com/favorite_combos.html">
+<style>
+  :root{
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --text:#111;
+    --muted:#666;
+    --line:#d7dbe6;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+    --radius:18px;
+    --green:#4aa52a;
+    --green-dark:#34761d;
+    --blue:#155f80;
+    --orange:#f59e0b;
+    --gray:#9aa0aa;
+    --gold:#d2b451;
+    --silver:#b7b7b7;
+    --bronze:#c8894a;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+  }
+  .wrap{ max-width:1180px; margin:0 auto; padding:18px 14px 90px; }
+  .topbar{ display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap; }
+  .back{
+    text-decoration:none; font-weight:900; color:#0b3d0f; background:#fff;
+    border:1px solid rgba(0,0,0,.12); padding:10px 14px; border-radius:12px;
+    display:inline-block; box-shadow:0 6px 14px rgba(0,0,0,.06);
+  }
+  h1{ margin:8px 0 10px; font-size:32px; letter-spacing:.02em; text-align:center; }
+  .note{ text-align:center; color:var(--muted); margin:0 0 16px; line-height:1.7; font-weight:800; }
+  .card{
+    background:var(--card); border:1px solid #e7e9f0; border-radius:22px;
+    box-shadow:var(--shadow); padding:16px; overflow:hidden; margin-bottom:14px;
+  }
+  .hero{
+    border-left:6px solid var(--green);
+    background:linear-gradient(180deg,#ffffff,#f4fbf1);
+  }
+  .heroGrid{ display:grid; grid-template-columns:1fr; gap:12px; align-items:center; }
+  @media (min-width: 860px){ .heroGrid{ grid-template-columns:1fr auto; } }
+  .heroTitle{ font-size:22px; font-weight:900; margin-bottom:8px; }
+  .heroText{ color:#334; font-weight:800; line-height:1.7; }
+  .badgeRow{ display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-start; }
+  .badge{
+    display:inline-flex; align-items:center; gap:6px; background:#eef7ea; color:var(--green-dark);
+    border:1px solid rgba(74,165,42,.25); padding:8px 12px; border-radius:999px;
+    font-weight:900; font-size:14px; white-space:nowrap;
+  }
+  .rankFilter{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:center; margin-top:12px; }
+  .rankBtn{
+    appearance:none; border:2px solid #dfe4ee; background:#fff; color:#223; border-radius:999px;
+    padding:10px 16px; font-weight:900; cursor:pointer; min-width:86px;
+    box-shadow:0 8px 16px rgba(0,0,0,.06);
+  }
+  .rankBtn.active{ color:#fff; border-color:#111; background:#111; }
+  .rankBtn[data-rank="金"].active{ background:var(--gold); color:#111; }
+  .rankBtn[data-rank="銀"].active{ background:#8e8e8e; color:#fff; }
+  .rankBtn[data-rank="銅"].active{ background:var(--bronze); color:#fff; }
+  .sectionHead{ display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+  .sectionTitle{ font-weight:900; font-size:22px; margin:0; }
+  .sectionSub{ color:var(--muted); font-weight:800; line-height:1.6; margin:4px 0 0; }
+  .countBadge{ background:#f1f3f8; color:#263238; border:1px solid #e1e5ef; padding:8px 12px; border-radius:999px; font-weight:900; font-size:14px; white-space:nowrap; }
+  .comboList{ display:grid; grid-template-columns:1fr; gap:12px; }
+  @media (min-width: 920px){ .comboList{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  .comboCard{
+    border:1px solid var(--line); border-left:7px solid var(--blue); border-radius:18px;
+    background:#fff; padding:14px; box-shadow:0 8px 18px rgba(0,0,0,.05);
+  }
+  .comboCard.rank-gold{ border-left-color:var(--gold); background:#fff9e2; }
+  .comboCard.rank-silver{ border-left-color:var(--silver); background:#f8f8f8; }
+  .comboCard.rank-bronze{ border-left-color:var(--bronze); background:#fff3e7; }
+  .comboName{ font-weight:900; font-size:19px; line-height:1.4; margin-bottom:10px; }
+  .comboMeta{ display:grid; grid-template-columns:92px 1fr; gap:6px 10px; font-size:14px; line-height:1.55; }
+  .comboMeta .k{ font-weight:900; color:#223; }
+  .comboMeta .v{ font-weight:800; color:#111; word-break:break-word; }
+  .memberList{ display:flex; gap:6px; flex-wrap:wrap; margin-top:12px; }
+  .memberChip{ display:inline-block; font-size:12px; font-weight:900; background:rgba(21,95,128,.08); border:1px solid rgba(21,95,128,.20); color:#0b3d50; padding:5px 8px; border-radius:999px; line-height:1.35; }
+  .missingBox{ margin-top:12px; padding:10px 12px; border-radius:14px; background:#fff; border:1px solid rgba(0,0,0,.10); }
+  .missingTitle{ font-weight:900; color:#9a5d00; margin-bottom:8px; }
+  .candidateList{ display:grid; gap:8px; }
+  .candidate{ display:grid; grid-template-columns:1fr auto; gap:8px; align-items:start; border-top:1px solid #edf0f5; padding-top:8px; }
+  .candidate:first-child{ border-top:none; padding-top:0; }
+  .candidateName{ font-weight:900; color:#0b63d1; }
+  .candidateMeta{ color:#444; font-weight:800; font-size:12px; line-height:1.5; margin-top:2px; }
+  .candidatePower{ font-weight:900; background:#eef7ea; color:var(--green-dark); border-radius:999px; padding:5px 8px; font-size:12px; white-space:nowrap; }
+  .empty{ text-align:center; padding:28px 14px; border:2px dashed #d4dae6; border-radius:18px; color:#555; font-weight:900; background:#fff; line-height:1.7; }
+  .favoritePlayers{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+  .favoritePlayerChip{ display:inline-block; background:#fff7d6; border:1px solid rgba(201,138,0,.25); color:#6e5200; padding:6px 10px; border-radius:999px; font-weight:900; font-size:13px; }
+  .error{ background:#fff1f1; border-color:#ffd0d0; color:#9b1c1c; }
+  .toTop{ position:fixed; right:16px; bottom:16px; z-index:999; border:none; border-radius:999px; background:var(--green); color:#fff; font-weight:900; padding:14px 16px; box-shadow:0 12px 20px rgba(0,0,0,.18); cursor:pointer; display:none; }
+  .toTop.show{ display:block; }
+  @media (max-width: 520px){
+    .wrap{ padding-left:10px; padding-right:10px; }
+    h1{ font-size:27px; }
+    .sectionTitle{ font-size:20px; }
+    .comboMeta{ grid-template-columns:78px 1fr; font-size:13px; }
+    .rankBtn{ flex:1 1 calc(50% - 10px); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap" id="pageTop">
+  <div class="topbar">
+    <a class="back" href="index.html">← サイトに戻る</a>
+    <a class="back" href="player_catalog.html">★ 選手図鑑でお気に入り登録</a>
+  </div>
+
+  <h1>フォメコン診断</h1>
+  <div class="note">
+    選手図鑑でお気に入り登録した選手から、発動できるフォーメーションコンボを自動診断します。<br>
+    「あと1名で発動できるコンボ」では、不足条件に合う選手を総合力上位3名で表示します。
+  </div>
+
+  <div class="card hero">
+    <div class="heroGrid">
+      <div>
+        <div class="heroTitle">お気に入り選手からフォメコンを逆引き</div>
+        <div class="heroText">
+          このページは <strong>players.json</strong>、<strong>combos.json</strong>、選手図鑑のお気に入りデータを参照します。<br>
+          お気に入り登録を変更した場合は、このページを再読み込みすると最新状態で診断できます。
+        </div>
+      </div>
+      <div class="badgeRow">
+        <span class="badge" id="favoriteCount">お気に入り：読み込み中</span>
+        <span class="badge" id="comboTotalCount">コンボ：読み込み中</span>
+      </div>
+    </div>
+    <div class="rankFilter" aria-label="コンボランク絞り込み">
+      <button type="button" class="rankBtn active" data-rank="">すべて</button>
+      <button type="button" class="rankBtn" data-rank="金">金</button>
+      <button type="button" class="rankBtn" data-rank="銀">銀</button>
+      <button type="button" class="rankBtn" data-rank="銅">銅</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="sectionHead">
+      <div>
+        <h2 class="sectionTitle">お気に入り選手だけで発動できるコンボ</h2>
+        <div class="sectionSub">同じ選手を複数条件に重複使用しない形で判定します。</div>
+      </div>
+      <div class="countBadge" id="availableCount">0件</div>
+    </div>
+    <div id="availableCombos" class="comboList">
+      <div class="empty">読み込み中です…</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="sectionHead">
+      <div>
+        <h2 class="sectionTitle">あと1名で発動できるコンボ</h2>
+        <div class="sectionSub">不足している条件と、その条件に該当する総合力上位3名を表示します。</div>
+      </div>
+      <div class="countBadge" id="oneAwayCount">0件</div>
+    </div>
+    <div id="oneAwayCombos" class="comboList">
+      <div class="empty">読み込み中です…</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="sectionHead">
+      <div>
+        <h2 class="sectionTitle">現在のお気に入り選手</h2>
+        <div class="sectionSub">選手図鑑と同じお気に入りデータを参照しています。</div>
+      </div>
+    </div>
+    <div id="favoritePlayers" class="favoritePlayers"><div class="empty">読み込み中です…</div></div>
+  </div>
+</div>
+
+<button id="toTopBtn" class="toTop" type="button" aria-label="ページ上部に戻る">▲</button>
+
+<script>
+let PLAYERS = [];
+let COMBOS = [];
+let favoritePlayerIds = new Set();
+let activeRank = "";
+const FAVORITES_STORAGE_KEY = "sakatsuku2026_player_catalog_favorites";
+
+const $ = (id)=>document.getElementById(id);
+const esc = (s)=>String(s ?? "").replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const normalize = (s)=>String(s ?? "").trim();
+const toNum = (v)=>{
+  const n = Number(v);
+  return Number.isFinite(n) ? n : null;
+};
+function pick(obj, keys, fallback=""){
+  for(const k of keys){
+    if(obj && obj[k] !== undefined && obj[k] !== null && String(obj[k]).trim() !== "") return obj[k];
+  }
+  return fallback;
+}
+function romanLv(n){
+  const v = toNum(n);
+  if(v === 1) return "Ⅰ";
+  if(v === 2) return "Ⅱ";
+  if(v === 3) return "Ⅲ";
+  return "";
+}
+function getPlayerCore(p){
+  return {
+    raw:p,
+    playerId: normalize(pick(p, ["player_id","playerId","id"], "")),
+    name: normalize(pick(p, ["name","player_name"], "")),
+    policy: normalize(pick(p, ["policy","ポリシー"], "")),
+    playStyle: normalize(pick(p, ["playStyle","プレイスタイル"], "")),
+    playStyleLv: pick(p, ["playStyleLv","play_style_lv","Lv","level","プレイスタイルLv"], ""),
+    mainPosition: normalize(pick(p, ["mainPosition","position","ポジション"], "")),
+    overall: pick(p, ["overall","初期総合力"], ""),
+    maxUpgrade: pick(p, ["maxUpgrade","最大強化"], ""),
+    acquisitionPlace: normalize(pick(p, ["acquisitionPlace","acquisition_place","入手場所"], "")),
+    acquisitionMethod: normalize(pick(p, ["acquisitionMethod","acquisition_method","入手方法"], "")),
+    rarity: normalize(pick(p, ["rarity","レアリティ"], "")),
+  };
+}
+function comboField(c, keys, fallback=""){
+  for(const k of keys){
+    if(c && c[k] !== undefined && c[k] !== null && String(c[k]).trim() !== "") return c[k];
+  }
+  return fallback;
+}
+function comboConditions(c){
+  const v = comboField(c, ["combo_requirements","comboRequirements","requirements","reqs","conditions","conditionList"], []);
+  return Array.isArray(v) ? v : [];
+}
+function comboPolicies(c){
+  const v = comboField(c, ["combo_policys","comboPolicies","policies"], null);
+  if(Array.isArray(v)) return v.map(normalize).filter(Boolean);
+  if(typeof v === "string" && v.trim() !== "") return [normalize(v)];
+
+  const conds = comboConditions(c);
+  const set = new Set();
+  conds.forEach(cond=>{
+    const policy = normalize(comboField(cond, ["policy","ポリシー"], ""));
+    if(policy) set.add(policy);
+  });
+  return [...set];
+}
+function comboRank(c){
+  const s = normalize(comboField(c, ["rank","ランク"], ""));
+  if(s.includes("金")) return "金";
+  if(s.includes("銀")) return "銀";
+  if(s.includes("銅")) return "銅";
+  return s;
+}
+function comboRankClass(rank){
+  if(rank === "金") return "rank-gold";
+  if(rank === "銀") return "rank-silver";
+  if(rank === "銅") return "rank-bronze";
+  return "";
+}
+function parseComboLv(v){
+  const raw = normalize(v);
+  if(raw.includes("Ⅲ")) return 3;
+  if(raw.includes("Ⅱ")) return 2;
+  if(raw.includes("Ⅰ")) return 1;
+  const m = raw.match(/\d+/);
+  if(m) return Number(m[0]);
+  const n = Number(v);
+  return Number.isFinite(n) ? n : 0;
+}
+function conditionText(cond){
+  const pos = normalize(comboField(cond, ["position","pos","ポジション"], ""));
+  const style = normalize(comboField(cond, ["playStyle","play_style","style","プレイスタイル","PS"], ""));
+  const lv = parseComboLv(comboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], 0));
+  const parts = [];
+  if(pos) parts.push(`ポジション：${pos}`);
+  if(style) parts.push(`PS：${style}${lv ? " " + romanLv(lv) + "以上" : ""}`);
+  return parts.length ? parts.join(" / ") : "条件指定なし";
+}
+function playerSatisfiesComboCondition(player, cond, policies){
+  const p = getPlayerCore(player);
+  const reqPos = normalize(comboField(cond, ["position","pos","ポジション"], "")).toUpperCase();
+  const reqStyle = normalize(comboField(cond, ["playStyle","play_style","style","プレイスタイル","PS"], ""));
+  const reqLv = parseComboLv(comboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], 0));
+  const posOk = !reqPos || normalize(p.mainPosition).toUpperCase() === reqPos;
+  const styleOk = !reqStyle || p.playStyle === reqStyle;
+  const lvOk = !reqLv || ((toNum(p.playStyleLv) || 0) >= reqLv);
+  const policyOk = !policies.length || policies.includes(p.policy);
+  return posOk && styleOk && lvOk && policyOk;
+}
+function findAssignment(combo, players, skipCondIndex=-1){
+  const conds = comboConditions(combo);
+  if(!conds.length) return null;
+  const policies = comboPolicies(combo);
+  const targetIndexes = conds.map((_,i)=>i).filter(i=>i !== skipCondIndex);
+  const candidates = new Map();
+  for(const i of targetIndexes){
+    candidates.set(i, players.filter(p => playerSatisfiesComboCondition(p, conds[i], policies)));
+    if(candidates.get(i).length === 0) return null;
+  }
+  const order = [...targetIndexes].sort((a,b)=>candidates.get(a).length - candidates.get(b).length);
+  const used = new Set();
+  const assigned = new Array(conds.length).fill(null);
+  function backtrack(depth){
+    if(depth >= order.length) return true;
+    const condIndex = order[depth];
+    const list = [...candidates.get(condIndex)].sort((a,b)=>{
+      const ao = Number(getPlayerCore(a).overall) || 0;
+      const bo = Number(getPlayerCore(b).overall) || 0;
+      return bo - ao;
+    });
+    for(const player of list){
+      const id = getPlayerCore(player).playerId;
+      if(!id || used.has(id)) continue;
+      used.add(id);
+      assigned[condIndex] = player;
+      if(backtrack(depth + 1)) return true;
+      assigned[condIndex] = null;
+      used.delete(id);
+    }
+    return false;
+  }
+  return backtrack(0) ? assigned : null;
+}
+function loadFavoritePlayerIds(){
+  try{
+    const raw = localStorage.getItem(FAVORITES_STORAGE_KEY);
+    if(!raw) return new Set();
+    const parsed = JSON.parse(raw);
+    if(!Array.isArray(parsed)) return new Set();
+    return new Set(parsed.map(v => String(v ?? "").trim()).filter(Boolean));
+  }catch(error){
+    console.warn("お気に入りデータの読み込みに失敗しました。", error);
+    return new Set();
+  }
+}
+function sortCombos(list){
+  const rankScore = {"金":3,"銀":2,"銅":1};
+  return list.sort((a,b)=>{
+    const ar = rankScore[comboRank(a.combo)] || 0;
+    const br = rankScore[comboRank(b.combo)] || 0;
+    if(br !== ar) return br - ar;
+    const an = normalize(comboField(a.combo, ["name","comboName","formationName","title"], ""));
+    const bn = normalize(comboField(b.combo, ["name","comboName","formationName","title"], ""));
+    return an.localeCompare(bn, "ja");
+  });
+}
+function getRankFilteredCombos(){
+  return COMBOS.filter(c => !activeRank || comboRank(c) === activeRank);
+}
+function buildDiagnostics(){
+  const favPlayers = PLAYERS.filter(p => favoritePlayerIds.has(getPlayerCore(p).playerId));
+  const available = [];
+  const oneAway = [];
+
+  for(const combo of getRankFilteredCombos()){
+    const conds = comboConditions(combo);
+    if(!conds.length) continue;
+    const full = findAssignment(combo, favPlayers);
+    if(full){
+      available.push({ combo, assignment: full });
+      continue;
+    }
+
+    const policies = comboPolicies(combo);
+    let best = null;
+    for(let missingIndex=0; missingIndex<conds.length; missingIndex++){
+      const partial = findAssignment(combo, favPlayers, missingIndex);
+      if(!partial) continue;
+      const usedIds = new Set(partial.filter(Boolean).map(p=>getPlayerCore(p).playerId));
+      const candidates = PLAYERS
+        .filter(p => {
+          const id = getPlayerCore(p).playerId;
+          if(!id || favoritePlayerIds.has(id) || usedIds.has(id)) return false;
+          return playerSatisfiesComboCondition(p, conds[missingIndex], policies);
+        })
+        .sort((a,b)=>(Number(getPlayerCore(b).overall)||0) - (Number(getPlayerCore(a).overall)||0))
+        .slice(0,3);
+      if(candidates.length){
+        const score = Number(getPlayerCore(candidates[0]).overall) || 0;
+        if(!best || score > best.score){
+          best = { combo, assignment: partial, missingIndex, candidates, score };
+        }
+      }
+    }
+    if(best) oneAway.push(best);
+  }
+  return { available: sortCombos(available), oneAway: sortCombos(oneAway), favPlayers };
+}
+function comboBaseHtml(combo){
+  const name = comboField(combo, ["name","comboName","formationName","title"], "名称なし");
+  const formation = comboField(combo, ["formation","formationCode","フォーメーション"], "-");
+  const rank = comboRank(combo) || "-";
+  const policies = comboPolicies(combo).join(" / ") || "-";
+  const effect = comboField(combo, ["effect","効果"], "-");
+  return { name, formation, rank, policies, effect };
+}
+function renderAvailable(list){
+  $("availableCount").textContent = `${list.length}件`;
+  const root = $("availableCombos");
+  if(!list.length){
+    root.innerHTML = `<div class="empty">条件に一致する発動可能コンボはありません。</div>`;
+    return;
+  }
+  root.innerHTML = list.map(({combo, assignment})=>{
+    const base = comboBaseHtml(combo);
+    const members = assignment.map((player, idx)=>{
+      const core = getPlayerCore(player);
+      const cond = comboConditions(combo)[idx] || {};
+      const pos = normalize(comboField(cond, ["position","pos","ポジション"], core.mainPosition || "-"));
+      return `<span class="memberChip">${esc(pos)}：${esc(core.name || core.playerId || "選手")}</span>`;
+    }).join("");
+    return `
+      <article class="comboCard ${esc(comboRankClass(base.rank))}">
+        <div class="comboName">${esc(base.name)}</div>
+        <div class="comboMeta">
+          <div class="k">フォメ</div><div class="v">${esc(base.formation)}</div>
+          <div class="k">ランク</div><div class="v">${esc(base.rank)}</div>
+          <div class="k">ポリシー</div><div class="v">${esc(base.policies)}</div>
+          <div class="k">効果</div><div class="v">${esc(base.effect)}</div>
+        </div>
+        <div class="memberList">${members}</div>
+      </article>`;
+  }).join("");
+}
+function renderOneAway(list){
+  $("oneAwayCount").textContent = `${list.length}件`;
+  const root = $("oneAwayCombos");
+  if(!list.length){
+    root.innerHTML = `<div class="empty">条件に一致する「あと1名」コンボはありません。</div>`;
+    return;
+  }
+  root.innerHTML = list.map(({combo, missingIndex, candidates})=>{
+    const base = comboBaseHtml(combo);
+    const cond = comboConditions(combo)[missingIndex] || {};
+    const candidateHtml = candidates.map(p=>{
+      const core = getPlayerCore(p);
+      const lv = romanLv(core.playStyleLv);
+      return `
+        <div class="candidate">
+          <div>
+            <div class="candidateName">${esc(core.name || core.playerId || "選手")}</div>
+            <div class="candidateMeta">
+              ${esc(core.mainPosition || "-")} / ${esc(core.policy || "-")} / ${esc(core.playStyle || "-")}${lv ? " " + esc(lv) : ""}<br>
+              入手場所：${esc(core.acquisitionPlace || "-")}
+            </div>
+          </div>
+          <div class="candidatePower">総合力 ${esc(core.overall || "-")}</div>
+        </div>`;
+    }).join("");
+    return `
+      <article class="comboCard ${esc(comboRankClass(base.rank))}">
+        <div class="comboName">${esc(base.name)}</div>
+        <div class="comboMeta">
+          <div class="k">フォメ</div><div class="v">${esc(base.formation)}</div>
+          <div class="k">ランク</div><div class="v">${esc(base.rank)}</div>
+          <div class="k">ポリシー</div><div class="v">${esc(base.policies)}</div>
+          <div class="k">効果</div><div class="v">${esc(base.effect)}</div>
+        </div>
+        <div class="missingBox">
+          <div class="missingTitle">不足条件：${esc(conditionText(cond))}</div>
+          <div class="candidateList">${candidateHtml}</div>
+        </div>
+      </article>`;
+  }).join("");
+}
+function renderFavorites(favPlayers){
+  $("favoriteCount").textContent = `お気に入り：${favPlayers.length}人`;
+  const root = $("favoritePlayers");
+  if(!favPlayers.length){
+    root.innerHTML = `<div class="empty">お気に入り選手が登録されていません。<br>選手図鑑で☆を押して登録してください。</div>`;
+    return;
+  }
+  root.innerHTML = favPlayers
+    .map(getPlayerCore)
+    .sort((a,b)=>a.playerId.localeCompare(b.playerId,"ja",{numeric:true}))
+    .map(p=>`<span class="favoritePlayerChip">★ ${esc(p.name || p.playerId)} <small>${esc(p.mainPosition || "-")}</small></span>`)
+    .join("");
+}
+function renderAll(){
+  const { available, oneAway, favPlayers } = buildDiagnostics();
+  renderAvailable(available);
+  renderOneAway(oneAway);
+  renderFavorites(favPlayers);
+}
+function setError(message){
+  $("availableCount").textContent = "読み込み失敗";
+  $("oneAwayCount").textContent = "読み込み失敗";
+  const html = `<div class="empty error">${esc(message)}</div>`;
+  $("availableCombos").innerHTML = html;
+  $("oneAwayCombos").innerHTML = html;
+}
+function setupRankButtons(){
+  document.querySelectorAll(".rankBtn").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      activeRank = btn.getAttribute("data-rank") || "";
+      document.querySelectorAll(".rankBtn").forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      renderAll();
+    });
+  });
+}
+function setupToTopButton(){
+  const btn = $("toTopBtn");
+  const toggle = ()=>{
+    if(window.scrollY > 300) btn.classList.add("show");
+    else btn.classList.remove("show");
+  };
+  window.addEventListener("scroll", toggle, { passive:true });
+  toggle();
+  btn.addEventListener("click", ()=>window.scrollTo({ top:0, behavior:"smooth" }));
+}
+async function init(){
+  setupRankButtons();
+  setupToTopButton();
+  favoritePlayerIds = loadFavoritePlayerIds();
+  try{
+    const [playerRes, comboRes] = await Promise.all([
+      fetch("players.json", { cache:"no-store" }),
+      fetch("combos.json", { cache:"no-store" })
+    ]);
+    if(!playerRes.ok) throw new Error("players.json の読み込みに失敗しました。");
+    if(!comboRes.ok) throw new Error("combos.json の読み込みに失敗しました。");
+    PLAYERS = await playerRes.json();
+    COMBOS = await comboRes.json();
+    if(!Array.isArray(PLAYERS)) throw new Error("players.json の形式が不正です。");
+    if(!Array.isArray(COMBOS)) throw new Error("combos.json の形式が不正です。");
+    $("comboTotalCount").textContent = `コンボ：${COMBOS.length}件`;
+    renderAll();
+  }catch(error){
+    console.error(error);
+    $("favoriteCount").textContent = `お気に入り：${favoritePlayerIds.size}人`;
+    $("comboTotalCount").textContent = "コンボ：読み込み失敗";
+    setError(error && error.message ? error.message : String(error));
+    $("favoritePlayers").innerHTML = `<div class="empty error">データ読み込みに失敗しました。</div>`;
+  }
+}
+init();
+</script>
+</body>
+</html>
