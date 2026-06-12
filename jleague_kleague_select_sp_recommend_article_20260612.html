@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>第二弾JリーグSP・KリーグSPのおすすめ選手まとめ｜サカつく2026攻略DB</title>
+<meta content="サカつく2026 Ver2.0でラインナップが一新されたJリーグセレクトSP選手スカウト、KリーグセレクトSP選手スカウトのおすすめ選手を解説。唯一無二のスキル・特徴、新プレイスタイル、金フォーメーションコンボ適性から注目選手を整理します。" name="description"/>
+<link href="https://sakatsuku2026-db.com/jleague_kleague_select_sp_recommend_article_20260612.html" rel="canonical"/>
+<style>
+    :root {
+      --main: #0aa36f;
+      --main-dark: #06734f;
+      --main-light: #e9fff6;
+      --accent: #ffb000;
+      --accent-light: #fff5d8;
+      --danger: #d94848;
+      --blue: #246bfe;
+      --text: #222;
+      --muted: #666;
+      --line: #d8e7df;
+      --bg: #f5f7f6;
+      --card: #fff;
+      --gold: #f2a900;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
+      background: radial-gradient(circle at top, #ecfff6 0, #f5f7f6 340px);
+      color: var(--text);
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+    }
+
+    a { color: var(--main-dark); text-decoration: none; font-weight: 800; }
+    a:hover { text-decoration: underline; }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.96);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbarInner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand { font-weight: 900; white-space: nowrap; }
+    .brand a { color: var(--text); text-decoration: none; }
+
+    .nav { display: flex; gap: 12px; align-items: center; font-size: .92rem; }
+    .nav a { color: var(--main-dark); text-decoration: none; font-weight: 800; }
+
+    .container { width: min(960px, calc(100% - 24px)); margin: 18px auto 48px; }
+
+    .article {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 8px 26px rgba(0,0,0,.08);
+      overflow: hidden;
+    }
+
+    .breadcrumb { margin: 0 0 14px; color: var(--muted); font-size: .9rem; }
+    .update-note {
+      display:inline-block;
+      margin: 0 0 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-light);
+      border: 1px solid #f5d58a;
+      color: #815b00;
+      font-size: .86rem;
+      font-weight: 900;
+    }
+
+
+    h1 {
+      margin: 8px 0 14px;
+      font-size: clamp(1.45rem, 4.4vw, 2.15rem);
+      line-height: 1.45;
+      color: #15382d;
+      border-left: 8px solid var(--main);
+      padding-left: 14px;
+    }
+
+    h2 {
+      margin: 36px 0 14px;
+      padding: 11px 15px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--main-dark), var(--main));
+      border-radius: 14px;
+      font-size: 1.28rem;
+      line-height: 1.45;
+      box-shadow: 0 4px 14px rgba(10,163,111,.18);
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      padding: 8px 12px;
+      border-left: 6px solid var(--accent);
+      background: #fff9e7;
+      border-radius: 10px;
+      font-size: 1.12rem;
+      line-height: 1.5;
+    }
+
+    h4 { margin: 20px 0 8px; font-size: 1rem; color: var(--main-dark); }
+    p { margin: 0 0 1em; }
+    ul, ol { margin: 0 0 1em; padding-left: 1.25em; }
+    li { margin: .28em 0; }
+
+    .lead {
+      font-size: 1.02rem;
+      background: linear-gradient(135deg, var(--main-light), #fff);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+
+    .article-img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 14px auto 18px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      box-shadow: 0 3px 12px rgba(0,0,0,.10);
+      background: #fff;
+    }
+
+    .playerImg {
+      width: 160px;
+      max-width: 70%;
+      height: auto;
+      display: block;
+      margin: 14px auto 18px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #fafafa;
+      padding: 6px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    }
+
+    .emphasis {
+      font-weight: 900;
+      color: var(--main-dark);
+      background: linear-gradient(transparent 62%, #c9f7df 62%);
+      padding: 0 .08em;
+    }
+
+    .hero-note {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 14px 0 18px;
+    }
+
+    .mini-card {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fcfffd;
+      text-align: center;
+    }
+
+    .mini-card strong { display: block; color: var(--main-dark); font-size: 1.05rem; }
+    .mini-card span { display: block; color: var(--muted); font-size: .88rem; }
+
+    .player-card {
+      margin: 30px 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fcfffd 0%, #fff 100%);
+      box-shadow: 0 3px 14px rgba(0,0,0,.04);
+    }
+
+    .summary-box, .point-box, .warning-box, .verdict-box, .compare-box {
+      border-radius: 16px;
+      padding: 15px;
+      margin: 16px 0;
+    }
+
+    .summary-box { background: #f3fff9; border: 1px solid #bde8d4; }
+    .point-box { background: #fffaf0; border: 1px solid #f5d58a; }
+    .warning-box { background: #fff4f4; border: 1px solid #efb8b8; }
+    .verdict-box { background: #f1f7ff; border: 1px solid #bfd7ff; }
+    .compare-box { background: #fafafa; border: 1px solid #ddd; }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: var(--main-light);
+      border: 1px solid #bde8d4;
+      padding: 4px 10px;
+      font-size: .9rem;
+      font-weight: 800;
+      color: #07593e;
+    }
+
+    .rating { color: var(--gold); font-weight: 900; letter-spacing: .06em; white-space: nowrap; }
+    .rank-good { color: var(--main-dark); font-weight: 900; }
+    .rank-normal { color: #815b00; font-weight: 900; }
+    .rank-low { color: var(--danger); font-weight: 900; }
+
+    .rating-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .rating-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .rating-item b { display: block; font-size: .95rem; }
+    .rating-item span { display: block; font-size: .88rem; }
+
+    .tool-link { margin: 18px 0 2px; }
+    .tool-link a {
+      display: inline-block;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: var(--main);
+      color: #fff;
+      box-shadow: 0 3px 10px rgba(10,163,111,.22);
+    }
+
+    .back-link { margin-top: 28px; text-align: center; }
+    .back-link a {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--main);
+      color: #fff;
+      box-shadow: 0 3px 10px rgba(10,163,111,.22);
+    }
+
+    .site-footer {
+      margin-top: 34px;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--line);
+      font-size: .92rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 760px) {
+      .hero-note, .rating-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 16px, 960px); margin-top: 10px; }
+      .article { padding: 14px; border-radius: 14px; }
+      .topbarInner { padding: 10px 12px; }
+      .nav { display: none; }
+      h1 { font-size: 1.32rem; padding-left: 10px; }
+      h2 { font-size: 1.12rem; }
+      .player-card { padding: 12px; }
+      .article-img { border-radius: 10px; }
+    }
+  
+    .toc-box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 16px 0;
+    }
+    .toc-box a {
+      display: block;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fcfffd;
+      color: var(--main-dark);
+      font-weight: 900;
+      text-align: center;
+      text-decoration: none;
+    }
+    .data-table-wrap { margin: 14px 0 18px; overflow-x: visible; }
+    .data-table { width: 100%; border-collapse: collapse; min-width: 0; table-layout: fixed; background: #fff; font-size: .82rem; line-height: 1.45; }
+    .data-table th, .data-table td { border: 1px solid var(--line); padding: 6px 5px; vertical-align: top; word-break: break-word; overflow-wrap: anywhere; }
+    .data-table th { background: var(--main-light); color: var(--main-dark); font-weight: 900; white-space: normal; }
+    .data-table td:first-child { font-weight: 900; }
+    .data-table th:first-child, .data-table td:first-child { width: 10%; }
+    .data-table th:nth-child(2), .data-table td:nth-child(2) { width: 21%; }
+    .data-table th:nth-child(3), .data-table td:nth-child(3) { width: 21%; }
+    .data-table th:nth-child(4), .data-table td:nth-child(4) { width: 21%; }
+    .data-table th:nth-child(5), .data-table td:nth-child(5) { width: 27%; }
+    .league-label { display:inline-block; min-width: 1.8em; padding: 1px 7px; border-radius:999px; font-size:.78rem; font-weight:900; background:var(--accent-light); color:#815b00; border:1px solid #f5d58a; text-align:center; }
+    .empty { color: var(--muted); font-weight: 700; }
+
+    .recommend-grid { display:grid; grid-template-columns: repeat(5, 1fr); gap:10px; margin:16px 0; }
+    .recommend-card { border:1px solid var(--line); border-radius:14px; padding:12px; background:#fff; text-align:center; }
+    .recommend-card strong { display:block; color:var(--main-dark); font-size:1.02rem; }
+    .recommend-card span { display:block; font-size:.86rem; color:var(--muted); line-height:1.55; margin-top:4px; }
+    .policy-counter { border-left:6px solid #e34848; }
+    .policy-moving { border-left:6px solid #246bfe; }
+    .policy-reaction { border-left:6px solid #8b58d9; }
+    .policy-possession { border-left:6px solid #0aa36f; }
+    @media (max-width: 760px) {
+      .toc-box, .recommend-grid { grid-template-columns: 1fr; }
+      .data-table-wrap { overflow-x: visible; }
+      .data-table,
+      .data-table thead,
+      .data-table tbody,
+      .data-table tr,
+      .data-table th,
+      .data-table td { display: block; width: 100% !important; }
+      .data-table { border-collapse: separate; border-spacing: 0 10px; background: transparent; font-size: .86rem; line-height: 1.55; table-layout: auto; }
+      .data-table thead { display: none; }
+      .data-table tr { border: 1px solid var(--line); border-radius: 14px; background: #fff; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.04); }
+      .data-table td { display: grid; grid-template-columns: 5.8em 1fr; gap: 8px; border: 0; border-bottom: 1px solid #edf3ef; padding: 7px 9px; word-break: normal; overflow-wrap: anywhere; }
+      .data-table td:last-child { border-bottom: 0; }
+      .data-table td::before { content: attr(data-label); color: var(--main-dark); font-weight: 900; font-size: .78rem; line-height: 1.6; }
+      .league-label { min-width: 2em; padding: 1px 7px; font-size: .76rem; }
+    }
+
+    @media (max-width: 430px) {
+      .data-table { font-size: .82rem; line-height: 1.48; }
+      .data-table td { grid-template-columns: 5.2em 1fr; padding: 6px 8px; gap: 6px; }
+      .data-table td::before { font-size: .74rem; }
+    }
+
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbarInner">
+<div class="brand"><a href="index.html">サカつく2026攻略DB</a></div>
+<nav aria-label="サイト内ナビゲーション" class="nav">
+<a href="index.html">トップ</a>
+<a href="articles.html">攻略記事一覧</a>
+<a href="sp_evaluator.html">選手評価ツール</a>
+</nav>
+</div>
+</header>
+<main class="container">
+<article class="article">
+<p class="breadcrumb"><a href="index.html">トップ</a> ＞ <a href="articles.html">攻略記事一覧</a> ＞ 第二弾JリーグSP・KリーグSPおすすめ選手</p>
+<h1>第二弾JリーグSP・KリーグSPのおすすめ選手まとめ！唯一無二の性能と金フォメコン適性を徹底解説</h1>
+<p class="lead">
+        Ver2.0で<strong>JリーグセレクトSP選手スカウト</strong>と<strong>KリーグセレクトSP選手スカウト</strong>のラインナップが一新されました。<br/>
+        Jリーグは全100名、Kリーグは全24名と対象選手が多いため、この記事では全員を並べるのではなく、<strong class="emphasis">唯一無二のスキル・特徴</strong>、<strong class="emphasis">新プレイスタイル</strong>、<strong class="emphasis">金フォーメーションコンボ適性</strong>に絞って、確保候補を整理します。
+      </p>
+<div class="hero-note">
+<div class="mini-card"><strong>Jリーグ 100名</strong><span>候補が多く、目的別の厳選が重要</span></div>
+<div class="mini-card"><strong>Kリーグ 24名</strong><span>人数は少ないが刺さる選手あり</span></div>
+<div class="mini-card"><strong>保存版</strong><span>フォメコン補強用の確認に便利</span></div>
+</div>
+<div class="summary-box">
+<h2>結論：Jリーグは補強候補がかなり多い。Kリーグはムービングとポゼッションに注目</h2>
+<p>
+          今回の第二弾ガチャは、単純な総合力だけで選ぶよりも、<strong class="emphasis">自分が使いたい金フォメコンの不足枠を埋められるか</strong>で判断した方が失敗しにくいです。
+        </p>
+<p>
+          Jリーグ側は、唯一スキルを持つ<strong>福田心之助</strong>、唯一特徴と新プレイスタイルが噛み合う<strong>相馬勇紀</strong>、リアクション金フォメコン「エンカルナードス'23」に絡む<strong>細井響</strong>、唯一のクリエイティブFBである<strong>本多勇喜</strong>など、ピックアップしたい選手がかなり多めです。
+        </p>
+<p>
+          Kリーグ側は全体数こそ少ないものの、ムービング金フォメコン「カナリア軍団'06」に絡む<strong>ヤコブ・トランジスカ</strong>と<strong>ジュリアン・セレスティン</strong>、ポゼッション金フォメコン「ブラウ・グラーナ'15」に絡む<strong>イ・ヒギュン</strong>は注目候補です。
+        </p>
+</div>
+<div aria-label="記事内リンク" class="toc-box">
+<a href="#unique">唯一無二の性能</a>
+<a href="#style">新プレイスタイル</a>
+<a href="#combo">金フォメコン適性</a>
+<a href="#ranking">おすすめBEST5</a>
+</div>
+<h2 id="unique">唯一無二の性能を持つおすすめ選手</h2>
+<p>
+        まず確認したいのは、代用が効きにくい<strong>唯一無二のスキル・特徴</strong>を持つ選手です。能力値だけなら今後インフレで抜かれる可能性がありますが、スキルや特徴は継承・編成価値が残りやすいので、長く使える可能性があります。
+      </p>
+<h3>スキルが唯一無二</h3>
+<div class="data-table-wrap">
+<table class="data-table">
+<thead><tr><th>リーグ</th><th>選手</th><th>スキル</th><th>ポリシー / ポジション</th><th>評価</th></tr></thead>
+<tbody>
+<tr><td data-label="リーグ"><span class="league-label">J</span></td><td data-label="選手">福田心之助</td><td data-label="スキル">打開のドリブル</td><td data-label="ポリシー / ポジション">カウンター / RB</td><td data-label="評価">J側で最も分かりやすい注目株。唯一スキル持ちのため、確保優先度は高めです。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">K</span></td><td class="empty" data-label="選手">該当なし</td><td data-label="スキル">-</td><td data-label="ポリシー / ポジション">-</td><td data-label="評価">スキル目的なら、K側は優先度を上げにくいです。</td></tr>
+</tbody>
+</table>
+</div>
+<h3>特徴が唯一無二</h3>
+<div class="data-table-wrap">
+<table class="data-table">
+<thead><tr><th>リーグ</th><th>特徴</th><th>選手</th><th>ポリシー / ポジション</th><th>注目ポイント</th></tr></thead>
+<tbody>
+<tr><td data-label="リーグ"><span class="league-label">J</span></td><td data-label="特徴">キングの舞</td><td data-label="選手">三浦知良</td><td data-label="ポリシー / ポジション">ムービング / CF</td><td data-label="注目ポイント">唯一特徴持ち。ロマン枠としても魅力があります。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">J</span></td><td data-label="特徴">俊敏なキッカー</td><td data-label="選手">相馬勇紀</td><td data-label="ポリシー / ポジション">カウンター / LW</td><td data-label="注目ポイント">唯一特徴に加えてワイドストライカー。左サイド補強候補です。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">J</span></td><td data-label="特徴">冷静な突破</td><td data-label="選手">倉田秋</td><td data-label="ポリシー / ポジション">ポゼッション / LW</td><td data-label="注目ポイント">ポゼッションのワイドストライカー枠としても貴重。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">J</span></td><td data-label="特徴">ターゲットマン</td><td data-label="選手">マテウス・モラエス</td><td data-label="ポリシー / ポジション">ポゼッション / RW</td><td data-label="注目ポイント">RWワイドストライカー枠。ポゼッション右サイドの候補。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">J</span></td><td data-label="特徴">高性能ロングパサー</td><td data-label="選手">清武弘嗣</td><td data-label="ポリシー / ポジション">リアクション / DM</td><td data-label="注目ポイント">DMの特徴要員として面白い存在。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">J</span></td><td data-label="特徴">リスクヘッジロングパサー</td><td data-label="選手">細井響</td><td data-label="ポリシー / ポジション">リアクション / CB</td><td data-label="注目ポイント">エンカルナードス'23にも絡むため、実戦価値が高いです。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">J</span></td><td data-label="特徴">ムービングウィール</td><td data-label="選手">岩下航</td><td data-label="ポリシー / ポジション">ムービング / CB</td><td data-label="注目ポイント">ムービングCBの特徴要員。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">J</span></td><td data-label="特徴">高速マーカー</td><td data-label="選手">藤春廣輝</td><td data-label="ポリシー / ポジション">ポゼッション / LB</td><td data-label="注目ポイント">LB補強候補。特徴目的でチェック。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">J</span></td><td data-label="特徴">スピードクラッシャー</td><td data-label="選手">佐々木旭</td><td data-label="ポリシー / ポジション">ポゼッション / LB</td><td data-label="注目ポイント">同じくポゼッションLB候補。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">J</span></td><td data-label="特徴">長短のキック</td><td data-label="選手">本多勇喜</td><td data-label="ポリシー / ポジション">リアクション / LB</td><td data-label="注目ポイント">唯一特徴＋クリエイティブFBでかなり貴重。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">J</span></td><td data-label="特徴">アジャイルクラッシャー</td><td data-label="選手">梅木怜</td><td data-label="ポリシー / ポジション">カウンター / RB</td><td data-label="注目ポイント">カウンターRBの特徴要員。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">K</span></td><td data-label="特徴">冷静な破壊者</td><td data-label="選手">ジュ・ミンギュ</td><td data-label="ポリシー / ポジション">リアクション / CF</td><td data-label="注目ポイント">リアクションCFを強化したい人向け。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">K</span></td><td data-label="特徴">走り切るロングパサー</td><td data-label="選手">イ・ヒギュン</td><td data-label="ポリシー / ポジション">ポゼッション / AM</td><td data-label="注目ポイント">ブラウ・グラーナ'15にも絡む注目選手。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">K</span></td><td data-label="特徴">保持するキッカー</td><td data-label="選手">コ・ジェヒョン</td><td data-label="ポリシー / ポジション">リアクション / RW</td><td data-label="注目ポイント">ワイドストライカーも持つ右サイド候補。</td></tr>
+<tr><td data-label="リーグ"><span class="league-label">K</span></td><td data-label="特徴">ランニングジャンパー</td><td data-label="選手">ヤコブ・トランジスカ</td><td data-label="ポリシー / ポジション">ムービング / CF</td><td data-label="注目ポイント">カナリア軍団'06にも絡むK側の重要候補。</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="style">新プレイスタイル持ちのおすすめ選手</h2>
+<p>
+        Ver2.0以降は、<strong>ワイドストライカー</strong>、<strong>クリエイティブFB</strong>、<strong>スプリントCB</strong>のような新しめのプレイスタイルがフォメコン条件に関わる場面が増えています。今すぐ使う予定がなくても、将来的なフォメコン追加を考えると押さえておきたい枠です。
+      </p>
+<div class="data-table-wrap">
+<table class="data-table">
+<thead><tr><th>プレイスタイル</th><th>J</th><th>K</th><th>評価</th></tr></thead>
+<tbody>
+<tr><td data-label="プレイスタイル">ワイドストライカー</td><td data-label="J">相馬勇紀、倉田秋、石井久継、マルコ・トゥーリオ、中村亮太、マテウス・モラエス</td><td data-label="K">グスタフ・ルドヴィグソン、コ・ジェヒョン、イ・チュンヨン</td><td data-label="評価">候補数が多い重要枠。左右のサイド補強として優先的に確認したいです。</td></tr>
+<tr><td data-label="プレイスタイル">クリエイティブFB</td><td data-label="J">本多勇喜</td><td class="empty" data-label="K">該当なし</td><td data-label="評価">現状では本多勇喜がかなり貴重。リアクションLBを使うなら要チェック。</td></tr>
+<tr><td data-label="プレイスタイル">スプリントCB</td><td data-label="J">藤井陽也</td><td class="empty" data-label="K">該当なし</td><td data-label="評価">CBの新プレイスタイル枠。将来的なコンボ条件化にも期待できます。</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="combo">金フォメコン別おすすめ選手</h2>
+<p>
+        ここからは、金フォーメーションコンボの条件を満たせる選手をポリシー別に整理します。<strong class="emphasis">該当なしも重要な情報</strong>です。狙っているフォメコンに該当選手がいない場合、そのガチャでは不足枠を埋められません。
+      </p>
+<h3 class="policy-counter">カウンター金フォメコン</h3>
+<div class="data-table-wrap"><table class="data-table"><thead><tr><th>フォメコン</th><th>J</th><th>K</th></tr></thead><tbody>
+<tr><td data-label="フォメコン">レ・ブルー'98</td><td class="empty" data-label="J">該当なし</td><td class="empty" data-label="K">該当なし</td></tr>
+<tr><td data-label="フォメコン">ディアボロ・ディ・ミラノ'99</td><td data-label="J">昌子源（カウンター / CB）</td><td class="empty" data-label="K">該当なし</td></tr>
+<tr><td data-label="フォメコン">リーベル'18</td><td class="empty" data-label="J">該当なし</td><td class="empty" data-label="K">該当なし</td></tr>
+<tr><td data-label="フォメコン">エウスカルドゥナク'12</td><td data-label="J">立田悠悟（ストッパー / CB）<br/>岡哲平（ストッパー / CB）<br/>山岸祐也（ストライカー / CF）</td><td class="empty" data-label="K">該当なし</td></tr>
+</tbody></table></div>
+<h3 class="policy-moving">ムービング金フォメコン</h3>
+<div class="data-table-wrap"><table class="data-table"><thead><tr><th>フォメコン</th><th>J</th><th>K</th></tr></thead><tbody>
+<tr><td data-label="フォメコン">ソベラーノ'94</td><td data-label="J">小泉佳穂（パサー / AM）<br/>山見大登（アタッカー / AM）</td><td class="empty" data-label="K">該当なし</td></tr>
+<tr><td data-label="フォメコン">アルビセレステ'01</td><td data-label="J">塩谷司（組立CB / CB）</td><td data-label="K">フアン・アントニオ・ロス（組立CB / CB）</td></tr>
+<tr><td data-label="フォメコン">カナリア軍団'06</td><td class="empty" data-label="J">該当なし</td><td data-label="K">ヤコブ・トランジスカ（ストライカー / CF）<br/>ジュリアン・セレスティン（ストッパー / CB）</td></tr>
+<tr><td data-label="フォメコン">ネラッズーロ'10</td><td class="empty" data-label="J">該当なし</td><td class="empty" data-label="K">該当なし</td></tr>
+</tbody></table></div>
+<h3 class="policy-reaction">リアクション金フォメコン</h3>
+<div class="data-table-wrap"><table class="data-table"><thead><tr><th>フォメコン</th><th>J</th><th>K</th></tr></thead><tbody>
+<tr><td data-label="フォメコン">ゴーデンゾーネン'95</td><td data-label="J">喜岡佳太（ストッパー / CB）<br/>西山大雅（ストッパー / CB）<br/>山口蛍（ハードマーカー / DM）<br/>西谷優希（ハードマーカー / DM）</td><td class="empty" data-label="K">該当なし</td></tr>
+<tr><td data-label="フォメコン">セレソン・ダス・キナス'16</td><td data-label="J">佐藤龍之介（サイドアタッカー / LM）</td><td class="empty" data-label="K">該当なし</td></tr>
+<tr><td data-label="フォメコン">エンカルナードス'23</td><td data-label="J">細井響（組立CB / CB）<br/>山根陸（セントラルMF / DM）</td><td class="empty" data-label="K">該当なし</td></tr>
+<tr><td data-label="フォメコン">アルヴィネグロ・プライアーノ'11</td><td class="empty" data-label="J">該当なし</td><td class="empty" data-label="K">該当なし</td></tr>
+</tbody></table></div>
+<h3 class="policy-possession">ポゼッション金フォメコン</h3>
+<div class="data-table-wrap"><table class="data-table"><thead><tr><th>フォメコン</th><th>J</th><th>K</th></tr></thead><tbody>
+<tr><td data-label="フォメコン">ラ・デア'22</td><td class="empty" data-label="J">該当なし</td><td class="empty" data-label="K">該当なし</td></tr>
+<tr><td data-label="フォメコン">ラ・ロハ'24</td><td data-label="J">山本悠樹（パサー / DM）</td><td class="empty" data-label="K">該当なし</td></tr>
+<tr><td data-label="フォメコン">ロス・カフェテロス'94</td><td data-label="J">デニス・ヒュメット（ストライカー / CF）</td><td class="empty" data-label="K">該当なし</td></tr>
+<tr><td data-label="フォメコン">ブラウ・グラーナ'15</td><td data-label="J">根本健太（組立CB / CB）<br/>畠中槙之輔（組立CB / CB）<br/>西澤健太（セントラルMF / AM）</td><td data-label="K">イ・ヒギュン（セントラルMF / AM）</td></tr>
+</tbody></table></div>
+<h2 id="ranking">今回のおすすめBEST5</h2>
+<p>
+        総合力ランキングではなく、<strong>代用のしにくさ</strong>、<strong>フォメコンへの絡み方</strong>、<strong>今後の価値</strong>を基準におすすめ選手を選ぶなら、個人的には以下の5名を優先してチェックしたいです。
+      </p>
+<div class="recommend-grid">
+<div class="recommend-card"><strong>1位<br/>福田心之助</strong><span>唯一スキル「打開のドリブル」。カウンターRBの注目株。</span></div>
+<div class="recommend-card"><strong>2位<br/>相馬勇紀</strong><span>唯一特徴＋ワイドストライカー。左サイド補強として魅力。</span></div>
+<div class="recommend-card"><strong>3位<br/>細井響</strong><span>唯一特徴＋エンカルナードス'23適性。リアクションCB候補。</span></div>
+<div class="recommend-card"><strong>4位<br/>本多勇喜</strong><span>唯一クリエイティブFB。特徴も唯一で将来性あり。</span></div>
+<div class="recommend-card"><strong>5位<br/>ヤコブ・トランジスカ</strong><span>Kリーグ側の注目枠。唯一特徴＋カナリア軍団'06適性。</span></div>
+</div>
+<div class="point-box">
+<h3>目的別に見るならこの選手</h3>
+<ul>
+<li><strong>唯一性能を重視：</strong>福田心之助、相馬勇紀、細井響、本多勇喜、ヤコブ・トランジスカ</li>
+<li><strong>カウンター強化：</strong>昌子源、立田悠悟、岡哲平、山岸祐也</li>
+<li><strong>ムービング強化：</strong>小泉佳穂、山見大登、塩谷司、フアン・アントニオ・ロス、ヤコブ・トランジスカ、ジュリアン・セレスティン</li>
+<li><strong>リアクション強化：</strong>細井響、山根陸、喜岡佳太、西山大雅、山口蛍、西谷優希</li>
+<li><strong>ポゼッション強化：</strong>山本悠樹、デニス・ヒュメット、根本健太、畠中槙之輔、西澤健太、イ・ヒギュン</li>
+</ul>
+</div>
+<h2>まとめ</h2>
+<p>
+        第二弾JリーグSP・KリーグSPは、単純に「有名選手を引く」よりも、<strong class="emphasis">自分の使っているポリシーと金フォメコンに合う選手を狙う</strong>のが大事です。
+      </p>
+<p>
+        Jリーグ側は対象選手が100名と多く、唯一スキル、唯一特徴、新プレイスタイル、金フォメコン適性のどれを重視するかで候補が変わります。迷ったら、まずは<strong>福田心之助</strong>、<strong>相馬勇紀</strong>、<strong>細井響</strong>、<strong>本多勇喜</strong>あたりを優先的に確認するのがおすすめです。
+      </p>
+<p>
+        Kリーグ側は人数が少ないぶん、狙いは絞りやすいです。特に<strong>ヤコブ・トランジスカ</strong>、<strong>ジュリアン・セレスティン</strong>、<strong>イ・ヒギュン</strong>は、フォメコン目的で見ると価値があります。
+      </p>
+<div class="summary-box">
+<h2>選手評価ツールも活用しよう</h2>
+<p>
+          各選手のポジション別順位、ポリシー別順位、プレイスタイル別順位、対応フォーメーションコンボを詳しく確認したい場合は、サイト内の「選手評価ツール」もおすすめです。記事内の評価とあわせて、自分の手持ちや使いたいフォメコンに合うかチェックしてみてください。
+        </p>
+<p><a href="sp_evaluator.html">▶ 選手評価ツールはこちら</a></p>
+</div>
+<div class="back-link"><a href="articles.html">← 攻略記事一覧に戻る</a></div>
+<footer class="site-footer">
+<a href="index.html">トップページ</a> / <a href="articles.html">攻略記事一覧</a> / <a href="contact.html">お問い合わせ</a>
+</footer>
+</article>
+</main>
+</body>
+</html>
