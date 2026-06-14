@@ -1038,6 +1038,100 @@
   }
 }
 
+
+
+/* ===== ゲーム情報リンク ===== */
+.gameInfoCard{
+  max-width:920px;
+  margin:20px auto;
+  padding:0;
+  overflow:hidden;
+  border-radius:0;
+  border:1px solid #d6b35a;
+  background:#fffdf5;
+}
+.gameInfoHead{
+  margin:0;
+  padding:12px 14px;
+  background:#263238;
+  color:#fff;
+  font-size:18px;
+  font-weight:900;
+  border:3px double #d9a400;
+  letter-spacing:.02em;
+}
+.gameInfoLead{
+  padding:14px 16px 4px;
+  font-size:14px;
+  line-height:1.8;
+  color:#111;
+}
+.gameInfoTableWrap{
+  padding:8px 14px 16px;
+  overflow-x:auto;
+}
+.gameInfoTable{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+  background:#fff;
+}
+.gameInfoTable th,
+.gameInfoTable td{
+  border:1px solid #d8c79a;
+  padding:10px 12px;
+  vertical-align:middle;
+}
+.gameInfoTable thead th{
+  background:#ffe083;
+  text-align:center;
+  font-weight:900;
+}
+.gameInfoTable tbody th{
+  width:150px;
+  background:#fffaf0;
+  text-align:center;
+  font-weight:900;
+  white-space:nowrap;
+}
+.gameInfoLink{
+  color:#0b63d1;
+  font-weight:900;
+  text-decoration:none;
+}
+.gameInfoLink:hover{ text-decoration:underline; }
+.storeBtnRow{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.storeBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:150px;
+  padding:10px 14px;
+  border-radius:10px;
+  background:#111;
+  color:#fff;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 8px 14px rgba(0,0,0,.16);
+}
+.storeBtn.playstation{ background:#003087; }
+.storeBtn.steam{ background:#171a21; }
+.storeBtn:active{ transform:scale(.97); }
+@media (max-width:480px){
+  .gameInfoHead{ font-size:16px; padding:10px 12px; }
+  .gameInfoLead{ font-size:13px; padding:12px 12px 2px; }
+  .gameInfoTableWrap{ padding:8px 8px 14px; }
+  .gameInfoTable{ font-size:13px; }
+  .gameInfoTable th,.gameInfoTable td{ padding:9px 8px; }
+  .gameInfoTable tbody th{ width:105px; }
+  .storeBtn{ min-width:132px; font-size:13px; padding:9px 10px; }
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -1417,7 +1511,6 @@
 </section>
 
 <!-- ===== SNSリンク ===== -->
-<!-- ===== SNSリンク ===== -->
 <div class="card" style="margin-bottom:20px;">
   <div class="sectionTitle" style="text-align:left;">SNS関連</div>
 
@@ -1458,6 +1551,53 @@
   </div>
 
 </div>
+</div>
+
+<!-- ===== サカつく2026 ゲーム情報 ===== -->
+<div class="card gameInfoCard">
+  <h2 class="gameInfoHead">サカつく2026 ゲーム情報</h2>
+  <div class="gameInfoLead">
+    『プロサッカークラブをつくろう！2026』は、SEGAから配信されているサッカークラブ育成シミュレーションゲームです。<br>
+    基本プレイ無料で、iOS / Android / PlayStation®5 / PlayStation®4 / Steam® などに対応しています。
+  </div>
+  <div class="gameInfoTableWrap">
+    <table class="gameInfoTable">
+      <thead>
+        <tr><th colspan="2">詳細</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>公式サイト：</th>
+          <td style="text-align:center;">
+            <a class="gameInfoLink" href="https://segafcchampions.sega.com/ja/" target="_blank" rel="noopener noreferrer">サカつく2026公式サイト</a>
+          </td>
+        </tr>
+        <tr>
+          <th>タイトル：</th>
+          <td>プロサッカークラブをつくろう！2026</td>
+        </tr>
+        <tr>
+          <th>ジャンル：</th>
+          <td>スポーツ育成シミュレーション</td>
+        </tr>
+        <tr>
+          <th>価格：</th>
+          <td>基本プレイ無料（一部アイテム課金あり）</td>
+        </tr>
+        <tr>
+          <th>配信：</th>
+          <td>
+            <div class="storeBtnRow">
+              <a class="storeBtn" href="https://apps.apple.com/jp/app/id6741469353" target="_blank" rel="noopener noreferrer">App Store</a>
+              <a class="storeBtn" href="https://play.google.com/store/apps/details?id=com.sega.FootballClubChampions" target="_blank" rel="noopener noreferrer">Google Play</a>
+              <a class="storeBtn playstation" href="https://store.playstation.com/ja-jp/concept/10012672" target="_blank" rel="noopener noreferrer">PlayStation Store</a>
+              <a class="storeBtn steam" href="https://store.steampowered.com/app/3271000" target="_blank" rel="noopener noreferrer">Steam</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <!-- モーダル -->
