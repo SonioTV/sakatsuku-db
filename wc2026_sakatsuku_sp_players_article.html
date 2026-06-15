@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【ワールドカップ2026】サカつく2026に登場している★3SP選手まとめ！日本代表から各国スター選手まで紹介！</title>
+  <meta name="description" content="ワールドカップ2026に出場している選手の中から、サカつく2026に★3SP選手として登場している選手をグループ・国別にまとめました。">
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --green: #16a34a;
+      --gold: #f59e0b;
+      --red: #dc2626;
+      --shadow: 0 8px 24px rgba(15, 23, 42, .08);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      line-height: 1.8;
+    }
+    a { color: inherit; }
+    .article-wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+    .breadcrumb a { color: var(--blue); text-decoration: none; }
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 54%, #2563eb 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 30px 26px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -80px;
+      top: -100px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.24);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 40px);
+      line-height: 1.35;
+      letter-spacing: .02em;
+    }
+    .lead {
+      margin: 16px 0 0;
+      color: rgba(255,255,255,.92);
+      font-size: 16px;
+      max-width: 820px;
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 18px 0 0;
+    }
+    .summary-card {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .summary-card b {
+      display: block;
+      font-size: 26px;
+      line-height: 1.1;
+    }
+    .summary-card span {
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+    }
+    .notice {
+      margin: 22px 0;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-left: 6px solid #f97316;
+      border-radius: 16px;
+      padding: 16px 18px;
+      font-weight: 700;
+    }
+    .notice small {
+      display: block;
+      color: #9a3412;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      margin: 22px 0;
+    }
+    .toc h2 {
+      font-size: 18px;
+      margin: 0 0 12px;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+    }
+    .toc-grid a {
+      text-align: center;
+      text-decoration: none;
+      padding: 9px 6px;
+      border-radius: 12px;
+      background: #eff6ff;
+      color: var(--blue-dark);
+      font-weight: 800;
+      font-size: 13px;
+      border: 1px solid #bfdbfe;
+    }
+    .toc-grid a.is-empty {
+      background: #f8fafc;
+      color: #94a3b8;
+      border-color: #e2e8f0;
+    }
+    .intro-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      margin: 22px 0;
+    }
+    .intro-card h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      border-left: 6px solid var(--blue);
+      padding-left: 12px;
+    }
+    .intro-card p {
+      margin: 8px 0;
+    }
+    .country-rank {
+      margin: 14px 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      list-style: none;
+    }
+    .country-rank li {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      font-size: 14px;
+    }
+    .country-rank strong { color: var(--blue-dark); }
+    .group-section {
+      margin: 28px 0;
+      scroll-margin-top: 16px;
+    }
+    .group-section h2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0 0 14px;
+      padding: 14px 18px;
+      border-radius: 18px;
+      color: #fff;
+      background: linear-gradient(135deg, #1e40af, #2563eb);
+      box-shadow: var(--shadow);
+      font-size: 22px;
+    }
+    .group-section h2 span {
+      font-size: 14px;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 999px;
+      padding: 3px 10px;
+    }
+    .empty-note {
+      background: #fff;
+      border: 1px dashed #cbd5e1;
+      color: var(--muted);
+      border-radius: 16px;
+      padding: 16px;
+      margin: 0;
+    }
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .country-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .country-card h3 {
+      margin: 0;
+      padding: 14px 16px;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--line);
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .country-card h3 span {
+      font-size: 13px;
+      background: #dbeafe;
+      color: var(--blue-dark);
+      border-radius: 999px;
+      padding: 2px 9px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 380px;
+    }
+    th, td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: middle;
+      font-size: 14px;
+    }
+    th {
+      color: #475569;
+      background: #ffffff;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    td.no {
+      width: 76px;
+      text-align: center;
+      font-weight: 900;
+      color: #0f172a;
+    }
+    .player-link {
+      color: var(--blue-dark);
+      font-weight: 900;
+      text-decoration: none;
+      border-bottom: 2px solid rgba(37,99,235,.25);
+    }
+    .player-link:hover {
+      color: #1e40af;
+      border-bottom-color: #1e40af;
+    }
+    .pos {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 42px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 12px;
+      color: #fff;
+    }
+    .pos-GK { background: #7c3aed; }
+    .pos-DF { background: #0284c7; }
+    .pos-MF { background: #16a34a; }
+    .pos-FW { background: #dc2626; }
+    .footer-note {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .back-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .back-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: #0f172a;
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 800;
+      font-size: 14px;
+    }
+    @media (max-width: 760px) {
+      .article-wrap { padding: 14px 10px 48px; }
+      .hero { padding: 24px 18px; border-radius: 20px; }
+      .summary { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .summary-card { padding: 10px; }
+      .summary-card b { font-size: 22px; }
+      .summary-card span { font-size: 11px; }
+      .toc-grid { grid-template-columns: repeat(3, 1fr); }
+      .country-grid { grid-template-columns: 1fr; }
+      .country-rank { grid-template-columns: 1fr; }
+      th, td { padding: 9px 8px; font-size: 13px; }
+      table { min-width: 340px; }
+      h1 { font-size: 25px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="article-wrap">
+    <nav class="breadcrumb">
+      <a href="index.html">トップ</a> &gt; <a href="articles.html">攻略記事</a> &gt; W杯2026出場SP選手まとめ
+    </nav>
+
+    <header class="hero">
+      <div class="tag">W杯2026 × サカつく2026</div>
+      <h1>【ワールドカップ2026】サカつく2026に登場している★3SP選手まとめ！日本代表から各国スター選手まで紹介！</h1>
+      <p class="lead">
+        FIFAワールドカップ2026に出場している選手の中から、サカつく2026に★3SP選手として登場している選手をまとめました。
+        選手名をクリックすると、選手評価ツールでポリシー・プレースタイル・総合力などの詳細を確認できます。
+      </p>
+      <div class="summary">
+        <div class="summary-card"><b>40</b><span>掲載選手</span></div>
+        <div class="summary-card"><b>19</b><span>対象国</span></div>
+        <div class="summary-card"><b>11</b><span>該当グループ</span></div>
+      </div>
+    </header>
+
+    <div class="notice">
+      注意：FIFA公式HPの日本語表記選手名を参考に手作業でリストアップした為、表記揺れ等によって抜け漏れがある可能性があります。
+      <small>本記事では2026年6月9日時点で実装されている★3のSP選手のみを掲載しています。</small>
+    </div>
+
+    <section class="intro-card">
+      <h2>この記事で確認できること</h2>
+      <p>
+        ワールドカップ2026出場選手のうち、サカつく2026で★3SP選手として実装されている選手を
+        <strong>グループ別・国別</strong>に確認できます。
+      </p>
+      <p>
+        表に記載しているポジションはFIFA公式の登録ポジションです。
+        サカつく2026内での主ポジション、ポリシー、プレースタイル、総合力などは選手名リンクから確認してください。
+      </p>
+      <ul class="country-rank">
+        <li><span>韓国</span><strong>4人</strong></li><li><span>スペイン</span><strong>4人</strong></li><li><span>オランダ</span><strong>3人</strong></li><li><span>フランス</span><strong>3人</strong></li><li><span>アルゼンチン</span><strong>3人</strong></li><li><span>ポルトガル</span><strong>3人</strong></li><li><span>モロッコ</span><strong>2人</strong></li><li><span>アメリカ</span><strong>2人</strong></li><li><span>日本</span><strong>2人</strong></li><li><span>ベルギー</span><strong>2人</strong></li><li><span>ウルグアイ</span><strong>2人</strong></li><li><span>ノルウェー</span><strong>2人</strong></li><li><span>イングランド</span><strong>2人</strong></li><li><span>スコットランド</span><strong>1人</strong></li><li><span>パラグアイ</span><strong>1人</strong></li><li><span>コートジボワール</span><strong>1人</strong></li><li><span>エジプト</span><strong>1人</strong></li><li><span>ヨルダン</span><strong>1人</strong></li><li><span>クロアチア</span><strong>1人</strong></li>
+      </ul>
+    </section>
+
+    <nav class="toc">
+      <h2>グループ別に見る</h2>
+      <div class="toc-grid">
+        <a href="#group-A" class="">Group A</a><a href="#group-B" class="is-empty">Group B</a><a href="#group-C" class="">Group C</a><a href="#group-D" class="">Group D</a><a href="#group-E" class="">Group E</a><a href="#group-F" class="">Group F</a><a href="#group-G" class="">Group G</a><a href="#group-H" class="">Group H</a><a href="#group-I" class="">Group I</a><a href="#group-J" class="">Group J</a><a href="#group-K" class="">Group K</a><a href="#group-L" class="">Group L</a>
+      </div>
+    </nav>
+
+    
+<section id="group-A" class="group-section">
+  <h2>グループA <span>4人</span></h2>
+  <div class="country-grid">
+    
+<div class="country-card">
+  <h3>韓国 <span>4人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">16</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0065">イ・ドンギョン</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+</tr><tr>
+<td class="no">19</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0022">ファン・インボム</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+</tr><tr>
+<td class="no">20</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0013">ファン・ヒチャン</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+</tr><tr>
+<td class="no">25</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0007">ソン・フンミン</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+</section>
+<section id="group-B" class="group-section">
+  <h2>グループB</h2>
+  <p class="empty-note">該当する★3SP選手はいません。</p>
+</section>
+<section id="group-C" class="group-section">
+  <h2>グループC <span>3人</span></h2>
+  <div class="country-grid">
+    
+<div class="country-card">
+  <h3>モロッコ <span>2人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">4</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0204">アクラフ・ハキミ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+</tr><tr>
+<td class="no">26</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0015">ブラヒム・ディアス</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="country-card">
+  <h3>スコットランド <span>1人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">16</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0220">スコット・マクトミネイ</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+</section>
+<section id="group-D" class="group-section">
+  <h2>グループD <span>3人</span></h2>
+  <div class="country-grid">
+    
+<div class="country-card">
+  <h3>アメリカ <span>2人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">14</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0214">ウェストン・マッケニー</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+</tr><tr>
+<td class="no">15</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0236">クリスティアン・ロルダン</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="country-card">
+  <h3>パラグアイ <span>1人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">19</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0199">ミゲル・アルミロン</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+</section>
+<section id="group-E" class="group-section">
+  <h2>グループE <span>1人</span></h2>
+  <div class="country-grid">
+    
+<div class="country-card">
+  <h3>コートジボワール <span>1人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">18</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0172">アマド・ディアロ</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+</section>
+<section id="group-F" class="group-section">
+  <h2>グループF <span>5人</span></h2>
+  <div class="country-grid">
+    
+<div class="country-card">
+  <h3>オランダ <span>3人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">6</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0206">デンゼル・ダンフリース</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+</tr><tr>
+<td class="no">7</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0210">ナタン・アケ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+</tr><tr>
+<td class="no">11</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0165">フィルジル・ファン・ダイク</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="country-card">
+  <h3>日本 <span>2人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">1</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0135">大迫敬介</a></td>
+<td><span class="pos pos-GK">GK</span></td>
+</tr><tr>
+<td class="no">12</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0090">長友佑都</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+</section>
+<section id="group-G" class="group-section">
+  <h2>グループG <span>3人</span></h2>
+  <div class="country-grid">
+    
+<div class="country-card">
+  <h3>ベルギー <span>2人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">2</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0201">ティボ・クルトワ</a></td>
+<td><span class="pos pos-GK">GK</span></td>
+</tr><tr>
+<td class="no">16</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0166">ケヴィン・デ・ブライネ</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="country-card">
+  <h3>エジプト <span>1人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">26</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0228">モハメド・サラー</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+</section>
+<section id="group-H" class="group-section">
+  <h2>グループH <span>6人</span></h2>
+  <div class="country-grid">
+    
+<div class="country-card">
+  <h3>スペイン <span>4人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">2</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0223">ジョアン・ガルシア</a></td>
+<td><span class="pos pos-GK">GK</span></td>
+</tr><tr>
+<td class="no">8</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0167">ペドロ・ポロ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+</tr><tr>
+<td class="no">14</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0023">ファビアン・ルイス</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+</tr><tr>
+<td class="no">21</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0230">ニコ・ウィリアムズ</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="country-card">
+  <h3>ウルグアイ <span>2人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">16</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0010">フェデリコ・バルベルデ</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+</tr><tr>
+<td class="no">21</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0198">ロドリゴ・ベンタンクール</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+</section>
+<section id="group-I" class="group-section">
+  <h2>グループI <span>5人</span></h2>
+  <div class="country-grid">
+    
+<div class="country-card">
+  <h3>フランス <span>3人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">2</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0163">マイク・メニャン</a></td>
+<td><span class="pos pos-GK">GK</span></td>
+</tr><tr>
+<td class="no">5</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0221">ウィリアム・サリバ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+</tr><tr>
+<td class="no">15</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0213">オーレリアン・チュアメニ</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="country-card">
+  <h3>ノルウェー <span>2人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">22</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0202">アレクサンダー・セルロート</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+</tr><tr>
+<td class="no">24</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0003, P0208">アーリング・ハーランド</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+</section>
+<section id="group-J" class="group-section">
+  <h2>グループJ <span>4人</span></h2>
+  <div class="country-grid">
+    
+<div class="country-card">
+  <h3>アルゼンチン <span>3人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">6</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0026">ナウエル・モリーナ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+</tr><tr>
+<td class="no">25</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0162">ラウタロ・マルティネス</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+</tr><tr>
+<td class="no">26</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0002">リオネル・メッシ</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="country-card">
+  <h3>ヨルダン <span>1人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">12</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0062">ヤザン・アルアラブ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+</section>
+<section id="group-K" class="group-section">
+  <h2>グループK <span>3人</span></h2>
+  <div class="country-grid">
+    
+<div class="country-card">
+  <h3>ポルトガル <span>3人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">6</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0171">ジョアン・カンセロ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+</tr><tr>
+<td class="no">11</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0004">ルベン・ディアス</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+</tr><tr>
+<td class="no">19</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0006">クリスティアーノ・ロナウド</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+</section>
+<section id="group-L" class="group-section">
+  <h2>グループL <span>3人</span></h2>
+  <div class="country-grid">
+    
+<div class="country-card">
+  <h3>イングランド <span>2人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">12</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0173">リース・ジェイムズ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+</tr><tr>
+<td class="no">25</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0161">ブカヨ・サカ</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="country-card">
+  <h3>クロアチア <span>1人</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>背番号</th><th>選手名</th><th>ポジション</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+<td class="no">20</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0170">ルカ・モドリッチ</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+</section>
+
+    <section class="footer-note">
+      <p>
+        掲載している内容は今後の選手追加やデータ修正により変わる可能性があります。
+      </p>
+      <div class="back-links">
+        <a href="sp_evaluator.html">選手評価ツールへ</a>
+        <a href="articles.html">攻略記事一覧へ</a>
+        <a href="index.html">トップページへ</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
