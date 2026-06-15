@@ -1415,7 +1415,11 @@ $("btnEvaluate").addEventListener("click", ()=>{
 /* URL指定で選手を自動評価 */
 function autoEvaluateFromUrl(){
   const params = new URLSearchParams(window.location.search);
-  const pid = normalize(params.get("player") || "");
+  const pid = normalize(
+  params.get("playerId") ||
+  params.get("player") ||
+  ""
+);
 
   if(!pid) return;
 
