@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>【ワールドカップ2026】サカつく2026未実装国から選ぶ！実装されたら優秀なSP選手になりそうな代表選手まとめ</title>
+  <meta name="description" content="ワールドカップ2026出場国のうち、サカつく2026にまだ選手が実装されていない国から、今後SP選手として登場したら優秀な性能になりそうな代表選手をピックアップして紹介します。" />
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --card: #ffffff;
+      --text: #182033;
+      --muted: #61708a;
+      --line: #dbe3f0;
+      --main: #0f5fbf;
+      --main-dark: #083b7a;
+      --accent: #ffb000;
+      --danger: #e94b5f;
+      --green: #1f9d74;
+      --shadow: 0 10px 28px rgba(22, 40, 70, 0.10);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 22px 16px 56px;
+    }
+
+    .article-hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      padding: 34px 28px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255,255,255,0.22), transparent 26%),
+        linear-gradient(135deg, #062c61 0%, #0f5fbf 52%, #13a17a 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .article-hero::after {
+      content: "SP";
+      position: absolute;
+      right: -18px;
+      bottom: -54px;
+      font-size: 160px;
+      line-height: 1;
+      font-weight: 900;
+      color: rgba(255,255,255,0.11);
+      letter-spacing: -0.08em;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      margin-bottom: 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: clamp(1.65rem, 4.5vw, 2.7rem);
+      line-height: 1.35;
+      font-weight: 900;
+      text-shadow: 0 3px 14px rgba(0,0,0,0.25);
+    }
+
+    .lead {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin: 18px 0 0;
+      color: rgba(255,255,255,0.93);
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .toc {
+      margin: 20px 0;
+      padding: 18px;
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .toc-title {
+      margin: 0 0 12px;
+      font-weight: 900;
+      color: var(--main-dark);
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .toc a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f9fbff;
+      text-decoration: none;
+      font-weight: 800;
+      color: var(--main-dark);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .section h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--line);
+      color: var(--main-dark);
+      font-size: 1.45rem;
+      line-height: 1.35;
+    }
+
+    .section h2 .mark {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      border-radius: 10px;
+      background: var(--main);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    .note {
+      padding: 14px 16px;
+      border-left: 5px solid var(--accent);
+      border-radius: 12px;
+      background: #fff8e7;
+      color: #543f00;
+      font-weight: 700;
+    }
+
+    .country-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .country-list span {
+      display: inline-flex;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #eef5ff;
+      color: var(--main-dark);
+      font-weight: 800;
+      font-size: 0.88rem;
+    }
+
+    .player-card {
+      margin-top: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .player-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 18px;
+      background: linear-gradient(135deg, #eef5ff 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .country {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 0.95rem;
+    }
+
+    .player-name {
+      margin: 0;
+      color: var(--main-dark);
+      font-size: 1.55rem;
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    .rank-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 92px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #111827;
+      color: #ffd45a;
+      font-weight: 900;
+      white-space: nowrap;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+    }
+
+    .player-body {
+      padding: 18px;
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .spec {
+      min-height: 78px;
+      padding: 10px;
+      border-radius: 14px;
+      background: #f7f9fd;
+      border: 1px solid #e5ecf7;
+    }
+
+    .spec-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .spec-value {
+      display: block;
+      margin-top: 4px;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .point {
+      margin: 14px 0 0;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #f1fbf7;
+      border: 1px solid #cceee2;
+      color: #0d5e45;
+      font-weight: 800;
+    }
+
+    .ranking {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .rank-card {
+      padding: 16px;
+      border-radius: 16px;
+      background: #f9fbff;
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .rank-card strong {
+      display: block;
+      color: var(--main-dark);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .rank-card .no {
+      display: inline-flex;
+      margin-bottom: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #2a2100;
+      font-weight: 900;
+    }
+
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .related-links a {
+      display: block;
+      padding: 14px;
+      border-radius: 14px;
+      background: #eef5ff;
+      border: 1px solid #d8e7ff;
+      color: var(--main-dark);
+      text-decoration: none;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 760px) {
+      .page { padding: 14px 10px 40px; }
+      .article-hero { padding: 26px 18px; border-radius: 18px; }
+      .lead { font-size: 0.98rem; }
+      .toc-grid { grid-template-columns: repeat(2, 1fr); }
+      .section { padding: 18px 14px; }
+      .section h2 { font-size: 1.25rem; }
+      .player-head { grid-template-columns: 1fr; }
+      .rank-badge { justify-self: start; }
+      .spec-grid { grid-template-columns: repeat(2, 1fr); }
+      .ranking { grid-template-columns: 1fr; }
+      .related-links { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="article-hero">
+      <div class="eyebrow">ワールドカップ2026 × サカつく2026</div>
+      <h1>【ワールドカップ2026】未実装国なのがもったいない！サカつく2026に来たら絶対欲しい最強SP選手10選！</h1>
+      <p class="lead">ワールドカップ2026に出場しているのに、サカつく2026ではまだ選手が実装されていない国から「もしSP選手として登場したら優秀そう」な代表選手をピックアップして紹介します。</p>
+    </header>
+
+    <nav class="toc" aria-label="目次">
+      <p class="toc-title">▼クリックすると該当の項目にジャンプできます</p>
+      <div class="toc-grid">
+        <a href="#about">この記事について</a>
+        <a href="#players">SP候補10選</a>
+        <a href="#top3">実装希望TOP3</a>
+        <a href="#summary">まとめ</a>
+      </div>
+    </nav>
+
+    <section class="section" id="about">
+      <h2><span class="mark">01</span>この記事について</h2>
+      <p>以前の記事では、ワールドカップ2026出場国の中から、サカつく2026に実装されている★3SP選手を紹介しました。</p>
+      <p>今回はその逆で、<strong>「ワールドカップ2026に出場しているのに、サカつく2026ではまだ選手が実装されていない国」</strong>に注目します。</p>
+      <div class="note">※本記事は実装予想・考察記事です。実際のゲーム内実装、能力、ポジション、ポリシー、プレイスタイルを保証するものではありません。</div>
+      <p class="small">未実装国リストとして確認した国は以下の通りです。</p>
+      <div class="country-list" aria-label="サカつく2026未実装国リスト">
+        <span>アルジェリア</span><span>イラク</span><span>イラン</span><span>ウズベキスタン</span><span>オーストリア</span><span>ガーナ</span><span>カーボベルデ</span><span>カタール</span><span>カナダ</span><span>キュラソー</span><span>コロンビア</span><span>コンゴ民主共和国</span><span>サウジアラビア</span><span>スイス</span><span>スウェーデン</span><span>セネガル</span><span>チェコ</span><span>チュニジア</span><span>ドイツ</span><span>トルコ</span><span>ニュージーランド</span><span>ハイチ</span><span>パナマ</span><span>ブラジル</span><span>ボスニア・ヘルツェゴヴィナ</span><span>メキシコ</span><span>南アフリカ</span>
+      </div>
+    </section>
+
+    <section class="section" id="players">
+      <h2><span class="mark">02</span>実装されたら優秀なSP選手になりそうな代表選手10選</h2>
+
+      <article class="player-card">
+        <div class="player-head">
+          <div><p class="country">ドイツ代表</p><h3 class="player-name">ジャマル・ムシアラ</h3></div>
+          <div class="rank-badge">★★★★★</div>
+        </div>
+        <div class="player-body">
+          <p>ドイツ代表の新エース候補。狭いスペースでも相手をかわすドリブル技術が魅力で、サカつく2026に実装されたら攻撃の中心になりそうな選手です。</p>
+          <div class="spec-grid">
+            <div class="spec"><span class="spec-label">予想ポジション</span><span class="spec-value">AM</span></div>
+            <div class="spec"><span class="spec-label">予想ポリシー</span><span class="spec-value">ムービング</span></div>
+            <div class="spec"><span class="spec-label">予想プレイスタイル</span><span class="spec-value">ドリブラー</span></div>
+            <div class="spec"><span class="spec-label">期待度</span><span class="spec-value">環境級</span></div>
+          </div>
+          <p class="point">AMのドリブラーは希少性が高く、実装されたらフォメコン要員としてもかなり価値が出そうです。</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-head">
+          <div><p class="country">ブラジル代表</p><h3 class="player-name">ヴィニシウス・ジュニオール</h3></div>
+          <div class="rank-badge">★★★★★</div>
+        </div>
+        <div class="player-body">
+          <p>ブラジル代表を牽引する世界最高峰のウイング。圧倒的なスピードと突破力を持つため、ゲーム内でも非常に分かりやすい強キャラになりそうです。</p>
+          <div class="spec-grid">
+            <div class="spec"><span class="spec-label">予想ポジション</span><span class="spec-value">LW</span></div>
+            <div class="spec"><span class="spec-label">予想ポリシー</span><span class="spec-value">カウンター</span></div>
+            <div class="spec"><span class="spec-label">予想プレイスタイル</span><span class="spec-value">サイドアタッカー</span></div>
+            <div class="spec"><span class="spec-label">期待度</span><span class="spec-value">最強候補</span></div>
+          </div>
+          <p class="point">カウンター型サイドアタッカーとして実装されたら、LWの当たり枠として長く使える性能になりそうです。</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-head">
+          <div><p class="country">コロンビア代表</p><h3 class="player-name">ルイス・ディアス</h3></div>
+          <div class="rank-badge">★★★★☆</div>
+        </div>
+        <div class="player-body">
+          <p>突破力と献身性を兼ね備えたコロンビアのエース。派手なドリブルだけでなく、運動量の多さも魅力です。</p>
+          <div class="spec-grid">
+            <div class="spec"><span class="spec-label">予想ポジション</span><span class="spec-value">LW</span></div>
+            <div class="spec"><span class="spec-label">予想ポリシー</span><span class="spec-value">カウンター</span></div>
+            <div class="spec"><span class="spec-label">予想プレイスタイル</span><span class="spec-value">サイドアタッカー</span></div>
+            <div class="spec"><span class="spec-label">期待度</span><span class="spec-value">実用型</span></div>
+          </div>
+          <p class="point">ヴィニシウスほどの超目玉ではなくても、カウンター系編成で使いやすいSP選手になりそうです。</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-head">
+          <div><p class="country">スイス代表</p><h3 class="player-name">グラニト・ジャカ</h3></div>
+          <div class="rank-badge">★★★★☆</div>
+        </div>
+        <div class="player-body">
+          <p>スイス代表を長年支える中盤のリーダー。攻守のバランスに優れ、落ち着いて試合を組み立てるタイプです。</p>
+          <div class="spec-grid">
+            <div class="spec"><span class="spec-label">予想ポジション</span><span class="spec-value">DM</span></div>
+            <div class="spec"><span class="spec-label">予想ポリシー</span><span class="spec-value">ポゼッション</span></div>
+            <div class="spec"><span class="spec-label">予想プレイスタイル</span><span class="spec-value">セントラルMF</span></div>
+            <div class="spec"><span class="spec-label">期待度</span><span class="spec-value">安定型</span></div>
+          </div>
+          <p class="point">ポゼッション編成の中盤要員として、地味だけど長く使えるタイプになりそうです。</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-head">
+          <div><p class="country">セネガル代表</p><h3 class="player-name">カリドゥ・クリバリ</h3></div>
+          <div class="rank-badge">★★★★☆</div>
+        </div>
+        <div class="player-body">
+          <p>アフリカ屈指のフィジカルを誇る鉄壁CB。対人守備に強く、守備の中心として実装されるならかなり魅力的です。</p>
+          <div class="spec-grid">
+            <div class="spec"><span class="spec-label">予想ポジション</span><span class="spec-value">CB</span></div>
+            <div class="spec"><span class="spec-label">予想ポリシー</span><span class="spec-value">リアクション</span></div>
+            <div class="spec"><span class="spec-label">予想プレイスタイル</span><span class="spec-value">ハードマーカー</span></div>
+            <div class="spec"><span class="spec-label">期待度</span><span class="spec-value">守備主力</span></div>
+          </div>
+          <p class="point">CB不足の監督にとっては、守備系フォメコンの軸として狙いたくなる1枚です。</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-head">
+          <div><p class="country">メキシコ代表</p><h3 class="player-name">サンティアゴ・ヒメネス</h3></div>
+          <div class="rank-badge">★★★★☆</div>
+        </div>
+        <div class="player-body">
+          <p>メキシコ代表の若きエースストライカー。高い決定力とゴール前での動き出しが魅力です。</p>
+          <div class="spec-grid">
+            <div class="spec"><span class="spec-label">予想ポジション</span><span class="spec-value">CF</span></div>
+            <div class="spec"><span class="spec-label">予想ポリシー</span><span class="spec-value">ムービング</span></div>
+            <div class="spec"><span class="spec-label">予想プレイスタイル</span><span class="spec-value">ラインブレーカー</span></div>
+            <div class="spec"><span class="spec-label">期待度</span><span class="spec-value">得点役</span></div>
+          </div>
+          <p class="point">ラインブレーカー系CFとして実装されれば、得点力重視の編成でかなり使いやすそうです。</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-head">
+          <div><p class="country">オーストリア代表</p><h3 class="player-name">ダヴィド・アラバ</h3></div>
+          <div class="rank-badge">★★★★★</div>
+        </div>
+        <div class="player-body">
+          <p>複数ポジションを高水準でこなせる万能選手。今回の候補の中でも、唯一性能になりそうな代表格です。</p>
+          <div class="spec-grid">
+            <div class="spec"><span class="spec-label">予想ポジション</span><span class="spec-value">CB / LB</span></div>
+            <div class="spec"><span class="spec-label">予想ポリシー</span><span class="spec-value">ポゼッション</span></div>
+            <div class="spec"><span class="spec-label">予想プレイスタイル</span><span class="spec-value">クリエイティブFB</span></div>
+            <div class="spec"><span class="spec-label">期待度</span><span class="spec-value">唯一性能</span></div>
+          </div>
+          <p class="point">CBとLBの両方で使えるような性能なら、編成の自由度を一気に上げてくれる貴重なSPになりそうです。</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-head">
+          <div><p class="country">トルコ代表</p><h3 class="player-name">ハカン・チャルハノール</h3></div>
+          <div class="rank-badge">★★★★☆</div>
+        </div>
+        <div class="player-body">
+          <p>正確なキックとゲームメイク能力を持つ中盤の司令塔。派手さよりも、チーム全体を支えるタイプのSPになりそうです。</p>
+          <div class="spec-grid">
+            <div class="spec"><span class="spec-label">予想ポジション</span><span class="spec-value">AM / DM</span></div>
+            <div class="spec"><span class="spec-label">予想ポリシー</span><span class="spec-value">ポゼッション</span></div>
+            <div class="spec"><span class="spec-label">予想プレイスタイル</span><span class="spec-value">パサー</span></div>
+            <div class="spec"><span class="spec-label">期待度</span><span class="spec-value">司令塔</span></div>
+          </div>
+          <p class="point">ポゼッション系のフォメコンを組む監督なら、かなり欲しくなる玄人好みの選手になりそうです。</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-head">
+          <div><p class="country">カナダ代表</p><h3 class="player-name">アルフォンソ・デイヴィス</h3></div>
+          <div class="rank-badge">★★★★★</div>
+        </div>
+        <div class="player-body">
+          <p>爆発的なスピードを武器にする現代型サイドバック。守備だけでなく攻撃参加でも違いを作れる選手です。</p>
+          <div class="spec-grid">
+            <div class="spec"><span class="spec-label">予想ポジション</span><span class="spec-value">LB</span></div>
+            <div class="spec"><span class="spec-label">予想ポリシー</span><span class="spec-value">カウンター</span></div>
+            <div class="spec"><span class="spec-label">予想プレイスタイル</span><span class="spec-value">攻撃的FB</span></div>
+            <div class="spec"><span class="spec-label">期待度</span><span class="spec-value">高速SB</span></div>
+          </div>
+          <p class="point">攻撃的FBの当たり枠として、カウンター編成の左サイドを一気に強化してくれそうです。</p>
+        </div>
+      </article>
+
+      <article class="player-card">
+        <div class="player-head">
+          <div><p class="country">ガーナ代表</p><h3 class="player-name">モハメド・クドゥス</h3></div>
+          <div class="rank-badge">★★★★☆</div>
+        </div>
+        <div class="player-body">
+          <p>個人技と推進力を兼ね備えた万能アタッカー。中央でもサイドでも怖さを出せるタイプです。</p>
+          <div class="spec-grid">
+            <div class="spec"><span class="spec-label">予想ポジション</span><span class="spec-value">AM / RW</span></div>
+            <div class="spec"><span class="spec-label">予想ポリシー</span><span class="spec-value">ムービング</span></div>
+            <div class="spec"><span class="spec-label">予想プレイスタイル</span><span class="spec-value">ドリブラー</span></div>
+            <div class="spec"><span class="spec-label">期待度</span><span class="spec-value">隠れ当たり</span></div>
+          </div>
+          <p class="point">ムシアラほどの超目玉ではなくても、ゲーム内ではかなり使いやすい隠れ当たり枠になりそうです。</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="top3">
+      <h2><span class="mark">03</span>編集部が選ぶ「実装されたら絶対引く」TOP3</h2>
+      <div class="ranking">
+        <div class="rank-card">
+          <span class="no">第3位</span>
+          <strong>アルフォンソ・デイヴィス</strong>
+          <p>カウンター型LBとして唯一性能になりそう。攻撃的FB好きなら絶対に欲しい選手です。</p>
+        </div>
+        <div class="rank-card">
+          <span class="no">第2位</span>
+          <strong>ジャマル・ムシアラ</strong>
+          <p>AMのドリブラーという希少性が魅力。ムービング編成の中心選手になりそうです。</p>
+        </div>
+        <div class="rank-card">
+          <span class="no">第1位</span>
+          <strong>ヴィニシウス・ジュニオール</strong>
+          <p>人気・性能・分かりやすさの全てが最強クラス。ブラジル代表SPが来たら目玉候補です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="summary">
+      <h2><span class="mark">04</span>まとめ</h2>
+      <p>ワールドカップ2026には、サカつく2026にまだ選手が実装されていない国にも魅力的な代表選手が数多くいます。</p>
+      <p>特に今回紹介した10選手は、実装された場合に<strong>環境入り、唯一性能、フォメコン要員、隠れ当たり枠</strong>として期待できる選手ばかりです。</p>
+      <div class="note">個人的には、ヴィニシウス、ムシアラ、アラバ、デイヴィスあたりは本当に実装してほしいですね。</div>
+      <p>皆さんは「この国ならこの選手を実装してほしい！」という代表選手はいますか？ぜひコメントで教えてください！</p>
+
+      <h2 style="margin-top: 28px;"><span class="mark">＋</span>この記事のあとにおすすめ</h2>
+      <div class="related-links">
+        <a href="wc2026_sakatsuku_sp_players_article.html">実装済み★3SP選手まとめ</a>
+        <a href="sp_evaluator.html">選手評価ツール</a>
+        <a href="favorite_combos.html">フォメコン診断</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
