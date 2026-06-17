@@ -469,6 +469,34 @@
     .chip{ font-size:10px; padding:3px 6px; }
     .mKey{ min-width:110px; display:block; margin-bottom:2px; }
   }
+
+  /* ===== Mobile filter layout: same order as evaluator ===== */
+  @media (max-width: 520px){
+    .ctrlGrid{
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:9px;
+    }
+    .ctrlGrid label{
+      font-size:12px;
+      margin:1px 0 3px;
+      line-height:1.25;
+    }
+    .ctrlGrid input,
+    .ctrlGrid select{
+      font-size:13px;
+      padding:9px 8px;
+      border-radius:12px;
+    }
+    .ctrlGrid .btn{
+      font-size:15px;
+      padding:10px 10px;
+      border-radius:14px;
+    }
+    .ctrlFullRow{
+      grid-column:1 / -1;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -493,7 +521,7 @@
       <div class="sectionTitle">絞り込み条件</div>
 
       <div class="ctrlGrid">
-        <div>
+        <div class="ctrlFullRow">
           <label for="fName">選手名</label>
           <input id="fName" type="text" placeholder="例：ロナウド / サカ" />
         </div>
@@ -502,12 +530,24 @@
           <select id="fNationality"><option value="">（指定なし）</option></select>
         </div>
         <div>
+          <label for="fRarity">レアリティ</label>
+          <select id="fRarity"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
           <label for="fGrowthType">成長タイプ</label>
           <select id="fGrowthType"><option value="">（指定なし）</option></select>
         </div>
         <div>
-          <label for="fRarity">レアリティ</label>
-          <select id="fRarity"><option value="">（指定なし）</option></select>
+          <label for="fPolicy">ポリシー</label>
+          <select id="fPolicy"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
+          <label for="fPosition">ポジション</label>
+          <select id="fPosition"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
+          <label for="fStyle">プレイスタイル</label>
+          <select id="fStyle"><option value="">（指定なし）</option></select>
         </div>
         <div>
           <label for="fAcqMethod">入手方法</label>
@@ -517,24 +557,12 @@
           <label for="fAcqPlace">入手場所</label>
           <select id="fAcqPlace"><option value="">（指定なし）</option></select>
         </div>
-        <div>
-          <label for="fPolicy">ポリシー</label>
-          <select id="fPolicy"><option value="">（指定なし）</option></select>
-        </div>
-        <div>
-          <label for="fStyle">プレイスタイル</label>
-          <select id="fStyle"><option value="">（指定なし）</option></select>
-        </div>
-        <div>
+        <div class="ctrlFullRow">
           <label for="fStyleLv">プレイスタイルLv</label>
           <select id="fStyleLv"><option value="">（指定なし）</option></select>
         </div>
-        <div>
-          <label for="fPosition">ポジション</label>
-          <select id="fPosition"><option value="">（指定なし）</option></select>
-        </div>
 
-        <div class="btnRow">
+        <div class="btnRow ctrlFullRow">
           <button class="btn primary" id="btnApply">絞り込み</button>
           <button class="btn gray" id="btnReset">リセット</button>
         </div>
@@ -751,14 +779,14 @@ function renderCurrentFilters(){
   const parts = [];
   if(f.name) parts.push(`選手名：${esc($("fName").value.trim())}`);
   if(f.nationality) parts.push(`国籍：${esc(f.nationality)}`);
-  if(f.growthType) parts.push(`成長タイプ：${esc(f.growthType)}`);
   if(f.rarity) parts.push(`レアリティ：${esc(showRarity(f.rarity))}`);
+  if(f.growthType) parts.push(`成長タイプ：${esc(f.growthType)}`);
+  if(f.policy) parts.push(`ポリシー：${esc(f.policy)}`);
+  if(f.mainPosition) parts.push(`ポジション：${esc(f.mainPosition)}`);
+  if(f.playStyle) parts.push(`プレイスタイル：${esc(f.playStyle)}`);
   if(f.acquisitionMethod) parts.push(`入手方法：${esc(f.acquisitionMethod)}`);
   if(f.acquisitionPlace) parts.push(`入手場所：${esc(f.acquisitionPlace)}`);
-  if(f.policy) parts.push(`ポリシー：${esc(f.policy)}`);
-  if(f.playStyle) parts.push(`プレイスタイル：${esc(f.playStyle)}`);
   if(f.playStyleLv) parts.push(`プレイスタイルLv：${esc(romanLv(f.playStyleLv))}`);
-  if(f.mainPosition) parts.push(`ポジション：${esc(f.mainPosition)}`);
   if(f.favoriteOnly) parts.push(`お気に入り：のみ表示`);
 
   $("currentFilters").innerHTML = parts.length
