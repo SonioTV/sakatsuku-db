@@ -473,6 +473,49 @@
     background:linear-gradient(180deg,var(--silver1),var(--silver2));
   }
 
+
+  /* Favorite button (shared with player_catalog.html) */
+  .favBtn{
+    appearance:none;
+    border:1px solid rgba(0,0,0,.15);
+    background:#fff;
+    color:#c98a00;
+    border-radius:999px;
+    min-width:38px;
+    height:38px;
+    padding:0 10px;
+    font-size:20px;
+    font-weight:900;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+    vertical-align:middle;
+  }
+  .favBtn.is-active{
+    background:#fff0b8;
+    border-color:rgba(201,138,0,.4);
+  }
+  .favBtn .favText{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+  }
+  .resultPlayerName{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    flex-wrap:wrap;
+  }
+
 </style>
 </head>
 <body>
@@ -662,9 +705,75 @@ function loadFavoritePlayerIds(){
   }
 }
 
+function saveFavoritePlayerIds(){
+  try{
+    localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify([...favoritePlayerIds]));
+  }catch(error){
+    console.warn("お気に入りデータの保存に失敗しました。", error);
+  }
+}
+
+function getPlayerId(player){
+  return String(player?.player_id ?? player?.playerId ?? player?.id ?? "").trim();
+}
+
 function isFavoritePlayer(player){
-  const pid = String(player?.player_id ?? player?.playerId ?? "").trim();
+  const pid = getPlayerId(player);
   return !!(pid && favoritePlayerIds.has(pid));
+}
+
+function favoriteButtonHtml(player){
+  const pid = getPlayerId(player);
+  if(!pid) return "";
+  const name = normalize(player?.name || player?.player_name || "選手");
+  const active = favoritePlayerIds.has(pid);
+  const label = active ? "お気に入り解除" : "お気に入り登録";
+  return `
+    <button
+      type="button"
+      class="favBtn ${active ? "is-active" : ""}"
+      data-favorite-id="${esc(pid)}"
+      aria-pressed="${active ? "true" : "false"}"
+      aria-label="${esc(name + "を" + label)}"
+      title="${esc(label)}"
+    >
+      ${active ? "★" : "☆"}
+      <span class="favText">${esc(label)}</span>
+    </button>
+  `;
+}
+
+function toggleFavoritePlayer(playerId){
+  const id = String(playerId ?? "").trim();
+  if(!id) return;
+  if(favoritePlayerIds.has(id)) favoritePlayerIds.delete(id);
+  else favoritePlayerIds.add(id);
+  saveFavoritePlayerIds();
+}
+
+function refreshFavoriteButtons(scope=document){
+  scope.querySelectorAll("[data-favorite-id]").forEach(btn=>{
+    const id = String(btn.getAttribute("data-favorite-id") || "").trim();
+    const active = !!(id && favoritePlayerIds.has(id));
+    const label = active ? "お気に入り解除" : "お気に入り登録";
+    btn.classList.toggle("is-active", active);
+    btn.setAttribute("aria-pressed", active ? "true" : "false");
+    btn.setAttribute("title", label);
+    btn.innerHTML = `${active ? "★" : "☆"}<span class="favText">${esc(label)}</span>`;
+  });
+}
+
+function attachFavoriteHandlers(scope=document){
+  scope.querySelectorAll("[data-favorite-id]").forEach(btn=>{
+    if(btn.dataset.favoriteBound === "1") return;
+    btn.dataset.favoriteBound = "1";
+    btn.addEventListener("click", (e)=>{
+      e.preventDefault();
+      e.stopPropagation();
+      toggleFavoritePlayer(btn.getAttribute("data-favorite-id"));
+      refreshFavoriteButtons(document);
+    });
+  });
 }
 
 async function loadData(){
@@ -1192,7 +1301,7 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
         <div>最大強化</div>
       </div>
       <div class="row topCols4">
-        <div>${esc(nm)}</div>
+        <div class="resultPlayerName">${favoriteButtonHtml(target)}<span>${esc(nm)}</span></div>
         <div>${esc(rarityDisp)}</div>
         <div>${overall!=null ? esc(overall) : "-"}</div>
         <div>${maxUp!=null ? esc(maxUp) : "-"}</div>
@@ -1316,6 +1425,8 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
       openPlayerModal(p);
     });
   });
+
+  attachFavoriteHandlers(out);
 
 }
 
@@ -1477,6 +1588,7 @@ function openPlayerModal(p){
   const esc2 = esc; // reuse
 
   const lines = [];
+  lines.push(`<div class="mLine"><span class="mKey">お気に入り</span><span class="mVal">${favoriteButtonHtml(p)}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">区分</span><span class="mVal">${esc2(p.category ?? "-")}</span></div>`);
 lines.push(`<div class="mLine"><span class="mKey">レアリティ</span><span class="mVal">${esc2((p.rarity!=null && String(p.rarity)!=="") ? ("★" + String(p.rarity).replace(/^★/,"")) : "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class="mVal">${esc2(p.acquisitionMethod ?? "-")}</span></div>`);
@@ -1491,6 +1603,7 @@ lines.push(`<div class="mLine"><span class="mKey">レアリティ</span><span cl
   lines.push(`<div class="mLine"><span class="mKey">メイン特徴</span><span class="mVal">${esc2(p.mainTrait ?? "-")}</span></div>`);
 
   document.getElementById("pModalBody").innerHTML = lines.join("");
+  attachFavoriteHandlers(document.getElementById("pModalBody"));
   const back = document.getElementById("pModalBack");
   back.classList.add("show");
   back.setAttribute("aria-hidden","false");
