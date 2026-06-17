@@ -98,6 +98,18 @@
   .empty{ text-align:center; padding:28px 14px; border:2px dashed #d4dae6; border-radius:18px; color:#555; font-weight:900; background:#fff; line-height:1.7; }
   .favoritePlayers{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
   .favoritePlayerChip{ display:inline-block; background:#fff7d6; border:1px solid rgba(201,138,0,.25); color:#6e5200; padding:6px 10px; border-radius:999px; font-weight:900; font-size:13px; }
+
+  .playerEvalLink{
+    color:#0b63d1;
+    font-weight:900;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  .memberChip .playerEvalLink,
+  .favoritePlayerChip .playerEvalLink{
+    color:inherit;
+  }
+
   .error{ background:#fff1f1; border-color:#ffd0d0; color:#9b1c1c; }
   .toTop{ position:fixed; right:16px; bottom:16px; z-index:999; border:none; border-radius:999px; background:var(--green); color:#fff; font-weight:900; padding:14px 16px; box-shadow:0 12px 20px rgba(0,0,0,.18); cursor:pointer; display:none; }
   .toTop.show{ display:block; }
@@ -226,6 +238,14 @@ function getPlayerCore(p){
     rarity: normalize(pick(p, ["rarity","レアリティ"], "")),
   };
 }
+
+function playerEvalLink(core, label){
+  const pid = normalize(core && core.playerId ? core.playerId : "");
+  const text = label || (core && (core.name || core.playerId)) || "選手";
+  if(!pid) return esc(text);
+  return `<a class="playerEvalLink" href="sp_evaluator.html?playerId=${encodeURIComponent(pid)}">${esc(text)}</a>`;
+}
+
 function comboField(c, keys, fallback=""){
   for(const k of keys){
     if(c && c[k] !== undefined && c[k] !== null && String(c[k]).trim() !== "") return c[k];
@@ -412,7 +432,7 @@ function renderAvailable(list){
       const core = getPlayerCore(player);
       const cond = comboConditions(combo)[idx] || {};
       const pos = normalize(comboField(cond, ["position","pos","ポジション"], core.mainPosition || "-"));
-      return `<span class="memberChip">${esc(pos)}：${esc(core.name || core.playerId || "選手")}</span>`;
+      return `<span class="memberChip">${esc(pos)}：${playerEvalLink(core, core.name || core.playerId || "選手")}</span>`;
     }).join("");
     return `
       <article class="comboCard ${esc(comboRankClass(base.rank))}">
@@ -442,7 +462,7 @@ function renderOneAway(list){
       const core = getPlayerCore(player);
       const cond = comboConditions(combo)[idx] || {};
       const pos = normalize(comboField(cond, ["position","pos","ポジション"], core.mainPosition || "-"));
-      return `<span class="memberChip">${esc(pos)}：${esc(core.name || core.playerId || "選手")}</span>`;
+      return `<span class="memberChip">${esc(pos)}：${playerEvalLink(core, core.name || core.playerId || "選手")}</span>`;
     }).filter(Boolean).join("");
     const candidateHtml = candidates.map(p=>{
       const core = getPlayerCore(p);
@@ -450,7 +470,7 @@ function renderOneAway(list){
       return `
         <div class="candidate">
           <div>
-            <div class="candidateName">${esc(core.name || core.playerId || "選手")}</div>
+            <div class="candidateName">${playerEvalLink(core, core.name || core.playerId || "選手")}</div>
             <div class="candidateMeta">
               ${esc(core.mainPosition || "-")} / ${esc(core.policy || "-")} / ${esc(core.playStyle || "-")}${lv ? " " + esc(lv) : ""}<br>
               入手場所：${esc(core.acquisitionPlace || "-")}
@@ -486,7 +506,7 @@ function renderFavorites(favPlayers){
   root.innerHTML = favPlayers
     .map(getPlayerCore)
     .sort((a,b)=>a.playerId.localeCompare(b.playerId,"ja",{numeric:true}))
-    .map(p=>`<span class="favoritePlayerChip">★ ${esc(p.name || p.playerId)} <small>${esc(p.mainPosition || "-")}</small></span>`)
+    .map(p=>`<span class="favoritePlayerChip">★ ${playerEvalLink(p, p.name || p.playerId)} <small>${esc(p.mainPosition || "-")}</small></span>`)
     .join("");
 }
 function renderAll(){
