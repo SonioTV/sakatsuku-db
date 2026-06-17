@@ -1132,6 +1132,50 @@
   .storeBtn{ min-width:132px; font-size:13px; padding:9px 10px; }
 }
 
+/* ===== ワールドカップ2026特集バナー ===== */
+.wc-banner{
+  display:block;
+  margin:16px auto 20px;
+  padding:18px 20px;
+  max-width:920px;
+  border-radius:20px;
+  text-decoration:none;
+  text-align:center;
+  color:#fff;
+  background:linear-gradient(135deg,#001B44,#003B7A);
+  border:3px solid #D4AF37;
+  box-shadow:0 12px 24px rgba(0,0,0,.18);
+  transition:.15s;
+}
+.wc-banner:hover{
+  transform:translateY(-2px);
+  background:linear-gradient(135deg,#00265C,#0052A5);
+}
+.wc-banner-title{
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:.05em;
+}
+.wc-banner-sub{
+  margin-top:6px;
+  font-size:15px;
+  font-weight:800;
+  opacity:.9;
+}
+@media (max-width:480px){
+  .wc-banner{
+    margin:14px 10px 18px;
+    padding:16px;
+    border-radius:18px;
+  }
+  .wc-banner-title{
+    font-size:22px;
+  }
+  .wc-banner-sub{
+    font-size:13px;
+  }
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -1165,6 +1209,11 @@
     ⚽ サカつく2026公式HP⚽
   </a>
 </div>
+
+<a href="wc2026_special.html" class="wc-banner">
+  <div class="wc-banner-title">🏆 ワールドカップ2026特集 🏆</div>
+  <div class="wc-banner-sub">▶ 特集を見る</div>
+</a>
 
 <!-- ===== 最新攻略記事 ===== -->
 <div class="card latestArticleCard">

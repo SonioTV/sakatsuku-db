@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ワールドカップ2026特集｜サカつく2026攻略DB</title>
+  <meta name="description" content="サカつく2026攻略DBのワールドカップ2026特集ページです。W杯2026出場選手のサカつく実装済み★3SP選手まとめ、未実装国から選ぶ実装希望SP候補記事をまとめて紹介します。" />
+  <meta property="og:title" content="ワールドカップ2026特集｜サカつく2026攻略DB" />
+  <meta property="og:description" content="ワールドカップ2026×サカつく2026の関連記事をまとめた特集ページ。実装済み★3SP選手、未実装国の注目SP候補をチェックできます。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://sakatsuku2026-db.com/wc2026_special.html" />
+  <link rel="canonical" href="https://sakatsuku2026-db.com/wc2026_special.html" />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #172033;
+      --muted: #607089;
+      --line: #dbe4f0;
+      --blue: #0f5fbf;
+      --blue-dark: #073b7a;
+      --green: #14a06f;
+      --gold: #f6b73c;
+      --orange: #f97316;
+      --shadow: 0 12px 30px rgba(15, 35, 70, .10);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(15, 95, 191, .12), transparent 28%),
+        radial-gradient(circle at 92% 6%, rgba(20, 160, 111, .12), transparent 26%),
+        var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.8;
+      letter-spacing: .02em;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 22px 16px 64px;
+    }
+
+    .breadcrumb {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .breadcrumb a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 36px 30px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 20% 18%, rgba(255,255,255,.20), transparent 24%),
+        linear-gradient(135deg, #061a3f 0%, #0f5fbf 52%, #14a06f 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::before {
+      content: "2026";
+      position: absolute;
+      right: -18px;
+      bottom: -70px;
+      font-size: clamp(96px, 18vw, 190px);
+      line-height: 1;
+      font-weight: 900;
+      color: rgba(255,255,255,.12);
+      letter-spacing: -.08em;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.25);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      margin: 14px 0 0;
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.25;
+      font-weight: 900;
+      text-shadow: 0 4px 16px rgba(0,0,0,.25);
+    }
+
+    .lead {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin: 16px 0 0;
+      color: rgba(255,255,255,.94);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--blue-dark);
+      text-decoration: none;
+      font-weight: 900;
+      box-shadow: 0 10px 20px rgba(0,0,0,.16);
+    }
+
+    .hero-btn.dark {
+      background: #111827;
+      color: #fff;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 18px 0 0;
+      position: relative;
+      z-index: 1;
+      max-width: 650px;
+    }
+
+    .stat {
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.22);
+    }
+
+    .stat b {
+      display: block;
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(255,255,255,.82);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 22px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 14px;
+      color: var(--blue-dark);
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .section-title .mark {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      border-radius: 12px;
+      color: #fff;
+      background: var(--blue);
+      font-size: 16px;
+      box-shadow: 0 8px 16px rgba(15,95,191,.22);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .article-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fff;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(15,35,70,.08);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+
+    .article-card:active {
+      transform: scale(.99);
+    }
+
+    .article-top {
+      min-height: 140px;
+      padding: 20px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 16% 18%, rgba(255,255,255,.22), transparent 28%),
+        linear-gradient(135deg, #12386f, #0f5fbf);
+    }
+
+    .article-card:nth-child(2) .article-top {
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255,255,255,.20), transparent 28%),
+        linear-gradient(135deg, #063b61, #14a06f);
+    }
+
+    .label {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.26);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .article-card h3 {
+      margin: 12px 0 0;
+      font-size: 22px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .article-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 18px;
+    }
+
+    .article-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .point-list {
+      display: grid;
+      gap: 8px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .point-list li {
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #f7faff;
+      border: 1px solid #e3edf9;
+      font-size: 13px;
+      font-weight: 900;
+      color: #17365f;
+    }
+
+    .readmore {
+      margin-top: auto;
+      padding-top: 16px;
+      color: var(--blue);
+      font-weight: 900;
+      text-align: right;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .guide-card {
+      min-height: 120px;
+      padding: 16px;
+      border-radius: 16px;
+      background: #f8fbff;
+      border: 1px solid #e1ebf8;
+    }
+
+    .guide-card strong {
+      display: block;
+      color: var(--blue-dark);
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .guide-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .notice {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #fff8e7;
+      border: 1px solid #ffe0a6;
+      border-left: 6px solid var(--gold);
+      color: #583f00;
+      font-weight: 800;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .link-grid a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 10px;
+      border-radius: 14px;
+      background: #eef6ff;
+      border: 1px solid #d7e9ff;
+      color: var(--blue-dark);
+      text-decoration: none;
+      text-align: center;
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .back-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .back-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: #111827;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .back-links a.main {
+      background: var(--green);
+    }
+
+    @media (max-width: 760px) {
+      .page { padding: 14px 10px 44px; }
+      .hero { padding: 28px 18px; border-radius: 22px; }
+      .lead { font-size: 14px; }
+      .stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .stat { padding: 10px 8px; }
+      .stat b { font-size: 23px; }
+      .stat span { font-size: 10px; line-height: 1.35; }
+      .section { padding: 18px 14px; }
+      .section-title { font-size: 20px; }
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .article-top {
+        min-height: auto;
+        padding: 14px 10px;
+      }
+      .label {
+        padding: 3px 7px;
+        font-size: 10px;
+      }
+      .article-card h3 {
+        margin-top: 9px;
+        font-size: 14px;
+        line-height: 1.38;
+        letter-spacing: -.03em;
+      }
+      .article-body {
+        padding: 11px 9px;
+      }
+      .article-body p {
+        font-size: 11px;
+        line-height: 1.55;
+        letter-spacing: -.03em;
+      }
+      .point-list {
+        gap: 6px;
+        margin-top: 10px;
+      }
+      .point-list li {
+        padding: 6px 7px;
+        font-size: 10.5px;
+        line-height: 1.35;
+        letter-spacing: -.04em;
+      }
+      .readmore {
+        padding-top: 10px;
+        font-size: 11px;
+      }
+      .guide-grid { grid-template-columns: 1fr; }
+      .link-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-actions { display: grid; grid-template-columns: 1fr; }
+      .hero-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="breadcrumb">
+      <a href="index.html">トップ</a> &gt; ワールドカップ2026特集
+    </nav>
+
+    <header class="hero">
+      <div class="eyebrow">🏆 ワールドカップ2026 × サカつく2026</div>
+      <h1>ワールドカップ2026特集</h1>
+      <p class="lead">
+        W杯2026出場国・代表選手を、サカつく2026目線でまとめる特集ページです。
+        サカつくに実装済みの★3SP選手、まだ未実装だけど今後来たら欲しい代表選手をここから確認できます。
+      </p>
+
+      <div class="stats">
+        <div class="stat"><b>2</b><span>公開中の記事</span></div>
+        <div class="stat"><b>40</b><span>実装済み★3SP掲載</span></div>
+        <div class="stat"><b>10</b><span>未実装国の注目候補</span></div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="hero-btn" href="#articles">特集記事を見る</a>
+        <a class="hero-btn dark" href="sp_evaluator.html">選手評価ツールへ</a>
+      </div>
+    </header>
+
+    <section class="section" id="articles">
+      <h2 class="section-title"><span class="mark">01</span>ワールドカップ2026特集記事</h2>
+      <p style="margin:0;color:var(--muted);font-weight:700;">
+        まずはこの2本を読めば、W杯2026出場選手とサカつく2026の実装状況をざっくり把握できます。
+      </p>
+
+      <div class="feature-grid">
+        <a class="article-card" href="wc2026_sakatsuku_sp_players_article.html">
+          <div class="article-top">
+            <span class="label">実装済みSPまとめ</span>
+            <h3>サカつく2026に登場している★3SP選手まとめ</h3>
+          </div>
+          <div class="article-body">
+            <p>
+              ワールドカップ2026に出場している選手の中から、サカつく2026に★3SP選手として登場している選手をグループ・国別に整理。
+            </p>
+            <ul class="point-list">
+              <li>グループ別・国別で確認できる</li>
+              <li>選手名クリックで選手評価ツールへ移動</li>
+              <li>日本代表から各国スター選手まで掲載</li>
+            </ul>
+            <div class="readmore">記事を読む →</div>
+          </div>
+        </a>
+
+        <a class="article-card" href="wc2026_unimplemented_sp_candidates.html">
+          <div class="article-top">
+            <span class="label">未実装国の注目候補</span>
+            <h3>未実装国なのがもったいない！最強SP選手候補10選</h3>
+          </div>
+          <div class="article-body">
+            <p>
+              W杯2026に出場しているのに、サカつく2026ではまだ選手が実装されていない国から、今後SP化してほしい代表選手をピックアップ。
+            </p>
+            <ul class="point-list">
+              <li>実装されたら優秀そうな代表選手を紹介</li>
+              <li>予想ポリシー・プレイスタイルも掲載</li>
+              <li>実装希望TOP3もチェック可能</li>
+            </ul>
+            <div class="readmore">記事を読む →</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title"><span class="mark">02</span>この特集で見るポイント</h2>
+      <div class="guide-grid">
+        <div class="guide-card">
+          <strong>実装済み選手を探す</strong>
+          <span>W杯出場国の中で、すでにサカつく2026に★3SPとして登場している選手を確認できます。</span>
+        </div>
+        <div class="guide-card">
+          <strong>未実装国の候補を見る</strong>
+          <span>まだサカつくに選手がいない国から、今後SP化したら面白そうな選手をチェックできます。</span>
+        </div>
+        <div class="guide-card">
+          <strong>選手評価ツールと併用</strong>
+          <span>実装済み選手は、選手評価ツールでポリシー、プレイスタイル、総合力、金コンボ適性を確認できます。</span>
+        </div>
+      </div>
+      <div class="notice">
+        ※本特集はサカつく2026攻略DB独自の整理・考察です。未実装選手の実装、能力、ポリシー、プレイスタイルを保証するものではありません。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title"><span class="mark">03</span>関連ツール・記事</h2>
+      <div class="link-grid">
+        <a href="sp_evaluator.html">選手評価ツール</a>
+        <a href="favorite_combos.html">フォメコン診断</a>
+        <a href="player_catalog.html">選手図鑑</a>
+        <a href="articles.html">攻略記事一覧</a>
+      </div>
+
+      <div class="back-links">
+        <a class="main" href="index.html">トップページへ戻る</a>
+        <a href="articles.html">攻略記事一覧へ</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
