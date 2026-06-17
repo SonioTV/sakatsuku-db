@@ -447,6 +447,7 @@
   }
 
   @media (max-width: 520px){
+　　.note{font-size:13px;line-height:1.5;}
     .wrap{ padding-left:8px; padding-right:8px; }
     h1{ font-size:26px; }
     .card{ padding:12px 10px; border-radius:18px; }
@@ -521,10 +522,6 @@
       <div class="sectionTitle">絞り込み条件</div>
 
       <div class="ctrlGrid">
-        <div class="ctrlFullRow">
-          <label for="fName">選手名</label>
-          <input id="fName" type="text" placeholder="例：ロナウド / サカ" />
-        </div>
         <div>
           <label for="fNationality">国籍</label>
           <select id="fNationality"><option value="">（指定なし）</option></select>
@@ -546,22 +543,25 @@
           <select id="fPosition"><option value="">（指定なし）</option></select>
         </div>
         <div>
-          <label for="fStyle">プレイスタイル</label>
-          <select id="fStyle"><option value="">（指定なし）</option></select>
-        </div>
-        <div>
           <label for="fAcqMethod">入手方法</label>
           <select id="fAcqMethod"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
+          <label for="fStyle">プレイスタイル</label>
+          <select id="fStyle"><option value="">（指定なし）</option></select>
         </div>
         <div>
           <label for="fAcqPlace">入手場所</label>
           <select id="fAcqPlace"><option value="">（指定なし）</option></select>
         </div>
-        <div class="ctrlFullRow">
+        <div>
           <label for="fStyleLv">プレイスタイルLv</label>
           <select id="fStyleLv"><option value="">（指定なし）</option></select>
         </div>
-
+        <div>
+          <label for="fName">選手名</label>
+          <input id="fName" type="text" placeholder="例：ロナウド / サカ" />
+        </div>
         <div class="btnRow ctrlFullRow">
           <button class="btn primary" id="btnApply">絞り込み</button>
           <button class="btn gray" id="btnReset">リセット</button>
