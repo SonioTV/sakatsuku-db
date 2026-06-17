@@ -183,11 +183,11 @@
 
   .catalog{
     display:grid;
-    grid-template-columns:1fr;
+    grid-template-columns: repeat(2, minmax(0,1fr));
     gap:12px;
   }
-  @media (min-width: 740px){
-    .catalog{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  @media (max-width: 520px){
+    .catalog{ gap:10px; }
   }
   .playerCard{
     border:3px solid var(--blue);
@@ -447,12 +447,26 @@
   }
 
   @media (max-width: 520px){
-    .wrap{ padding-left:10px; padding-right:10px; }
+    .wrap{ padding-left:8px; padding-right:8px; }
     h1{ font-size:26px; }
-    .playerHead{ grid-template-columns:1fr; }
-    .playerName{ font-size:17px; }
-    .stats{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .meta{ grid-template-columns: 100px 1fr; font-size:13px; }
+    .card{ padding:12px 10px; border-radius:18px; }
+    .summary{ gap:6px; }
+    .summaryActions{ gap:6px; }
+    .favOnlyWrap{ padding:7px 9px; font-size:12px; gap:6px; }
+    .summaryBadge{ padding:7px 9px; font-size:12px; }
+    .playerCard{ border-width:2px; border-radius:14px; }
+    .playerHead{ grid-template-columns:1fr; padding:8px 8px; }
+    .playerHeadMain{ gap:6px; align-items:center; }
+    .favBtn{ min-width:34px; height:34px; padding:0 7px; font-size:17px; }
+    .playerName{ font-size:14px; line-height:1.3; }
+    .playerBody{ padding:8px; }
+    .stats{ grid-template-columns: repeat(2, minmax(0,1fr)); gap:6px; margin-bottom:8px; }
+    .stat{ padding:7px 4px 6px; border-radius:11px; }
+    .stat .k{ font-size:10px; margin-bottom:3px; }
+    .stat .v{ font-size:14px; }
+    .meta{ grid-template-columns: 62px 1fr; gap:5px 5px; font-size:11px; line-height:1.45; }
+    .chipRow{ margin-top:8px; gap:4px; }
+    .chip{ font-size:10px; padding:3px 6px; }
     .mKey{ min-width:110px; display:block; margin-bottom:2px; }
   }
 </style>
