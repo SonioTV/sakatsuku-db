@@ -67,7 +67,55 @@ a:hover{opacity:.85}
   main{padding:16px}
   h1{font-size:26px}
   .nav{display:none}
-  .grid{grid-template-columns:1fr}
+
+  /* スマホでは記事カードを2列表示にして、説明文も残す */
+  .grid{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:12px;
+  }
+
+  .section:not(.box){
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:12px;
+  }
+  .section:not(.box) > h2,
+  .section:not(.box) > .grid{
+    grid-column:1 / -1;
+  }
+  .grid{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:12px;
+  }
+  .card{
+    padding:12px;
+    border-radius:14px;
+  }
+  .meta{
+    font-size:10px;
+    padding:2px 8px;
+    margin-bottom:8px;
+  }
+  .card h3{
+    font-size:14px;
+    line-height:1.4;
+    margin-bottom:6px;
+  }
+  .desc{
+    font-size:12px;
+    line-height:1.5;
+  }
+  .linkbtn{
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:8px 10px;
+    font-size:12px;
+  }
+  .subLinks{
+    font-size:11px;
+    line-height:1.4;
+  }
 }
 </style>
 </head>
@@ -104,6 +152,7 @@ a:hover{opacity:.85}
 
   <div class="section">
     <h2>おすすめ記事</h2>
+    <div class="grid">
 
 <article class="card">
   <div class="meta">ワールドカップ2026</div>
@@ -331,6 +380,7 @@ a:hover{opacity:.85}
         </div>
       </article>
 
+    </div>
 
     <div class="grid">
       <article class="card">
