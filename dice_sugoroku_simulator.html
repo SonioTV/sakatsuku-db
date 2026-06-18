@@ -228,15 +228,30 @@ if(pos===30){
 }
   if(pos===12){ addLog('12マス目：+3発動'); await moveSteps(3); await resolveSpecial(); return; }
   if(pos===18||pos===28){ addLog(`${pos}マス目：+2発動`); await moveSteps(2); await resolveSpecial(); return; }
-  if(pos===5||pos===13){ addLog(`${pos}マス目：もう一度ダイス`); await wait(450); await roll(true); }
+  if(pos===5||pos===13){
+    addLog(`${pos}マス目：もう一度ダイス発動`);
+    await wait(450);
+    await roll(true, true);
+  }
 }
-async function roll(isFree=false){
-  if(rolling)return; rolling=true; document.getElementById('rollBtn').disabled=true;
+async function roll(isFree=false, force=false){
+  if(rolling && !force)return;
+  const isRootRoll = !rolling;
+  if(isRootRoll){
+    rolling=true;
+    document.getElementById('rollBtn').disabled=true;
+  }
+
   const d=Math.floor(Math.random()*6)+1; setDiceFace(d);
   if(!isFree) diceUsed+=multiplier;
   addLog(`${isFree?'無料でもう一度':'サイコロ'}：${d} / ${multiplier}倍`);
   render(); await wait(220); await moveSteps(d); await resolveSpecial();
-  rolling=false; document.getElementById('rollBtn').disabled=false; render();
+
+  if(isRootRoll){
+    rolling=false;
+    document.getElementById('rollBtn').disabled=false;
+    render();
+  }
 }
 function updateHint(){
   const h=document.getElementById('hint');
