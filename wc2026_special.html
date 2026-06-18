@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ワールドカップ2026特集｜サカつく2026攻略DB</title>
-  <meta name="description" content="サカつく2026攻略DBのワールドカップ2026特集ページです。W杯2026出場選手のサカつく実装済み★3SP選手まとめ、未実装国から選ぶ実装希望SP候補記事をまとめて紹介します。" />
+  <meta name="description" content="サカつく2026攻略DBのワールドカップ2026特集ページです。W杯2026出場選手のサカつく実装済み★3SP選手まとめ、未実装国から選ぶ実装希望SP候補記事、FIFA公式の試合日程・出場チーム・順位表・ニュースリンクをまとめて紹介します。" />
   <meta property="og:title" content="ワールドカップ2026特集｜サカつく2026攻略DB" />
-  <meta property="og:description" content="ワールドカップ2026×サカつく2026の関連記事をまとめた特集ページ。実装済み★3SP選手、未実装国の注目SP候補をチェックできます。" />
+  <meta property="og:description" content="ワールドカップ2026×サカつく2026の関連記事をまとめた特集ページ。実装済み★3SP選手、未実装国の注目SP候補、FIFA公式情報をチェックできます。" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://sakatsuku2026-db.com/wc2026_special.html" />
   <link rel="canonical" href="https://sakatsuku2026-db.com/wc2026_special.html" />
@@ -393,6 +393,67 @@
       background: var(--green);
     }
 
+
+    .official-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .official-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 150px;
+      padding: 16px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef6ff 100%);
+      border: 1px solid #d7e9ff;
+      color: var(--blue-dark);
+      text-decoration: none;
+      box-shadow: 0 8px 18px rgba(15,35,70,.06);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+
+    .official-card:active {
+      transform: scale(.99);
+    }
+
+    .official-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 10px;
+      border-radius: 13px;
+      background: #fff;
+      border: 1px solid #d7e9ff;
+      font-size: 19px;
+    }
+
+    .official-card strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 900;
+    }
+
+    .official-card span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .official-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
     @media (max-width: 760px) {
       .page { padding: 14px 10px 44px; }
       .hero { padding: 28px 18px; border-radius: 22px; }
@@ -443,6 +504,12 @@
         padding-top: 10px;
         font-size: 11px;
       }
+
+      .official-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .official-card { min-height: 132px; padding: 12px 10px; }
+      .official-icon { width: 34px; height: 34px; margin-bottom: 8px; font-size: 17px; }
+      .official-card strong { font-size: 13px; letter-spacing: -.03em; }
+      .official-card span { font-size: 10.5px; line-height: 1.45; letter-spacing: -.03em; }
       .guide-grid { grid-template-columns: 1fr; }
       .link-grid { grid-template-columns: repeat(2, 1fr); }
       .hero-actions { display: grid; grid-template-columns: 1fr; }
@@ -473,6 +540,7 @@
       <div class="hero-actions">
         <a class="hero-btn" href="#articles">特集記事を見る</a>
         <a class="hero-btn dark" href="sp_evaluator.html">選手評価ツールへ</a>
+        <a class="hero-btn" href="#fifa-official">FIFA公式情報を見る</a>
       </div>
     </header>
 
@@ -542,8 +610,49 @@
       </div>
     </section>
 
+
+    <section class="section" id="fifa-official">
+      <h2 class="section-title"><span class="mark">03</span>FIFA公式リンク</h2>
+      <p style="margin:0;color:var(--muted);font-weight:700;">
+        試合日程、出場チーム、順位表、最新ニュースなど、ワールドカップ2026の公式情報はこちらから確認できます。
+      </p>
+
+      <div class="official-grid">
+        <a class="official-card" href="https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/scores-fixtures?country=JP&amp;wtw-filter=ALL" target="_blank" rel="noopener noreferrer">
+          <span class="official-icon">📅</span>
+          <strong>試合日程と視聴方法</strong>
+          <span>日本向けの試合スケジュール・視聴情報を確認できます。</span>
+        </a>
+        <a class="official-card" href="https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams" target="_blank" rel="noopener noreferrer">
+          <span class="official-icon">🌍</span>
+          <strong>出場チーム一覧</strong>
+          <span>ワールドカップ2026の出場国・チーム情報を確認できます。</span>
+        </a>
+        <a class="official-card" href="https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/standings" target="_blank" rel="noopener noreferrer">
+          <span class="official-icon">📊</span>
+          <strong>順位表とグループステージ表</strong>
+          <span>各グループの順位や勝点状況を確認できます。</span>
+        </a>
+        <a class="official-card" href="https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/news" target="_blank" rel="noopener noreferrer">
+          <span class="official-icon">📰</span>
+          <strong>最新ニュース</strong>
+          <span>大会関連の最新ニュースをFIFA公式で確認できます。</span>
+        </a>
+        <a class="official-card" href="https://play.fifa.com/match-predictor/en/match" target="_blank" rel="noopener noreferrer">
+          <span class="official-icon">🔮</span>
+          <strong>試合予想ツール</strong>
+          <span>FIFA公式の試合予想コンテンツです。※英語ページ</span>
+        </a>
+      </div>
+
+      <p class="official-note">
+        ※外部サイト（FIFA公式）へ移動します。最新の試合日程・視聴情報・順位表は公式ページをご確認ください。
+      </p>
+    </section>
+
+
     <section class="section">
-      <h2 class="section-title"><span class="mark">03</span>関連ツール・記事</h2>
+      <h2 class="section-title"><span class="mark">04</span>関連ツール・記事</h2>
       <div class="link-grid">
         <a href="sp_evaluator.html">選手評価ツール</a>
         <a href="favorite_combos.html">フォメコン診断</a>
