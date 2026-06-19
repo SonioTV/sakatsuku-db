@@ -284,6 +284,53 @@
 .toTop.show{
   display:block;
 }
+
+/* ===== スマホ時は検索条件を2列表示 ===== */
+@media (max-width: 520px){
+
+  .ctrlRow{
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap:9px;
+  }
+
+  .ctrlRow label{
+    font-size:12px;
+    margin:1px 0 3px;
+    line-height:1.25;
+  }
+
+  .ctrlRow select,
+  .ctrlRow input{
+    font-size:13px;
+    padding:9px 8px;
+    border-radius:12px;
+  }
+
+  .checkWrap{
+    font-size:13px;
+    padding:9px 8px;
+    min-height:48px;
+  }
+
+  .checkWrap input[type="checkbox"]{
+    width:18px;
+    height:18px;
+  }
+
+  .btn{
+    font-size:15px;
+    padding:10px;
+    border-radius:14px;
+  }
+
+  /* チェックボックス・ボタン・エラーは横幅いっぱい */
+  .ctrlRow > div:nth-child(5),
+  .ctrlRow > .btnRow,
+  .ctrlRow > #err{
+    grid-column:1 / -1;
+  }
+}
+
 </style>
 </head>
 <body>
