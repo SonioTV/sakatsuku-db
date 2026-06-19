@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【サカつく2026】次回SP選手は誰？匂わせ画像から新ガシャ選手を予想！</title>
+  <meta name="description" content="サカつく2026の次回6月23日開催予定のガシャで追加される新SP選手を、公開された匂わせ画像の国旗・ポジション・シルエットから予想。エムバペ、オブラク、アルダ・ギュレル、アレクサンダー＝アーノルド実装の可能性を考察します。">
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --cyan: #06b6d4;
+      --green: #16a34a;
+      --gold: #f59e0b;
+      --red: #dc2626;
+      --shadow: 0 8px 24px rgba(15, 23, 42, .08);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      line-height: 1.8;
+    }
+    a { color: inherit; }
+    .article-wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+    .breadcrumb a { color: var(--blue); text-decoration: none; }
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #164e63 48%, #2563eb 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 30px 26px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -90px;
+      top: -110px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.24);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 40px);
+      line-height: 1.35;
+      letter-spacing: .02em;
+      position: relative;
+      z-index: 1;
+    }
+    .lead {
+      margin: 16px 0 0;
+      color: rgba(255,255,255,.92);
+      font-size: 16px;
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 18px 0 0;
+      position: relative;
+      z-index: 1;
+    }
+    .summary-card {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .summary-card b {
+      display: block;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+    .summary-card span {
+      color: rgba(255,255,255,.82);
+      font-size: 12px;
+    }
+    .notice {
+      margin: 22px 0;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-left: 6px solid #f97316;
+      border-radius: 16px;
+      padding: 16px 18px;
+      font-weight: 700;
+    }
+    .notice small {
+      display: block;
+      color: #9a3412;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .article-image {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 14px;
+      margin: 22px 0;
+    }
+    .article-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+    }
+    .article-image figcaption {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 8px;
+      text-align: center;
+    }
+    .toc, .section-card, .prediction-card, .footer-note {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      margin: 22px 0;
+    }
+    .toc h2, .section-card h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      border-left: 6px solid var(--blue);
+      padding-left: 12px;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .toc-grid a {
+      text-align: center;
+      text-decoration: none;
+      padding: 10px 8px;
+      border-radius: 12px;
+      background: #eff6ff;
+      color: var(--blue-dark);
+      font-weight: 800;
+      font-size: 13px;
+      border: 1px solid #bfdbfe;
+    }
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+    .info-table th, .info-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      font-size: 14px;
+    }
+    .info-table th {
+      background: #f8fafc;
+      color: #475569;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .prediction-card {
+      scroll-margin-top: 16px;
+      padding: 0;
+      overflow: hidden;
+    }
+    .prediction-head {
+      padding: 16px 18px;
+      color: #fff;
+      background: linear-gradient(135deg, #1e40af, #0891b2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .prediction-head h2 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.45;
+    }
+    .confidence {
+      flex: 0 0 auto;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .prediction-body { padding: 20px; }
+    .candidate {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ecfeff;
+      color: #155e75;
+      border: 1px solid #a5f3fc;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .reason-list {
+      margin: 10px 0 0;
+      padding-left: 1.2em;
+    }
+    .reason-list li { margin: 4px 0; }
+    .rivals {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .final-table-wrap { overflow-x: auto; }
+    .rank-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 72px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      color: #fff;
+      font-weight: 900;
+      font-size: 12px;
+      background: var(--blue);
+    }
+    .rank-badge.high { background: var(--green); }
+    .rank-badge.mid { background: var(--gold); }
+    .back-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .back-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: #0f172a;
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 800;
+      font-size: 14px;
+    }
+    @media (max-width: 760px) {
+      .article-wrap { padding: 14px 10px 48px; }
+      .hero { padding: 24px 18px; border-radius: 20px; }
+      .summary { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .summary-card { padding: 10px; }
+      .summary-card b { font-size: 15px; }
+      .summary-card span { font-size: 11px; }
+      .toc-grid { grid-template-columns: repeat(2, 1fr); }
+      .prediction-head { display: block; }
+      .confidence { display: inline-flex; margin-top: 10px; }
+      .info-table th, .info-table td { padding: 9px 8px; font-size: 13px; }
+      h1 { font-size: 25px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="article-wrap">
+    <nav class="breadcrumb">
+      <a href="index.html">トップ</a> &gt; <a href="articles.html">攻略記事</a> &gt; <a href="wc2026_special.html">ワールドカップ2026特集</a> &gt; 次回SP選手予想
+    </nav>
+
+    <header class="hero">
+      <div class="tag">W杯2026 × サカつく2026</div>
+      <h1>【サカつく2026】次回SP選手は誰？匂わせ画像から新ガシャ選手を予想！</h1>
+      <p class="lead">
+        サカつく2026公式から、次回ガシャで追加される新SP選手の匂わせ画像が公開されました。
+        画像内には選手名こそ伏せられていますが、国旗・ポジション・シルエットが確認できます。
+        今回はその情報をもとに、実装される可能性が高そうな4名を予想していきます。
+      </p>
+      <div class="summary">
+        <div class="summary-card"><b>フランス</b><span>CF候補</span></div>
+        <div class="summary-card"><b>スロベニア</b><span>GK候補</span></div>
+        <div class="summary-card"><b>トルコ</b><span>AM候補</span></div>
+        <div class="summary-card"><b>イングランド</b><span>RB候補</span></div>
+      </div>
+    </header>
+
+    <div class="notice">
+      注意：この記事は公開された匂わせ画像をもとにした予想記事です。
+      <small>正式発表前の考察のため、実際の実装選手とは異なる可能性があります。</small>
+    </div>
+
+    <figure class="article-image">
+      <img src="img/articles/wc2026_sp_gacha_prediction/sakatsuku2026_sp_gacha_teaser.jpg" alt="サカつく2026 新SP選手 匂わせ画像">
+      <figcaption>次回ガシャで追加される新SP選手の匂わせ画像</figcaption>
+    </figure>
+
+<div class="notice" style="background:#eff6ff;border-color:#bfdbfe;border-left-color:#2563eb;">
+  サカつく2026公式Xで匂わせ画像が公開されています。<br>
+  <a href="https://x.com/sakatsuku20xx/status/2067819662360895693?s=20"
+     target="_blank"
+     rel="noopener noreferrer"
+     style="font-weight:900;color:#1d4ed8;">
+    ▶ サカつく2026公式Xの投稿を見る
+  </a>
+</div>
+
+    <section class="section-card">
+      <h2>公開された匂わせ情報</h2>
+      <p>
+        今回の画像で確認できる情報は、以下の4パターンです。
+        選手名は非公開ですが、国旗とポジションがかなり大きなヒントになっています。
+      </p>
+      <table class="info-table">
+        <thead>
+          <tr><th>国</th><th>ポジション</th><th>注目ポイント</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>フランス</td><td>CF</td><td>世界的スター級のFW候補</td></tr>
+          <tr><td>スロベニア</td><td>GK</td><td>国籍とポジションだけでかなり絞れる</td></tr>
+          <tr><td>トルコ</td><td>AM</td><td>若手スター候補との一致度が高い</td></tr>
+          <tr><td>イングランド</td><td>RB</td><td>髪型・体格のシルエットが重要</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <nav class="toc">
+      <h2>予想選手一覧</h2>
+      <div class="toc-grid">
+        <a href="#france-cf">フランスCF</a>
+        <a href="#slovenia-gk">スロベニアGK</a>
+        <a href="#turkey-am">トルコAM</a>
+        <a href="#england-rb">イングランドRB</a>
+      </div>
+    </nav>
+
+    <section id="france-cf" class="prediction-card">
+      <div class="prediction-head">
+        <h2>フランスCF予想</h2>
+        <div class="confidence">自信度：★★★★☆</div>
+      </div>
+      <div class="prediction-body">
+        <div class="candidate">本命：キリアン・エムバペ</div>
+        <p>
+          フランス代表のCF候補として、まず名前が挙がるのはキリアン・エムバペです。
+          現在の世界サッカー界を代表するスター選手であり、ワールドカップ2026特集との相性も抜群です。
+        </p>
+        <ul class="reason-list">
+          <li>フランス代表の前線で最も話題性がある</li>
+          <li>CF枠の目玉選手としてガシャ訴求力が高い</li>
+          <li>新SP選手として実装された場合のインパクトが大きい</li>
+        </ul>
+        <div class="rivals">
+          対抗候補：ランダル・コロ・ムアニ、マルクス・テュラム。ただし、話題性とガシャの目玉感を考えるとエムバペが最有力と予想します。
+        </div>
+      </div>
+    </section>
+
+    <section id="slovenia-gk" class="prediction-card">
+      <div class="prediction-head">
+        <h2>スロベニアGK予想</h2>
+        <div class="confidence">自信度：★★★★★</div>
+      </div>
+      <div class="prediction-body">
+        <div class="candidate">本命：ヤン・オブラク</div>
+        <p>
+          今回の4名の中で、最も本命度が高いと感じるのがスロベニアGKです。
+          スロベニア代表のGKで世界的な知名度を持つ選手といえば、ヤン・オブラクが筆頭候補になります。
+        </p>
+        <ul class="reason-list">
+          <li>スロベニア代表のGKという条件でかなり絞りやすい</li>
+          <li>世界的な知名度があり、SP選手としての格も十分</li>
+          <li>シルエットも大型GKらしい雰囲気に見える</li>
+        </ul>
+        <div class="rivals">
+          対抗候補はいるものの、知名度・ポジション・国籍の一致度を考えると、オブラク予想でかなり良さそうです。
+        </div>
+      </div>
+    </section>
+
+    <section id="turkey-am" class="prediction-card">
+      <div class="prediction-head">
+        <h2>トルコAM予想</h2>
+        <div class="confidence">自信度：★★★★☆</div>
+      </div>
+      <div class="prediction-body">
+        <div class="candidate">本命：アルダ・ギュレル</div>
+        <p>
+          トルコ代表のAM候補として本命視したいのがアルダ・ギュレルです。
+          若手スターとして注目度が高く、AM表記とも非常に相性が良い選手です。
+        </p>
+        <ul class="reason-list">
+          <li>トルコ代表の中でも注目度が高い若手スター</li>
+          <li>AMというポジション表記とイメージが近い</li>
+          <li>細身でやや長めの髪型に見えるシルエットとも一致しやすい</li>
+        </ul>
+        <div class="rivals">
+          対抗候補：ハカン・チャルハノール。ただしチャルハノールはCMF寄りの印象もあるため、今回はアルダ・ギュレルを本命とします。
+        </div>
+      </div>
+    </section>
+
+    <section id="england-rb" class="prediction-card">
+      <div class="prediction-head">
+        <h2>イングランドRB予想</h2>
+        <div class="confidence">自信度：★★★☆☆</div>
+      </div>
+      <div class="prediction-body">
+        <div class="candidate">本命：トレント・アレクサンダー＝アーノルド</div>
+        <p>
+          今回最も予想が難しいのがイングランドRBです。
+          候補としてはカイル・ウォーカー、リース・ジェームズも考えられますが、シルエットの形をそのまま髪型として見ると、アレクサンダー＝アーノルド感がかなりあります。
+        </p>
+        <ul class="reason-list">
+          <li>頭部のボリュームが上方向に大きく見える</li>
+          <li>首周りや腕のラインが比較的スマート</li>
+          <li>RBのスター選手として実装された場合の注目度が高い</li>
+        </ul>
+        <div class="rivals">
+          対抗候補：カイル・ウォーカー、リース・ジェームズ。ウォーカーなら短髪寄り、リース・ジェームズなら上半身がより厚く見えそうなので、シルエット重視ならアーノルドを本命にしたいところです。
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>編集部の最終予想</h2>
+      <p>
+        国旗・ポジション・シルエット・ガシャの目玉感を総合すると、今回の最終予想は以下の4名です。
+      </p>
+      <div class="final-table-wrap">
+        <table class="info-table">
+          <thead>
+            <tr><th>国 / ポジション</th><th>予想選手</th><th>自信度</th><th>理由</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>フランス / CF</td><td>キリアン・エムバペ</td><td><span class="rank-badge high">高め</span></td><td>話題性と目玉感が圧倒的</td></tr>
+            <tr><td>スロベニア / GK</td><td>ヤン・オブラク</td><td><span class="rank-badge high">超本命</span></td><td>国籍とポジションの一致度が高い</td></tr>
+            <tr><td>トルコ / AM</td><td>アルダ・ギュレル</td><td><span class="rank-badge high">高め</span></td><td>AM表記と若手スター感が一致</td></tr>
+            <tr><td>イングランド / RB</td><td>トレント・アレクサンダー＝アーノルド</td><td><span class="rank-badge mid">やや高め</span></td><td>髪型・体格のシルエットが近い</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>まとめ</h2>
+      <p>
+        今回の匂わせ画像から予想すると、エムバペ、オブラク、アルダ・ギュレル、アレクサンダー＝アーノルドの4名が有力候補に見えます。
+        特にスロベニアGKのオブラクは、国籍とポジションだけでもかなり可能性が高そうです。
+      </p>
+      <p>
+        正式発表で何人当たるのか、答え合わせが楽しみですね。
+        実装後は選手性能やプレースタイル、フォメコン適性もあわせてチェックしていきます。
+      </p>
+    </section>
+
+    <section class="footer-note">
+      <p>
+        ワールドカップ2026に関連するサカつく2026記事は、特集ページからまとめて確認できます。
+      </p>
+      <div class="back-links">
+        <a href="wc2026_special.html">ワールドカップ2026特集へ</a>
+        <a href="sp_evaluator.html">選手評価ツールへ</a>
+        <a href="articles.html">攻略記事一覧へ</a>
+        <a href="index.html">トップページへ</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
