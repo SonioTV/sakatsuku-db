@@ -254,8 +254,9 @@ async function resolveSpecial(){
 if(pos===30){
   goals++;
   addLog(`ゴール！`);
-  await wait(450);
   render();
+  await wait(800);
+  location.href = 'strikeout_simulator.html';
   return;
 }
   if(pos===12){ addLog('12マス目：+3発動'); await moveSteps(3); await resolveSpecial(); return; }
