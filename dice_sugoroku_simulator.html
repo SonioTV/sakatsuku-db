@@ -37,6 +37,23 @@
   .wrap{max-width:1180px;margin:auto;padding:18px;}
   .siteBack{display:inline-flex;align-items:center;gap:6px;margin-bottom:12px;padding:9px 14px;border:2px solid #93d8ff;border-radius:999px;background:rgba(255,255,255,.9);color:#1267bd;text-decoration:none;font-weight:1000;box-shadow:0 5px 14px rgba(47,141,242,.12)}
   .siteBack:hover{background:#fff;transform:translateY(-1px)}
+.topLinks{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+
+.strikeLink{
+  color:#b85a00;
+  border-color:#ffd26a;
+  background:linear-gradient(180deg,#fff8d5,#ffe27a);
+  box-shadow:0 5px 14px rgba(255,180,0,.18);
+}
+
+.strikeLink:hover{
+  background:#fff4b8;
+}
   .hero{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:14px;}
   h1{font-size:34px;line-height:1.05;margin:0;font-weight:1000;color:#1274d8;text-shadow:0 3px 0 #fff,0 5px 12px rgba(47,141,242,.22)}
   h1 .diceIcon{font-size:.9em;margin-right:6px}.lead{margin:8px 0 0;color:#276087;font-weight:700}.legend{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.tag{background:rgba(255,255,255,.86);border:2px solid #bde7ff;border-radius:14px;padding:8px 12px;font-weight:900;box-shadow:0 4px 10px rgba(47,141,242,.09)}
@@ -45,6 +62,9 @@
   .piece{position:absolute;width:38%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#ffeded 45%,#ff5151 70%);box-shadow:0 0 0 5px rgba(255,194,42,.45),0 5px 14px rgba(0,0,0,.25);z-index:5;transition:.18s transform}.piece::after{content:"♟";color:#d9002f;display:grid;place-items:center;font-size:1.1em;line-height:1}
   .controls{display:grid;gap:12px}.settingRow{display:flex;align-items:center;justify-content:space-between;gap:10px}.inputLike{display:flex;align-items:center;gap:8px}.inputLike input{width:90px;border:2px solid #d7e5f1;border-radius:11px;padding:10px;text-align:center;font-size:18px;font-weight:900;background:#fff}.btn{border:0;border-radius:14px;padding:13px 16px;font-weight:1000;cursor:pointer;background:linear-gradient(180deg,#ff7798,#f02f62);color:#fff;box-shadow:0 6px 0 #c21f4a,0 10px 18px rgba(240,47,98,.25);font-size:18px}.btn:active{transform:translateY(3px);box-shadow:0 3px 0 #c21f4a}.btn:disabled{opacity:.5;cursor:not-allowed}.btn.secondary{background:linear-gradient(180deg,#5fb8ff,#2387eb);box-shadow:0 6px 0 #1163b5}.mult{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mult button{border:2px solid #91c9ff;border-radius:12px;padding:11px;background:#f6fbff;color:#1667c5;font-weight:1000;cursor:pointer}.mult button.active{background:#fff1a8;border-color:#ffaf16;color:#c74600}.dice{font-size:54px;font-weight:1000;text-align:center;min-height:64px;filter:drop-shadow(0 6px 8px rgba(0,0,0,.12))}.stats{display:grid;gap:0;border:1px solid #d8ead2;border-radius:14px;overflow:hidden}.stat{display:grid;grid-template-columns:1fr auto;gap:8px;background:#fff;padding:11px 13px;border-bottom:1px solid #e8eef2;font-weight:900}.stat:last-child{border-bottom:0}.stat b{font-size:18px}.stat span{color:#334155}.log{height:150px;overflow:auto;background:#fff;border:1px solid #eadbff;border-radius:14px;padding:12px;line-height:1.6;color:#273245;font-weight:700}.hint{background:#fff9db;border:2px solid #ffd35a;border-radius:16px;padding:12px;color:#5a3a00;font-weight:900;margin-top:12px;text-align:center}.boardControls{display:flex;justify-content:center;gap:14px;align-items:center;padding:0 16px 18px}.boardControls .btn{min-width:250px}.note{text-align:center;color:#52616f;font-weight:800;font-size:13px;margin-top:-4px}
   @media(max-width:900px){
+.topLinks{
+  justify-content:center;
+}
     .wrap{padding:10px}.siteBack{margin-bottom:10px;font-size:13px;padding:8px 12px}.hero{display:block;text-align:center}.legend{justify-content:center;margin-top:10px}.tag{font-size:12px;padding:6px 8px}h1{font-size:25px}.lead{font-size:13px}.main{display:flex;flex-direction:column}.panel{width:100%}.board-wrap{padding:10px}.board{width:min(100%,96vw);max-width:none}.cell{border-width:1.5px;border-radius:4px;font-size:clamp(10px,3.35vw,17px)}.cell small{top:3px;left:4px}.piece{width:44%}.side{width:100%;grid-template-columns:1fr}.boardControls{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 10px 12px}.boardControls .btn{min-width:0;font-size:15px;padding:11px}.dice{font-size:42px;min-height:50px}.cardTitle{font-size:17px}.controls{gap:10px}.settingRow{font-size:14px}.inputLike input{width:74px;padding:8px}.log{height:110px}.hint{font-size:13px;margin:10px}.note{font-size:12px}}
   @media(max-width:430px){
     .wrap{padding:8px}.board-wrap{padding:6px}.cell{font-size:clamp(9px,3.05vw,14px);border-radius:3px}.cell small{font-size:.7em}.legend{display:none}.main{gap:10px}.panel.pad{padding:10px}.cardTitle{margin:-10px -10px 10px;padding:9px 12px}.boardControls{grid-template-columns:1fr}.side{gap:10px}.stat{padding:9px 11px}.btn{font-size:16px}.mult button{padding:9px 6px}.hint{font-size:12px}}
@@ -78,6 +98,9 @@
   .resetSmall{margin-top:2px;border:2px solid #b7d7f3;border-radius:999px;padding:9px 28px;background:#fff;color:#1a69b8;font-weight:1000;cursor:pointer;}
   .side .settingsPanel{display:none;}
   @media(max-width:900px){
+.topLinks{
+  justify-content:center;
+}
     .diceCube{width:clamp(64px,21vw,110px);border-width:4px;gap:7%;padding:16%;}.diceCenterTitle{font-size:12px;margin-bottom:4px}.diceRibbon{font-size:22px;padding:1px 14px}.diceUsedBadge{left:6px;bottom:6px;min-width:98px;padding:6px 8px;border-width:2px;font-size:12px}.rollArea{padding:0 10px 12px}.rollArea .btn{font-size:17px}.rollArea .mult{grid-template-columns:1fr 1fr}
   }
   @media(max-width:430px){
@@ -88,7 +111,10 @@
 </head>
 <body>
 <div class="wrap">
+<div class="topLinks">
   <a class="siteBack" href="index.html">← サイトトップに戻る</a>
+  <a class="siteBack strikeLink" href="strikeout_simulator.html">🎯 ストラックアウト</a>
+</div>
   <div class="hero">
     <div>
       <h1><span class="diceIcon">🎲</span>ダイスすごろく</h1>
@@ -138,7 +164,10 @@
           <div class="stat"><span>周回数</span><b><span id="laps">0</span> 周</b></div>
           <div class="stat"><span>ゴール数</span><b><span id="goals">0</span> 回</b></div>
           <div class="stat"><span>使用ダイス数</span><b><span id="diceUsed">0</span> 個</b></div>
-          <div class="stat"><span>報酬倍率合計</span><b><span id="reward">0</span> 倍</b></div>
+<div class="stat">
+  <span>平均ダイス数</span>
+  <b><span id="avgDice">0.0</span> 個</b>
+</div>
         </div>
       </section>
 
@@ -153,7 +182,7 @@
 const board = document.getElementById('board');
 const cells = [];
 const special = {5:'re',13:'re',12:'plus3',18:'plus2',28:'plus2',30:'goal'};
-let pos=30, diceUsed=0, goals=0, reward=0, laps=0, multiplier=1, rolling=false;
+let pos=30, diceUsed=0, goals=0, laps=0, multiplier=1, rolling=false;
 const layout = {
   25:[1,1],26:[1,2],27:[1,3],28:[1,4],29:[1,5],30:[1,6],1:[1,7],
   24:[2,1],2:[2,7],
@@ -198,7 +227,8 @@ function render(){
   document.getElementById('diceUsed').textContent=diceUsed;
   document.getElementById('diceUsedBoard').textContent=diceUsed;
   document.getElementById('goals').textContent=goals;
-  document.getElementById('reward').textContent=reward;
+const avgDice = goals > 0 ? (diceUsed / goals).toFixed(1) : '0.0';
+document.getElementById('avgDice').textContent = avgDice;
   document.getElementById('laps').textContent=laps;
   if(pos>=1&&pos<=30){ cells[pos].appendChild(piece); }
   updateHint();
@@ -223,8 +253,7 @@ async function moveSteps(n){
 async function resolveSpecial(){
 if(pos===30){
   goals++;
-  reward+=multiplier;
-  addLog(`ゴール！報酬${multiplier}倍を獲得`);
+  addLog(`ゴール！`);
   await wait(450);
   render();
   return;
@@ -263,7 +292,7 @@ function updateHint(){
   else h.textContent='この位置は10倍温存推奨。24〜27マス目まで進んでから狙うのが効率的です。';
 }
 document.getElementById('rollBtn').onclick=()=>roll(false);
-document.getElementById('resetBtn').onclick=()=>{pos=30;diceUsed=0;goals=0;reward=0;laps=0;setDiceFace(null);document.getElementById('log').innerHTML='';render();addLog('ゲームをリセットしました');};
+document.getElementById('resetBtn').onclick=()=>{pos=30;diceUsed=0;goals=0;laps=0;setDiceFace(null);document.getElementById('log').innerHTML='';render();addLog('ゲームをリセットしました');};
 const m1Btn=document.getElementById('m1');
 const m10Btn=document.getElementById('m10');
 m1Btn.onclick=()=>{multiplier=1;m1Btn.classList.add('active');m10Btn.classList.remove('active')};
