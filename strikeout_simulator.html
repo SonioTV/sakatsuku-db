@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ストラックアウト サンプル</title>
+  <style>
+    :root{
+      --sky:#dff7ff;
+      --sky2:#fff7d1;
+      --blue:#2d8cff;
+      --blue2:#1667d8;
+      --yellow:#ffd84d;
+      --orange:#ff9f1c;
+      --green:#29c86f;
+      --pink:#ff6fb1;
+      --text:#17325c;
+      --muted:#5e789e;
+      --card:#ffffff;
+      --line:#9ed5ff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      min-height:100vh;
+      padding:18px;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(255,255,255,.95) 0 0.9%, transparent 1.05%),
+        radial-gradient(circle at 82% 18%, rgba(255,216,77,.45) 0 3.2%, transparent 3.4%),
+        radial-gradient(circle at 18% 78%, rgba(255,111,177,.23) 0 4%, transparent 4.3%),
+        linear-gradient(180deg,#bdefff 0%, #eaf9ff 45%, #fff3c7 100%);
+    }
+    .wrap{max-width:920px;margin:0 auto;}
+    .topbar{
+      display:flex;
+      justify-content:flex-start;
+      margin-bottom:14px;
+    }
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color:#17325c;
+      text-decoration:none;
+      border:2px solid #87cfff;
+      background:linear-gradient(180deg,#ffffff,#e7f7ff);
+      padding:9px 14px;
+      border-radius:999px;
+      font-weight:900;
+      box-shadow:0 5px 0 #79b9e8, 0 10px 20px rgba(45,140,255,.18);
+    }
+    .back-link:active{transform:translateY(2px);box-shadow:0 3px 0 #79b9e8, 0 6px 14px rgba(45,140,255,.18);}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(135deg,#2d8cff 0%,#31c8ff 48%,#ffd84d 100%);
+      border:4px solid #fff;
+      border-radius:26px;
+      padding:20px 16px;
+      text-align:center;
+      box-shadow:0 8px 0 #1671d7, 0 18px 34px rgba(45,140,255,.28);
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-40px;
+      background:
+        radial-gradient(circle at 18% 26%, rgba(255,255,255,.4) 0 5%, transparent 5.5%),
+        radial-gradient(circle at 78% 30%, rgba(255,255,255,.28) 0 7%, transparent 7.5%),
+        radial-gradient(circle at 50% 92%, rgba(255,255,255,.24) 0 8%, transparent 8.5%);
+      pointer-events:none;
+    }
+    h1{
+      position:relative;
+      margin:0;
+      font-size:clamp(30px,6vw,50px);
+      letter-spacing:.05em;
+      font-weight:1000;
+      color:#fff;
+      text-shadow:0 4px 0 #1364c9, 0 7px 14px rgba(0,0,0,.22);
+    }
+    .sub{
+      position:relative;
+      display:inline-block;
+      color:#17325c;
+      font-weight:1000;
+      margin-top:10px;
+      background:rgba(255,255,255,.9);
+      border:2px solid rgba(255,255,255,.95);
+      border-radius:999px;
+      padding:7px 14px;
+      box-shadow:0 4px 0 rgba(0,0,0,.08);
+    }
+    .main{
+      display:grid;
+      grid-template-columns:1fr 300px;
+      gap:16px;
+      margin-top:18px;
+      align-items:start;
+    }
+    .board-card,.side-card{
+      background:rgba(255,255,255,.94);
+      border:3px solid #b9e4ff;
+      border-radius:26px;
+      padding:16px;
+      box-shadow:0 8px 0 #a2d8ff, 0 18px 32px rgba(39,126,220,.16);
+    }
+    .attempts{
+      text-align:center;
+      font-size:20px;
+      font-weight:1000;
+      margin-bottom:14px;
+      color:#17325c;
+      background:linear-gradient(180deg,#fff8d5,#ffe98b);
+      border:3px solid #fff;
+      border-radius:18px;
+      padding:10px 12px;
+      box-shadow:0 5px 0 #f0b83a;
+    }
+    .attempts span{
+      color:#ff5b2e;
+      font-size:30px;
+      padding:0 3px;
+      text-shadow:0 2px 0 #fff;
+    }
+    .board{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      max-width:520px;
+      margin:0 auto;
+    }
+    .panel{
+      aspect-ratio:1/1;
+      border:4px solid #fff;
+      border-radius:22px;
+      position:relative;
+      overflow:hidden;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg,#63c9ff,#2d8cff);
+      box-shadow:0 7px 0 #176bd0, inset 0 2px 0 rgba(255,255,255,.55), inset 0 -10px 0 rgba(0,0,0,.09);
+      transition:transform .12s ease, filter .12s ease, box-shadow .12s ease;
+    }
+    .panel::before{
+      content:"";
+      position:absolute;
+      inset:9px;
+      border-radius:16px;
+      border:2px dashed rgba(255,255,255,.55);
+      pointer-events:none;
+    }
+    .panel:hover{
+      transform:translateY(-3px);
+      filter:brightness(1.05);
+      box-shadow:0 10px 0 #176bd0, inset 0 2px 0 rgba(255,255,255,.55), inset 0 -10px 0 rgba(0,0,0,.09);
+    }
+    .panel:disabled{cursor:default;transform:none;filter:none;}
+    .question{
+      position:relative;
+      z-index:1;
+      font-size:clamp(36px,8vw,62px);
+      font-weight:1000;
+      color:#fff;
+      text-shadow:0 4px 0 #1264c8, 0 7px 14px rgba(0,0,0,.22);
+    }
+    .panel.open{
+      background:linear-gradient(180deg,#fff7c1,#ffd84d);
+      border-color:#fff;
+      box-shadow:0 7px 0 #e0a51c, inset 0 2px 0 rgba(255,255,255,.7);
+      animation:pop .22s ease-out;
+    }
+    .panel.open.mid{
+      background:linear-gradient(180deg,#f8fbff,#c8d8ea);
+      box-shadow:0 7px 0 #93aecd, inset 0 2px 0 rgba(255,255,255,.7);
+    }
+    .panel.open.normal{
+      background:linear-gradient(180deg,#eaffff,#7adfff);
+      box-shadow:0 7px 0 #39aee0, inset 0 2px 0 rgba(255,255,255,.7);
+    }
+    .panel img{
+      position:relative;
+      z-index:1;
+      width:80%;
+      height:80%;
+      object-fit:contain;
+      filter:drop-shadow(0 8px 8px rgba(23,50,92,.25));
+    }
+    @keyframes pop{0%{transform:scale(.78) rotate(-2deg)}70%{transform:scale(1.06) rotate(1deg)}100%{transform:scale(1) rotate(0)}}
+    .side-card h2{
+      margin:0 0 12px!important;
+      text-align:center;
+      color:#17325c;
+      font-size:20px;
+      font-weight:1000;
+    }
+    .reward-list{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .reward-row{
+      width:76px;
+      height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg,#ffffff,#eaf8ff);
+      border:3px solid #bde8ff;
+      border-radius:20px;
+      padding:8px;
+      box-shadow:0 5px 0 #a2d8ff, inset 0 2px 0 rgba(255,255,255,.8);
+    }
+    .reward-row img{width:58px;height:58px;object-fit:contain;filter:drop-shadow(0 5px 5px rgba(23,50,92,.2));}
+    @media(max-width:760px){
+      body{padding:12px}
+      .main{grid-template-columns:1fr}
+      .board{gap:8px}
+      .board-card,.side-card{padding:12px;border-radius:22px}
+      .panel{border-radius:16px}
+      .side-card{order:0}
+      .reward-row{width:68px;height:68px;border-radius:18px}
+      .reward-row img{width:52px;height:52px}
+    }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="back-link" href="dice_sugoroku_simulator.html">← すごろくに戻る</a>
+    </div>
+
+    <section class="hero">
+      <h1>ストラックアウト</h1>
+      <div class="sub">9マスの中から3回挑戦して報酬を獲得！</div>
+    </section>
+
+    <main class="main">
+      <section class="board-card">
+        <div class="attempts">残り挑戦回数：<span id="attemptCount">3</span>回</div>
+        <div class="board" id="board"></div>
+      </section>
+
+      <aside class="side-card">
+        <h2 style="margin:0 0 10px;">報酬内容</h2>
+        <div class="reward-list" id="rewardList"></div>
+
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    const IMG_DIR = 'img/strikeout_rewards/';
+    const MAX_ATTEMPTS = 3;
+
+    const stages = [
+      {
+        key: 'money',
+        name: 'お金袋ステージ',
+        weight: 50,
+        rewards: {
+          jackpot: { name: '大きいお金袋', img: 'reward_money_bag_big.png', label: '大当たり' },
+          mid:     { name: '普通のお金袋', img: 'reward_money_bag_medium.png', label: '中当たり' },
+          normal:  { name: '小さいお金袋', img: 'reward_money_bag_small.png', label: '通常' }
+        }
+      },
+      {
+        key: 'shoes',
+        name: 'スニーカーステージ',
+        weight: 20,
+        rewards: {
+          jackpot: { name: '金のスニーカー', img: 'reward_shoes_gold.png', label: '大当たり' },
+          mid:     { name: '銀のスニーカー', img: 'reward_shoes_silver.png', label: '中当たり' },
+          normal:  { name: '青いスニーカー', img: 'reward_shoes_blue.png', label: '通常' }
+        }
+      },
+      {
+        key: 'cap',
+        name: 'キャップステージ',
+        weight: 20,
+        rewards: {
+          jackpot: { name: '金のキャップ', img: 'reward_cap_gold.png', label: '大当たり' },
+          mid:     { name: '銀のキャップ', img: 'reward_cap_silver.png', label: '中当たり' },
+          normal:  { name: '赤いキャップ', img: 'reward_cap_red.png', label: '通常' }
+        }
+      },
+      {
+        key: 'ticket',
+        name: 'チケットステージ',
+        weight: 10,
+        rewards: {
+          jackpot: { name: '金のチケット', img: 'reward_ticket_gold.png', label: '大当たり' },
+          mid:     { name: '銀のチケット', img: 'reward_ticket_silver.png', label: '中当たり' },
+          normal:  { name: '緑のチケット', img: 'reward_ticket_green.png', label: '通常' }
+        }
+      }
+    ];
+
+    let currentStage;
+    let panels = [];
+    let remaining = MAX_ATTEMPTS;
+    let gained = [];
+
+    function weightedRandomStage(){
+      const total = stages.reduce((sum, stage) => sum + stage.weight, 0);
+      let rand = Math.random() * total;
+      for(const stage of stages){
+        rand -= stage.weight;
+        if(rand <= 0) return stage;
+      }
+      return stages[0];
+    }
+
+    function shuffle(array){
+      const result = [...array];
+      for(let i = result.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+      return result;
+    }
+
+    function buildPanels(stage){
+      return shuffle([
+        { rank: 'jackpot', ...stage.rewards.jackpot },
+        { rank: 'mid', ...stage.rewards.mid },
+        { rank: 'mid', ...stage.rewards.mid },
+        { rank: 'mid', ...stage.rewards.mid },
+        { rank: 'normal', ...stage.rewards.normal },
+        { rank: 'normal', ...stage.rewards.normal },
+        { rank: 'normal', ...stage.rewards.normal },
+        { rank: 'normal', ...stage.rewards.normal },
+        { rank: 'normal', ...stage.rewards.normal }
+      ]);
+    }
+
+function renderRewardList(stage){
+  const list = document.getElementById('rewardList');
+
+  const rewards = [
+    stage.rewards.jackpot,
+    stage.rewards.mid,
+    stage.rewards.normal
+  ];
+
+  list.innerHTML = rewards.map(reward => `
+    <div class="reward-row">
+      <img src="${IMG_DIR + reward.img}" alt="${reward.name}">
+    </div>
+  `).join('');
+}
+
+    function renderBoard(){
+      const board = document.getElementById('board');
+      board.innerHTML = panels.map((panel, index) => `
+        <button class="panel" type="button" data-index="${index}" aria-label="${index + 1}番のパネル">
+          <span class="question">?</span>
+        </button>
+      `).join('');
+
+      board.querySelectorAll('.panel').forEach(button => {
+        button.addEventListener('click', () => openPanel(Number(button.dataset.index), button));
+      });
+    }
+
+    function openPanel(index, button){
+      if(remaining <= 0 || button.classList.contains('open')) return;
+
+      const reward = panels[index];
+      remaining -= 1;
+      gained.push(reward);
+
+      document.getElementById('attemptCount').textContent = remaining;
+      button.classList.add('open', reward.rank);
+      button.disabled = true;
+button.innerHTML = `
+  <img src="${IMG_DIR + reward.img}" alt="${reward.name}">
+`;
+
+      if(remaining === 0){
+        finishGame();
+      }
+    }
+
+function finishGame(){
+  document.querySelectorAll('.panel:not(.open)')
+    .forEach(button => button.disabled = true);
+
+}
+
+function init(){
+  currentStage = weightedRandomStage();
+  panels = buildPanels(currentStage);
+  remaining = MAX_ATTEMPTS;
+  gained = [];
+  document.getElementById('attemptCount').textContent = remaining;
+  renderRewardList(currentStage);
+  renderBoard();
+}
+
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
