@@ -14,7 +14,6 @@
     --green2:#eafbdd;
     --line:#8ab869;
     --text:#172033;
-    --muted:#5f6d7a;
     --goal:#ff8dc8;
     --goal-line:#e84f9d;
     --re:#9bdcf7;
@@ -22,7 +21,6 @@
     --plus:#ffd55a;
     --plus-line:#ff9d00;
     --pink:#ff4e7e;
-    --card:#ffffff;
   }
   *{box-sizing:border-box}
   body{
@@ -35,93 +33,107 @@
     color:var(--text);
   }
   .wrap{max-width:1180px;margin:auto;padding:18px;}
-  .siteBack{display:inline-flex;align-items:center;gap:6px;margin-bottom:12px;padding:9px 14px;border:2px solid #93d8ff;border-radius:999px;background:rgba(255,255,255,.9);color:#1267bd;text-decoration:none;font-weight:1000;box-shadow:0 5px 14px rgba(47,141,242,.12)}
+  .topLinks{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;}
+  .siteBack{
+    display:inline-flex;align-items:center;gap:6px;margin-bottom:12px;padding:9px 14px;
+    border:2px solid #93d8ff;border-radius:999px;background:rgba(255,255,255,.9);
+    color:#1267bd;text-decoration:none;font-weight:1000;box-shadow:0 5px 14px rgba(47,141,242,.12);
+  }
   .siteBack:hover{background:#fff;transform:translateY(-1px)}
-.topLinks{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:12px;
-}
+  .strikeLink{color:#b85a00;border-color:#ffd26a;background:linear-gradient(180deg,#fff8d5,#ffe27a);box-shadow:0 5px 14px rgba(255,180,0,.18);}
+  .strikeLink:hover{background:#fff4b8;}
 
-.strikeLink{
-  color:#b85a00;
-  border-color:#ffd26a;
-  background:linear-gradient(180deg,#fff8d5,#ffe27a);
-  box-shadow:0 5px 14px rgba(255,180,0,.18);
-}
-
-.strikeLink:hover{
-  background:#fff4b8;
-}
   .hero{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:14px;}
   h1{font-size:34px;line-height:1.05;margin:0;font-weight:1000;color:#1274d8;text-shadow:0 3px 0 #fff,0 5px 12px rgba(47,141,242,.22)}
-  h1 .diceIcon{font-size:.9em;margin-right:6px}.lead{margin:8px 0 0;color:#276087;font-weight:700}.legend{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.tag{background:rgba(255,255,255,.86);border:2px solid #bde7ff;border-radius:14px;padding:8px 12px;font-weight:900;box-shadow:0 4px 10px rgba(47,141,242,.09)}
-  .main{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start}.panel{background:rgba(255,255,255,.9);border:2px solid #93d8ff;border-radius:20px;box-shadow:0 12px 28px rgba(47,141,242,.16);overflow:hidden}.panel.pad{padding:14px}.side{display:grid;gap:14px}.cardTitle{font-size:20px;font-weight:1000;color:#fff;margin:-14px -14px 12px;padding:11px 16px;background:linear-gradient(90deg,var(--blue),var(--blue2));}.greenTitle{background:linear-gradient(90deg,#4eb94d,#80d870)}.purpleTitle{background:linear-gradient(90deg,#7d59e8,#b778ff)}
-  .board-wrap{padding:20px;overflow:visible}.board{position:relative;display:grid;grid-template-columns:repeat(9,1fr);grid-template-rows:repeat(8,1fr);gap:2px;aspect-ratio:9/8;width:100%;max-width:790px;margin:auto;background:transparent}.cell{position:relative;border:2px solid var(--line);border-radius:7px;background:linear-gradient(135deg,var(--green2),var(--green));color:#10200d;display:flex;align-items:center;justify-content:center;font-weight:1000;font-size:clamp(14px,2.15vw,24px);overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}.cell small{position:absolute;top:6px;left:8px;color:#10200d;font-size:.72em;font-weight:1000}.cell.goal{background:linear-gradient(135deg,#ffd8ec,var(--goal));border-color:var(--goal-line)}.cell.re{background:linear-gradient(135deg,#d9f5ff,var(--re));border-color:var(--re-line)}.cell.plus{background:linear-gradient(135deg,#fff2a4,var(--plus));border-color:var(--plus-line);font-size:clamp(18px,3.2vw,34px)}
-  .piece{position:absolute;width:38%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#ffeded 45%,#ff5151 70%);box-shadow:0 0 0 5px rgba(255,194,42,.45),0 5px 14px rgba(0,0,0,.25);z-index:5;transition:.18s transform}.piece::after{content:"♟";color:#d9002f;display:grid;place-items:center;font-size:1.1em;line-height:1}
-  .controls{display:grid;gap:12px}.settingRow{display:flex;align-items:center;justify-content:space-between;gap:10px}.inputLike{display:flex;align-items:center;gap:8px}.inputLike input{width:90px;border:2px solid #d7e5f1;border-radius:11px;padding:10px;text-align:center;font-size:18px;font-weight:900;background:#fff}.btn{border:0;border-radius:14px;padding:13px 16px;font-weight:1000;cursor:pointer;background:linear-gradient(180deg,#ff7798,#f02f62);color:#fff;box-shadow:0 6px 0 #c21f4a,0 10px 18px rgba(240,47,98,.25);font-size:18px}.btn:active{transform:translateY(3px);box-shadow:0 3px 0 #c21f4a}.btn:disabled{opacity:.5;cursor:not-allowed}.btn.secondary{background:linear-gradient(180deg,#5fb8ff,#2387eb);box-shadow:0 6px 0 #1163b5}.mult{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mult button{border:2px solid #91c9ff;border-radius:12px;padding:11px;background:#f6fbff;color:#1667c5;font-weight:1000;cursor:pointer}.mult button.active{background:#fff1a8;border-color:#ffaf16;color:#c74600}.dice{font-size:54px;font-weight:1000;text-align:center;min-height:64px;filter:drop-shadow(0 6px 8px rgba(0,0,0,.12))}.stats{display:grid;gap:0;border:1px solid #d8ead2;border-radius:14px;overflow:hidden}.stat{display:grid;grid-template-columns:1fr auto;gap:8px;background:#fff;padding:11px 13px;border-bottom:1px solid #e8eef2;font-weight:900}.stat:last-child{border-bottom:0}.stat b{font-size:18px}.stat span{color:#334155}.log{height:150px;overflow:auto;background:#fff;border:1px solid #eadbff;border-radius:14px;padding:12px;line-height:1.6;color:#273245;font-weight:700}.hint{background:#fff9db;border:2px solid #ffd35a;border-radius:16px;padding:12px;color:#5a3a00;font-weight:900;margin-top:12px;text-align:center}.boardControls{display:flex;justify-content:center;gap:14px;align-items:center;padding:0 16px 18px}.boardControls .btn{min-width:250px}.note{text-align:center;color:#52616f;font-weight:800;font-size:13px;margin-top:-4px}
-  @media(max-width:900px){
-.topLinks{
-  justify-content:center;
-}
-    .wrap{padding:10px}.siteBack{margin-bottom:10px;font-size:13px;padding:8px 12px}.hero{display:block;text-align:center}.legend{justify-content:center;margin-top:10px}.tag{font-size:12px;padding:6px 8px}h1{font-size:25px}.lead{font-size:13px}.main{display:flex;flex-direction:column}.panel{width:100%}.board-wrap{padding:10px}.board{width:min(100%,96vw);max-width:none}.cell{border-width:1.5px;border-radius:4px;font-size:clamp(10px,3.35vw,17px)}.cell small{top:3px;left:4px}.piece{width:44%}.side{width:100%;grid-template-columns:1fr}.boardControls{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 10px 12px}.boardControls .btn{min-width:0;font-size:15px;padding:11px}.dice{font-size:42px;min-height:50px}.cardTitle{font-size:17px}.controls{gap:10px}.settingRow{font-size:14px}.inputLike input{width:74px;padding:8px}.log{height:110px}.hint{font-size:13px;margin:10px}.note{font-size:12px}}
-  @media(max-width:430px){
-    .wrap{padding:8px}.board-wrap{padding:6px}.cell{font-size:clamp(9px,3.05vw,14px);border-radius:3px}.cell small{font-size:.7em}.legend{display:none}.main{gap:10px}.panel.pad{padding:10px}.cardTitle{margin:-10px -10px 10px;padding:9px 12px}.boardControls{grid-template-columns:1fr}.side{gap:10px}.stat{padding:9px 11px}.btn{font-size:16px}.mult button{padding:9px 6px}.hint{font-size:12px}}
+  h1 .diceIcon{font-size:.9em;margin-right:6px}
+  .lead{margin:8px 0 0;color:#276087;font-weight:700}
+  .legend{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  .tag{background:rgba(255,255,255,.86);border:2px solid #bde7ff;border-radius:14px;padding:8px 12px;font-weight:900;box-shadow:0 4px 10px rgba(47,141,242,.09)}
 
-  /* 追加修正：盤面中央に出目、左下に使用数、ボタン配置変更 */
-  .board{isolation:isolate;}
-  .diceCenter{
-    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-    z-index:3;text-align:center;pointer-events:none;
-  }
+  .main{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start}
+  .panel{background:rgba(255,255,255,.9);border:2px solid #93d8ff;border-radius:20px;box-shadow:0 12px 28px rgba(47,141,242,.16);overflow:hidden}
+  .panel.pad{padding:14px}
+  .side{display:grid;gap:14px}
+  .cardTitle{font-size:20px;font-weight:1000;color:#fff;margin:-14px -14px 12px;padding:11px 16px;background:linear-gradient(90deg,var(--blue),var(--blue2));}
+  .greenTitle{background:linear-gradient(90deg,#4eb94d,#80d870)}
+  .purpleTitle{background:linear-gradient(90deg,#7d59e8,#b778ff)}
+
+  .board-wrap{padding:20px;overflow:visible}
+  .board{position:relative;display:grid;grid-template-columns:repeat(9,1fr);grid-template-rows:repeat(8,1fr);gap:2px;aspect-ratio:9/8;width:100%;max-width:790px;margin:auto;background:transparent;isolation:isolate;}
+  .cell{position:relative;border:2px solid var(--line);border-radius:7px;background:linear-gradient(135deg,var(--green2),var(--green));color:#10200d;display:flex;align-items:center;justify-content:center;font-weight:1000;font-size:clamp(14px,2.15vw,24px);overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+  .cell small{position:absolute;top:6px;left:8px;color:#10200d;font-size:.72em;font-weight:1000}
+  .cell.goal{background:linear-gradient(135deg,#ffd8ec,var(--goal));border-color:var(--goal-line)}
+  .cell.re{background:linear-gradient(135deg,#d9f5ff,var(--re));border-color:var(--re-line)}
+  .cell.plus{background:linear-gradient(135deg,#fff2a4,var(--plus));border-color:var(--plus-line);font-size:clamp(18px,3.2vw,34px)}
+  .piece{position:absolute;width:38%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#ffeded 45%,#ff5151 70%);box-shadow:0 0 0 5px rgba(255,194,42,.45),0 5px 14px rgba(0,0,0,.25);z-index:5;transition:.18s transform}
+  .piece::after{content:"♟";color:#d9002f;display:grid;place-items:center;font-size:1.1em;line-height:1}
+
+  .diceCenter{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;text-align:center;pointer-events:none;}
   .diceCenterTitle{font-weight:1000;color:#1667c5;text-shadow:0 2px 0 #fff;font-size:clamp(14px,2vw,20px);margin-bottom:8px;}
-  .diceCube{
-    width:clamp(84px,16vw,150px);aspect-ratio:1/1;border-radius:22%;
-    background:linear-gradient(145deg,#ffffff,#edf5ff 48%,#d4e6ff);
-    border:5px solid #74b9ff;box-shadow:0 0 0 8px rgba(116,185,255,.18),0 14px 30px rgba(32,93,164,.24),inset 0 5px 8px rgba(255,255,255,.95),inset 0 -6px 12px rgba(25,118,210,.12);
-    display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:8%;padding:17%;
-    margin:auto;animation:dicePop .28s ease;
-  }
+  .diceCube{width:clamp(84px,16vw,150px);aspect-ratio:1/1;border-radius:22%;background:linear-gradient(145deg,#ffffff,#edf5ff 48%,#d4e6ff);border:5px solid #74b9ff;box-shadow:0 0 0 8px rgba(116,185,255,.18),0 14px 30px rgba(32,93,164,.24),inset 0 5px 8px rgba(255,255,255,.95),inset 0 -6px 12px rgba(25,118,210,.12);display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:8%;padding:17%;margin:auto;animation:dicePop .28s ease;}
   .pip{border-radius:50%;background:radial-gradient(circle at 35% 30%,#333,#020202);box-shadow:inset 0 2px 3px rgba(255,255,255,.18),0 2px 3px rgba(0,0,0,.22);opacity:0;}
   .pip.show{opacity:1;}
   .diceRibbon{display:inline-block;margin-top:-4px;background:linear-gradient(180deg,#338df2,#0f65c9);color:#fff;border-radius:999px;padding:2px 18px;font-size:clamp(20px,4vw,42px);font-weight:1000;text-shadow:0 2px 0 rgba(0,0,0,.18);box-shadow:0 6px 12px rgba(47,141,242,.24);}
   @keyframes dicePop{0%{transform:scale(.75) rotate(-8deg);opacity:.4}70%{transform:scale(1.08) rotate(3deg)}100%{transform:scale(1) rotate(0);opacity:1}}
-  .diceUsedBadge{
-    position:absolute;left:10px;bottom:10px;z-index:4;background:rgba(255,255,255,.96);border:3px solid #3a9af5;border-radius:14px;
-    padding:8px 12px;min-width:126px;box-shadow:0 6px 16px rgba(20,95,180,.18);font-weight:1000;color:#115fb5;
-  }
-  .diceUsedBadge .num{display:flex;align-items:baseline;gap:8px;color:#111;margin-top:2px}.diceUsedBadge b{font-size:clamp(28px,4vw,42px)}
+  .diceUsedBadge{position:absolute;left:10px;bottom:10px;z-index:4;background:rgba(255,255,255,.96);border:3px solid #3a9af5;border-radius:14px;padding:8px 12px;min-width:126px;box-shadow:0 6px 16px rgba(20,95,180,.18);font-weight:1000;color:#115fb5;}
+  .diceUsedBadge .num{display:flex;align-items:baseline;gap:8px;color:#111;margin-top:2px}
+  .diceUsedBadge b{font-size:clamp(28px,4vw,42px)}
+
   .rollArea{display:grid;gap:10px;justify-items:center;padding:0 16px 18px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.55));}
   .rollArea .btn{min-width:min(440px,100%);}
-  .rollArea .mult{width:min(520px,100%);}
+  .btn{border:0;border-radius:14px;padding:13px 16px;font-weight:1000;cursor:pointer;background:linear-gradient(180deg,#ff7798,#f02f62);color:#fff;box-shadow:0 6px 0 #c21f4a,0 10px 18px rgba(240,47,98,.25);font-size:18px}
+  .btn:active{transform:translateY(3px);box-shadow:0 3px 0 #c21f4a}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .mult{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:min(520px,100%);}
+  .mult button{border:2px solid #91c9ff;border-radius:12px;padding:11px;background:#f6fbff;color:#1667c5;font-weight:1000;cursor:pointer}
+  .mult button.active{background:#fff1a8;border-color:#ffaf16;color:#c74600}
   .resetSmall{margin-top:2px;border:2px solid #b7d7f3;border-radius:999px;padding:9px 28px;background:#fff;color:#1a69b8;font-weight:1000;cursor:pointer;}
+  .note{text-align:center;color:#52616f;font-weight:800;font-size:13px;margin-top:-4px}
+  .hint{background:#fff9db;border:2px solid #ffd35a;border-radius:16px;padding:12px;color:#5a3a00;font-weight:900;margin:12px;text-align:center}
+
+  .stats{display:grid;gap:0;border:1px solid #d8ead2;border-radius:14px;overflow:hidden}
+  .stat{display:grid;grid-template-columns:1fr auto;gap:8px;background:#fff;padding:11px 13px;border-bottom:1px solid #e8eef2;font-weight:900}
+  .stat:last-child{border-bottom:0}
+  .stat b{font-size:18px}
+  .stat span{color:#334155}
+  .log{height:150px;overflow:auto;background:#fff;border:1px solid #eadbff;border-radius:14px;padding:12px;line-height:1.6;color:#273245;font-weight:700}
   .side .settingsPanel{display:none;}
+
+  .goalModal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:999;background:rgba(0,0,0,.35);padding:18px;}
+  .goalModal.show{display:flex;}
+  .goalModalBox{width:min(360px,90vw);text-align:center;background:#fff;border:4px solid #ffd55a;border-radius:26px;padding:24px 18px;box-shadow:0 12px 0 #ff9d00,0 24px 40px rgba(0,0,0,.25);}
+  .goalTitle{font-size:44px;font-weight:1000;color:#ff4e7e;text-shadow:0 3px 0 #fff4b8;}
+  .goalText{margin:10px 0 18px;font-weight:1000;color:#172033;}
+  .goalActions{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .goalActions button{border:0;border-radius:14px;padding:12px;font-weight:1000;cursor:pointer;}
+  #goStrikeBtn{background:linear-gradient(180deg,#ff7798,#f02f62);color:#fff;box-shadow:0 5px 0 #c21f4a;}
+  #closeGoalBtn{background:linear-gradient(180deg,#ffffff,#e7f7ff);color:#1267bd;border:2px solid #93d8ff;}
+
   @media(max-width:900px){
-.topLinks{
-  justify-content:center;
-}
-    .diceCube{width:clamp(64px,21vw,110px);border-width:4px;gap:7%;padding:16%;}.diceCenterTitle{font-size:12px;margin-bottom:4px}.diceRibbon{font-size:22px;padding:1px 14px}.diceUsedBadge{left:6px;bottom:6px;min-width:98px;padding:6px 8px;border-width:2px;font-size:12px}.rollArea{padding:0 10px 12px}.rollArea .btn{font-size:17px}.rollArea .mult{grid-template-columns:1fr 1fr}
+    .wrap{padding:10px}.topLinks{justify-content:center}.siteBack{margin-bottom:10px;font-size:13px;padding:8px 12px}.hero{display:block;text-align:center}.legend{justify-content:center;margin-top:10px}.tag{font-size:12px;padding:6px 8px}h1{font-size:25px}.lead{font-size:13px}.main{display:flex;flex-direction:column}.panel{width:100%}.board-wrap{padding:10px}.board{width:min(100%,96vw);max-width:none}.cell{border-width:1.5px;border-radius:4px;font-size:clamp(10px,3.35vw,17px)}.cell small{top:3px;left:4px}.piece{width:44%}.side{width:100%;grid-template-columns:1fr}.cardTitle{font-size:17px}.log{height:110px}.hint{font-size:13px;margin:10px}.note{font-size:12px}.diceCube{width:clamp(64px,21vw,110px);border-width:4px;gap:7%;padding:16%;}.diceCenterTitle{font-size:12px;margin-bottom:4px}.diceRibbon{font-size:22px;padding:1px 14px}.diceUsedBadge{left:6px;bottom:6px;min-width:98px;padding:6px 8px;border-width:2px;font-size:12px}.rollArea{padding:0 10px 12px}.rollArea .btn{font-size:17px}.mult{grid-template-columns:1fr 1fr}
   }
   @media(max-width:430px){
-    .diceCube{width:58px;border-width:3px;box-shadow:0 0 0 4px rgba(116,185,255,.15),0 8px 18px rgba(32,93,164,.2);}.diceCenterTitle{display:none}.diceRibbon{font-size:18px}.diceUsedBadge{min-width:82px;padding:5px 7px;font-size:11px}.diceUsedBadge b{font-size:24px}.rollArea .mult button{font-size:14px}.rollArea .btn{font-size:16px;min-width:0;width:100%}
+    .wrap{padding:8px}.board-wrap{padding:6px}.cell{font-size:clamp(9px,3.05vw,14px);border-radius:3px}.cell small{font-size:.7em}.legend{display:none}.main{gap:10px}.panel.pad{padding:10px}.cardTitle{margin:-10px -10px 10px;padding:9px 12px}.side{gap:10px}.stat{padding:9px 11px}.btn{font-size:16px}.mult button{padding:9px 6px;font-size:14px}.hint{font-size:12px}.diceCube{width:58px;border-width:3px;box-shadow:0 0 0 4px rgba(116,185,255,.15),0 8px 18px rgba(32,93,164,.2);}.diceCenterTitle{display:none}.diceRibbon{font-size:18px}.diceUsedBadge{min-width:82px;padding:5px 7px;font-size:11px}.diceUsedBadge b{font-size:24px}.rollArea .btn{font-size:16px;min-width:0;width:100%}
   }
-
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="topLinks">
-  <a class="siteBack" href="index.html">← サイトトップに戻る</a>
-  <a class="siteBack strikeLink" href="strikeout_simulator.html">🎯 ストラックアウト</a>
-</div>
+  <div class="topLinks">
+    <a class="siteBack" href="index.html">← サイトトップに戻る</a>
+    <a class="siteBack strikeLink" href="strikeout_simulator.html">🎯 ストラックアウト</a>
+  </div>
+
   <div class="hero">
     <div>
       <h1><span class="diceIcon">🎲</span>ダイスすごろく</h1>
       <p class="lead">30マスのすごろくでゴールを目指そう！</p>
     </div>
     <div class="legend">
-      <div class="tag">R：もう一度ダイス</div><div class="tag">+2：2マス進む</div><div class="tag">+3：3マス進む</div><div class="tag">G：ゴール</div>
+      <div class="tag">R：もう一度ダイス</div>
+      <div class="tag">+2：2マス進む</div>
+      <div class="tag">+3：3マス進む</div>
+      <div class="tag">G：ゴール</div>
     </div>
   </div>
 
@@ -143,10 +155,10 @@
       <div class="rollArea">
         <button class="btn" id="rollBtn">🎲 サイコロを振る！</button>
         <div class="mult" aria-label="倍率">
-          <button id="m1" class="active">1倍で振る<br><small>報酬は等倍</small></button>
-          <button id="m10">10倍で振る<br><small>報酬が10倍！</small></button>
+          <button id="m1" class="active" type="button">1倍で振る<br><small>報酬は等倍</small></button>
+          <button id="m10" type="button">10倍で振る<br><small>報酬が10倍！</small></button>
         </div>
-        <button class="resetSmall" id="resetBtn">↻ リセット</button>
+        <button class="resetSmall" id="resetBtn" type="button">↻ リセット</button>
       </div>
       <div class="note">※10倍モードでも出目は1〜6のままです</div>
       <div class="hint" id="hint">24〜27マス目はゴール可能出目が2つあるので、10倍チャンス向きです。</div>
@@ -164,10 +176,7 @@
           <div class="stat"><span>周回数</span><b><span id="laps">0</span> 周</b></div>
           <div class="stat"><span>ゴール数</span><b><span id="goals">0</span> 回</b></div>
           <div class="stat"><span>使用ダイス数</span><b><span id="diceUsed">0</span> 個</b></div>
-<div class="stat">
-  <span>平均ダイス数</span>
-  <b><span id="avgDice">0.0</span> 個</b>
-</div>
+          <div class="stat"><span>平均ダイス数</span><b><span id="avgDice">0.0</span> 個</b></div>
         </div>
       </section>
 
@@ -178,11 +187,23 @@
     </aside>
   </div>
 </div>
+
+<div class="goalModal" id="goalModal" aria-hidden="true">
+  <div class="goalModalBox">
+    <div class="goalTitle">ゴール！</div>
+    <div class="goalText">ストラックアウトに挑戦しますか？</div>
+    <div class="goalActions">
+      <button id="goStrikeBtn" type="button">やる</button>
+      <button id="closeGoalBtn" type="button">やらない</button>
+    </div>
+  </div>
+</div>
+
 <script>
+const STORAGE_KEY = 'diceSugorokuStateV1';
 const board = document.getElementById('board');
 const cells = [];
 const special = {5:'re',13:'re',12:'plus3',18:'plus2',28:'plus2',30:'goal'};
-let pos=30, diceUsed=0, goals=0, laps=0, multiplier=1, rolling=false;
 const layout = {
   25:[1,1],26:[1,2],27:[1,3],28:[1,4],29:[1,5],30:[1,6],1:[1,7],
   24:[2,1],2:[2,7],
@@ -193,112 +214,287 @@ const layout = {
   15:[7,5],11:[7,7],10:[7,8],9:[7,9],
   14:[8,5],13:[8,6],12:[8,7]
 };
-for(let i=1;i<=30;i++){
-  const c=document.createElement('div'); c.className='cell';
-  const [row,col] = layout[i];
-  c.style.gridRow = row; c.style.gridColumn = col;
-  if(i===30)c.classList.add('goal');
-  if(special[i]==='re')c.classList.add('re');
-  if(special[i]==='plus2'||special[i]==='plus3')c.classList.add('plus');
-  c.innerHTML=`<small>${i}</small>${label(i)}`;
-  board.appendChild(c); cells[i]=c;
+
+let pos = 30;
+let diceUsed = 0;
+let goals = 0;
+let laps = 0;
+let multiplier = 1;
+let rolling = false;
+
+const piece = document.createElement('div');
+piece.className = 'piece';
+
+function label(i){
+  if(i === 30) return 'G';
+  if(i === 5 || i === 13) return 'R';
+  if(i === 12) return '+3';
+  if(i === 18 || i === 28) return '+2';
+  return '';
 }
-const piece=document.createElement('div'); piece.className='piece';
-function label(i){ if(i===30)return 'G'; if(i===5||i===13)return 'R'; if(i===12)return '+3'; if(i===18||i===28)return '+2'; return ''; }
+
+function wait(ms){
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function saveState(){
+  const log = document.getElementById('log')?.innerHTML || '';
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
+    pos,
+    diceUsed,
+    goals,
+    laps,
+    multiplier,
+    log
+  }));
+}
+
+function loadState(){
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if(!saved) return;
+
+  try{
+    const data = JSON.parse(saved);
+    pos = Number.isFinite(Number(data.pos)) ? Number(data.pos) : 30;
+    diceUsed = Number.isFinite(Number(data.diceUsed)) ? Number(data.diceUsed) : 0;
+    goals = Number.isFinite(Number(data.goals)) ? Number(data.goals) : 0;
+    laps = Number.isFinite(Number(data.laps)) ? Number(data.laps) : 0;
+    multiplier = Number(data.multiplier) === 10 ? 10 : 1;
+
+    const logEl = document.getElementById('log');
+    if(logEl && typeof data.log === 'string'){
+      logEl.innerHTML = data.log;
+    }
+  }catch(e){
+    localStorage.removeItem(STORAGE_KEY);
+  }
+}
+
+function clearState(){
+  localStorage.removeItem(STORAGE_KEY);
+}
+
+function addLog(text){
+  const log = document.getElementById('log');
+  log.innerHTML = '・' + text + '<br>' + log.innerHTML;
+  saveState();
+}
+
+function buildBoard(){
+  for(let i = 1; i <= 30; i++){
+    const cell = document.createElement('div');
+    cell.className = 'cell';
+    const [row, col] = layout[i];
+    cell.style.gridRow = row;
+    cell.style.gridColumn = col;
+    if(i === 30) cell.classList.add('goal');
+    if(special[i] === 're') cell.classList.add('re');
+    if(special[i] === 'plus2' || special[i] === 'plus3') cell.classList.add('plus');
+    cell.innerHTML = `<small>${i}</small>${label(i)}`;
+    board.appendChild(cell);
+    cells[i] = cell;
+  }
+}
 
 function setDiceFace(n){
-  const cube=document.getElementById('diceCube');
-  const num=document.getElementById('diceNumber');
-  const positions={1:[5],2:[1,9],3:[1,5,9],4:[1,3,7,9],5:[1,3,5,7,9],6:[1,3,4,6,7,9]};
-  cube.innerHTML='';
-  for(let i=1;i<=9;i++){
-    const p=document.createElement('span');
-    p.className='pip'+(positions[n]?.includes(i)?' show':'');
-    cube.appendChild(p);
+  const cube = document.getElementById('diceCube');
+  const num = document.getElementById('diceNumber');
+  const positions = {1:[5],2:[1,9],3:[1,5,9],4:[1,3,7,9],5:[1,3,5,7,9],6:[1,3,4,6,7,9]};
+  cube.innerHTML = '';
+  for(let i = 1; i <= 9; i++){
+    const pip = document.createElement('span');
+    pip.className = 'pip' + (positions[n]?.includes(i) ? ' show' : '');
+    cube.appendChild(pip);
   }
-  num.textContent=n || '?';
-  cube.style.animation='none';
+  num.textContent = n || '?';
+  cube.style.animation = 'none';
   cube.offsetHeight;
-  cube.style.animation='dicePop .28s ease';
+  cube.style.animation = 'dicePop .28s ease';
+}
+
+function syncMultiplierButtons(){
+  const m1Btn = document.getElementById('m1');
+  const m10Btn = document.getElementById('m10');
+  if(multiplier === 10){
+    m10Btn.classList.add('active');
+    m1Btn.classList.remove('active');
+  }else{
+    multiplier = 1;
+    m1Btn.classList.add('active');
+    m10Btn.classList.remove('active');
+  }
 }
 
 function render(){
-  document.getElementById('posText').textContent=pos;
-  document.getElementById('diceUsed').textContent=diceUsed;
-  document.getElementById('diceUsedBoard').textContent=diceUsed;
-  document.getElementById('goals').textContent=goals;
-const avgDice = goals > 0 ? (diceUsed / goals).toFixed(1) : '0.0';
-document.getElementById('avgDice').textContent = avgDice;
-  document.getElementById('laps').textContent=laps;
-  if(pos>=1&&pos<=30){ cells[pos].appendChild(piece); }
-  updateHint();
-}
-function wait(ms){return new Promise(r=>setTimeout(r,ms));}
-function addLog(t){ const log=document.getElementById('log'); log.innerHTML = '・'+t+'<br>'+log.innerHTML; }
-async function moveSteps(n){
-  for(let i=0;i<n;i++){
-    pos++;
+  document.getElementById('posText').textContent = pos;
+  document.getElementById('diceUsed').textContent = diceUsed;
+  document.getElementById('diceUsedBoard').textContent = diceUsed;
+  document.getElementById('goals').textContent = goals;
+  document.getElementById('laps').textContent = laps;
 
+  const avgDice = goals > 0 ? (diceUsed / goals).toFixed(1) : '0.0';
+  document.getElementById('avgDice').textContent = avgDice;
+
+  if(pos >= 1 && pos <= 30){
+    cells[pos].appendChild(piece);
+  }
+  updateHint();
+  saveState();
+}
+
+async function moveSteps(steps){
+  for(let i = 0; i < steps; i++){
+    pos++;
     if(pos > 30){
       pos = 1;
       laps++;
       addLog('次の周回に入りました');
     }
-
     render();
     await wait(160);
   }
-  return true;
 }
+
 async function resolveSpecial(){
-if(pos===30){
-  goals++;
-  addLog(`ゴール！`);
-  render();
-  await wait(800);
-  location.href = 'strikeout_simulator.html';
-  return;
-}
-  if(pos===12){ addLog('12マス目：+3発動'); await moveSteps(3); await resolveSpecial(); return; }
-  if(pos===18||pos===28){ addLog(`${pos}マス目：+2発動`); await moveSteps(2); await resolveSpecial(); return; }
-  if(pos===5||pos===13){
+  if(pos === 30){
+    goals++;
+    addLog('ゴール！');
+    render();
+    showGoalModal();
+    return;
+  }
+
+  if(pos === 12){
+    addLog('12マス目：+3発動');
+    await moveSteps(3);
+    await resolveSpecial();
+    return;
+  }
+
+  if(pos === 18 || pos === 28){
+    addLog(`${pos}マス目：+2発動`);
+    await moveSteps(2);
+    await resolveSpecial();
+    return;
+  }
+
+  if(pos === 5 || pos === 13){
     addLog(`${pos}マス目：もう一度ダイス発動`);
     await wait(450);
     await roll(true, true);
   }
 }
-async function roll(isFree=false, force=false){
-  if(rolling && !force)return;
+
+async function roll(isFree = false, force = false){
+  if(rolling && !force) return;
+
   const isRootRoll = !rolling;
   if(isRootRoll){
-    rolling=true;
-    document.getElementById('rollBtn').disabled=true;
+    rolling = true;
+    document.getElementById('rollBtn').disabled = true;
   }
 
-  const d=Math.floor(Math.random()*6)+1; setDiceFace(d);
-  if(!isFree) diceUsed+=multiplier;
-  addLog(`${isFree?'無料でもう一度':'サイコロ'}：${d} / ${multiplier}倍`);
-  render(); await wait(220); await moveSteps(d); await resolveSpecial();
+  const dice = Math.floor(Math.random() * 6) + 1;
+  setDiceFace(dice);
+  if(!isFree) diceUsed += multiplier;
+  addLog(`${isFree ? '無料でもう一度' : 'サイコロ'}：${dice} / ${multiplier}倍`);
+  render();
+
+  await wait(220);
+  await moveSteps(dice);
+  await resolveSpecial();
 
   if(isRootRoll){
-    rolling=false;
-    document.getElementById('rollBtn').disabled=false;
+    rolling = false;
+    document.getElementById('rollBtn').disabled = false;
     render();
   }
 }
+
 function updateHint(){
-  const h=document.getElementById('hint');
-  if([24,25,26,27].includes(pos)) h.textContent='ここは10倍チャンス最優先！30直行と28→+2の2ルートがあります。';
-  else if([22,23,29].includes(pos)) h.textContent='10倍を使っても悪くない位置。ただし成功出目は基本1つです。';
-  else h.textContent='この位置は10倍温存推奨。24〜27マス目まで進んでから狙うのが効率的です。';
+  const hint = document.getElementById('hint');
+  if([24,25,26,27].includes(pos)){
+    hint.textContent = 'ここは10倍チャンス最優先！30直行と28→+2の2ルートがあります。';
+  }else if([22,23,29].includes(pos)){
+    hint.textContent = '10倍を使っても悪くない位置。ただし成功出目は基本1つです。';
+  }else{
+    hint.textContent = 'この位置は10倍温存推奨。24〜27マス目まで進んでから狙うのが効率的です。';
+  }
 }
-document.getElementById('rollBtn').onclick=()=>roll(false);
-document.getElementById('resetBtn').onclick=()=>{pos=30;diceUsed=0;goals=0;laps=0;setDiceFace(null);document.getElementById('log').innerHTML='';render();addLog('ゲームをリセットしました');};
-const m1Btn=document.getElementById('m1');
-const m10Btn=document.getElementById('m10');
-m1Btn.onclick=()=>{multiplier=1;m1Btn.classList.add('active');m10Btn.classList.remove('active')};
-m10Btn.onclick=()=>{multiplier=10;m10Btn.classList.add('active');m1Btn.classList.remove('active')};
-setDiceFace(null); render(); addLog('ゲームを開始しました！');
+
+function showGoalModal(){
+  const modal = document.getElementById('goalModal');
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden', 'false');
+}
+
+function closeGoalModal(){
+  const modal = document.getElementById('goalModal');
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden', 'true');
+}
+
+function resetGame(){
+  pos = 30;
+  diceUsed = 0;
+  goals = 0;
+  laps = 0;
+  multiplier = 1;
+  rolling = false;
+  clearState();
+  closeGoalModal();
+  setDiceFace(null);
+  document.getElementById('log').innerHTML = '';
+  document.getElementById('rollBtn').disabled = false;
+  syncMultiplierButtons();
+  render();
+  addLog('ゲームをリセットしました');
+}
+
+function bindEvents(){
+  const m1Btn = document.getElementById('m1');
+  const m10Btn = document.getElementById('m10');
+
+  document.getElementById('rollBtn').onclick = () => roll(false);
+  document.getElementById('resetBtn').onclick = resetGame;
+
+  m1Btn.onclick = () => {
+    multiplier = 1;
+    syncMultiplierButtons();
+    saveState();
+  };
+
+  m10Btn.onclick = () => {
+    multiplier = 10;
+    syncMultiplierButtons();
+    saveState();
+  };
+
+  document.getElementById('goStrikeBtn').onclick = () => {
+    saveState();
+    location.href = 'strikeout_simulator.html';
+  };
+
+  document.getElementById('closeGoalBtn').onclick = () => {
+    closeGoalModal();
+    saveState();
+  };
+}
+
+function init(){
+  buildBoard();
+  bindEvents();
+  loadState();
+  syncMultiplierButtons();
+  setDiceFace(null);
+  render();
+
+  if(!localStorage.getItem(STORAGE_KEY)){
+    addLog('ゲームを開始しました！');
+  }
+}
+
+init();
 </script>
 </body>
 </html>
