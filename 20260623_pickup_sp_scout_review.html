@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ウスマン・デンベレのピックアップSP選手スカウトは引くべき？新SP選手4名を徹底評価｜サカつく2026攻略DB</title>
+  <meta name="description" content="サカつく2026のウスマン・デンベレのピックアップSP選手スカウトは引くべきかを解説。デンベレ、オブラク、チャルハノール、ウォーカーの性能・おすすめ度・ガチャの注意点を攻略目線で評価します。">
+  <link rel="canonical" href="https://sakatsuku2026-db.com/20260623_pickup_sp_scout_review.html">
+  <style>
+    :root {
+      --main: #0aa36f;
+      --main-dark: #06734f;
+      --main-light: #e9fff6;
+      --accent: #ffb000;
+      --accent-light: #fff5d8;
+      --danger: #d94848;
+      --blue: #246bfe;
+      --text: #222;
+      --muted: #666;
+      --line: #d8e7df;
+      --bg: #f5f7f6;
+      --card: #fff;
+      --gold: #f2a900;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
+      background: radial-gradient(circle at top, #ecfff6 0, #f5f7f6 340px);
+      color: var(--text);
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+    }
+
+    a { color: var(--main-dark); text-decoration: none; font-weight: 800; }
+    a:hover { text-decoration: underline; }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.96);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbarInner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand { font-weight: 900; white-space: nowrap; }
+    .brand a { color: var(--text); text-decoration: none; }
+
+    .nav { display: flex; gap: 12px; align-items: center; font-size: .92rem; }
+    .nav a { color: var(--main-dark); text-decoration: none; font-weight: 800; }
+
+    .container { width: min(960px, calc(100% - 24px)); margin: 18px auto 48px; }
+
+    .article {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 8px 26px rgba(0,0,0,.08);
+      overflow: hidden;
+    }
+
+    .breadcrumb { margin: 0 0 14px; color: var(--muted); font-size: .9rem; }
+
+    h1 {
+      margin: 8px 0 14px;
+      font-size: clamp(1.45rem, 4.4vw, 2.15rem);
+      line-height: 1.45;
+      color: #15382d;
+      border-left: 8px solid var(--main);
+      padding-left: 14px;
+    }
+
+    h2 {
+      margin: 36px 0 14px;
+      padding: 11px 15px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--main-dark), var(--main));
+      border-radius: 14px;
+      font-size: 1.28rem;
+      line-height: 1.45;
+      box-shadow: 0 4px 14px rgba(10,163,111,.18);
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      padding: 8px 12px;
+      border-left: 6px solid var(--accent);
+      background: #fff9e7;
+      border-radius: 10px;
+      font-size: 1.12rem;
+      line-height: 1.5;
+    }
+
+    h4 { margin: 20px 0 8px; font-size: 1rem; color: var(--main-dark); }
+    p { margin: 0 0 1em; }
+    ul, ol { margin: 0 0 1em; padding-left: 1.25em; }
+    li { margin: .28em 0; }
+
+    .lead {
+      font-size: 1.02rem;
+      background: linear-gradient(135deg, var(--main-light), #fff);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+
+    .article-img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 14px auto 18px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      box-shadow: 0 3px 12px rgba(0,0,0,.10);
+      background: #fff;
+    }
+
+    .emphasis {
+      font-weight: 900;
+      color: var(--main-dark);
+      background: linear-gradient(transparent 62%, #c9f7df 62%);
+      padding: 0 .08em;
+    }
+
+    .hero-note {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 14px 0 18px;
+    }
+
+    .mini-card {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fcfffd;
+      text-align: center;
+    }
+
+    .mini-card strong { display: block; color: var(--main-dark); font-size: 1.05rem; }
+    .mini-card span { display: block; color: var(--muted); font-size: .88rem; }
+
+    .player-card {
+      margin: 30px 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fcfffd 0%, #fff 100%);
+      box-shadow: 0 3px 14px rgba(0,0,0,.04);
+    }
+
+    .summary-box, .point-box, .warning-box, .verdict-box, .compare-box {
+      border-radius: 16px;
+      padding: 15px;
+      margin: 16px 0;
+    }
+
+    .summary-box { background: #f3fff9; border: 1px solid #bde8d4; }
+    .point-box { background: #fffaf0; border: 1px solid #f5d58a; }
+    .warning-box { background: #fff4f4; border: 1px solid #efb8b8; }
+    .verdict-box { background: #f1f7ff; border: 1px solid #bfd7ff; }
+    .compare-box { background: #fafafa; border: 1px solid #ddd; }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: var(--main-light);
+      border: 1px solid #bde8d4;
+      padding: 4px 10px;
+      font-size: .9rem;
+      font-weight: 800;
+      color: #07593e;
+    }
+
+    .rating { color: var(--gold); font-weight: 900; letter-spacing: .06em; white-space: nowrap; }
+    .rank-good { color: var(--main-dark); font-weight: 900; }
+    .rank-normal { color: #815b00; font-weight: 900; }
+    .rank-low { color: var(--danger); font-weight: 900; }
+
+    .rating-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .rating-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .rating-item b { display: block; font-size: .95rem; }
+    .rating-item span { display: block; font-size: .88rem; }
+
+    .tool-link { margin: 18px 0 2px; }
+    .tool-link a {
+      display: inline-block;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: var(--main);
+      color: #fff;
+      box-shadow: 0 3px 10px rgba(10,163,111,.22);
+    }
+
+    .back-link { margin-top: 28px; text-align: center; }
+    .back-link a {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--main);
+      color: #fff;
+      box-shadow: 0 3px 10px rgba(10,163,111,.22);
+    }
+
+    .site-footer {
+      margin-top: 34px;
+      padding: 18px 0 4px;
+      border-top: 1px solid var(--line);
+      font-size: .92rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 760px) {
+      .hero-note, .rating-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 16px, 960px); margin-top: 10px; }
+      .article { padding: 14px; border-radius: 14px; }
+      .topbarInner { padding: 10px 12px; }
+      .nav { display: none; }
+      h1 { font-size: 1.32rem; padding-left: 10px; }
+      h2 { font-size: 1.12rem; }
+      .player-card { padding: 12px; }
+      .article-img { border-radius: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbarInner">
+      <div class="brand"><a href="index.html">サカつく2026攻略DB</a></div>
+      <nav class="nav" aria-label="サイト内ナビゲーション">
+        <a href="index.html">トップ</a>
+        <a href="articles.html">攻略記事一覧</a>
+        <a href="sp_evaluator.html">選手評価ツール</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="article">
+      <p class="breadcrumb"><a href="index.html">トップ</a> ＞ <a href="articles.html">攻略記事一覧</a> ＞ ピックアップSP選手スカウト評価</p>
+
+      <h1>W杯2026で活躍中の選手が登場!!ウスマン・デンベレのピックアップSP選手スカウトは引くべき？新SP選手4名を徹底評価</h1>
+
+      <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/top.png" alt="ウスマン・デンベレのピックアップSP選手スカウト">
+
+      <p class="lead">
+        2026年6月23日更新の<strong>ピックアップSP選手スカウト</strong>では、ウスマン・デンベレ、ヤン・オブラク、ハカン・チャルハノール、カイル・ウォーカーの新SP選手4名が登場しました。<br>
+        今回の注目は、W杯2026に出場している選手たちが中心になっている点と、Ver2.0で追加された金フォーメーションコンボ<strong class="emphasis">「ブラウ・グラーナ'15」</strong>に関係する選手が含まれている点です。<br>
+        ただし、同時開催中のMLS実装記念SP選手スカウトや、7月7日前後の新ガチャ可能性もあるため、何も考えずに深追いするよりも、狙いを明確にして判断したいガチャです。
+      </p>
+
+      <div class="hero-note">
+        <div class="mini-card"><strong>★3排出率 5%</strong><span>通常タブで新SP4名がピックアップ</span></div>
+        <div class="mini-card"><strong>デンベレが目玉</strong><span>ポゼッションCF最強候補</span></div>
+        <div class="mini-card"><strong>恒常追加予定</strong><span>期間終了後の深追いは慎重に</span></div>
+      </div>
+
+      <div class="summary-box">
+        <h2>結論：デンベレで「ブラウ・グラーナ'15」を組みたい人向け。基本は様子見寄り</h2>
+        <p>
+          今回のガチャは、<strong class="emphasis">ウスマン・デンベレを狙うかどうか</strong>で評価が大きく変わります。デンベレはポゼッションCFの「ストライカーⅢ」として現状唯一無二で、金フォーメーションコンボ「ブラウ・グラーナ'15」の発動条件を満たせる重要なキー選手です。
+        </p>
+        <p>
+          一方で、純粋な戦力強化だけを考えるなら、6月30日までは同時開催中の<strong>MLS実装記念SP選手スカウト</strong>の優先度が高めです。特に期間限定かつ再入手不可のリオネル・メッシをまだ確保していない場合は、デンベレよりメッシを優先したい場面が多いです。
+        </p>
+        <p>
+          さらに今回の開催終了日は<strong>2026年7月7日12時59分まで</strong>。七夕タイミングで新ガチャが来る可能性や、日本代表2026関連のピックアップなども期待できるため、デンベレを狙う場合でも期限ギリギリまで情報を待つのがおすすめです。
+        </p>
+      </div>
+
+      <h2>ガシャの注目ポイント</h2>
+      <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/pickup.png" alt="ピックアップSP選手スカウトの新SP選手4名">
+
+      <ul>
+        <li>★3の排出率は5%。</li>
+        <li>排出される★3選手は、2026年5月15日までに登場した選手のみ。スコット・マクトミネイなども対象。</li>
+        <li>RB1回限定★3確定10連はピックアップ確定ではなく、新SP4名を含む全60種の★3SP選手の排出確率が同じ。</li>
+        <li>新SP選手がピックアップ確率で引けるのは「通常」タブのGBで引けるガチャ。</li>
+        <li>開催期間終了後、次回以降のアップデートで恒常ガチャ「SP選手スカウト」に追加予定。</li>
+        <li>「ピックアップSP選手スカウトメダル」は、期間終了後に1枚につき「SP選手スカウトメダル」1枚へ変換される。</li>
+      </ul>
+
+      <div class="warning-box">
+        <h3>RB1回限定★3確定10連の注意点</h3>
+        <p>
+          RB1回限定の★3確定10連は、★3が1人確定する点では魅力的です。ただし、<strong>デンベレなどの新SP4名が確定するガチャではありません。</strong><br>
+          ★3確定枠では新SP4名を含む全60種の★3SP選手が同じ確率で並ぶため、デンベレ1点狙いには向いていません。
+        </p>
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/offer_rate_RB.png" alt="RB1回限定10連の提供割合">
+        <p>
+          新SP選手をピックアップ確率で狙うなら、基本的には<strong class="emphasis">通常タブのGBガチャ</strong>を確認してから引くのが安全です。RB確定枠は「とりあえず★3を増やしたい人向け」、通常GBは「新SPを狙いたい人向け」と考えると判断しやすいです。
+        </p>
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/offer_rate_GB.png" alt="通常GBガチャの提供割合">
+      </div>
+
+      <h2>おすすめ度早見表</h2>
+      <div class="rating-grid">
+        <div class="rating-item"><b>デンベレ</b><span class="rating">★★★★★</span><span>ブラウ・グラーナ要員</span></div>
+        <div class="rating-item"><b>チャルハノール</b><span class="rating">★★★☆☆</span><span>イスコ上位候補</span></div>
+        <div class="rating-item"><b>オブラク</b><span class="rating">★★☆☆☆</span><span>強いが代用可能</span></div>
+        <div class="rating-item"><b>ウォーカー</b><span class="rating">★☆☆☆☆</span><span>将来性枠</span></div>
+      </div>
+
+      <h2>新SP選手4名の性能評価</h2>
+
+      <section class="player-card">
+        <h3>ウスマン・デンベレ</h3>
+        <div class="tag-row">
+          <span class="tag">CF</span><span class="tag">ポゼッション</span><span class="tag">ストライカーⅢ</span><span class="tag">初期総合力 7063</span><span class="tag">最大強化 15703</span>
+        </div>
+
+        <h4>基本性能</h4>
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/P0372_info.png" alt="ウスマン・デンベレの基本情報">
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/P0372_status.png" alt="ウスマン・デンベレのステータス">
+        <p>
+          デンベレは、総合力が全SP選手375人中3位、ポゼッション94人中2位、CF73人中1位、ストライカー20人中1位。CFとしてもストライカーとしても、現環境のSP選手でトップに立てる性能です。
+        </p>
+        <p>
+          最大の強みは、<strong class="emphasis">ポゼッションCFのストライカーⅢ</strong>という唯一性です。SP選手では現状唯一の組み合わせで、金フォーメーションコンボ「ブラウ・グラーナ'15」の発動条件「ストライカーⅢ」を満たせるキー選手として採用できます。
+        </p>
+        <p>
+          W杯2026のフランス代表として出場している点も、今回のガチャのテーマ性と合っています。サカつく内の性能だけでなく、リアルの大会連動感がある選手を確保したい人にも魅力があります。
+        </p>
+
+        <h4>スキル・特徴評価</h4>
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/P0372_skill.png" alt="ウスマン・デンベレのスキルと特徴">
+        <p>
+          所持特徴は「好調トリガー2つ、絶好調トリガー1つ」と扱いやすく、スタメン起用でも安定して使いやすい構成です。高総合力、唯一性、金フォメコン適性、特徴構成のバランスが良く、今回の明確な当たり枠と言えます。
+        </p>
+
+        <div class="verdict-box">
+          <p><strong>おすすめ度：</strong><span class="rating">★★★★★</span></p>
+          <p>
+            「ブラウ・グラーナ'15」を採用した最強チームを組みたいなら、デンベレは欠かせない存在です。ただし、同時開催のMLS実装記念SP選手スカウトでは期間限定かつ再入手不可のメッシが登場しているため、メッシ未所持なら優先順位には注意。デンベレ1点狙いになる人ほど、深追いは慎重に判断しましょう。
+          </p>
+        </div>
+        <p class="tool-link"><a href="sp_evaluator.html?player=P0372">▶ ウスマン・デンベレを選手評価ツールで詳しく見る</a></p>
+      </section>
+
+      <section class="player-card">
+        <h3>ヤン・オブラク</h3>
+        <div class="tag-row">
+          <span class="tag">GK</span><span class="tag">ポゼッション</span><span class="tag">オーソドックスGKⅡ</span><span class="tag">初期総合力 6821</span><span class="tag">最大強化 15619</span>
+        </div>
+
+        <h4>基本性能</h4>
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/P0373_info.png" alt="ヤン・オブラクの基本情報">
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/P0373_status.png" alt="ヤン・オブラクのステータス">
+        <p>
+          オブラクは、総合力が全SP選手375人中29位、ポゼッション94人中8位、GK34人中2位、オーソドックスGK31人中2位。GKとしての総合力は非常に高く、ポゼッションGKの中ではトップクラスです。
+        </p>
+        <p>
+          ポゼッションGKのオーソドックスGKは、恒常SPのマイク・メニャンなど全7名が存在します。その中でオブラクは総合力1位ですが、メニャンの限界突破が進んでいる場合は、無理に確保しなくても戦力的には代用可能です。
+        </p>
+
+        <h4>スキル・特徴評価</h4>
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/P0373_skill.png" alt="ヤン・オブラクのスキルと特徴">
+        <p>
+          GKとして重要な「セービング・反応速度・1対1」は、マイク・メニャンよりも全て高く、単体性能では最強クラス。さらに特徴構成も「好調トリガー2つ、絶好調トリガー1つ」と扱いやすいです。
+        </p>
+
+        <div class="compare-box">
+          <h4>メニャンで代用できる？</h4>
+          <p>
+            総合力やGK主要パラメータではオブラクが優秀ですが、メニャンの限界突破が進んでいる人は確保優先度が下がります。スタメンをオブラク、交代枠をメニャンにする布陣は面白いものの、デンベレほどガチャを引く理由にはなりにくいです。
+          </p>
+        </div>
+
+        <div class="verdict-box">
+          <p><strong>おすすめ度：</strong><span class="rating">★★☆☆☆</span></p>
+          <p>
+            強いGKであることは間違いありません。ただし、マイク・メニャン、川島永嗣、東口順昭などの代用候補がいるため、率先して狙う必要は薄め。運よく当たったら最強GK候補として採用できる、という評価です。
+          </p>
+        </div>
+        <p class="tool-link"><a href="sp_evaluator.html?player=P0373">▶ ヤン・オブラクを選手評価ツールで詳しく見る</a></p>
+      </section>
+
+      <section class="player-card">
+        <h3>ハカン・チャルハノール</h3>
+        <div class="tag-row">
+          <span class="tag">AM</span><span class="tag">ポゼッション</span><span class="tag">セントラルMFⅡ</span><span class="tag">初期総合力 6927</span><span class="tag">最大強化 15274</span>
+        </div>
+
+        <h4>基本性能</h4>
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/P0374_info.png" alt="ハカン・チャルハノールの基本情報">
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/P0374_status.png" alt="ハカン・チャルハノールのステータス">
+        <p>
+          チャルハノールは、総合力が全SP選手375人中18位、ポゼッション94人中5位、AM46人中4位、セントラルMF27人中2位。ポゼッションAMのセントラルMFとしては非常に高い性能を持っています。
+        </p>
+        <p>
+          ポゼッションAMのセントラルMFは、恒常SPのイスコ、JリーグSPの西澤健太、KリーグSPのイ・ヒギュンに続いて4人目。その中でチャルハノールは総合力1位で、金フォーメーションコンボ「ブラウ・グラーナ'15」の発動条件「セントラルMFⅡ」を満たせるキー選手として採用できます。
+        </p>
+        <p>
+          W杯2026のトルコ代表として出場している点も含め、今回のガチャテーマに合う選手です。デンベレと同じく「ブラウ・グラーナ'15」を意識するなら評価が上がります。
+        </p>
+
+        <h4>スキル・特徴評価</h4>
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/P0374_skill.png" alt="ハカン・チャルハノールのスキルと特徴">
+        <p>
+          イスコの所持特徴が2つなのに対して、チャルハノールは特徴3つ。さらに「好調トリガー2つ、絶好調トリガー1つ」と扱いやすく、総合力だけでなく特徴面でもイスコの上位互換に近い立ち位置です。
+        </p>
+
+        <div class="compare-box">
+          <h4>イスコやMLSミュラーとの比較</h4>
+          <p>
+            イスコの限界突破が進んでいる場合、チャルハノールの獲得優先度は少し下がります。また、6月30日まで開催中のMLS実装記念SP選手スカウトでは、ポゼッションAM最強クラスのトーマス・ミュラーもピックアップされています。イスコや西澤を持っているなら、最強メッシを同時に狙えるMLS側を優先する判断も十分ありです。
+          </p>
+        </div>
+
+        <div class="verdict-box">
+          <p><strong>おすすめ度：</strong><span class="rating">★★★☆☆</span></p>
+          <p>
+            単体性能は高く、「ブラウ・グラーナ'15」要員としても優秀です。ただし、デンベレほどの唯一性はなく、MLSミュラーという強力な競合もいるため、狙うかどうかは手持ち次第。ポゼッションAMが薄い人には十分おすすめできます。
+          </p>
+        </div>
+        <p class="tool-link"><a href="sp_evaluator.html?player=P0374">▶ ハカン・チャルハノールを選手評価ツールで詳しく見る</a></p>
+      </section>
+
+      <section class="player-card">
+        <h3>カイル・ウォーカー</h3>
+        <div class="tag-row">
+          <span class="tag">RB</span><span class="tag">ムービング</span><span class="tag">守備的FBⅡ</span><span class="tag">初期総合力 6609</span><span class="tag">最大強化 15148</span>
+        </div>
+
+        <h4>基本性能</h4>
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/P0375_info.png" alt="カイル・ウォーカーの基本情報">
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/P0375_status.png" alt="カイル・ウォーカーのステータス">
+        <p>
+          ウォーカーは、総合力が全SP選手375人中54位、ムービング87人中15位、RB21人中3位、守備的FB7人中1位。ムービングRBとしては、恒常SPのデンゼル・ダンフリースに次ぐ2人目の選択肢です。
+        </p>
+        <p>
+          プレイスタイル「守備的FBⅡ」では現状唯一無二ですが、現時点で発動条件を満たせる金フォーメーションコンボは実装されていません。つまり、今すぐ最強編成に入るというよりは、将来のフォメコン追加で評価が上がる可能性を持つ選手です。
+        </p>
+
+        <h4>スキル・特徴評価</h4>
+        <img class="article-img" src="img/articles/20260623_pickup_sp_scout_review/P0375_skill.png" alt="カイル・ウォーカーのスキルと特徴">
+        <p>
+          総合力ではダンフリースの下位互換であり、所持特徴もダンフリースが3つに対してウォーカーは2つ。現時点の即戦力評価では、やや物足りなさがあります。
+        </p>
+
+        <div class="compare-box">
+          <h4>将来性はある？</h4>
+          <p>
+            「RBの守備的FBⅡ」が発動トリガーになる金フォーメーションコンボが実装されれば、ウォーカーは一気に必須級へ評価が上がる可能性があります。今は研究枠・将来性枠ですが、プレイスタイル唯一性があるため、当たった場合に完全なハズレとは言い切れません。
+          </p>
+        </div>
+
+        <div class="verdict-box">
+          <p><strong>おすすめ度：</strong><span class="rating">★☆☆☆☆</span></p>
+          <p>
+            現時点では優先して狙う選手ではありません。ムービングRBを強化したいだけならダンフリースで十分な場面も多く、ガチャの本命にはしにくいです。ただし、守備的FBⅡという唯一性があるため、将来の金フォメコン追加を見越して持っておく価値はあります。
+          </p>
+        </div>
+        <p class="tool-link"><a href="sp_evaluator.html?player=P0375">▶ カイル・ウォーカーを選手評価ツールで詳しく見る</a></p>
+      </section>
+
+      <h2>今回のガチャは誰が引くべき？</h2>
+      <div class="point-box">
+        <h3>引くべき人</h3>
+        <ul>
+          <li>金フォーメーションコンボ「ブラウ・グラーナ'15」を本気で組みたい人。</li>
+          <li>ポゼッションCFの最強候補としてデンベレを確保したい人。</li>
+          <li>チャルハノールも含めて、ポゼッション編成のキー選手を補強したい人。</li>
+          <li>W杯2026出場選手を中心にチームを作りたい人。</li>
+          <li>メッシを確保済みで、次の補強先としてポゼッションを強化したい人。</li>
+        </ul>
+
+        <h3>様子見でもいい人</h3>
+        <ul>
+          <li>MLS実装記念SP選手スカウトのメッシをまだ確保していない人。</li>
+          <li>デンベレ1点狙いになってしまう人。</li>
+          <li>ポゼッションCFやAMの手持ちがすでに充実している人。</li>
+          <li>7月7日前後の新ガチャに備えてGBやRBを温存したい人。</li>
+          <li>恒常追加後にゆっくり狙えばいいと考えている人。</li>
+        </ul>
+      </div>
+
+      <h2>おすすめ度ランキング</h2>
+      <ol>
+        <li><span class="rank-good">ウスマン・デンベレ</span>：CF・ストライカーでトップ評価。ブラウ・グラーナ'15の最重要パーツ。</li>
+        <li><span class="rank-normal">ハカン・チャルハノール</span>：ポゼッションAMのセントラルMFでは総合力1位。イスコ上位候補。</li>
+        <li><span class="rank-normal">ヤン・オブラク</span>：GK単体性能は最強クラス。ただし代用候補が多く優先度は控えめ。</li>
+        <li><span class="rank-low">カイル・ウォーカー</span>：現時点では将来性枠。守備的FBⅡの金フォメコン追加に期待。</li>
+      </ol>
+
+      <h2>まとめ</h2>
+      <p>
+        今回のピックアップSP選手スカウトは、<strong class="emphasis">デンベレを狙う価値があるかどうか</strong>で判断するガチャです。デンベレはポゼッションCFのストライカーⅢとして現状唯一無二で、金フォーメーションコンボ「ブラウ・グラーナ'15」を組むなら非常に重要な選手です。
+      </p>
+      <p>
+        ただし、ガチャ全体で見ると、デンベレ以外の3名は手持ちや編成次第で評価が変わります。オブラクは強いものの代用候補が多く、チャルハノールは優秀ですがMLSミュラーとの比較が必要。ウォーカーは将来性こそあるものの、現時点では即戦力としての優先度は低めです。
+      </p>
+      <p>
+        さらに、同時開催中のMLS実装記念SP選手スカウト、7月7日前後の新ガチャ可能性、今後のワールドカップ関連ガチャまで考えると、今すぐ全力で引くよりも<strong class="emphasis">情報が出揃うまで待ってから判断する</strong>のが安全です。ブラウ・グラーナ'15を本気で組みたい人はデンベレ狙い、そうでない人は様子見寄りで良いガチャだと思います。
+      </p>
+
+      <div class="summary-box">
+        <h2>選手評価ツールも活用しよう</h2>
+        <p>
+          各選手のポジション別順位、ポリシー別順位、プレイスタイル別順位、対応フォーメーションコンボを詳しく確認したい場合は、サイト内の「選手評価ツール」もおすすめです。記事内の評価とあわせて、自分の手持ちや使いたいフォメコンに合うかチェックしてみてください。
+        </p>
+        <p><a href="sp_evaluator.html">▶ 選手評価ツールはこちら</a></p>
+      </div>
+
+      <div class="back-link"><a href="articles.html">← 攻略記事一覧に戻る</a></div>
+
+      <footer class="site-footer">
+        <a href="index.html">トップページ</a> / <a href="articles.html">攻略記事一覧</a> / <a href="contact.html">お問い合わせ</a>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
