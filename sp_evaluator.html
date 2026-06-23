@@ -575,8 +575,6 @@
     }
 
     /* キーワード・お気に入り・ボタン・評価対象選択は横幅いっぱい */
-    .ctrlRow > div:nth-child(9),
-    .ctrlRow > div:nth-child(10),
     .ctrlRow > .btnRow,
     .ctrlRow > div[style*="margin-top:12px"],
     .ctrlRow > #err{
@@ -605,6 +603,10 @@
 
       <div class="ctrlRow">
         <div>
+          <label>キーワード（選手名）</label>
+          <input id="fKw" type="text" placeholder="例：サカ / ロナウド" />
+        </div>
+        <div>
           <label for="fNationality">国籍</label>
           <select id="fNationality"><option value="">（指定なし）</option></select>
         </div>
@@ -625,25 +627,22 @@
           <select id="fPos"><option value="">（指定なし）</option></select>
         </div>
         <div>
-          <label>プレイスタイル</label>
-          <select id="fStyle"><option value="">（指定なし）</option></select>
-        </div>
-        <div>
           <label for="fAcqMethod">入手方法</label>
           <select id="fAcqMethod"><option value="">（指定なし）</option></select>
-        </div>
-        <div>
-           <label for="fStyleLv">プレイスタイルLv</label>
-           <select id="fStyleLv"><option value="">（指定なし）</option></select>
         </div>
         <div>
           <label for="fAcqPlace">入手場所</label>
           <select id="fAcqPlace"><option value="">（指定なし）</option></select>
         </div>
         <div>
-          <label>キーワード（選手名）</label>
-          <input id="fKw" type="text" placeholder="例：サカ / ロナウド" />
+          <label>プレイスタイル</label>
+          <select id="fStyle"><option value="">（指定なし）</option></select>
         </div>
+        <div>
+           <label for="fStyleLv">プレイスタイルLv</label>
+           <select id="fStyleLv"><option value="">（指定なし）</option></select>
+        </div>
+
 <div>
   <label style="display:flex;align-items:center;gap:8px;">
     <input id="favOnly" type="checkbox" style="width:18px;height:18px;margin:0;">
