@@ -217,6 +217,140 @@
       box-shadow:0 5px 0 #a2d8ff, inset 0 2px 0 rgba(255,255,255,.8);
     }
     .reward-row img{width:58px;height:58px;object-fit:contain;filter:drop-shadow(0 5px 5px rgba(23,50,92,.2));}
+
+    .cutin{
+      position:fixed;
+      left:0;
+      top:38%;
+      width:100%;
+      padding:28px 0;
+      background:rgba(0,0,0,.68);
+      z-index:9999;
+      text-align:center;
+      pointer-events:none;
+      opacity:0;
+      transform:translateY(10px) scale(.98);
+      transition:opacity .16s ease, transform .16s ease;
+    }
+    .cutin.show{
+      opacity:1;
+      transform:translateY(0) scale(1);
+    }
+    .cutin-main{
+      font-size:clamp(56px,12vw,96px);
+      line-height:.95;
+      font-weight:1000;
+      color:#00f5ff;
+      letter-spacing:.02em;
+      text-shadow:5px 5px 10px rgba(0,0,0,.85), 0 0 8px rgba(0,255,255,.25);
+    }
+    .cutin-sub{
+      margin-top:10px;
+      font-size:clamp(24px,5vw,38px);
+      font-weight:1000;
+      color:#fff;
+      text-shadow:3px 3px 7px rgba(0,0,0,.95);
+    }
+    .result-modal{
+      position:fixed;
+      inset:0;
+      z-index:9998;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      background:rgba(0,0,0,.48);
+    }
+    .result-modal.show{display:flex;}
+    .result-box{
+      width:min(560px,92vw);
+      border-radius:28px;
+      padding:24px 18px 20px;
+      text-align:center;
+      background:linear-gradient(180deg,#ffffff,#eaf8ff);
+      border:4px solid #fff;
+      box-shadow:0 10px 0 #1671d7,0 24px 42px rgba(0,0,0,.28);
+    }
+    .result-title{
+      font-size:clamp(34px,8vw,56px);
+      font-weight:1000;
+      color:#00cfe8;
+      text-shadow:3px 3px 0 #073b55,0 6px 12px rgba(0,0,0,.24);
+      margin-bottom:4px;
+    }
+    .result-sub{
+      font-size:clamp(20px,4.6vw,30px);
+      font-weight:1000;
+      color:#17325c;
+      margin-bottom:14px;
+    }
+    .result-items{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin:10px auto 18px;
+      max-width:460px;
+    }
+    .result-item{
+      aspect-ratio:1/1;
+      border-radius:20px;
+      background:linear-gradient(180deg,#ffffff,#eaf8ff);
+      border:3px solid #bde8ff;
+      display:grid;
+      place-items:center;
+      box-shadow:0 6px 0 #a2d8ff,inset 0 2px 0 rgba(255,255,255,.9);
+      padding:10px;
+    }
+    .result-item img{
+      width:88%;
+      height:88%;
+      object-fit:contain;
+      filter:drop-shadow(0 7px 7px rgba(23,50,92,.25));
+    }
+    .result-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      max-width:420px;
+      margin:0 auto;
+    }
+    .result-actions button{
+      border:0;
+      border-radius:999px;
+      padding:13px 12px;
+      font-weight:1000;
+      font-size:clamp(16px,4.2vw,24px);
+      cursor:pointer;
+      color:#fff;
+      background:linear-gradient(180deg,#ffd84d,#ffb800);
+      box-shadow:0 6px 0 #c98500,0 10px 18px rgba(255,184,0,.25);
+      text-shadow:2px 2px 4px rgba(0,0,0,.42);
+    }
+    .result-actions button:active{
+      transform:translateY(3px);
+      box-shadow:0 3px 0 #c98500,0 6px 12px rgba(255,184,0,.2);
+    }
+
+
+    .sound-toggle{
+      position:fixed;
+      right:14px;
+      bottom:14px;
+      z-index:10000;
+      border:2px solid #87cfff;
+      border-radius:999px;
+      padding:10px 14px;
+      background:linear-gradient(180deg,#ffffff,#e7f7ff);
+      color:#17325c;
+      font-weight:1000;
+      cursor:pointer;
+      box-shadow:0 5px 0 #79b9e8,0 10px 20px rgba(45,140,255,.18);
+    }
+    .sound-toggle:active{
+      transform:translateY(2px);
+      box-shadow:0 3px 0 #79b9e8,0 6px 14px rgba(45,140,255,.18);
+    }
+
     @media(max-width:760px){
       body{padding:12px}
       .main{grid-template-columns:1fr}
@@ -254,9 +388,88 @@
     </main>
   </div>
 
+
+  <div class="cutin" id="resultCutin" aria-hidden="true">
+    <div class="cutin-main">Result</div>
+    <div class="cutin-sub">獲得アイテム</div>
+  </div>
+
+  <div class="result-modal" id="resultModal" aria-hidden="true">
+    <div class="result-box">
+      <div class="result-title">Result</div>
+      <div class="result-sub">獲得アイテム</div>
+      <div class="result-items" id="resultItems"></div>
+      <div class="result-actions">
+        <button id="backSugorokuBtn" type="button">すごろくに戻る</button>
+        <button id="closeResultBtn" type="button">とじる</button>
+      </div>
+    </div>
+  </div>
+
+
+  <button class="sound-toggle" id="soundToggleBtn" type="button" aria-pressed="false">🔇 SE OFF</button>
+
+  <audio id="sePanelA" src="sound/panel_A.mp3" preload="auto"></audio>
+  <audio id="sePanelB" src="sound/panel_B.mp3" preload="auto"></audio>
+  <audio id="seResult" src="sound/Result.mp3" preload="auto"></audio>
+
   <script>
     const IMG_DIR = 'img/strikeout_rewards/';
     const MAX_ATTEMPTS = 3;
+
+    const SOUND_KEY = 'soundEnabled';
+    let soundEnabled = localStorage.getItem(SOUND_KEY) === 'true';
+
+    function playSE(id){
+      if(!soundEnabled) return;
+
+      const se = document.getElementById(id);
+      if(!se) return;
+
+      se.currentTime = 0;
+      se.play().catch(() => {});
+    }
+
+    function setSEVolume(){
+      const volumes = {
+        sePanelA: 0.65,
+        sePanelB: 0.95,
+        seResult: 1.0
+      };
+
+      Object.entries(volumes).forEach(([id, volume]) => {
+        const se = document.getElementById(id);
+        if(se) se.volume = volume;
+      });
+    }
+
+    function unlockSE(){
+      ['sePanelA','sePanelB','seResult'].forEach(id => {
+        const se = document.getElementById(id);
+        if(!se) return;
+        se.load();
+      });
+    }
+
+    function updateSoundToggle(){
+      const btn = document.getElementById('soundToggleBtn');
+      if(!btn) return;
+
+      btn.textContent = soundEnabled ? '🔊 SE ON' : '🔇 SE OFF';
+      btn.setAttribute('aria-pressed', String(soundEnabled));
+    }
+
+    function toggleSound(){
+      soundEnabled = !soundEnabled;
+      localStorage.setItem(SOUND_KEY, String(soundEnabled));
+      updateSoundToggle();
+
+      if(soundEnabled){
+        unlockSE();
+        playSE('sePanelA');
+      }
+    }
+
 
     const stages = [
       {
@@ -364,7 +577,10 @@ function renderRewardList(stage){
       `).join('');
 
       board.querySelectorAll('.panel').forEach(button => {
-        button.addEventListener('click', () => openPanel(Number(button.dataset.index), button));
+        button.addEventListener('click', () => {
+          unlockSE();
+          openPanel(Number(button.dataset.index), button);
+        });
       });
     }
 
@@ -373,6 +589,7 @@ function renderRewardList(stage){
 
       const reward = panels[index];
       remaining -= 1;
+      playSE(remaining === 0 ? 'sePanelB' : 'sePanelA');
       gained.push(reward);
 
       document.getElementById('attemptCount').textContent = remaining;
@@ -387,13 +604,58 @@ button.innerHTML = `
       }
     }
 
-function finishGame(){
+function wait(ms){
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function showResultCutin(){
+  playSE('seResult');
+  const cutin = document.getElementById('resultCutin');
+  cutin.classList.add('show');
+  cutin.setAttribute('aria-hidden', 'false');
+
+  await wait(950);
+
+  cutin.classList.remove('show');
+  cutin.setAttribute('aria-hidden', 'true');
+
+  await wait(120);
+}
+
+function showResultModal(){
+  const modal = document.getElementById('resultModal');
+  const items = document.getElementById('resultItems');
+
+  items.innerHTML = gained.map(reward => `
+    <div class="result-item">
+      <img src="${IMG_DIR + reward.img}" alt="${reward.name}">
+    </div>
+  `).join('');
+
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden', 'false');
+}
+
+function closeResultModal(){
+  const modal = document.getElementById('resultModal');
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden', 'true');
+}
+
+async function finishGame(){
   document.querySelectorAll('.panel:not(.open)')
     .forEach(button => button.disabled = true);
 
+  await wait(350);
+  await showResultCutin();
+  showResultModal();
 }
 
 function init(){
+  setSEVolume();
+  updateSoundToggle();
+  document.getElementById('soundToggleBtn').addEventListener('click', toggleSound);
+
   currentStage = weightedRandomStage();
   panels = buildPanels(currentStage);
   remaining = MAX_ATTEMPTS;
@@ -401,6 +663,12 @@ function init(){
   document.getElementById('attemptCount').textContent = remaining;
   renderRewardList(currentStage);
   renderBoard();
+
+  document.getElementById('backSugorokuBtn').addEventListener('click', () => {
+    location.href = 'dice_sugoroku_simulator.html';
+  });
+
+  document.getElementById('closeResultBtn').addEventListener('click', closeResultModal);
 }
 
     window.addEventListener('DOMContentLoaded', init);
