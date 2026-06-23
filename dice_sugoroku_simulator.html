@@ -88,6 +88,9 @@
   .mult button{border:2px solid #91c9ff;border-radius:12px;padding:11px;background:#f6fbff;color:#1667c5;font-weight:1000;cursor:pointer}
   .mult button.active{background:#fff1a8;border-color:#ffaf16;color:#c74600}
   .resetSmall{margin-top:2px;border:2px solid #b7d7f3;border-radius:999px;padding:9px 28px;background:#fff;color:#1a69b8;font-weight:1000;cursor:pointer;}
+  .soundToggle{border:2px solid #91c9ff;border-radius:999px;padding:9px 26px;background:linear-gradient(180deg,#ffffff,#e7f7ff);color:#1667c5;font-weight:1000;cursor:pointer;box-shadow:0 4px 0 #b7d7f3;}
+  .soundToggle.on{background:linear-gradient(180deg,#fff1a8,#ffd55a);border-color:#ffaf16;color:#c74600;box-shadow:0 4px 0 #e49b12;}
+  .soundToggle:active{transform:translateY(2px);box-shadow:0 2px 0 #b7d7f3;}
   .note{text-align:center;color:#52616f;font-weight:800;font-size:13px;margin-top:-4px}
   .hint{background:#fff9db;border:2px solid #ffd35a;border-radius:16px;padding:12px;color:#5a3a00;font-weight:900;margin:12px;text-align:center}
 
@@ -109,10 +112,64 @@
   #goStrikeBtn{background:linear-gradient(180deg,#ff7798,#f02f62);color:#fff;box-shadow:0 5px 0 #c21f4a;}
   #closeGoalBtn{background:linear-gradient(180deg,#ffffff,#e7f7ff);color:#1267bd;border:2px solid #93d8ff;}
 
+
+
+  /* カットイン演出 */
+  .cutin{
+    position:fixed;
+    left:0;
+    top:38%;
+    width:100%;
+    min-height:138px;
+    padding:26px 12px 24px;
+    background:rgba(0,0,0,.68);
+    z-index:1200;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    pointer-events:none;
+    opacity:0;
+    transform:translateY(12px) scale(.98);
+    transition:opacity .16s ease, transform .16s ease;
+  }
+  .cutin.show{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+  .cutin.hidden{display:none;}
+  .cutinInner{animation:cutinPop .72s ease both;}
+  .cutinMain{
+    font-size:clamp(58px,10vw,112px);
+    line-height:.92;
+    font-weight:1000;
+    letter-spacing:.01em;
+    color:#00f5ff;
+    text-shadow:0 5px 0 rgba(0,0,0,.85),0 0 18px rgba(0,245,255,.55),4px 4px 10px rgba(0,0,0,.75);
+  }
+  .cutinMain.move{
+    color:#fff200;
+    text-shadow:0 5px 0 rgba(0,0,0,.85),0 0 18px rgba(255,242,0,.55),4px 4px 10px rgba(0,0,0,.75);
+  }
+  .cutinSub{
+    margin-top:10px;
+    font-size:clamp(22px,4.5vw,42px);
+    line-height:1.1;
+    font-weight:1000;
+    color:#fff;
+    text-shadow:0 4px 0 rgba(0,0,0,.85),3px 3px 8px rgba(0,0,0,.9);
+  }
+  @keyframes cutinPop{
+    0%{transform:scale(.82);filter:blur(1px);opacity:.2}
+    22%{transform:scale(1.08);filter:blur(0);opacity:1}
+    55%{transform:scale(1)}
+    100%{transform:scale(1)}
+  }
+
   @media(max-width:900px){
     .wrap{padding:10px}.topLinks{justify-content:center}.siteBack{margin-bottom:10px;font-size:13px;padding:8px 12px}.hero{display:block;text-align:center}.legend{justify-content:center;margin-top:10px}.tag{font-size:12px;padding:6px 8px}h1{font-size:25px}.lead{font-size:13px}.main{display:flex;flex-direction:column}.panel{width:100%}.board-wrap{padding:10px}.board{width:min(100%,96vw);max-width:none}.cell{border-width:1.5px;border-radius:4px;font-size:clamp(10px,3.35vw,17px)}.cell small{top:3px;left:4px}.piece{width:44%}.side{width:100%;grid-template-columns:1fr}.cardTitle{font-size:17px}.log{height:110px}.hint{font-size:13px;margin:10px}.note{font-size:12px}.diceCube{width:clamp(64px,21vw,110px);border-width:4px;gap:7%;padding:16%;}.diceCenterTitle{font-size:12px;margin-bottom:4px}.diceRibbon{font-size:22px;padding:1px 14px}.diceUsedBadge{left:6px;bottom:6px;min-width:98px;padding:6px 8px;border-width:2px;font-size:12px}.rollArea{padding:0 10px 12px}.rollArea .btn{font-size:17px}.mult{grid-template-columns:1fr 1fr}
   }
   @media(max-width:430px){
+    .cutin{top:37%;min-height:106px;padding:20px 8px 18px}.cutinSub{margin-top:6px}
     .wrap{padding:8px}.board-wrap{padding:6px}.cell{font-size:clamp(9px,3.05vw,14px);border-radius:3px}.cell small{font-size:.7em}.legend{display:none}.main{gap:10px}.panel.pad{padding:10px}.cardTitle{margin:-10px -10px 10px;padding:9px 12px}.side{gap:10px}.stat{padding:9px 11px}.btn{font-size:16px}.mult button{padding:9px 6px;font-size:14px}.hint{font-size:12px}.diceCube{width:58px;border-width:3px;box-shadow:0 0 0 4px rgba(116,185,255,.15),0 8px 18px rgba(32,93,164,.2);}.diceCenterTitle{display:none}.diceRibbon{font-size:18px}.diceUsedBadge{min-width:82px;padding:5px 7px;font-size:11px}.diceUsedBadge b{font-size:24px}.rollArea .btn{font-size:16px;min-width:0;width:100%}
   }
 </style>
@@ -158,6 +215,7 @@
           <button id="m1" class="active" type="button">1倍で振る<br><small>報酬は等倍</small></button>
           <button id="m10" type="button">10倍で振る<br><small>報酬が10倍！</small></button>
         </div>
+        <button class="soundToggle" id="soundToggleBtn" type="button" aria-pressed="false">🔇 SE OFF</button>
         <button class="resetSmall" id="resetBtn" type="button">↻ リセット</button>
       </div>
       <div class="note">※10倍モードでも出目は1〜6のままです</div>
@@ -188,6 +246,13 @@
   </div>
 </div>
 
+<div id="cutin" class="cutin hidden" aria-hidden="true">
+  <div class="cutinInner">
+    <div class="cutinMain" id="cutinMain">Replay</div>
+    <div class="cutinSub" id="cutinSub">サイコロをもう一度振る</div>
+  </div>
+</div>
+
 <div class="goalModal" id="goalModal" aria-hidden="true">
   <div class="goalModalBox">
     <div class="goalTitle">ゴール！</div>
@@ -199,8 +264,15 @@
   </div>
 </div>
 
+<audio id="seDice" src="sound/dice.mp3" preload="auto"></audio>
+<audio id="seMove" src="sound/move.mp3" preload="auto"></audio>
+<audio id="seM2M3" src="sound/+2+3.mp3" preload="auto"></audio>
+<audio id="seReplay" src="sound/Replay.mp3" preload="auto"></audio>
+<audio id="seGoal" src="sound/goal.mp3" preload="auto"></audio>
+
 <script>
 const STORAGE_KEY = 'diceSugorokuStateV1';
+const SOUND_KEY = 'diceSugorokuSoundEnabled';
 const board = document.getElementById('board');
 const cells = [];
 const special = {5:'re',13:'re',12:'plus3',18:'plus2',28:'plus2',30:'goal'};
@@ -221,6 +293,7 @@ let goals = 0;
 let laps = 0;
 let multiplier = 1;
 let rolling = false;
+let soundEnabled = localStorage.getItem(SOUND_KEY) === '1';
 
 const piece = document.createElement('div');
 piece.className = 'piece';
@@ -235,6 +308,92 @@ function label(i){
 
 function wait(ms){
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function playSE(id){
+  if(!soundEnabled) return;
+
+  const se = document.getElementById(id);
+  if(!se) return;
+
+  se.currentTime = 0;
+  se.play().catch(()=>{});
+}
+
+function setSEVolume(){
+  const volumes = {
+    seDice: 0.75,
+    seMove: 0.28,
+    seM2M3: 0.95,
+    seReplay: 0.95,
+    seGoal: 1.0
+  };
+
+  Object.entries(volumes).forEach(([id, volume]) => {
+    const se = document.getElementById(id);
+    if(se) se.volume = volume;
+  });
+}
+
+function unlockSE(){
+  ['seDice','seMove','seM2M3','seReplay','seGoal'].forEach(id => {
+    const se = document.getElementById(id);
+    if(!se) return;
+    se.load();
+  });
+}
+
+function syncSoundButton(){
+  const btn = document.getElementById('soundToggleBtn');
+  if(!btn) return;
+
+  btn.textContent = soundEnabled ? '🔊 SE ON' : '🔇 SE OFF';
+  btn.classList.toggle('on', soundEnabled);
+  btn.setAttribute('aria-pressed', String(soundEnabled));
+}
+
+function toggleSound(){
+  soundEnabled = !soundEnabled;
+  localStorage.setItem(SOUND_KEY, soundEnabled ? '1' : '0');
+  syncSoundButton();
+
+  if(soundEnabled){
+    unlockSE();
+    playSE('seDice');
+  }
+}
+
+
+function showCutin(type, value = null){
+  const cutin = document.getElementById('cutin');
+  const main = document.getElementById('cutinMain');
+  const sub = document.getElementById('cutinSub');
+
+  main.classList.remove('move');
+
+  if(type === 'replay'){
+    main.textContent = 'Replay';
+    sub.textContent = 'サイコロをもう一度振る';
+  }else if(type === 'move'){
+    main.textContent = `Move +${value}`;
+    sub.textContent = `${value}マスすすむ`;
+    main.classList.add('move');
+  }
+
+  cutin.classList.remove('hidden');
+  cutin.setAttribute('aria-hidden', 'false');
+  requestAnimationFrame(() => cutin.classList.add('show'));
+
+  return new Promise(resolve => {
+    setTimeout(() => {
+      cutin.classList.remove('show');
+      setTimeout(() => {
+        cutin.classList.add('hidden');
+        cutin.setAttribute('aria-hidden', 'true');
+        resolve();
+      }, 170);
+    }, 900);
+  });
 }
 
 function saveState(){
@@ -344,6 +503,7 @@ function render(){
 
 async function moveSteps(steps){
   for(let i = 0; i < steps; i++){
+    playSE('seMove');
     pos++;
     if(pos > 30){
       pos = 1;
@@ -357,6 +517,7 @@ async function moveSteps(steps){
 
 async function resolveSpecial(){
   if(pos === 30){
+    playSE('seGoal');
     goals++;
     addLog('ゴール！');
     render();
@@ -365,22 +526,27 @@ async function resolveSpecial(){
   }
 
   if(pos === 12){
+    playSE('seM2M3');
     addLog('12マス目：+3発動');
+    await showCutin('move', 3);
     await moveSteps(3);
     await resolveSpecial();
     return;
   }
 
   if(pos === 18 || pos === 28){
+    playSE('seM2M3');
     addLog(`${pos}マス目：+2発動`);
+    await showCutin('move', 2);
     await moveSteps(2);
     await resolveSpecial();
     return;
   }
 
   if(pos === 5 || pos === 13){
+    playSE('seReplay');
     addLog(`${pos}マス目：もう一度ダイス発動`);
-    await wait(450);
+    await showCutin('replay');
     await roll(true, true);
   }
 }
@@ -394,6 +560,7 @@ async function roll(isFree = false, force = false){
     document.getElementById('rollBtn').disabled = true;
   }
 
+  playSE('seDice');
   const dice = Math.floor(Math.random() * 6) + 1;
   setDiceFace(dice);
   if(!isFree) diceUsed += multiplier;
@@ -455,7 +622,11 @@ function bindEvents(){
   const m1Btn = document.getElementById('m1');
   const m10Btn = document.getElementById('m10');
 
-  document.getElementById('rollBtn').onclick = () => roll(false);
+  document.getElementById('rollBtn').onclick = () => {
+    unlockSE();
+    roll(false);
+  };
+  document.getElementById('soundToggleBtn').onclick = toggleSound;
   document.getElementById('resetBtn').onclick = resetGame;
 
   m1Btn.onclick = () => {
@@ -482,6 +653,8 @@ function bindEvents(){
 }
 
 function init(){
+  setSEVolume();
+  syncSoundButton();
   buildBoard();
   bindEvents();
   loadState();
