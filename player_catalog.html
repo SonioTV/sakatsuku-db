@@ -169,6 +169,29 @@
     accent-color:#c98a00;
     flex:0 0 auto;
   }
+
+  .sortWrap{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#eef6ff;
+    border:1px solid rgba(21,95,128,.22);
+    color:#0b3d50;
+    padding:8px 12px;
+    border-radius:999px;
+    font-weight:900;
+    font-size:14px;
+  }
+  .sortWrap select{
+    border:none;
+    background:transparent;
+    color:#0b3d50;
+    font-weight:900;
+    font-size:14px;
+    outline:none;
+    cursor:pointer;
+  }
+
   .currentFilters{
     margin:10px 0 2px;
     padding:10px 12px;
@@ -454,6 +477,8 @@
     .summary{ gap:6px; }
     .summaryActions{ gap:6px; }
     .favOnlyWrap{ padding:7px 9px; font-size:12px; gap:6px; }
+    .sortWrap{ padding:7px 9px; font-size:12px; gap:6px; }
+    .sortWrap select{ font-size:12px; max-width:130px; }
     .summaryBadge{ padding:7px 9px; font-size:12px; }
     .playerCard{ border-width:2px; border-radius:14px; }
     .playerHead{ grid-template-columns:1fr; padding:8px 8px; }
@@ -577,6 +602,14 @@
       <div class="summary">
         <div class="sectionTitle" style="margin-bottom:0;">選手一覧</div>
         <div class="summaryActions">
+          <label class="sortWrap" for="sortOrder">
+            <span>並び順</span>
+            <select id="sortOrder">
+              <option value="id">登録ID順</option>
+              <option value="overall">初期総合力順</option>
+              <option value="maxUpgrade">最大総合力順</option>
+            </select>
+          </label>
           <label class="favOnlyWrap">
             <input type="checkbox" id="favoriteOnlyCheck">
             <span>お気に入りのみ表示</span>
@@ -748,6 +781,7 @@ function currentFilterState(){
     playStyleLv: normalize($("fStyleLv").value),
     mainPosition: normalize($("fPosition").value),
     favoriteOnly: $("favoriteOnlyCheck") ? !!$("favoriteOnlyCheck").checked : false,
+    sortOrder: $("sortOrder") ? normalize($("sortOrder").value) : "id",
   };
 }
 
@@ -768,6 +802,17 @@ function filterPlayers(){
     return true;
   })
 .sort((a,b)=>{
+  const sortOrder = f.sortOrder || "id";
+  if(sortOrder === "overall"){
+    const av = toNum(a.overall) ?? -Infinity;
+    const bv = toNum(b.overall) ?? -Infinity;
+    if(bv !== av) return bv - av;
+  }
+  if(sortOrder === "maxUpgrade"){
+    const av = toNum(a.maxUpgrade) ?? -Infinity;
+    const bv = toNum(b.maxUpgrade) ?? -Infinity;
+    if(bv !== av) return bv - av;
+  }
   const aid = String(a.playerId || "");
   const bid = String(b.playerId || "");
   return aid.localeCompare(bid, "ja", { numeric:true });
@@ -788,6 +833,8 @@ function renderCurrentFilters(){
   if(f.acquisitionPlace) parts.push(`入手場所：${esc(f.acquisitionPlace)}`);
   if(f.playStyleLv) parts.push(`プレイスタイルLv：${esc(romanLv(f.playStyleLv))}`);
   if(f.favoriteOnly) parts.push(`お気に入り：のみ表示`);
+  const sortLabel = f.sortOrder === "overall" ? "初期総合力順" : (f.sortOrder === "maxUpgrade" ? "最大総合力順" : "登録ID順");
+  parts.push(`並び順：${esc(sortLabel)}`);
 
   $("currentFilters").innerHTML = parts.length
     ? `<strong>現在の条件：</strong> ${parts.join(" / ")}`
@@ -888,6 +935,7 @@ function resetFilters(){
   $("fStyleLv").value = "";
   $("fPosition").value = "";
   if($("favoriteOnlyCheck")) $("favoriteOnlyCheck").checked = false;
+  if($("sortOrder")) $("sortOrder").value = "id";
   applyFilters();
 }
 
@@ -968,6 +1016,7 @@ async function init(){
 $("btnApply").addEventListener("click", applyFilters);
 $("btnReset").addEventListener("click", resetFilters);
 $("favoriteOnlyCheck").addEventListener("change", applyFilters);
+$("sortOrder").addEventListener("change", applyFilters);
 
 // Enterキーでも絞り込み実行
 $("fName").addEventListener("keydown", (e)=>{
