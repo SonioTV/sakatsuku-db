@@ -467,6 +467,59 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
   .pitchNameFallback{ font-size:11px; padding:5px 7px; }
 }
 
+
+/* ===== Mobile display fixes: position column + modal detail rows ===== */
+@media (max-width:680px){
+  #gridWrap tbody tr{
+    grid-template-columns:68px 1fr !important;
+  }
+  #gridWrap tbody td.pos{
+    grid-row:1 / span 1 !important;
+    width:68px !important;
+    min-width:68px !important;
+    overflow:visible !important;
+    white-space:nowrap !important;
+    padding:9px 6px !important;
+  }
+  #gridWrap tbody td.pos span{
+    display:block;
+    width:100%;
+    overflow:visible;
+    white-space:nowrap;
+    text-align:center;
+    font-size:13px;
+    line-height:1.2;
+  }
+
+  .modal{
+    width:min(720px, calc(100% - 24px));
+    max-height:88vh;
+  }
+  .modalBody{
+    padding:14px 16px 18px;
+  }
+  .modalBody .mLine{
+    display:flex !important;
+    gap:10px !important;
+    align-items:flex-start !important;
+    margin:8px 0 !important;
+    line-height:1.55;
+  }
+  .modalBody .mKey{
+    display:inline-block !important;
+    flex:0 0 118px !important;
+    min-width:118px !important;
+    margin-bottom:0 !important;
+    font-weight:900;
+  }
+  .modalBody .mVal{
+    flex:1 1 auto !important;
+    min-width:0 !important;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+  }
+}
+
 </style>
 </head>
 <body>
