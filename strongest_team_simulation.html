@@ -521,9 +521,10 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
 }
 
 
-/* ===== Pitch field lines ===== */
+/* ===== Half-pitch field lines ===== */
 .pitch{
   position:relative;
+  overflow:hidden;
 }
 .pitch::before{
   content:"";
@@ -539,10 +540,9 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
   position:absolute;
   left:3%;
   right:3%;
-  top:50%;
-  height:4px;
-  background:rgba(255,255,255,.28);
-  transform:translateY(-50%);
+  top:3%;
+  height:0;
+  border-top:4px solid rgba(255,255,255,.95);
   z-index:1;
   pointer-events:none;
 }
@@ -558,61 +558,55 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
   border-style:solid;
   box-sizing:border-box;
 }
-.pitchLine.penaltyTop{
-  left:21%;
-  top:3%;
-  width:58%;
-  height:18%;
-  border-width:0 4px 4px 4px;
-  border-radius:0 0 8px 8px;
-}
-.pitchLine.arcTop{
-  left:36%;
-  top:3%;
-  width:28%;
-  height:17%;
-  border-width:0 4px 4px 4px;
+
+/* ハーフコート上端＝センターライン。上から大きなセンターサークルだけ見せる */
+.pitchLine.centerArc{
+  left:20%;
+  top:-23%;
+  width:60%;
+  height:36%;
+  border-width:4px;
   border-radius:0 0 999px 999px;
 }
+
+/* ペナルティエリア */
 .pitchLine.penaltyBottom{
   left:15%;
   bottom:3%;
   width:70%;
-  height:23%;
+  height:25%;
   border-width:4px 4px 0 4px;
   border-radius:8px 8px 0 0;
 }
+
+/* ゴールエリア */
 .pitchLine.goalBottom{
-  left:25%;
+  left:28%;
   bottom:3%;
-  width:50%;
-  height:14%;
+  width:44%;
+  height:13%;
   border-width:4px 4px 0 4px;
   border-radius:6px 6px 0 0;
 }
+
+/* ペナルティアーク */
 .pitchLine.arcBottom{
   left:36%;
-  bottom:20.5%;
+  bottom:22.5%;
   width:28%;
-  height:14%;
+  height:13%;
   border-width:4px 4px 0 4px;
   border-radius:999px 999px 0 0;
 }
+
 .pPlayer{
   z-index:2;
 }
+
 @media (max-width:680px){
   .pitch::before{ border-width:3px; }
-  .pitch::after{ height:3px; }
-  .pitchLine.penaltyTop,
-  .pitchLine.arcTop,
-  .pitchLine.penaltyBottom,
-  .pitchLine.goalBottom,
-  .pitchLine.arcBottom{
-    border-width:3px;
-  }
-  .pitchLine.penaltyTop{ border-width:0 3px 3px 3px; }
-  .pitchLine.arcTop{ border-width:0 3px 3px 3px; }
+  .pitch::after{ border-top-width:3px; }
+  .pitchLine.centerArc{ border-width:3px; }
   .pitchLine.penaltyBottom{ border-width:3px 3px 0 3px; }
   .pitchLine.goalBottom{ border-width:3px 3px 0 3px; }
   .pitchLine.arcBottom{ border-width:3px 3px 0 3px; }
@@ -825,8 +819,7 @@ function renderPitch(){
 
   pitch.innerHTML = `
     <div class="pitchLines" aria-hidden="true">
-      <div class="pitchLine penaltyTop"></div>
-      <div class="pitchLine arcTop"></div>
+      <div class="pitchLine centerArc"></div>
       <div class="pitchLine penaltyBottom"></div>
       <div class="pitchLine goalBottom"></div>
       <div class="pitchLine arcBottom"></div>
