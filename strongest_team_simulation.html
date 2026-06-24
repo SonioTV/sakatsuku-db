@@ -294,20 +294,155 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
 
 /* ---- end pitch view ---- */
 
+
+
+/* ===== Stylish UI override 2026 ===== */
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --line:#dbe4f0;
+  --txt:#111827;
+  --mut:#64748b;
+  --acc:#155f80;
+  --good:#0f9d58;
+  --bad:#d92d20;
+  --orange:#f59e0b;
+  --shadow:0 18px 45px rgba(15,23,42,.10);
+}
+html,body{
+  background:
+    radial-gradient(circle at top left, rgba(21,95,128,.12), transparent 34%),
+    linear-gradient(180deg,#f8fbff 0%,#f2f5fa 100%);
+  color:var(--txt);
+}
+.wrap{max-width:1080px;padding:18px 14px 60px;}
+.pageTitleImg{text-align:center;margin:6px 0 8px;}
+.pageTitleImg img{width:min(420px,88%);height:auto;}
+.topNav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:10px 0 14px;}
+.topNav a{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 14px;border-radius:999px;background:#fff;color:#155f80;
+  border:1px solid rgba(21,95,128,.18);text-decoration:none;font-weight:900;
+  box-shadow:0 8px 18px rgba(15,23,42,.06);
+}
+h1{font-size:clamp(28px,4vw,42px);text-align:center;margin:8px 0 8px;color:#0f172a;}
+.lead{margin:0 auto 16px;max-width:760px;text-align:center;color:var(--mut);font-size:14px;line-height:1.7;font-weight:800;}
+.card{
+  background:rgba(255,255,255,.94);border:1px solid rgba(15,23,42,.08);
+  border-radius:24px;box-shadow:var(--shadow);padding:18px;
+}
+.simCard{overflow:hidden;position:relative;}
+.simCard::before{content:"";position:absolute;left:0;top:0;right:0;height:7px;background:linear-gradient(90deg,#155f80,#2a87ff,#f59e0b);}
+.sectionTitle{font-size:20px;font-weight:900;color:#0f172a;margin:4px 0 14px;}
+.ctrl{gap:12px;}
+.row{gap:12px;}
+.ctrl > .row:first-child{display:grid;grid-template-columns:180px 200px 1fr;align-items:end;}
+.ctrl > .row:nth-child(2){display:grid;grid-template-columns:minmax(240px,420px);}
+.two{gap:6px;}
+label{font-size:13px;color:#334155;font-weight:900;}
+select,input[type="text"]{
+  width:100%;min-width:0;background:#fff;border:2px solid #dbe4f0;color:#111827;
+  border-radius:14px;padding:11px 12px;font-size:15px;font-weight:800;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+}
+select:focus,input[type="text"]:focus{border-color:#155f80;box-shadow:0 0 0 4px rgba(21,95,128,.10);}
+#comboSel{padding:11px 12px;border-radius:14px;}
+.actionRow{align-items:center;margin-top:2px;}
+.btn{
+  background:linear-gradient(180deg,#f8a51b,#f59e0b);border:none;border-radius:16px;color:#fff;
+  font-size:18px;font-weight:900;padding:14px 22px;box-shadow:0 14px 24px rgba(245,158,11,.25);
+}
+.mini{font-size:13px;color:var(--mut);font-weight:800;}
+.err{color:var(--bad);}
+.viewBlock{margin-top:6px;padding:12px;border-radius:18px;background:#f8fafc;border:1px solid #e5edf6;}
+.viewLabel{font-size:13px;color:#334155;font-weight:900;margin:0 0 8px;}
+.pitchTeamLabel{margin-top:10px;}
+.viewRow{gap:8px;}
+.pill{
+  background:#fff;border:1px solid #dbe4f0;color:#334155;border-radius:999px;padding:8px 12px;
+  font-size:13px;font-weight:900;box-shadow:0 6px 12px rgba(15,23,42,.04);
+}
+.pill input{accent-color:#155f80;}
+.resultsBox{padding:16px;}
+.resultHeader{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 10px;}
+.resultHeader div{font-size:20px;font-weight:900;color:#0f172a;}
+.resultHeader span{font-size:12px;font-weight:900;color:#0f9d58;background:#eaf8f0;border:1px solid rgba(15,157,88,.18);border-radius:999px;padding:6px 10px;}
+.grid{margin-top:10px;border:1px solid #dbe4f0;border-radius:18px;overflow:hidden;background:#fff;}
+table{background:#fff;table-layout:fixed;width:100%;}
+thead th{position:sticky;top:0;background:#f1f5f9;color:#334155;border-bottom:1px solid #dbe4f0;font-size:13px;padding:12px 10px;}
+tbody td{border-bottom:1px solid #eef2f7;padding:12px 10px;font-size:14px;color:#111827;background:#fff;}
+tbody tr:nth-child(even) td{background:#fbfdff;}
+#gridWrap th:first-child,#gridWrap td:first-child{width:76px !important;text-align:center;}
+.pos span,.pos{font-weight:900;color:#155f80;}
+.playerLink{color:#0f172a;text-decoration:none;font-weight:900;}
+.hit .playerLink{color:#0f9d58;}
+.resultNote{font-size:12px;color:#64748b;line-height:1.6;font-weight:800;}
+.pitch{
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.04) 50%, rgba(255,255,255,.08) 50%),
+    radial-gradient(120% 120% at 50% 20%, rgba(84,209,138,.18), rgba(0,0,0,0)),
+    linear-gradient(180deg,#198344,#0e5c2d);
+  background-size:auto,auto,auto;
+  border:1px solid rgba(15,23,42,.18);border-radius:22px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.08);
+}
+.pPos{color:rgba(255,255,255,.82);}
+.modal{background:#fff;color:#111827;}
+.modalBody{max-height:70vh;overflow:auto;}
+.backWrap{display:none;}
+
+@media (max-width:820px){
+  .ctrl > .row:first-child{grid-template-columns:1fr;}
+  .ctrl > .row:nth-child(2){grid-template-columns:1fr;}
+}
+@media (max-width:680px){
+  .wrap{padding:14px 10px 50px;}
+  .card{padding:14px;border-radius:20px;}
+  .lead{font-size:12px;}
+  .btn{width:100%;font-size:17px;padding:13px 16px;}
+  .viewRow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;}
+  .viewRow .pill{justify-content:center;padding:8px 6px;font-size:12px;}
+  #gridWrap{border:none;background:transparent;overflow:visible;}
+  #gridWrap table,#gridWrap thead,#gridWrap tbody,#gridWrap tr,#gridWrap th,#gridWrap td{display:block;width:100%;}
+  #gridWrap thead{display:none;}
+  #gridWrap tbody{display:grid;gap:10px;}
+  #gridWrap tbody tr{
+    display:grid;grid-template-columns:56px 1fr;gap:0;border:1px solid #dbe4f0;border-radius:16px;overflow:hidden;background:#fff;
+    box-shadow:0 8px 18px rgba(15,23,42,.06);
+  }
+  #gridWrap tbody td{border:none;background:#fff!important;padding:9px 10px;min-width:0;}
+  #gridWrap tbody td.pos{grid-row:1 / span 2;display:flex;align-items:center;justify-content:center;background:#eef7fb!important;border-right:1px solid #dbe4f0;}
+  #gridWrap tbody td:not(.pos)::before{content:attr(data-label);display:block;font-size:10px;color:#64748b;font-weight:900;margin-bottom:3px;}
+  #gridWrap th:first-child,#gridWrap td:first-child{width:100%!important;}
+  .playerName{font-size:13px;}
+  #pitchWrap{margin-top:10px;}
+  .pitch{aspect-ratio:3 / 4.25;}
+  .pPlayer{min-width:50px;width:18%;}
+  .pPlayer .playerLink{font-size:11px;padding:5px 7px;}
+  .modalBody .mLine{display:block;}
+  .modalBody .mKey{display:block;min-width:0;margin-bottom:2px;}
+}
+
 </style>
 </head>
 <body>
   <div class="wrap">
+    <div class="pageTitleImg"><img src="img/title.png" alt="サカつく2026 DB"></div>
+    <div class="topNav">
+      <a href="index.html">← サイトに戻る</a>
+      <a href="favorite_combos.html">⭐ フォメコン診断</a>
+    </div>
     <h1>最強チームシミュレーション</h1>
-<div class="card">
+    <p class="lead">選択したフォーメーションコンボに対して、ポリシー染め・ポリシー自由の最適メンバーを比較できます。</p>
+<div class="card simCard">
+      <div class="sectionTitle">条件を選択</div>
       <div class="ctrl">
 <div class="row">
           <div class="two">
-            <label>ランク選択</label>
+            <label>コンボランク</label>
             <select id="rankSel"></select>
           </div>
           <div class="two">
-            <label>ポリシー選択</label>
+            <label>コンボポリシー</label>
             <select id="policySel"></select>
           </div>
           <div class="two">
@@ -323,20 +458,28 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
           </div>
         </div>
 
-        <div class="row"><button class="btn" id="btnSim">シミュレーション</button><div class="mini" id="status"></div></div>
+        <div class="row actionRow"><button class="btn" id="btnSim">最強チームを表示</button><div class="mini" id="status"></div></div>
 
-<div class="row" style="margin-top:6px">
+<div class="viewBlock">
+  <div class="viewLabel">表示形式</div>
+  <div class="row viewRow">
   <label class="pill"><input type="radio" name="view" value="table" checked> テーブル</label>
   <label class="pill"><input type="radio" name="view" value="pitch"> ピッチ</label>
   <label class="pill"><input type="radio" name="view" value="both"> 両方</label>
 </div>
-<div class="row" style="margin-top:-4px">
+  <div class="viewLabel pitchTeamLabel">ピッチ表示チーム</div>
+<div class="row viewRow">
   <label class="pill"><input type="radio" name="pitchTeam" value="dye" checked> ポリシー染め</label>
   <label class="pill"><input type="radio" name="pitchTeam" value="free"> ポリシー自由</label>
 </div>
+</div>
       </div>
 
-      <div class="card resultsBox" id="resultsBox" style="margin-top:12px;display:none">
+      <div class="card resultsBox" id="resultsBox" style="margin-top:16px;display:none">
+        <div class="resultHeader">
+          <div>シミュレーション結果</div>
+          <span>緑色＝コンボ条件一致</span>
+        </div>
 <div class="grid" id="gridWrap" style="display:none">
         <table>
           <thead>
@@ -359,7 +502,7 @@ td:nth-child(2) .link, td:nth-child(3) .link{ display:block; width:100%; overflo
 </div>
   </div>
 
-  <div class="backWrap"><a class="backBtn" href="https://sakatsuku2026-db.com/">←サイトに戻る</a></div>
+  
 
   <!-- modal -->
   <div id="modalBack" class="modalBack" role="dialog" aria-modal="true" aria-hidden="true">
@@ -871,9 +1014,9 @@ function simulate(){
     const b = picksB[i]?.player || null;
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td class="pos">${esc(s.position)}</td>
-      <td>${makeCell(a, s)}</td>
-      <td>${makeCell(b, s)}</td>
+      <td class="pos" data-label="ポジション"><span>${esc(s.position)}</span></td>
+      <td data-label="ポリシー染め">${makeCell(a, s)}</td>
+      <td data-label="ポリシー自由">${makeCell(b, s)}</td>
     `;
     tbody.appendChild(tr);
   }
