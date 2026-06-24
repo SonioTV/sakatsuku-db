@@ -7,159 +7,413 @@
 <link rel="canonical" href="https://sakatsuku2026-db.com/stadium.html">
 <style>
 :root{
-  --bg:#f2f4f8;
+  --bg:#eef3f8;
   --card:#ffffff;
-  --text:#111827;
-  --muted:#6b7280;
-  --border:rgba(17,24,39,.12);
-  --shadow:0 18px 50px rgba(0,0,0,.10);
-  --radius:24px;
+  --text:#102033;
+  --muted:#64748b;
+  --line:#dbe5f0;
+  --shadow:0 16px 40px rgba(15,23,42,.10);
   --blue:#0b5bd3;
-  --blue-soft:#bcd2ff;
+  --blue2:#063f9c;
   --orange:#f59e0b;
+  --green:#0f9d58;
+  --radius:22px;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,Arial,sans-serif;}
-.wrap{max-width:980px;margin:0 auto;padding:26px 16px 40px;}
-h1{font-size:36px;line-height:1.15;margin:10px 0 10px;text-align:center;font-weight:900;letter-spacing:.01em;}
-.nav{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:18px 0 18px;}
-.nav a{display:inline-block;padding:14px 22px;border-radius:22px;border:3px solid var(--blue-soft);background:#fff;color:var(--blue);font-weight:900;text-decoration:none;font-size:22px;}
-.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 18px;border:1px solid var(--border);}
-.sectionTitle{font-size:34px;font-weight:900;text-align:center;margin:8px 0 12px;}
-.bigSelect{width:min(720px,100%);font-size:30px;font-weight:900;border-radius:20px;border:3px solid rgba(17,24,39,.18);padding:18px 16px;outline:none;background:#e9e9e9;color:var(--blue);}
-.bigBtn{width:min(720px,100%);display:block;margin:16px auto 0;border:none;border-radius:28px;padding:22px 18px;font-size:38px;font-weight:900;background:var(--orange);color:#fff;box-shadow:0 20px 40px rgba(245,158,11,.30);}
-.hr{height:2px;background:rgba(17,24,39,.10);margin:18px 0;}
-.resultTitle{font-size:18px;font-weight:900;text-align:center;line-height:1.25;margin:10px 0 14px;}
-.list{display:grid;gap:14px;}
-.item{
-  border:2px solid rgba(17,24,39,.10);
-  border-radius:24px;
-  padding:14px;
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at top left, rgba(11,91,211,.12), transparent 32%),
+    linear-gradient(180deg,#f8fbff 0%,var(--bg) 48%,#f6f8fb 100%);
+  color:var(--text);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:22px 14px 80px;}
+.pageTitleImg{text-align:center;margin:8px 0 4px}
+.pageTitleImg img{width:min(420px,88%);height:auto;display:inline-block}
+
+.hero{
+  margin:12px 0 16px;
+  padding:20px 18px;
+  border-radius:28px;
+  background:linear-gradient(135deg,#0b5bd3,#083477);
+  color:#fff;
+  box-shadow:0 18px 46px rgba(11,91,211,.22);
+  position:relative;
+  overflow:hidden;
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  right:-60px;
+  top:-70px;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+}
+h1{
+  margin:0;
+  font-size:34px;
+  line-height:1.25;
+  font-weight:1000;
+  letter-spacing:.02em;
+  text-align:center;
+}
+.heroText{
+  margin:8px auto 0;
+  max-width:780px;
+  text-align:center;
+  color:rgba(255,255,255,.88);
+  font-weight:800;
+  line-height:1.6;
+  font-size:14px;
+}
+.nav{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:14px 0 18px;
+}
+.nav a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:10px 16px;
+  border-radius:999px;
   background:#fff;
+  color:var(--blue2);
+  border:1px solid rgba(11,91,211,.16);
+  box-shadow:0 8px 18px rgba(15,23,42,.07);
+  text-decoration:none;
+  font-weight:900;
+}
+
+.panel{
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(219,229,240,.95);
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  padding:16px;
+  backdrop-filter:blur(8px);
+}
+.controlHead{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+.sectionTitle{
+  margin:0;
+  font-size:22px;
+  font-weight:1000;
+}
+.controlNote{
+  color:var(--muted);
+  font-weight:800;
+  font-size:13px;
+  line-height:1.5;
+}
+.controlGrid{
   display:grid;
-  grid-template-columns:210px 1fr;
-  gap:14px;
+  grid-template-columns:1fr auto;
+  gap:12px;
+  align-items:end;
+}
+.field label{
+  display:block;
+  margin:0 0 6px;
+  font-size:13px;
+  font-weight:900;
+  color:#334155;
+}
+.bigSelect{
+  width:100%;
+  height:54px;
+  border:2px solid #cfe0f4;
+  border-radius:16px;
+  padding:0 14px;
+  background:#fff;
+  color:var(--blue2);
+  font-size:18px;
+  font-weight:1000;
+  outline:none;
+}
+.bigSelect:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(11,91,211,.10)}
+.bigBtn{
+  height:54px;
+  min-width:180px;
+  border:none;
+  border-radius:16px;
+  padding:0 18px;
+  background:linear-gradient(135deg,#f59e0b,#f97316);
+  color:#fff;
+  font-size:17px;
+  font-weight:1000;
+  cursor:pointer;
+  box-shadow:0 12px 22px rgba(245,158,11,.26);
+}
+.categoryChips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+.catChip{
+  border:1px solid rgba(11,91,211,.18);
+  background:#f7fbff;
+  color:var(--blue2);
+  border-radius:999px;
+  padding:8px 12px;
+  font-weight:1000;
+  cursor:pointer;
+}
+.catChip.active{
+  background:var(--blue);
+  color:#fff;
+  border-color:var(--blue);
+}
+
+.resultPanel{margin-top:14px;display:none}
+.resultHead{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+.resultTitle{
+  margin:0;
+  font-size:20px;
+  font-weight:1000;
+}
+.count{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:#eef7ff;
+  color:var(--blue2);
+  border:1px solid rgba(11,91,211,.14);
+  font-size:13px;
+  font-weight:1000;
+}
+.list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.item{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 10px 24px rgba(15,23,42,.07);
+}
+.itemTop{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:12px;
+  padding:12px;
   align-items:center;
 }
 .itemImageWrap{
-  width:210px;
-  height:158px;
-  background:transparent;
+  width:150px;
+  aspect-ratio:4/3;
+  border-radius:16px;
+  background:#f2f6fb;
   display:flex;
   align-items:center;
   justify-content:center;
   overflow:hidden;
+  border:1px solid #e6edf6;
 }
-.itemImage{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
+.itemImage{width:100%;height:100%;object-fit:cover;display:block}
 .itemImagePlaceholder{
-  font-size:14px;
-  font-weight:800;
+  font-size:12px;
+  font-weight:900;
   color:var(--muted);
   text-align:center;
   line-height:1.4;
-  padding:10px;
+  padding:8px;
 }
-.itemBody{min-width:0;}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;}
+.itemBody{min-width:0}
+.itemName{
+  margin:0 0 8px;
+  font-size:18px;
+  line-height:1.35;
+  font-weight:1000;
+  word-break:break-word;
+}
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
 .badge{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:34px;
-  padding:6px 12px;
+  min-height:28px;
+  padding:5px 9px;
   border-radius:999px;
   background:#eef4ff;
-  color:var(--blue);
-  font-size:14px;
-  font-weight:900;
-  line-height:1.2;
-  border:1px solid rgba(11,91,211,.14);
+  color:var(--blue2);
+  font-size:12px;
+  font-weight:1000;
+  border:1px solid rgba(11,91,211,.12);
+}
+.badge.strong{
+  background:#fff7e6;
+  color:#a15c00;
+  border-color:rgba(245,158,11,.25);
+}
+.effectBox{
+  border-top:1px solid var(--line);
+  padding:10px 12px 12px;
+  background:#fbfdff;
+}
+.effectLabel{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:1000;
+  margin-bottom:4px;
 }
 .itemEff{
-  font-size:15px;
-  font-weight:800;
-  line-height:1.5;
   margin:0;
-  white-space:normal;
-  overflow:visible;
+  font-size:14px;
+  font-weight:900;
+  line-height:1.6;
   color:#111827;
-  word-break:keep-all;
+  word-break:break-word;
 }
-.count{text-align:center;color:var(--muted);font-weight:900;margin-top:10px;font-size:13px;}
-.pageTitleImg{text-align:center;margin:10px 0 6px;}
-.pageTitleImg img{max-width:100%;height:auto;width:420px;}
-@media (max-width:520px){
-  h1{font-size:30px;}
-  .nav a{font-size:22px;}
-  .sectionTitle{font-size:26px;}
-  .bigSelect{font-size:22px;padding:14px 14px;border-radius:18px;}
-  .bigBtn{font-size:26px;padding:16px 16px;border-radius:22px;}
-  .resultTitle{font-size:16px;}
-  .item{
-    grid-template-columns:156px 1fr;
-    gap:12px;
-    padding:12px;
-    align-items:center;
+.empty{
+  grid-column:1/-1;
+  padding:28px 14px;
+  text-align:center;
+  border:2px dashed #cfd8e3;
+  border-radius:20px;
+  color:var(--muted);
+  font-weight:900;
+  background:#fff;
+}
+#scrollTopBtn{
+  position:fixed;
+  right:16px;
+  bottom:18px;
+  width:50px;
+  height:50px;
+  border:none;
+  border-radius:999px;
+  background:var(--blue);
+  color:#fff;
+  font-size:20px;
+  font-weight:1000;
+  box-shadow:0 12px 24px rgba(15,23,42,.25);
+  cursor:pointer;
+  display:none;
+  z-index:999;
+}
+
+@media (max-width:820px){
+  .list{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:14px 8px 74px}
+  .hero{border-radius:22px;padding:18px 12px}
+  h1{font-size:27px}
+  .heroText{font-size:12px}
+  .nav{gap:8px;margin:12px 0}
+  .nav a{font-size:13px;min-height:38px;padding:8px 12px}
+  .panel{border-radius:22px;padding:12px}
+  .controlGrid{grid-template-columns:1fr}
+  .bigSelect{height:48px;font-size:16px;border-radius:14px}
+  .bigBtn{width:100%;height:48px;font-size:16px;border-radius:14px}
+  .sectionTitle{font-size:19px}
+  .controlNote{font-size:12px}
+  .catChip{font-size:13px;padding:7px 10px}
+  .resultTitle{font-size:17px}
+  .itemTop{
+    grid-template-columns:128px 1fr;
+    gap:9px;
+    padding:9px;
   }
-  .itemImageWrap{
-    width:156px;
-    height:117px;
-    margin:0;
-  }
-  .badge{font-size:13px;padding:6px 10px;min-height:32px;}
-  .pageTitleImg img{width:85%;}
+  .itemImageWrap{width:128px;border-radius:13px}
+  .itemName{font-size:15px;margin-bottom:6px}
+  .badge{font-size:10px;padding:4px 7px;min-height:24px}
+  .effectBox{padding:8px 9px 10px}
+  .itemEff{font-size:12px}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<div class="pageTitleImg">
-  <img src="img/title.png" alt="サカつく2026 DB">
-</div>
+  <div class="pageTitleImg">
+    <img src="img/title.png" alt="サカつく2026 DB">
+  </div>
 
-  <h1>スタジアム施設一覧</h1>
+  <section class="hero">
+    <h1>スタジアム施設一覧</h1>
+    <p class="heroText">満足度・収入力・PR力から、効果を持つスタジアム施設を確認できます。選択中の効果量が高い順に表示します。</p>
+  </section>
 
   <div class="nav">
-    <a href="index.html">検索ツールへ戻る</a>
+    <a href="index.html">← 検索ツールへ戻る</a>
+    <a href="stadium_simulation.html">施設シミュレーションへ</a>
     <a href="clubhouse.html">クラブハウス設備へ</a>
   </div>
 
-  <div class="card">
-    <div class="sectionTitle">効果カテゴリを選択</div>
-    <div style="text-align:center;">
-      <select id="selCategory" class="bigSelect" aria-label="category select">
-      <option value="満足度">満足度</option>
-      <option value="収入力">収入力</option>
-      <option value="PR力">PR力</option>
-      </select>
+  <section class="panel">
+    <div class="controlHead">
+      <div>
+        <h2 class="sectionTitle">効果カテゴリを選択</h2>
+        <div class="controlNote">カテゴリを選ぶと、該当施設をすぐに一覧表示します。</div>
+      </div>
     </div>
-    <button id="btnShow" class="bigBtn" type="button">一覧を表示</button>
 
-    <div class="hr"></div>
+    <div class="controlGrid">
+      <div class="field">
+        <label for="selCategory">表示する効果</label>
+        <select id="selCategory" class="bigSelect" aria-label="category select">
+          <option value="満足度">満足度</option>
+          <option value="収入力">収入力</option>
+          <option value="PR力">PR力</option>
+        </select>
+      </div>
+      <button id="btnShow" class="bigBtn" type="button">一覧を表示</button>
+    </div>
 
-    <div id="outArea" style="display:none;">
-      <div class="resultTitle">このカテゴリが上昇する施設一覧</div>
+    <div class="categoryChips" id="categoryChips" aria-label="カテゴリショートカット"></div>
+
+    <div id="outArea" class="resultPanel">
+      <div class="resultHead">
+        <h2 id="resultTitle" class="resultTitle">このカテゴリが上昇する施設一覧</h2>
+        <div id="count" class="count">表示件数：0</div>
+      </div>
       <div id="list" class="list"></div>
-      <div id="count" class="count"></div>
     </div>
-  </div>
+  </section>
 </div>
+
+<button id="scrollTopBtn" type="button" aria-label="ページ上部へ戻る">▲</button>
 
 <script>
 const JSON_PATH = "stadium_facilities.json";
 const IMAGE_BASE = "img/stadium_facilities/";
 const IMAGE_EXTS = ["png","jpg","jpeg","webp"];
 
-function norm(s){
-  return (s ?? "").toString().trim();
+function norm(s){ return (s ?? "").toString().trim(); }
+function escapeHtml(str){
+  return String(str).replace(/[&<>\"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
 }
-
 function effectsToString(item){
   const parts=[];
   for (let i=1;i<=3;i++) {
@@ -170,7 +424,6 @@ function effectsToString(item){
   }
   return parts.join(" / ");
 }
-
 function selectedValue(item, selected){
   let sum=0;
   for (let i=1;i<=3;i++) {
@@ -180,11 +433,6 @@ function selectedValue(item, selected){
   }
   return sum;
 }
-
-function escapeHtml(str){
-  return String(str).replace(/[&<>\"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
-}
-
 function createFacilityImage(facilityId, facilityName){
   const wrap = document.createElement('div');
   wrap.className = 'itemImageWrap';
@@ -214,19 +462,41 @@ function createFacilityImage(facilityId, facilityName){
 }
 
 let facilities = [];
+const EFFECTS = ["満足度","収入力","PR力"];
+
+function setupChips(){
+  const chips = document.getElementById("categoryChips");
+  chips.innerHTML = EFFECTS.map(e => `<button type="button" class="catChip" data-effect="${escapeHtml(e)}">${escapeHtml(e)}</button>`).join("");
+  chips.querySelectorAll("[data-effect]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      document.getElementById("selCategory").value = btn.dataset.effect;
+      render();
+    });
+  });
+}
+function updateActiveChip(){
+  const sel = norm(document.getElementById("selCategory").value);
+  document.querySelectorAll(".catChip").forEach(btn=>{
+    btn.classList.toggle("active", btn.dataset.effect === sel);
+  });
+}
 async function init(){
   try {
     const res = await fetch(JSON_PATH, {cache:"no-store"});
     facilities = await res.json();
+    setupChips();
+    render();
   } catch (e) {
     console.error(e);
-    alert("データの読み込みに失敗しました。JSONファイルの配置を確認してください。");
-    return;
+    document.getElementById("list").innerHTML = `<div class="empty">データの読み込みに失敗しました。stadium_facilities.json の配置を確認してください。</div>`;
+    document.getElementById("outArea").style.display = "block";
   }
 }
 
 function render(){
   const sel = norm(document.getElementById("selCategory").value);
+  updateActiveChip();
+
   const hit = facilities.filter(it => {
     for (let i=1;i<=3;i++) {
       if (norm(it["effect"+i]) === sel) return true;
@@ -252,6 +522,10 @@ function render(){
   const list = document.getElementById("list");
   list.innerHTML = "";
 
+  if(!hit.length){
+    list.innerHTML = `<div class="empty">「${escapeHtml(sel)}」が上昇する施設は見つかりませんでした。</div>`;
+  }
+
   hit.forEach(it => {
     const div = document.createElement("div");
     div.className = "item";
@@ -262,29 +536,56 @@ function render(){
     const cost = it.cost ?? "-";
     const installLevel = (it.install_level === null || it.install_level === undefined || it.install_level === "") ? "-" : it.install_level;
     const eff = effectsToString(it);
+    const selected = selectedValue(it, sel);
 
     const image = createFacilityImage(facilityId, name);
+
+    const top = document.createElement("div");
+    top.className = "itemTop";
+
     const body = document.createElement('div');
     body.className = 'itemBody';
     body.innerHTML = `
+      <h3 class="itemName">${escapeHtml(name || "施設名未設定")}</h3>
       <div class="badges">
-        <span class="badge">カテゴリ：${escapeHtml(cat)}</span>
-        <span class="badge">設置コスト：${escapeHtml(cost)}</span>
-        <span class="badge">設置可能Lv：${escapeHtml(installLevel)}</span>
-        <span class="badge">上昇効果：${escapeHtml(eff || "-")}</span>
+        <span class="badge strong">${escapeHtml(sel)} +${escapeHtml(selected)}</span>
+        <span class="badge">カテゴリ：${escapeHtml(cat || "-")}</span>
+        <span class="badge">コスト：${escapeHtml(cost)}</span>
+        <span class="badge">Lv：${escapeHtml(installLevel)}</span>
       </div>
     `;
 
-    div.appendChild(image);
-    div.appendChild(body);
+    top.appendChild(image);
+    top.appendChild(body);
+
+    const effectBox = document.createElement("div");
+    effectBox.className = "effectBox";
+    effectBox.innerHTML = `
+      <div class="effectLabel">上昇効果</div>
+      <p class="itemEff">${escapeHtml(eff || "-")}</p>
+    `;
+
+    div.appendChild(top);
+    div.appendChild(effectBox);
     list.appendChild(div);
   });
 
+  document.getElementById("resultTitle").textContent = `${sel} が上昇する施設一覧`;
   document.getElementById("count").textContent = `表示件数：${hit.length}`;
   document.getElementById("outArea").style.display = "block";
 }
 
 document.getElementById("btnShow").addEventListener("click", render);
+document.getElementById("selCategory").addEventListener("change", render);
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+window.addEventListener("scroll", () => {
+  scrollBtn.style.display = window.scrollY > 240 ? "block" : "none";
+}, {passive:true});
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
 init();
 </script>
 </body>
