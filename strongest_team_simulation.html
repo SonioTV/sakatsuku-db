@@ -643,6 +643,15 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
 }
 /* ===== end stable half-pitch lines ===== */
 
+
+/* ===== Player filter row ===== */
+.playerFilterRow .pill{ min-width:0; }
+@media (max-width:680px){
+  .playerFilterRow{ grid-template-columns:1fr !important; }
+  .playerFilterRow .pill{ justify-content:flex-start; font-size:12px; padding:9px 10px; }
+}
+/* ===== end player filter row ===== */
+
 </style>
 </head>
 <body>
@@ -692,6 +701,13 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
 <div class="row viewRow">
   <label class="pill"><input type="radio" name="pitchTeam" value="dye" checked> ポリシー染め</label>
   <label class="pill"><input type="radio" name="pitchTeam" value="free"> ポリシー自由</label>
+</div>
+
+  <div class="viewLabel pitchTeamLabel">表示選手</div>
+<div class="row viewRow playerFilterRow">
+  <label class="pill"><input type="radio" name="playerFilter" value="all" checked> 全SP選手</label>
+  <label class="pill"><input type="radio" name="playerFilter" value="available"> 入手可能SP選手</label>
+  <label class="pill"><input type="radio" name="playerFilter" value="favorite"> お気に入りSP選手</label>
 </div>
 </div>
       </div>
@@ -756,6 +772,7 @@ function escapeHtml(str){
   const getPlayerId = (p)=>String(p?.player_id || p?.playerId || "");
   const getSelectedTeamMode = ()=>document.querySelector('input[name="pitchTeam"]:checked')?.value || "dye";
   const getSelectedTeamLabel = ()=>getSelectedTeamMode() === "free" ? "ポリシー自由" : "ポリシー染め";
+  const getPlayerFilterMode = ()=>document.querySelector('input[name="playerFilter"]:checked')?.value || "all";
   const getMode = ()=>"maxUpgrade";
   const getRank = ()=>$("rankSel")?.value || "";
   const getPolicyFilter = ()=>$("policySel")?.value || "";
@@ -1172,6 +1189,77 @@ function rebuildAcqSelect(){
 }
 
 
+
+function getFavoritePlayerIds(){
+  const favIds = new Set();
+  const addId = (v)=>{
+    const s = String(v ?? "").trim();
+    if(/^P\d{4,}$/i.test(s)) favIds.add(s.toUpperCase());
+  };
+  const scanValue = (value)=>{
+    if(value == null) return;
+    if(typeof value === "string"){
+      addId(value);
+      try{
+        scanValue(JSON.parse(value));
+      }catch(e){
+        const matches = value.match(/P\d{4,}/gi) || [];
+        matches.forEach(addId);
+      }
+      return;
+    }
+    if(Array.isArray(value)){
+      value.forEach(scanValue);
+      return;
+    }
+    if(typeof value === "object"){
+      for(const [k,v] of Object.entries(value)){
+        if(v === true || v === 1 || v === "1" || String(v).toLowerCase() === "true") addId(k);
+        scanValue(v);
+      }
+    }
+  };
+
+  const preferredKeys = [
+    "favoritePlayers",
+    "favoritePlayerIds",
+    "favorites",
+    "sakatsuku_favorite_players",
+    "sakatsuku2026_favorite_players",
+    "playerFavorites"
+  ];
+
+  for(const key of preferredKeys){
+    try{ scanValue(localStorage.getItem(key)); }catch(e){}
+  }
+
+  // キー名が違っていても拾えるように、favorite / fav を含むlocalStorageも確認
+  try{
+    for(let i=0;i<localStorage.length;i++){
+      const key = localStorage.key(i) || "";
+      if(/favorite|favorites|fav|お気に入り/i.test(key)){
+        scanValue(localStorage.getItem(key));
+      }
+    }
+  }catch(e){}
+
+  return favIds;
+}
+
+function getSimulationPlayers(){
+  const filterMode = getPlayerFilterMode();
+  let base = [...PLAYERS];
+
+  if(filterMode === "available"){
+    base = base.filter(p=>p.available === true);
+  }else if(filterMode === "favorite"){
+    const favIds = getFavoritePlayerIds();
+    base = base.filter(p=>favIds.has(String(p.player_id || p.playerId || "").toUpperCase()));
+  }
+
+  return base;
+}
+
 function simulate(){
   if(!SLOTS.length){
     setStatus("formation_slots.json が見つかりません。ファイルを同じフォルダに配置してください。", true);
@@ -1255,8 +1343,22 @@ function simulate(){
     </div>`;
   };
 
+  const simulationPlayers = getSimulationPlayers();
+  const filterMode = getPlayerFilterMode();
+  if(!simulationPlayers.length){
+    const msg = filterMode === "available"
+      ? "入手可能SP選手が見つかりません。players.json の available を確認してください。"
+      : (filterMode === "favorite"
+        ? "お気に入りSP選手が見つかりません。選手図鑑などでお気に入り登録してください。"
+        : "選手データが見つかりません。");
+    setStatus(msg, true);
+    LAST = null;
+    updateView();
+    return;
+  }
+
   // policy-dye column: force policy for all slots
-  const availA = [...PLAYERS];
+  const availA = [...simulationPlayers];
   const picksA = [];
   for(const s of slots){
     const p = pickBest(availA, s, forcedPolicy || "");
@@ -1268,7 +1370,7 @@ function simulate(){
   }
 
   // free column: no forced policy
-  const availB = [...PLAYERS];
+  const availB = [...simulationPlayers];
   const picksB = [];
   for(const s of slots){
     const p = pickBest(availB, s, "");
@@ -1332,6 +1434,7 @@ function showPlayerDetailById(pid){
     ["入手方法", p.acquisitionMethod],
     ["入手場所", p.acquisitionPlace],
     ["入手可能期間", p.availablePeriod],
+    ["入手可否", p.available === true ? "入手可能" : (p.available === false ? "入手不可" : "-")],
     ["初期総合力", p.overall],
     ["最大強化", p.maxUpgrade],
     ["ポリシー", p.policy],
@@ -1376,6 +1479,13 @@ document.querySelectorAll('input[name="view"]').forEach(el=>{
 });
 document.querySelectorAll('input[name="pitchTeam"]').forEach(el=>{
   el.addEventListener("change", ()=>{ renderTable(); renderPitch(); updateView(); });
+});
+document.querySelectorAll('input[name="playerFilter"]').forEach(el=>{
+  el.addEventListener("change", ()=>{
+    if(LAST && $("comboSel")?.value){
+      simulate();
+    }
+  });
 });
 
   // events
