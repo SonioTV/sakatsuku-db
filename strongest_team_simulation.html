@@ -422,6 +422,51 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
   .modalBody .mKey{display:block;min-width:0;margin-bottom:2px;}
 }
 
+
+/* ===== Table single-team + pitch image view ===== */
+#gridWrap table.singleTeamTable th:first-child,
+#gridWrap table.singleTeamTable td:first-child{ width:82px !important; }
+.teamCell{ min-width:0; }
+.pitchPlayerLink{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:#fff;
+  width:100%;
+}
+.pitchPortrait{
+  width:clamp(44px, 8vw, 72px);
+  height:clamp(44px, 8vw, 72px);
+  object-fit:contain;
+  filter:drop-shadow(0 8px 10px rgba(0,0,0,.38));
+}
+.pitchNameFallback{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  border:2px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.14);
+  color:#fff;
+  font-weight:900;
+  text-decoration:none;
+  -webkit-text-stroke:0.7px rgba(0,0,0,.95);
+  text-shadow:1px 0 rgba(0,0,0,.70),-1px 0 rgba(0,0,0,.70),0 1px rgba(0,0,0,.70),0 -1px rgba(0,0,0,.70);
+  max-width:100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.pPlayer.hasImage .pitchNameFallback{ display:none; }
+.pPlayer.hit .pitchPortrait{ filter:drop-shadow(0 0 8px rgba(15,157,88,.95)) drop-shadow(0 8px 10px rgba(0,0,0,.38)); }
+@media (max-width:680px){
+  #gridWrap tbody tr{ grid-template-columns:56px 1fr; }
+  #gridWrap tbody td.pos{ grid-row:1 / span 1; }
+  .pitchPortrait{ width:46px; height:46px; }
+  .pitchNameFallback{ font-size:11px; padding:5px 7px; }
+}
+
 </style>
 </head>
 <body>
@@ -432,7 +477,7 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
       <a href="favorite_combos.html">⭐ フォメコン診断</a>
     </div>
     <h1>最強チームシミュレーション</h1>
-    <p class="lead">選択したフォーメーションコンボに対して、ポリシー染め・ポリシー自由の最適メンバーを比較できます。</p>
+    <p class="lead">選択したフォーメーションコンボに対して、ポリシー染め／ポリシー自由のどちらかを選んで最適メンバーを表示できます。</p>
 <div class="card simCard">
       <div class="sectionTitle">条件を選択</div>
       <div class="ctrl">
@@ -467,7 +512,7 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
   <label class="pill"><input type="radio" name="view" value="pitch"> ピッチ</label>
   <label class="pill"><input type="radio" name="view" value="both"> 両方</label>
 </div>
-  <div class="viewLabel pitchTeamLabel">ピッチ表示チーム</div>
+  <div class="viewLabel pitchTeamLabel">表示チーム</div>
 <div class="row viewRow">
   <label class="pill"><input type="radio" name="pitchTeam" value="dye" checked> ポリシー染め</label>
   <label class="pill"><input type="radio" name="pitchTeam" value="free"> ポリシー自由</label>
@@ -481,12 +526,11 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
           <span>緑色＝コンボ条件一致</span>
         </div>
 <div class="grid" id="gridWrap" style="display:none">
-        <table>
+        <table id="resultTable" class="singleTeamTable">
           <thead>
             <tr>
-              <th style="width:48px">ポジ</th>
-              <th>ポリシー染め</th>
-              <th>ポリシー自由</th>
+              <th style="width:82px">ポジ</th>
+              <th id="teamTableHead">ポリシー染め</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
@@ -533,6 +577,9 @@ function escapeHtml(str){
   const esc = (s)=>String(s??"").replace(/[&<>"']/g, m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
   const roman = (n)=>({1:"Ⅰ",2:"Ⅱ",3:"Ⅲ"}[Number(n)]||String(n??""));
   const short2 = (s)=>String(s??"").slice(0,2);
+  const getPlayerId = (p)=>String(p?.player_id || p?.playerId || "");
+  const getSelectedTeamMode = ()=>document.querySelector('input[name="pitchTeam"]:checked')?.value || "dye";
+  const getSelectedTeamLabel = ()=>getSelectedTeamMode() === "free" ? "ポリシー自由" : "ポリシー染め";
   const getMode = ()=>"maxUpgrade";
   const getRank = ()=>$("rankSel")?.value || "";
   const getPolicyFilter = ()=>$("policySel")?.value || "";
@@ -650,8 +697,9 @@ function renderPitch(){
     const y = (xy && Number.isFinite(xy.y)) ? xy.y : getY(k);
 
     const ok = LAST.highlightOK(player, s);
-    const pid = String(player.player_id || player.playerId || "");
+    const pid = getPlayerId(player);
     const nm  = short2(player.name || "-");
+    const imgSrc = pid ? `img/players/${esc(pid)}.png` : "";
 const div = document.createElement("div");
     const g = (()=>{
       const p = String(pos||"").toUpperCase();
@@ -661,14 +709,55 @@ const div = document.createElement("div");
       if(["CF","LW","RW"].includes(p)) return "pp-att";
       return "";
     })();
-    div.className = "pPlayer" + (g ? (" "+g) : "") + (ok ? " hit" : "");
+    div.className = "pPlayer hasImage" + (g ? (" "+g) : "") + (ok ? " hit" : "");
     div.style.left = x + "%";
     div.style.top  = y + "%";
     div.innerHTML = `
       <div class="pPos">${esc(pos)}</div>
-      <a href="#" class="playerLink" data-pid="${esc(pid)}">${esc(nm)}</a>
+      <a href="#" class="pitchPlayerLink" data-pid="${esc(pid)}" aria-label="${esc(player.name || '-')}">
+        <img class="pitchPortrait" src="${imgSrc}" alt="${esc(player.name || '-')}" onerror="this.style.display='none'; this.closest('.pPlayer').classList.remove('hasImage');">
+        <span class="pitchNameFallback">${esc(nm)}</span>
+      </a>
     `;
     pitch.appendChild(div);
+  }
+}
+
+function makeResultCell(player, slot){
+  if(!player) return `<span class="mut">-</span>`;
+  const cls = LAST && LAST.highlightOK(player, slot) ? "hit" : "";
+  const pid = getPlayerId(player);
+  const nm  = player.name || "-";
+  return `<div class="two teamCell">
+    <div class="${cls}"><a href="#" class="playerLink playerName" data-pid="${esc(pid)}">${esc(nm)}</a></div>
+  </div>`;
+}
+
+function renderTable(){
+  const tbody = $("tbody");
+  const head = $("teamTableHead");
+  if(!tbody || !LAST) return;
+
+  const team = getSelectedTeamMode();
+  const label = getSelectedTeamLabel();
+  const picks = team === "free" ? LAST.picksB : LAST.picksA;
+  if(head) head.textContent = label;
+
+  const pickBySlot = new Map(
+    (picks || [])
+      .filter(x => x && x.slot)
+      .map(x => [String(x.slot.slotNo), x.player || null])
+  );
+
+  tbody.innerHTML = "";
+  for(const s of LAST.slots){
+    const player = pickBySlot.get(String(s.slotNo)) || null;
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td class="pos" data-label="ポジション"><span>${esc(s.position)}</span></td>
+      <td data-label="${esc(label)}">${makeResultCell(player, s)}</td>
+    `;
+    tbody.appendChild(tr);
   }
 }
 
@@ -981,9 +1070,6 @@ function simulate(){
     </div>`;
   };
 
-  const tbody = $("tbody");
-  tbody.innerHTML = "";
-
   // policy-dye column: force policy for all slots
   const availA = [...PLAYERS];
   const picksA = [];
@@ -1008,19 +1094,6 @@ function simulate(){
     }
   }
 
-  for(let i=0;i<slots.length;i++){
-    const s = slots[i];
-    const a = picksA[i]?.player || null;
-    const b = picksB[i]?.player || null;
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td class="pos" data-label="ポジション"><span>${esc(s.position)}</span></td>
-      <td data-label="ポリシー染め">${makeCell(a, s)}</td>
-      <td data-label="ポリシー自由">${makeCell(b, s)}</td>
-    `;
-    tbody.appendChild(tr);
-  }
-
         const slotPlaceMap = new Map((combo.combo_requirements||[])
       .filter(r=>r && (r.slotNo!==undefined && r.slotNo!==null) && r.positionPlace)
       .map(r=>[String(r.slotNo), String(r.positionPlace)]));
@@ -1035,6 +1108,7 @@ function simulate(){
     );
 
     LAST = { comboId: String(comboId), formationId, slots, picksA, picksB, highlightOK, slotPlaceMap, slotCoordMap };
+  renderTable();
   renderPitch();
   updateView();
   setStatus("");
@@ -1104,7 +1178,7 @@ $("tbody").addEventListener("click", (e)=>{
 const pitchEl = $("pitch");
 if(pitchEl){
   pitchEl.addEventListener("click", (e)=>{
-    const a = e.target.closest("a.playerLink");
+    const a = e.target.closest("a[data-pid]");
     if(!a) return;
     e.preventDefault();
     showPlayerDetailById(a.dataset.pid);
@@ -1116,7 +1190,7 @@ document.querySelectorAll('input[name="view"]').forEach(el=>{
   el.addEventListener("change", ()=>{ updateView(); });
 });
 document.querySelectorAll('input[name="pitchTeam"]').forEach(el=>{
-  el.addEventListener("change", ()=>{ renderPitch(); updateView(); });
+  el.addEventListener("change", ()=>{ renderTable(); renderPitch(); updateView(); });
 });
 
   // events
