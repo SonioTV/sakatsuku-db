@@ -612,6 +612,37 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
   .pitchLine.arcBottom{ border-width:3px 3px 0 3px; }
 }
 
+
+
+/* ===== Stable half-pitch lines via inline SVG ===== */
+.pitch::before,
+.pitch::after{
+  content:none !important;
+  display:none !important;
+}
+.pitchSvg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:1;
+  pointer-events:none;
+  overflow:visible;
+}
+.pitchSvg .fieldLine{
+  fill:none;
+  stroke:rgba(255,255,255,.96);
+  stroke-width:3.2;
+  stroke-linecap:square;
+  stroke-linejoin:round;
+  vector-effect:non-scaling-stroke;
+}
+.pPlayer{ z-index:2; }
+@media (max-width:680px){
+  .pitchSvg .fieldLine{ stroke-width:3; }
+}
+/* ===== end stable half-pitch lines ===== */
+
 </style>
 </head>
 <body>
@@ -818,12 +849,14 @@ function renderPitch(){
   }
 
   pitch.innerHTML = `
-    <div class="pitchLines" aria-hidden="true">
-      <div class="pitchLine centerArc"></div>
-      <div class="pitchLine penaltyBottom"></div>
-      <div class="pitchLine goalBottom"></div>
-      <div class="pitchLine arcBottom"></div>
-    </div>
+    <svg class="pitchSvg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <rect class="fieldLine" x="3" y="3" width="94" height="94" rx="2.5" ry="2.5"></rect>
+      <line class="fieldLine" x1="3" y1="3" x2="97" y2="3"></line>
+      <path class="fieldLine" d="M30 3 C35 29 65 29 70 3"></path>
+      <path class="fieldLine" d="M15 97 L15 75 L85 75 L85 97"></path>
+      <path class="fieldLine" d="M28 97 L28 87 L72 87 L72 97"></path>
+      <path class="fieldLine" d="M35 75 C40 63 60 63 65 75"></path>
+    </svg>
   `;
 
   for(let i=0;i<LAST.slots.length;i++){
