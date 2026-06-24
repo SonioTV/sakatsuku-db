@@ -18,7 +18,8 @@
     "nationality": "香港特別行政区",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0002",
@@ -39,7 +40,8 @@
     "nationality": "アルゼンチン",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0003",
@@ -60,7 +62,8 @@
     "nationality": "ノルウェー",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0004",
@@ -81,7 +84,8 @@
     "nationality": "ポルトガル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0005",
@@ -102,7 +106,8 @@
     "nationality": "オランダ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0006",
@@ -123,7 +128,8 @@
     "nationality": "ポルトガル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0007",
@@ -144,7 +150,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0008",
@@ -165,7 +172,8 @@
     "nationality": "イングランド",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0009",
@@ -186,7 +194,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0010",
@@ -207,7 +216,8 @@
     "nationality": "ウルグアイ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0011",
@@ -228,7 +238,8 @@
     "nationality": "スイス",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0012",
@@ -249,7 +260,8 @@
     "nationality": "イングランド",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0013",
@@ -270,7 +282,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0014",
@@ -291,7 +304,8 @@
     "nationality": "スペイン",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0015",
@@ -312,7 +326,8 @@
     "nationality": "モロッコ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0016",
@@ -333,7 +348,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0017",
@@ -354,7 +370,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0018",
@@ -375,7 +392,8 @@
     "nationality": "イングランド",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0019",
@@ -396,7 +414,8 @@
     "nationality": "イタリア",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0020",
@@ -417,7 +436,8 @@
     "nationality": "コロンビア",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0021",
@@ -438,7 +458,8 @@
     "nationality": "イングランド",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0022",
@@ -459,7 +480,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0023",
@@ -480,7 +502,8 @@
     "nationality": "スペイン",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0024",
@@ -501,7 +524,8 @@
     "nationality": "イングランド",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0025",
@@ -522,7 +546,8 @@
     "nationality": "オランダ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0026",
@@ -543,7 +568,8 @@
     "nationality": "アルゼンチン",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0027",
@@ -564,7 +590,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0028",
@@ -585,7 +612,8 @@
     "nationality": "イタリア",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0029",
@@ -606,7 +634,8 @@
     "nationality": "イングランド",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0030",
@@ -627,7 +656,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0031",
@@ -648,7 +678,8 @@
     "nationality": "オランダ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0032",
@@ -669,7 +700,8 @@
     "nationality": "ポルトガル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0033",
@@ -690,7 +722,8 @@
     "nationality": "ウェールズ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0034",
@@ -711,7 +744,8 @@
     "nationality": "ベルギー",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0035",
@@ -732,7 +766,8 @@
     "nationality": "オランダ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0036",
@@ -753,7 +788,8 @@
     "nationality": "イングランド",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0037",
@@ -774,7 +810,8 @@
     "nationality": "オランダ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0038",
@@ -795,7 +832,8 @@
     "nationality": "ポーランド",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0039",
@@ -816,7 +854,8 @@
     "nationality": "フランス",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0040",
@@ -837,7 +876,8 @@
     "nationality": "アイルランド",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0041",
@@ -858,7 +898,8 @@
     "nationality": "イングランド",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0042",
@@ -879,7 +920,8 @@
     "nationality": "スペイン",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0043",
@@ -900,7 +942,8 @@
     "nationality": "アルゼンチン",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0044",
@@ -921,7 +964,8 @@
     "nationality": "ベルギー",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0045",
@@ -942,7 +986,8 @@
     "nationality": "イタリア",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0046",
@@ -963,7 +1008,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0047",
@@ -984,7 +1030,8 @@
     "nationality": "エクアドル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0048",
@@ -1005,7 +1052,8 @@
     "nationality": "アメリカ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0049",
@@ -1026,7 +1074,8 @@
     "nationality": "アメリカ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0050",
@@ -1047,7 +1096,8 @@
     "nationality": "イタリア",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0051",
@@ -1068,7 +1118,8 @@
     "nationality": "オランダ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0052",
@@ -1089,7 +1140,8 @@
     "nationality": "オランダ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0053",
@@ -1110,7 +1162,8 @@
     "nationality": "オーストラリア",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0054",
@@ -1131,7 +1184,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★2"
+    "rarity": "★2",
+    "available": true
   },
   {
     "player_id": "P0055",
@@ -1152,7 +1206,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0056",
@@ -1173,7 +1228,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0057",
@@ -1194,7 +1250,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0058",
@@ -1215,7 +1272,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0059",
@@ -1236,7 +1294,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0060",
@@ -1257,7 +1316,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0061",
@@ -1278,7 +1338,8 @@
     "nationality": "イングランド",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0062",
@@ -1299,7 +1360,8 @@
     "nationality": "ヨルダン",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0063",
@@ -1320,7 +1382,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0064",
@@ -1341,7 +1404,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0065",
@@ -1362,7 +1426,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0066",
@@ -1383,7 +1448,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0067",
@@ -1404,7 +1470,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0068",
@@ -1425,7 +1492,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0069",
@@ -1446,7 +1514,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0070",
@@ -1467,7 +1536,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0071",
@@ -1488,7 +1558,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0072",
@@ -1509,7 +1580,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0073",
@@ -1530,7 +1602,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0074",
@@ -1551,7 +1624,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0075",
@@ -1572,7 +1646,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0076",
@@ -1593,7 +1668,8 @@
     "nationality": "シリア",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0077",
@@ -1614,7 +1690,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0078",
@@ -1635,7 +1712,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0079",
@@ -1656,7 +1734,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0080",
@@ -1677,7 +1756,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0081",
@@ -1698,7 +1778,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0082",
@@ -1719,7 +1800,8 @@
     "nationality": "ノルウェー",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0083",
@@ -1740,7 +1822,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0084",
@@ -1761,7 +1844,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0085",
@@ -1782,7 +1866,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0086",
@@ -1803,7 +1888,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0087",
@@ -1824,7 +1910,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0088",
@@ -1845,7 +1932,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0089",
@@ -1866,7 +1954,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0090",
@@ -1887,7 +1976,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0091",
@@ -1908,7 +1998,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0092",
@@ -1929,7 +2020,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0093",
@@ -1950,7 +2042,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0094",
@@ -1971,7 +2064,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0095",
@@ -1992,7 +2086,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0096",
@@ -2013,7 +2108,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0097",
@@ -2034,7 +2130,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0098",
@@ -2055,7 +2152,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0099",
@@ -2076,7 +2174,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0100",
@@ -2097,7 +2196,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0101",
@@ -2118,7 +2218,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0102",
@@ -2139,7 +2240,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0103",
@@ -2160,7 +2262,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0104",
@@ -2181,7 +2284,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0105",
@@ -2202,7 +2306,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0106",
@@ -2223,7 +2328,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0107",
@@ -2244,7 +2350,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0108",
@@ -2265,7 +2372,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0109",
@@ -2286,7 +2394,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0110",
@@ -2307,7 +2416,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0111",
@@ -2328,7 +2438,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0112",
@@ -2349,7 +2460,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0113",
@@ -2370,7 +2482,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0114",
@@ -2391,7 +2504,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0115",
@@ -2412,7 +2526,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0116",
@@ -2433,7 +2548,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0117",
@@ -2454,7 +2570,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0118",
@@ -2475,7 +2592,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0119",
@@ -2496,7 +2614,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0120",
@@ -2517,7 +2636,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0121",
@@ -2538,7 +2658,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0122",
@@ -2559,7 +2680,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0123",
@@ -2580,7 +2702,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0124",
@@ -2601,7 +2724,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0125",
@@ -2622,7 +2746,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0126",
@@ -2643,7 +2768,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0127",
@@ -2664,7 +2790,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0128",
@@ -2685,7 +2812,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0129",
@@ -2706,7 +2834,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0130",
@@ -2727,7 +2856,8 @@
     "nationality": "ドイツ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0131",
@@ -2748,7 +2878,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0132",
@@ -2769,7 +2900,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0133",
@@ -2790,7 +2922,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0134",
@@ -2811,7 +2944,8 @@
     "nationality": "ドイツ",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0135",
@@ -2832,7 +2966,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0136",
@@ -2853,7 +2988,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0137",
@@ -2874,7 +3010,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0138",
@@ -2895,7 +3032,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0139",
@@ -2916,7 +3054,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0140",
@@ -2937,7 +3076,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0141",
@@ -2958,7 +3098,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0142",
@@ -2979,7 +3120,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0143",
@@ -3000,7 +3142,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0144",
@@ -3021,7 +3164,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0145",
@@ -3042,7 +3186,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0146",
@@ -3063,7 +3208,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0147",
@@ -3084,7 +3230,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0148",
@@ -3105,7 +3252,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0149",
@@ -3126,7 +3274,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0150",
@@ -3147,7 +3296,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0151",
@@ -3168,7 +3318,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0152",
@@ -3189,7 +3340,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0153",
@@ -3210,7 +3362,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0154",
@@ -3231,7 +3384,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0155",
@@ -3252,7 +3406,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0156",
@@ -3273,7 +3428,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0157",
@@ -3294,7 +3450,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0158",
@@ -3315,7 +3472,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0159",
@@ -3336,7 +3494,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0160",
@@ -3357,7 +3516,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-01-29",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0161",
@@ -3378,7 +3538,8 @@
     "nationality": "イングランド",
     "growthType": "超早熟",
     "implementedDate": "2026-02-05",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0162",
@@ -3399,7 +3560,8 @@
     "nationality": "アルゼンチン",
     "growthType": "超早熟",
     "implementedDate": "2026-02-05",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0163",
@@ -3420,7 +3582,8 @@
     "nationality": "フランス",
     "growthType": "超早熟",
     "implementedDate": "2026-02-05",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0164",
@@ -3441,7 +3604,8 @@
     "nationality": "スペイン",
     "growthType": "超早熟",
     "implementedDate": "2026-02-05",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0165",
@@ -3462,7 +3626,8 @@
     "nationality": "オランダ",
     "growthType": "超早熟",
     "implementedDate": "2026-02-17",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0166",
@@ -3483,7 +3648,8 @@
     "nationality": "ベルギー",
     "growthType": "超早熟",
     "implementedDate": "2026-02-17",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0167",
@@ -3504,7 +3670,8 @@
     "nationality": "スペイン",
     "growthType": "超早熟",
     "implementedDate": "2026-02-17",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0168",
@@ -3525,7 +3692,8 @@
     "nationality": "イタリア",
     "growthType": "超早熟",
     "implementedDate": "2026-02-17",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0169",
@@ -3546,7 +3714,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-02-23",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0170",
@@ -3567,7 +3736,8 @@
     "nationality": "クロアチア",
     "growthType": "超早熟",
     "implementedDate": "2026-02-27",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0171",
@@ -3588,7 +3758,8 @@
     "nationality": "ポルトガル",
     "growthType": "超早熟",
     "implementedDate": "2026-02-27",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0172",
@@ -3609,7 +3780,8 @@
     "nationality": "コートジボワール",
     "growthType": "超早熟",
     "implementedDate": "2026-02-27",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0173",
@@ -3630,7 +3802,8 @@
     "nationality": "イングランド",
     "growthType": "超早熟",
     "implementedDate": "2026-02-27",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0174",
@@ -3651,7 +3824,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0175",
@@ -3672,7 +3846,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0176",
@@ -3693,7 +3868,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0177",
@@ -3714,7 +3890,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0178",
@@ -3735,7 +3912,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0179",
@@ -3756,7 +3934,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0180",
@@ -3777,7 +3956,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0181",
@@ -3798,7 +3978,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0182",
@@ -3819,7 +4000,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0183",
@@ -3840,7 +4022,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0184",
@@ -3861,7 +4044,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0185",
@@ -3882,7 +4066,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0186",
@@ -3903,7 +4088,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0187",
@@ -3924,7 +4110,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0188",
@@ -3945,7 +4132,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0189",
@@ -3966,7 +4154,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0190",
@@ -3987,7 +4176,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0191",
@@ -4008,7 +4198,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0192",
@@ -4029,7 +4220,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0193",
@@ -4050,7 +4242,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0194",
@@ -4071,7 +4264,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0195",
@@ -4092,7 +4286,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0196",
@@ -4113,7 +4308,8 @@
     "nationality": "ジョージア",
     "growthType": "超早熟",
     "implementedDate": "2026-03-18",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0197",
@@ -4134,7 +4330,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-03-18",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0198",
@@ -4155,7 +4352,8 @@
     "nationality": "ウルグアイ",
     "growthType": "超早熟",
     "implementedDate": "2026-03-18",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0199",
@@ -4176,7 +4374,8 @@
     "nationality": "パラグアイ",
     "growthType": "超早熟",
     "implementedDate": "2026-03-18",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0200",
@@ -4197,7 +4396,8 @@
     "nationality": "イタリア",
     "growthType": "超早熟",
     "implementedDate": "2026-03-31",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0201",
@@ -4218,7 +4418,8 @@
     "nationality": "ベルギー",
     "growthType": "超早熟",
     "implementedDate": "2026-03-31",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0202",
@@ -4239,7 +4440,8 @@
     "nationality": "ノルウェー",
     "growthType": "超早熟",
     "implementedDate": "2026-03-31",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0203",
@@ -4260,7 +4462,8 @@
     "nationality": "イングランド",
     "growthType": "超早熟",
     "implementedDate": "2026-03-31",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0204",
@@ -4281,7 +4484,8 @@
     "nationality": "モロッコ",
     "growthType": "超早熟",
     "implementedDate": "2026-04-16",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0205",
@@ -4302,7 +4506,8 @@
     "nationality": "フランス",
     "growthType": "超早熟",
     "implementedDate": "2026-04-16",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0206",
@@ -4323,7 +4528,8 @@
     "nationality": "オランダ",
     "growthType": "超早熟",
     "implementedDate": "2026-04-16",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0207",
@@ -4344,7 +4550,8 @@
     "nationality": "ノルウェー",
     "growthType": "超早熟",
     "implementedDate": "2026-04-16",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0208",
@@ -4365,7 +4572,8 @@
     "nationality": "ノルウェー",
     "growthType": "超早熟",
     "implementedDate": "2026-04-23",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0209",
@@ -4386,7 +4594,8 @@
     "nationality": "エジプト",
     "growthType": "超早熟",
     "implementedDate": "2026-04-23",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0210",
@@ -4407,7 +4616,8 @@
     "nationality": "オランダ",
     "growthType": "超早熟",
     "implementedDate": "2026-04-23",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0211",
@@ -4428,7 +4638,8 @@
     "nationality": "ポーランド",
     "growthType": "超早熟",
     "implementedDate": "2026-04-28",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0212",
@@ -4449,7 +4660,8 @@
     "nationality": "イタリア",
     "growthType": "超早熟",
     "implementedDate": "2026-04-28",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0213",
@@ -4470,7 +4682,8 @@
     "nationality": "フランス",
     "growthType": "超早熟",
     "implementedDate": "2026-04-28",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0214",
@@ -4491,7 +4704,8 @@
     "nationality": "アメリカ",
     "growthType": "超早熟",
     "implementedDate": "2026-04-28",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0215",
@@ -4512,7 +4726,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-05-07",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0216",
@@ -4533,7 +4748,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-05-07",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0217",
@@ -4554,7 +4770,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-05-07",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0218",
@@ -4575,7 +4792,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-05-07",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0219",
@@ -4596,7 +4814,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-05-07",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0220",
@@ -4617,7 +4836,8 @@
     "nationality": "スコットランド",
     "growthType": "超早熟",
     "implementedDate": "2026-05-15",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0221",
@@ -4638,7 +4858,8 @@
     "nationality": "フランス",
     "growthType": "超早熟",
     "implementedDate": "2026-05-15",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0222",
@@ -4659,7 +4880,8 @@
     "nationality": "イタリア",
     "growthType": "超早熟",
     "implementedDate": "2026-05-15",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0223",
@@ -4680,7 +4902,8 @@
     "nationality": "スペイン",
     "growthType": "超早熟",
     "implementedDate": "2026-05-15",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0224",
@@ -4701,7 +4924,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-05-20",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0225",
@@ -4722,7 +4946,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-05-20",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0226",
@@ -4743,7 +4968,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-05-20",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0227",
@@ -4764,7 +4990,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-05-20",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0228",
@@ -4785,7 +5012,8 @@
     "nationality": "エジプト",
     "growthType": "超早熟",
     "implementedDate": "2026-05-29",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0229",
@@ -4806,7 +5034,8 @@
     "nationality": "フランス",
     "growthType": "超早熟",
     "implementedDate": "2026-05-29",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0230",
@@ -4827,7 +5056,8 @@
     "nationality": "スペイン",
     "growthType": "超早熟",
     "implementedDate": "2026-05-29",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0231",
@@ -4848,7 +5078,8 @@
     "nationality": "アルゼンチン",
     "growthType": "超早熟",
     "implementedDate": "2026-05-29",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": false
   },
   {
     "player_id": "P0232",
@@ -4869,7 +5100,8 @@
     "nationality": "アルゼンチン",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0233",
@@ -4890,7 +5122,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0234",
@@ -4911,7 +5144,8 @@
     "nationality": "ドイツ",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0235",
@@ -4932,7 +5166,8 @@
     "nationality": "ドイツ",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0236",
@@ -4953,7 +5188,8 @@
     "nationality": "アメリカ",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0237",
@@ -4974,7 +5210,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0238",
@@ -4995,7 +5232,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0239",
@@ -5016,7 +5254,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0240",
@@ -5037,7 +5276,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0241",
@@ -5058,7 +5298,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0242",
@@ -5079,7 +5320,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0243",
@@ -5100,7 +5342,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0244",
@@ -5121,7 +5364,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0245",
@@ -5142,7 +5386,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0246",
@@ -5163,7 +5408,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0247",
@@ -5184,7 +5430,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0248",
@@ -5205,7 +5452,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0249",
@@ -5226,7 +5474,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0250",
@@ -5247,7 +5496,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0251",
@@ -5268,7 +5518,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0252",
@@ -5289,7 +5540,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0253",
@@ -5310,7 +5562,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0254",
@@ -5331,7 +5584,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0255",
@@ -5352,7 +5606,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0256",
@@ -5373,7 +5628,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0257",
@@ -5394,7 +5650,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0258",
@@ -5415,7 +5672,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0259",
@@ -5436,7 +5694,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0260",
@@ -5457,7 +5716,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0261",
@@ -5478,7 +5738,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0262",
@@ -5499,7 +5760,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0263",
@@ -5520,7 +5782,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0264",
@@ -5541,7 +5804,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0265",
@@ -5562,7 +5826,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0266",
@@ -5583,7 +5848,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0267",
@@ -5604,7 +5870,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0268",
@@ -5625,7 +5892,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0269",
@@ -5646,7 +5914,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0270",
@@ -5667,7 +5936,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0271",
@@ -5688,7 +5958,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0272",
@@ -5709,7 +5980,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0273",
@@ -5730,7 +6002,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0274",
@@ -5751,7 +6024,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0275",
@@ -5772,7 +6046,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0276",
@@ -5793,7 +6068,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0277",
@@ -5814,7 +6090,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0278",
@@ -5835,7 +6112,8 @@
     "nationality": "トルコ",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0279",
@@ -5856,7 +6134,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0280",
@@ -5877,7 +6156,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0281",
@@ -5898,7 +6178,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0282",
@@ -5919,7 +6200,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0283",
@@ -5940,7 +6222,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0284",
@@ -5961,7 +6244,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0285",
@@ -5982,7 +6266,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0286",
@@ -6003,7 +6288,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0287",
@@ -6024,7 +6310,8 @@
     "nationality": "ドイツ",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0288",
@@ -6045,7 +6332,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0289",
@@ -6066,7 +6354,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0290",
@@ -6087,7 +6376,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0291",
@@ -6108,7 +6398,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0292",
@@ -6129,7 +6420,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0293",
@@ -6150,7 +6442,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0294",
@@ -6171,7 +6464,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0295",
@@ -6192,7 +6486,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0296",
@@ -6213,7 +6508,8 @@
     "nationality": "ジャマイカ",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0297",
@@ -6234,7 +6530,8 @@
     "nationality": "シエラレオーネ",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0298",
@@ -6255,7 +6552,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0299",
@@ -6276,7 +6574,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0300",
@@ -6297,7 +6596,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0301",
@@ -6318,7 +6618,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0302",
@@ -6339,7 +6640,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0303",
@@ -6360,7 +6662,8 @@
     "nationality": "クロアチア",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0304",
@@ -6381,7 +6684,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0305",
@@ -6402,7 +6706,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0306",
@@ -6423,7 +6728,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0307",
@@ -6444,7 +6750,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0308",
@@ -6465,7 +6772,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0309",
@@ -6486,7 +6794,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0310",
@@ -6507,7 +6816,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0311",
@@ -6528,7 +6838,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0312",
@@ -6549,7 +6860,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0313",
@@ -6570,7 +6882,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0314",
@@ -6591,7 +6904,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0315",
@@ -6612,7 +6926,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0316",
@@ -6633,7 +6948,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0317",
@@ -6654,7 +6970,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0318",
@@ -6675,7 +6992,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0319",
@@ -6696,7 +7014,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0320",
@@ -6717,7 +7036,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0321",
@@ -6738,7 +7058,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0322",
@@ -6759,7 +7080,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0323",
@@ -6780,7 +7102,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0324",
@@ -6801,7 +7124,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0325",
@@ -6822,7 +7146,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0326",
@@ -6843,7 +7168,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0327",
@@ -6864,7 +7190,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0328",
@@ -6885,7 +7212,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0329",
@@ -6906,7 +7234,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0330",
@@ -6927,7 +7256,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0331",
@@ -6948,7 +7278,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0332",
@@ -6969,7 +7300,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0333",
@@ -6990,7 +7322,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0334",
@@ -7011,7 +7344,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0335",
@@ -7032,7 +7366,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0336",
@@ -7053,7 +7388,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0337",
@@ -7074,7 +7410,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0338",
@@ -7095,7 +7432,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0339",
@@ -7116,7 +7454,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0340",
@@ -7137,7 +7476,8 @@
     "nationality": "スウェーデン",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0341",
@@ -7158,7 +7498,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0342",
@@ -7179,7 +7520,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0343",
@@ -7200,7 +7542,8 @@
     "nationality": "ポーランド",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0344",
@@ -7221,7 +7564,8 @@
     "nationality": "スペイン",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0345",
@@ -7242,7 +7586,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0346",
@@ -7263,7 +7608,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0347",
@@ -7284,7 +7630,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0348",
@@ -7305,7 +7652,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0349",
@@ -7326,7 +7674,8 @@
     "nationality": "ドイツ",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0350",
@@ -7347,7 +7696,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0351",
@@ -7368,7 +7718,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0352",
@@ -7389,7 +7740,8 @@
     "nationality": "モンテネグロ",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0353",
@@ -7410,7 +7762,8 @@
     "nationality": "フランス",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0354",
@@ -7431,7 +7784,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0355",
@@ -7452,7 +7806,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0356",
@@ -7473,7 +7828,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0357",
@@ -7494,7 +7850,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0358",
@@ -7515,7 +7872,8 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0359",
@@ -7536,7 +7894,8 @@
     "nationality": "アイスランド",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0360",
@@ -7557,7 +7916,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0361",
@@ -7578,7 +7938,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0362",
@@ -7599,7 +7960,8 @@
     "nationality": "エジプト",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0363",
@@ -7620,7 +7982,8 @@
     "nationality": "韓国",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0364",
@@ -7641,7 +8004,8 @@
     "nationality": "ジャマイカ",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0365",
@@ -7662,7 +8026,8 @@
     "nationality": "ウズベキスタン",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0366",
@@ -7683,7 +8048,8 @@
     "nationality": "ポルトガル",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0367",
@@ -7704,7 +8070,8 @@
     "nationality": "日本",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0368",
@@ -7725,7 +8092,8 @@
     "nationality": "UAE",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0369",
@@ -7746,7 +8114,8 @@
     "nationality": "南アフリカ",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0370",
@@ -7767,7 +8136,8 @@
     "nationality": "南アフリカ",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0371",
@@ -7788,7 +8158,8 @@
     "nationality": "中国本土",
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0372",
@@ -7809,7 +8180,8 @@
     "nationality": "フランス",
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0373",
@@ -7830,7 +8202,8 @@
     "nationality": "スロベニア",
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0374",
@@ -7851,7 +8224,8 @@
     "nationality": "トルコ",
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   },
   {
     "player_id": "P0375",
@@ -7872,6 +8246,7 @@
     "nationality": "イングランド",
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
-    "rarity": "★3"
+    "rarity": "★3",
+    "available": true
   }
 ]
