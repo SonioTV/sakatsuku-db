@@ -1125,10 +1125,36 @@ function getReqField(req, keys, def=""){
   return def;
 }
 
+/* ===== Position helpers: mainPosition + suitablePositions ===== */
+function normalizePosition(v){
+  return normalize(v).toUpperCase();
+}
+
+function getSuitablePositions(player){
+  const main = normalizePosition(player?.mainPosition ?? player?.position ?? player?.["ポジション"] ?? "");
+  const raw = player?.suitablePositions ?? player?.suitable_positions ?? player?.["適性ポジション"] ?? null;
+  let list = [];
+
+  if(Array.isArray(raw)){
+    list = raw.map(normalizePosition).filter(Boolean);
+  }else if(typeof raw === "string" && raw.trim() !== ""){
+    list = raw.split(/[\/／,，、\s]+/).map(normalizePosition).filter(Boolean);
+  }
+
+  if(main && !list.includes(main)) list.unshift(main);
+  if(!list.length && main) list.push(main);
+  return [...new Set(list)];
+}
+
+function hasSuitablePosition(player, position){
+  const pos = normalizePosition(position);
+  if(!pos) return true;
+  return getSuitablePositions(player).includes(pos);
+}
+
 /* ===== Combo aptitude (Gold + Silver / Gold only toggle) ===== */
 function calcRankCombos(target, goldOnly=false){
   const pPol = normalize(target.policy);
-  const pPos = normalize(target.mainPosition);
   const pSty = normalize(target.playStyle);
   const pLv  = toNum(target.playStyleLv);
 
@@ -1155,7 +1181,7 @@ function calcRankCombos(target, goldOnly=false){
 
       const styOk = (rSty==="") ? true : (rSty===pSty);
       const lvOk  = lvInclusiveMatch(rLv, pLv);
-      const posOk = (rPos==="") ? true : (rPos===pPos);
+      const posOk = hasSuitablePosition(target, rPos);
 
       const corePS = styOk && lvOk;
       const corePosStyle = posOk && corePS;

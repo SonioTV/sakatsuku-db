@@ -19,7 +19,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0002",
@@ -41,7 +44,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0003",
@@ -63,7 +69,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0004",
@@ -85,7 +94,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0005",
@@ -107,7 +119,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0006",
@@ -129,7 +144,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0007",
@@ -151,7 +169,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0008",
@@ -173,7 +194,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0009",
@@ -195,7 +219,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0010",
@@ -217,7 +244,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0011",
@@ -239,7 +269,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0012",
@@ -261,7 +294,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0013",
@@ -283,7 +319,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0014",
@@ -305,7 +344,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0015",
@@ -327,7 +369,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0016",
@@ -349,7 +394,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0017",
@@ -371,7 +419,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0018",
@@ -393,7 +444,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0019",
@@ -415,7 +469,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0020",
@@ -437,7 +494,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0021",
@@ -459,7 +519,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0022",
@@ -481,7 +544,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0023",
@@ -503,7 +569,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0024",
@@ -525,7 +594,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0025",
@@ -547,7 +619,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0026",
@@ -569,7 +644,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0027",
@@ -591,7 +669,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0028",
@@ -613,7 +694,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0029",
@@ -635,7 +719,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0030",
@@ -657,7 +744,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0031",
@@ -679,7 +769,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0032",
@@ -701,7 +794,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0033",
@@ -723,7 +819,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0034",
@@ -745,7 +844,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0035",
@@ -767,7 +869,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0036",
@@ -789,7 +894,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0037",
@@ -811,7 +919,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0038",
@@ -833,7 +944,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0039",
@@ -855,7 +969,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0040",
@@ -877,7 +994,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0041",
@@ -899,7 +1019,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0042",
@@ -921,7 +1044,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0043",
@@ -943,7 +1069,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0044",
@@ -965,7 +1094,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0045",
@@ -987,7 +1119,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0046",
@@ -1009,7 +1144,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0047",
@@ -1031,7 +1169,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0048",
@@ -1053,7 +1194,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0049",
@@ -1075,7 +1219,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0050",
@@ -1097,7 +1244,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0051",
@@ -1119,7 +1269,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0052",
@@ -1141,7 +1294,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0053",
@@ -1163,7 +1319,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0054",
@@ -1185,7 +1344,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★2",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0055",
@@ -1207,7 +1369,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0056",
@@ -1229,7 +1394,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0057",
@@ -1251,7 +1419,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0058",
@@ -1273,7 +1444,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0059",
@@ -1295,7 +1469,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0060",
@@ -1317,7 +1494,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0061",
@@ -1339,7 +1519,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0062",
@@ -1361,7 +1544,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0063",
@@ -1383,7 +1569,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0064",
@@ -1405,7 +1594,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0065",
@@ -1427,7 +1619,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0066",
@@ -1449,7 +1644,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0067",
@@ -1471,7 +1669,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0068",
@@ -1493,7 +1694,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0069",
@@ -1515,7 +1719,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0070",
@@ -1537,7 +1744,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0071",
@@ -1559,7 +1769,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0072",
@@ -1581,7 +1794,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0073",
@@ -1603,7 +1819,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0074",
@@ -1625,7 +1844,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0075",
@@ -1647,7 +1869,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0076",
@@ -1669,7 +1894,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0077",
@@ -1691,7 +1919,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0078",
@@ -1713,7 +1944,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0079",
@@ -1735,7 +1969,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0080",
@@ -1757,7 +1994,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0081",
@@ -1779,7 +2019,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0082",
@@ -1801,7 +2044,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0083",
@@ -1823,7 +2069,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0084",
@@ -1845,7 +2094,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0085",
@@ -1867,7 +2119,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0086",
@@ -1889,7 +2144,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0087",
@@ -1911,7 +2169,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0088",
@@ -1933,7 +2194,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0089",
@@ -1955,7 +2219,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0090",
@@ -1977,7 +2244,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0091",
@@ -1999,7 +2269,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0092",
@@ -2021,7 +2294,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0093",
@@ -2043,7 +2319,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0094",
@@ -2065,7 +2344,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0095",
@@ -2087,7 +2369,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0096",
@@ -2109,7 +2394,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0097",
@@ -2131,7 +2419,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0098",
@@ -2153,7 +2444,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0099",
@@ -2175,7 +2469,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0100",
@@ -2197,7 +2494,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0101",
@@ -2219,7 +2519,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0102",
@@ -2241,7 +2544,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0103",
@@ -2263,7 +2569,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0104",
@@ -2285,7 +2594,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0105",
@@ -2307,7 +2619,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0106",
@@ -2329,7 +2644,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0107",
@@ -2351,7 +2669,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0108",
@@ -2373,7 +2694,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0109",
@@ -2395,7 +2719,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0110",
@@ -2417,7 +2744,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0111",
@@ -2439,7 +2769,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0112",
@@ -2461,7 +2794,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0113",
@@ -2483,7 +2819,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0114",
@@ -2505,7 +2844,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0115",
@@ -2527,7 +2869,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0116",
@@ -2549,7 +2894,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0117",
@@ -2571,7 +2919,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0118",
@@ -2593,7 +2944,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0119",
@@ -2615,7 +2969,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0120",
@@ -2637,7 +2994,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0121",
@@ -2659,7 +3019,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0122",
@@ -2681,7 +3044,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0123",
@@ -2703,7 +3069,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0124",
@@ -2725,7 +3094,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0125",
@@ -2747,7 +3119,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0126",
@@ -2769,7 +3144,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0127",
@@ -2791,7 +3169,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0128",
@@ -2813,7 +3194,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0129",
@@ -2835,7 +3219,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0130",
@@ -2857,7 +3244,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0131",
@@ -2879,7 +3269,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0132",
@@ -2901,7 +3294,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0133",
@@ -2923,7 +3319,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0134",
@@ -2945,7 +3344,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0135",
@@ -2967,7 +3369,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0136",
@@ -2989,7 +3394,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0137",
@@ -3011,7 +3419,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0138",
@@ -3033,7 +3444,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0139",
@@ -3055,7 +3469,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0140",
@@ -3077,7 +3494,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0141",
@@ -3099,7 +3519,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0142",
@@ -3121,7 +3544,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0143",
@@ -3143,7 +3569,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0144",
@@ -3165,7 +3594,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0145",
@@ -3187,7 +3619,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0146",
@@ -3209,7 +3644,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0147",
@@ -3231,7 +3669,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0148",
@@ -3253,7 +3694,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0149",
@@ -3275,7 +3719,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0150",
@@ -3297,7 +3744,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0151",
@@ -3319,7 +3769,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0152",
@@ -3341,7 +3794,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0153",
@@ -3363,7 +3819,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0154",
@@ -3385,7 +3844,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0155",
@@ -3407,7 +3869,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0156",
@@ -3429,7 +3894,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0157",
@@ -3451,7 +3919,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0158",
@@ -3473,7 +3944,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0159",
@@ -3495,7 +3969,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-22",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0160",
@@ -3517,7 +3994,11 @@
     "growthType": "超早熟",
     "implementedDate": "2026-01-29",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RM",
+      "AM"
+    ]
   },
   {
     "player_id": "P0161",
@@ -3539,7 +4020,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-02-05",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0162",
@@ -3561,7 +4045,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-02-05",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0163",
@@ -3583,7 +4070,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-02-05",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0164",
@@ -3605,7 +4095,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-02-05",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0165",
@@ -3627,7 +4120,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-02-17",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0166",
@@ -3649,7 +4145,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-02-17",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0167",
@@ -3671,7 +4170,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-02-17",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0168",
@@ -3693,7 +4195,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-02-17",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0169",
@@ -3715,7 +4220,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-02-23",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0170",
@@ -3737,7 +4245,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-02-27",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0171",
@@ -3759,7 +4270,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-02-27",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0172",
@@ -3781,7 +4295,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-02-27",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0173",
@@ -3803,7 +4320,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-02-27",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0174",
@@ -3825,7 +4345,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0175",
@@ -3847,7 +4370,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0176",
@@ -3869,7 +4395,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0177",
@@ -3891,7 +4420,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0178",
@@ -3913,7 +4445,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0179",
@@ -3935,7 +4470,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0180",
@@ -3957,7 +4495,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0181",
@@ -3979,7 +4520,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0182",
@@ -4001,7 +4545,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0183",
@@ -4023,7 +4570,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0184",
@@ -4045,7 +4595,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0185",
@@ -4067,7 +4620,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0186",
@@ -4089,7 +4645,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0187",
@@ -4111,7 +4670,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0188",
@@ -4133,7 +4695,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0189",
@@ -4155,7 +4720,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0190",
@@ -4177,7 +4745,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0191",
@@ -4199,7 +4770,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0192",
@@ -4221,7 +4795,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0193",
@@ -4243,7 +4820,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0194",
@@ -4265,7 +4845,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0195",
@@ -4287,7 +4870,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-11",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0196",
@@ -4309,7 +4895,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-18",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0197",
@@ -4331,7 +4920,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-18",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0198",
@@ -4353,7 +4945,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-18",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0199",
@@ -4375,7 +4970,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-18",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0200",
@@ -4397,7 +4995,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-31",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0201",
@@ -4419,7 +5020,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-31",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0202",
@@ -4441,7 +5045,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-31",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0203",
@@ -4463,7 +5070,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-03-31",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0204",
@@ -4485,7 +5095,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-04-16",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0205",
@@ -4507,7 +5120,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-04-16",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0206",
@@ -4529,7 +5145,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-04-16",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0207",
@@ -4551,7 +5170,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-04-16",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0208",
@@ -4573,7 +5195,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-04-23",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0209",
@@ -4595,7 +5220,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-04-23",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0210",
@@ -4617,7 +5245,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-04-23",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0211",
@@ -4639,7 +5270,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-04-28",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0212",
@@ -4661,7 +5295,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-04-28",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0213",
@@ -4683,7 +5320,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-04-28",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0214",
@@ -4705,7 +5345,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-04-28",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0215",
@@ -4727,7 +5370,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-07",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0216",
@@ -4749,7 +5395,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-07",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0217",
@@ -4771,7 +5420,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-07",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0218",
@@ -4793,7 +5445,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-07",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0219",
@@ -4815,7 +5470,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-07",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0220",
@@ -4837,7 +5495,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-15",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0221",
@@ -4859,7 +5520,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-15",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0222",
@@ -4881,7 +5545,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-15",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0223",
@@ -4903,7 +5570,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-15",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0224",
@@ -4925,7 +5595,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-20",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0225",
@@ -4947,7 +5620,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-20",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0226",
@@ -4969,7 +5645,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-20",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0227",
@@ -4991,7 +5670,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-20",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0228",
@@ -5013,7 +5695,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-29",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0229",
@@ -5035,7 +5720,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-29",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0230",
@@ -5057,7 +5745,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-29",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0231",
@@ -5079,7 +5770,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-29",
     "rarity": "★3",
-    "available": false
+    "available": false,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0232",
@@ -5101,7 +5795,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0233",
@@ -5123,7 +5820,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0234",
@@ -5145,7 +5845,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0235",
@@ -5167,7 +5870,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0236",
@@ -5189,7 +5895,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0237",
@@ -5211,7 +5920,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0238",
@@ -5233,7 +5945,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0239",
@@ -5255,7 +5970,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0240",
@@ -5277,7 +5995,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0241",
@@ -5299,7 +6020,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0242",
@@ -5321,7 +6045,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0243",
@@ -5343,7 +6070,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0244",
@@ -5365,7 +6095,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0245",
@@ -5387,7 +6120,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0246",
@@ -5409,7 +6145,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0247",
@@ -5431,7 +6170,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0248",
@@ -5453,7 +6195,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0249",
@@ -5475,7 +6220,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0250",
@@ -5497,7 +6245,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0251",
@@ -5519,7 +6270,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0252",
@@ -5541,7 +6295,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0253",
@@ -5563,7 +6320,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0254",
@@ -5585,7 +6345,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0255",
@@ -5607,7 +6370,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0256",
@@ -5629,7 +6395,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0257",
@@ -5651,7 +6420,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0258",
@@ -5673,7 +6445,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0259",
@@ -5695,7 +6470,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0260",
@@ -5717,7 +6495,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0261",
@@ -5739,7 +6520,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0262",
@@ -5761,7 +6545,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0263",
@@ -5783,7 +6570,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0264",
@@ -5805,7 +6595,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0265",
@@ -5827,7 +6620,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0266",
@@ -5849,7 +6645,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0267",
@@ -5871,7 +6670,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0268",
@@ -5893,7 +6695,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0269",
@@ -5915,7 +6720,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0270",
@@ -5937,7 +6745,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0271",
@@ -5959,7 +6770,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0272",
@@ -5981,7 +6795,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0273",
@@ -6003,7 +6820,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0274",
@@ -6025,7 +6845,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0275",
@@ -6047,7 +6870,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0276",
@@ -6069,7 +6895,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0277",
@@ -6091,7 +6920,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0278",
@@ -6113,7 +6945,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0279",
@@ -6135,7 +6970,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0280",
@@ -6157,7 +6995,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0281",
@@ -6179,7 +7020,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0282",
@@ -6201,7 +7045,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0283",
@@ -6223,7 +7070,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0284",
@@ -6245,7 +7095,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0285",
@@ -6267,7 +7120,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0286",
@@ -6289,7 +7145,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0287",
@@ -6311,7 +7170,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0288",
@@ -6333,7 +7195,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0289",
@@ -6355,7 +7220,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0290",
@@ -6377,7 +7245,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0291",
@@ -6399,7 +7270,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0292",
@@ -6421,7 +7295,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0293",
@@ -6443,7 +7320,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0294",
@@ -6465,7 +7345,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0295",
@@ -6487,7 +7370,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0296",
@@ -6509,7 +7395,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0297",
@@ -6531,7 +7420,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0298",
@@ -6553,7 +7445,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0299",
@@ -6575,7 +7470,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0300",
@@ -6597,7 +7495,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0301",
@@ -6619,7 +7520,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0302",
@@ -6641,7 +7545,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0303",
@@ -6663,7 +7570,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0304",
@@ -6685,7 +7595,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0305",
@@ -6707,7 +7620,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0306",
@@ -6729,7 +7645,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0307",
@@ -6751,7 +7670,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0308",
@@ -6773,7 +7695,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0309",
@@ -6795,7 +7720,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0310",
@@ -6817,7 +7745,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0311",
@@ -6839,7 +7770,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0312",
@@ -6861,7 +7795,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0313",
@@ -6883,7 +7820,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0314",
@@ -6905,7 +7845,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0315",
@@ -6927,7 +7870,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0316",
@@ -6949,7 +7895,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0317",
@@ -6971,7 +7920,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0318",
@@ -6993,7 +7945,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0319",
@@ -7015,7 +7970,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0320",
@@ -7037,7 +7995,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0321",
@@ -7059,7 +8020,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0322",
@@ -7081,7 +8045,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0323",
@@ -7103,7 +8070,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0324",
@@ -7125,7 +8095,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0325",
@@ -7147,7 +8120,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0326",
@@ -7169,7 +8145,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0327",
@@ -7191,7 +8170,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0328",
@@ -7213,7 +8195,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0329",
@@ -7235,7 +8220,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0330",
@@ -7257,7 +8245,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0331",
@@ -7279,7 +8270,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LM"
+    ]
   },
   {
     "player_id": "P0332",
@@ -7301,7 +8295,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0333",
@@ -7323,7 +8320,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0334",
@@ -7345,7 +8345,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0335",
@@ -7367,7 +8370,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0336",
@@ -7389,7 +8395,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0337",
@@ -7411,7 +8420,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0338",
@@ -7433,7 +8445,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0339",
@@ -7455,7 +8470,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0340",
@@ -7477,7 +8495,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0341",
@@ -7499,7 +8520,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0342",
@@ -7521,7 +8545,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0343",
@@ -7543,7 +8570,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0344",
@@ -7565,7 +8595,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0345",
@@ -7587,7 +8620,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0346",
@@ -7609,7 +8645,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0347",
@@ -7631,7 +8670,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0348",
@@ -7653,7 +8695,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RM"
+    ]
   },
   {
     "player_id": "P0349",
@@ -7675,7 +8720,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0350",
@@ -7697,7 +8745,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0351",
@@ -7719,7 +8770,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0352",
@@ -7741,7 +8795,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0353",
@@ -7763,7 +8820,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0354",
@@ -7785,7 +8845,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0355",
@@ -7807,7 +8870,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0356",
@@ -7829,7 +8895,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0357",
@@ -7851,7 +8920,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0358",
@@ -7873,7 +8945,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0359",
@@ -7895,7 +8970,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0360",
@@ -7917,7 +8995,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0361",
@@ -7939,7 +9020,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0362",
@@ -7961,7 +9045,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0363",
@@ -7983,7 +9070,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0364",
@@ -8005,7 +9095,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ]
   },
   {
     "player_id": "P0365",
@@ -8027,7 +9120,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0366",
@@ -8049,7 +9145,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0367",
@@ -8071,7 +9170,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0368",
@@ -8093,7 +9195,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0369",
@@ -8115,7 +9220,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
   },
   {
     "player_id": "P0370",
@@ -8137,7 +9245,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
   },
   {
     "player_id": "P0371",
@@ -8159,7 +9270,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0372",
@@ -8181,7 +9295,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0373",
@@ -8203,7 +9320,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0374",
@@ -8225,7 +9345,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   },
   {
     "player_id": "P0375",
@@ -8247,7 +9370,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ]
   },
   {
     "player_id": "P0376",
@@ -8269,7 +9395,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
   },
   {
     "player_id": "P0377",
@@ -8291,7 +9420,11 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM",
+      "LM"
+    ]
   },
   {
     "player_id": "P0378",
@@ -8313,7 +9446,11 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "LM",
+      "LW"
+    ]
   },
   {
     "player_id": "P0379",
@@ -8335,7 +9472,11 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM",
+      "RM"
+    ]
   },
   {
     "player_id": "P0380",
@@ -8357,7 +9498,11 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "RM",
+      "RW"
+    ]
   },
   {
     "player_id": "P0381",
@@ -8379,7 +9524,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0382",
@@ -8401,7 +9549,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
   },
   {
     "player_id": "P0383",
@@ -8423,7 +9574,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0384",
@@ -8445,7 +9599,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0385",
@@ -8467,7 +9624,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   },
   {
     "player_id": "P0386",
@@ -8489,7 +9649,10 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
   },
   {
     "player_id": "P0387",
@@ -8511,6 +9674,9 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
   }
 ]

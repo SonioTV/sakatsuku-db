@@ -2217,6 +2217,49 @@ function normalizePolicy(p){
 function normalizePos(p){
   return safeStr(p).trim().toUpperCase();
 }
+
+function getPlayerSuitablePositions(player){
+  const values = [];
+
+  const add = (v)=>{
+    if(v === null || v === undefined) return;
+
+    if(Array.isArray(v)){
+      v.forEach(add);
+      return;
+    }
+
+    safeStr(v)
+      .split(/[\/／,、\s]+/)
+      .map(normalizePos)
+      .filter(Boolean)
+      .forEach(pos => values.push(pos));
+  };
+
+  add(getComboField(player, [
+    "suitablePositions",
+    "suitable_positions",
+    "適性ポジション",
+    "対応ポジション"
+  ], null));
+
+  // 旧players.jsonや空欄データでも従来通り動くように、メインポジションは必ず候補に含める
+  add(getComboField(player, [
+    "mainPosition",
+    "main_position",
+    "position",
+    "ポジション",
+    "メインポジション"
+  ], null));
+
+  return [...new Set(values)];
+}
+
+function playerHasPosition(player, requiredPosition){
+  const req = normalizePos(requiredPosition);
+  if(!req) return true;
+  return getPlayerSuitablePositions(player).includes(req);
+}
 function normalizeStyle(s){
   return safeStr(s).trim();
 }
@@ -2605,12 +2648,11 @@ function playerMatchesCondition(p, cond, comboPolicys){
       const lvReqRaw = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], null);
       const lvReq = (lvReqRaw===null || lvReqRaw===undefined || lvReqRaw==="") ? null : Number(lvReqRaw);
 
-      const pPos   = getComboField(p, ["mainPosition","main_position","position","ポジション","メインポジション"], "");
       const pStyle = getComboField(p, ["playStyle","play_style","style","プレイスタイル"], "");
       const pLvRaw = getComboField(p, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "");
       const pLv = (pLvRaw===null || pLvRaw===undefined || pLvRaw==="") ? null : Number(pLvRaw);
 
-      const posOk   = !posReq   || pPos   === posReq;
+      const posOk   = !posReq   || playerHasPosition(p, posReq);
       const styleOk = !styleReq || pStyle === styleReq;
       const lvOk    = (lvReq===null) || (pLv!==null && pLv>=lvReq);
 

@@ -222,7 +222,34 @@ function romanLv(n){
   if(v === 3) return "Ⅲ";
   return "";
 }
+function normalizePositionList(value, fallback=""){
+  let list = [];
+
+  if(Array.isArray(value)){
+    list = value;
+  }else if(typeof value === "string"){
+    list = value.split(/[\/／,、\s]+/);
+  }
+
+  list = list
+    .map(v => normalize(v).toUpperCase())
+    .filter(Boolean);
+
+  const fallbackPos = normalize(fallback).toUpperCase();
+  if(!list.length && fallbackPos) list = [fallbackPos];
+
+  return [...new Set(list)];
+}
+
+function positionText(core){
+  const positions = Array.isArray(core && core.suitablePositions) ? core.suitablePositions : [];
+  if(positions.length) return positions.join("/");
+  return normalize(core && core.mainPosition ? core.mainPosition : "") || "-";
+}
+
 function getPlayerCore(p){
+  const mainPosition = normalize(pick(p, ["mainPosition","position","ポジション"], ""));
+  const suitablePositionsRaw = pick(p, ["suitablePositions","suitable_positions","適性ポジション"], null);
   return {
     raw:p,
     playerId: normalize(pick(p, ["player_id","playerId","id"], "")),
@@ -230,7 +257,8 @@ function getPlayerCore(p){
     policy: normalize(pick(p, ["policy","ポリシー"], "")),
     playStyle: normalize(pick(p, ["playStyle","プレイスタイル"], "")),
     playStyleLv: pick(p, ["playStyleLv","play_style_lv","Lv","level","プレイスタイルLv"], ""),
-    mainPosition: normalize(pick(p, ["mainPosition","position","ポジション"], "")),
+    mainPosition,
+    suitablePositions: normalizePositionList(suitablePositionsRaw, mainPosition),
     overall: pick(p, ["overall","初期総合力"], ""),
     maxUpgrade: pick(p, ["maxUpgrade","最大強化"], ""),
     acquisitionPlace: normalize(pick(p, ["acquisitionPlace","acquisition_place","入手場所"], "")),
@@ -306,7 +334,7 @@ function playerSatisfiesComboCondition(player, cond, policies){
   const reqPos = normalize(comboField(cond, ["position","pos","ポジション"], "")).toUpperCase();
   const reqStyle = normalize(comboField(cond, ["playStyle","play_style","style","プレイスタイル","PS"], ""));
   const reqLv = parseComboLv(comboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], 0));
-  const posOk = !reqPos || normalize(p.mainPosition).toUpperCase() === reqPos;
+  const posOk = !reqPos || p.suitablePositions.includes(reqPos);
   const styleOk = !reqStyle || p.playStyle === reqStyle;
   const lvOk = !reqLv || ((toNum(p.playStyleLv) || 0) >= reqLv);
   const policyOk = !policies.length || policies.includes(p.policy);
@@ -472,7 +500,7 @@ function renderOneAway(list){
           <div>
             <div class="candidateName">${playerEvalLink(core, core.name || core.playerId || "選手")}</div>
             <div class="candidateMeta">
-              ${esc(core.mainPosition || "-")} / ${esc(core.policy || "-")} / ${esc(core.playStyle || "-")}${lv ? " " + esc(lv) : ""}<br>
+              ${esc(positionText(core))} / ${esc(core.policy || "-")} / ${esc(core.playStyle || "-")}${lv ? " " + esc(lv) : ""}<br>
               入手場所：${esc(core.acquisitionPlace || "-")}
             </div>
           </div>
@@ -506,7 +534,7 @@ function renderFavorites(favPlayers){
   root.innerHTML = favPlayers
     .map(getPlayerCore)
     .sort((a,b)=>a.playerId.localeCompare(b.playerId,"ja",{numeric:true}))
-    .map(p=>`<span class="favoritePlayerChip">★ ${playerEvalLink(p, p.name || p.playerId)} <small>${esc(p.mainPosition || "-")}</small></span>`)
+    .map(p=>`<span class="favoritePlayerChip">★ ${playerEvalLink(p, p.name || p.playerId)} <small>${esc(positionText(p))}</small></span>`)
     .join("");
 }
 function renderAll(){

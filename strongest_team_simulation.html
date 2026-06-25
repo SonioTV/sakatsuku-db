@@ -808,6 +808,39 @@ function escapeHtml(str){
   const getPolicyFilter = ()=>$("policySel")?.value || "";
   const getAcq = ()=>$("acqSel")?.value || "";
 
+  function normalizePositionValue(v){
+    return String(v ?? "").trim().toUpperCase();
+  }
+
+  function getSuitablePositions(player){
+    const raw = player?.suitablePositions;
+    let positions = [];
+
+    if(Array.isArray(raw)){
+      positions = raw;
+    }else if(typeof raw === "string" && raw.trim() !== ""){
+      positions = raw.split(/[\/／,、\s]+/);
+    }
+
+    const main = player?.mainPosition ?? player?.position ?? player?.ポジション ?? "";
+    if(main !== null && main !== undefined && String(main).trim() !== ""){
+      positions.unshift(main);
+    }
+
+    return [...new Set(positions.map(normalizePositionValue).filter(Boolean))];
+  }
+
+  function playerCanPlayPosition(player, position){
+    const reqPos = normalizePositionValue(position);
+    if(!reqPos) return true;
+    return getSuitablePositions(player).includes(reqPos);
+  }
+
+  function getPositionDisplay(player){
+    const positions = getSuitablePositions(player);
+    return positions.length ? positions.join("/") : "-";
+  }
+
   let PLAYERS = [];
   let COMBOS = [];
   let SLOTS = []; // formation_slots.json (x,y を含む)
@@ -1162,8 +1195,8 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
     }
 
     // Position match
-    const pos = String(player?.mainPosition ?? '');
-    if(pos !== slotPos) return false;
+    // mainPositionだけでなく suitablePositions も参照する
+    if(!playerCanPlayPosition(player, slotPos)) return false;
 
     // AcquisitionPlace match (only when selected)
     if(requiredAcq){
@@ -1470,6 +1503,7 @@ function showPlayerDetailById(pid){
     ["ポリシー", p.policy],
     ["プレイスタイル", ps],
     ["メインポジション", p.mainPosition],
+    ["適性ポジション", getPositionDisplay(p)],
     ["メインスキル", p.mainSkill],
     ["メイン特徴", p.mainTrait],
   ].map(([k,v])=>makeRow(k,v)).join("");
