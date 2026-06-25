@@ -340,6 +340,39 @@ function playerSatisfiesComboCondition(player, cond, policies){
   const policyOk = !policies.length || policies.includes(p.policy);
   return posOk && styleOk && lvOk && policyOk;
 }
+
+function positionMatchLevel(player, cond){
+  const p = getPlayerCore(player);
+  const reqPos = normalize(comboField(cond, ["position","pos","ポジション"], "")).toUpperCase();
+  if(!reqPos) return 2;
+  const mainPos = normalize(p.mainPosition).toUpperCase();
+  if(mainPos === reqPos) return 2;
+  if(Array.isArray(p.suitablePositions) && p.suitablePositions.includes(reqPos)) return 1;
+  return 0;
+}
+
+function comparePlayersForCondition(a, b, cond){
+  // 同じ条件に複数選手が該当する場合は、
+  // ①メインポジション一致 → ②適性ポジション一致 → ③総合力 → ④最大強化 → ⑤選手名 の順で採用する。
+  const am = positionMatchLevel(a, cond);
+  const bm = positionMatchLevel(b, cond);
+  if(bm !== am) return bm - am;
+
+  const ac = getPlayerCore(a);
+  const bc = getPlayerCore(b);
+  const ao = Number(ac.overall) || 0;
+  const bo = Number(bc.overall) || 0;
+  if(bo !== ao) return bo - ao;
+
+  const au = Number(ac.maxUpgrade) || 0;
+  const bu = Number(bc.maxUpgrade) || 0;
+  if(bu !== au) return bu - au;
+
+  const nameCompare = normalize(ac.name).localeCompare(normalize(bc.name), "ja");
+  if(nameCompare !== 0) return nameCompare;
+  return normalize(ac.playerId).localeCompare(normalize(bc.playerId), "ja", { numeric:true });
+}
+
 function findAssignment(combo, players, skipCondIndex=-1){
   const conds = comboConditions(combo);
   if(!conds.length) return null;
@@ -356,11 +389,7 @@ function findAssignment(combo, players, skipCondIndex=-1){
   function backtrack(depth){
     if(depth >= order.length) return true;
     const condIndex = order[depth];
-    const list = [...candidates.get(condIndex)].sort((a,b)=>{
-      const ao = Number(getPlayerCore(a).overall) || 0;
-      const bo = Number(getPlayerCore(b).overall) || 0;
-      return bo - ao;
-    });
+    const list = [...candidates.get(condIndex)].sort((a,b)=>comparePlayersForCondition(a, b, conds[condIndex]));
     for(const player of list){
       const id = getPlayerCore(player).playerId;
       if(!id || used.has(id)) continue;
@@ -426,7 +455,7 @@ function buildDiagnostics(){
           if(!id || favoritePlayerIds.has(id) || usedIds.has(id)) return false;
           return playerSatisfiesComboCondition(p, conds[missingIndex], policies);
         })
-        .sort((a,b)=>(Number(getPlayerCore(b).overall)||0) - (Number(getPlayerCore(a).overall)||0))
+        .sort((a,b)=>comparePlayersForCondition(a, b, conds[missingIndex]))
         .slice(0,3);
       if(candidates.length){
         const score = Number(getPlayerCore(candidates[0]).overall) || 0;
