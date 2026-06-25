@@ -2782,5 +2782,63 @@
         "conditionNo": 3
       }
     ]
+  },
+  {
+    "comboId": "C057",
+    "name": "ブルー・インパクト'26",
+    "formation": "3-6-1A",
+    "rank": "金",
+    "combo_policys": [
+      "カウンター"
+    ],
+    "requiredPlayers": 3,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "第4回サカつくチャレンジミッション",
+    "availablePeriod": "2026年7月16日まで",
+    "effect": "タックルが60%アップ、マークが60%アップ、決定力が100%アップ、コンタクトが100%アップ",
+    "effects": [
+      {
+        "status": "タックル",
+        "value": 60
+      },
+      {
+        "status": "マーク",
+        "value": 60
+      },
+      {
+        "status": "決定力",
+        "value": 100
+      },
+      {
+        "status": "コンタクト",
+        "value": 100
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 6,
+        "position": "DM",
+        "positionPlace": "Left",
+        "playStyle": "パサー",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 7,
+        "position": "LM",
+        "positionPlace": null,
+        "playStyle": "ドリブラー",
+        "playStyleLv": 3,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 8,
+        "position": "RM",
+        "positionPlace": null,
+        "playStyle": "ドリブラー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      }
+    ]
   }
 ]
