@@ -1214,6 +1214,304 @@
     }
 }
 
+
+/* ===== 選手検索：コンボ詳細カード（表形式） ===== */
+.comboDetailCard{
+  margin-top:14px;
+  border:1px solid #cfe3d3;
+  border-left:6px solid #1f7a35;
+  border-radius:18px;
+  background:#eef8f0;
+  padding:13px;
+  box-shadow:0 8px 18px rgba(15,23,42,.06);
+}
+.comboDetailHead{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:10px;
+}
+.comboFormationImg{
+  width:66px;
+  height:66px;
+  object-fit:contain;
+  border-radius:12px;
+  background:#fff;
+  border:1px solid #d6e4da;
+  padding:4px;
+  flex:0 0 auto;
+  box-shadow:0 4px 10px rgba(15,23,42,.06);
+}
+.comboDetailTitle{
+  font-size:25px;
+  font-weight:900;
+  line-height:1.2;
+  letter-spacing:.01em;
+}
+.comboInfoTable{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  margin:9px 0 13px;
+  background:#fff;
+  font-size:16px;
+}
+.comboInfoTable th,
+.comboInfoTable td{
+  border:1px solid #334155;
+  padding:8px 6px;
+  text-align:center;
+  vertical-align:middle;
+  font-weight:900;
+  line-height:1.35;
+  word-break:break-word;
+}
+.comboInfoTable th{
+  background:#1f7a35;
+  color:#fff;
+}
+.comboInfoTable .subHead th{
+  background:#a8df65;
+  color:#111;
+}
+.comboInfoTable .blockTitle{
+  background:#1f7a35;
+  color:#fff;
+  font-size:18px;
+}
+@media (max-width:480px){
+  .comboDetailCard{ padding:9px; border-radius:16px; margin-top:12px; }
+  .comboDetailHead{ gap:9px; margin-bottom:8px; }
+  .comboFormationImg{ width:50px; height:50px; border-radius:10px; }
+  .comboDetailTitle{ font-size:20px; letter-spacing:-.03em; }
+  .comboInfoTable{ font-size:12px; margin:7px 0 10px; }
+  .comboInfoTable th,
+  .comboInfoTable td{ padding:6px 3px; border-width:1px; }
+  .comboInfoTable .blockTitle{ font-size:14px; }
+}
+
+
+/* ===== 選手検索：対応選手 表形式 ===== */
+.comboPlayerTableWrap{
+  margin-top:16px;
+  overflow-x:visible;
+  border:1px solid #d8e0ea;
+  border-radius:18px;
+  background:#fff;
+  padding:11px;
+  box-shadow:0 8px 18px rgba(15,23,42,.06);
+}
+.comboPlayerTable{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  background:#fff;
+  font-size:16px;
+}
+.comboPlayerTable th,
+.comboPlayerTable td{
+  border:1px solid #334155;
+  padding:10px 8px;
+  text-align:center;
+  vertical-align:top;
+  font-weight:900;
+  line-height:1.35;
+  word-break:normal;
+  overflow-wrap:normal;
+}
+.comboPlayerTable .condHead th{
+  color:#fff;
+  font-size:18px;
+  white-space:nowrap;
+}
+.comboPlayerTable .posRow td{
+  font-size:20px;
+  white-space:nowrap;
+}
+.comboPlayerTable .styleRow td{
+  background:#fff;
+  font-size:17px;
+  white-space:nowrap;
+}
+
+/* 条件ごとの色分け（落ち着いたトーン） */
+.comboPlayerTable .condColor1{ background:#2f80d8; }
+.comboPlayerTable .condColor2{ background:#239b56; }
+.comboPlayerTable .condColor3{ background:#c94f4f; }
+.comboPlayerTable .condColor4{ background:#7c3aed; }
+.comboPlayerTable .condColor5{ background:#0f766e; }
+.comboPlayerTable .condColor6{ background:#b45309; }
+.comboPlayerTable .posColor1{ background:#d9f0ff; }
+.comboPlayerTable .posColor2{ background:#dcf6e5; }
+.comboPlayerTable .posColor3{ background:#f8dada; }
+.comboPlayerTable .posColor4{ background:#eadcff; }
+.comboPlayerTable .posColor5{ background:#d8f3ef; }
+.comboPlayerTable .posColor6{ background:#fff0cf; }
+.comboPlayerTable .styleColor1{ border-top-color:#2f80d8; }
+.comboPlayerTable .styleColor2{ border-top-color:#239b56; }
+.comboPlayerTable .styleColor3{ border-top-color:#c94f4f; }
+.comboPlayerTable .styleColor4{ border-top-color:#7c3aed; }
+.comboPlayerTable .styleColor5{ border-top-color:#0f766e; }
+.comboPlayerTable .styleColor6{ border-top-color:#b45309; }
+
+.comboPlayerTable .playerSectionTitle{
+  color:#111;
+  font-size:18px;
+  padding:9px 8px;
+  white-space:nowrap;
+}
+.comboPlayerTable .playerSectionTitle.full{
+  background:#e7f6e8;
+  color:#137333;
+}
+.comboPlayerTable .playerSectionTitle.policyDiff{
+  background:#fff0dc;
+  color:#d86f00;
+}
+.comboPlayerCell{
+  height:212px;              /* 3枚表示＋ボタン分の高さを統一 */
+  background:#fff;
+  padding:8px 7px !important;
+}
+.comboPlayerCell.full{ background:#fbfffb; }
+.comboPlayerCell.policyDiff{ background:#fffdf8; }
+.comboPlayerCellInner{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-height:188px;
+}
+.comboPlayerFixedArea{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-height:132px;          /* 常に3カード分を確保 */
+}
+.comboPlayerMiniCard{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  width:100%;
+  min-height:40px;
+  padding:7px 8px;
+  border:1px solid #dbe5f0;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 3px 8px rgba(15,23,42,.05);
+  color:#0b63d1;
+  text-decoration:none;
+  font-weight:900;
+  min-width:0;
+  transition:transform .08s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.comboPlayerMiniCard:active{
+  transform:scale(.985);
+}
+.comboPlayerMiniCard.policyDiff{
+  color:#d86f00;
+  border-color:#ffd2a1;
+  background:#fff9f1;
+}
+.comboPlayerIcon{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+  border-radius:9px;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  flex:0 0 auto;
+}
+.comboPlayerMiniText{
+  display:block;
+  min-width:0;
+  max-width:100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  text-align:left;
+  font-size:13px;
+  line-height:1.2;
+}
+.comboMoreDetails{
+  margin-top:auto;
+}
+.comboMoreDetails summary{
+  cursor:pointer;
+  list-style:none;
+  display:block;
+  width:100%;
+  padding:8px 8px;
+  border-radius:999px;
+  border:1px solid #9cc4ff;
+  background:#dcecff;
+  color:#0b63d1;
+  text-decoration:none;
+  font-weight:900;
+  font-size:14px;
+  line-height:1.2;
+  white-space:nowrap;
+  box-shadow:0 3px 8px rgba(15,23,42,.07);
+  transition:transform .08s ease, background .12s ease;
+}
+.comboMoreDetails summary:active{
+  transform:scale(.985);
+}
+.comboMoreDetails summary::-webkit-details-marker{ display:none; }
+.comboMoreDetails.policyDiff summary{
+  color:#d86f00;
+  border-color:#ffbd73;
+  background:#ffe7c8;
+}
+.comboMoreDetails[open] summary{
+  margin-bottom:6px;
+}
+.comboEmptyText{
+  min-height:188px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#137333;
+  background:#f0fbf1;
+  border:1px dashed #8ed29a;
+  border-radius:12px;
+  font-weight:900;
+  padding:10px 4px;
+  white-space:nowrap;
+}
+.comboEmptyText.policyDiff{
+  color:#d86f00;
+  background:#fff4e6;
+  border-color:#ffc27b;
+}
+@media (max-width:480px){
+  .comboPlayerTableWrap{ padding:5px; border-radius:16px; overflow-x:visible; }
+  .comboPlayerTable{ font-size:10px; table-layout:fixed; }
+  .comboPlayerTable th,
+  .comboPlayerTable td{ padding:5px 2px; border-width:1px; }
+  .comboPlayerTable .condHead th{ font-size:13px; }
+  .comboPlayerTable .posRow td{ font-size:14px; }
+  .comboPlayerTable .styleRow td{ font-size:11px; letter-spacing:-.05em; }
+  .comboPlayerTable .playerSectionTitle{ font-size:12px; padding:6px 2px; }
+  .comboPlayerCell{ height:162px; padding:5px 3px !important; }
+  .comboPlayerCellInner{ gap:4px; min-height:148px; }
+  .comboPlayerFixedArea{ gap:4px; min-height:94px; }
+  .comboPlayerMiniCard{ gap:3px; padding:4px 3px; min-height:29px; border-radius:9px; }
+  .comboPlayerIcon{ width:24px; height:24px; border-radius:7px; }
+  .comboPlayerMiniText{ font-size:10px; letter-spacing:-.05em; }
+  .comboMoreDetails summary{ font-size:10px; letter-spacing:-.04em; padding:5px 2px; }
+  .comboEmptyText{ min-height:148px; font-size:10px; padding:6px 2px; }
+}
+@media (max-width:360px){
+  .comboPlayerTableWrap{ padding:4px; }
+  .comboPlayerTable th,
+  .comboPlayerTable td{ padding:4px 1px; }
+  .comboPlayerTable .condHead th{ font-size:12px; }
+  .comboPlayerTable .posRow td{ font-size:13px; }
+  .comboPlayerTable .styleRow td{ font-size:10px; }
+  .comboPlayerMiniText{ font-size:9px; }
+  .comboPlayerIcon{ width:22px; height:22px; }
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -2581,6 +2879,92 @@ function getSelectedCombo(){
   return COMBOS.find(c => safeStr(getComboField(c,["comboId","id","ID"],"")) === v) || null;
 }
 
+function getComboImageSrc(c){
+  const direct = getComboField(c, ["image","img","画像","comboImage","formationImage","formation_image"], "");
+  if(direct) return direct;
+
+  // フォーメーション画像は「コンボID」ではなく「フォーメーション名」で保存する
+  // 例：img/formation_combo/4-4-2D.png
+  const formation = safeStr(getComboField(c,["formation","formationCode","フォーメーション"],"")).trim();
+  return formation ? `img/formation_combo/${encodeURIComponent(formation)}.png` : "";
+}
+
+function parseComboEffectsFromText(effectText){
+  const text = safeStr(effectText).replace(/％/g,"%").trim();
+  if(!text || text === "-") return [];
+
+  // 「キック力、パスカット、マーク、走力が80%アップ」のように、
+  // 最後だけに「が80%アップ」が付く表記にも対応する
+  const tail = text.match(/(.+?)が\s*([0-9]+)\s*%\s*アップ$/);
+  if(tail){
+    return tail[1]
+      .split(/[、,，]/)
+      .map(x=>x.trim())
+      .filter(Boolean)
+      .map(name=>({name, value:`${tail[2]}%`}));
+  }
+
+  const pieces = text.split(/[、,，]/).map(x=>x.trim()).filter(Boolean);
+  const out = [];
+  for(const piece of pieces){
+    const m = piece.match(/^(.+?)が\s*([0-9]+)\s*%\s*アップ/);
+    if(m) out.push({name:m[1].trim(), value:`${m[2]}%`});
+    else out.push({name:piece.replace(/アップ$/,""), value:"アップ"});
+  }
+  return out;
+}
+
+function getComboEffects(c){
+  const arr = getComboField(c, ["effects","combo_effects","効果一覧"], null);
+  if(Array.isArray(arr) && arr.length){
+    return arr.map(e=>({
+      name: getComboField(e,["status","name","ステータス"],"-"),
+      value: `${getComboField(e,["value","倍率","値"],"-")}%`
+    })).filter(e=>safeStr(e.name) && safeStr(e.name) !== "-");
+  }
+  return parseComboEffectsFromText(getComboField(c, ["effect","効果"], "-"));
+}
+
+function renderComboEffectTable(c){
+  const effects = getComboEffects(c);
+  if(!effects.length) return `
+    <table class="comboInfoTable">
+      <tr><th class="blockTitle">フォーメーションコンボ効果</th></tr>
+      <tr><td>-</td></tr>
+    </table>`;
+  return `
+    <table class="comboInfoTable">
+      <tr><th class="blockTitle" colspan="${effects.length}">フォーメーションコンボ効果</th></tr>
+      <tr class="subHead">${effects.map(e=>`<th>${esc(e.name)}</th>`).join("")}</tr>
+      <tr>${effects.map(e=>`<td>${esc(e.value || "アップ")}</td>`).join("")}</tr>
+    </table>`;
+}
+
+function renderComboConditionTable(c){
+  const conds = getComboConditions(c);
+  if(!conds.length) return `
+    <table class="comboInfoTable">
+      <tr><th class="blockTitle">フォーメーションコンボ発動条件</th></tr>
+      <tr><td>-</td></tr>
+    </table>`;
+
+  const cols = conds.map(cond=>{
+    const pos = getComboField(cond, ["position","pos","ポジション"], "-");
+    const style = getComboField(cond, ["playStyle","style","プレイスタイル"], "-");
+    const lvRaw = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "");
+    const lv = romanLv(parseLvReq(lvRaw) || lvRaw);
+    const ps = `${safeStr(style)}${(lv && safeStr(lv)!=="0" && safeStr(lv)!=="-") ? " " + safeStr(lv) : ""}`;
+    return {pos, ps};
+  });
+
+  return `
+    <table class="comboInfoTable">
+      <tr><th class="blockTitle" colspan="${cols.length}">フォーメーションコンボ発動条件</th></tr>
+      <tr class="subHead">${cols.map(x=>`<th>${esc(x.pos)}</th>`).join("")}</tr>
+      <tr>${cols.map(x=>`<td>${esc(x.ps)}</td>`).join("")}</tr>
+    </table>`;
+}
+
 function renderComboDetail(){
   const box = document.getElementById("comboDetail");
   const c = getSelectedCombo();
@@ -2594,48 +2978,47 @@ function renderComboDetail(){
   const policyArr = getComboPolicys(c);
   const policy = policyArr.length ? policyArr.join(" / ") : "-";
   const effect = getComboField(c, ["effect","効果"], "-");
-  const need = getComboField(c, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
-const acqMethod = normalizeAcquisitionMethod(getComboField(c, ["acquisitionMethod","入手方法"], "-"));
+  const acqMethod = normalizeAcquisitionMethod(getComboField(c, ["acquisitionMethod","入手方法"], "-"));
   const acqPlace  = getComboField(c, ["acquisitionPlace","入手場所"], "-");
   const acqPeriod = getComboField(c, ["availablePeriod","入手可能期間"], "-");
-
-  // 条件（表示のみ整形：既存検索ロジックには影響なし）
-  const condHtml = getComboConditions(c).map(cond => {
-    const p = getComboField(cond, ["position","pos","ポジション"], "-");
-    const s = getComboField(cond, ["playStyle","style","プレイスタイル"], "-");
-    const lvRaw = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "");
-    const lv = romanLv(parseLvReq(lvRaw) || lvRaw);
-
-    return `
-      <div class="condBox">
-        <div class="condRow">
-          <span class="condKey">ポジション：</span>
-          <span class="condVal">${esc(p)}</span>
-        </div>
-        <div class="condRow">
-          <span class="condKey">PS：</span>
-          <span class="condVal">${esc(s)}${(lv && safeStr(lv)!=="0" && safeStr(lv)!=="-") ? (" " + esc(lv)) : ""}</span>
-        </div>
-      </div>
-    `;
-  }).join("");
-
-  const condBlock = `<div class="condList">${condHtml || `<div class="note" style="text-align:left;margin:0;">-</div>`}</div>`;
+  const imgSrc = getComboImageSrc(c);
 
   box.innerHTML = `
-    <div class="comboCard" style="margin-top:16px;">
-      <div class="comboName">${esc(name)}</div>
-      <div class="kv">
-        <div class="k">フォーメーション</div><div class="v">${esc(formation)}</div>
-        <div class="k">ランク</div><div class="v">${esc(rank)}</div>
-        <div class="k">ポリシー</div><div class="v">${esc(policy)}</div>
-        <div class="k">効果</div><div class="v">${esc(effect)}</div>
-        <div class="k">必要人数</div><div class="v">${esc(need)}</div>
-        <div class="k">入手方法</div><div class="v">${esc(acqMethod)}</div>
-        <div class="k">入手場所</div><div class="v">${esc(acqPlace)}</div>
-        <div class="k">入手可能期間</div><div class="v">${esc(acqPeriod)}</div>
-        <div class="k">条件</div><div class="v">${condBlock}</div>
+    <div class="comboDetailCard">
+      <div class="comboDetailHead">
+        ${imgSrc ? `<img class="comboFormationImg" src="${esc(imgSrc)}" alt="${esc(name)}" onerror="this.style.display='none';">` : ""}
+        <div class="comboDetailTitle">${esc(name)}</div>
       </div>
+
+      <table class="comboInfoTable">
+        <tr>
+          <th>フォーメーション</th>
+          <th>ランク</th>
+          <th>ポリシー</th>
+        </tr>
+        <tr>
+          <td>${esc(formation)}</td>
+          <td>${esc(rank)}</td>
+          <td>${esc(policy)}</td>
+        </tr>
+      </table>
+
+      ${renderComboEffectTable(c)}
+
+      <table class="comboInfoTable">
+        <tr>
+          <th>入手方法</th>
+          <th>入手場所</th>
+          <th>入手可能期間</th>
+        </tr>
+        <tr>
+          <td>${esc(acqMethod)}</td>
+          <td>${esc(acqPlace)}</td>
+          <td>${esc(acqPeriod)}</td>
+        </tr>
+      </table>
+
+      ${renderComboConditionTable(c)}
     </div>
   `;
 }
@@ -2673,20 +3056,19 @@ function renderPlayersForCombo(){
   const out = document.getElementById("playerResult");
   out.innerHTML = "";
   if(!c) return;
-  const comboPolicys = getComboPolicys(c);
 
+  const comboPolicys = getComboPolicys(c);
   const conds = getComboConditions(c);
   if(!conds.length){
     out.innerHTML = `<div class="note" style="text-align:left;">条件が見つかりませんでした。</div>`;
     return;
   }
 
-  // 1コンボ内に複数条件がある前提。各条件ごとに完全一致/ポリシー違い を表示（ポジション違いは今回は省略）
-  conds.forEach((cond, idx)=>{
+  const targetPlayers = filterPlayersBySelectedAcquisitionPlace(PLAYERS);
+  const columns = conds.map((cond, idx)=>{
     const matchedFull = [];
     const matchedPolDiff = [];
 
-    const targetPlayers = filterPlayersBySelectedAcquisitionPlace(PLAYERS);
     for(const p of targetPlayers){
       const m = playerMatchesCondition(p, cond, comboPolicys);
       if(m.ok) matchedFull.push(p);
@@ -2695,31 +3077,49 @@ function renderPlayersForCombo(){
 
     const pos = normalizePos(getComboField(cond, ["position","pos","ポジション"], "-"));
     const style = normalizeStyle(getComboField(cond, ["playStyle","style","プレイスタイル"], "-"));
-    const lvReq = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "-");
-    const pol = normalizePolicy(getComboField(cond, ["policy","ポリシー"], "-"));
+    const lvReq = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "");
+    const styleLv = `${safeStr(style)}${lvReq ? " " + safeStr(romanLv(lvReq)) : ""}`;
 
-    const card = document.createElement("div");
-    card.className="card";
-    card.style.marginTop="14px";
-    card.style.boxShadow="none";
-    card.style.border="1px solid var(--line)";
-    card.innerHTML = `
-      <div style="font-weight:900;font-size:20px;margin-bottom:10px;">条件${idx+1}</div>
-      <div class="kv" style="grid-template-columns:110px 1fr;">
-        <div class="k">ポジション</div><div class="v">${esc(pos)}</div>
-        <div class="k">プレイスタイル</div><div class="v">${esc(style)}${lvReq ? " " + esc(romanLv(lvReq)) : ""}</div>
-      </div>
-      <div style="margin-top:12px;">
-        <div style="font-weight:900;font-size:18px;margin:10px 0 8px;">完全一致（${matchedFull.length}人）</div>
-        ${renderPlayerNameOnlyList(matchedFull)}
-        <div style="font-weight:900;font-size:18px;margin:14px 0 8px;">ポリシー違い（${matchedPolDiff.length}人）</div>
-        ${renderPlayerNameOnlyList(matchedPolDiff)}
-      </div>
-    `;
-    out.appendChild(card);
+    return {
+      idx,
+      pos,
+      styleLv,
+      matchedFull: sortPlayersForComboResult(matchedFull),
+      matchedPolDiff: sortPlayersForComboResult(matchedPolDiff)
+    };
   });
 
-  // link handlers
+  const fullTotal = columns.reduce((sum, col)=>sum + col.matchedFull.length, 0);
+  const polTotal = columns.reduce((sum, col)=>sum + col.matchedPolDiff.length, 0);
+  const colCount = Math.max(columns.length, 1);
+  out.innerHTML = `
+    <div class="comboPlayerTableWrap">
+      <table class="comboPlayerTable">
+        <tr class="condHead">
+          ${columns.map(col=>`<th class="condColor${(col.idx % 6)+1}">条件${col.idx+1}</th>`).join("")}
+        </tr>
+        <tr class="posRow">
+          ${columns.map(col=>`<td class="posColor${(col.idx % 6)+1}">${esc(col.pos)}</td>`).join("")}
+        </tr>
+        <tr class="styleRow">
+          ${columns.map(col=>`<td class="styleColor${(col.idx % 6)+1}">${esc(col.styleLv)}</td>`).join("")}
+        </tr>
+        <tr>
+          <th class="playerSectionTitle full" colspan="${colCount}">【完全一致（${fullTotal}名）】</th>
+        </tr>
+        <tr>
+          ${columns.map(col=>`<td class="comboPlayerCell full">${renderComboPlayerCell(col.matchedFull, "full")}</td>`).join("")}
+        </tr>
+        <tr>
+          <th class="playerSectionTitle policyDiff" colspan="${colCount}">【ポリシー違い（${polTotal}名）】</th>
+        </tr>
+        <tr>
+          ${columns.map(col=>`<td class="comboPlayerCell policyDiff">${renderComboPlayerCell(col.matchedPolDiff, "policyDiff")}</td>`).join("")}
+        </tr>
+      </table>
+    </div>
+  `;
+
   out.querySelectorAll("[data-player-id]").forEach(a=>{
     a.addEventListener("click", (e)=>{
       e.preventDefault();
@@ -2727,34 +3127,59 @@ function renderPlayersForCombo(){
       openPlayerModal(playerById.get(pid));
     });
   });
+  out.querySelectorAll(".comboMoreDetails").forEach(d=>{
+    const s = d.querySelector("summary");
+    if(!s) return;
+    const closedText = s.dataset.closedText || s.textContent;
+    const openText = s.dataset.openText || "閉じる";
+    const update = ()=>{ s.textContent = d.open ? openText : closedText; };
+    d.addEventListener("toggle", update);
+    update();
+  });
 }
 
-function renderPlayerNameOnlyList(arr){
-  if(!arr || arr.length===0) return `<div class="note" style="text-align:left;margin:6px 0;">なし</div>`;
+function sortPlayersForComboResult(arr){
+  return [...(arr || [])].sort((a,b)=> (Number(b?.overall)||0) - (Number(a?.overall)||0));
+}
 
-  const sorted = [...arr].sort((a,b)=> (Number(b?.overall)||0) - (Number(a?.overall)||0));
+function renderComboPlayerCell(arr, type){
+  const isPolicyDiff = type === "policyDiff";
+  const typeClass = isPolicyDiff ? " policyDiff" : "";
+
+  if(!arr || arr.length===0){
+    return `<div class="comboEmptyText${typeClass}">🎉 該当なし</div>`;
+  }
+
   const MAX = 3;
-  const head = sorted.slice(0, MAX);
-  const rest = sorted.slice(MAX);
+  const head = arr.slice(0, MAX);
+  const rest = arr.slice(MAX);
 
-  const headHtml = head.map(p=>{
+  const makeCard = (p)=>{
     const pid = esc(getPlayerId(p));
-    return `<div class="playerRow"><a href="#" data-player-id="${pid}">${esc(formatPlayerListLabel(p))}</a></div>`;
-  }).join("");
-
-  if(rest.length===0) return headHtml;
-
-  const restPids = rest.map(p=>esc(getPlayerId(p))).join(",");
-  const moreBtn = `
-    <div class="playerRow" style="margin-top:6px;">
-      <a href="#" data-more-pids="${restPids}" data-more-title="選手一覧"
-         style="display:inline-block;font-weight:900;text-decoration:underline;">
-        他${rest.length}人を見る
+    const label = esc(formatPlayerListLabel(p));
+    return `
+      <a class="comboPlayerMiniCard${typeClass}" href="#" data-player-id="${pid}" title="${label}">
+        <img class="comboPlayerIcon" src="img/players/${pid}.png" alt="" loading="lazy" onerror="this.style.display='none';">
+        <span class="comboPlayerMiniText">${label}</span>
       </a>
+    `;
+  };
+
+  const headHtml = head.map(makeCard).join("");
+  const restHtml = rest.map(makeCard).join("");
+  const moreHtml = rest.length ? `
+    <details class="comboMoreDetails${typeClass}">
+      <summary data-closed-text="▼ 他${rest.length}名を見る" data-open-text="▲ 閉じる">▼ 他${rest.length}名を見る</summary>
+      ${restHtml}
+    </details>
+  ` : `<div class="comboMoreDetails" aria-hidden="true"></div>`;
+
+  return `
+    <div class="comboPlayerCellInner">
+      <div class="comboPlayerFixedArea">${headHtml}</div>
+      ${moreHtml}
     </div>
   `;
-
-  return headHtml + moreBtn;
 }
 </script>
 
