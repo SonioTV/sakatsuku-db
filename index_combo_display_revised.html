@@ -1217,31 +1217,33 @@
 
 /* ===== 選手検索：コンボ詳細カード（表形式） ===== */
 .comboDetailCard{
-  margin-top:16px;
-  border:1px solid #d5e4d8;
-  border-left:7px solid #2e7d32;
+  margin-top:14px;
+  border:1px solid #cfe3d3;
+  border-left:6px solid #1f7a35;
   border-radius:18px;
-  background:#eefaf1;
-  padding:14px;
+  background:#eef8f0;
+  padding:13px;
+  box-shadow:0 8px 18px rgba(15,23,42,.06);
 }
 .comboDetailHead{
   display:flex;
   align-items:center;
-  gap:14px;
-  margin-bottom:12px;
+  gap:12px;
+  margin-bottom:10px;
 }
 .comboFormationImg{
-  width:70px;
-  height:70px;
+  width:66px;
+  height:66px;
   object-fit:contain;
-  border-radius:10px;
+  border-radius:12px;
   background:#fff;
-  border:1px solid #dfe8e2;
+  border:1px solid #d6e4da;
   padding:4px;
   flex:0 0 auto;
+  box-shadow:0 4px 10px rgba(15,23,42,.06);
 }
 .comboDetailTitle{
-  font-size:26px;
+  font-size:25px;
   font-weight:900;
   line-height:1.2;
   letter-spacing:.01em;
@@ -1250,13 +1252,13 @@
   width:100%;
   border-collapse:collapse;
   table-layout:fixed;
-  margin:10px 0 14px;
+  margin:9px 0 13px;
   background:#fff;
   font-size:16px;
 }
 .comboInfoTable th,
 .comboInfoTable td{
-  border:2px solid #111;
+  border:1px solid #334155;
   padding:8px 6px;
   text-align:center;
   vertical-align:middle;
@@ -1265,24 +1267,24 @@
   word-break:break-word;
 }
 .comboInfoTable th{
-  background:#237d2b;
+  background:#1f7a35;
   color:#fff;
 }
 .comboInfoTable .subHead th{
-  background:#9bd955;
+  background:#a8df65;
   color:#111;
 }
 .comboInfoTable .blockTitle{
-  background:#237d2b;
+  background:#1f7a35;
   color:#fff;
   font-size:18px;
 }
 @media (max-width:480px){
-  .comboDetailCard{ padding:10px; border-radius:16px; }
-  .comboDetailHead{ gap:10px; margin-bottom:10px; }
-  .comboFormationImg{ width:52px; height:52px; }
+  .comboDetailCard{ padding:9px; border-radius:16px; margin-top:12px; }
+  .comboDetailHead{ gap:9px; margin-bottom:8px; }
+  .comboFormationImg{ width:50px; height:50px; border-radius:10px; }
   .comboDetailTitle{ font-size:20px; letter-spacing:-.03em; }
-  .comboInfoTable{ font-size:12px; margin:8px 0 12px; }
+  .comboInfoTable{ font-size:12px; margin:7px 0 10px; }
   .comboInfoTable th,
   .comboInfoTable td{ padding:6px 3px; border-width:1px; }
   .comboInfoTable .blockTitle{ font-size:14px; }
@@ -1293,11 +1295,11 @@
 .comboPlayerTableWrap{
   margin-top:16px;
   overflow-x:visible;
-  border:1px solid #d7dbe6;
+  border:1px solid #d8e0ea;
   border-radius:18px;
   background:#fff;
-  padding:12px;
-  box-shadow:0 10px 20px rgba(0,0,0,.06);
+  padding:11px;
+  box-shadow:0 8px 18px rgba(15,23,42,.06);
 }
 .comboPlayerTable{
   width:100%;
@@ -1308,7 +1310,7 @@
 }
 .comboPlayerTable th,
 .comboPlayerTable td{
-  border:2px solid #111;
+  border:1px solid #334155;
   padding:10px 8px;
   text-align:center;
   vertical-align:top;
@@ -1332,22 +1334,22 @@
   white-space:nowrap;
 }
 
-/* 条件ごとの色分け */
-.comboPlayerTable .condColor1{ background:#2f7ed8; }
-.comboPlayerTable .condColor2{ background:#24a148; }
-.comboPlayerTable .condColor3{ background:#d94848; }
+/* 条件ごとの色分け（落ち着いたトーン） */
+.comboPlayerTable .condColor1{ background:#2f80d8; }
+.comboPlayerTable .condColor2{ background:#239b56; }
+.comboPlayerTable .condColor3{ background:#c94f4f; }
 .comboPlayerTable .condColor4{ background:#7c3aed; }
 .comboPlayerTable .condColor5{ background:#0f766e; }
 .comboPlayerTable .condColor6{ background:#b45309; }
-.comboPlayerTable .posColor1{ background:#c8eefa; }
-.comboPlayerTable .posColor2{ background:#d9f8dc; }
-.comboPlayerTable .posColor3{ background:#ffe0e0; }
+.comboPlayerTable .posColor1{ background:#d9f0ff; }
+.comboPlayerTable .posColor2{ background:#dcf6e5; }
+.comboPlayerTable .posColor3{ background:#f8dada; }
 .comboPlayerTable .posColor4{ background:#eadcff; }
 .comboPlayerTable .posColor5{ background:#d8f3ef; }
 .comboPlayerTable .posColor6{ background:#fff0cf; }
-.comboPlayerTable .styleColor1{ border-top-color:#2f7ed8; }
-.comboPlayerTable .styleColor2{ border-top-color:#24a148; }
-.comboPlayerTable .styleColor3{ border-top-color:#d94848; }
+.comboPlayerTable .styleColor1{ border-top-color:#2f80d8; }
+.comboPlayerTable .styleColor2{ border-top-color:#239b56; }
+.comboPlayerTable .styleColor3{ border-top-color:#c94f4f; }
 .comboPlayerTable .styleColor4{ border-top-color:#7c3aed; }
 .comboPlayerTable .styleColor5{ border-top-color:#0f766e; }
 .comboPlayerTable .styleColor6{ border-top-color:#b45309; }
@@ -1359,15 +1361,15 @@
   white-space:nowrap;
 }
 .comboPlayerTable .playerSectionTitle.full{
-  background:#e8f7e8;
-  color:#17813a;
+  background:#e7f6e8;
+  color:#137333;
 }
 .comboPlayerTable .playerSectionTitle.policyDiff{
-  background:#fff2df;
-  color:#e67800;
+  background:#fff0dc;
+  color:#d86f00;
 }
 .comboPlayerCell{
-  height:208px;              /* 3枚表示＋ボタン分の高さを統一 */
+  height:212px;              /* 3枚表示＋ボタン分の高さを統一 */
   background:#fff;
   padding:8px 7px !important;
 }
@@ -1377,40 +1379,44 @@
   display:flex;
   flex-direction:column;
   gap:6px;
-  min-height:184px;
+  min-height:188px;
 }
 .comboPlayerFixedArea{
   display:flex;
   flex-direction:column;
   gap:6px;
-  min-height:126px;          /* 常に3カード分を確保 */
+  min-height:132px;          /* 常に3カード分を確保 */
 }
 .comboPlayerMiniCard{
   display:flex;
   align-items:center;
-  gap:6px;
+  gap:7px;
   width:100%;
-  min-height:38px;
-  padding:6px;
-  border:1px solid #dfe6ef;
-  border-radius:10px;
+  min-height:40px;
+  padding:7px 8px;
+  border:1px solid #dbe5f0;
+  border-radius:12px;
   background:#fff;
-  box-shadow:0 4px 10px rgba(0,0,0,.04);
+  box-shadow:0 3px 8px rgba(15,23,42,.05);
   color:#0b63d1;
   text-decoration:none;
   font-weight:900;
   min-width:0;
+  transition:transform .08s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.comboPlayerMiniCard:active{
+  transform:scale(.985);
 }
 .comboPlayerMiniCard.policyDiff{
-  color:#e67800;
-  border-color:#ffd8aa;
-  background:#fffaf3;
+  color:#d86f00;
+  border-color:#ffd2a1;
+  background:#fff9f1;
 }
 .comboPlayerIcon{
   width:34px;
   height:34px;
   object-fit:contain;
-  border-radius:8px;
+  border-radius:9px;
   background:#f8fafc;
   border:1px solid #e5e7eb;
   flex:0 0 auto;
@@ -1434,33 +1440,37 @@
   list-style:none;
   display:block;
   width:100%;
-  padding:7px 6px;
+  padding:8px 8px;
   border-radius:999px;
-  border:1px solid #b7d3ff;
-  background:#eaf3ff;
+  border:1px solid #9cc4ff;
+  background:#dcecff;
   color:#0b63d1;
   text-decoration:none;
   font-weight:900;
   font-size:14px;
   line-height:1.2;
   white-space:nowrap;
-  box-shadow:0 3px 8px rgba(0,0,0,.06);
+  box-shadow:0 3px 8px rgba(15,23,42,.07);
+  transition:transform .08s ease, background .12s ease;
+}
+.comboMoreDetails summary:active{
+  transform:scale(.985);
 }
 .comboMoreDetails summary::-webkit-details-marker{ display:none; }
 .comboMoreDetails.policyDiff summary{
-  color:#e67800;
-  border-color:#ffc98d;
-  background:#fff0dc;
+  color:#d86f00;
+  border-color:#ffbd73;
+  background:#ffe7c8;
 }
 .comboMoreDetails[open] summary{
   margin-bottom:6px;
 }
 .comboEmptyText{
-  min-height:184px;
+  min-height:188px;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#17813a;
+  color:#137333;
   background:#f0fbf1;
   border:1px dashed #8ed29a;
   border-radius:12px;
@@ -1469,12 +1479,12 @@
   white-space:nowrap;
 }
 .comboEmptyText.policyDiff{
-  color:#e67800;
+  color:#d86f00;
   background:#fff4e6;
   border-color:#ffc27b;
 }
 @media (max-width:480px){
-  .comboPlayerTableWrap{ padding:6px; border-radius:16px; overflow-x:visible; }
+  .comboPlayerTableWrap{ padding:5px; border-radius:16px; overflow-x:visible; }
   .comboPlayerTable{ font-size:10px; table-layout:fixed; }
   .comboPlayerTable th,
   .comboPlayerTable td{ padding:5px 2px; border-width:1px; }
@@ -1482,14 +1492,14 @@
   .comboPlayerTable .posRow td{ font-size:14px; }
   .comboPlayerTable .styleRow td{ font-size:11px; letter-spacing:-.05em; }
   .comboPlayerTable .playerSectionTitle{ font-size:12px; padding:6px 2px; }
-  .comboPlayerCell{ height:158px; padding:5px 3px !important; }
-  .comboPlayerCellInner{ gap:4px; min-height:144px; }
-  .comboPlayerFixedArea{ gap:4px; min-height:90px; }
-  .comboPlayerMiniCard{ gap:3px; padding:4px 3px; min-height:28px; border-radius:8px; }
-  .comboPlayerIcon{ width:24px; height:24px; border-radius:6px; }
+  .comboPlayerCell{ height:162px; padding:5px 3px !important; }
+  .comboPlayerCellInner{ gap:4px; min-height:148px; }
+  .comboPlayerFixedArea{ gap:4px; min-height:94px; }
+  .comboPlayerMiniCard{ gap:3px; padding:4px 3px; min-height:29px; border-radius:9px; }
+  .comboPlayerIcon{ width:24px; height:24px; border-radius:7px; }
   .comboPlayerMiniText{ font-size:10px; letter-spacing:-.05em; }
   .comboMoreDetails summary{ font-size:10px; letter-spacing:-.04em; padding:5px 2px; }
-  .comboEmptyText{ min-height:144px; font-size:10px; padding:6px 2px; }
+  .comboEmptyText{ min-height:148px; font-size:10px; padding:6px 2px; }
 }
 @media (max-width:360px){
   .comboPlayerTableWrap{ padding:4px; }
