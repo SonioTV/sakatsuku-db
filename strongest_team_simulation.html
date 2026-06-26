@@ -1167,23 +1167,49 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
     }
   }
 
-  function buildRequirementMap(combo){
-    const byPos = new Map();   // position -> [req...]
-    const bySlot = new Map();  // slotNo(string) -> [req...]
+  function buildRequirementMap(combo, slotsForCombo=[]){
+    const byPos = new Map();        // position -> [req...]
+    const bySlot = new Map();       // slotNo(string) -> [req...]
+    const byCondition = new Map();  // conditionNo(string) -> [req...]
+
+    const pushMap = (map, key, req)=>{
+      const k = String(key);
+      if(!map.has(k)) map.set(k, []);
+      map.get(k).push(req);
+    };
+
     (combo.combo_requirements||[]).forEach(req=>{
       const pos = req.position;
-      if(pos){
-        if(!byPos.has(pos)) byPos.set(pos, []);
-        byPos.get(pos).push(req);
-      }
+      if(pos) pushMap(byPos, pos, req);
+
+      // combos.json 側が slotNo / slot_no を持つ場合
       const sn = req.slotNo ?? req.slot_no;
-      if(sn!==undefined && sn!==null && sn!==""){
-        const key = String(sn);
-        if(!bySlot.has(key)) bySlot.set(key, []);
-        bySlot.get(key).push(req);
-      }
+      if(sn!==undefined && sn!==null && sn!=="") pushMap(bySlot, sn, req);
+
+      // combos.json 側が conditionNo / condition_no を持つ場合
+      const cn = req.conditionNo ?? req.condition_no;
+      if(cn!==undefined && cn!==null && cn!=="") pushMap(byCondition, cn, req);
     });
-    return { byPos, bySlot };
+
+    // formation_slots.json の conditionNo と combos.json の conditionNo を紐づけて、
+    // 実際の slotNo に発動条件を展開する。
+    // これにより、同じDMが2枠ある場合でも「発動条件DM」と「空きDM」を分けて扱える。
+    for(const slot of (slotsForCombo||[])){
+      const slotNo = slot?.slotNo ?? slot?.slot_no;
+      const conditionNo = slot?.conditionNo ?? slot?.condition_no;
+      if(slotNo===undefined || slotNo===null || slotNo==="") continue;
+      if(conditionNo===undefined || conditionNo===null || conditionNo==="") continue;
+
+      const reqs = byCondition.get(String(conditionNo)) || [];
+      if(!reqs.length) continue;
+      const k = String(slotNo);
+      if(!bySlot.has(k)) bySlot.set(k, []);
+      for(const req of reqs){
+        if(!bySlot.get(k).includes(req)) bySlot.get(k).push(req);
+      }
+    }
+
+    return { byPos, bySlot, byCondition };
   }
 
   function matchPlayerForSlot(player, combo, slotPos, reqMap, kw, forcedPolicy, requiredAcq){
@@ -1347,7 +1373,7 @@ function simulate(){
   }
 
   const forcedPolicy = Array.isArray(combo.combo_policys) ? combo.combo_policys[0] : (combo.combo_policys || "");
-  const reqMap = buildRequirementMap(combo);
+  const reqMap = buildRequirementMap(combo, slots);
 
   // greedy pick (unique players)
   const pickBest = (available, slot, forcePol)=>{
