@@ -538,7 +538,7 @@
   <h1>選手図鑑</h1>
   <div class="note">
     全選手を一覧で確認できます。<br>
-    選手名・国籍・成長タイプ・レアリティ・入手方法・入手場所・ポリシー・プレイスタイル・プレイスタイルLv・ポジションで絞り込み可能です。<br>
+    選手名・国籍・成長タイプ・レアリティ・入手方法・入手場所・ポリシー・プレイスタイル・プレイスタイルLv・適性ポジションで絞り込み可能です。<br>
     お気に入り選手登録すると「選手評価ツール」で性能をチェックしたり「フォメコン診断」で発動条件に一致するフォーメーションコンボを表示する事が出来ます。
   </div>
 
@@ -568,7 +568,7 @@
           <select id="fPolicy"><option value="">（指定なし）</option></select>
         </div>
         <div>
-          <label for="fPosition">ポジション</label>
+          <label for="fPosition">適性ポジション</label>
           <select id="fPosition"><option value="">（指定なし）</option></select>
         </div>
         <div>
@@ -673,6 +673,27 @@ function pick(obj, keys, fallback=""){
   }
   return fallback;
 }
+
+function getSuitablePositionsFromRaw(p){
+  const values = [];
+  const raw = p?.suitablePositions ?? p?.suitable_positions ?? p?.適性ポジション;
+
+  if(Array.isArray(raw)){
+    raw.forEach(v => values.push(v));
+  }else if(raw !== undefined && raw !== null && String(raw).trim() !== ""){
+    String(raw).split(/[\/／,、\s]+/).forEach(v => values.push(v));
+  }
+
+  const main = pick(p, ["mainPosition","position","ポジション"], "");
+  if(main !== undefined && main !== null && String(main).trim() !== "") values.unshift(main);
+
+  return [...new Set(values.map(v => String(v ?? "").trim().toUpperCase()).filter(Boolean))];
+}
+
+function showSuitablePositions(values){
+  const arr = Array.isArray(values) ? values : [];
+  return arr.length ? arr.join(" / ") : "-";
+}
 function uniqueSorted(values){
   return [...new Set(values.map(normalize).filter(Boolean))]
     .sort((a,b)=>String(a).localeCompare(String(b), "ja"));
@@ -696,6 +717,7 @@ function getPlayerCore(p){
   const playStyle = normalize(pick(p, ["playStyle","プレイスタイル"], ""));
   const playStyleLv = pick(p, ["playStyleLv","play_style_lv","Lv","level","プレイスタイルLv"], "");
   const mainPosition = normalize(pick(p, ["mainPosition","position","ポジション"], ""));
+  const suitablePositions = getSuitablePositionsFromRaw(p);
   const overall = pick(p, ["overall","初期総合力"], "");
   const maxUpgrade = pick(p, ["maxUpgrade","最大強化"], "");
   const category = normalize(pick(p, ["category","区分"], ""));
@@ -717,6 +739,7 @@ function getPlayerCore(p){
     playStyle,
     playStyleLv,
     mainPosition,
+    suitablePositions,
     overall,
     maxUpgrade,
     category,
@@ -765,7 +788,7 @@ function loadOptions(){
   fillSelect($("fPolicy"), uniqueSorted(rows.map(r=>r.policy)));
   fillSelect($("fStyle"), uniqueSorted(rows.map(r=>r.playStyle)));
   fillSelect($("fStyleLv"), uniqueSorted(rows.map(r=>String(r.playStyleLv || ""))), romanLv);
-  fillSelect($("fPosition"), uniqueSorted(rows.map(r=>r.mainPosition)));
+  fillSelect($("fPosition"), uniqueSorted(rows.flatMap(r=>r.suitablePositions || [])));
 }
 
 function currentFilterState(){
@@ -779,7 +802,7 @@ function currentFilterState(){
     policy: normalize($("fPolicy").value),
     playStyle: normalize($("fStyle").value),
     playStyleLv: normalize($("fStyleLv").value),
-    mainPosition: normalize($("fPosition").value),
+    position: normalize($("fPosition").value),
     favoriteOnly: $("favoriteOnlyCheck") ? !!$("favoriteOnlyCheck").checked : false,
     sortOrder: $("sortOrder") ? normalize($("sortOrder").value) : "id",
   };
@@ -797,7 +820,7 @@ function filterPlayers(){
     if(f.policy && p.policy !== f.policy) return false;
     if(f.playStyle && p.playStyle !== f.playStyle) return false;
     if(f.playStyleLv && String(p.playStyleLv) !== String(f.playStyleLv)) return false;
-    if(f.mainPosition && p.mainPosition !== f.mainPosition) return false;
+    if(f.position && !(p.suitablePositions || []).includes(f.position)) return false;
     if(f.favoriteOnly && !isFavoritePlayer(p)) return false;
     return true;
   })
@@ -827,7 +850,7 @@ function renderCurrentFilters(){
   if(f.rarity) parts.push(`レアリティ：${esc(showRarity(f.rarity))}`);
   if(f.growthType) parts.push(`成長タイプ：${esc(f.growthType)}`);
   if(f.policy) parts.push(`ポリシー：${esc(f.policy)}`);
-  if(f.mainPosition) parts.push(`ポジション：${esc(f.mainPosition)}`);
+  if(f.position) parts.push(`適性ポジション：${esc(f.position)}`);
   if(f.playStyle) parts.push(`プレイスタイル：${esc(f.playStyle)}`);
   if(f.acquisitionMethod) parts.push(`入手方法：${esc(f.acquisitionMethod)}`);
   if(f.acquisitionPlace) parts.push(`入手場所：${esc(f.acquisitionPlace)}`);
@@ -894,6 +917,7 @@ function renderCatalog(list){
   <div class="k">ポリシー</div><div class="v">${esc(p.policy || "-")}</div>
   <div class="k">プレイスタイル</div><div class="v">${esc(styleDisplay)}</div>
   <div class="k">ポジション</div><div class="v">${esc(p.mainPosition || "-")}</div>
+  <div class="k">適性ポジション</div><div class="v">${esc(showSuitablePositions(p.suitablePositions))}</div>
   <div class="k">入手方法</div><div class="v">${esc(p.acquisitionMethod || "-")}</div>
   <div class="k">入手場所</div><div class="v">${esc(p.acquisitionPlace || "-")}</div>
 </div>
@@ -958,6 +982,7 @@ function openPlayerModal(p){
   lines.push(`<div class="mLine"><span class="mKey">ポリシー</span><span class="mVal">${esc(p.policy || "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">プレイスタイル</span><span class="mVal">${esc(styleDisplay)}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">ポジション</span><span class="mVal">${esc(p.mainPosition || "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">適性ポジション</span><span class="mVal">${esc(showSuitablePositions(p.suitablePositions))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">国籍</span><span class="mVal">${esc(p.nationality || "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">成長タイプ</span><span class="mVal">${esc(p.growthType || "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class="mVal">${esc(p.acquisitionMethod || "-")}</span></div>`);
