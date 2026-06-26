@@ -1318,13 +1318,11 @@
   overflow-wrap:normal;
 }
 .comboPlayerTable .condHead th{
-  background:#2f7ed8;
   color:#fff;
   font-size:18px;
   white-space:nowrap;
 }
 .comboPlayerTable .posRow td{
-  background:#c8eefa;
   font-size:20px;
   white-space:nowrap;
 }
@@ -1333,6 +1331,27 @@
   font-size:17px;
   white-space:nowrap;
 }
+
+/* 条件ごとの色分け */
+.comboPlayerTable .condColor1{ background:#2f7ed8; }
+.comboPlayerTable .condColor2{ background:#24a148; }
+.comboPlayerTable .condColor3{ background:#d94848; }
+.comboPlayerTable .condColor4{ background:#7c3aed; }
+.comboPlayerTable .condColor5{ background:#0f766e; }
+.comboPlayerTable .condColor6{ background:#b45309; }
+.comboPlayerTable .posColor1{ background:#c8eefa; }
+.comboPlayerTable .posColor2{ background:#d9f8dc; }
+.comboPlayerTable .posColor3{ background:#ffe0e0; }
+.comboPlayerTable .posColor4{ background:#eadcff; }
+.comboPlayerTable .posColor5{ background:#d8f3ef; }
+.comboPlayerTable .posColor6{ background:#fff0cf; }
+.comboPlayerTable .styleColor1{ border-top-color:#2f7ed8; }
+.comboPlayerTable .styleColor2{ border-top-color:#24a148; }
+.comboPlayerTable .styleColor3{ border-top-color:#d94848; }
+.comboPlayerTable .styleColor4{ border-top-color:#7c3aed; }
+.comboPlayerTable .styleColor5{ border-top-color:#0f766e; }
+.comboPlayerTable .styleColor6{ border-top-color:#b45309; }
+
 .comboPlayerTable .playerSectionTitle{
   color:#111;
   font-size:18px;
@@ -1348,21 +1367,30 @@
   color:#e67800;
 }
 .comboPlayerCell{
-  min-height:150px;
+  height:208px;              /* 3枚表示＋ボタン分の高さを統一 */
   background:#fff;
+  padding:8px 7px !important;
 }
-.comboPlayerCell.full{
-  background:#fbfffb;
+.comboPlayerCell.full{ background:#fbfffb; }
+.comboPlayerCell.policyDiff{ background:#fffdf8; }
+.comboPlayerCellInner{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-height:184px;
 }
-.comboPlayerCell.policyDiff{
-  background:#fffdf8;
+.comboPlayerFixedArea{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-height:126px;          /* 常に3カード分を確保 */
 }
 .comboPlayerMiniCard{
   display:flex;
   align-items:center;
   gap:6px;
   width:100%;
-  margin:6px 0;
+  min-height:38px;
   padding:6px;
   border:1px solid #dfe6ef;
   border-radius:10px;
@@ -1399,26 +1427,51 @@
   line-height:1.2;
 }
 .comboMoreDetails{
-  margin-top:8px;
+  margin-top:auto;
 }
 .comboMoreDetails summary{
   cursor:pointer;
   list-style:none;
+  display:block;
+  width:100%;
+  padding:7px 6px;
+  border-radius:999px;
+  border:1px solid #b7d3ff;
+  background:#eaf3ff;
   color:#0b63d1;
-  text-decoration:underline;
+  text-decoration:none;
   font-weight:900;
-  font-size:15px;
+  font-size:14px;
+  line-height:1.2;
   white-space:nowrap;
+  box-shadow:0 3px 8px rgba(0,0,0,.06);
 }
 .comboMoreDetails summary::-webkit-details-marker{ display:none; }
 .comboMoreDetails.policyDiff summary{
   color:#e67800;
+  border-color:#ffc98d;
+  background:#fff0dc;
+}
+.comboMoreDetails[open] summary{
+  margin-bottom:6px;
 }
 .comboEmptyText{
-  color:#777;
+  min-height:184px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#17813a;
+  background:#f0fbf1;
+  border:1px dashed #8ed29a;
+  border-radius:12px;
   font-weight:900;
-  padding:10px 0;
+  padding:10px 4px;
   white-space:nowrap;
+}
+.comboEmptyText.policyDiff{
+  color:#e67800;
+  background:#fff4e6;
+  border-color:#ffc27b;
 }
 @media (max-width:480px){
   .comboPlayerTableWrap{ padding:6px; border-radius:16px; overflow-x:visible; }
@@ -1429,11 +1482,14 @@
   .comboPlayerTable .posRow td{ font-size:14px; }
   .comboPlayerTable .styleRow td{ font-size:11px; letter-spacing:-.05em; }
   .comboPlayerTable .playerSectionTitle{ font-size:12px; padding:6px 2px; }
-  .comboPlayerMiniCard{ gap:3px; padding:4px 3px; margin:4px 0; border-radius:8px; }
+  .comboPlayerCell{ height:158px; padding:5px 3px !important; }
+  .comboPlayerCellInner{ gap:4px; min-height:144px; }
+  .comboPlayerFixedArea{ gap:4px; min-height:90px; }
+  .comboPlayerMiniCard{ gap:3px; padding:4px 3px; min-height:28px; border-radius:8px; }
   .comboPlayerIcon{ width:24px; height:24px; border-radius:6px; }
   .comboPlayerMiniText{ font-size:10px; letter-spacing:-.05em; }
-  .comboMoreDetails summary{ font-size:10px; letter-spacing:-.04em; }
-  .comboEmptyText{ font-size:10px; }
+  .comboMoreDetails summary{ font-size:10px; letter-spacing:-.04em; padding:5px 2px; }
+  .comboEmptyText{ min-height:144px; font-size:10px; padding:6px 2px; }
 }
 @media (max-width:360px){
   .comboPlayerTableWrap{ padding:4px; }
@@ -1445,6 +1501,7 @@
   .comboPlayerMiniText{ font-size:9px; }
   .comboPlayerIcon{ width:22px; height:22px; }
 }
+
 </style>
 <script type="application/ld+json">
 {
@@ -3029,13 +3086,13 @@ function renderPlayersForCombo(){
     <div class="comboPlayerTableWrap">
       <table class="comboPlayerTable">
         <tr class="condHead">
-          ${columns.map(col=>`<th>条件${col.idx+1}</th>`).join("")}
+          ${columns.map(col=>`<th class="condColor${(col.idx % 6)+1}">条件${col.idx+1}</th>`).join("")}
         </tr>
         <tr class="posRow">
-          ${columns.map(col=>`<td>${esc(col.pos)}</td>`).join("")}
+          ${columns.map(col=>`<td class="posColor${(col.idx % 6)+1}">${esc(col.pos)}</td>`).join("")}
         </tr>
         <tr class="styleRow">
-          ${columns.map(col=>`<td>${esc(col.styleLv)}</td>`).join("")}
+          ${columns.map(col=>`<td class="styleColor${(col.idx % 6)+1}">${esc(col.styleLv)}</td>`).join("")}
         </tr>
         <tr>
           <th class="playerSectionTitle full" colspan="${colCount}">【完全一致（${fullTotal}名）】</th>
@@ -3060,6 +3117,15 @@ function renderPlayersForCombo(){
       openPlayerModal(playerById.get(pid));
     });
   });
+  out.querySelectorAll(".comboMoreDetails").forEach(d=>{
+    const s = d.querySelector("summary");
+    if(!s) return;
+    const closedText = s.dataset.closedText || s.textContent;
+    const openText = s.dataset.openText || "閉じる";
+    const update = ()=>{ s.textContent = d.open ? openText : closedText; };
+    d.addEventListener("toggle", update);
+    update();
+  });
 }
 
 function sortPlayersForComboResult(arr){
@@ -3067,13 +3133,16 @@ function sortPlayersForComboResult(arr){
 }
 
 function renderComboPlayerCell(arr, type){
-  if(!arr || arr.length===0) return `<div class="comboEmptyText">なし</div>`;
+  const isPolicyDiff = type === "policyDiff";
+  const typeClass = isPolicyDiff ? " policyDiff" : "";
+
+  if(!arr || arr.length===0){
+    return `<div class="comboEmptyText${typeClass}">🎉 該当なし</div>`;
+  }
 
   const MAX = 3;
   const head = arr.slice(0, MAX);
   const rest = arr.slice(MAX);
-  const isPolicyDiff = type === "policyDiff";
-  const typeClass = isPolicyDiff ? " policyDiff" : "";
 
   const makeCard = (p)=>{
     const pid = esc(getPlayerId(p));
@@ -3087,14 +3156,19 @@ function renderComboPlayerCell(arr, type){
   };
 
   const headHtml = head.map(makeCard).join("");
-  if(rest.length===0) return headHtml;
-
   const restHtml = rest.map(makeCard).join("");
-  return headHtml + `
+  const moreHtml = rest.length ? `
     <details class="comboMoreDetails${typeClass}">
-      <summary>他${rest.length}名を見る</summary>
+      <summary data-closed-text="▼ 他${rest.length}名を見る" data-open-text="▲ 閉じる">▼ 他${rest.length}名を見る</summary>
       ${restHtml}
     </details>
+  ` : `<div class="comboMoreDetails" aria-hidden="true"></div>`;
+
+  return `
+    <div class="comboPlayerCellInner">
+      <div class="comboPlayerFixedArea">${headHtml}</div>
+      ${moreHtml}
+    </div>
   `;
 }
 </script>
