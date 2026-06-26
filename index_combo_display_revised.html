@@ -1292,8 +1292,7 @@
 /* ===== 選手検索：対応選手 表形式 ===== */
 .comboPlayerTableWrap{
   margin-top:16px;
-  overflow-x:auto;
-  -webkit-overflow-scrolling:touch;
+  overflow-x:visible;
   border:1px solid #d7dbe6;
   border-radius:18px;
   background:#fff;
@@ -1315,76 +1314,137 @@
   vertical-align:top;
   font-weight:900;
   line-height:1.35;
-  word-break:break-word;
+  word-break:normal;
+  overflow-wrap:normal;
 }
 .comboPlayerTable .condHead th{
   background:#2f7ed8;
   color:#fff;
   font-size:18px;
+  white-space:nowrap;
 }
 .comboPlayerTable .posRow td{
   background:#c8eefa;
   font-size:20px;
+  white-space:nowrap;
 }
 .comboPlayerTable .styleRow td{
   background:#fff;
   font-size:17px;
+  white-space:nowrap;
 }
 .comboPlayerTable .playerSectionTitle{
-  background:#f8fafc;
   color:#111;
   font-size:18px;
   padding:9px 8px;
+  white-space:nowrap;
 }
 .comboPlayerTable .playerSectionTitle.full{
-  color:#0b63d1;
+  background:#e8f7e8;
+  color:#17813a;
 }
 .comboPlayerTable .playerSectionTitle.policyDiff{
-  color:#d65ac8;
+  background:#fff2df;
+  color:#e67800;
 }
 .comboPlayerCell{
   min-height:150px;
+  background:#fff;
 }
-.comboPlayerLink{
+.comboPlayerCell.full{
+  background:#fbfffb;
+}
+.comboPlayerCell.policyDiff{
+  background:#fffdf8;
+}
+.comboPlayerMiniCard{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  width:100%;
+  margin:6px 0;
+  padding:6px;
+  border:1px solid #dfe6ef;
+  border-radius:10px;
+  background:#fff;
+  box-shadow:0 4px 10px rgba(0,0,0,.04);
+  color:#0b63d1;
+  text-decoration:none;
+  font-weight:900;
+  min-width:0;
+}
+.comboPlayerMiniCard.policyDiff{
+  color:#e67800;
+  border-color:#ffd8aa;
+  background:#fffaf3;
+}
+.comboPlayerIcon{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+  border-radius:8px;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  flex:0 0 auto;
+}
+.comboPlayerMiniText{
   display:block;
-  color:#0b63d1;
-  text-decoration:underline;
-  font-weight:900;
-  font-size:17px;
-  margin:7px 0;
+  min-width:0;
+  max-width:100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  text-align:left;
+  font-size:13px;
+  line-height:1.2;
 }
-.comboPlayerLink.policyDiff{
-  color:#d65ac8;
-}
-.comboMoreLink{
-  display:inline-block;
+.comboMoreDetails{
   margin-top:8px;
+}
+.comboMoreDetails summary{
+  cursor:pointer;
+  list-style:none;
   color:#0b63d1;
   text-decoration:underline;
   font-weight:900;
-  font-size:16px;
+  font-size:15px;
+  white-space:nowrap;
 }
-.comboMoreLink.policyDiff{
-  color:#d65ac8;
+.comboMoreDetails summary::-webkit-details-marker{ display:none; }
+.comboMoreDetails.policyDiff summary{
+  color:#e67800;
 }
 .comboEmptyText{
   color:#777;
   font-weight:900;
   padding:10px 0;
+  white-space:nowrap;
 }
 @media (max-width:480px){
-  .comboPlayerTableWrap{ padding:8px; border-radius:16px; }
-  .comboPlayerTable{ font-size:12px; }
+  .comboPlayerTableWrap{ padding:6px; border-radius:16px; overflow-x:visible; }
+  .comboPlayerTable{ font-size:10px; table-layout:fixed; }
   .comboPlayerTable th,
-  .comboPlayerTable td{ padding:7px 5px; border-width:1px; }
-  .comboPlayerTable .condHead th{ font-size:15px; }
-  .comboPlayerTable .posRow td{ font-size:16px; }
-  .comboPlayerTable .styleRow td{ font-size:13px; }
-  .comboPlayerTable .playerSectionTitle{ font-size:14px; }
-  .comboPlayerLink{ font-size:13px; margin:6px 0; }
-  .comboMoreLink{ font-size:13px; }
+  .comboPlayerTable td{ padding:5px 2px; border-width:1px; }
+  .comboPlayerTable .condHead th{ font-size:13px; }
+  .comboPlayerTable .posRow td{ font-size:14px; }
+  .comboPlayerTable .styleRow td{ font-size:11px; letter-spacing:-.05em; }
+  .comboPlayerTable .playerSectionTitle{ font-size:12px; padding:6px 2px; }
+  .comboPlayerMiniCard{ gap:3px; padding:4px 3px; margin:4px 0; border-radius:8px; }
+  .comboPlayerIcon{ width:24px; height:24px; border-radius:6px; }
+  .comboPlayerMiniText{ font-size:10px; letter-spacing:-.05em; }
+  .comboMoreDetails summary{ font-size:10px; letter-spacing:-.04em; }
+  .comboEmptyText{ font-size:10px; }
 }
-
+@media (max-width:360px){
+  .comboPlayerTableWrap{ padding:4px; }
+  .comboPlayerTable th,
+  .comboPlayerTable td{ padding:4px 1px; }
+  .comboPlayerTable .condHead th{ font-size:12px; }
+  .comboPlayerTable .posRow td{ font-size:13px; }
+  .comboPlayerTable .styleRow td{ font-size:10px; }
+  .comboPlayerMiniText{ font-size:9px; }
+  .comboPlayerIcon{ width:22px; height:22px; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -2965,11 +3025,9 @@ function renderPlayersForCombo(){
   const fullTotal = columns.reduce((sum, col)=>sum + col.matchedFull.length, 0);
   const polTotal = columns.reduce((sum, col)=>sum + col.matchedPolDiff.length, 0);
   const colCount = Math.max(columns.length, 1);
-  const minWidth = Math.max(540, colCount * 190);
-
   out.innerHTML = `
     <div class="comboPlayerTableWrap">
-      <table class="comboPlayerTable" style="min-width:${minWidth}px;">
+      <table class="comboPlayerTable">
         <tr class="condHead">
           ${columns.map(col=>`<th>条件${col.idx+1}</th>`).join("")}
         </tr>
@@ -2983,13 +3041,13 @@ function renderPlayersForCombo(){
           <th class="playerSectionTitle full" colspan="${colCount}">【完全一致（${fullTotal}名）】</th>
         </tr>
         <tr>
-          ${columns.map(col=>`<td class="comboPlayerCell">${renderComboPlayerCell(col.matchedFull, "full")}</td>`).join("")}
+          ${columns.map(col=>`<td class="comboPlayerCell full">${renderComboPlayerCell(col.matchedFull, "full")}</td>`).join("")}
         </tr>
         <tr>
           <th class="playerSectionTitle policyDiff" colspan="${colCount}">【ポリシー違い（${polTotal}名）】</th>
         </tr>
         <tr>
-          ${columns.map(col=>`<td class="comboPlayerCell">${renderComboPlayerCell(col.matchedPolDiff, "policyDiff")}</td>`).join("")}
+          ${columns.map(col=>`<td class="comboPlayerCell policyDiff">${renderComboPlayerCell(col.matchedPolDiff, "policyDiff")}</td>`).join("")}
         </tr>
       </table>
     </div>
@@ -3015,21 +3073,28 @@ function renderComboPlayerCell(arr, type){
   const head = arr.slice(0, MAX);
   const rest = arr.slice(MAX);
   const isPolicyDiff = type === "policyDiff";
-  const linkClass = isPolicyDiff ? " policyDiff" : "";
+  const typeClass = isPolicyDiff ? " policyDiff" : "";
 
-  const headHtml = head.map(p=>{
+  const makeCard = (p)=>{
     const pid = esc(getPlayerId(p));
-    return `<a class="comboPlayerLink${linkClass}" href="#" data-player-id="${pid}">${esc(formatPlayerListLabel(p))}</a>`;
-  }).join("");
+    const label = esc(formatPlayerListLabel(p));
+    return `
+      <a class="comboPlayerMiniCard${typeClass}" href="#" data-player-id="${pid}" title="${label}">
+        <img class="comboPlayerIcon" src="img/players/${pid}.png" alt="" loading="lazy" onerror="this.style.display='none';">
+        <span class="comboPlayerMiniText">${label}</span>
+      </a>
+    `;
+  };
 
+  const headHtml = head.map(makeCard).join("");
   if(rest.length===0) return headHtml;
 
-  const restPids = rest.map(p=>esc(getPlayerId(p))).join(",");
-  const moreTitle = isPolicyDiff ? "ポリシー違いの選手一覧" : "完全一致の選手一覧";
+  const restHtml = rest.map(makeCard).join("");
   return headHtml + `
-    <a href="#" class="comboMoreLink${linkClass}" data-more-pids="${restPids}" data-more-title="${esc(moreTitle)}">
-      他${rest.length}名を見る
-    </a>
+    <details class="comboMoreDetails${typeClass}">
+      <summary>他${rest.length}名を見る</summary>
+      ${restHtml}
+    </details>
   `;
 }
 </script>
