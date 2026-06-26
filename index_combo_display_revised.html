@@ -1288,6 +1288,103 @@
   .comboInfoTable .blockTitle{ font-size:14px; }
 }
 
+
+/* ===== 選手検索：対応選手 表形式 ===== */
+.comboPlayerTableWrap{
+  margin-top:16px;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  border:1px solid #d7dbe6;
+  border-radius:18px;
+  background:#fff;
+  padding:12px;
+  box-shadow:0 10px 20px rgba(0,0,0,.06);
+}
+.comboPlayerTable{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  background:#fff;
+  font-size:16px;
+}
+.comboPlayerTable th,
+.comboPlayerTable td{
+  border:2px solid #111;
+  padding:10px 8px;
+  text-align:center;
+  vertical-align:top;
+  font-weight:900;
+  line-height:1.35;
+  word-break:break-word;
+}
+.comboPlayerTable .condHead th{
+  background:#2f7ed8;
+  color:#fff;
+  font-size:18px;
+}
+.comboPlayerTable .posRow td{
+  background:#c8eefa;
+  font-size:20px;
+}
+.comboPlayerTable .styleRow td{
+  background:#fff;
+  font-size:17px;
+}
+.comboPlayerTable .playerSectionTitle{
+  background:#f8fafc;
+  color:#111;
+  font-size:18px;
+  padding:9px 8px;
+}
+.comboPlayerTable .playerSectionTitle.full{
+  color:#0b63d1;
+}
+.comboPlayerTable .playerSectionTitle.policyDiff{
+  color:#d65ac8;
+}
+.comboPlayerCell{
+  min-height:150px;
+}
+.comboPlayerLink{
+  display:block;
+  color:#0b63d1;
+  text-decoration:underline;
+  font-weight:900;
+  font-size:17px;
+  margin:7px 0;
+}
+.comboPlayerLink.policyDiff{
+  color:#d65ac8;
+}
+.comboMoreLink{
+  display:inline-block;
+  margin-top:8px;
+  color:#0b63d1;
+  text-decoration:underline;
+  font-weight:900;
+  font-size:16px;
+}
+.comboMoreLink.policyDiff{
+  color:#d65ac8;
+}
+.comboEmptyText{
+  color:#777;
+  font-weight:900;
+  padding:10px 0;
+}
+@media (max-width:480px){
+  .comboPlayerTableWrap{ padding:8px; border-radius:16px; }
+  .comboPlayerTable{ font-size:12px; }
+  .comboPlayerTable th,
+  .comboPlayerTable td{ padding:7px 5px; border-width:1px; }
+  .comboPlayerTable .condHead th{ font-size:15px; }
+  .comboPlayerTable .posRow td{ font-size:16px; }
+  .comboPlayerTable .styleRow td{ font-size:13px; }
+  .comboPlayerTable .playerSectionTitle{ font-size:14px; }
+  .comboPlayerLink{ font-size:13px; margin:6px 0; }
+  .comboMoreLink{ font-size:13px; }
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -2832,20 +2929,19 @@ function renderPlayersForCombo(){
   const out = document.getElementById("playerResult");
   out.innerHTML = "";
   if(!c) return;
-  const comboPolicys = getComboPolicys(c);
 
+  const comboPolicys = getComboPolicys(c);
   const conds = getComboConditions(c);
   if(!conds.length){
     out.innerHTML = `<div class="note" style="text-align:left;">条件が見つかりませんでした。</div>`;
     return;
   }
 
-  // 1コンボ内に複数条件がある前提。各条件ごとに完全一致/ポリシー違い を表示（ポジション違いは今回は省略）
-  conds.forEach((cond, idx)=>{
+  const targetPlayers = filterPlayersBySelectedAcquisitionPlace(PLAYERS);
+  const columns = conds.map((cond, idx)=>{
     const matchedFull = [];
     const matchedPolDiff = [];
 
-    const targetPlayers = filterPlayersBySelectedAcquisitionPlace(PLAYERS);
     for(const p of targetPlayers){
       const m = playerMatchesCondition(p, cond, comboPolicys);
       if(m.ok) matchedFull.push(p);
@@ -2854,31 +2950,51 @@ function renderPlayersForCombo(){
 
     const pos = normalizePos(getComboField(cond, ["position","pos","ポジション"], "-"));
     const style = normalizeStyle(getComboField(cond, ["playStyle","style","プレイスタイル"], "-"));
-    const lvReq = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "-");
-    const pol = normalizePolicy(getComboField(cond, ["policy","ポリシー"], "-"));
+    const lvReq = getComboField(cond, ["playStyleLv","play_style_lv","lv","level","Lv","プレイスタイルLv"], "");
+    const styleLv = `${safeStr(style)}${lvReq ? " " + safeStr(romanLv(lvReq)) : ""}`;
 
-    const card = document.createElement("div");
-    card.className="card";
-    card.style.marginTop="14px";
-    card.style.boxShadow="none";
-    card.style.border="1px solid var(--line)";
-    card.innerHTML = `
-      <div style="font-weight:900;font-size:20px;margin-bottom:10px;">条件${idx+1}</div>
-      <div class="kv" style="grid-template-columns:110px 1fr;">
-        <div class="k">ポジション</div><div class="v">${esc(pos)}</div>
-        <div class="k">プレイスタイル</div><div class="v">${esc(style)}${lvReq ? " " + esc(romanLv(lvReq)) : ""}</div>
-      </div>
-      <div style="margin-top:12px;">
-        <div style="font-weight:900;font-size:18px;margin:10px 0 8px;">完全一致（${matchedFull.length}人）</div>
-        ${renderPlayerNameOnlyList(matchedFull)}
-        <div style="font-weight:900;font-size:18px;margin:14px 0 8px;">ポリシー違い（${matchedPolDiff.length}人）</div>
-        ${renderPlayerNameOnlyList(matchedPolDiff)}
-      </div>
-    `;
-    out.appendChild(card);
+    return {
+      idx,
+      pos,
+      styleLv,
+      matchedFull: sortPlayersForComboResult(matchedFull),
+      matchedPolDiff: sortPlayersForComboResult(matchedPolDiff)
+    };
   });
 
-  // link handlers
+  const fullTotal = columns.reduce((sum, col)=>sum + col.matchedFull.length, 0);
+  const polTotal = columns.reduce((sum, col)=>sum + col.matchedPolDiff.length, 0);
+  const colCount = Math.max(columns.length, 1);
+  const minWidth = Math.max(540, colCount * 190);
+
+  out.innerHTML = `
+    <div class="comboPlayerTableWrap">
+      <table class="comboPlayerTable" style="min-width:${minWidth}px;">
+        <tr class="condHead">
+          ${columns.map(col=>`<th>条件${col.idx+1}</th>`).join("")}
+        </tr>
+        <tr class="posRow">
+          ${columns.map(col=>`<td>${esc(col.pos)}</td>`).join("")}
+        </tr>
+        <tr class="styleRow">
+          ${columns.map(col=>`<td>${esc(col.styleLv)}</td>`).join("")}
+        </tr>
+        <tr>
+          <th class="playerSectionTitle full" colspan="${colCount}">【完全一致（${fullTotal}名）】</th>
+        </tr>
+        <tr>
+          ${columns.map(col=>`<td class="comboPlayerCell">${renderComboPlayerCell(col.matchedFull, "full")}</td>`).join("")}
+        </tr>
+        <tr>
+          <th class="playerSectionTitle policyDiff" colspan="${colCount}">【ポリシー違い（${polTotal}名）】</th>
+        </tr>
+        <tr>
+          ${columns.map(col=>`<td class="comboPlayerCell">${renderComboPlayerCell(col.matchedPolDiff, "policyDiff")}</td>`).join("")}
+        </tr>
+      </table>
+    </div>
+  `;
+
   out.querySelectorAll("[data-player-id]").forEach(a=>{
     a.addEventListener("click", (e)=>{
       e.preventDefault();
@@ -2888,32 +3004,33 @@ function renderPlayersForCombo(){
   });
 }
 
-function renderPlayerNameOnlyList(arr){
-  if(!arr || arr.length===0) return `<div class="note" style="text-align:left;margin:6px 0;">なし</div>`;
+function sortPlayersForComboResult(arr){
+  return [...(arr || [])].sort((a,b)=> (Number(b?.overall)||0) - (Number(a?.overall)||0));
+}
 
-  const sorted = [...arr].sort((a,b)=> (Number(b?.overall)||0) - (Number(a?.overall)||0));
+function renderComboPlayerCell(arr, type){
+  if(!arr || arr.length===0) return `<div class="comboEmptyText">なし</div>`;
+
   const MAX = 3;
-  const head = sorted.slice(0, MAX);
-  const rest = sorted.slice(MAX);
+  const head = arr.slice(0, MAX);
+  const rest = arr.slice(MAX);
+  const isPolicyDiff = type === "policyDiff";
+  const linkClass = isPolicyDiff ? " policyDiff" : "";
 
   const headHtml = head.map(p=>{
     const pid = esc(getPlayerId(p));
-    return `<div class="playerRow"><a href="#" data-player-id="${pid}">${esc(formatPlayerListLabel(p))}</a></div>`;
+    return `<a class="comboPlayerLink${linkClass}" href="#" data-player-id="${pid}">${esc(formatPlayerListLabel(p))}</a>`;
   }).join("");
 
   if(rest.length===0) return headHtml;
 
   const restPids = rest.map(p=>esc(getPlayerId(p))).join(",");
-  const moreBtn = `
-    <div class="playerRow" style="margin-top:6px;">
-      <a href="#" data-more-pids="${restPids}" data-more-title="選手一覧"
-         style="display:inline-block;font-weight:900;text-decoration:underline;">
-        他${rest.length}人を見る
-      </a>
-    </div>
+  const moreTitle = isPolicyDiff ? "ポリシー違いの選手一覧" : "完全一致の選手一覧";
+  return headHtml + `
+    <a href="#" class="comboMoreLink${linkClass}" data-more-pids="${restPids}" data-more-title="${esc(moreTitle)}">
+      他${rest.length}名を見る
+    </a>
   `;
-
-  return headHtml + moreBtn;
 }
 </script>
 
