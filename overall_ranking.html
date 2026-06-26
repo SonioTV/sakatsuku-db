@@ -101,7 +101,7 @@
       </section>
 
       <section id="filter" class="card full">
-        <div class="cardHead green"><div><h2 class="cardTitle">総合フィルターランキング TOP5</h2><p class="cardNote">ポリシー・ポジション・プレイスタイル・入手場所を組み合わせて表示</p></div><div class="metricPill">FILTER</div></div>
+        <div class="cardHead green"><div><h2 class="cardTitle">総合フィルターランキング TOP5</h2><p class="cardNote">ポリシー・適性ポジション・プレイスタイル・入手場所を組み合わせて表示</p></div><div class="metricPill">FILTER</div></div>
         <div class="cardBody">
           <div class="filters">
             <select id="fPolicy" class="select"></select>
@@ -117,7 +117,7 @@
 
       <section id="share" class="card full">
         <div class="cardHead orange"><div><h2 class="cardTitle">SP選手の割合</h2><p class="cardNote">登録データ内の構成比をバーで表示</p></div><div class="metricPill">SHARE</div></div>
-        <div class="cardBody"><div class="shareGrid"><div class="shareBox"><div class="shareTitle">ポリシー別</div><div id="barsPolicy"></div></div><div class="shareBox"><div class="shareTitle">プレイスタイル別</div><div id="barsStyle"></div></div><div class="shareBox"><div class="shareTitle">メインポジション別</div><div id="barsPos"></div></div></div></div>
+        <div class="cardBody"><div class="shareGrid"><div class="shareBox"><div class="shareTitle">ポリシー別</div><div id="barsPolicy"></div></div><div class="shareBox"><div class="shareTitle">プレイスタイル別</div><div id="barsStyle"></div></div><div class="shareBox"><div class="shareTitle">メイン適性ポジション別</div><div id="barsPos"></div></div></div></div>
       </section>
     </div>
   </main>
@@ -172,7 +172,7 @@ function rankHtml(p, i, key, label){
   const id = esc(getId(p));
   return `<div class="rankItem" data-id="${id}">
     <div class="rankNo">${i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
-    <div><div class="rankName">${esc(p.name)}</div><div class="rankMeta">${tag(p.rarity)}${tag(p.mainPosition)}${tag(p.policy,"policy")}${tag(p.playStyle + (p.playStyleLv ? " " + romanLv(p.playStyleLv) : ""))}</div></div>
+    <div><div class="rankName">${esc(p.name)}</div><div class="rankMeta">${tag(p.rarity)}${tag((Array.isArray(p.suitablePositions)?p.suitablePositions:[p.mainPosition]).join("/"))}${tag(p.policy,"policy")}${tag(p.playStyle + (p.playStyleLv ? " " + romanLv(p.playStyleLv) : ""))}</div></div>
     <div class="score"><div class="num">${fmt(p[key])}</div><div class="lbl">${esc(label)}</div></div>
   </div>`;
 }
@@ -184,7 +184,7 @@ function renderRankings(){
 }
 function setupFilters(){
   const fill=(id,label,items)=>$(id).innerHTML=`<option value="">${label}</option>` + items.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
-  fill("fPolicy","ポリシー",uniq("policy")); fill("fPos","ポジション",uniq("mainPosition")); fill("fStyle","プレイスタイル",uniq("playStyle")); fill("fPlace","入手場所",uniq("acquisitionPlace"));
+  fill("fPolicy","ポリシー",uniq("policy")); fill("fPos","適性ポジション",[...new Set(PLAYERS.flatMap(p=>Array.isArray(p.suitablePositions)?p.suitablePositions:[p.mainPosition]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),"ja"))); fill("fStyle","プレイスタイル",uniq("playStyle")); fill("fPlace","入手場所",uniq("acquisitionPlace"));
   ["fPolicy","fPos","fStyle","fPlace","fMetric"].forEach(id=>$(id).addEventListener("change",renderFiltered));
   $("resetBtn").addEventListener("click",()=>{["fPolicy","fPos","fStyle","fPlace"].forEach(id=>$(id).value="");$("fMetric").value="overall";renderFiltered();});
   renderFiltered();
@@ -192,10 +192,10 @@ function setupFilters(){
 function renderFiltered(){
   const fp=$("fPolicy").value, fpos=$("fPos").value, fs=$("fStyle").value, fpl=$("fPlace").value, key=$("fMetric").value || "overall";
   let arr=[...PLAYERS];
-  if(fp) arr=arr.filter(p=>p.policy===fp); if(fpos) arr=arr.filter(p=>p.mainPosition===fpos); if(fs) arr=arr.filter(p=>p.playStyle===fs); if(fpl) arr=arr.filter(p=>p.acquisitionPlace===fpl);
+  if(fp) arr=arr.filter(p=>p.policy===fp); if(fpos) arr=arr.filter(p=>((Array.isArray(p.suitablePositions)?p.suitablePositions:[p.mainPosition])||[]).includes(fpos)); if(fs) arr=arr.filter(p=>p.playStyle===fs); if(fpl) arr=arr.filter(p=>p.acquisitionPlace===fpl);
   arr=arr.filter(p=>num(p[key])>0).sort((a,b)=>num(b[key])-num(a[key])).slice(0,5);
   if(!arr.length){$("filteredList").innerHTML=`<div class="empty" style="grid-column:1/-1">対象選手がいません</div>`;return;}
-  $("filteredList").innerHTML=arr.map((p,i)=>`<div class="miniCard" data-id="${esc(getId(p))}"><div class="miniRank">#${i+1}</div><div class="miniName">${esc(p.name)}</div><div class="miniScore">${fmt(p[key])}</div><div class="miniMeta">${esc(p.rarity || "-")} / ${esc(p.mainPosition || "-")}<br>${esc(p.policy || "-")} / ${esc(p.playStyle || "-")}</div></div>`).join("");
+  $("filteredList").innerHTML=arr.map((p,i)=>`<div class="miniCard" data-id="${esc(getId(p))}"><div class="miniRank">#${i+1}</div><div class="miniName">${esc(p.name)}</div><div class="miniScore">${fmt(p[key])}</div><div class="miniMeta">${esc(p.rarity || "-")} / ${esc((Array.isArray(p.suitablePositions)?p.suitablePositions:[p.mainPosition]).join("/") || "-")}<br>${esc(p.policy || "-")} / ${esc(p.playStyle || "-")}</div></div>`).join("");
   bindCards($("filteredList"));
 }
 function renderBars(containerId, key, order=[]){
@@ -212,7 +212,7 @@ function renderShare(){
 function openModal(p){
   if(!p) return;
   $("modalName").textContent=p.name || "-";
-  $("modalTags").innerHTML=tag(p.rarity)+tag(p.category)+tag(p.mainPosition)+tag(p.policy,"policy")+tag((p.playStyle||"-") + (p.playStyleLv ? " " + romanLv(p.playStyleLv) : ""));
+  $("modalTags").innerHTML=tag(p.rarity)+tag(p.category)+tag((Array.isArray(p.suitablePositions)?p.suitablePositions:[p.mainPosition]).join("/"))+tag(p.policy,"policy")+tag((p.playStyle||"-") + (p.playStyleLv ? " " + romanLv(p.playStyleLv) : ""));
   const img=playerImage(p);
   $("modalAvatar").innerHTML = img ? `<img src="${esc(img)}" alt="${esc(p.name)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'fallback',textContent:'${esc((p.name||'?').slice(0,1))}'}))">` : `<div class="fallback">${esc((p.name||"?").slice(0,1))}</div>`;
   const details=[["初期総合力",fmt(p.overall)],["最大強化",fmt(p.maxUpgrade)],["国籍",p.nationality],["成長タイプ",p.growthType],["入手方法",p.acquisitionMethod],["入手場所",p.acquisitionPlace],["入手可能期間",p.availablePeriod],["メインスキル",p.mainSkill],["メイントレイト",p.mainTrait],["実装日",p.implementedDate]];

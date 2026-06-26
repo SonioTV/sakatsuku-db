@@ -592,7 +592,7 @@
 
   <h1>選手評価ツール</h1>
   <div class="note">
-    条件（ポリシー/ポジション/プレイスタイル + キーワード）で候補を絞り、選手の順位・コンボ適性・互換選手を表示します。<br>
+    条件（ポリシー/適性ポジション/プレイスタイル + キーワード）で候補を絞り、選手の順位・コンボ適性・互換選手を表示します。<br>
     お気に入り選手登録すると「選手評価ツール」で性能をチェックしたり「フォメコン診断」で発動条件に一致するフォーメーションコンボを表示する事が出来ます。
   </div>
 
@@ -623,7 +623,7 @@
           <select id="fPolicy"><option value="">（指定なし）</option></select>
         </div>
         <div>
-          <label>ポジション</label>
+          <label>適性ポジション</label>
           <select id="fPos"><option value="">（指定なし）</option></select>
         </div>
         <div>
@@ -927,12 +927,12 @@ fillSelect($("fNationality"), uniqueSorted(SP_PLAYERS.map(p=>p.nationality)));
 fillSelect($("fRarity"), uniqueSorted(SP_PLAYERS.map(p=>p.rarity)), showRarity);
 fillSelect($("fGrowthType"), uniqueSorted(SP_PLAYERS.map(p=>p.growthType)));
 fillSelect($("fPolicy"), uniqueSorted(SP_PLAYERS.map(p=>p.policy)));
-fillSelect($("fPos"), uniqueSorted(SP_PLAYERS.map(p=>p.mainPosition)));
+fillSelect($("fPos"), uniqueSorted(SP_PLAYERS.flatMap(p=>getSuitablePositions(p))));
 fillSelect($("fStyle"), uniqueSorted(SP_PLAYERS.map(p=>p.playStyle)));
 fillSelect($("fAcqMethod"), uniqueSorted(SP_PLAYERS.map(p=>p.acquisitionMethod)));
 fillSelect($("fAcqPlace"), uniqueSorted(SP_PLAYERS.map(p=>p.acquisitionPlace)));
 
-ALL_POS    = uniqueSorted(SP_PLAYERS.map(p=>p.mainPosition));
+ALL_POS    = uniqueSorted(SP_PLAYERS.flatMap(p=>getSuitablePositions(p)));
 ALL_STYLES = uniqueSorted(SP_PLAYERS.map(p=>p.playStyle));
 }
 
@@ -954,7 +954,7 @@ function filterCandidates(){
     if(rarity && normalize(p.rarity)!==rarity) return false;
     if(growthType && normalize(p.growthType)!==growthType) return false;
     if(pol && normalize(p.policy)!==pol) return false;
-    if(pos && normalize(p.mainPosition)!==pos) return false;
+    if(pos && !hasSuitablePosition(p, pos)) return false;
     if(sty && normalize(p.playStyle)!==sty) return false;
     if(acqMethod && normalize(p.acquisitionMethod)!==acqMethod) return false;
     if(acqPlace && normalize(p.acquisitionPlace)!==acqPlace) return false;
@@ -1017,7 +1017,7 @@ function updateStyleOptionsByPos(){
 
   const styles = uniqueSorted(
     SP_PLAYERS
-      .filter(p => normalize(p.mainPosition) === pos)
+      .filter(p => hasSuitablePosition(p, pos))
       .map(p => p.playStyle)
   );
 
@@ -1047,7 +1047,7 @@ function updatePosOptionsByStyle(){
   const poses = uniqueSorted(
     SP_PLAYERS
       .filter(p => normalize(p.playStyle) === sty)
-      .map(p => p.mainPosition)
+      .flatMap(p => getSuitablePositions(p))
   );
 
   fillSelect($("fPos"), poses);
@@ -1099,7 +1099,11 @@ function calcRankings(target, spOnly=true){
     make(poolBase, wholeLabel, ""),
     make(poolBase.filter(p=>normalize(p.acquisitionPlace)===normalize(target.acquisitionPlace)), "入手場所別", normalize(target.acquisitionPlace)),
     make(poolBase.filter(p=>normalize(p.policy)===normalize(target.policy)), "ポリシー", normalize(target.policy)),
-    make(poolBase.filter(p=>normalize(p.mainPosition)===normalize(target.mainPosition)), "ポジション", normalize(target.mainPosition)),
+    make(
+      poolBase.filter(p=>hasAnySuitablePosition(p, getSuitablePositions(target))),
+      "適性ポジション",
+      formatSuitablePositions(target)
+    ),
     make(poolBase.filter(p=>normalize(p.playStyle)===normalize(target.playStyle)), "プレイスタイル", normalize(target.playStyle)),
   ];
 }
@@ -1144,6 +1148,18 @@ function getSuitablePositions(player){
   if(main && !list.includes(main)) list.unshift(main);
   if(!list.length && main) list.push(main);
   return [...new Set(list)];
+}
+
+function formatSuitablePositions(player){
+  const positions = getSuitablePositions(player);
+  return positions.length ? positions.join("/") : "-";
+}
+
+function hasAnySuitablePosition(player, positions){
+  const own = getSuitablePositions(player);
+  const targets = (Array.isArray(positions) ? positions : [positions]).map(normalizePosition).filter(Boolean);
+  if(!targets.length) return true;
+  return targets.some(pos => own.includes(pos));
 }
 
 function hasSuitablePosition(player, position){
@@ -1191,7 +1207,7 @@ function calcRankCombos(target, goldOnly=false){
       else if(corePS && polOk && !posOk) hasPosDiff = true;
     }
 
-    // 排他的（優先: 完全一致 > ポリシー違い > ポジション違い）
+    // 排他的（優先: 完全一致 > ポリシー違い > 適性ポジション違い）
     if(hasFull) full.push(c);
     else if(hasPolDiff) polDiff.push(c);
     else if(hasPosDiff) posDiff.push(c);
@@ -1223,7 +1239,7 @@ function pickOnePlayer(list){
 function calcCompat(target){
   const pid = target.player_id || target.playerId || "";
   const tPol = normalize(target.policy);
-  const tPos = normalize(target.mainPosition);
+  const tPositions = getSuitablePositions(target);
   const tSty = normalize(target.playStyle);
   const tLv  = toNum(target.playStyleLv);
 
@@ -1241,10 +1257,10 @@ function calcCompat(target){
 
   for(const p of others){
     const pPol = normalize(p.policy);
-    const pPos = normalize(p.mainPosition);
     const pSty = normalize(p.playStyle);
 
-    const posOk = (pPos===tPos);
+    // 適性ポジション同士で1つでも重なれば互換ポジション扱い
+    const posOk = hasAnySuitablePosition(p, tPositions);
     const polOk = (pPol===tPol);
     const styOk = styleMatchInclusive(p);
 
@@ -1256,7 +1272,6 @@ function calcCompat(target){
 
   return { full, polDiff, posDiff, styleDiff };
 }
-
 /* ===== Modal ===== */
 function openModal(title, bodyHtml){
   $("modalTitle").textContent = title || "詳細";
@@ -1283,7 +1298,7 @@ function openPlayerDetail(p){
   const overall = toNum(p.overall);
   const maxUp   = toNum(p.maxUpgrade);
   const pol = normalize(p.policy || "-");
-  const pos = normalize(p.mainPosition || "-");
+  const pos = formatSuitablePositions(p);
   const sty = normalize(p.playStyle || "-");
   const lv  = toNum(p.playStyleLv);
   const styShow = `${esc(sty)}${lv!=null?` ${esc(romanLv(lv))}`:""}`;
@@ -1303,7 +1318,7 @@ function openPlayerDetail(p){
       <div class="k">初期総合力</div><div class="v">${overall!=null?esc(overall):"-"}</div>
       <div class="k">最大強化</div><div class="v">${maxUp!=null?esc(maxUp):"-"}</div>
       <div class="k">ポリシー</div><div class="v">${esc(pol)}</div>
-      <div class="k">ポジション</div><div class="v">${esc(pos)}</div>
+      <div class="k">適性ポジション</div><div class="v">${esc(pos)}</div>
       <div class="k">プレイスタイル</div><div class="v">${styShow}</div>
       <div class="k">入手方法</div><div class="v">${esc(acM)}</div>
       <div class="k">入手場所</div><div class="v">${esc(acP)}</div>
@@ -1438,7 +1453,7 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
   const overall = toNum(target.overall);
   const maxUp   = toNum(target.maxUpgrade);
   const pol = normalize(target.policy);
-  const pos = normalize(target.mainPosition);
+  const pos = formatSuitablePositions(target);
   const sty = normalize(target.playStyle);
   const lv  = toNum(target.playStyleLv);
   const styShow = `${esc(sty||"-")}${lv!=null?` ${esc(romanLv(lv))}`:""}`;
@@ -1474,7 +1489,7 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
         <div>${maxUp!=null ? esc(maxUp) : "-"}</div>
       </div>
 <div class="hdr">
-  <div>ポリシー</div><div class="center">ポジション</div><div class="center">プレイスタイル</div>
+  <div>ポリシー</div><div class="center">適性ポジション</div><div class="center">プレイスタイル</div>
 </div>
 <div class="row">
   <div class="center">${esc(pol||"-")}</div>
@@ -1522,7 +1537,7 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
 
       ${renderComboLine("完全一致", combos.full, "combo_full")}
       ${renderComboLine("ポリシー違い", combos.polDiff, "combo_pol")}
-      ${renderComboLine("ポジション違い", combos.posDiff, "combo_pos")}
+      ${renderComboLine("適性ポジション違い", combos.posDiff, "combo_pos")}
     </div>
 
     <!-- ③ Compatibility -->
@@ -1534,7 +1549,7 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
 
       ${renderCompatLine("完全一致", compat.full, compatPickFull, "compat_full")}
       ${renderCompatLine("ポリシー違い", compat.polDiff, compatPickPol, "compat_pol")}
-      ${renderCompatLine("ポジション違い", compat.posDiff, compatPickPos, "compat_pos")}
+      ${renderCompatLine("適性ポジション違い", compat.posDiff, compatPickPos, "compat_pos")}
       ${renderCompatLine("プレイスタイル違い", compat.styleDiff, compatPickSty, "compat_style")}
     </div>
   `;
@@ -1565,7 +1580,7 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
       const key = el.getAttribute("data-combo-key");
       if(key==="combo_full") openComboList("フォメコン適性：完全一致", combos.full);
       if(key==="combo_pol") openComboList("フォメコン適性：ポリシー違い", combos.polDiff);
-      if(key==="combo_pos") openComboList("フォメコン適性：ポジション違い", combos.posDiff);
+      if(key==="combo_pos") openComboList("フォメコン適性：適性ポジション違い", combos.posDiff);
     });
   });
 
@@ -1578,7 +1593,7 @@ if (rarityRaw !== null && rarityRaw !== undefined && String(rarityRaw).trim() !=
       const key = el.getAttribute("data-compat-key");
       if(key==="compat_full") openCompatList("互換選手：完全一致", compat.full);
       if(key==="compat_pol") openCompatList("互換選手：ポリシー違い", compat.polDiff);
-      if(key==="compat_pos") openCompatList("互換選手：ポジション違い", compat.posDiff);
+      if(key==="compat_pos") openCompatList("互換選手：適性ポジション違い", compat.posDiff);
       if(key==="compat_style") openCompatList("互換選手：プレイスタイル違い", compat.styleDiff);
     });
   });
@@ -1769,7 +1784,7 @@ lines.push(`<div class="mLine"><span class="mKey">レアリティ</span><span cl
   lines.push(`<div class="mLine"><span class="mKey">最大強化</span><span class="mVal">${esc2(p.maxUpgrade ?? "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">ポリシー</span><span class="mVal">${esc2(p.policy ?? "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">プレイスタイル</span><span class="mVal">${esc2(ps)} ${esc2(lv)}</span></div>`);
-  lines.push(`<div class="mLine"><span class="mKey">メインポジション</span><span class="mVal">${esc2(p.mainPosition ?? "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">適性ポジション</span><span class="mVal">${esc2(formatSuitablePositions(p))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">メインスキル</span><span class="mVal">${esc2(p.mainSkill ?? "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">メイン特徴</span><span class="mVal">${esc2(p.mainTrait ?? "-")}</span></div>`);
 

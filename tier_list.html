@@ -2,884 +2,280 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>ティア表メーカー | サカつく2026 DB</title>
+  <link rel="canonical" href="https://sakatsuku2026-db.com/tier_list.html">
   <style>
-:root{
-  --bg:#0f172a;
-  --panel:#111827;
-  --line:#334155;
-  --text:#e5e7eb;
-  --muted:#94a3b8;
-  --accent:#22c55e;
-  --danger:#ef4444;
-  --shadow:0 10px 24px rgba(0,0,0,.24);
-  --card-w:70px;
-  --label-w:46px;
-  --gap:4px;
-}
+    :root{
+      --bg:#f4f7fb;
+      --ink:#102033;
+      --muted:#64748b;
+      --card:#ffffff;
+      --line:#dbe5f1;
+      --blue:#155f80;
+      --blue2:#1e88ff;
+      --green:#11a87b;
+      --orange:#f59e0b;
+      --red:#ef4444;
+      --shadow:0 18px 45px rgba(15,23,42,.10);
+      --shadow2:0 8px 22px rgba(15,23,42,.08);
+      --radius:24px;
+      --card-w:74px;
+      --label-w:66px;
+      --gap:6px;
+    }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:linear-gradient(180deg,#0b1120 0%,#0f172a 100%);
-      color:var(--text);
+      font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(30,136,255,.18), transparent 34rem),
+        radial-gradient(circle at top right, rgba(245,158,11,.15), transparent 30rem),
+        linear-gradient(180deg,#f8fbff 0%,var(--bg) 100%);
     }
     a{color:inherit;text-decoration:none}
-    .page{
-      max-width:530px;
-      margin:0 auto;
-      padding:10px;
+    .page{max-width:1180px;margin:0 auto;padding:14px 14px 90px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:6px 0 14px;flex-wrap:wrap}
+    .navBtn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      min-height:42px;padding:10px 14px;border-radius:999px;
+      background:rgba(255,255,255,.88);border:1px solid rgba(21,95,128,.16);
+      color:#155f80;font-weight:900;box-shadow:var(--shadow2);backdrop-filter:blur(10px);
     }
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:8px;
-      margin-bottom:10px;
-      flex-wrap:wrap;
+    .hero{
+      position:relative;overflow:hidden;border-radius:30px;padding:24px;
+      background:linear-gradient(135deg,#0f172a 0%,#155f80 58%,#1e88ff 100%);
+      color:#fff;box-shadow:var(--shadow);margin-bottom:16px;
     }
-    .title-wrap h1{
-      margin:0;
-      font-size:22px;
-      line-height:1.15;
-      letter-spacing:.02em;
-    }
-    .title-wrap p{
-      margin:4px 0 0;
-      color:var(--muted);
-      font-size:11px;
-    }
-    .back-btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:34px;
-      padding:0 10px;
-      border-radius:10px;
-      border:1px solid #4b5563;
-      background:#111827;
-      font-weight:700;
-      font-size:12px;
-      box-shadow:var(--shadow);
-    }
+    .hero:before{content:"";position:absolute;right:-70px;top:-90px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.16)}
+    .hero:after{content:"";position:absolute;left:-90px;bottom:-130px;width:260px;height:260px;border-radius:50%;background:rgba(245,158,11,.18)}
+    .heroInner{position:relative;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end}
+    h1{margin:0;font-size:clamp(28px,4.7vw,48px);line-height:1.1;letter-spacing:.02em;font-weight:1000}
+    .lead{margin:10px 0 0;color:rgba(255,255,255,.82);font-weight:800;line-height:1.65;font-size:14px;max-width:760px}
+    .heroStats{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .statPill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:10px 12px;min-width:116px;backdrop-filter:blur(10px)}
+    .statPill .k{font-size:11px;color:rgba(255,255,255,.72);font-weight:900}.statPill .v{font-size:22px;font-weight:1000;margin-top:2px}
 
-.controls{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  padding:10px;
-  border:1px solid var(--line);
-  background:rgba(17,24,39,.92);
-  border-radius:14px;
-  box-shadow:var(--shadow);
-  margin-bottom:10px;
-}
-    .field{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-      min-width:0;
+    .controls{
+      display:grid;grid-template-columns:1.5fr repeat(3,1fr) auto auto auto;gap:10px;align-items:end;
+      padding:14px;border:1px solid rgba(15,23,42,.08);background:rgba(255,255,255,.92);
+      border-radius:24px;box-shadow:var(--shadow);margin-bottom:16px;backdrop-filter:blur(10px);
     }
-    .field label{
-      font-size:11px;
-      color:var(--muted);
-      font-weight:700;
+    .field{display:flex;flex-direction:column;gap:6px;min-width:0}
+    .field label{font-size:12px;color:#334155;font-weight:900}
+    .field input,.field select{
+      width:100%;height:44px;border-radius:14px;border:2px solid #dbe5f1;background:#fff;color:#102033;
+      padding:0 12px;font-size:14px;font-weight:900;outline:none;
     }
-    .field input,
-    .field select{
-      width:100%;
-      height:34px;
-      border-radius:10px;
-      border:1px solid #475569;
-      background:#0f172a;
-      color:var(--text);
-      padding:0 10px;
-      font-size:12px;
-    }
+    .field input:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(21,95,128,.10)}
     .btn{
-      height:34px;
-      border:none;
-      border-radius:10px;
-      padding:0 10px;
-      font-size:12px;
-      font-weight:800;
-      cursor:pointer;
-      white-space:nowrap;
-      box-shadow:var(--shadow);
+      height:44px;border:0;border-radius:14px;padding:0 14px;font-size:14px;font-weight:1000;cursor:pointer;white-space:nowrap;
+      box-shadow:0 10px 18px rgba(15,23,42,.10);
     }
-    .btn-main{background:var(--accent); color:#052e16;}
-    .btn-sub{background:#1f2937; color:var(--text); border:1px solid #475569;}
-    .btn-danger{background:#7f1d1d; color:#fee2e2; border:1px solid #b91c1c;}
+    .btn-main{background:linear-gradient(180deg,#f8a51b,#f59e0b);color:#fff}
+    .btn-sub{background:#fff;color:#155f80;border:1px solid rgba(21,95,128,.20)}
+    .btn-danger{background:#fff1f2;color:#be123c;border:1px solid rgba(190,18,60,.18)}
 
-    .stack{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .panel{
-      border:1px solid var(--line);
-      background:rgba(17,24,39,.92);
-      border-radius:14px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .panel-head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:8px;
-      padding:10px 12px;
-      border-bottom:1px solid rgba(71,85,105,.7);
-    }
-    .panel-head h2{
-      margin:0;
-      font-size:15px;
-    }
-    .panel-head .sub{
-      color:var(--muted);
-      font-size:11px;
-      font-weight:700;
-    }
+    .layout{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+    .panel{background:rgba(255,255,255,.92);border:1px solid rgba(15,23,42,.08);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .panelHead{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:16px 18px 12px;border-bottom:1px solid #edf2f7}
+    .panelTitle{margin:0;font-size:20px;font-weight:1000}.panelSub{margin:4px 0 0;color:var(--muted);font-size:13px;font-weight:800;line-height:1.5}
+    .countBadge{display:inline-flex;align-items:center;justify-content:center;min-width:72px;border-radius:999px;padding:8px 12px;background:#eef7ff;color:#155f80;border:1px solid rgba(21,95,128,.18);font-size:13px;font-weight:1000}
 
-    .board-wrap{
-      padding:8px;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
-.tier-zone{
-  position:relative;
-  min-height:70px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.08);
-  overflow:hidden;
-  padding-left:calc(var(--label-w) + 5px);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)),
-        radial-gradient(circle at top left, rgba(255,255,255,.06), transparent 28%);
-    }
-    .tier-zone[data-tier="S"]{background-color:rgba(127,29,29,.55)}
-    .tier-zone[data-tier="A"]{background-color:rgba(133,77,14,.52)}
-    .tier-zone[data-tier="B"]{background-color:rgba(20,83,45,.52)}
-    .tier-zone[data-tier="C"]{background-color:rgba(30,64,175,.45)}
-    .tier-label{
-      position:absolute;
-      left:0;
-      top:0;
-      bottom:0;
-      width:var(--label-w);
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      border-right:1px solid rgba(255,255,255,.12);
-      background:rgba(15,23,42,.52);
-      backdrop-filter:blur(4px);
-    }
-    .tier-label .grade{
-      font-size:24px;
-      line-height:1;
-      font-weight:900;
-    }
-    .tier-label .count{
-      margin-top:6px;
-      font-size:10px;
-      color:#e2e8f0;
-      font-weight:800;
-    }
-.tier-canvas{
-  min-height:70px;
-  padding:1px;
-  display:flex;
-  flex-wrap:wrap;
-  align-content:flex-start;
-  gap:1px;
-}
+    .poolWrap{padding:14px;overflow-x:auto;overflow-y:hidden;background:linear-gradient(180deg,#fbfdff,#fff)}
+    .poolRow{display:flex;gap:var(--gap);align-items:flex-start;min-height:94px;width:max-content;min-width:100%}
+    .emptyNote{text-align:center;color:var(--muted);font-weight:900;padding:22px;border:2px dashed #dbe5f1;border-radius:18px;background:#fff}
 
-    .pool-wrap{
-      padding:8px;
-      overflow-x:auto;
-      overflow-y:hidden;
-      background:
-        linear-gradient(180deg, rgba(34,197,94,.05), transparent 18%),
-        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
-    }
-    .pool-row{
-      display:flex;
-      gap:var(--gap);
-      align-items:flex-start;
-      min-height:86px;
-      width:max-content;
-      min-width:100%;
-    }
+    .boardWrap{padding:14px;display:grid;gap:10px}
+    .tierZone{position:relative;min-height:92px;border-radius:20px;border:1px solid rgba(15,23,42,.08);overflow:hidden;padding-left:var(--label-w);background:#fff}
+    .tierZone[data-tier="S"]{background:linear-gradient(90deg,rgba(239,68,68,.17),#fff 42%)}
+    .tierZone[data-tier="A"]{background:linear-gradient(90deg,rgba(245,158,11,.18),#fff 42%)}
+    .tierZone[data-tier="B"]{background:linear-gradient(90deg,rgba(17,168,123,.16),#fff 42%)}
+    .tierZone[data-tier="C"]{background:linear-gradient(90deg,rgba(30,136,255,.14),#fff 42%)}
+    .tierLabel{position:absolute;left:0;top:0;bottom:0;width:var(--label-w);display:flex;flex-direction:column;justify-content:center;align-items:center;border-right:1px solid rgba(15,23,42,.08);color:#fff}
+    .tierZone[data-tier="S"] .tierLabel{background:#ef4444}.tierZone[data-tier="A"] .tierLabel{background:#f59e0b}.tierZone[data-tier="B"] .tierLabel{background:#11a87b}.tierZone[data-tier="C"] .tierLabel{background:#1e88ff}
+    .tierLabel .grade{font-size:30px;line-height:1;font-weight:1000}.tierLabel .count{margin-top:7px;font-size:11px;font-weight:1000;opacity:.92}
+    .tierCanvas{min-height:92px;padding:8px;display:flex;flex-wrap:wrap;align-content:flex-start;gap:var(--gap)}
 
-    .empty-note{
-      padding:18px 8px;
-      text-align:center;
-      color:var(--muted);
-      font-size:12px;
-    }
+    .playerCard{width:var(--card-w);flex:0 0 var(--card-w);user-select:none;touch-action:none;cursor:grab;line-height:0;position:relative;transition:transform .12s ease,filter .12s ease}
+    .playerCard:hover{transform:translateY(-2px);filter:brightness(1.03)}
+    .playerCard.dragging{cursor:grabbing;z-index:9999;box-shadow:0 24px 50px rgba(15,23,42,.35)}
+    .playerCard img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid rgba(15,23,42,.14);background:#eef3fb;box-shadow:0 7px 15px rgba(15,23,42,.15);pointer-events:none}
+    .playerCard .nameTip{display:none;position:absolute;left:50%;bottom:100%;transform:translateX(-50%);margin-bottom:6px;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:#0f172a;color:#fff;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:900;line-height:1.2;z-index:5;box-shadow:0 8px 18px rgba(0,0,0,.25)}
+    .playerCard:hover .nameTip{display:block}
+    .dropHighlight{outline:3px dashed rgba(21,95,128,.42);outline-offset:-5px;background-color:rgba(30,136,255,.06)!important}
 
-    .player-card{
-      width:var(--card-w);
-      flex:0 0 var(--card-w);
-      user-select:none;
-      touch-action:none;
-      cursor:grab;
-      line-height:0;
-    }
-    .player-card.dragging{
-      cursor:grabbing;
-      z-index:9999;
-      box-shadow:0 18px 48px rgba(0,0,0,.45);
-    }
-    .player-card img{
-      display:block;
-      width:100%;
-      height:auto;
-      border-radius:6px;
-      border:1px solid rgba(255,255,255,.16);
-      background:#0f172a;
-      box-shadow:0 4px 10px rgba(0,0,0,.22);
-      pointer-events:none;
-    }
+    .footerNote{margin-top:12px;color:var(--muted);font-size:12px;font-weight:800;line-height:1.6;text-align:right}
 
-    .drop-highlight{
-      outline:2px dashed rgba(255,255,255,.55);
-      outline-offset:-4px;
-    }
+    .capture-mode .controls,.capture-mode .pool-panel,.capture-mode .navBtn,.capture-mode .footerNote{display:none!important}
+    .capture-mode body{background:#fff}
+    .capture-mode .page{max-width:1120px;padding:8px}
+    .capture-mode .hero{box-shadow:none;margin-bottom:10px;border-radius:20px;padding:18px}
+    .capture-mode .heroStats,.capture-mode .lead{display:none}
+    .capture-mode .panel{box-shadow:none;border:none;background:transparent}.capture-mode .panelHead{display:none}.capture-mode .boardWrap{padding:0}
 
-    .footer-note{
-      margin-top:10px;
-      color:var(--muted);
-      font-size:11px;
-      line-height:1.6;
-      text-align:right;
-    }
-
-    .capture-mode .controls,
-    .capture-mode .pool-panel,
-    .capture-mode .back-btn,
-    .capture-mode .footer-note{
-      display:none !important;
-    }
-    .capture-mode .page{
-      max-width:1120px;
-      padding:8px;
-    }
-    .capture-mode .topbar{
-      margin-bottom:6px;
-      justify-content:center;
-    }
-    .capture-mode .title-wrap{
-      text-align:center;
-    }
-    .capture-mode .panel{
-      background:transparent;
-      border:none;
-      box-shadow:none;
-    }
-    .capture-mode .panel-head{
-      display:none;
-    }
-    .capture-mode .board-wrap{
-      padding:0;
-    }
-
-    @media (max-width:1100px){
-      .controls{
-        grid-template-columns:1fr 1fr 1fr 1fr;
-      }
-    }
-@media (max-width:760px){
-  :root{
-    --card-w:52px;
-    --label-w:40px;
-    --gap:4px;
-  }
-  .page{padding:8px}
-  .controls{
-    grid-template-columns:1fr 1fr;
-  }
-  .title-wrap h1{
-    font-size:18px;
-  }
-  .title-wrap p{
-    font-size:10px;
-  }
-  .panel-head h2{
-    font-size:13px;
-  }
-  .tier-zone{
-    min-height:57px;
-  }
-  .tier-canvas{
-    min-height:57px;
-    padding:1px;
-  }
-  .tier-label .grade{
-    font-size:18px;
-  }
-  .pool-row{
-    min-height:62px;
-  }
-}
-    @media (max-width:520px){
-      .controls{
-        grid-template-columns:1fr;
-      }
-    }
+    @media(max-width:1080px){.controls{grid-template-columns:repeat(4,minmax(0,1fr))}.controls .btn{width:100%}}
+    @media(max-width:760px){:root{--card-w:56px;--label-w:48px;--gap:4px}.page{padding:10px}.hero{border-radius:24px;padding:20px}.heroInner{grid-template-columns:1fr}.heroStats{justify-content:flex-start}.controls{grid-template-columns:repeat(2,minmax(0,1fr));padding:12px;border-radius:20px}.tierZone{min-height:68px;border-radius:16px}.tierCanvas{min-height:68px;padding:5px}.poolRow{min-height:70px}.tierLabel .grade{font-size:22px}.panelTitle{font-size:18px}}
+    @media(max-width:480px){.controls{grid-template-columns:1fr}.statPill{min-width:calc(50% - 4px)}.field input,.field select,.btn{height:42px}.panelHead{padding:14px}.boardWrap,.poolWrap{padding:10px}}
   </style>
 </head>
 <body>
   <div class="page">
     <div class="topbar">
-      <div class="title-wrap">
-        <h1>サカつく2026 ティア表メーカー</h1>
-        <p>ドラッグで S / A / B / C に配置でき、ティア内は左から自動整列されます。（スクショモードはリロードで元画面に戻ります）</p>
-      </div>
-      <a href="index.html" class="back-btn">← サイトに戻る</a>
+      <a href="index.html" class="navBtn">← サイトに戻る</a>
+      <a href="player_catalog.html" class="navBtn">★ 選手図鑑</a>
     </div>
 
+    <section class="hero">
+      <div class="heroInner">
+        <div>
+          <h1>サカつく2026 ティア表メーカー</h1>
+          <p class="lead">選手カードをドラッグして S / A / B / C に配置できます。絞り込みは適性ポジション（suitablePositions）基準で判定します。</p>
+        </div>
+        <div class="heroStats">
+          <div class="statPill"><div class="k">表示選手</div><div class="v" id="visibleCount">-</div></div>
+          <div class="statPill"><div class="k">配置済み</div><div class="v" id="placedCount">-</div></div>
+        </div>
+      </div>
+    </section>
+
     <div class="controls">
-      <div class="field">
-        <label for="keywordInput">選手名検索</label>
-        <input id="keywordInput" type="text" placeholder="例：ロナウド、メッシ" />
-      </div>
-      <div class="field">
-        <label for="policySelect">ポリシー</label>
-        <select id="policySelect">
-          <option value="">全て</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="positionSelect">ポジション</label>
-        <select id="positionSelect">
-          <option value="">全て</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="placeSelect">入手場所</label>
-        <select id="placeSelect">
-          <option value="">全て</option>
-        </select>
-      </div>
+      <div class="field"><label for="keywordInput">選手名検索</label><input id="keywordInput" type="text" placeholder="例：ロナウド、メッシ" /></div>
+      <div class="field"><label for="policySelect">ポリシー</label><select id="policySelect"><option value="">全て</option></select></div>
+      <div class="field"><label for="positionSelect">適性ポジション</label><select id="positionSelect"><option value="">全て</option></select></div>
+      <div class="field"><label for="placeSelect">入手場所</label><select id="placeSelect"><option value="">全て</option></select></div>
       <button id="resetFiltersBtn" class="btn btn-sub" type="button">絞り込み解除</button>
       <button id="captureBtn" class="btn btn-main" type="button">スクショモード</button>
       <button id="clearSaveBtn" class="btn btn-danger" type="button">最初からやり直す</button>
     </div>
 
-    <div class="stack">
+    <div class="layout">
       <section class="panel pool-panel">
-        <div class="panel-head">
-          <div>
-            <h2>未配置選手※横スクロールできます※</h2>
-          </div>
-          <div class="sub"><span id="poolCount">0</span>人</div>
-        </div>
-        <div id="poolWrap" class="pool-wrap" data-drop-zone="pool">
-          <div id="poolRow" class="pool-row"></div>
-          <div id="poolEmpty" class="empty-note" style="display:none;">絞り込み条件に一致する未配置選手はいません。</div>
-        </div>
+        <div class="panelHead"><div><h2 class="panelTitle">未配置選手</h2><p class="panelSub">横スクロールできます。カードをティア表へドラッグしてください。</p></div><div class="countBadge"><span id="poolCount">0</span>人</div></div>
+        <div id="poolWrap" class="poolWrap" data-drop-zone="pool"><div id="poolRow" class="poolRow"></div><div id="poolEmpty" class="emptyNote" style="display:none;">絞り込み条件に一致する未配置選手はいません。</div></div>
       </section>
 
       <section class="panel board-panel">
-        <div class="panel-head">
-          <div>
-            <h2>ティア表</h2>
-            <div class="sub">ドラッグで移動 / 各ティア内は左から自動整列</div>
-          </div>
-        </div>
-        <div class="board-wrap">
-          <div class="tier-zone" data-drop-zone="S" data-tier="S">
-            <div class="tier-label"><div class="grade">S</div><div class="count" id="count-S">0人</div></div>
-            <div class="tier-canvas" id="canvas-S"></div>
-          </div>
-          <div class="tier-zone" data-drop-zone="A" data-tier="A">
-            <div class="tier-label"><div class="grade">A</div><div class="count" id="count-A">0人</div></div>
-            <div class="tier-canvas" id="canvas-A"></div>
-          </div>
-          <div class="tier-zone" data-drop-zone="B" data-tier="B">
-            <div class="tier-label"><div class="grade">B</div><div class="count" id="count-B">0人</div></div>
-            <div class="tier-canvas" id="canvas-B"></div>
-          </div>
-          <div class="tier-zone" data-drop-zone="C" data-tier="C">
-            <div class="tier-label"><div class="grade">C</div><div class="count" id="count-C">0人</div></div>
-            <div class="tier-canvas" id="canvas-C"></div>
-          </div>
+        <div class="panelHead"><div><h2 class="panelTitle">ティア表</h2><p class="panelSub">ティア内の並び順もドラッグで調整できます。</p></div></div>
+        <div class="boardWrap">
+          <div class="tierZone" data-drop-zone="S" data-tier="S"><div class="tierLabel"><div class="grade">S</div><div class="count" id="count-S">0人</div></div><div class="tierCanvas" id="canvas-S"></div></div>
+          <div class="tierZone" data-drop-zone="A" data-tier="A"><div class="tierLabel"><div class="grade">A</div><div class="count" id="count-A">0人</div></div><div class="tierCanvas" id="canvas-A"></div></div>
+          <div class="tierZone" data-drop-zone="B" data-tier="B"><div class="tierLabel"><div class="grade">B</div><div class="count" id="count-B">0人</div></div><div class="tierCanvas" id="canvas-B"></div></div>
+          <div class="tierZone" data-drop-zone="C" data-tier="C"><div class="tierLabel"><div class="grade">C</div><div class="count" id="count-C">0人</div></div><div class="tierCanvas" id="canvas-C"></div></div>
         </div>
       </section>
     </div>
 
+    <div class="footerNote">※配置はブラウザの localStorage に保存されます。スクショモードはもう一度押すと通常表示に戻ります。</div>
   </div>
 
   <script>
     (() => {
-      const STORAGE_KEY = "sakatsuku2026_tier_list_v3";
+      const STORAGE_KEY = "sakatsuku2026_tier_list_v4_suitable_positions";
       const IMAGE_BASE = "img/players/";
       const TIERS = ["S", "A", "B", "C"];
-
-      const state = {
-        players: [],
-        placement: {},
-        filter: {
-          keyword: "",
-          policy: "",
-          position: "",
-          acquisitionPlace: ""
-        },
-        dragging: null,
-        captureMode: false
-      };
-
+      const state = { players: [], placement: {}, filter: { keyword:"", policy:"", position:"", acquisitionPlace:"" }, dragging:null, captureMode:false };
       const els = {
-        keywordInput: document.getElementById("keywordInput"),
-        policySelect: document.getElementById("policySelect"),
-        positionSelect: document.getElementById("positionSelect"),
-        placeSelect: document.getElementById("placeSelect"),
-        poolRow: document.getElementById("poolRow"),
-        poolWrap: document.getElementById("poolWrap"),
-        poolEmpty: document.getElementById("poolEmpty"),
-        poolCount: document.getElementById("poolCount"),
-        resetFiltersBtn: document.getElementById("resetFiltersBtn"),
-        captureBtn: document.getElementById("captureBtn"),
-        clearSaveBtn: document.getElementById("clearSaveBtn"),
-        canvases: {
-          S: document.getElementById("canvas-S"),
-          A: document.getElementById("canvas-A"),
-          B: document.getElementById("canvas-B"),
-          C: document.getElementById("canvas-C")
-        },
-        counts: {
-          S: document.getElementById("count-S"),
-          A: document.getElementById("count-A"),
-          B: document.getElementById("count-B"),
-          C: document.getElementById("count-C")
-        }
+        keywordInput: document.getElementById("keywordInput"), policySelect: document.getElementById("policySelect"), positionSelect: document.getElementById("positionSelect"), placeSelect: document.getElementById("placeSelect"), poolRow: document.getElementById("poolRow"), poolWrap: document.getElementById("poolWrap"), poolEmpty: document.getElementById("poolEmpty"), poolCount: document.getElementById("poolCount"), visibleCount: document.getElementById("visibleCount"), placedCount: document.getElementById("placedCount"), resetFiltersBtn: document.getElementById("resetFiltersBtn"), captureBtn: document.getElementById("captureBtn"), clearSaveBtn: document.getElementById("clearSaveBtn"), canvases:{S:document.getElementById("canvas-S"),A:document.getElementById("canvas-A"),B:document.getElementById("canvas-B"),C:document.getElementById("canvas-C")}, counts:{S:document.getElementById("count-S"),A:document.getElementById("count-A"),B:document.getElementById("count-B"),C:document.getElementById("count-C")}
       };
-
-      function normalizePlayer(player) {
-        return {
-          player_id: player.player_id || player.playerId || "",
-          name: player.name || "",
-          policy: player.policy || "",
-          mainPosition: player.mainPosition || "",
-          acquisitionPlace: player.acquisitionPlace || ""
-        };
+      const normalize = (v)=>String(v ?? "").trim();
+      const esc = (s)=>String(s ?? "").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+      const getId = (p)=>normalize(p.player_id || p.playerId || p.id || "");
+      function normalizePosition(v){ return normalize(v).toUpperCase(); }
+      function getSuitablePositionsRaw(player){
+        const main = normalizePosition(player.mainPosition || player.position || player["ポジション"] || "");
+        const raw = player.suitablePositions ?? player.suitable_positions ?? player["適性ポジション"] ?? null;
+        let list = [];
+        if(Array.isArray(raw)) list = raw.map(normalizePosition).filter(Boolean);
+        else if(typeof raw === "string" && raw.trim()) list = raw.split(/[\/／,，、\s]+/).map(normalizePosition).filter(Boolean);
+        if(main && !list.includes(main)) list.unshift(main);
+        if(!list.length && main) list.push(main);
+        return [...new Set(list)];
       }
-
-      function loadPlacement() {
-        try {
-          const raw = localStorage.getItem(STORAGE_KEY);
-          const parsed = raw ? JSON.parse(raw) : {};
-          if (!parsed || typeof parsed !== "object") return {};
-          return parsed;
-        } catch {
-          return {};
+      function normalizePlayer(player){
+        const player_id = getId(player);
+        const mainPosition = normalize(player.mainPosition || player.position || player["ポジション"] || "");
+        return { player_id, name:normalize(player.name || player.player_name || ""), policy:normalize(player.policy || player["ポリシー"] || ""), mainPosition, suitablePositions:getSuitablePositionsRaw(player), acquisitionPlace:normalize(player.acquisitionPlace || player.acquisition_place || player["入手場所"] || "") };
+      }
+      function positionText(player){ return (player.suitablePositions && player.suitablePositions.length) ? player.suitablePositions.join("/") : (player.mainPosition || "-"); }
+      function loadPlacement(){ try{ const raw=localStorage.getItem(STORAGE_KEY); const parsed=raw?JSON.parse(raw):{}; return parsed && typeof parsed === "object" ? parsed : {}; }catch{ return {}; } }
+      function savePlacement(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(state.placement)); }
+      function ensurePlacement(playerId){ if(!state.placement[playerId]) state.placement[playerId]={zone:"pool",order:999999}; if(typeof state.placement[playerId].order!=="number") state.placement[playerId].order=999999; return state.placement[playerId]; }
+      function matchesFilters(player){
+        const keyword = state.filter.keyword.trim().toLowerCase();
+        if(keyword && !player.name.toLowerCase().includes(keyword)) return false;
+        if(state.filter.policy && player.policy !== state.filter.policy) return false;
+        if(state.filter.position && !player.suitablePositions.includes(state.filter.position)) return false;
+        if(state.filter.acquisitionPlace && player.acquisitionPlace !== state.filter.acquisitionPlace) return false;
+        return true;
+      }
+      function getZonePlayers(zone){ return state.players.filter(p=>ensurePlacement(p.player_id).zone===zone && matchesFilters(p)).sort((a,b)=>ensurePlacement(a.player_id).order-ensurePlacement(b.player_id).order); }
+      function getVisiblePoolPlayers(){ return getZonePlayers("pool"); }
+      function createCard(player){
+        const card=document.createElement("div"); card.className="playerCard"; card.dataset.playerId=player.player_id; card.title=`${player.name}｜${positionText(player)}`;
+        card.innerHTML=`<span class="nameTip">${esc(player.name)}</span><img src="${IMAGE_BASE}${esc(player.player_id)}.png" alt="${esc(player.name)}" loading="lazy">`;
+        card.addEventListener("pointerdown", startDrag); return card;
+      }
+      function updateStats(){ const visible=state.players.filter(matchesFilters).length; const placed=state.players.filter(p=>TIERS.includes(ensurePlacement(p.player_id).zone)).length; els.visibleCount.textContent=String(visible); els.placedCount.textContent=String(placed); }
+      function renderPool(){ const players=getVisiblePoolPlayers(); els.poolRow.innerHTML=""; players.forEach(p=>els.poolRow.appendChild(createCard(p))); els.poolCount.textContent=String(players.length); els.poolEmpty.style.display=players.length?"none":"block"; }
+      function renderTiers(){ TIERS.forEach(tier=>{ const players=getZonePlayers(tier); els.canvases[tier].innerHTML=""; players.forEach(p=>els.canvases[tier].appendChild(createCard(p))); els.counts[tier].textContent=`${players.length}人`; }); }
+      function renderAll(){ renderPool(); renderTiers(); updateStats(); }
+      function addOptions(select, values){ values.forEach(v=>{ const opt=document.createElement("option"); opt.value=v; opt.textContent=v; select.appendChild(opt); }); }
+      function populateFilters(){
+        const policies=[...new Set(state.players.map(p=>p.policy).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ja"));
+        const positions=[...new Set(state.players.flatMap(p=>p.suitablePositions || []).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ja"));
+        const places=[...new Set(state.players.map(p=>p.acquisitionPlace).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ja"));
+        addOptions(els.policySelect, policies); addOptions(els.positionSelect, positions); addOptions(els.placeSelect, places);
+      }
+      function getNextOrder(zone){ const orders=state.players.map(p=>ensurePlacement(p.player_id)).filter(pl=>pl.zone===zone).map(pl=>pl.order); return orders.length?Math.max(...orders)+1:0; }
+      function normalizeZoneOrder(zone){ state.players.filter(p=>ensurePlacement(p.player_id).zone===zone).sort((a,b)=>ensurePlacement(a.player_id).order-ensurePlacement(b.player_id).order).forEach((p,i)=>ensurePlacement(p.player_id).order=i); }
+      function reorderWithinZone(playerId, zone, clientX, clientY){
+        const container = zone === "pool" ? els.poolRow : els.canvases[zone];
+        const cards=[...container.querySelectorAll(".playerCard")].filter(card=>card.dataset.playerId!==playerId);
+        let insertIndex=cards.length;
+        for(let i=0;i<cards.length;i++){ const r=cards[i].getBoundingClientRect(); const cx=r.left+r.width/2; if(clientY<r.top || (clientY>=r.top && clientY<=r.bottom && clientX<cx)){ insertIndex=i; break; } }
+        const moving=state.players.find(p=>p.player_id===playerId); if(!moving) return;
+        const zonePlayers=state.players.filter(p=>ensurePlacement(p.player_id).zone===zone && p.player_id!==playerId).sort((a,b)=>ensurePlacement(a.player_id).order-ensurePlacement(b.player_id).order);
+        zonePlayers.splice(insertIndex,0,moving); zonePlayers.forEach((p,i)=>{ const pl=ensurePlacement(p.player_id); pl.zone=zone; pl.order=i; });
+      }
+      function clearDropHighlights(){ document.querySelectorAll("[data-drop-zone]").forEach(el=>el.classList.remove("dropHighlight")); }
+      function getDropZone(clientX, clientY){ return document.elementsFromPoint(clientX, clientY).find(el=>el?.dataset?.dropZone); }
+      function startDrag(event){
+        const card=event.currentTarget; const playerId=card.dataset.playerId; const rect=card.getBoundingClientRect(); const offsetX=event.clientX-rect.left; const offsetY=event.clientY-rect.top; const ghost=card.cloneNode(true);
+        ghost.classList.add("dragging"); ghost.style.position="fixed"; ghost.style.left=rect.left+"px"; ghost.style.top=rect.top+"px"; ghost.style.width=rect.width+"px"; ghost.style.zIndex="9999"; ghost.style.pointerEvents="none"; document.body.appendChild(ghost);
+        state.dragging={playerId,ghost,offsetX,offsetY}; updateGhost(event.clientX,event.clientY); document.addEventListener("pointermove",onPointerMove); document.addEventListener("pointerup",onPointerUp,{once:true});
+      }
+      function updateGhost(clientX,clientY){ if(!state.dragging) return; const {ghost,offsetX,offsetY}=state.dragging; ghost.style.left=(clientX-offsetX)+"px"; ghost.style.top=(clientY-offsetY)+"px"; }
+      function onPointerMove(event){ updateGhost(event.clientX,event.clientY); clearDropHighlights(); const zone=getDropZone(event.clientX,event.clientY); if(zone) zone.classList.add("dropHighlight"); }
+      function onPointerUp(event){
+        document.removeEventListener("pointermove",onPointerMove); clearDropHighlights(); if(!state.dragging) return; const {playerId,ghost}=state.dragging; const zone=getDropZone(event.clientX,event.clientY); ghost.remove(); state.dragging=null; if(!zone) return;
+        const dropZone=zone.dataset.dropZone; const currentZone=ensurePlacement(playerId).zone;
+        if(dropZone==="pool" || TIERS.includes(dropZone)){
+          if(currentZone!==dropZone){ ensurePlacement(playerId).zone=dropZone; ensurePlacement(playerId).order=getNextOrder(dropZone); }
+          reorderWithinZone(playerId,dropZone,event.clientX,event.clientY); normalizeZoneOrder(dropZone); if(currentZone!==dropZone) normalizeZoneOrder(currentZone); savePlacement(); renderAll();
         }
       }
-
-      function savePlacement() {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.placement));
+      function bindEvents(){
+        els.keywordInput.addEventListener("input",e=>{state.filter.keyword=e.target.value||"";renderAll();});
+        els.policySelect.addEventListener("change",e=>{state.filter.policy=e.target.value||"";renderAll();});
+        els.positionSelect.addEventListener("change",e=>{state.filter.position=e.target.value||"";renderAll();});
+        els.placeSelect.addEventListener("change",e=>{state.filter.acquisitionPlace=e.target.value||"";renderAll();});
+        els.resetFiltersBtn.addEventListener("click",()=>{state.filter={keyword:"",policy:"",position:"",acquisitionPlace:""}; els.keywordInput.value=""; els.policySelect.value=""; els.positionSelect.value=""; els.placeSelect.value=""; renderAll();});
+        els.captureBtn.addEventListener("click",()=>{state.captureMode=!state.captureMode; document.body.classList.toggle("capture-mode",state.captureMode); els.captureBtn.textContent=state.captureMode?"通常表示に戻す":"スクショモード";});
+        els.clearSaveBtn.addEventListener("click",()=>{ if(!confirm("保存済みのティア配置を削除します。よろしいですか？")) return; localStorage.removeItem(STORAGE_KEY); state.placement={}; state.players.forEach((p,i)=>state.placement[p.player_id]={zone:"pool",order:i}); renderAll(); });
       }
-
-function ensurePlacement(playerId) {
-  if (!state.placement[playerId]) {
-    state.placement[playerId] = { zone: "pool", order: 999999 };
-  }
-  if (typeof state.placement[playerId].order !== "number") {
-    state.placement[playerId].order = 999999;
-  }
-  return state.placement[playerId];
-}
-
-function matchesFilters(player) {
-  const keyword = state.filter.keyword.trim().toLowerCase();
-
-  if (keyword && !player.name.toLowerCase().includes(keyword)) return false;
-  if (state.filter.policy && player.policy !== state.filter.policy) return false;
-  if (state.filter.position && player.mainPosition !== state.filter.position) return false;
-  if (state.filter.acquisitionPlace && player.acquisitionPlace !== state.filter.acquisitionPlace) return false;
-
-  return true;
-}
-
-function getZonePlayers(zone) {
-  return state.players
-    .filter((p) => {
-      const placement = ensurePlacement(p.player_id);
-      if (placement.zone !== zone) return false;
-      return matchesFilters(p);
-    })
-    .sort((a, b) => {
-      const pa = ensurePlacement(a.player_id);
-      const pb = ensurePlacement(b.player_id);
-      return pa.order - pb.order;
-    });
-}
-
-function getVisiblePoolPlayers() {
-  return state.players
-    .filter((p) => {
-      const placement = ensurePlacement(p.player_id);
-      if (placement.zone !== "pool") return false;
-      return matchesFilters(p);
-    })
-    .sort((a, b) => {
-      const pa = ensurePlacement(a.player_id);
-      const pb = ensurePlacement(b.player_id);
-      return pa.order - pb.order;
-    });
-}
-
-      function createCard(player) {
-        const card = document.createElement("div");
-        card.className = "player-card";
-        card.dataset.playerId = player.player_id;
-        card.innerHTML = `<img src="${IMAGE_BASE}${player.player_id}.png" alt="${escapeHtml(player.name)}" loading="lazy">`;
-        card.addEventListener("pointerdown", startDrag);
-        return card;
+      function checkImageExists(playerId){ return new Promise(resolve=>{ const img=new Image(); img.onload=()=>resolve(true); img.onerror=()=>resolve(false); img.src=`${IMAGE_BASE}${playerId}.png`; }); }
+      async function filterPlayersWithImages(players){ const checks=await Promise.all(players.map(async player=>({player,ok:await checkImageExists(player.player_id)}))); return checks.filter(x=>x.ok).map(x=>x.player); }
+      async function init(){
+        try{
+          const res=await fetch("players.json",{cache:"no-store"}); if(!res.ok) throw new Error("players.json の読み込みに失敗しました。"); const json=await res.json();
+          const loaded=(Array.isArray(json)?json:[]).map(normalizePlayer).filter(p=>p.player_id).sort((a,b)=>a.player_id.localeCompare(b.player_id,"ja",{numeric:true}));
+          state.players=await filterPlayersWithImages(loaded); state.placement=loadPlacement(); const validIds=new Set(state.players.map(p=>p.player_id)); state.placement=Object.fromEntries(Object.entries(state.placement).filter(([id])=>validIds.has(id)));
+          state.players.forEach((p,i)=>{ const pl=ensurePlacement(p.player_id); if(pl.zone==="pool" && pl.order===999999) pl.order=i; }); normalizeZoneOrder("pool"); TIERS.forEach(normalizeZoneOrder); populateFilters(); bindEvents(); renderAll();
+        }catch(error){ console.error(error); document.querySelector(".page").innerHTML=`<div style="max-width:760px;margin:60px auto;padding:24px;border:1px solid #fecaca;background:#fff;border-radius:22px;box-shadow:0 18px 45px rgba(15,23,42,.10);"><h1 style="margin-top:0;">読み込みエラー</h1><p>players.json を読み込めませんでした。</p><p style="color:#64748b;font-weight:800;">このHTMLと同じ階層に players.json があるか確認してください。</p></div>`; }
       }
-
-      function renderPool() {
-        const players = getVisiblePoolPlayers();
-        els.poolRow.innerHTML = "";
-        players.forEach((player) => {
-          els.poolRow.appendChild(createCard(player));
-        });
-        els.poolCount.textContent = String(players.length);
-        els.poolEmpty.style.display = players.length ? "none" : "block";
-      }
-
-      function renderTiers() {
-        TIERS.forEach((tier) => {
-          const canvas = els.canvases[tier];
-          const players = getZonePlayers(tier);
-          canvas.innerHTML = "";
-          players.forEach((player) => {
-            canvas.appendChild(createCard(player));
-          });
-          els.counts[tier].textContent = `${players.length}人`;
-        });
-      }
-
-      function renderAll() {
-        renderPool();
-        renderTiers();
-      }
-
-      function populateFilters() {
-        const policies = [...new Set(state.players.map(p => p.policy).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ja"));
-        const positions = [...new Set(state.players.map(p => p.mainPosition).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ja"));
-        const places = [...new Set(state.players.map(p => p.acquisitionPlace).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ja"));
-
-        for (const policy of policies) {
-          const opt = document.createElement("option");
-          opt.value = policy;
-          opt.textContent = policy;
-          els.policySelect.appendChild(opt);
-        }
-        for (const position of positions) {
-          const opt = document.createElement("option");
-          opt.value = position;
-          opt.textContent = position;
-          els.positionSelect.appendChild(opt);
-        }
-        for (const place of places) {
-          const opt = document.createElement("option");
-          opt.value = place;
-          opt.textContent = place;
-          els.placeSelect.appendChild(opt);
-        }
-      }
-
-function getNextOrder(zone) {
-  const orders = state.players
-    .map((p) => ensurePlacement(p.player_id))
-    .filter((pl) => pl.zone === zone)
-    .map((pl) => pl.order);
-
-  return orders.length ? Math.max(...orders) + 1 : 0;
-}
-
-function normalizeZoneOrder(zone) {
-  const zonePlayers = state.players
-    .filter((p) => ensurePlacement(p.player_id).zone === zone)
-    .sort((a, b) => ensurePlacement(a.player_id).order - ensurePlacement(b.player_id).order);
-
-  zonePlayers.forEach((player, index) => {
-    ensurePlacement(player.player_id).order = index;
-  });
-}
-
-function reorderWithinZone(playerId, zone, clientX, clientY) {
-  const container = zone === "pool" ? els.poolRow : els.canvases[zone];
-  const cards = [...container.querySelectorAll(".player-card")]
-    .filter((card) => card.dataset.playerId !== playerId);
-
-  let insertIndex = cards.length;
-
-  for (let i = 0; i < cards.length; i++) {
-    const rect = cards[i].getBoundingClientRect();
-    const rowTop = rect.top;
-    const rowBottom = rect.bottom;
-    const centerX = rect.left + rect.width / 2;
-
-    const isAboveThisRow = clientY < rowTop;
-    const isSameRow = clientY >= rowTop && clientY <= rowBottom;
-
-    if (isAboveThisRow || (isSameRow && clientX < centerX)) {
-      insertIndex = i;
-      break;
-    }
-  }
-
-  const movingPlayer = state.players.find((p) => p.player_id === playerId);
-  const zonePlayers = state.players
-    .filter((p) => ensurePlacement(p.player_id).zone === zone && p.player_id !== playerId)
-    .sort((a, b) => ensurePlacement(a.player_id).order - ensurePlacement(b.player_id).order);
-
-  zonePlayers.splice(insertIndex, 0, movingPlayer);
-
-  zonePlayers.forEach((player, index) => {
-    const placement = ensurePlacement(player.player_id);
-    placement.zone = zone;
-    placement.order = index;
-  });
-}
-
-function moveToZone(playerId, zone) {
-  const placement = ensurePlacement(playerId);
-  placement.zone = zone;
-  placement.order = getNextOrder(zone);
-  normalizeZoneOrder(zone);
-  savePlacement();
-  renderAll();
-}
-
-      function clearDropHighlights() {
-        document.querySelectorAll("[data-drop-zone]").forEach(el => el.classList.remove("drop-highlight"));
-      }
-
-      function getDropZone(clientX, clientY) {
-        const targets = document.elementsFromPoint(clientX, clientY);
-        return targets.find(el => el?.dataset?.dropZone);
-      }
-
-      function startDrag(event) {
-        const card = event.currentTarget;
-        const playerId = card.dataset.playerId;
-        const rect = card.getBoundingClientRect();
-        const offsetX = event.clientX - rect.left;
-        const offsetY = event.clientY - rect.top;
-        const ghost = card.cloneNode(true);
-
-        ghost.classList.add("dragging");
-        ghost.style.position = "fixed";
-        ghost.style.left = rect.left + "px";
-        ghost.style.top = rect.top + "px";
-        ghost.style.width = rect.width + "px";
-        ghost.style.zIndex = "9999";
-        document.body.appendChild(ghost);
-
-        state.dragging = { playerId, ghost, offsetX, offsetY };
-        updateGhost(event.clientX, event.clientY);
-
-        document.addEventListener("pointermove", onPointerMove);
-        document.addEventListener("pointerup", onPointerUp, { once: true });
-      }
-
-      function updateGhost(clientX, clientY) {
-        if (!state.dragging) return;
-        const { ghost, offsetX, offsetY } = state.dragging;
-        ghost.style.left = (clientX - offsetX) + "px";
-        ghost.style.top = (clientY - offsetY) + "px";
-      }
-
-      function onPointerMove(event) {
-        updateGhost(event.clientX, event.clientY);
-        clearDropHighlights();
-        const zone = getDropZone(event.clientX, event.clientY);
-        if (zone) zone.classList.add("drop-highlight");
-      }
-
-function onPointerUp(event) {
-  document.removeEventListener("pointermove", onPointerMove);
-  clearDropHighlights();
-
-  if (!state.dragging) return;
-  const { playerId, ghost } = state.dragging;
-  const zone = getDropZone(event.clientX, event.clientY);
-
-  ghost.remove();
-  state.dragging = null;
-
-  if (!zone) return;
-
-  const dropZone = zone.dataset.dropZone;
-  const currentZone = ensurePlacement(playerId).zone;
-
-  if (dropZone === "pool") {
-    if (currentZone !== "pool") {
-      ensurePlacement(playerId).zone = "pool";
-      ensurePlacement(playerId).order = getNextOrder("pool");
-    }
-    reorderWithinZone(playerId, "pool", event.clientX, event.clientY);
-    normalizeZoneOrder("pool");
-    if (currentZone !== "pool" && TIERS.includes(currentZone)) {
-      normalizeZoneOrder(currentZone);
-    }
-    savePlacement();
-    renderAll();
-    return;
-  }
-
-  if (TIERS.includes(dropZone)) {
-    if (currentZone !== dropZone) {
-      ensurePlacement(playerId).zone = dropZone;
-      ensurePlacement(playerId).order = getNextOrder(dropZone);
-    }
-    reorderWithinZone(playerId, dropZone, event.clientX, event.clientY);
-    normalizeZoneOrder(dropZone);
-
-    if (currentZone !== dropZone && currentZone === "pool") {
-      normalizeZoneOrder("pool");
-    }
-    if (currentZone !== dropZone && TIERS.includes(currentZone)) {
-      normalizeZoneOrder(currentZone);
-    }
-
-    savePlacement();
-    renderAll();
-  }
-}
-
-      function escapeHtml(text) {
-        return String(text)
-          .replaceAll("&", "&amp;")
-          .replaceAll("<", "&lt;")
-          .replaceAll(">", "&gt;")
-          .replaceAll('"', "&quot;")
-          .replaceAll("'", "&#39;");
-      }
-
-      function bindEvents() {
-els.keywordInput.addEventListener("input", (e) => {
-  state.filter.keyword = e.target.value || "";
-  renderAll();
-});
-els.policySelect.addEventListener("change", (e) => {
-  state.filter.policy = e.target.value || "";
-  console.log("selected policy:", state.filter.policy);
-  console.log(
-    "pool players after filter:",
-    getVisiblePoolPlayers().map(p => `${p.name}:${p.policy}`)
-  );
-  renderAll();
-});
-els.positionSelect.addEventListener("change", (e) => {
-  state.filter.position = e.target.value || "";
-  renderAll();
-});
-
-els.placeSelect.addEventListener("change", (e) => {
-  state.filter.acquisitionPlace = e.target.value || "";
-  renderAll();
-});
-
-els.resetFiltersBtn.addEventListener("click", () => {
-  state.filter.keyword = "";
-  state.filter.policy = "";
-  state.filter.position = "";
-  state.filter.acquisitionPlace = "";
-  els.keywordInput.value = "";
-  els.policySelect.value = "";
-  els.positionSelect.value = "";
-  els.placeSelect.value = "";
-  renderAll();
-});
-        els.captureBtn.addEventListener("click", () => {
-          state.captureMode = !state.captureMode;
-          document.body.classList.toggle("capture-mode", state.captureMode);
-          els.captureBtn.textContent = state.captureMode ? "通常表示に戻す" : "スクショモード";
-        });
-els.clearSaveBtn.addEventListener("click", () => {
-  const ok = confirm("保存済みのティア配置を削除します。よろしいですか？");
-  if (!ok) return;
-  localStorage.removeItem(STORAGE_KEY);
-  state.placement = {};
-  state.players.forEach((player, index) => {
-    state.placement[player.player_id] = { zone: "pool", order: index };
-  });
-  renderAll();
-});
-      }
-
-      function checkImageExists(playerId) {
-        return new Promise((resolve) => {
-          const img = new Image();
-          img.onload = () => resolve(true);
-          img.onerror = () => resolve(false);
-          img.src = `${IMAGE_BASE}${playerId}.png`;
-        });
-      }
-
-      async function filterPlayersWithImages(players) {
-        const checks = await Promise.all(
-          players.map(async (player) => ({
-            player,
-            ok: await checkImageExists(player.player_id)
-          }))
-        );
-        return checks.filter(item => item.ok).map(item => item.player);
-      }
-
-      async function init() {
-        try {
-          const res = await fetch("players.json", { cache: "no-store" });
-          if (!res.ok) throw new Error("players.json の読み込みに失敗しました。");
-          const json = await res.json();
-
-          const loadedPlayers = (Array.isArray(json) ? json : [])
-            .map(normalizePlayer)
-            .filter(p => p.player_id)
-            .sort((a, b) => a.player_id.localeCompare(b.player_id, "ja"));
-
-          state.players = await filterPlayersWithImages(loadedPlayers);
-
-state.placement = loadPlacement();
-const validIds = new Set(state.players.map(p => p.player_id));
-state.placement = Object.fromEntries(
-  Object.entries(state.placement).filter(([playerId]) => validIds.has(playerId))
-);
-
-state.players.forEach((player, index) => {
-  const placement = ensurePlacement(player.player_id);
-  if (placement.zone === "pool" && placement.order === 999999) {
-    placement.order = index;
-  }
-});
-
-normalizeZoneOrder("pool");
-TIERS.forEach(normalizeZoneOrder);
-
-populateFilters();
-bindEvents();
-renderAll();
-
-        } catch (error) {
-          console.error(error);
-          document.querySelector(".page").innerHTML = `
-            <div style="max-width:760px;margin:60px auto;padding:24px;border:1px solid #7f1d1d;background:#111827;border-radius:16px;">
-              <h1 style="margin-top:0;">読み込みエラー</h1>
-              <p>players.json を読み込めませんでした。</p>
-              <p style="color:#94a3b8;">このHTMLと同じ階層に players.json があるか確認してください。</p>
-            </div>
-          `;
-        }
-      }
-
       init();
     })();
   </script>
