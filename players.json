@@ -9429,32 +9429,6 @@
   {
     "player_id": "P0378",
     "playerId": "P0378",
-    "name": "中村敬斗 〔2026〕",
-    "overall": 6713,
-    "maxUpgrade": 15263,
-    "policy": "カウンター",
-    "playStyle": "ドリブラー",
-    "playStyleLv": 3,
-    "mainPosition": "LM",
-    "acquisitionMethod": "ガチャ",
-    "acquisitionPlace": "日本代表SP選手スカウト",
-    "availablePeriod": "2026年7月20日まで",
-    "mainSkill": "ジャックナイフ",
-    "mainTrait": "ムービングスナイパー",
-    "category": "SP選手",
-    "nationality": "日本",
-    "growthType": "超早熟",
-    "implementedDate": "2026-06-26",
-    "rarity": "★3",
-    "available": true,
-    "suitablePositions": [
-      "LM",
-      "LW"
-    ]
-  },
-  {
-    "player_id": "P0379",
-    "playerId": "P0379",
     "name": "堂安律 〔2026〕",
     "overall": 6792,
     "maxUpgrade": 15471,
@@ -9476,6 +9450,32 @@
     "suitablePositions": [
       "RM",
       "AM"
+    ]
+  },
+  {
+    "player_id": "P0379",
+    "playerId": "P0379",
+    "name": "中村敬斗 〔2026〕",
+    "overall": 6713,
+    "maxUpgrade": 15263,
+    "policy": "カウンター",
+    "playStyle": "ドリブラー",
+    "playStyleLv": 3,
+    "mainPosition": "LM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "日本代表SP選手スカウト",
+    "availablePeriod": "2026年7月20日まで",
+    "mainSkill": "ジャックナイフ",
+    "mainTrait": "ムービングスナイパー",
+    "category": "SP選手",
+    "nationality": "日本",
+    "growthType": "超早熟",
+    "implementedDate": "2026-06-26",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "LM",
+      "LW"
     ]
   },
   {
