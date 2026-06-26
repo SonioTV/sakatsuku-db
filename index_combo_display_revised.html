@@ -2658,27 +2658,51 @@ function getSelectedCombo(){
 function getComboImageSrc(c){
   const direct = getComboField(c, ["image","img","画像","comboImage","formationImage","formation_image"], "");
   if(direct) return direct;
-  const id = safeStr(getComboField(c,["comboId","id","ID"],"")).trim();
-  if(id) return `img/formation_combo/${id}.png`;
-  const name = safeStr(getComboField(c,["name","comboName","formationName","title"],"")).trim();
-  return name ? `img/formation_combo/${encodeURIComponent(name)}.png` : "";
+
+  // フォーメーション画像は「コンボID」ではなく「フォーメーション名」で保存する
+  // 例：img/formation_combo/4-4-2D.png
+  const formation = safeStr(getComboField(c,["formation","formationCode","フォーメーション"],"")).trim();
+  return formation ? `img/formation_combo/${encodeURIComponent(formation)}.png` : "";
 }
 
-function parseComboEffects(effectText){
-  const text = safeStr(effectText).replace(/％/g,"%");
+function parseComboEffectsFromText(effectText){
+  const text = safeStr(effectText).replace(/％/g,"%").trim();
   if(!text || text === "-") return [];
+
+  // 「キック力、パスカット、マーク、走力が80%アップ」のように、
+  // 最後だけに「が80%アップ」が付く表記にも対応する
+  const tail = text.match(/(.+?)が\s*([0-9]+)\s*%\s*アップ$/);
+  if(tail){
+    return tail[1]
+      .split(/[、,，]/)
+      .map(x=>x.trim())
+      .filter(Boolean)
+      .map(name=>({name, value:`${tail[2]}%`}));
+  }
+
   const pieces = text.split(/[、,，]/).map(x=>x.trim()).filter(Boolean);
   const out = [];
   for(const piece of pieces){
     const m = piece.match(/^(.+?)が\s*([0-9]+)\s*%\s*アップ/);
     if(m) out.push({name:m[1].trim(), value:`${m[2]}%`});
-    else out.push({name:piece.replace(/アップ$/,""), value:""});
+    else out.push({name:piece.replace(/アップ$/,""), value:"アップ"});
   }
   return out;
 }
 
-function renderComboEffectTable(effect){
-  const effects = parseComboEffects(effect);
+function getComboEffects(c){
+  const arr = getComboField(c, ["effects","combo_effects","効果一覧"], null);
+  if(Array.isArray(arr) && arr.length){
+    return arr.map(e=>({
+      name: getComboField(e,["status","name","ステータス"],"-"),
+      value: `${getComboField(e,["value","倍率","値"],"-")}%`
+    })).filter(e=>safeStr(e.name) && safeStr(e.name) !== "-");
+  }
+  return parseComboEffectsFromText(getComboField(c, ["effect","効果"], "-"));
+}
+
+function renderComboEffectTable(c){
+  const effects = getComboEffects(c);
   if(!effects.length) return `
     <table class="comboInfoTable">
       <tr><th class="blockTitle">フォーメーションコンボ効果</th></tr>
@@ -2755,7 +2779,7 @@ function renderComboDetail(){
         </tr>
       </table>
 
-      ${renderComboEffectTable(effect)}
+      ${renderComboEffectTable(c)}
 
       <table class="comboInfoTable">
         <tr>
