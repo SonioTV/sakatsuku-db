@@ -1420,29 +1420,111 @@ function simulate(){
     return;
   }
 
-  // policy-dye column: force policy for all slots
-  const availA = [...simulationPlayers];
-  const picksA = [];
-  for(const s of slots){
-    const p = pickBest(availA, s, forcedPolicy || "");
-    picksA.push({slot:s, player:p});
-    if(p){
-      const idx = availA.indexOf(p);
-      if(idx>=0) availA.splice(idx,1);
+  const getPower = (p)=>{
+    const max = Number(p?.maxUpgrade);
+    if(Number.isFinite(max)) return max;
+    const overall = Number(p?.overall);
+    return Number.isFinite(overall) ? overall : -Infinity;
+  };
+
+  const getSlotReqs = (slot)=>{
+    const slotKey = String(slot?.slotNo ?? slot?.slot_no ?? "");
+    return (reqMap.bySlot && slotKey) ? (reqMap.bySlot.get(slotKey) || []) : [];
+  };
+
+  const playerMatchesSlotReq = (player, slot)=>{
+    const reqs = getSlotReqs(slot);
+    if(!reqs.length) return true;
+    const ps = String(player?.playStyle ?? "");
+    const lv = Number(player?.playStyleLv ?? 0);
+    return reqs.some(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
+  };
+
+  const sortPlayersByPower = (arr)=>arr.slice().sort((a,b)=>{
+    const d = getPower(b) - getPower(a);
+    if(d!==0) return d;
+    return String(a?.name||"").localeCompare(String(b?.name||""), "ja");
+  });
+
+  // 発動条件スロットを先に「最大強化」合計が最大になる組み合わせで固定し、残りを総合力順で埋める
+  const buildPicks = (forcePol)=>{
+    const requiredSlots = slots.filter(s=>getSlotReqs(s).length > 0);
+    const normalSlots = slots.filter(s=>getSlotReqs(s).length === 0);
+    const chosenBySlot = new Map();
+    const usedIds = new Set();
+
+    const reqCandidates = requiredSlots.map(slot=>{
+      const list = sortPlayersByPower(simulationPlayers.filter(p=>
+        matchPlayerForSlot(p, combo, String(slot?.position ?? ""), reqMap, "", forcePol, requiredAcq) &&
+        playerMatchesSlotReq(p, slot)
+      ));
+      return { slot, list };
+    });
+
+    // 候補が少ない条件から探索すると、重複選手の除外が安定しやすい
+    reqCandidates.sort((a,b)=>a.list.length - b.list.length || Number(a.slot.slotNo)-Number(b.slot.slotNo));
+
+    let bestScore = -Infinity;
+    let bestMap = new Map();
+    const dfs = (idx, score, map, used)=>{
+      if(idx >= reqCandidates.length){
+        if(score > bestScore){
+          bestScore = score;
+          bestMap = new Map(map);
+        }
+        return;
+      }
+
+      const { slot, list } = reqCandidates[idx];
+      const slotKey = String(slot.slotNo);
+
+      // 候補なしの場合も、他の発動条件スロットの選出は続ける
+      if(!list.length){
+        map.set(slotKey, null);
+        dfs(idx + 1, score, map, used);
+        map.delete(slotKey);
+        return;
+      }
+
+      for(const p of list){
+        const pid = getPlayerId(p);
+        if(pid && used.has(pid)) continue;
+        if(pid) used.add(pid);
+        map.set(slotKey, p);
+        dfs(idx + 1, score + getPower(p), map, used);
+        map.delete(slotKey);
+        if(pid) used.delete(pid);
+      }
+    };
+
+    dfs(0, 0, new Map(), new Set());
+
+    for(const [slotKey, player] of bestMap){
+      chosenBySlot.set(slotKey, player);
+      const pid = getPlayerId(player);
+      if(pid) usedIds.add(pid);
     }
-  }
+
+    // 残りスロットは、発動条件で固定した選手を除外して最大強化順に配置
+    for(const s of normalSlots){
+      const available = simulationPlayers.filter(p=>{
+        const pid = getPlayerId(p);
+        return !pid || !usedIds.has(pid);
+      });
+      const p = pickBest(available, s, forcePol);
+      chosenBySlot.set(String(s.slotNo), p || null);
+      const pid = getPlayerId(p);
+      if(pid) usedIds.add(pid);
+    }
+
+    return slots.map(s=>({ slot:s, player:chosenBySlot.get(String(s.slotNo)) || null }));
+  };
+
+  // policy-dye column: force policy for all slots
+  const picksA = buildPicks(forcedPolicy || "");
 
   // free column: no forced policy
-  const availB = [...simulationPlayers];
-  const picksB = [];
-  for(const s of slots){
-    const p = pickBest(availB, s, "");
-    picksB.push({slot:s, player:p});
-    if(p){
-      const idx = availB.indexOf(p);
-      if(idx>=0) availB.splice(idx,1);
-    }
-  }
+  const picksB = buildPicks("");
 
         const slotPlaceMap = new Map((combo.combo_requirements||[])
       .filter(r=>r && (r.slotNo!==undefined && r.slotNo!==null) && r.positionPlace)
