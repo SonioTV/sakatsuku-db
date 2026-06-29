@@ -5795,7 +5795,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "RW"
     ]
@@ -5820,7 +5820,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "LW"
     ]
@@ -5845,7 +5845,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "AM"
     ]
@@ -5870,7 +5870,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "AM"
     ]
@@ -5895,7 +5895,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-09",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "DM"
     ]
@@ -9005,7 +9005,7 @@
     "playerId": "P0361",
     "name": "飯島潤一郎",
     "overall": 5130,
-    "maxUpgrade": null,
+    "maxUpgrade": 11058,
     "policy": "ムービング",
     "playStyle": "オーソドックスGK",
     "playStyleLv": 2,
@@ -9030,7 +9030,7 @@
     "playerId": "P0362",
     "name": "バルフィー",
     "overall": 5082,
-    "maxUpgrade": null,
+    "maxUpgrade": 10984,
     "policy": "カウンター",
     "playStyle": "ストッパー",
     "playStyleLv": 2,
@@ -9055,7 +9055,7 @@
     "playerId": "P0363",
     "name": "ペク・ギョンス",
     "overall": 5077,
-    "maxUpgrade": null,
+    "maxUpgrade": 10979,
     "policy": "ポゼッション",
     "playStyle": "ストッパー",
     "playStyleLv": 2,
@@ -9080,7 +9080,7 @@
     "playerId": "P0364",
     "name": "バロウズ",
     "overall": 5102,
-    "maxUpgrade": null,
+    "maxUpgrade": 10982,
     "policy": "カウンター",
     "playStyle": "攻撃的FB",
     "playStyleLv": 2,
@@ -9105,7 +9105,7 @@
     "playerId": "P0365",
     "name": "アルガンチューワ",
     "overall": 5142,
-    "maxUpgrade": null,
+    "maxUpgrade": 11022,
     "policy": "カウンター",
     "playStyle": "攻撃的FB",
     "playStyleLv": 2,
@@ -9130,7 +9130,7 @@
     "playerId": "P0366",
     "name": "ススペイタ",
     "overall": 5154,
-    "maxUpgrade": null,
+    "maxUpgrade": 10978,
     "policy": "リアクション",
     "playStyle": "パサー",
     "playStyleLv": 2,
@@ -9659,7 +9659,7 @@
     "playerId": "P0387",
     "name": "平塚狼馬",
     "overall": 5579,
-    "maxUpgrade": null,
+    "maxUpgrade": 11422,
     "policy": "カウンター",
     "playStyle": "アタッカー",
     "playStyleLv": 2,
@@ -9677,6 +9677,56 @@
     "available": true,
     "suitablePositions": [
       "AM"
+    ]
+  },
+  {
+    "player_id": "P0388",
+    "playerId": "P0388",
+    "name": "歐偉倫 〔LEGEND〕",
+    "overall": null,
+    "maxUpgrade": null,
+    "policy": "カウンター",
+    "playStyle": "ストライカー",
+    "playStyleLv": 2,
+    "mainPosition": "CF",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "香港レジェンドSP選手スカウト",
+    "availablePeriod": "2026年7月20日まで",
+    "mainSkill": null,
+    "mainTrait": null,
+    "category": "SP選手",
+    "nationality": "香港",
+    "growthType": "超早熟",
+    "implementedDate": "2026-06-30",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
+  },
+  {
+    "player_id": "P0389",
+    "playerId": "P0389",
+    "name": "李健和 〔LEGEND〕",
+    "overall": null,
+    "maxUpgrade": null,
+    "policy": "カウンター",
+    "playStyle": "ドリブラー",
+    "playStyleLv": 2,
+    "mainPosition": "RW",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "香港レジェンドSP選手スカウト",
+    "availablePeriod": "2026年7月20日まで",
+    "mainSkill": null,
+    "mainTrait": null,
+    "category": "SP選手",
+    "nationality": "香港",
+    "growthType": "超早熟",
+    "implementedDate": "2026-06-30",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "RW"
     ]
   }
 ]
