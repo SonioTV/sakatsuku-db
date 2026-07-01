@@ -1,0 +1,538 @@
+{
+  "updatedAt": "2026-07-01",
+  "timezone": "JST",
+  "teams": {
+    "brazil": {
+      "flag": "🇧🇷",
+      "name": "ブラジル",
+      "spCount": 0,
+      "href": "#country-brazil"
+    },
+    "japan": {
+      "flag": "🇯🇵",
+      "name": "日本",
+      "spCount": 11,
+      "href": "#country-japan"
+    },
+    "germany": {
+      "flag": "🇩🇪",
+      "name": "ドイツ",
+      "spCount": 0,
+      "href": "#country-germany"
+    },
+    "paraguay": {
+      "flag": "🇵🇾",
+      "name": "パラグアイ",
+      "spCount": 1,
+      "href": "#country-paraguay"
+    },
+    "france": {
+      "flag": "🇫🇷",
+      "name": "フランス",
+      "spCount": 4,
+      "href": "#country-france"
+    },
+    "sweden": {
+      "flag": "🇸🇪",
+      "name": "スウェーデン",
+      "spCount": 0,
+      "href": "#country-sweden"
+    },
+    "south-africa": {
+      "flag": "🇿🇦",
+      "name": "南アフリカ",
+      "spCount": 0,
+      "href": "#country-south-africa"
+    },
+    "canada": {
+      "flag": "🇨🇦",
+      "name": "カナダ",
+      "spCount": 0,
+      "href": "#country-canada"
+    },
+    "netherlands": {
+      "flag": "🇳🇱",
+      "name": "オランダ",
+      "spCount": 3,
+      "href": "#country-netherlands"
+    },
+    "morocco": {
+      "flag": "🇲🇦",
+      "name": "モロッコ",
+      "spCount": 2,
+      "href": "#country-morocco"
+    },
+    "portugal": {
+      "flag": "🇵🇹",
+      "name": "ポルトガル",
+      "spCount": 3,
+      "href": "#country-portugal"
+    },
+    "croatia": {
+      "flag": "🇭🇷",
+      "name": "クロアチア",
+      "spCount": 1,
+      "href": "#country-croatia"
+    },
+    "spain": {
+      "flag": "🇪🇸",
+      "name": "スペイン",
+      "spCount": 4,
+      "href": "#country-spain"
+    },
+    "austria": {
+      "flag": "🇦🇹",
+      "name": "オーストリア",
+      "spCount": 0,
+      "href": "#country-austria"
+    },
+    "usa": {
+      "flag": "🇺🇸",
+      "name": "アメリカ",
+      "spCount": 2,
+      "href": "#country-usa"
+    },
+    "bosnia": {
+      "flag": "🇧🇦",
+      "name": "ボスニア・ヘルツェゴビナ",
+      "spCount": 0,
+      "href": "#country-bosnia"
+    },
+    "belgium": {
+      "flag": "🇧🇪",
+      "name": "ベルギー",
+      "spCount": 2,
+      "href": "#country-belgium"
+    },
+    "senegal": {
+      "flag": "🇸🇳",
+      "name": "セネガル",
+      "spCount": 0,
+      "href": "#country-senegal"
+    },
+    "ivory-coast": {
+      "flag": "🇨🇮",
+      "name": "コートジボワール",
+      "spCount": 1,
+      "href": "#country-ivory-coast"
+    },
+    "norway": {
+      "flag": "🇳🇴",
+      "name": "ノルウェー",
+      "spCount": 2,
+      "href": "#country-norway"
+    },
+    "mexico": {
+      "flag": "🇲🇽",
+      "name": "メキシコ",
+      "spCount": 0,
+      "href": "#country-mexico"
+    },
+    "ecuador": {
+      "flag": "🇪🇨",
+      "name": "エクアドル",
+      "spCount": 0,
+      "href": "#country-ecuador"
+    },
+    "england": {
+      "flag": "EN",
+      "name": "イングランド",
+      "spCount": 2,
+      "href": "#country-england"
+    },
+    "dr-congo": {
+      "flag": "🇨🇩",
+      "name": "コンゴ民主共和国",
+      "spCount": 0,
+      "href": "#country-dr-congo"
+    },
+    "argentina": {
+      "flag": "🇦🇷",
+      "name": "アルゼンチン",
+      "spCount": 3,
+      "href": "#country-argentina"
+    },
+    "cape-verde": {
+      "flag": "🇨🇻",
+      "name": "カーボベルデ",
+      "spCount": 0,
+      "href": "#country-cape-verde"
+    },
+    "australia": {
+      "flag": "🇦🇺",
+      "name": "オーストラリア",
+      "spCount": 0,
+      "href": "#country-australia"
+    },
+    "egypt": {
+      "flag": "🇪🇬",
+      "name": "エジプト",
+      "spCount": 1,
+      "href": "#country-egypt"
+    },
+    "switzerland": {
+      "flag": "🇨🇭",
+      "name": "スイス",
+      "spCount": 0,
+      "href": "#country-switzerland"
+    },
+    "algeria": {
+      "flag": "🇩🇿",
+      "name": "アルジェリア",
+      "spCount": 0,
+      "href": "#country-algeria"
+    },
+    "colombia": {
+      "flag": "🇨🇴",
+      "name": "コロンビア",
+      "spCount": 0,
+      "href": "#country-colombia"
+    },
+    "ghana": {
+      "flag": "🇬🇭",
+      "name": "ガーナ",
+      "spCount": 0,
+      "href": "#country-ghana"
+    }
+  },
+  "matches": {
+    "r32-1": {
+      "round": "ラウンド32",
+      "datetime": "6/29 4:00",
+      "team1": "south-africa",
+      "team2": "canada",
+      "status": "finished",
+      "score1": 0,
+      "score2": 1,
+      "winner": "canada",
+      "next": "r16-1",
+      "nextSlot": "team1"
+    },
+    "r32-9": {
+      "round": "ラウンド32",
+      "datetime": "6/30 2:00",
+      "team1": "brazil",
+      "team2": "japan",
+      "status": "finished",
+      "score1": 2,
+      "score2": 1,
+      "winner": "brazil",
+      "next": "r16-5",
+      "nextSlot": "team1"
+    },
+    "r32-3": {
+      "round": "ラウンド32",
+      "datetime": "6/30 5:30",
+      "team1": "germany",
+      "team2": "paraguay",
+      "status": "finished",
+      "score1": 1,
+      "score2": 1,
+      "penalty1": 3,
+      "penalty2": 4,
+      "winner": "paraguay",
+      "next": "r16-2",
+      "nextSlot": "team1"
+    },
+    "r32-2": {
+      "round": "ラウンド32",
+      "datetime": "6/30 10:00",
+      "team1": "netherlands",
+      "team2": "morocco",
+      "status": "finished",
+      "score1": 1,
+      "score2": 1,
+      "penalty1": 2,
+      "penalty2": 3,
+      "winner": "morocco",
+      "next": "r16-1",
+      "nextSlot": "team2"
+    },
+    "r32-10": {
+      "round": "ラウンド32",
+      "datetime": "7/1 2:00",
+      "team1": "ivory-coast",
+      "team2": "norway",
+      "status": "finished",
+      "score1": 1,
+      "score2": 2,
+      "winner": "norway",
+      "next": "r16-5",
+      "nextSlot": "team2"
+    },
+    "r32-4": {
+      "round": "ラウンド32",
+      "datetime": "7/1 6:00",
+      "team1": "france",
+      "team2": "sweden",
+      "status": "finished",
+      "score1": 3,
+      "score2": 0,
+      "winner": "france",
+      "next": "r16-2",
+      "nextSlot": "team2"
+    },
+    "r32-11": {
+      "round": "ラウンド32",
+      "datetime": "7/1 10:00",
+      "team1": "mexico",
+      "team2": "ecuador",
+      "status": "finished",
+      "score1": 2,
+      "score2": 0,
+      "winner": "mexico",
+      "next": "r16-6",
+      "nextSlot": "team1"
+    },
+    "r32-12": {
+      "round": "ラウンド32",
+      "datetime": "7/2 1:00",
+      "team1": "england",
+      "team2": "dr-congo",
+      "status": "scheduled",
+      "next": "r16-6",
+      "nextSlot": "team2"
+    },
+    "r32-8": {
+      "round": "ラウンド32",
+      "datetime": "7/2 5:00",
+      "team1": "belgium",
+      "team2": "senegal",
+      "status": "scheduled",
+      "next": "r16-4",
+      "nextSlot": "team2"
+    },
+    "r32-7": {
+      "round": "ラウンド32",
+      "datetime": "7/2 9:00",
+      "team1": "usa",
+      "team2": "bosnia",
+      "status": "scheduled",
+      "next": "r16-4",
+      "nextSlot": "team1"
+    },
+    "r32-6": {
+      "round": "ラウンド32",
+      "datetime": "7/3 4:00",
+      "team1": "spain",
+      "team2": "austria",
+      "status": "scheduled",
+      "next": "r16-3",
+      "nextSlot": "team2"
+    },
+    "r32-5": {
+      "round": "ラウンド32",
+      "datetime": "7/3 8:00",
+      "team1": "portugal",
+      "team2": "croatia",
+      "status": "scheduled",
+      "next": "r16-3",
+      "nextSlot": "team1"
+    },
+    "r32-15": {
+      "round": "ラウンド32",
+      "datetime": "7/3 12:00",
+      "team1": "switzerland",
+      "team2": "algeria",
+      "status": "scheduled",
+      "next": "r16-8",
+      "nextSlot": "team1"
+    },
+    "r32-14": {
+      "round": "ラウンド32",
+      "datetime": "7/4 3:00",
+      "team1": "australia",
+      "team2": "egypt",
+      "status": "scheduled",
+      "next": "r16-7",
+      "nextSlot": "team2"
+    },
+    "r32-13": {
+      "round": "ラウンド32",
+      "datetime": "7/4 7:00",
+      "team1": "argentina",
+      "team2": "cape-verde",
+      "status": "scheduled",
+      "next": "r16-7",
+      "nextSlot": "team1"
+    },
+    "r32-16": {
+      "round": "ラウンド32",
+      "datetime": "7/4 10:30",
+      "team1": "colombia",
+      "team2": "ghana",
+      "status": "scheduled",
+      "next": "r16-8",
+      "nextSlot": "team2"
+    },
+    "r16-1": {
+      "round": "ベスト16",
+      "datetime": "7/5 2:00",
+      "team1": "canada",
+      "team2": "morocco",
+      "status": "scheduled",
+      "next": "qf-1",
+      "nextSlot": "team1"
+    },
+    "r16-2": {
+      "round": "ベスト16",
+      "datetime": "7/5 6:00",
+      "team1": "paraguay",
+      "team2": "france",
+      "status": "scheduled",
+      "next": "qf-1",
+      "nextSlot": "team2"
+    },
+    "r16-5": {
+      "round": "ベスト16",
+      "datetime": "7/6 5:00",
+      "team1": "brazil",
+      "team2": "norway",
+      "status": "scheduled",
+      "next": "qf-3",
+      "nextSlot": "team1"
+    },
+    "r16-6": {
+      "round": "ベスト16",
+      "datetime": "7/6 9:00",
+      "team1": "mexico",
+      "team2": "",
+      "status": "scheduled",
+      "placeholder2": "イングランド/コンゴ民主共和国勝者",
+      "next": "qf-3",
+      "nextSlot": "team2"
+    },
+    "r16-3": {
+      "round": "ベスト16",
+      "datetime": "7/7 4:00",
+      "team1": "",
+      "team2": "",
+      "status": "scheduled",
+      "placeholder1": "ポルトガル/クロアチア勝者",
+      "placeholder2": "スペイン/オーストリア勝者",
+      "next": "qf-2",
+      "nextSlot": "team1"
+    },
+    "r16-4": {
+      "round": "ベスト16",
+      "datetime": "7/7 9:00",
+      "team1": "",
+      "team2": "",
+      "status": "scheduled",
+      "placeholder1": "アメリカ/ボスニア勝者",
+      "placeholder2": "ベルギー/セネガル勝者",
+      "next": "qf-2",
+      "nextSlot": "team2"
+    },
+    "r16-7": {
+      "round": "ベスト16",
+      "datetime": "7/8 1:00",
+      "team1": "",
+      "team2": "",
+      "status": "scheduled",
+      "placeholder1": "アルゼンチン/カーボベルデ勝者",
+      "placeholder2": "オーストラリア/エジプト勝者",
+      "next": "qf-4",
+      "nextSlot": "team1"
+    },
+    "r16-8": {
+      "round": "ベスト16",
+      "datetime": "7/8 5:00",
+      "team1": "",
+      "team2": "",
+      "status": "scheduled",
+      "placeholder1": "スイス/アルジェリア勝者",
+      "placeholder2": "コロンビア/ガーナ勝者",
+      "next": "qf-4",
+      "nextSlot": "team2"
+    },
+    "qf-1": {
+      "round": "ベスト8",
+      "datetime": "7/10 5:00",
+      "team1": "",
+      "team2": "",
+      "status": "scheduled",
+      "placeholder1": "ベスト16勝者",
+      "placeholder2": "ベスト16勝者",
+      "next": "sf-1",
+      "nextSlot": "team1"
+    },
+    "qf-2": {
+      "round": "ベスト8",
+      "datetime": "7/11 4:00",
+      "team1": "",
+      "team2": "",
+      "status": "scheduled",
+      "placeholder1": "ベスト16勝者",
+      "placeholder2": "ベスト16勝者",
+      "next": "sf-1",
+      "nextSlot": "team2"
+    },
+    "qf-3": {
+      "round": "ベスト8",
+      "datetime": "7/12 6:00",
+      "team1": "",
+      "team2": "",
+      "status": "scheduled",
+      "placeholder1": "ベスト16勝者",
+      "placeholder2": "ベスト16勝者",
+      "next": "sf-2",
+      "nextSlot": "team1"
+    },
+    "qf-4": {
+      "round": "ベスト8",
+      "datetime": "7/12 10:00",
+      "team1": "",
+      "team2": "",
+      "status": "scheduled",
+      "placeholder1": "ベスト16勝者",
+      "placeholder2": "ベスト16勝者",
+      "next": "sf-2",
+      "nextSlot": "team2"
+    },
+    "sf-1": {
+      "round": "ベスト4",
+      "datetime": "7/15 4:00",
+      "team1": "",
+      "team2": "",
+      "status": "scheduled",
+      "placeholder1": "準々決勝勝者",
+      "placeholder2": "準々決勝勝者",
+      "next": "final",
+      "nextSlot": "team1",
+      "loserNext": "third",
+      "loserNextSlot": "team1"
+    },
+    "sf-2": {
+      "round": "ベスト4",
+      "datetime": "7/16 4:00",
+      "team1": "",
+      "team2": "",
+      "status": "scheduled",
+      "placeholder1": "準々決勝勝者",
+      "placeholder2": "準々決勝勝者",
+      "next": "final",
+      "nextSlot": "team2",
+      "loserNext": "third",
+      "loserNextSlot": "team2"
+    },
+    "third": {
+      "round": "3位決定戦",
+      "datetime": "7/19 6:00",
+      "team1": "",
+      "team2": "",
+      "status": "scheduled",
+      "placeholder1": "準決勝敗者",
+      "placeholder2": "準決勝敗者"
+    },
+    "final": {
+      "round": "決勝",
+      "datetime": "7/20 4:00",
+      "team1": "",
+      "team2": "",
+      "status": "scheduled",
+      "placeholder1": "準決勝勝者",
+      "placeholder2": "準決勝勝者"
+    }
+  }
+}

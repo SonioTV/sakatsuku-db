@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>【ワールドカップ2026】決勝トーナメント進出国の★3SP選手まとめ！サカつく2026で使えるスター選手を紹介</title>
+<meta content="ワールドカップ2026決勝トーナメント進出国から、サカつく2026に★3SP選手として登場している選手を国別にまとめました。トーナメント表の国名クリックで選手リストへジャンプできます。" name="description"/>
+<style>
+    :root {
+      --bg:#f6f8fb;--card:#fff;--text:#1f2937;--muted:#64748b;--line:#e2e8f0;--blue:#2563eb;--blue-dark:#1d4ed8;--red:#dc2626;--green:#16a34a;--gold:#f59e0b;--shadow:0 8px 24px rgba(15,23,42,.08);--radius:18px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.8} a{color:inherit}
+    .article-wrap{max-width:1180px;margin:0 auto;padding:24px 16px 64px} .breadcrumb{color:var(--muted);font-size:13px;margin-bottom:14px} .breadcrumb a{color:var(--blue);text-decoration:none}
+    .hero{background:linear-gradient(135deg,#111827 0%,#1e3a8a 54%,#0ea5e9 100%);color:#fff;border-radius:24px;padding:30px 26px;box-shadow:var(--shadow);position:relative;overflow:hidden} .hero:after{content:"";position:absolute;width:260px;height:260px;right:-80px;top:-100px;border-radius:50%;background:rgba(255,255,255,.12)}
+    .tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.24);padding:4px 12px;border-radius:999px;font-size:13px;font-weight:800;margin-bottom:12px} h1{margin:0;font-size:clamp(25px,4vw,40px);line-height:1.35;letter-spacing:.02em} .lead{margin:16px 0 0;color:rgba(255,255,255,.92);font-size:16px;max-width:880px}
+    .summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 0} .summary-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:14px} .summary-card b{display:block;font-size:26px;line-height:1.1} .summary-card span{color:rgba(255,255,255,.82);font-size:13px}
+    .notice,.intro-card,.tournament-card,.quick-card,.footer-note{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin:22px 0} .notice{background:#fff7ed;border-left:6px solid #f97316;font-weight:700} .notice small{display:block;color:#9a3412;font-weight:600;margin-top:4px}
+    .intro-card h2,.tournament-card h2,.quick-card h2{margin:0 0 10px;font-size:22px;border-left:6px solid var(--blue);padding-left:12px} .intro-card p,.tournament-card p{margin:8px 0}
+    .legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px} .legend span{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;background:#f8fafc;padding:5px 10px;font-size:13px;font-weight:800} .dot{width:10px;height:10px;border-radius:50%;display:inline-block} .dot.blue{background:var(--blue)} .dot.gray{background:#94a3b8} .dot.red{background:var(--red)}
+    .bracket-scroll{overflow-x:auto;padding-bottom:10px} .bracket{display:grid;grid-template-columns:repeat(5,minmax(218px,1fr));gap:14px;min-width:1180px;align-items:start} .round h3{margin:0;padding:12px 14px;border-radius:16px;background:linear-gradient(135deg,#1e40af,#2563eb);color:#fff;font-size:18px} .round p{margin:7px 4px 10px;color:var(--muted);font-size:12px;font-weight:700} .round-stack{display:grid;gap:10px}
+    .match-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:0 5px 16px rgba(15,23,42,.06);position:relative} .match-card.done{border-left:5px solid var(--red)} .match-card.scheduled{border-left:5px solid var(--blue)} .match-card.tbd{border-left:5px solid #94a3b8;background:#f8fafc} .match-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;color:#0f172a;font-weight:900;font-size:13px} .match-head em{font-style:normal;font-size:11px;border-radius:999px;padding:2px 7px;background:#eff6ff;color:var(--blue-dark)} .done .match-head em{background:#fee2e2;color:#b91c1c}
+    .team-row{display:flex;align-items:center;gap:6px;margin:4px 0} .team-link{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:34px;width:100%;padding:6px 8px;border-radius:11px;text-decoration:none;font-weight:900;font-size:13px;border:1px solid var(--line);background:#fff} .team-link.has-sp{color:var(--blue-dark);background:#eff6ff;border-color:#bfdbfe} .team-link.no-sp{color:#64748b;background:#f8fafc} .team-link:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(15,23,42,.08)} .sp-count{font-size:10px;white-space:nowrap;background:#dbeafe;color:var(--blue-dark);border-radius:999px;padding:1px 6px} .sp-count.none{background:#e2e8f0;color:#64748b} .score{min-width:24px;text-align:center;font-weight:900;color:#0f172a} .vs{text-align:center;color:#94a3b8;font-weight:900;font-size:11px;line-height:1.2} .result-note{margin:8px 0 0;color:#b91c1c;font-size:12px;font-weight:800} .path-tag{margin-top:8px;color:#64748b;font-size:11px;font-weight:800} .placeholder{background:#eef2f7;border:1px dashed #cbd5e1;border-radius:11px;padding:7px 8px;color:#64748b;font-size:13px;font-weight:800}
+    .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px} .quick-link{display:flex;justify-content:space-between;align-items:center;text-decoration:none;border-radius:12px;padding:8px 10px;font-weight:900;font-size:13px;border:1px solid var(--line);background:#fff} .quick-link.has{background:#eff6ff;color:var(--blue-dark);border-color:#bfdbfe} .quick-link.empty{color:#64748b;background:#f8fafc} .quick-link span{background:rgba(37,99,235,.12);border-radius:999px;padding:1px 7px}
+    .country-section{margin:26px 0;scroll-margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden} .country-section h2{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;padding:14px 18px;color:#fff;background:linear-gradient(135deg,#1e40af,#2563eb);font-size:22px} .country-section.no-players h2{background:linear-gradient(135deg,#64748b,#94a3b8)} .country-section h2 span{font-size:14px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:3px 10px}
+    .table-wrap{overflow-x:auto} table{width:100%;border-collapse:collapse;min-width:720px} th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle;font-size:14px} th{color:#475569;background:#f8fafc;font-weight:900;white-space:nowrap} td.no{width:70px;text-align:center;font-weight:900;color:#0f172a} .player-link{color:var(--blue-dark);font-weight:900;text-decoration:none;border-bottom:2px solid rgba(37,99,235,.25)} .player-link:hover{color:#1e40af;border-bottom-color:#1e40af} .pos{display:inline-flex;align-items:center;justify-content:center;min-width:42px;padding:2px 8px;border-radius:999px;font-weight:900;font-size:12px;color:#fff} .pos-GK{background:#7c3aed} .pos-DF{background:#0284c7} .pos-MF{background:#16a34a} .pos-FW{background:#dc2626} .overall{font-weight:900;color:#0f172a}
+    .empty-note{margin:0;padding:18px;color:var(--muted);font-weight:700} .back-top{padding:0 18px 16px;margin:0;text-align:right} .back-top a{color:var(--blue-dark);font-weight:900;text-decoration:none} .back-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px} .back-links a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:#0f172a;color:#fff;border-radius:999px;padding:10px 16px;font-weight:800;font-size:14px}
+    @media(max-width:760px){.article-wrap{padding:14px 10px 48px}.hero{padding:24px 18px;border-radius:20px}.summary{grid-template-columns:repeat(3,1fr);gap:8px}.summary-card{padding:10px}.summary-card b{font-size:22px}.summary-card span{font-size:11px}.quick-grid{grid-template-columns:repeat(2,1fr)}h1{font-size:24px}.intro-card h2,.tournament-card h2,.quick-card h2{font-size:20px}th,td{padding:9px 8px;font-size:13px}}
+  
+/* Tournament bracket v2 */
+.ko-scroll{overflow-x:auto;padding:8px 0 12px;-webkit-overflow-scrolling:touch}.ko-board{min-width:1180px;display:grid;grid-template-columns:1fr 128px 1fr;gap:18px;align-items:stretch;background:linear-gradient(180deg,#fff,#f8fafc);border:1px solid var(--line);border-radius:18px;padding:18px}.ko-side{display:grid;grid-template-columns:1.35fr 1.15fr .95fr .85fr;gap:14px;align-items:stretch}.ko-right{grid-template-columns:.85fr .95fr 1.15fr 1.35fr}.ko-round{display:flex;flex-direction:column}.ko-round h3{text-align:center;margin:0 0 10px;padding:8px 10px;border-radius:12px;background:#f1f5f9;color:#0f172a;font-size:14px}.ko-stack{height:760px;display:flex;flex-direction:column;justify-content:space-around;position:relative}.ko-left .ko-stack:after,.ko-right .ko-stack:before{content:"";position:absolute;top:5%;bottom:5%;width:2px;background:#cbd5e1}.ko-left .ko-stack:after{right:-8px}.ko-right .ko-stack:before{left:-8px}.ko-match{position:relative;background:#fff;border:1px solid #dbe3ef;border-radius:12px;padding:7px 8px;box-shadow:0 4px 12px rgba(15,23,42,.06);font-size:12px}.ko-match.is-done{border-left:4px solid var(--red)}.ko-match.is-tbd{background:#f8fafc;border-style:dashed}.ko-time{font-weight:900;color:#0f172a;text-align:center;margin-bottom:4px;line-height:1.2}.team{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:5px;min-height:27px;padding:4px 6px;border-radius:9px;text-decoration:none;border:1px solid var(--line);background:#fff;font-weight:900;line-height:1.2}.team.has-sp{color:var(--blue-dark);background:#eff6ff;border-color:#bfdbfe}.team.no-sp{color:#64748b;background:#f8fafc}.team.winner{border-color:#ef4444;background:#fff1f2;color:#b91c1c}.team-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mini-sp{font-size:9px;background:#dbeafe;border-radius:999px;padding:1px 5px;white-space:nowrap}.mini-sp.none{background:#e2e8f0;color:#64748b}.mini-score{font-size:14px;color:#0f172a}.ko-vs{text-align:center;color:#94a3b8;font-weight:900;font-size:10px;line-height:1.1;margin:1px 0}.ko-note{text-align:center;color:#b91c1c;font-weight:900;font-size:11px;margin-top:4px}.ko-placeholder{min-height:27px;display:flex;align-items:center;justify-content:center;text-align:center;padding:4px 6px;border-radius:9px;border:1px dashed #cbd5e1;color:#64748b;background:#eef2f7;font-weight:800;line-height:1.25}.ko-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}.trophy{font-size:54px;filter:drop-shadow(0 6px 8px rgba(0,0,0,.18))}.final-box,.third-box{width:100%;text-align:center;border-radius:14px;border:1px solid var(--line);background:#fff;padding:12px 8px;box-shadow:0 5px 16px rgba(15,23,42,.06)}.final-box strong,.third-box strong{display:block;font-size:17px;color:#0f172a}.final-box span,.third-box span{display:block;font-weight:900;color:var(--blue-dark)}
+.country-section table{min-width:420px}.country-section th:nth-child(n+4),.country-section td:nth-child(n+4){display:none}
+@media(max-width:760px){.ko-board{min-width:1120px;padding:12px}.ko-stack{height:720px}.ko-match{padding:6px}.team{font-size:11px}.mini-sp{display:none}.trophy{font-size:44px}.country-section table{min-width:340px}}
+
+/* SVG tournament bracket + manual JSON update */
+.svg-bracket-wrap{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#fff,#f8fafc);padding:10px;margin-top:14px}
+.svg-bracket{display:block;width:100%;max-width:1180px;height:auto;margin:0 auto;font-family:inherit}
+.bracket-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;color:var(--muted);font-size:13px;font-weight:800}
+.bracket-meta code{background:#f1f5f9;border:1px solid var(--line);border-radius:999px;padding:2px 8px;color:#334155}
+.svg-bracket .round-title{font-size:22px;font-weight:900;fill:#0f172a}
+.svg-bracket .match-card{fill:#fff;stroke:#0b3a4a;stroke-width:2.2;filter:url(#cardShadow)}
+.svg-bracket .match-card.finished{stroke:#ef4444;stroke-width:2.4}
+.svg-bracket .match-card.scheduled{stroke:#0b3a4a}
+.svg-bracket .match-time{font-size:13px;font-weight:900;fill:#0f172a}
+.svg-bracket .team-bg{fill:#f8fafc;stroke:#e2e8f0;stroke-width:1}
+.svg-bracket .team-bg.has-sp{fill:#eff6ff;stroke:#bfdbfe}
+.svg-bracket .team-bg.winner{fill:#fff1f2;stroke:#ef4444;stroke-width:1.5}
+.svg-bracket .team-text{font-size:14px;font-weight:900;fill:#334155}
+.svg-bracket a.has-sp .team-text{fill:#1d4ed8}
+.svg-bracket .winner-text{fill:#b91c1c!important}
+.svg-bracket .score-text{font-size:16px;font-weight:900;fill:#0f172a;text-anchor:end}
+.svg-bracket .sp-badge{font-size:10px;font-weight:900;fill:#1d4ed8}
+.svg-bracket .placeholder-text{font-size:13px;font-weight:800;fill:#64748b}
+.svg-bracket .connector{fill:none;stroke:#0e5f7f;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.svg-bracket .connector.winner-path{stroke:#ef4444;stroke-width:3.8}
+.svg-bracket .center-title{font-size:42px;font-weight:900;fill:#0f172a;text-anchor:middle;letter-spacing:1px}
+.svg-bracket .center-date{font-size:13px;font-weight:900;fill:#64748b;text-anchor:middle}
+.svg-bracket .cup{font-size:86px;text-anchor:middle}
+.svg-bracket .help-text{font-size:12px;font-weight:800;fill:#64748b}
+@media(max-width:760px){.svg-bracket-wrap{padding:6px}.bracket-meta{font-size:12px}.svg-bracket .round-title{font-size:14px}.svg-bracket .team-text{font-size:10px}.svg-bracket .score-text{font-size:10px}.svg-bracket .sp-badge{display:none}.svg-bracket .center-title{font-size:18px}}
+
+</style>
+</head>
+<body>
+<main class="article-wrap">
+<nav class="breadcrumb"><a href="index.html">トップ</a> &gt; <a href="articles.html">攻略記事</a> &gt; W杯2026決勝トーナメントSP選手まとめ</nav>
+<header class="hero">
+<div class="tag">W杯2026決勝トーナメント × サカつく2026</div>
+<h1>【ワールドカップ2026】決勝トーナメント進出国の★3SP選手まとめ！サカつく2026で使えるスター選手を紹介</h1>
+<p class="lead">ワールドカップ2026決勝トーナメント進出国の中から、サカつく2026に★3SP選手として登場している選手を国別にまとめました。トーナメント表の国名をクリックすると、各国のSP選手リストへジャンプできます。</p>
+<div class="summary"><div class="summary-card"><b>42</b><span>掲載★3SP選手</span></div><div class="summary-card"><b>15</b><span>★3SP該当国</span></div><div class="summary-card"><b>32</b><span>決勝T進出国</span></div></div>
+</header>
+<div class="notice">注意：試合日時は日本時間です。<small>本記事では、添付データ内で「サカつく2026に★3SP選手として一致」した選手のみを掲載しています。</small></div>
+<section class="intro-card"><h2>この記事で確認できること</h2><p>決勝トーナメント表で試合日時を確認しながら、各国にサカつく2026の★3SP選手がいるかを確認できます。</p><p>青色の国名は★3SP選手あり、グレーの国名は本記事条件で該当選手なしです。</p><div class="legend"><span><i class="dot blue"></i>★3SP選手あり</span><span><i class="dot gray"></i>該当選手なし</span><span><i class="dot red"></i>結果反映済み</span></div></section>
+<section class="tournament-card" id="tournament">
+<h2>決勝トーナメント表（日本時間）</h2>
+<p>国名をクリックすると、ページ下部の国別★3SP選手リストへジャンプします。</p>
+<div class="svg-bracket-wrap">
+  <svg id="svgBracket" class="svg-bracket" viewBox="0 0 1400 1080" role="img" aria-label="ワールドカップ2026 決勝トーナメント表"></svg>
+</div>
+<div class="bracket-meta">
+  <span>表示時刻：日本時間</span>
+  <span>赤枠・赤線：結果反映済み</span>
+  <span>青文字：★3SP選手あり</span>
+</div>
+</section><section class="quick-card"><h2>国別SP選手リストへ移動</h2><div class="quick-grid"><a class="quick-link has" href="#country-japan">🇯🇵 日本<span>11</span></a><a class="quick-link empty" href="#country-brazil">🇧🇷 ブラジル<span>0</span></a><a class="quick-link empty" href="#country-germany">🇩🇪 ドイツ<span>0</span></a><a class="quick-link has" href="#country-paraguay">🇵🇾 パラグアイ<span>1</span></a><a class="quick-link has" href="#country-france">🇫🇷 フランス<span>4</span></a><a class="quick-link empty" href="#country-sweden">🇸🇪 スウェーデン<span>0</span></a><a class="quick-link empty" href="#country-south-africa">🇿🇦 南アフリカ<span>0</span></a><a class="quick-link empty" href="#country-canada">🇨🇦 カナダ<span>0</span></a><a class="quick-link has" href="#country-netherlands">🇳🇱 オランダ<span>3</span></a><a class="quick-link has" href="#country-morocco">🇲🇦 モロッコ<span>2</span></a><a class="quick-link has" href="#country-portugal">🇵🇹 ポルトガル<span>3</span></a><a class="quick-link has" href="#country-croatia">🇭🇷 クロアチア<span>1</span></a><a class="quick-link has" href="#country-spain">🇪🇸 スペイン<span>4</span></a><a class="quick-link empty" href="#country-austria">🇦🇹 オーストリア<span>0</span></a><a class="quick-link has" href="#country-usa">🇺🇸 アメリカ<span>2</span></a><a class="quick-link empty" href="#country-bosnia">🇧🇦 ボスニア・ヘルツェゴビナ<span>0</span></a><a class="quick-link has" href="#country-belgium">🇧🇪 ベルギー<span>2</span></a><a class="quick-link empty" href="#country-senegal">🇸🇳 セネガル<span>0</span></a><a class="quick-link has" href="#country-ivory-coast">🇨🇮 コートジボワール<span>1</span></a><a class="quick-link has" href="#country-norway">🇳🇴 ノルウェー<span>2</span></a><a class="quick-link empty" href="#country-mexico">🇲🇽 メキシコ<span>0</span></a><a class="quick-link empty" href="#country-ecuador">🇪🇨 エクアドル<span>0</span></a><a class="quick-link has" href="#country-england">EN イングランド<span>2</span></a><a class="quick-link empty" href="#country-dr-congo">🇨🇩 コンゴ民主共和国<span>0</span></a><a class="quick-link has" href="#country-argentina">🇦🇷 アルゼンチン<span>3</span></a><a class="quick-link empty" href="#country-cape-verde">🇨🇻 カーボベルデ<span>0</span></a><a class="quick-link empty" href="#country-australia">🇦🇺 オーストラリア<span>0</span></a><a class="quick-link has" href="#country-egypt">🇪🇬 エジプト<span>1</span></a><a class="quick-link empty" href="#country-switzerland">🇨🇭 スイス<span>0</span></a><a class="quick-link empty" href="#country-algeria">🇩🇿 アルジェリア<span>0</span></a><a class="quick-link empty" href="#country-colombia">🇨🇴 コロンビア<span>0</span></a><a class="quick-link empty" href="#country-ghana">🇬🇭 ガーナ<span>0</span></a></div></section>
+<section class="intro-card"><h2>国別★3SP選手リスト</h2><p>選手名をクリックすると、選手評価ツールでポリシー・プレースタイル・総合力などの詳細を確認できます。</p></section>
+<section class="country-section has-players" id="country-japan">
+<h2>🇯🇵 日本 <span>11人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">1</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0135">大迫敬介</a></td>
+<td><span class="pos pos-GK">GK</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">3</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0386">鈴木彩艶 〔2026〕</a></td>
+<td><span class="pos pos-GK">GK</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">4</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0383">伊藤洋輝 〔2026〕</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">10</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0385">谷口彰悟 〔2026〕</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">12</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0090">長友佑都</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">13</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0379">中村敬斗 〔2026〕</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">15</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0380">伊東純也 〔2026〕</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">16</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0382">佐野海舟 〔2026〕</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">18</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0378">堂安律 〔2026〕</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">21</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0381">鎌田大地 〔2026〕</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">22</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0376">上田綺世 〔2026〕</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-brazil">
+<h2>🇧🇷 ブラジル <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-germany">
+<h2>🇩🇪 ドイツ <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-paraguay">
+<h2>🇵🇾 パラグアイ <span>1人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">19</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0199">ミゲル・アルミロン</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-france">
+<h2>🇫🇷 フランス <span>4人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">2</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0163">マイク・メニャン</a></td>
+<td><span class="pos pos-GK">GK</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">5</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0221">ウィリアム・サリバ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">15</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0213">オーレリアン・チュアメニ</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">20</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0372">ウスマン・デンベレ</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-sweden">
+<h2>🇸🇪 スウェーデン <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-south-africa">
+<h2>🇿🇦 南アフリカ <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-canada">
+<h2>🇨🇦 カナダ <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-netherlands">
+<h2>🇳🇱 オランダ <span>3人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">6</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0206">デンゼル・ダンフリース</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">7</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0210">ナタン・アケ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">11</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0165">フィルジル・ファン・ダイク</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-morocco">
+<h2>🇲🇦 モロッコ <span>2人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">4</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0204">アクラフ・ハキミ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">26</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0015">ブラヒム・ディアス</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-portugal">
+<h2>🇵🇹 ポルトガル <span>3人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">6</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0171">ジョアン・カンセロ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">11</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0004">ルベン・ディアス</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">19</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0006">クリスティアーノ・ロナウド</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-croatia">
+<h2>🇭🇷 クロアチア <span>1人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">20</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0170">ルカ・モドリッチ</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-spain">
+<h2>🇪🇸 スペイン <span>4人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">2</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0223">ジョアン・ガルシア</a></td>
+<td><span class="pos pos-GK">GK</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">8</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0167">ペドロ・ポロ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">14</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0023">ファビアン・ルイス</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">21</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0230">ニコ・ウィリアムズ</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-austria">
+<h2>🇦🇹 オーストリア <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-usa">
+<h2>🇺🇸 アメリカ <span>2人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">14</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0214">ウェストン・マッケニー</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">15</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0236">クリスティアン・ロルダン 〔2026〕</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-bosnia">
+<h2>🇧🇦 ボスニア・ヘルツェゴビナ <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-belgium">
+<h2>🇧🇪 ベルギー <span>2人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">2</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0201">ティボ・クルトワ</a></td>
+<td><span class="pos pos-GK">GK</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">16</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0166">ケヴィン・デ・ブライネ</a></td>
+<td><span class="pos pos-MF">MF</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-senegal">
+<h2>🇸🇳 セネガル <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-ivory-coast">
+<h2>🇨🇮 コートジボワール <span>1人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">18</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0172">アマド・ディアロ</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-norway">
+<h2>🇳🇴 ノルウェー <span>2人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">22</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0202">アレクサンダー・セルロート</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">24</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0208">アーリング・ハーランド</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-mexico">
+<h2>🇲🇽 メキシコ <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-ecuador">
+<h2>🇪🇨 エクアドル <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-england">
+<h2>EN イングランド <span>2人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">12</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0173">リース・ジェイムズ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">25</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0161">ブカヨ・サカ</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-dr-congo">
+<h2>🇨🇩 コンゴ民主共和国 <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-argentina">
+<h2>🇦🇷 アルゼンチン <span>3人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">6</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0026">ナウエル・モリーナ</a></td>
+<td><span class="pos pos-DF">DF</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">25</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0162">ラウタロ・マルティネス</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+
+
+
+
+</tr>
+<tr>
+<td class="no">26</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0002">リオネル・メッシ</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-cape-verde">
+<h2>🇨🇻 カーボベルデ <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-australia">
+<h2>🇦🇺 オーストラリア <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section has-players" id="country-egypt">
+<h2>🇪🇬 エジプト <span>1人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
+<td class="no">26</td>
+<td><a class="player-link" href="sp_evaluator.html?playerId=P0228">モハメド・サラー</a></td>
+<td><span class="pos pos-FW">FW</span></td>
+
+
+
+
+</tr></tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-switzerland">
+<h2>🇨🇭 スイス <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-algeria">
+<h2>🇩🇿 アルジェリア <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-colombia">
+<h2>🇨🇴 コロンビア <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="country-section no-players" id="country-ghana">
+<h2>🇬🇭 ガーナ <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section>
+<section class="footer-note"><p>掲載している内容は、今後の選手追加やデータ修正、ワールドカップの試合結果により変更される可能性があります。</p><div class="back-links"><a href="wc2026_sakatsuku_sp_players_article.html">W杯2026出場SP選手まとめへ</a><a href="wc2026_special.html">ワールドカップ2026特集へ</a><a href="sp_evaluator.html">選手評価ツールへ</a><a href="articles.html">攻略記事一覧へ</a></div></section>
+</main>
+
+<script id="knockout-fallback-data" type="application/json">
+{"updatedAt": "2026-07-01", "timezone": "JST", "teams": {"brazil": {"flag": "🇧🇷", "name": "ブラジル", "spCount": 0, "href": "#country-brazil"}, "japan": {"flag": "🇯🇵", "name": "日本", "spCount": 11, "href": "#country-japan"}, "germany": {"flag": "🇩🇪", "name": "ドイツ", "spCount": 0, "href": "#country-germany"}, "paraguay": {"flag": "🇵🇾", "name": "パラグアイ", "spCount": 1, "href": "#country-paraguay"}, "france": {"flag": "🇫🇷", "name": "フランス", "href": "#country-france"}, "sweden": {"flag": "🇸🇪", "name": "スウェーデン", "spCount": 0, "href": "#country-sweden"}, "south-africa": {"flag": "🇿🇦", "name": "南アフリカ", "spCount": 0, "href": "#country-south-africa"}, "canada": {"flag": "🇨🇦", "name": "カナダ", "spCount": 0, "href": "#country-canada"}, "netherlands": {"flag": "🇳🇱", "name": "オランダ", "spCount": 3, "href": "#country-netherlands"}, "morocco": {"flag": "🇲🇦", "name": "モロッコ", "spCount": 2, "href": "#country-morocco"}, "portugal": {"flag": "🇵🇹", "name": "ポルトガル", "spCount": 3, "href": "#country-portugal"}, "croatia": {"flag": "🇭🇷", "name": "クロアチア", "spCount": 1, "href": "#country-croatia"}, "spain": {"flag": "🇪🇸", "name": "スペイン", "spCount": 4, "href": "#country-spain"}, "austria": {"flag": "🇦🇹", "name": "オーストリア", "spCount": 0, "href": "#country-austria"}, "usa": {"flag": "🇺🇸", "name": "アメリカ", "spCount": 2, "href": "#country-usa"}, "bosnia": {"flag": "🇧🇦", "name": "ボスニア・ヘルツェゴビナ", "spCount": 0, "href": "#country-bosnia"}, "belgium": {"flag": "🇧🇪", "name": "ベルギー", "spCount": 2, "href": "#country-belgium"}, "senegal": {"flag": "🇸🇳", "name": "セネガル", "spCount": 0, "href": "#country-senegal"}, "ivory-coast": {"flag": "🇨🇮", "name": "コートジボワール", "spCount": 1, "href": "#country-ivory-coast"}, "norway": {"flag": "🇳🇴", "name": "ノルウェー", "spCount": 2, "href": "#country-norway"}, "mexico": {"flag": "🇲🇽", "name": "メキシコ", "spCount": 0, "href": "#country-mexico"}, "ecuador": {"flag": "🇪🇨", "name": "エクアドル", "spCount": 0, "href": "#country-ecuador"}, "england": {"flag": "EN", "name": "イングランド", "spCount": 2, "href": "#country-england"}, "dr-congo": {"flag": "🇨🇩", "name": "コンゴ民主共和国", "spCount": 0, "href": "#country-dr-congo"}, "argentina": {"flag": "🇦🇷", "name": "アルゼンチン", "spCount": 3, "href": "#country-argentina"}, "cape-verde": {"flag": "🇨🇻", "name": "カーボベルデ", "spCount": 0, "href": "#country-cape-verde"}, "australia": {"flag": "🇦🇺", "name": "オーストラリア", "spCount": 0, "href": "#country-australia"}, "egypt": {"flag": "🇪🇬", "name": "エジプト", "spCount": 1, "href": "#country-egypt"}, "switzerland": {"flag": "🇨🇭", "name": "スイス", "spCount": 0, "href": "#country-switzerland"}, "algeria": {"flag": "🇩🇿", "name": "アルジェリア", "spCount": 0, "href": "#country-algeria"}, "colombia": {"flag": "🇨🇴", "name": "コロンビア", "spCount": 0, "href": "#country-colombia"}, "ghana": {"flag": "🇬🇭", "name": "ガーナ", "spCount": 0, "href": "#country-ghana"}}, "matches": {"r32-1": {"round": "ラウンド32", "datetime": "6/29 4:00", "team1": "south-africa", "team2": "canada", "score1": 0, "score2": 1, "winner": "canada", "status": "finished", "next": "r16-1", "nextSlot": "team1"}, "r32-2": {"round": "ラウンド32", "datetime": "6/30 10:00", "team1": "netherlands", "team2": "morocco", "score1": 1, "score2": 1, "penalty1": 2, "penalty2": 3, "winner": "morocco", "status": "finished", "next": "r16-1", "nextSlot": "team2"}, "r32-3": {"round": "ラウンド32", "datetime": "6/30 5:30", "team1": "germany", "team2": "paraguay", "score1": 1, "score2": 1, "penalty1": 3, "penalty2": 4, "winner": "paraguay", "status": "finished", "next": "r16-2", "nextSlot": "team1"}, "r32-4": {"round": "ラウンド32", "datetime": "7/1 6:00", "team1": "france", "team2": "sweden", "score1": 3, "score2": 0, "winner": "france", "status": "finished", "next": "r16-2", "nextSlot": "team2"}, "r32-5": {"round": "ラウンド32", "datetime": "7/3 8:00", "team1": "portugal", "team2": "croatia", "status": "scheduled", "next": "r16-3", "nextSlot": "team1"}, "r32-6": {"round": "ラウンド32", "datetime": "7/3 4:00", "team1": "spain", "team2": "austria", "status": "scheduled", "next": "r16-3", "nextSlot": "team2"}, "r32-7": {"round": "ラウンド32", "datetime": "7/2 9:00", "team1": "usa", "team2": "bosnia", "status": "scheduled", "next": "r16-4", "nextSlot": "team1"}, "r32-8": {"round": "ラウンド32", "datetime": "7/2 5:00", "team1": "belgium", "team2": "senegal", "status": "scheduled", "next": "r16-4", "nextSlot": "team2"}, "r32-9": {"round": "ラウンド32", "datetime": "6/30 2:00", "team1": "brazil", "team2": "japan", "score1": 2, "score2": 1, "winner": "brazil", "status": "finished", "next": "r16-5", "nextSlot": "team1"}, "r32-10": {"round": "ラウンド32", "datetime": "7/1 2:00", "team1": "ivory-coast", "team2": "norway", "score1": 1, "score2": 2, "winner": "norway", "status": "finished", "next": "r16-5", "nextSlot": "team2"}, "r32-11": {"round": "ラウンド32", "datetime": "7/1 10:00", "team1": "mexico", "team2": "ecuador", "status": "scheduled", "next": "r16-6", "nextSlot": "team1"}, "r32-12": {"round": "ラウンド32", "datetime": "7/2 1:00", "team1": "england", "team2": "dr-congo", "status": "scheduled", "next": "r16-6", "nextSlot": "team2"}, "r32-13": {"round": "ラウンド32", "datetime": "7/4 7:00", "team1": "argentina", "team2": "cape-verde", "status": "scheduled", "next": "r16-7", "nextSlot": "team1"}, "r32-14": {"round": "ラウンド32", "datetime": "7/4 3:00", "team1": "australia", "team2": "egypt", "status": "scheduled", "next": "r16-7", "nextSlot": "team2"}, "r32-15": {"round": "ラウンド32", "datetime": "7/3 12:00", "team1": "switzerland", "team2": "algeria", "status": "scheduled", "next": "r16-8", "nextSlot": "team1"}, "r32-16": {"round": "ラウンド32", "datetime": "7/4 10:30", "team1": "colombia", "team2": "ghana", "status": "scheduled", "next": "r16-8", "nextSlot": "team2"}, "r16-1": {"round": "ベスト16", "datetime": "7/5 2:00", "team1": "canada", "team2": "morocco", "status": "scheduled", "next": "qf-1", "nextSlot": "team1"}, "r16-2": {"round": "ベスト16", "datetime": "7/5 6:00", "team1": "paraguay", "team2": "france", "status": "scheduled", "next": "qf-1", "nextSlot": "team2"}, "r16-3": {"round": "ベスト16", "datetime": "7/7 4:00", "team1": "", "team2": "", "placeholder1": "ラウンド32勝者", "placeholder2": "ラウンド32勝者", "status": "scheduled", "next": "qf-2", "nextSlot": "team1"}, "r16-4": {"round": "ベスト16", "datetime": "7/7 9:00", "team1": "", "team2": "", "placeholder1": "ラウンド32勝者", "placeholder2": "ラウンド32勝者", "status": "scheduled", "next": "qf-2", "nextSlot": "team2"}, "r16-5": {"round": "ベスト16", "datetime": "7/6 5:00", "team1": "brazil", "team2": "norway", "status": "scheduled", "next": "qf-3", "nextSlot": "team1"}, "r16-6": {"round": "ベスト16", "datetime": "7/6 9:00", "team1": "", "team2": "", "placeholder1": "ラウンド32勝者", "placeholder2": "ラウンド32勝者", "status": "scheduled", "next": "qf-3", "nextSlot": "team2"}, "r16-7": {"round": "ベスト16", "datetime": "7/8 1:00", "team1": "", "team2": "", "placeholder1": "ラウンド32勝者", "placeholder2": "ラウンド32勝者", "status": "scheduled", "next": "qf-4", "nextSlot": "team1"}, "r16-8": {"round": "ベスト16", "datetime": "7/8 5:00", "team1": "", "team2": "", "placeholder1": "ラウンド32勝者", "placeholder2": "ラウンド32勝者", "status": "scheduled", "next": "qf-4", "nextSlot": "team2"}, "qf-1": {"round": "ベスト8", "datetime": "7/10 5:00", "team1": "", "team2": "", "placeholder1": "ベスト16勝者", "placeholder2": "ベスト16勝者", "status": "scheduled", "next": "sf-1", "nextSlot": "team1"}, "qf-2": {"round": "ベスト8", "datetime": "7/11 4:00", "team1": "", "team2": "", "placeholder1": "ベスト16勝者", "placeholder2": "ベスト16勝者", "status": "scheduled", "next": "sf-1", "nextSlot": "team2"}, "qf-3": {"round": "ベスト8", "datetime": "7/12 6:00", "team1": "", "team2": "", "placeholder1": "ベスト16勝者", "placeholder2": "ベスト16勝者", "status": "scheduled", "next": "sf-2", "nextSlot": "team1"}, "qf-4": {"round": "ベスト8", "datetime": "7/12 10:00", "team1": "", "team2": "", "placeholder1": "ベスト16勝者", "placeholder2": "ベスト16勝者", "status": "scheduled", "next": "sf-2", "nextSlot": "team2"}, "sf-1": {"round": "ベスト4", "datetime": "7/15 4:00", "team1": "", "team2": "", "placeholder1": "ベスト8勝者", "placeholder2": "ベスト8勝者", "status": "scheduled", "next": "final", "nextSlot": "team1", "loserNext": "third", "loserNextSlot": "team1"}, "sf-2": {"round": "ベスト4", "datetime": "7/16 4:00", "team1": "", "team2": "", "placeholder1": "ベスト8勝者", "placeholder2": "ベスト8勝者", "status": "scheduled", "next": "final", "nextSlot": "team2", "loserNext": "third", "loserNextSlot": "team2"}, "third": {"round": "3位決定戦", "datetime": "7/19 6:00", "team1": "", "team2": "", "placeholder1": "ベスト4敗者", "placeholder2": "ベスト4敗者", "status": "scheduled"}, "final": {"round": "決勝", "datetime": "7/20 4:00", "team1": "", "team2": "", "placeholder1": "ベスト4勝者", "placeholder2": "ベスト4勝者", "status": "scheduled"}}}
+</script>
+<script>
+(function(){
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+  const XLINK_NS = 'http://www.w3.org/1999/xlink';
+  const order = ['r32-1','r32-2','r32-3','r32-4','r32-5','r32-6','r32-7','r32-8','r32-9','r32-10','r32-11','r32-12','r32-13','r32-14','r32-15','r32-16','r16-1','r16-2','r16-3','r16-4','r16-5','r16-6','r16-7','r16-8','qf-1','qf-2','qf-3','qf-4','sf-1','sf-2','third','final'];
+  const positions = {
+    // Redesigned SVG bracket layout.
+    // サンプル画像に近い「骨格を先に決める」設計：大きめカード＋左右対称＋中央決勝配置。
+    // left side
+    'r32-1':[30,70],  'r32-2':[30,190], 'r32-3':[30,310], 'r32-4':[30,430],
+    'r32-5':[30,570], 'r32-6':[30,690], 'r32-7':[30,810], 'r32-8':[30,930],
+    'r16-1':[245,130], 'r16-2':[245,370], 'r16-3':[245,630], 'r16-4':[245,870],
+    'qf-1':[380,250], 'qf-2':[380,750],
+    'sf-1':[515,500],
+    // right side
+    'r32-9':[1200,70],  'r32-10':[1200,190], 'r32-11':[1200,310], 'r32-12':[1200,430],
+    'r32-13':[1200,570], 'r32-14':[1200,690], 'r32-15':[1200,810], 'r32-16':[1200,930],
+    'r16-5':[985,130], 'r16-6':[985,370], 'r16-7':[985,630], 'r16-8':[985,870],
+    'qf-3':[850,250], 'qf-4':[850,750],
+    'sf-2':[715,500],
+    // center matches
+    'final':[615,350],
+    'third':[615,760]
+  };
+  const size = {w:170,h:100};
+  const children = {'r16-1':['r32-1','r32-2'],'r16-2':['r32-3','r32-4'],'r16-3':['r32-5','r32-6'],'r16-4':['r32-7','r32-8'],'qf-1':['r16-1','r16-2'],'qf-2':['r16-3','r16-4'],'sf-1':['qf-1','qf-2'],'r16-5':['r32-9','r32-10'],'r16-6':['r32-11','r32-12'],'r16-7':['r32-13','r32-14'],'r16-8':['r32-15','r32-16'],'qf-3':['r16-5','r16-6'],'qf-4':['r16-7','r16-8'],'sf-2':['qf-3','qf-4'],'final':['sf-1','sf-2'],'third':['sf-1','sf-2']};
+  const roundTitles = [
+    ['ラウンド32',115,38],['ベスト16',330,105],['ベスト8',465,225],['ベスト4',600,480],
+    ['決勝',700,330],['ベスト4',800,480],['ベスト8',935,225],['ベスト16',1070,105],['ラウンド32',1285,38]
+  ];
+  function el(name, attrs={}, text){
+    const node=document.createElementNS(SVG_NS,name);
+    for(const [k,v] of Object.entries(attrs)){ if(k==='href') node.setAttributeNS(XLINK_NS,'href',v); else node.setAttribute(k,v); }
+    if(text!==undefined) node.textContent=text;
+    return node;
+  }
+  function fallbackData(){
+    return JSON.parse(document.getElementById('knockout-fallback-data').textContent);
+  }
+  function normalizeData(data){
+    const matches=data.matches;
+    let changed=true;
+    while(changed){
+      changed=false;
+      for(const id of order){
+        const m=matches[id]; if(!m||!m.winner) continue;
+        if(m.next&&matches[m.next]&&!matches[m.next][m.nextSlot]){ matches[m.next][m.nextSlot]=m.winner; changed=true; }
+        if(m.loserNext&&matches[m.loserNext]){
+          const loser=(m.team1&&m.team2) ? (m.winner===m.team1?m.team2:m.team1) : '';
+          if(loser&&!matches[m.loserNext][m.loserNextSlot]){ matches[m.loserNext][m.loserNextSlot]=loser; changed=true; }
+        }
+      }
+    }
+    return data;
+  }
+  function teamLabel(data, teamId, placeholder){
+    if(teamId && data.teams[teamId]){
+      const t=data.teams[teamId];
+      return {id:teamId, text:`${t.flag} ${t.name}`, href:t.href, spCount:Number(t.spCount||0)};
+    }
+    return {id:'', text:placeholder||'未定', href:null, spCount:null};
+  }
+  function drawTeam(g, data, match, slot, x, y, isWinner){
+    const teamId=match[slot];
+    const scoreKey=slot==='team1'?'score1':'score2';
+    const penKey=slot==='team1'?'penalty1':'penalty2';
+    const placeholder=match[slot==='team1'?'placeholder1':'placeholder2'];
+    const info=teamLabel(data, teamId, placeholder);
+    const hasSp=info.spCount>0;
+    const a= info.href ? el('a',{href:info.href, class:hasSp?'has-sp':'no-sp'}) : el('g');
+    const teamW = size.w - 12;
+    a.appendChild(el('rect',{x,y,width:teamW,height:22,rx:7, class:`team-bg ${hasSp?'has-sp':''} ${isWinner?'winner':''}`}));
+    const label = info.text.length>16 ? info.text.slice(0,15)+'…' : info.text;
+    a.appendChild(el('text',{x:x+8,y:y+16,class:`team-text ${isWinner?'winner-text':''}`},label));
+    let score='';
+    if(match[scoreKey]!==undefined && match[scoreKey]!==null){ score=String(match[scoreKey]); if(match[penKey]!==undefined) score += `(${match[penKey]})`; }
+    a.appendChild(el('text',{x:x+teamW-6,y:y+16,class:'score-text'},score));
+    g.appendChild(a);
+  }
+  function drawMatch(svg, data, id){
+    const m=data.matches[id]; const p=positions[id]; if(!m||!p) return;
+    const [x,y]=p;
+    const g=el('g',{'data-match':id});
+    const cls='match-card '+(m.status==='finished'?'finished':'scheduled');
+    g.appendChild(el('rect',{x,y,width:size.w,height:size.h,rx:9,class:cls}));
+    g.appendChild(el('text',{x:x+size.w/2,y:y+16,'text-anchor':'middle',class:'match-time'},m.datetime));
+    drawTeam(g,data,m,'team1',x+6,y+30,m.winner&&m.winner===m.team1);
+    drawTeam(g,data,m,'team2',x+6,y+63,m.winner&&m.winner===m.team2);
+    svg.appendChild(g);
+  }
+  function mid(id){ const [x,y]=positions[id]; return {x:x+size.w/2,y:y+size.h/2,left:x,right:x+size.w}; }
+  function drawConnector(svg, data, from, to){
+    if(!positions[from]||!positions[to]) return;
+    const a=mid(from), b=mid(to);
+    const rightSide = positions[from][0] > positions[to][0];
+    const startX = rightSide ? a.left : a.right;
+    const endX = rightSide ? b.right : b.left;
+    const mx = rightSide ? Math.min(startX,endX)-12 : Math.max(startX,endX)+12;
+    const d = `M ${startX} ${a.y} L ${mx} ${a.y} L ${mx} ${b.y} L ${endX} ${b.y}`;
+    const fm=data.matches[from]; const isWinnerPath=fm&&fm.winner&&fm.next===to;
+    svg.insertBefore(el('path',{d,class:'connector '+(isWinnerPath?'winner-path':'')}), svg.firstChild.nextSibling);
+  }
+  function render(data){
+    data=normalizeData(JSON.parse(JSON.stringify(data)));
+    const svg=document.getElementById('svgBracket'); if(!svg) return; svg.innerHTML='';
+    const defs=el('defs');
+    const filter=el('filter',{id:'cardShadow',x:'-20%',y:'-20%',width:'140%',height:'140%'});
+    filter.appendChild(el('feDropShadow',{dx:'0',dy:'4',stdDeviation:'3','flood-color':'#0f172a','flood-opacity':'.10'}));
+    defs.appendChild(filter); svg.appendChild(defs);
+    svg.appendChild(el('rect',{x:3,y:3,width:1394,height:1074,rx:28,fill:'none',stroke:'#0b3a4a','stroke-width':5}));
+    roundTitles.forEach(([text,x,y])=>svg.appendChild(el('text',{x,y,'text-anchor':'middle',class:'round-title'},text)));
+    svg.appendChild(el('text',{x:700,y:64,class:'center-title'},'FIFA WORLD CUP 2026'));
+    svg.appendChild(el('text',{x:700,y:230,class:'cup'},'🏆'));
+    svg.appendChild(el('text',{x:700,y:268,class:'center-date'},'決勝：7/20 4:00（日本時間）'));
+    svg.appendChild(el('text',{x:700,y:288,class:'help-text','text-anchor':'middle'},'国名クリックでSP選手リストへ移動')); 
+    Object.entries(children).forEach(([to,froms])=>froms.forEach(from=>drawConnector(svg,data,from,to)));
+    order.forEach(id=>drawMatch(svg,data,id));
+  }
+  async function init(){
+    try{
+      const res=await fetch('wc2026_knockout_results.json',{cache:'no-store'});
+      if(!res.ok) throw new Error('json load failed');
+      render(await res.json());
+    }catch(e){
+      render(fallbackData());
+    }
+  }
+  init();
+})();
+</script>
+</body>
+</html>
