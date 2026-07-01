@@ -35,6 +35,7 @@
 /* SVG tournament bracket + manual JSON update */
 .svg-bracket-wrap{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#fff,#f8fafc);padding:10px;margin-top:14px}
 .svg-bracket{display:block;width:100%;max-width:1180px;height:auto;margin:0 auto;font-family:inherit}
+.mobile-scroll-note{display:none;margin:10px 0 0;padding:8px 10px;border-radius:12px;background:#eff6ff;border:1px solid #bfdbfe;color:var(--blue-dark);font-size:13px;font-weight:900;text-align:center}
 .bracket-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;color:var(--muted);font-size:13px;font-weight:800}
 .bracket-meta code{background:#f1f5f9;border:1px solid var(--line);border-radius:999px;padding:2px 8px;color:#334155}
 .svg-bracket .round-title{font-size:22px;font-weight:900;fill:#0f172a}
@@ -57,7 +58,7 @@
 .svg-bracket .center-date{font-size:13px;font-weight:900;fill:#64748b;text-anchor:middle}
 .svg-bracket .cup{font-size:86px;text-anchor:middle}
 .svg-bracket .help-text{font-size:12px;font-weight:800;fill:#64748b}
-@media(max-width:760px){.svg-bracket-wrap{padding:6px}.bracket-meta{font-size:12px}.svg-bracket .round-title{font-size:14px}.svg-bracket .team-text{font-size:10px}.svg-bracket .score-text{font-size:10px}.svg-bracket .sp-badge{display:none}.svg-bracket .center-title{font-size:18px}}
+@media(max-width:760px){.svg-bracket-wrap{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;padding:6px}.svg-bracket{width:1180px;max-width:none}.mobile-scroll-note{display:block}.bracket-meta{font-size:12px}.svg-bracket .round-title{font-size:22px}.svg-bracket .team-text{font-size:14px}.svg-bracket .score-text{font-size:16px}.svg-bracket .sp-badge{display:inline}.svg-bracket .center-title{font-size:42px}}
 
 </style>
 </head>
@@ -75,6 +76,7 @@
 <section class="tournament-card" id="tournament">
 <h2>決勝トーナメント表（日本時間）</h2>
 <p>国名をクリックすると、ページ下部の国別★3SP選手リストへジャンプします。</p>
+<p class="mobile-scroll-note">📱スマホでは左右にスワイプすると、トーナメント表全体を確認できます。</p>
 <div class="svg-bracket-wrap">
   <svg id="svgBracket" class="svg-bracket" viewBox="0 0 1400 1080" role="img" aria-label="ワールドカップ2026 決勝トーナメント表"></svg>
 </div>
