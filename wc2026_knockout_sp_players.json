@@ -1,0 +1,1341 @@
+{
+  "updatedAt": "2026-07-02",
+  "sourceFile": "【ワールドカップ2026】サカつく2026に実装されているSP選手(6).xlsx",
+  "sourceSheet": "対応表_全選手",
+  "filter": {
+    "照合結果": "一致",
+    "カテゴリ": "SP選手",
+    "レアリティ": "★3",
+    "target": "決勝トーナメント32カ国"
+  },
+  "summary": {
+    "totalPlayers": 44,
+    "countriesWithPlayers": 16,
+    "totalCountries": 32
+  },
+  "countries": [
+    {
+      "country": "日本",
+      "countryId": "japan",
+      "flag": "🇯🇵",
+      "href": "#country-japan",
+      "spCount": 11,
+      "players": [
+        {
+          "number": 1,
+          "fifaName": "大迫敬介",
+          "name": "大迫敬介",
+          "playerId": "P0135",
+          "position": "GK",
+          "positionGroup": "GK",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "ムービング",
+          "mainPosition": "GK",
+          "playStyle": "オーソドックスGK",
+          "overall": 5950,
+          "maxOverall": 14579,
+          "acquisitionPlace": "JリーグセレクトSP選手スカウト【第一弾】",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/squad"
+        },
+        {
+          "number": 3,
+          "fifaName": "鈴木彩艶",
+          "name": "鈴木彩艶 〔2026〕",
+          "playerId": "P0386",
+          "position": "GK",
+          "positionGroup": "GK",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "GK",
+          "playStyle": "オーソドックスGK",
+          "overall": 6692,
+          "maxOverall": 15472,
+          "acquisitionPlace": "日本代表SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/squad"
+        },
+        {
+          "number": 4,
+          "fifaName": "伊藤洋輝",
+          "name": "伊藤洋輝 〔2026〕",
+          "playerId": "P0383",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "CB",
+          "playStyle": "ストッパー",
+          "overall": 6901,
+          "maxOverall": 15724,
+          "acquisitionPlace": "日本代表SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/squad"
+        },
+        {
+          "number": 10,
+          "fifaName": "谷口彰悟",
+          "name": "谷口彰悟 〔2026〕",
+          "playerId": "P0385",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "CB",
+          "playStyle": "組立CB",
+          "overall": 6423,
+          "maxOverall": 14963,
+          "acquisitionPlace": "日本代表SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/squad"
+        },
+        {
+          "number": 12,
+          "fifaName": "長友佑都",
+          "name": "長友佑都",
+          "playerId": "P0090",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "リアクション",
+          "mainPosition": "LB",
+          "playStyle": "攻撃的FB",
+          "overall": 6101,
+          "maxOverall": 14682,
+          "acquisitionPlace": "JリーグセレクトSP選手スカウト【第一弾】",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/squad"
+        },
+        {
+          "number": 13,
+          "fifaName": "中村敬斗",
+          "name": "中村敬斗 〔2026〕",
+          "playerId": "P0379",
+          "position": "MF",
+          "positionGroup": "MF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "LM",
+          "playStyle": "ドリブラー",
+          "overall": 6713,
+          "maxOverall": 15263,
+          "acquisitionPlace": "日本代表SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/squad"
+        },
+        {
+          "number": 15,
+          "fifaName": "伊東純也",
+          "name": "伊東純也 〔2026〕",
+          "playerId": "P0380",
+          "position": "MF",
+          "positionGroup": "MF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "RM",
+          "playStyle": "ドリブラー",
+          "overall": 6751,
+          "maxOverall": 15434,
+          "acquisitionPlace": "日本代表SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/squad"
+        },
+        {
+          "number": 16,
+          "fifaName": "佐野海舟",
+          "name": "佐野海舟 〔2026〕",
+          "playerId": "P0382",
+          "position": "MF",
+          "positionGroup": "MF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "DM",
+          "playStyle": "ハードマーカー",
+          "overall": 6773,
+          "maxOverall": 15393,
+          "acquisitionPlace": "日本代表SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/squad"
+        },
+        {
+          "number": 18,
+          "fifaName": "堂安律",
+          "name": "堂安律 〔2026〕",
+          "playerId": "P0378",
+          "position": "MF",
+          "positionGroup": "MF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "RM",
+          "playStyle": "ドリブラー",
+          "overall": 6792,
+          "maxOverall": 15471,
+          "acquisitionPlace": "日本代表SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/squad"
+        },
+        {
+          "number": 21,
+          "fifaName": "鎌田大地",
+          "name": "鎌田大地 〔2026〕",
+          "playerId": "P0381",
+          "position": "MF",
+          "positionGroup": "MF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "DM",
+          "playStyle": "パサー",
+          "overall": 6964,
+          "maxOverall": 15564,
+          "acquisitionPlace": "日本代表SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/squad"
+        },
+        {
+          "number": 22,
+          "fifaName": "上田綺世",
+          "name": "上田綺世 〔2026〕",
+          "playerId": "P0376",
+          "position": "FW",
+          "positionGroup": "FW",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "CF",
+          "playStyle": "ストライカー",
+          "overall": 6915,
+          "maxOverall": 15640,
+          "acquisitionPlace": "日本代表SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/squad"
+        }
+      ]
+    },
+    {
+      "country": "ブラジル",
+      "countryId": "brazil",
+      "flag": "🇧🇷",
+      "href": "#country-brazil",
+      "spCount": 1,
+      "players": [
+        {
+          "number": 5,
+          "fifaName": "ガブリエル・マガリャエス",
+          "name": "ガブリエウ",
+          "playerId": "P0197",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "候補確認○",
+          "policy": "ポゼッション",
+          "mainPosition": "CB",
+          "playStyle": "ストッパー",
+          "overall": 6741,
+          "maxOverall": 15350,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/brazil/squad"
+        }
+      ]
+    },
+    {
+      "country": "ドイツ",
+      "countryId": "germany",
+      "flag": "🇩🇪",
+      "href": "#country-germany",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "パラグアイ",
+      "countryId": "paraguay",
+      "flag": "🇵🇾",
+      "href": "#country-paraguay",
+      "spCount": 1,
+      "players": [
+        {
+          "number": 19,
+          "fifaName": "ミゲル・アルミロン",
+          "name": "ミゲル・アルミロン",
+          "playerId": "P0199",
+          "position": "MF",
+          "positionGroup": "MF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "RW",
+          "playStyle": "ドリブラー",
+          "overall": 6424,
+          "maxOverall": 14898,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/paraguay/squad"
+        }
+      ]
+    },
+    {
+      "country": "フランス",
+      "countryId": "france",
+      "flag": "🇫🇷",
+      "href": "#country-france",
+      "spCount": 4,
+      "players": [
+        {
+          "number": 2,
+          "fifaName": "マイク・メニャン",
+          "name": "マイク・メニャン",
+          "playerId": "P0163",
+          "position": "GK",
+          "positionGroup": "GK",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "候補確認○",
+          "policy": "ポゼッション",
+          "mainPosition": "GK",
+          "playStyle": "オーソドックスGK",
+          "overall": 6685,
+          "maxOverall": 15353,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/france/squad"
+        },
+        {
+          "number": 5,
+          "fifaName": "ウィリアム・サリバ",
+          "name": "ウィリアム・サリバ",
+          "playerId": "P0221",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "CB",
+          "playStyle": "組立CB",
+          "overall": 6966,
+          "maxOverall": 15634,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/france/squad"
+        },
+        {
+          "number": 15,
+          "fifaName": "オーレリアン・チュアメニ",
+          "name": "オーレリアン・チュアメニ",
+          "playerId": "P0213",
+          "position": "MF",
+          "positionGroup": "MF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "リアクション",
+          "mainPosition": "DM",
+          "playStyle": "セントラルMF",
+          "overall": 6876,
+          "maxOverall": 15394,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/france/squad"
+        },
+        {
+          "number": 20,
+          "fifaName": "ウスマン・デンベレ",
+          "name": "ウスマン・デンベレ",
+          "playerId": "P0372",
+          "position": "FW",
+          "positionGroup": "FW",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "ポゼッション",
+          "mainPosition": "CF",
+          "playStyle": "ストライカー",
+          "overall": 7063,
+          "maxOverall": 15703,
+          "acquisitionPlace": "ピックアップSP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/france/squad"
+        }
+      ]
+    },
+    {
+      "country": "スウェーデン",
+      "countryId": "sweden",
+      "flag": "🇸🇪",
+      "href": "#country-sweden",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "南アフリカ",
+      "countryId": "south-africa",
+      "flag": "🇿🇦",
+      "href": "#country-south-africa",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "カナダ",
+      "countryId": "canada",
+      "flag": "🇨🇦",
+      "href": "#country-canada",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "オランダ",
+      "countryId": "netherlands",
+      "flag": "🇳🇱",
+      "href": "#country-netherlands",
+      "spCount": 3,
+      "players": [
+        {
+          "number": 6,
+          "fifaName": "デンゼル・ダンフリース",
+          "name": "デンゼル・ダンフリース",
+          "playerId": "P0206",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "候補確認○",
+          "policy": "ムービング",
+          "mainPosition": "RB",
+          "playStyle": "攻撃的FB",
+          "overall": 6671,
+          "maxOverall": 15165,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/netherlands/squad"
+        },
+        {
+          "number": 7,
+          "fifaName": "ナタン・アケ",
+          "name": "ナタン・アケ",
+          "playerId": "P0210",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "ムービング",
+          "mainPosition": "CB",
+          "playStyle": "ストッパー",
+          "overall": 6690,
+          "maxOverall": 15356,
+          "acquisitionPlace": "マンチェスター・シティ記念SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/netherlands/squad"
+        },
+        {
+          "number": 11,
+          "fifaName": "フィルジル・ファン・ダイク",
+          "name": "フィルジル・ファン・ダイク",
+          "playerId": "P0165",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "候補確認○",
+          "policy": "ムービング",
+          "mainPosition": "CB",
+          "playStyle": "組立CB",
+          "overall": 6999,
+          "maxOverall": 15607,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/netherlands/squad"
+        }
+      ]
+    },
+    {
+      "country": "モロッコ",
+      "countryId": "morocco",
+      "flag": "🇲🇦",
+      "href": "#country-morocco",
+      "spCount": 2,
+      "players": [
+        {
+          "number": 4,
+          "fifaName": "アクラフ・ハキミ",
+          "name": "アクラフ・ハキミ",
+          "playerId": "P0204",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "候補確認○",
+          "policy": "ポゼッション",
+          "mainPosition": "RB",
+          "playStyle": "攻撃的FB",
+          "overall": 6889,
+          "maxOverall": 15578,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/morocco/squad"
+        },
+        {
+          "number": 26,
+          "fifaName": "ブラヒム・ディアス",
+          "name": "ブラヒム・ディアス",
+          "playerId": "P0015",
+          "position": "FW",
+          "positionGroup": "FW",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "リアクション",
+          "mainPosition": "RW",
+          "playStyle": "ドリブラー",
+          "overall": 6702,
+          "maxOverall": 15368,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/morocco/squad"
+        }
+      ]
+    },
+    {
+      "country": "ポルトガル",
+      "countryId": "portugal",
+      "flag": "🇵🇹",
+      "href": "#country-portugal",
+      "spCount": 3,
+      "players": [
+        {
+          "number": 6,
+          "fifaName": "ジョアン・カンセロ",
+          "name": "ジョアン・カンセロ",
+          "playerId": "P0171",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "リアクション",
+          "mainPosition": "LB",
+          "playStyle": "攻撃的FB",
+          "overall": 6685,
+          "maxOverall": 15140,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/portugal/squad"
+        },
+        {
+          "number": 11,
+          "fifaName": "ルベン・ディアス",
+          "name": "ルベン・ディアス",
+          "playerId": "P0004",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "ムービング",
+          "mainPosition": "CB",
+          "playStyle": "ストッパー",
+          "overall": 5427,
+          "maxOverall": 12113,
+          "acquisitionPlace": "事前登録達成感謝ログインボーナス",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/portugal/squad"
+        },
+        {
+          "number": 19,
+          "fifaName": "クリスティアーノ・ロナウド",
+          "name": "クリスティアーノ・ロナウド",
+          "playerId": "P0006",
+          "position": "FW",
+          "positionGroup": "FW",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "リアクション",
+          "mainPosition": "CF",
+          "playStyle": "ストライカー",
+          "overall": 6657,
+          "maxOverall": 15972,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/portugal/squad"
+        }
+      ]
+    },
+    {
+      "country": "クロアチア",
+      "countryId": "croatia",
+      "flag": "🇭🇷",
+      "href": "#country-croatia",
+      "spCount": 1,
+      "players": [
+        {
+          "number": 20,
+          "fifaName": "ルカ・モドリッチ",
+          "name": "ルカ・モドリッチ",
+          "playerId": "P0170",
+          "position": "MF",
+          "positionGroup": "MF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "ポゼッション",
+          "mainPosition": "DM",
+          "playStyle": "パサー",
+          "overall": 6929,
+          "maxOverall": 15481,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/croatia/squad"
+        }
+      ]
+    },
+    {
+      "country": "スペイン",
+      "countryId": "spain",
+      "flag": "🇪🇸",
+      "href": "#country-spain",
+      "spCount": 4,
+      "players": [
+        {
+          "number": 2,
+          "fifaName": "ジョアン・ガルシア",
+          "name": "ジョアン・ガルシア",
+          "playerId": "P0223",
+          "position": "GK",
+          "positionGroup": "GK",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "ムービング",
+          "mainPosition": "GK",
+          "playStyle": "オーソドックスGK",
+          "overall": 6498,
+          "maxOverall": 15251,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/spain/squad"
+        },
+        {
+          "number": 8,
+          "fifaName": "ペドロ・ポロ",
+          "name": "ペドロ・ポロ",
+          "playerId": "P0167",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "リアクション",
+          "mainPosition": "RM",
+          "playStyle": "サイドアタッカー",
+          "overall": 6726,
+          "maxOverall": 15183,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/spain/squad"
+        },
+        {
+          "number": 14,
+          "fifaName": "ファビアン・ルイス",
+          "name": "ファビアン・ルイス",
+          "playerId": "P0023",
+          "position": "MF",
+          "positionGroup": "MF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "ポゼッション",
+          "mainPosition": "DM",
+          "playStyle": "パサー",
+          "overall": 6577,
+          "maxOverall": 14907,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/spain/squad"
+        },
+        {
+          "number": 21,
+          "fifaName": "ニコ・ウィリアムズ",
+          "name": "ニコ・ウィリアムズ",
+          "playerId": "P0230",
+          "position": "FW",
+          "positionGroup": "FW",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "LW",
+          "playStyle": "ドリブラー",
+          "overall": 6739,
+          "maxOverall": 15400,
+          "acquisitionPlace": "ピックアップSP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/spain/squad"
+        }
+      ]
+    },
+    {
+      "country": "オーストリア",
+      "countryId": "austria",
+      "flag": "🇦🇹",
+      "href": "#country-austria",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "アメリカ",
+      "countryId": "usa",
+      "flag": "🇺🇸",
+      "href": "#country-usa",
+      "spCount": 2,
+      "players": [
+        {
+          "number": 14,
+          "fifaName": "ウェストン・マッケニー",
+          "name": "ウェストン・マッケニー",
+          "playerId": "P0214",
+          "position": "MF",
+          "positionGroup": "MF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "ムービング",
+          "mainPosition": "RM",
+          "playStyle": "サイドアタッカー",
+          "overall": 6490,
+          "maxOverall": 14973,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/usa/squad"
+        },
+        {
+          "number": 15,
+          "fifaName": "クリスティアン・ロルダン",
+          "name": "クリスティアン・ロルダン 〔2026〕",
+          "playerId": "P0236",
+          "position": "MF",
+          "positionGroup": "MF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "候補確認○",
+          "policy": "ムービング",
+          "mainPosition": "DM",
+          "playStyle": "セントラルMF",
+          "overall": 6750,
+          "maxOverall": 15253,
+          "acquisitionPlace": "MLS実装記念SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/usa/squad"
+        }
+      ]
+    },
+    {
+      "country": "ボスニア・ヘルツェゴビナ",
+      "countryId": "bosnia",
+      "flag": "🇧🇦",
+      "href": "#country-bosnia",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "ベルギー",
+      "countryId": "belgium",
+      "flag": "🇧🇪",
+      "href": "#country-belgium",
+      "spCount": 2,
+      "players": [
+        {
+          "number": 2,
+          "fifaName": "ティボ・クルトワ",
+          "name": "ティボ・クルトワ",
+          "playerId": "P0201",
+          "position": "GK",
+          "positionGroup": "GK",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "GK",
+          "playStyle": "オーソドックスGK",
+          "overall": 6898,
+          "maxOverall": 15920,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/belgium/squad"
+        },
+        {
+          "number": 16,
+          "fifaName": "ケヴィン・デ・ブライネ",
+          "name": "ケヴィン・デ・ブライネ",
+          "playerId": "P0166",
+          "position": "MF",
+          "positionGroup": "MF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "ムービング",
+          "mainPosition": "DM",
+          "playStyle": "パサー",
+          "overall": 6848,
+          "maxOverall": 15321,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/belgium/squad"
+        }
+      ]
+    },
+    {
+      "country": "セネガル",
+      "countryId": "senegal",
+      "flag": "🇸🇳",
+      "href": "#country-senegal",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "コートジボワール",
+      "countryId": "ivory-coast",
+      "flag": "🇨🇮",
+      "href": "#country-ivory-coast",
+      "spCount": 1,
+      "players": [
+        {
+          "number": 18,
+          "fifaName": "アマド・ディアロ",
+          "name": "アマド・ディアロ",
+          "playerId": "P0172",
+          "position": "FW",
+          "positionGroup": "FW",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "RM",
+          "playStyle": "サイドアタッカー",
+          "overall": 6748,
+          "maxOverall": 15230,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/cote-d-ivoire/squad"
+        }
+      ]
+    },
+    {
+      "country": "ノルウェー",
+      "countryId": "norway",
+      "flag": "🇳🇴",
+      "href": "#country-norway",
+      "spCount": 2,
+      "players": [
+        {
+          "number": 22,
+          "fifaName": "アレクサンダー・セルロート",
+          "name": "アレクサンダー・セルロート",
+          "playerId": "P0202",
+          "position": "FW",
+          "positionGroup": "FW",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "候補確認○",
+          "policy": "カウンター",
+          "mainPosition": "CF",
+          "playStyle": "ポストプレーヤー",
+          "overall": 6684,
+          "maxOverall": 15315,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/norway/squad"
+        },
+        {
+          "number": 24,
+          "fifaName": "アーリング・ハーランド",
+          "name": "アーリング・ハーランド",
+          "playerId": "P0208",
+          "position": "FW",
+          "positionGroup": "FW",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "ムービング",
+          "mainPosition": "CF",
+          "playStyle": "ストライカー",
+          "overall": 6987,
+          "maxOverall": 15702,
+          "acquisitionPlace": "マンチェスター・シティ記念SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/norway/squad"
+        }
+      ]
+    },
+    {
+      "country": "メキシコ",
+      "countryId": "mexico",
+      "flag": "🇲🇽",
+      "href": "#country-mexico",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "エクアドル",
+      "countryId": "ecuador",
+      "flag": "🇪🇨",
+      "href": "#country-ecuador",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "イングランド",
+      "countryId": "england",
+      "flag": "EN",
+      "href": "#country-england",
+      "spCount": 2,
+      "players": [
+        {
+          "number": 12,
+          "fifaName": "リース・ジェイムズ",
+          "name": "リース・ジェイムズ",
+          "playerId": "P0173",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "候補確認○",
+          "policy": "リアクション",
+          "mainPosition": "RB",
+          "playStyle": "守備的FB",
+          "overall": 6495,
+          "maxOverall": 14913,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/england/squad"
+        },
+        {
+          "number": 25,
+          "fifaName": "ブカヨ・サカ",
+          "name": "ブカヨ・サカ",
+          "playerId": "P0161",
+          "position": "FW",
+          "positionGroup": "FW",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "ポゼッション",
+          "mainPosition": "RW",
+          "playStyle": "ドリブラー",
+          "overall": 6936,
+          "maxOverall": 15587,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/england/squad"
+        }
+      ]
+    },
+    {
+      "country": "コンゴ民主共和国",
+      "countryId": "dr-congo",
+      "flag": "🇨🇩",
+      "href": "#country-dr-congo",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "アルゼンチン",
+      "countryId": "argentina",
+      "flag": "🇦🇷",
+      "href": "#country-argentina",
+      "spCount": 3,
+      "players": [
+        {
+          "number": 6,
+          "fifaName": "ナウエル・モリーナ",
+          "name": "ナウエル・モリーナ",
+          "playerId": "P0026",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "RB",
+          "playStyle": "攻撃的FB",
+          "overall": 6463,
+          "maxOverall": 14979,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/argentina/squad"
+        },
+        {
+          "number": 25,
+          "fifaName": "ラウタロ・マルティネス",
+          "name": "ラウタロ・マルティネス",
+          "playerId": "P0162",
+          "position": "FW",
+          "positionGroup": "FW",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "リアクション",
+          "mainPosition": "CF",
+          "playStyle": "ラインブレーカー",
+          "overall": 6810,
+          "maxOverall": 15403,
+          "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/argentina/squad"
+        },
+        {
+          "number": 26,
+          "fifaName": "リオネル・メッシ",
+          "name": "リオネル・メッシ",
+          "playerId": "P0002",
+          "position": "FW",
+          "positionGroup": "FW",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "リアクション",
+          "mainPosition": "RW",
+          "playStyle": "ドリブラー",
+          "overall": 6041,
+          "maxOverall": 11403,
+          "acquisitionPlace": "初心者ガイドミッション",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/argentina/squad"
+        }
+      ]
+    },
+    {
+      "country": "カーボベルデ",
+      "countryId": "cape-verde",
+      "flag": "🇨🇻",
+      "href": "#country-cape-verde",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "オーストラリア",
+      "countryId": "australia",
+      "flag": "🇦🇺",
+      "href": "#country-australia",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "エジプト",
+      "countryId": "egypt",
+      "flag": "🇪🇬",
+      "href": "#country-egypt",
+      "spCount": 2,
+      "players": [
+        {
+          "number": 21,
+          "fifaName": "オマル・マルムシュ",
+          "name": "オマル・マーモウシュ",
+          "playerId": "P0209",
+          "position": "FW",
+          "positionGroup": "FW",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "候補確認○",
+          "policy": "ムービング",
+          "mainPosition": "AM",
+          "playStyle": "アタッカー",
+          "overall": 6837,
+          "maxOverall": 15317,
+          "acquisitionPlace": "マンチェスター・シティ記念SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/egypt/squad"
+        },
+        {
+          "number": 26,
+          "fifaName": "モハメド・サラー",
+          "name": "モハメド・サラー",
+          "playerId": "P0228",
+          "position": "FW",
+          "positionGroup": "FW",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "RW",
+          "playStyle": "ドリブラー",
+          "overall": 7004,
+          "maxOverall": 15608,
+          "acquisitionPlace": "ピックアップSP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/egypt/squad"
+        }
+      ]
+    },
+    {
+      "country": "スイス",
+      "countryId": "switzerland",
+      "flag": "🇨🇭",
+      "href": "#country-switzerland",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "アルジェリア",
+      "countryId": "algeria",
+      "flag": "🇩🇿",
+      "href": "#country-algeria",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "コロンビア",
+      "countryId": "colombia",
+      "flag": "🇨🇴",
+      "href": "#country-colombia",
+      "spCount": 0,
+      "players": []
+    },
+    {
+      "country": "ガーナ",
+      "countryId": "ghana",
+      "flag": "🇬🇭",
+      "href": "#country-ghana",
+      "spCount": 0,
+      "players": []
+    }
+  ],
+  "teams": {
+    "japan": {
+      "flag": "🇯🇵",
+      "name": "日本",
+      "spCount": 11,
+      "href": "#country-japan"
+    },
+    "brazil": {
+      "flag": "🇧🇷",
+      "name": "ブラジル",
+      "spCount": 1,
+      "href": "#country-brazil"
+    },
+    "germany": {
+      "flag": "🇩🇪",
+      "name": "ドイツ",
+      "spCount": 0,
+      "href": "#country-germany"
+    },
+    "paraguay": {
+      "flag": "🇵🇾",
+      "name": "パラグアイ",
+      "spCount": 1,
+      "href": "#country-paraguay"
+    },
+    "france": {
+      "flag": "🇫🇷",
+      "name": "フランス",
+      "spCount": 4,
+      "href": "#country-france"
+    },
+    "sweden": {
+      "flag": "🇸🇪",
+      "name": "スウェーデン",
+      "spCount": 0,
+      "href": "#country-sweden"
+    },
+    "south-africa": {
+      "flag": "🇿🇦",
+      "name": "南アフリカ",
+      "spCount": 0,
+      "href": "#country-south-africa"
+    },
+    "canada": {
+      "flag": "🇨🇦",
+      "name": "カナダ",
+      "spCount": 0,
+      "href": "#country-canada"
+    },
+    "netherlands": {
+      "flag": "🇳🇱",
+      "name": "オランダ",
+      "spCount": 3,
+      "href": "#country-netherlands"
+    },
+    "morocco": {
+      "flag": "🇲🇦",
+      "name": "モロッコ",
+      "spCount": 2,
+      "href": "#country-morocco"
+    },
+    "portugal": {
+      "flag": "🇵🇹",
+      "name": "ポルトガル",
+      "spCount": 3,
+      "href": "#country-portugal"
+    },
+    "croatia": {
+      "flag": "🇭🇷",
+      "name": "クロアチア",
+      "spCount": 1,
+      "href": "#country-croatia"
+    },
+    "spain": {
+      "flag": "🇪🇸",
+      "name": "スペイン",
+      "spCount": 4,
+      "href": "#country-spain"
+    },
+    "austria": {
+      "flag": "🇦🇹",
+      "name": "オーストリア",
+      "spCount": 0,
+      "href": "#country-austria"
+    },
+    "usa": {
+      "flag": "🇺🇸",
+      "name": "アメリカ",
+      "spCount": 2,
+      "href": "#country-usa"
+    },
+    "bosnia": {
+      "flag": "🇧🇦",
+      "name": "ボスニア・ヘルツェゴビナ",
+      "spCount": 0,
+      "href": "#country-bosnia"
+    },
+    "belgium": {
+      "flag": "🇧🇪",
+      "name": "ベルギー",
+      "spCount": 2,
+      "href": "#country-belgium"
+    },
+    "senegal": {
+      "flag": "🇸🇳",
+      "name": "セネガル",
+      "spCount": 0,
+      "href": "#country-senegal"
+    },
+    "ivory-coast": {
+      "flag": "🇨🇮",
+      "name": "コートジボワール",
+      "spCount": 1,
+      "href": "#country-ivory-coast"
+    },
+    "norway": {
+      "flag": "🇳🇴",
+      "name": "ノルウェー",
+      "spCount": 2,
+      "href": "#country-norway"
+    },
+    "mexico": {
+      "flag": "🇲🇽",
+      "name": "メキシコ",
+      "spCount": 0,
+      "href": "#country-mexico"
+    },
+    "ecuador": {
+      "flag": "🇪🇨",
+      "name": "エクアドル",
+      "spCount": 0,
+      "href": "#country-ecuador"
+    },
+    "england": {
+      "flag": "EN",
+      "name": "イングランド",
+      "spCount": 2,
+      "href": "#country-england"
+    },
+    "dr-congo": {
+      "flag": "🇨🇩",
+      "name": "コンゴ民主共和国",
+      "spCount": 0,
+      "href": "#country-dr-congo"
+    },
+    "argentina": {
+      "flag": "🇦🇷",
+      "name": "アルゼンチン",
+      "spCount": 3,
+      "href": "#country-argentina"
+    },
+    "cape-verde": {
+      "flag": "🇨🇻",
+      "name": "カーボベルデ",
+      "spCount": 0,
+      "href": "#country-cape-verde"
+    },
+    "australia": {
+      "flag": "🇦🇺",
+      "name": "オーストラリア",
+      "spCount": 0,
+      "href": "#country-australia"
+    },
+    "egypt": {
+      "flag": "🇪🇬",
+      "name": "エジプト",
+      "spCount": 2,
+      "href": "#country-egypt"
+    },
+    "switzerland": {
+      "flag": "🇨🇭",
+      "name": "スイス",
+      "spCount": 0,
+      "href": "#country-switzerland"
+    },
+    "algeria": {
+      "flag": "🇩🇿",
+      "name": "アルジェリア",
+      "spCount": 0,
+      "href": "#country-algeria"
+    },
+    "colombia": {
+      "flag": "🇨🇴",
+      "name": "コロンビア",
+      "spCount": 0,
+      "href": "#country-colombia"
+    },
+    "ghana": {
+      "flag": "🇬🇭",
+      "name": "ガーナ",
+      "spCount": 0,
+      "href": "#country-ghana"
+    }
+  },
+  "ignoredRows": [
+    {
+      "row": 199,
+      "country": "ウルグアイ",
+      "playerId": "P0010",
+      "name": "フェデリコ・バルベルデ",
+      "reason": "決勝トーナメント32カ国ではないため除外"
+    },
+    {
+      "row": 204,
+      "country": "ウルグアイ",
+      "playerId": "P0198",
+      "name": "ロドリゴ・ベンタンクール",
+      "reason": "決勝トーナメント32カ国ではないため除外"
+    },
+    {
+      "row": 667,
+      "country": "スコットランド",
+      "playerId": "P0220",
+      "name": "スコット・マクトミネイ",
+      "reason": "決勝トーナメント32カ国ではないため除外"
+    },
+    {
+      "row": 824,
+      "country": "トルコ",
+      "playerId": "P0374",
+      "name": "ハカン・チャルハノール",
+      "reason": "決勝トーナメント32カ国ではないため除外"
+    },
+    {
+      "row": 1157,
+      "country": "ヨルダン",
+      "playerId": "P0062",
+      "name": "ヤザン・アルアラブ",
+      "reason": "決勝トーナメント32カ国ではないため除外"
+    },
+    {
+      "row": 1187,
+      "country": "韓国",
+      "playerId": "P0065",
+      "name": "イ・ドンギョン",
+      "reason": "決勝トーナメント32カ国ではないため除外"
+    },
+    {
+      "row": 1190,
+      "country": "韓国",
+      "playerId": "P0022",
+      "name": "ファン・インボム",
+      "reason": "決勝トーナメント32カ国ではないため除外"
+    },
+    {
+      "row": 1191,
+      "country": "韓国",
+      "playerId": "P0013",
+      "name": "ファン・ヒチャン",
+      "reason": "決勝トーナメント32カ国ではないため除外"
+    },
+    {
+      "row": 1196,
+      "country": "韓国",
+      "playerId": "P0007",
+      "name": "ソン・フンミン",
+      "reason": "決勝トーナメント32カ国ではないため除外"
+    }
+  ]
+}

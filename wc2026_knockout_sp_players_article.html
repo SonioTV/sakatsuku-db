@@ -25,6 +25,7 @@
     .country-section{margin:26px 0;scroll-margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden} .country-section h2{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;padding:14px 18px;color:#fff;background:linear-gradient(135deg,#1e40af,#2563eb);font-size:22px} .country-section.no-players h2{background:linear-gradient(135deg,#64748b,#94a3b8)} .country-section h2 span{font-size:14px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:3px 10px}
     .table-wrap{overflow-x:auto} table{width:100%;border-collapse:collapse;min-width:720px} th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle;font-size:14px} th{color:#475569;background:#f8fafc;font-weight:900;white-space:nowrap} td.no{width:70px;text-align:center;font-weight:900;color:#0f172a} .player-link{color:var(--blue-dark);font-weight:900;text-decoration:none;border-bottom:2px solid rgba(37,99,235,.25)} .player-link:hover{color:#1e40af;border-bottom-color:#1e40af} .pos{display:inline-flex;align-items:center;justify-content:center;min-width:42px;padding:2px 8px;border-radius:999px;font-weight:900;font-size:12px;color:#fff} .pos-GK{background:#7c3aed} .pos-DF{background:#0284c7} .pos-MF{background:#16a34a} .pos-FW{background:#dc2626} .overall{font-weight:900;color:#0f172a}
     .empty-note{margin:0;padding:18px;color:var(--muted);font-weight:700} .back-top{padding:0 18px 16px;margin:0;text-align:right} .back-top a{color:var(--blue-dark);font-weight:900;text-decoration:none} .back-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px} .back-links a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:#0f172a;color:#fff;border-radius:999px;padding:10px 16px;font-weight:800;font-size:14px}
+.json-loading{padding:18px;color:var(--muted);font-weight:800}.json-error{padding:18px;color:#b91c1c;background:#fee2e2;border:1px solid #fecaca;border-radius:14px;font-weight:800}.data-updated{margin:10px 0 0;color:rgba(255,255,255,.82);font-size:13px;font-weight:800}
     @media(max-width:760px){.article-wrap{padding:14px 10px 48px}.hero{padding:24px 18px;border-radius:20px}.summary{grid-template-columns:repeat(3,1fr);gap:8px}.summary-card{padding:10px}.summary-card b{font-size:22px}.summary-card span{font-size:11px}.quick-grid{grid-template-columns:repeat(2,1fr)}h1{font-size:24px}.intro-card h2,.tournament-card h2,.quick-card h2{font-size:20px}th,td{padding:9px 8px;font-size:13px}}
   
 /* Tournament bracket v2 */
@@ -69,7 +70,7 @@
 <div class="tag">W杯2026決勝トーナメント × サカつく2026</div>
 <h1>【ワールドカップ2026】決勝トーナメント進出国の★3SP選手まとめ！サカつく2026で使えるスター選手を紹介</h1>
 <p class="lead">ワールドカップ2026決勝トーナメント進出国の中から、サカつく2026に★3SP選手として登場している選手を国別にまとめました。トーナメント表の国名をクリックすると、各国のSP選手リストへジャンプできます。</p>
-<div class="summary"><div class="summary-card"><b>42</b><span>掲載★3SP選手</span></div><div class="summary-card"><b>15</b><span>★3SP該当国</span></div><div class="summary-card"><b>32</b><span>決勝T進出国</span></div></div>
+<div class="summary" id="summaryCards"><div class="summary-card"><b id="summaryTotalPlayers">-</b><span>掲載★3SP選手</span></div><div class="summary-card"><b id="summaryCountriesWithPlayers">-</b><span>★3SP該当国</span></div><div class="summary-card"><b id="summaryTotalCountries">-</b><span>決勝T進出国</span></div></div>
 </header>
 <div class="notice">注意：試合日時は日本時間です。<small>本記事では、添付データ内で「サカつく2026に★3SP選手として一致」した選手のみを掲載しています。</small></div>
 <section class="intro-card"><h2>この記事で確認できること</h2><p>決勝トーナメント表で試合日時を確認しながら、各国にサカつく2026の★3SP選手がいるかを確認できます。</p><p>青色の国名は★3SP選手あり、グレーの国名は本記事条件で該当選手なしです。</p><div class="legend"><span><i class="dot blue"></i>★3SP選手あり</span><span><i class="dot gray"></i>該当選手なし</span><span><i class="dot red"></i>結果反映済み</span></div></section>
@@ -85,506 +86,159 @@
   <span>赤枠・赤線：結果反映済み</span>
   <span>青文字：★3SP選手あり</span>
 </div>
-</section><section class="quick-card"><h2>国別SP選手リストへ移動</h2><div class="quick-grid"><a class="quick-link has" href="#country-japan">🇯🇵 日本<span>11</span></a><a class="quick-link empty" href="#country-brazil">🇧🇷 ブラジル<span>0</span></a><a class="quick-link empty" href="#country-germany">🇩🇪 ドイツ<span>0</span></a><a class="quick-link has" href="#country-paraguay">🇵🇾 パラグアイ<span>1</span></a><a class="quick-link has" href="#country-france">🇫🇷 フランス<span>4</span></a><a class="quick-link empty" href="#country-sweden">🇸🇪 スウェーデン<span>0</span></a><a class="quick-link empty" href="#country-south-africa">🇿🇦 南アフリカ<span>0</span></a><a class="quick-link empty" href="#country-canada">🇨🇦 カナダ<span>0</span></a><a class="quick-link has" href="#country-netherlands">🇳🇱 オランダ<span>3</span></a><a class="quick-link has" href="#country-morocco">🇲🇦 モロッコ<span>2</span></a><a class="quick-link has" href="#country-portugal">🇵🇹 ポルトガル<span>3</span></a><a class="quick-link has" href="#country-croatia">🇭🇷 クロアチア<span>1</span></a><a class="quick-link has" href="#country-spain">🇪🇸 スペイン<span>4</span></a><a class="quick-link empty" href="#country-austria">🇦🇹 オーストリア<span>0</span></a><a class="quick-link has" href="#country-usa">🇺🇸 アメリカ<span>2</span></a><a class="quick-link empty" href="#country-bosnia">🇧🇦 ボスニア・ヘルツェゴビナ<span>0</span></a><a class="quick-link has" href="#country-belgium">🇧🇪 ベルギー<span>2</span></a><a class="quick-link empty" href="#country-senegal">🇸🇳 セネガル<span>0</span></a><a class="quick-link has" href="#country-ivory-coast">🇨🇮 コートジボワール<span>1</span></a><a class="quick-link has" href="#country-norway">🇳🇴 ノルウェー<span>2</span></a><a class="quick-link empty" href="#country-mexico">🇲🇽 メキシコ<span>0</span></a><a class="quick-link empty" href="#country-ecuador">🇪🇨 エクアドル<span>0</span></a><a class="quick-link has" href="#country-england">EN イングランド<span>2</span></a><a class="quick-link empty" href="#country-dr-congo">🇨🇩 コンゴ民主共和国<span>0</span></a><a class="quick-link has" href="#country-argentina">🇦🇷 アルゼンチン<span>3</span></a><a class="quick-link empty" href="#country-cape-verde">🇨🇻 カーボベルデ<span>0</span></a><a class="quick-link empty" href="#country-australia">🇦🇺 オーストラリア<span>0</span></a><a class="quick-link has" href="#country-egypt">🇪🇬 エジプト<span>1</span></a><a class="quick-link empty" href="#country-switzerland">🇨🇭 スイス<span>0</span></a><a class="quick-link empty" href="#country-algeria">🇩🇿 アルジェリア<span>0</span></a><a class="quick-link empty" href="#country-colombia">🇨🇴 コロンビア<span>0</span></a><a class="quick-link empty" href="#country-ghana">🇬🇭 ガーナ<span>0</span></a></div></section>
-<section class="intro-card"><h2>国別★3SP選手リスト</h2><p>選手名をクリックすると、選手評価ツールでポリシー・プレースタイル・総合力などの詳細を確認できます。</p></section>
-<section class="country-section has-players" id="country-japan">
-<h2>🇯🇵 日本 <span>11人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">1</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0135">大迫敬介</a></td>
-<td><span class="pos pos-GK">GK</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">3</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0386">鈴木彩艶 〔2026〕</a></td>
-<td><span class="pos pos-GK">GK</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">4</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0383">伊藤洋輝 〔2026〕</a></td>
-<td><span class="pos pos-DF">DF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">10</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0385">谷口彰悟 〔2026〕</a></td>
-<td><span class="pos pos-DF">DF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">12</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0090">長友佑都</a></td>
-<td><span class="pos pos-DF">DF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">13</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0379">中村敬斗 〔2026〕</a></td>
-<td><span class="pos pos-MF">MF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">15</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0380">伊東純也 〔2026〕</a></td>
-<td><span class="pos pos-MF">MF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">16</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0382">佐野海舟 〔2026〕</a></td>
-<td><span class="pos pos-MF">MF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">18</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0378">堂安律 〔2026〕</a></td>
-<td><span class="pos pos-MF">MF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">21</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0381">鎌田大地 〔2026〕</a></td>
-<td><span class="pos pos-MF">MF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">22</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0376">上田綺世 〔2026〕</a></td>
-<td><span class="pos pos-FW">FW</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-brazil">
-<h2>🇧🇷 ブラジル <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-germany">
-<h2>🇩🇪 ドイツ <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-paraguay">
-<h2>🇵🇾 パラグアイ <span>1人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">19</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0199">ミゲル・アルミロン</a></td>
-<td><span class="pos pos-MF">MF</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-france">
-<h2>🇫🇷 フランス <span>4人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">2</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0163">マイク・メニャン</a></td>
-<td><span class="pos pos-GK">GK</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">5</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0221">ウィリアム・サリバ</a></td>
-<td><span class="pos pos-DF">DF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">15</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0213">オーレリアン・チュアメニ</a></td>
-<td><span class="pos pos-MF">MF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">20</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0372">ウスマン・デンベレ</a></td>
-<td><span class="pos pos-FW">FW</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-sweden">
-<h2>🇸🇪 スウェーデン <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-south-africa">
-<h2>🇿🇦 南アフリカ <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-canada">
-<h2>🇨🇦 カナダ <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-netherlands">
-<h2>🇳🇱 オランダ <span>3人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">6</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0206">デンゼル・ダンフリース</a></td>
-<td><span class="pos pos-DF">DF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">7</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0210">ナタン・アケ</a></td>
-<td><span class="pos pos-DF">DF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">11</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0165">フィルジル・ファン・ダイク</a></td>
-<td><span class="pos pos-DF">DF</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-morocco">
-<h2>🇲🇦 モロッコ <span>2人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">4</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0204">アクラフ・ハキミ</a></td>
-<td><span class="pos pos-DF">DF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">26</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0015">ブラヒム・ディアス</a></td>
-<td><span class="pos pos-FW">FW</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-portugal">
-<h2>🇵🇹 ポルトガル <span>3人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">6</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0171">ジョアン・カンセロ</a></td>
-<td><span class="pos pos-DF">DF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">11</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0004">ルベン・ディアス</a></td>
-<td><span class="pos pos-DF">DF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">19</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0006">クリスティアーノ・ロナウド</a></td>
-<td><span class="pos pos-FW">FW</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-croatia">
-<h2>🇭🇷 クロアチア <span>1人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">20</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0170">ルカ・モドリッチ</a></td>
-<td><span class="pos pos-MF">MF</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-spain">
-<h2>🇪🇸 スペイン <span>4人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">2</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0223">ジョアン・ガルシア</a></td>
-<td><span class="pos pos-GK">GK</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">8</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0167">ペドロ・ポロ</a></td>
-<td><span class="pos pos-DF">DF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">14</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0023">ファビアン・ルイス</a></td>
-<td><span class="pos pos-MF">MF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">21</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0230">ニコ・ウィリアムズ</a></td>
-<td><span class="pos pos-FW">FW</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-austria">
-<h2>🇦🇹 オーストリア <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-usa">
-<h2>🇺🇸 アメリカ <span>2人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">14</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0214">ウェストン・マッケニー</a></td>
-<td><span class="pos pos-MF">MF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">15</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0236">クリスティアン・ロルダン 〔2026〕</a></td>
-<td><span class="pos pos-MF">MF</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-bosnia">
-<h2>🇧🇦 ボスニア・ヘルツェゴビナ <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-belgium">
-<h2>🇧🇪 ベルギー <span>2人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">2</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0201">ティボ・クルトワ</a></td>
-<td><span class="pos pos-GK">GK</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">16</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0166">ケヴィン・デ・ブライネ</a></td>
-<td><span class="pos pos-MF">MF</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-senegal">
-<h2>🇸🇳 セネガル <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-ivory-coast">
-<h2>🇨🇮 コートジボワール <span>1人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">18</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0172">アマド・ディアロ</a></td>
-<td><span class="pos pos-FW">FW</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-norway">
-<h2>🇳🇴 ノルウェー <span>2人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">22</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0202">アレクサンダー・セルロート</a></td>
-<td><span class="pos pos-FW">FW</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">24</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0208">アーリング・ハーランド</a></td>
-<td><span class="pos pos-FW">FW</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-mexico">
-<h2>🇲🇽 メキシコ <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-ecuador">
-<h2>🇪🇨 エクアドル <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-england">
-<h2>EN イングランド <span>2人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">12</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0173">リース・ジェイムズ</a></td>
-<td><span class="pos pos-DF">DF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">25</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0161">ブカヨ・サカ</a></td>
-<td><span class="pos pos-FW">FW</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-dr-congo">
-<h2>🇨🇩 コンゴ民主共和国 <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-argentina">
-<h2>🇦🇷 アルゼンチン <span>3人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">6</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0026">ナウエル・モリーナ</a></td>
-<td><span class="pos pos-DF">DF</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">25</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0162">ラウタロ・マルティネス</a></td>
-<td><span class="pos pos-FW">FW</span></td>
-
-
-
-
-</tr>
-<tr>
-<td class="no">26</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0002">リオネル・メッシ</a></td>
-<td><span class="pos pos-FW">FW</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-cape-verde">
-<h2>🇨🇻 カーボベルデ <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-australia">
-<h2>🇦🇺 オーストラリア <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section has-players" id="country-egypt">
-<h2>🇪🇬 エジプト <span>1人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody><tr>
-<td class="no">26</td>
-<td><a class="player-link" href="sp_evaluator.html?playerId=P0228">モハメド・サラー</a></td>
-<td><span class="pos pos-FW">FW</span></td>
-
-
-
-
-</tr></tbody></table></div>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-switzerland">
-<h2>🇨🇭 スイス <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-algeria">
-<h2>🇩🇿 アルジェリア <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-colombia">
-<h2>🇨🇴 コロンビア <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
-</section><section class="country-section no-players" id="country-ghana">
-<h2>🇬🇭 ガーナ <span>0人</span></h2>
-<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
-<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section><section class="quick-card" id="countryQuickNav">
+<h2>国別SP選手リストへ移動</h2>
+<div class="json-loading">JSONファイルから国別リンクを読み込み中です。</div>
 </section>
+<section class="intro-card"><h2>国別★3SP選手リスト</h2><p>選手名をクリックすると、選手評価ツールでポリシー・プレースタイル・総合力などの詳細を確認できます。</p></section>
+<div id="countryPlayerSections"><div class="json-loading">JSONファイルから選手情報を読み込み中です。</div></div>
 <section class="footer-note"><p>掲載している内容は、今後の選手追加やデータ修正、ワールドカップの試合結果により変更される可能性があります。</p><div class="back-links"><a href="wc2026_sakatsuku_sp_players_article.html">W杯2026出場SP選手まとめへ</a><a href="wc2026_special.html">ワールドカップ2026特集へ</a><a href="sp_evaluator.html">選手評価ツールへ</a><a href="articles.html">攻略記事一覧へ</a></div></section>
 </main>
 
 <script id="knockout-fallback-data" type="application/json">
 {"updatedAt": "2026-07-01", "timezone": "JST", "teams": {"brazil": {"flag": "🇧🇷", "name": "ブラジル", "spCount": 0, "href": "#country-brazil"}, "japan": {"flag": "🇯🇵", "name": "日本", "spCount": 11, "href": "#country-japan"}, "germany": {"flag": "🇩🇪", "name": "ドイツ", "spCount": 0, "href": "#country-germany"}, "paraguay": {"flag": "🇵🇾", "name": "パラグアイ", "spCount": 1, "href": "#country-paraguay"}, "france": {"flag": "🇫🇷", "name": "フランス", "href": "#country-france"}, "sweden": {"flag": "🇸🇪", "name": "スウェーデン", "spCount": 0, "href": "#country-sweden"}, "south-africa": {"flag": "🇿🇦", "name": "南アフリカ", "spCount": 0, "href": "#country-south-africa"}, "canada": {"flag": "🇨🇦", "name": "カナダ", "spCount": 0, "href": "#country-canada"}, "netherlands": {"flag": "🇳🇱", "name": "オランダ", "spCount": 3, "href": "#country-netherlands"}, "morocco": {"flag": "🇲🇦", "name": "モロッコ", "spCount": 2, "href": "#country-morocco"}, "portugal": {"flag": "🇵🇹", "name": "ポルトガル", "spCount": 3, "href": "#country-portugal"}, "croatia": {"flag": "🇭🇷", "name": "クロアチア", "spCount": 1, "href": "#country-croatia"}, "spain": {"flag": "🇪🇸", "name": "スペイン", "spCount": 4, "href": "#country-spain"}, "austria": {"flag": "🇦🇹", "name": "オーストリア", "spCount": 0, "href": "#country-austria"}, "usa": {"flag": "🇺🇸", "name": "アメリカ", "spCount": 2, "href": "#country-usa"}, "bosnia": {"flag": "🇧🇦", "name": "ボスニア・ヘルツェゴビナ", "spCount": 0, "href": "#country-bosnia"}, "belgium": {"flag": "🇧🇪", "name": "ベルギー", "spCount": 2, "href": "#country-belgium"}, "senegal": {"flag": "🇸🇳", "name": "セネガル", "spCount": 0, "href": "#country-senegal"}, "ivory-coast": {"flag": "🇨🇮", "name": "コートジボワール", "spCount": 1, "href": "#country-ivory-coast"}, "norway": {"flag": "🇳🇴", "name": "ノルウェー", "spCount": 2, "href": "#country-norway"}, "mexico": {"flag": "🇲🇽", "name": "メキシコ", "spCount": 0, "href": "#country-mexico"}, "ecuador": {"flag": "🇪🇨", "name": "エクアドル", "spCount": 0, "href": "#country-ecuador"}, "england": {"flag": "EN", "name": "イングランド", "spCount": 2, "href": "#country-england"}, "dr-congo": {"flag": "🇨🇩", "name": "コンゴ民主共和国", "spCount": 0, "href": "#country-dr-congo"}, "argentina": {"flag": "🇦🇷", "name": "アルゼンチン", "spCount": 3, "href": "#country-argentina"}, "cape-verde": {"flag": "🇨🇻", "name": "カーボベルデ", "spCount": 0, "href": "#country-cape-verde"}, "australia": {"flag": "🇦🇺", "name": "オーストラリア", "spCount": 0, "href": "#country-australia"}, "egypt": {"flag": "🇪🇬", "name": "エジプト", "spCount": 1, "href": "#country-egypt"}, "switzerland": {"flag": "🇨🇭", "name": "スイス", "spCount": 0, "href": "#country-switzerland"}, "algeria": {"flag": "🇩🇿", "name": "アルジェリア", "spCount": 0, "href": "#country-algeria"}, "colombia": {"flag": "🇨🇴", "name": "コロンビア", "spCount": 0, "href": "#country-colombia"}, "ghana": {"flag": "🇬🇭", "name": "ガーナ", "spCount": 0, "href": "#country-ghana"}}, "matches": {"r32-1": {"round": "ラウンド32", "datetime": "6/29 4:00", "team1": "south-africa", "team2": "canada", "score1": 0, "score2": 1, "winner": "canada", "status": "finished", "next": "r16-1", "nextSlot": "team1"}, "r32-2": {"round": "ラウンド32", "datetime": "6/30 10:00", "team1": "netherlands", "team2": "morocco", "score1": 1, "score2": 1, "penalty1": 2, "penalty2": 3, "winner": "morocco", "status": "finished", "next": "r16-1", "nextSlot": "team2"}, "r32-3": {"round": "ラウンド32", "datetime": "6/30 5:30", "team1": "germany", "team2": "paraguay", "score1": 1, "score2": 1, "penalty1": 3, "penalty2": 4, "winner": "paraguay", "status": "finished", "next": "r16-2", "nextSlot": "team1"}, "r32-4": {"round": "ラウンド32", "datetime": "7/1 6:00", "team1": "france", "team2": "sweden", "score1": 3, "score2": 0, "winner": "france", "status": "finished", "next": "r16-2", "nextSlot": "team2"}, "r32-5": {"round": "ラウンド32", "datetime": "7/3 8:00", "team1": "portugal", "team2": "croatia", "status": "scheduled", "next": "r16-3", "nextSlot": "team1"}, "r32-6": {"round": "ラウンド32", "datetime": "7/3 4:00", "team1": "spain", "team2": "austria", "status": "scheduled", "next": "r16-3", "nextSlot": "team2"}, "r32-7": {"round": "ラウンド32", "datetime": "7/2 9:00", "team1": "usa", "team2": "bosnia", "status": "scheduled", "next": "r16-4", "nextSlot": "team1"}, "r32-8": {"round": "ラウンド32", "datetime": "7/2 5:00", "team1": "belgium", "team2": "senegal", "status": "scheduled", "next": "r16-4", "nextSlot": "team2"}, "r32-9": {"round": "ラウンド32", "datetime": "6/30 2:00", "team1": "brazil", "team2": "japan", "score1": 2, "score2": 1, "winner": "brazil", "status": "finished", "next": "r16-5", "nextSlot": "team1"}, "r32-10": {"round": "ラウンド32", "datetime": "7/1 2:00", "team1": "ivory-coast", "team2": "norway", "score1": 1, "score2": 2, "winner": "norway", "status": "finished", "next": "r16-5", "nextSlot": "team2"}, "r32-11": {"round": "ラウンド32", "datetime": "7/1 10:00", "team1": "mexico", "team2": "ecuador", "status": "scheduled", "next": "r16-6", "nextSlot": "team1"}, "r32-12": {"round": "ラウンド32", "datetime": "7/2 1:00", "team1": "england", "team2": "dr-congo", "status": "scheduled", "next": "r16-6", "nextSlot": "team2"}, "r32-13": {"round": "ラウンド32", "datetime": "7/4 7:00", "team1": "argentina", "team2": "cape-verde", "status": "scheduled", "next": "r16-7", "nextSlot": "team1"}, "r32-14": {"round": "ラウンド32", "datetime": "7/4 3:00", "team1": "australia", "team2": "egypt", "status": "scheduled", "next": "r16-7", "nextSlot": "team2"}, "r32-15": {"round": "ラウンド32", "datetime": "7/3 12:00", "team1": "switzerland", "team2": "algeria", "status": "scheduled", "next": "r16-8", "nextSlot": "team1"}, "r32-16": {"round": "ラウンド32", "datetime": "7/4 10:30", "team1": "colombia", "team2": "ghana", "status": "scheduled", "next": "r16-8", "nextSlot": "team2"}, "r16-1": {"round": "ベスト16", "datetime": "7/5 2:00", "team1": "canada", "team2": "morocco", "status": "scheduled", "next": "qf-1", "nextSlot": "team1"}, "r16-2": {"round": "ベスト16", "datetime": "7/5 6:00", "team1": "paraguay", "team2": "france", "status": "scheduled", "next": "qf-1", "nextSlot": "team2"}, "r16-3": {"round": "ベスト16", "datetime": "7/7 4:00", "team1": "", "team2": "", "placeholder1": "ラウンド32勝者", "placeholder2": "ラウンド32勝者", "status": "scheduled", "next": "qf-2", "nextSlot": "team1"}, "r16-4": {"round": "ベスト16", "datetime": "7/7 9:00", "team1": "", "team2": "", "placeholder1": "ラウンド32勝者", "placeholder2": "ラウンド32勝者", "status": "scheduled", "next": "qf-2", "nextSlot": "team2"}, "r16-5": {"round": "ベスト16", "datetime": "7/6 5:00", "team1": "brazil", "team2": "norway", "status": "scheduled", "next": "qf-3", "nextSlot": "team1"}, "r16-6": {"round": "ベスト16", "datetime": "7/6 9:00", "team1": "", "team2": "", "placeholder1": "ラウンド32勝者", "placeholder2": "ラウンド32勝者", "status": "scheduled", "next": "qf-3", "nextSlot": "team2"}, "r16-7": {"round": "ベスト16", "datetime": "7/8 1:00", "team1": "", "team2": "", "placeholder1": "ラウンド32勝者", "placeholder2": "ラウンド32勝者", "status": "scheduled", "next": "qf-4", "nextSlot": "team1"}, "r16-8": {"round": "ベスト16", "datetime": "7/8 5:00", "team1": "", "team2": "", "placeholder1": "ラウンド32勝者", "placeholder2": "ラウンド32勝者", "status": "scheduled", "next": "qf-4", "nextSlot": "team2"}, "qf-1": {"round": "ベスト8", "datetime": "7/10 5:00", "team1": "", "team2": "", "placeholder1": "ベスト16勝者", "placeholder2": "ベスト16勝者", "status": "scheduled", "next": "sf-1", "nextSlot": "team1"}, "qf-2": {"round": "ベスト8", "datetime": "7/11 4:00", "team1": "", "team2": "", "placeholder1": "ベスト16勝者", "placeholder2": "ベスト16勝者", "status": "scheduled", "next": "sf-1", "nextSlot": "team2"}, "qf-3": {"round": "ベスト8", "datetime": "7/12 6:00", "team1": "", "team2": "", "placeholder1": "ベスト16勝者", "placeholder2": "ベスト16勝者", "status": "scheduled", "next": "sf-2", "nextSlot": "team1"}, "qf-4": {"round": "ベスト8", "datetime": "7/12 10:00", "team1": "", "team2": "", "placeholder1": "ベスト16勝者", "placeholder2": "ベスト16勝者", "status": "scheduled", "next": "sf-2", "nextSlot": "team2"}, "sf-1": {"round": "ベスト4", "datetime": "7/15 4:00", "team1": "", "team2": "", "placeholder1": "ベスト8勝者", "placeholder2": "ベスト8勝者", "status": "scheduled", "next": "final", "nextSlot": "team1", "loserNext": "third", "loserNextSlot": "team1"}, "sf-2": {"round": "ベスト4", "datetime": "7/16 4:00", "team1": "", "team2": "", "placeholder1": "ベスト8勝者", "placeholder2": "ベスト8勝者", "status": "scheduled", "next": "final", "nextSlot": "team2", "loserNext": "third", "loserNextSlot": "team2"}, "third": {"round": "3位決定戦", "datetime": "7/19 6:00", "team1": "", "team2": "", "placeholder1": "ベスト4敗者", "placeholder2": "ベスト4敗者", "status": "scheduled"}, "final": {"round": "決勝", "datetime": "7/20 4:00", "team1": "", "team2": "", "placeholder1": "ベスト4勝者", "placeholder2": "ベスト4勝者", "status": "scheduled"}}}
 </script>
+
+<script>
+(function(){
+  const SP_PLAYERS_JSON = 'wc2026_knockout_sp_players.json';
+  window.__wc2026SpPlayers = null;
+
+  function escapeHtml(value){
+    return String(value ?? '').replace(/[&<>"]/g, function(ch){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch];
+    });
+  }
+
+  function toNumber(value, fallback=0){
+    const n = Number(value);
+    return Number.isFinite(n) ? n : fallback;
+  }
+
+  function playerUrl(player){
+    return player.playerId ? `sp_evaluator.html?playerId=${encodeURIComponent(player.playerId)}` : 'sp_evaluator.html';
+  }
+
+  function renderSummary(data){
+    const summary = data.summary || {};
+    const countries = Array.isArray(data.countries) ? data.countries : [];
+    const totalPlayers = toNumber(summary.totalPlayers, countries.reduce((sum,c)=>sum + (Array.isArray(c.players) ? c.players.length : toNumber(c.spCount)), 0));
+    const countriesWithPlayers = toNumber(summary.countriesWithPlayers, countries.filter(c => (Array.isArray(c.players) ? c.players.length : toNumber(c.spCount)) > 0).length);
+    const totalCountries = toNumber(summary.totalCountries, countries.length);
+    const totalEl = document.getElementById('summaryTotalPlayers');
+    const countriesEl = document.getElementById('summaryCountriesWithPlayers');
+    const totalCountriesEl = document.getElementById('summaryTotalCountries');
+    if(totalEl) totalEl.textContent = totalPlayers;
+    if(countriesEl) countriesEl.textContent = countriesWithPlayers;
+    if(totalCountriesEl) totalCountriesEl.textContent = totalCountries;
+
+    const hero = document.querySelector('.hero');
+    if(hero && data.updatedAt && !document.getElementById('spDataUpdatedAt')){
+      const p = document.createElement('p');
+      p.id = 'spDataUpdatedAt';
+      p.className = 'data-updated';
+      p.textContent = `選手データ更新日：${data.updatedAt}`;
+      hero.appendChild(p);
+    }
+  }
+
+  function renderQuickNav(data){
+    const wrap = document.getElementById('countryQuickNav');
+    if(!wrap) return;
+    const countries = Array.isArray(data.countries) ? data.countries : [];
+    const links = countries.map(country => {
+      const count = Array.isArray(country.players) ? country.players.length : toNumber(country.spCount);
+      const cls = count > 0 ? 'has' : 'empty';
+      const flag = country.flag || '';
+      const name = country.country || country.name || '';
+      const href = country.href || `#country-${country.countryId || ''}`;
+      return `<a class="quick-link ${cls}" href="${escapeHtml(href)}">${escapeHtml(flag)} ${escapeHtml(name)}<span>${count}</span></a>`;
+    }).join('');
+    wrap.innerHTML = `<h2>国別SP選手リストへ移動</h2><div class="quick-grid">${links}</div>`;
+  }
+
+  function renderCountrySections(data){
+    const container = document.getElementById('countryPlayerSections');
+    if(!container) return;
+    const countries = Array.isArray(data.countries) ? data.countries : [];
+    container.innerHTML = countries.map(country => {
+      const players = Array.isArray(country.players) ? country.players : [];
+      const count = players.length;
+      const countryId = country.countryId || '';
+      const flag = country.flag || '';
+      const name = country.country || country.name || '';
+      const sectionClass = count > 0 ? 'country-section has-players' : 'country-section no-players';
+      if(count === 0){
+        return `<section class="${sectionClass}" id="country-${escapeHtml(countryId)}">
+<h2>${escapeHtml(flag)} ${escapeHtml(name)} <span>0人</span></h2>
+<p class="empty-note">現時点で、本記事の条件に該当するサカつく2026★3SP選手は確認できません。</p>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section>`;
+      }
+      const rows = players.map(player => {
+        const posGroup = player.positionGroup || player.position || '';
+        const posClass = ['GK','DF','MF','FW'].includes(posGroup) ? `pos-${posGroup}` : 'pos-MF';
+        const number = player.number ?? '';
+        const displayName = player.name || player.fifaName || '';
+        const position = player.position || posGroup || '';
+        return `<tr>
+<td class="no">${escapeHtml(number)}</td>
+<td><a class="player-link" href="${escapeHtml(playerUrl(player))}">${escapeHtml(displayName)}</a></td>
+<td><span class="pos ${escapeHtml(posClass)}">${escapeHtml(position)}</span></td>
+</tr>`;
+      }).join('');
+      return `<section class="${sectionClass}" id="country-${escapeHtml(countryId)}">
+<h2>${escapeHtml(flag)} ${escapeHtml(name)} <span>${count}人</span></h2>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody>${rows}</tbody></table></div>
+<p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
+</section>`;
+    }).join('');
+  }
+
+  function showJsonError(message){
+    const quick = document.getElementById('countryQuickNav');
+    if(quick) quick.innerHTML = `<h2>国別SP選手リストへ移動</h2><div class="json-error">${escapeHtml(message)}</div>`;
+    const container = document.getElementById('countryPlayerSections');
+    if(container) container.innerHTML = `<div class="json-error">${escapeHtml(message)}</div>`;
+  }
+
+  function applySpCountsToBracketData(bracketData, spData){
+    if(!bracketData || !bracketData.teams || !spData || !Array.isArray(spData.countries)) return bracketData;
+    spData.countries.forEach(country => {
+      const id = country.countryId;
+      if(!id || !bracketData.teams[id]) return;
+      const count = Array.isArray(country.players) ? country.players.length : toNumber(country.spCount);
+      bracketData.teams[id].spCount = count;
+      bracketData.teams[id].href = country.href || `#country-${id}`;
+      if(country.flag) bracketData.teams[id].flag = country.flag;
+      if(country.country) bracketData.teams[id].name = country.country;
+    });
+    return bracketData;
+  }
+
+  async function loadSpPlayers(){
+    const res = await fetch(SP_PLAYERS_JSON, {cache:'no-store'});
+    if(!res.ok) throw new Error(`${SP_PLAYERS_JSON} の読み込みに失敗しました`);
+    const data = await res.json();
+    window.__wc2026SpPlayers = data;
+    renderSummary(data);
+    renderQuickNav(data);
+    renderCountrySections(data);
+    return data;
+  }
+
+  window.loadWc2026SpPlayers = loadSpPlayers;
+  window.applyWc2026SpCountsToBracketData = applySpCountsToBracketData;
+
+  document.addEventListener('DOMContentLoaded', function(){
+    loadSpPlayers().catch(function(error){
+      console.error(error);
+      showJsonError('選手情報JSONを読み込めませんでした。wc2026_knockout_sp_players.json の配置場所を確認してください。');
+    });
+  });
+})();
+</script>
+
 <script>
 (function(){
   const SVG_NS = 'http://www.w3.org/2000/svg';
@@ -704,12 +358,18 @@
     order.forEach(id=>drawMatch(svg,data,id));
   }
   async function init(){
+    let spData = window.__wc2026SpPlayers || null;
+    if(!spData && typeof window.loadWc2026SpPlayers === 'function'){
+      try{ spData = await window.loadWc2026SpPlayers(); }catch(e){ console.warn(e); }
+    }
     try{
       const res=await fetch('wc2026_knockout_results.json',{cache:'no-store'});
       if(!res.ok) throw new Error('json load failed');
-      render(await res.json());
+      const data = await res.json();
+      render(typeof window.applyWc2026SpCountsToBracketData === 'function' ? window.applyWc2026SpCountsToBracketData(data, spData) : data);
     }catch(e){
-      render(fallbackData());
+      const data = fallbackData();
+      render(typeof window.applyWc2026SpCountsToBracketData === 'function' ? window.applyWc2026SpCountsToBracketData(data, spData) : data);
     }
   }
   init();
