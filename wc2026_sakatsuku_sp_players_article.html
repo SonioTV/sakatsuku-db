@@ -547,7 +547,7 @@
   function renderPlayerRow(player) {
     const position = player.positionGroup || player.position || '';
     const cls = posClass(position);
-    const displayName = player.name || player.fifaName || '';
+    const displayName = player.fifaname || player.Name || '';
     const number = player.number || '';
     const playerId = player.playerId || player.player_id || player.id || '';
     const href = playerId ? `sp_evaluator.html?playerId=${encodeURIComponent(playerId)}` : 'sp_evaluator.html';
