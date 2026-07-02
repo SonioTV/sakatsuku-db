@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01",
+  "updatedAt": "2026-07-02",
   "timezone": "JST",
   "teams": {
     "brazil": {
@@ -289,7 +289,10 @@
       "datetime": "7/2 1:00",
       "team1": "england",
       "team2": "dr-congo",
-      "status": "scheduled",
+      "status": "finished",
+      "score1": 2,
+      "score2": 1,
+      "winner": "england",
       "next": "r16-6",
       "nextSlot": "team2"
     },
@@ -298,7 +301,10 @@
       "datetime": "7/2 5:00",
       "team1": "belgium",
       "team2": "senegal",
-      "status": "scheduled",
+      "status": "finished",
+      "score1": 3,
+      "score2": 2,
+      "winner": "belgium",
       "next": "r16-4",
       "nextSlot": "team2"
     },
@@ -307,7 +313,10 @@
       "datetime": "7/2 9:00",
       "team1": "usa",
       "team2": "bosnia",
-      "status": "scheduled",
+      "status": "finished",
+      "score1": 2,
+      "score2": 0,
+      "winner": "usa",
       "next": "r16-4",
       "nextSlot": "team1"
     },
@@ -396,9 +405,8 @@
       "round": "ベスト16",
       "datetime": "7/6 9:00",
       "team1": "mexico",
-      "team2": "",
+      "team2": "england",
       "status": "scheduled",
-      "placeholder2": "イングランド/コンゴ民主共和国勝者",
       "next": "qf-3",
       "nextSlot": "team2"
     },
@@ -416,11 +424,9 @@
     "r16-4": {
       "round": "ベスト16",
       "datetime": "7/7 9:00",
-      "team1": "",
-      "team2": "",
+      "team1": "usa",
+      "team2": "belgium",
       "status": "scheduled",
-      "placeholder1": "アメリカ/ボスニア勝者",
-      "placeholder2": "ベルギー/セネガル勝者",
       "next": "qf-2",
       "nextSlot": "team2"
     },
