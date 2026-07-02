@@ -179,7 +179,7 @@
         const posGroup = player.positionGroup || player.position || '';
         const posClass = ['GK','DF','MF','FW'].includes(posGroup) ? `pos-${posGroup}` : 'pos-MF';
         const number = player.number ?? '';
-        const displayName = player.name || player.fifaName || '';
+        const displayName = player.fifaname || player.Name || '';
         const position = player.position || posGroup || '';
         return `<tr>
 <td class="no">${escapeHtml(number)}</td>
@@ -189,7 +189,7 @@
       }).join('');
       return `<section class="${sectionClass}" id="country-${escapeHtml(countryId)}">
 <h2>${escapeHtml(flag)} ${escapeHtml(name)} <span>${count}人</span></h2>
-<div class="table-wrap"><table><thead><tr><th>背番号</th><th>選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody>${rows}</tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>背番号</th><th>FIFA登録選手名</th><th>FIFA登録ポジション</th></tr></thead><tbody>${rows}</tbody></table></div>
 <p class="back-top"><a href="#tournament">トーナメント表へ戻る</a></p>
 </section>`;
     }).join('');
