@@ -179,7 +179,7 @@
         const posGroup = player.positionGroup || player.position || '';
         const posClass = ['GK','DF','MF','FW'].includes(posGroup) ? `pos-${posGroup}` : 'pos-MF';
         const number = player.number ?? '';
-        const displayName = player.fifaname || player.Name || '';
+        const displayName = player.fifaName || player.name || '';
         const position = player.position || posGroup || '';
         return `<tr>
 <td class="no">${escapeHtml(number)}</td>
