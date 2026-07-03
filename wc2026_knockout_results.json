@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02",
+  "updatedAt": "2026-07-03",
   "timezone": "JST",
   "teams": {
     "brazil": {
@@ -325,7 +325,10 @@
       "datetime": "7/3 4:00",
       "team1": "spain",
       "team2": "austria",
-      "status": "scheduled",
+      "status": "finished",
+      "score1": 3,
+      "score2": 0,
+      "winner": "spain",
       "next": "r16-3",
       "nextSlot": "team2"
     },
@@ -334,7 +337,10 @@
       "datetime": "7/3 8:00",
       "team1": "portugal",
       "team2": "croatia",
-      "status": "scheduled",
+      "status": "finished",
+      "score1": 2,
+      "score2": 1,
+      "winner": "portugal",
       "next": "r16-3",
       "nextSlot": "team1"
     },
@@ -343,7 +349,10 @@
       "datetime": "7/3 12:00",
       "team1": "switzerland",
       "team2": "algeria",
-      "status": "scheduled",
+      "status": "finished",
+      "score1": 2,
+      "score2": 0,
+      "winner": "switzerland",
       "next": "r16-8",
       "nextSlot": "team1"
     },
@@ -413,11 +422,9 @@
     "r16-3": {
       "round": "ベスト16",
       "datetime": "7/7 4:00",
-      "team1": "",
-      "team2": "",
+      "team1": "portugal",
+      "team2": "spain",
       "status": "scheduled",
-      "placeholder1": "ポルトガル/クロアチア勝者",
-      "placeholder2": "スペイン/オーストリア勝者",
       "next": "qf-2",
       "nextSlot": "team1"
     },
@@ -444,10 +451,9 @@
     "r16-8": {
       "round": "ベスト16",
       "datetime": "7/8 5:00",
-      "team1": "",
+      "team1": "switzerland",
       "team2": "",
       "status": "scheduled",
-      "placeholder1": "スイス/アルジェリア勝者",
       "placeholder2": "コロンビア/ガーナ勝者",
       "next": "qf-4",
       "nextSlot": "team2"
