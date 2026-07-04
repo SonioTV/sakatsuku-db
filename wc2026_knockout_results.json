@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03",
+  "updatedAt": "2026-07-04",
   "timezone": "JST",
   "teams": {
     "brazil": {
@@ -361,7 +361,12 @@
       "datetime": "7/4 3:00",
       "team1": "australia",
       "team2": "egypt",
-      "status": "scheduled",
+      "status": "finished",
+      "score1": 1,
+      "score2": 1,
+      "penalty1": 2,
+      "penalty2": 4,
+      "winner": "egypt",
       "next": "r16-7",
       "nextSlot": "team2"
     },
@@ -370,7 +375,10 @@
       "datetime": "7/4 7:00",
       "team1": "argentina",
       "team2": "cape-verde",
-      "status": "scheduled",
+      "status": "finished",
+      "score1": 3,
+      "score2": 2,
+      "winner": "argentina",
       "next": "r16-7",
       "nextSlot": "team1"
     },
@@ -379,7 +387,10 @@
       "datetime": "7/4 10:30",
       "team1": "colombia",
       "team2": "ghana",
-      "status": "scheduled",
+      "status": "finished",
+      "score1": 1,
+      "score2": 0,
+      "winner": "colombia",
       "next": "r16-8",
       "nextSlot": "team2"
     },
@@ -440,11 +451,9 @@
     "r16-7": {
       "round": "ベスト16",
       "datetime": "7/8 1:00",
-      "team1": "",
-      "team2": "",
+      "team1": "argentina",
+      "team2": "egypt",
       "status": "scheduled",
-      "placeholder1": "アルゼンチン/カーボベルデ勝者",
-      "placeholder2": "オーストラリア/エジプト勝者",
       "next": "qf-4",
       "nextSlot": "team1"
     },
@@ -452,9 +461,8 @@
       "round": "ベスト16",
       "datetime": "7/8 5:00",
       "team1": "switzerland",
-      "team2": "",
+      "team2": "colombia",
       "status": "scheduled",
-      "placeholder2": "コロンビア/ガーナ勝者",
       "next": "qf-4",
       "nextSlot": "team2"
     },
