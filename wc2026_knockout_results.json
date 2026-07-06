@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-05",
+  "updatedAt": "2026-07-06",
   "timezone": "JST",
   "teams": {
     "brazil": {
@@ -423,7 +423,10 @@
       "datetime": "7/6 5:00",
       "team1": "brazil",
       "team2": "norway",
-      "status": "scheduled",
+      "status": "finished",
+      "score1": 1,
+      "score2": 2,
+      "winner": "norway",
       "next": "qf-3",
       "nextSlot": "team1"
     },
@@ -432,7 +435,10 @@
       "datetime": "7/6 9:00",
       "team1": "mexico",
       "team2": "england",
-      "status": "scheduled",
+      "status": "finished",
+      "score1": 2,
+      "score2": 3,
+      "winner": "england",
       "next": "qf-3",
       "nextSlot": "team2"
     },
@@ -495,11 +501,9 @@
     "qf-3": {
       "round": "ベスト8",
       "datetime": "7/12 6:00",
-      "team1": "",
-      "team2": "",
+      "team1": "norway",
+      "team2": "england",
       "status": "scheduled",
-      "placeholder1": "ベスト16勝者",
-      "placeholder2": "ベスト16勝者",
       "next": "sf-2",
       "nextSlot": "team1"
     },
