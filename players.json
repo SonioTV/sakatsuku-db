@@ -9295,7 +9295,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CF"
     ]
@@ -9320,7 +9320,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "GK"
     ]
@@ -9345,7 +9345,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "AM"
     ]
@@ -9370,7 +9370,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "RB"
     ]
