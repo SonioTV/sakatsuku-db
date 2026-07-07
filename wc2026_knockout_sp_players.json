@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-02",
-  "sourceFile": "【ワールドカップ2026】サカつく2026に実装されているSP選手(6).xlsx",
+  "updatedAt": "2026-07-07",
+  "sourceFile": "【ワールドカップ2026】サカつく2026に実装されているSP選手.xlsx",
   "sourceSheet": "対応表_全選手",
   "filter": {
     "照合結果": "一致",
@@ -9,7 +9,7 @@
     "target": "決勝トーナメント32カ国"
   },
   "summary": {
-    "totalPlayers": 44,
+    "totalPlayers": 46,
     "countriesWithPlayers": 16,
     "totalCountries": 32
   },
@@ -564,8 +564,26 @@
       "countryId": "croatia",
       "flag": "🇭🇷",
       "href": "#country-croatia",
-      "spCount": 1,
+      "spCount": 2,
       "players": [
+        {
+          "number": 10,
+          "fifaName": "ヨスコ・グヴァルディオル",
+          "name": "ヨシュコ・グヴァルディオル",
+          "playerId": "P0391",
+          "position": "DF",
+          "positionGroup": "DF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "CB",
+          "playStyle": "組立CB",
+          "overall": 7008,
+          "maxOverall": 15770,
+          "acquisitionPlace": "ピックアップSP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/croatia/squad"
+        },
         {
           "number": 20,
           "fifaName": "ルカ・モドリッチ",
@@ -874,7 +892,7 @@
       "countryId": "england",
       "flag": "EN",
       "href": "#country-england",
-      "spCount": 2,
+      "spCount": 3,
       "players": [
         {
           "number": 12,
@@ -892,6 +910,24 @@
           "overall": 6495,
           "maxOverall": 14913,
           "acquisitionPlace": "SP選手スカウト",
+          "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/england/squad"
+        },
+        {
+          "number": 16,
+          "fifaName": "ジュード・ベリンガム",
+          "name": "ジュード・ベリンガム",
+          "playerId": "P0390",
+          "position": "MF",
+          "positionGroup": "MF",
+          "category": "SP選手",
+          "rarity": "★3",
+          "matchType": "国籍+名前一致",
+          "policy": "カウンター",
+          "mainPosition": "AM",
+          "playStyle": "アタッカー",
+          "overall": 7188,
+          "maxOverall": 15749,
+          "acquisitionPlace": "ピックアップSP選手スカウト",
           "fifaUrl": "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/teams/england/squad"
         },
         {
@@ -1149,7 +1185,7 @@
     "croatia": {
       "flag": "🇭🇷",
       "name": "クロアチア",
-      "spCount": 1,
+      "spCount": 2,
       "href": "#country-croatia"
     },
     "spain": {
@@ -1215,7 +1251,7 @@
     "england": {
       "flag": "EN",
       "name": "イングランド",
-      "spCount": 2,
+      "spCount": 3,
       "href": "#country-england"
     },
     "dr-congo": {
