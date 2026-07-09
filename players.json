@@ -9205,8 +9205,8 @@
     "playerId": "P0369",
     "name": "P・ラマンベラ",
     "overall": 5100,
-    "maxUpgrade": null,
-    "policy": "カウンター",
+    "maxUpgrade": 10969,
+    "policy": "ポゼッション",
     "playStyle": "ドリブラー",
     "playStyleLv": 2,
     "mainPosition": "LW",
@@ -9230,7 +9230,7 @@
     "playerId": "P0370",
     "name": "J・ラマンベラ",
     "overall": 5105,
-    "maxUpgrade": null,
+    "maxUpgrade": 10975,
     "policy": "カウンター",
     "playStyle": "ドリブラー",
     "playStyleLv": 2,
@@ -9823,7 +9823,7 @@
     "nationality": "ブラジル",
     "growthType": "超早熟",
     "implementedDate": "2026-07-07",
-    "rarity": null,
+    "rarity": "★3",
     "available": true,
     "suitablePositions": [
       "CB"
