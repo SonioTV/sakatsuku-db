@@ -9255,7 +9255,7 @@
     "playerId": "P0371",
     "name": "アンタンシェン",
     "overall": 5092,
-    "maxUpgrade": null,
+    "maxUpgrade": 10959,
     "policy": "カウンター",
     "playStyle": "ラインブレーカー",
     "playStyleLv": 2,
@@ -9827,6 +9827,56 @@
     "available": true,
     "suitablePositions": [
       "CB"
+    ]
+  },
+  {
+    "player_id": "P0394",
+    "playerId": "P0394",
+    "name": "キム・ナミル",
+    "overall": 5491,
+    "maxUpgrade": 11410,
+    "policy": "ムービング",
+    "playStyle": "ハードマーカー",
+    "playStyleLv": 2,
+    "mainPosition": "DM",
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "Half Anniversaryカウントダウンログインボーナス",
+    "availablePeriod": "2026年8月26日まで",
+    "mainSkill": "奮戦のパスカット",
+    "mainTrait": "ハイタワーの天敵",
+    "category": "SP選手",
+    "nationality": "韓国",
+    "growthType": "超早熟",
+    "implementedDate": "2026-07-16",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
+  },
+  {
+    "player_id": "P0395",
+    "playerId": "P0395",
+    "name": "アン・ジョンファン",
+    "overall": 5460,
+    "maxUpgrade": 11425,
+    "policy": "ムービング",
+    "playStyle": "ストライカー",
+    "playStyleLv": 2,
+    "mainPosition": "CF",
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "Half Anniversaryカウントダウンログインボーナス",
+    "availablePeriod": "2026年8月26日まで",
+    "mainSkill": "点で合わせるシュート",
+    "mainTrait": "冷静な突破",
+    "category": "SP選手",
+    "nationality": "韓国",
+    "growthType": "超早熟",
+    "implementedDate": "2026-07-16",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CF"
     ]
   }
 ]
