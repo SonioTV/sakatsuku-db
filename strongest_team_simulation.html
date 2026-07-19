@@ -337,7 +337,7 @@ h1{font-size:clamp(28px,4vw,42px);text-align:center;margin:8px 0 8px;color:#0f17
 .ctrl{gap:12px;}
 .row{gap:12px;}
 .ctrl > .row:first-child{display:grid;grid-template-columns:180px 200px 1fr;align-items:end;}
-.ctrl > .row:nth-child(2){display:grid;grid-template-columns:minmax(240px,420px);}
+.ctrl > .row:nth-child(2){display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));}
 .two{gap:6px;}
 label{font-size:13px;color:#334155;font-weight:900;}
 select,input[type="text"]{
@@ -713,6 +713,10 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
 
         <div class="row">
           <div class="two">
+            <label>国籍</label>
+            <select id="nationalitySel"></select>
+          </div>
+          <div class="two">
             <label>選手の入手場所</label>
             <select id="acqSel"></select>
           </div>
@@ -806,6 +810,7 @@ function escapeHtml(str){
   const getMode = ()=>"maxUpgrade";
   const getRank = ()=>$("rankSel")?.value || "";
   const getPolicyFilter = ()=>$("policySel")?.value || "";
+  const getNationality = ()=>$("nationalitySel")?.value || "";
   const getAcq = ()=>$("acqSel")?.value || "";
 
   function normalizePositionValue(v){
@@ -1104,6 +1109,7 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
   }
 
   rebuildRankPolicySelect();
+  rebuildNationalitySelect();
   rebuildAcqSelect();
   rebuildComboSelect();
 }
@@ -1212,7 +1218,7 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
     return { byPos, bySlot, byCondition };
   }
 
-  function matchPlayerForSlot(player, combo, slotPos, reqMap, kw, forcedPolicy, requiredAcq){
+  function matchPlayerForSlot(player, combo, slotPos, reqMap, kw, forcedPolicy, requiredNationality, requiredAcq){
     // NOTE: Slot assignment should be based on position (+ optional policy/keyword) only.
     // combo_requirements is used for "強調表示" (highlight) separately.
     if(kw){
@@ -1223,6 +1229,11 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
     // Position match
     // mainPositionだけでなく suitablePositions も参照する
     if(!playerCanPlayPosition(player, slotPos)) return false;
+
+    // Nationality match (only when selected)
+    if(requiredNationality){
+      if(getPlayerNationality(player) !== requiredNationality) return false;
+    }
 
     // AcquisitionPlace match (only when selected)
     if(requiredAcq){
@@ -1267,6 +1278,30 @@ function rebuildRankPolicySelect(){
 
     rankSel?.addEventListener("change", rebuildComboSelect);
     polSel?.addEventListener("change", rebuildComboSelect);
+}
+
+function getPlayerNationality(player){
+  return String(
+    player?.nationality ??
+    player?.国籍 ??
+    player?.country ??
+    player?.nation ??
+    ""
+  ).trim();
+}
+
+function rebuildNationalitySelect(){
+  const nationalities = Array.from(
+    new Set((PLAYERS||[]).map(getPlayerNationality).filter(Boolean))
+  );
+  nationalities.sort((a,b)=>a.localeCompare(b,"ja"));
+
+  const sel = $("nationalitySel");
+  if(!sel) return;
+
+  sel.innerHTML =
+    `<option value="">（指定なし）</option>` +
+    nationalities.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join("");
 }
 
 function rebuildAcqSelect(){
@@ -1362,6 +1397,7 @@ function simulate(){
   }
 
   const mode = getMode(); // always maxUpgrade
+  const requiredNationality = getNationality();
   const requiredAcq = getAcq();
   const slots = SLOTS
     .filter(s=>String(s.comboId)===String(comboId))
@@ -1383,7 +1419,7 @@ function simulate(){
     const slotKey = String(slot?.slotNo ?? slot?.slot_no ?? "");
     const reqs = (reqMap.bySlot && slotKey) ? (reqMap.bySlot.get(slotKey) || []) : [];
     for(const p of available){
-      if(!matchPlayerForSlot(p, combo, slotPos, reqMap, "", forcePol, requiredAcq)) continue;
+      if(!matchPlayerForSlot(p, combo, slotPos, reqMap, "", forcePol, requiredNationality, requiredAcq)) continue;
       // If this slot is part of combo_requirements, enforce exact requirement match (playStyle & Lv)
       if(reqs.length){
         const ps = String(p?.playStyle ?? "");
@@ -1481,7 +1517,7 @@ function simulate(){
 
     const reqCandidates = requiredSlots.map(slot=>{
       const list = sortPlayersByPower(simulationPlayers.filter(p=>
-        matchPlayerForSlot(p, combo, String(slot?.position ?? ""), reqMap, "", forcePol, requiredAcq) &&
+        matchPlayerForSlot(p, combo, String(slot?.position ?? ""), reqMap, "", forcePol, requiredNationality, requiredAcq) &&
         playerMatchesSlotReq(p, slot)
       ));
       return { slot, list };
