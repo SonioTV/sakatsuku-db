@@ -2719,7 +2719,8 @@ function runComboSearch(){
   const rankKey = (rank==="金") ? "gold" : (rank==="銀") ? "silver" : (rank==="銅") ? "bronze" : "";
   if(rankKey) card.classList.add("rank-"+rankKey);
       const policy = (getComboPolicys(combo).filter(Boolean).join(" / ")) || getComboField(combo, ["policy","ポリシー"], "-");
-      const effect = getComboField(combo, ["effect","効果"], "-");
+      const effect = getComboBaseEffectText(combo);
+      const additionalEffectHtml = renderComboAdditionalEffectText(combo);
       const need = getComboField(combo, ["requiredPlayers","requiredCount","needCount","必要人数"], "-");
 
 const acqMethod = getComboField(combo, ["acquisitionMethod","入手方法"], "-");
@@ -2758,6 +2759,9 @@ const acqMethod = getComboField(combo, ["acquisitionMethod","入手方法"], "-"
           <div class="k">ランク</div><div class="v">${esc(rank)}</div>
           <div class="k">ポリシー</div><div class="v">${esc(policy)}</div>
           <div class="k">効果</div><div class="v">${esc(effect)}</div>
+          ${additionalEffectHtml
+            ? `<div class="k">追加効果</div><div class="v">${additionalEffectHtml}</div>`
+            : ""}
           <div class="k">必要人数</div><div class="v">${esc(need)}</div>
           <div class="k">入手方法</div><div class="v">${esc(acqMethod)}</div>
           <div class="k">入手場所</div><div class="v">${esc(acqPlace)}</div>
@@ -2939,6 +2943,70 @@ function parseComboEffectsFromText(effectText){
   return out;
 }
 
+
+function getComboAdditionalEffects(c){
+  const arr = getComboField(c, ["effects","combo_effects","効果一覧"], null);
+  if(!Array.isArray(arr)) return [];
+
+  const seen = new Set();
+  const out = [];
+
+  arr.forEach(e=>{
+    const condition = safeStr(getComboField(
+      e,
+      ["additionalCondition","additional_condition","追加条件"],
+      ""
+    )).trim();
+
+    const valueRaw = getComboField(
+      e,
+      ["additionalValue","additional_value","追加値"],
+      null
+    );
+
+    if(!condition || valueRaw === null || valueRaw === undefined || valueRaw === "") return;
+
+    const value = safeStr(valueRaw).trim();
+    const key = `${condition}\u0000${value}`;
+    if(seen.has(key)) return;
+
+    seen.add(key);
+    out.push({condition, value});
+  });
+
+  return out;
+}
+
+function getComboBaseEffectText(c){
+  const arr = getComboField(c, ["effects","combo_effects","効果一覧"], null);
+
+  if(Array.isArray(arr) && arr.length){
+    const effects = arr.map(e=>({
+      status: safeStr(getComboField(e, ["status","name","ステータス"], "")).trim(),
+      value: getComboField(e, ["value","倍率","値"], null)
+    })).filter(e=>e.status && e.value !== null && e.value !== undefined && e.value !== "");
+
+    if(effects.length){
+      const values = [...new Set(effects.map(e=>safeStr(e.value)))];
+
+      if(values.length === 1){
+        return `${effects.map(e=>e.status).join("、")}が${values[0]}%アップ`;
+      }
+
+      return effects.map(e=>`${e.status}が${e.value}%アップ`).join("、");
+    }
+  }
+
+  const raw = safeStr(getComboField(c, ["effect","効果"], "-")).trim();
+  return raw.split("。")[0] || "-";
+}
+
+function renderComboAdditionalEffectText(c){
+  return getComboAdditionalEffects(c)
+    .map(x=>`${x.condition}、${x.value}％強化される`)
+    .join("<br>");
+}
+
 function getComboEffects(c){
   const arr = getComboField(c, ["effects","combo_effects","効果一覧"], null);
   if(Array.isArray(arr) && arr.length){
@@ -2952,16 +3020,25 @@ function getComboEffects(c){
 
 function renderComboEffectTable(c){
   const effects = getComboEffects(c);
+  const additionalEffectHtml = renderComboAdditionalEffectText(c);
+
   if(!effects.length) return `
     <table class="comboInfoTable">
       <tr><th class="blockTitle">フォーメーションコンボ効果</th></tr>
       <tr><td>-</td></tr>
+      ${additionalEffectHtml
+        ? `<tr><td>${additionalEffectHtml}</td></tr>`
+        : ""}
     </table>`;
+
   return `
     <table class="comboInfoTable">
       <tr><th class="blockTitle" colspan="${effects.length}">フォーメーションコンボ効果</th></tr>
       <tr class="subHead">${effects.map(e=>`<th>${esc(e.name)}</th>`).join("")}</tr>
       <tr>${effects.map(e=>`<td>${esc(e.value || "アップ")}</td>`).join("")}</tr>
+      ${additionalEffectHtml
+        ? `<tr><td colspan="${effects.length}">${additionalEffectHtml}</td></tr>`
+        : ""}
     </table>`;
 }
 

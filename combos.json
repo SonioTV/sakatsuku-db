@@ -2858,25 +2858,25 @@
       {
         "status": "タックル",
         "value": 60,
-        "additionalCondition": "スタメンのブラジル人選手1人につき",
+        "additionalCondition": "スタメンのブラジル人選手1人につき、上記効果が",
         "additionalValue": 2
       },
       {
         "status": "マーク",
         "value": 60,
-        "additionalCondition": "スタメンのブラジル人選手1人につき",
+        "additionalCondition": "スタメンのブラジル人選手1人につき、上記効果が",
         "additionalValue": 2
       },
       {
         "status": "決定力",
         "value": 100,
-        "additionalCondition": "スタメンのブラジル人選手1人につき",
+        "additionalCondition": "スタメンのブラジル人選手1人につき、上記効果が",
         "additionalValue": 2
       },
       {
         "status": "パスカット",
         "value": 100,
-        "additionalCondition": "スタメンのブラジル人選手1人につき",
+        "additionalCondition": "スタメンのブラジル人選手1人につき、上記効果が",
         "additionalValue": 2
       }
     ],
