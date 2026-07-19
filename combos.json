@@ -2840,5 +2840,79 @@
         "conditionNo": 3
       }
     ]
+  },
+  {
+    "comboId": "C058",
+    "name": "セレソン'70",
+    "formation": "3-4-3C",
+    "rank": "金",
+    "combo_policys": [
+      "リアクション"
+    ],
+    "requiredPlayers": 4,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "Half Anniversary ログインボーナス",
+    "availablePeriod": "2026年8月26日まで",
+    "effect": "タックルが60%アップ、マークが60%アップ、決定力が100%アップ、パスカットが100%アップ。スタメンのブラジル人選手1人につき、上記能力が追加で2%強化される",
+    "effects": [
+      {
+        "status": "タックル",
+        "value": 60,
+        "additionalCondition": "スタメンのブラジル人選手1人につき",
+        "additionalValue": 2
+      },
+      {
+        "status": "マーク",
+        "value": 60,
+        "additionalCondition": "スタメンのブラジル人選手1人につき",
+        "additionalValue": 2
+      },
+      {
+        "status": "決定力",
+        "value": 100,
+        "additionalCondition": "スタメンのブラジル人選手1人につき",
+        "additionalValue": 2
+      },
+      {
+        "status": "パスカット",
+        "value": 100,
+        "additionalCondition": "スタメンのブラジル人選手1人につき",
+        "additionalValue": 2
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 2,
+        "position": "CB",
+        "positionPlace": "Right",
+        "playStyle": "スプリントCB",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 5,
+        "position": "DM",
+        "positionPlace": "Right",
+        "playStyle": "ハードマーカー",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 9,
+        "position": "LW",
+        "positionPlace": null,
+        "playStyle": "サイドアタッカー",
+        "playStyleLv": 3,
+        "conditionNo": 3
+      },
+      {
+        "slotNo": 11,
+        "position": "CF",
+        "positionPlace": null,
+        "playStyle": "ラインブレーカー",
+        "playStyleLv": 3,
+        "conditionNo": 4
+      }
+    ]
   }
 ]
