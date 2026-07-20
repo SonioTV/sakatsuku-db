@@ -5687,7 +5687,7 @@
     "mainPosition": "RW",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年6月23日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "ジャックナイフ",
     "mainTrait": "流氷の一撃",
     "category": "SP選手",
@@ -5695,7 +5695,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-29",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "RW"
     ]
@@ -5712,7 +5712,7 @@
     "mainPosition": "AM",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年6月23日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "キラーパス",
     "mainTrait": "誘いの遊戯",
     "category": "SP選手",
@@ -5720,7 +5720,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-29",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "AM"
     ]
@@ -5737,7 +5737,7 @@
     "mainPosition": "LW",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年6月23日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "スリップビート",
     "mainTrait": "懐の深いボールタッチ",
     "category": "SP選手",
@@ -5745,7 +5745,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-29",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "LW"
     ]
@@ -5762,7 +5762,7 @@
     "mainPosition": "CF",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年6月23日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "変速ギア",
     "mainTrait": "冷静なボールタッチ",
     "category": "SP選手",
@@ -5770,7 +5770,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-05-29",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "CF"
     ]
@@ -9287,7 +9287,7 @@
     "mainPosition": "CF",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年7月7日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "変速ギア",
     "mainTrait": "流氷の一撃",
     "category": "SP選手",
@@ -9295,7 +9295,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "CF"
     ]
@@ -9312,7 +9312,7 @@
     "mainPosition": "GK",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年7月7日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "エレガントセーブ",
     "mainTrait": "広域の守護神",
     "category": "SP選手",
@@ -9320,7 +9320,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "GK"
     ]
@@ -9337,7 +9337,7 @@
     "mainPosition": "AM",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年7月7日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "仕上げのスパイス",
     "mainTrait": "精緻なパサー",
     "category": "SP選手",
@@ -9345,7 +9345,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "AM"
     ]
@@ -9362,7 +9362,7 @@
     "mainPosition": "RB",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年7月7日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "遮断のアクション",
     "mainTrait": "俊敏なマーカー",
     "category": "SP選手",
@@ -9370,7 +9370,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-23",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "RB"
     ]
@@ -9877,6 +9877,131 @@
     "available": true,
     "suitablePositions": [
       "CF"
+    ]
+  },
+  {
+    "player_id": "P0396",
+    "playerId": "P0396",
+    "name": "ペレ 〔SUPER LEGEND〕",
+    "overall": 7341,
+    "maxUpgrade": 16269,
+    "policy": "リアクション",
+    "playStyle": "ラインブレーカー",
+    "playStyleLv": 3,
+    "mainPosition": "CF",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "Half Anniversary レジェンドSP選手スカウト",
+    "availablePeriod": "2026年8月12日まで",
+    "mainSkill": "アンストッパブルショット",
+    "mainTrait": "流氷の一撃",
+    "category": "SP選手",
+    "nationality": "ブラジル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-07-20",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
+  },
+  {
+    "player_id": "P0397",
+    "playerId": "P0397",
+    "name": "ヴィニシウス・ジュニオール 〔2025-2026〕",
+    "overall": 7107,
+    "maxUpgrade": 15811,
+    "policy": "リアクション",
+    "playStyle": "サイドアタッカー",
+    "playStyleLv": 3,
+    "mainPosition": "LW",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "Half Anniversary レジェンドSP選手スカウト",
+    "availablePeriod": "2026年8月12日まで",
+    "mainSkill": "カッティングエッジ",
+    "mainTrait": "スピード溢れる突破",
+    "category": "SP選手",
+    "nationality": "ブラジル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-07-20",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ]
+  },
+  {
+    "player_id": "P0398",
+    "playerId": "P0398",
+    "name": "エデル・ミリトン 〔2025-2026〕",
+    "overall": 6857,
+    "maxUpgrade": 15538,
+    "policy": "リアクション",
+    "playStyle": "スプリントCB",
+    "playStyleLv": 2,
+    "mainPosition": "CB",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "Half Anniversary レジェンドSP選手スカウト",
+    "availablePeriod": "2026年8月12日まで",
+    "mainSkill": "チェーンカッター",
+    "mainTrait": "インターセプター",
+    "category": "SP選手",
+    "nationality": "ブラジル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-07-20",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
+  },
+  {
+    "player_id": "P0399",
+    "playerId": "P0399",
+    "name": "エデルソン 〔2025-2026〕",
+    "overall": 6905,
+    "maxUpgrade": 15433,
+    "policy": "リアクション",
+    "playStyle": "セントラルMF",
+    "playStyleLv": 2,
+    "mainPosition": "DM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "Half Anniversary レジェンドSP選手スカウト",
+    "availablePeriod": "2026年8月12日まで",
+    "mainSkill": "遮断のアクション",
+    "mainTrait": "ムービングウィール",
+    "category": "SP選手",
+    "nationality": "ブラジル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-07-20",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
+  },
+  {
+    "player_id": "P0400",
+    "playerId": "P0400",
+    "name": "河本龍将",
+    "overall": 5415,
+    "maxUpgrade": 11436,
+    "policy": "カウンター",
+    "playStyle": "オーソドックスGK",
+    "playStyleLv": 2,
+    "mainPosition": "GK",
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "河本龍将選手パック",
+    "availablePeriod": "終了日未定",
+    "mainSkill": "驚異的なセービング",
+    "mainTrait": "上空の守護者",
+    "category": "SP選手",
+    "nationality": "日本",
+    "growthType": "超早熟",
+    "implementedDate": "2026-07-20",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "GK"
     ]
   }
 ]
