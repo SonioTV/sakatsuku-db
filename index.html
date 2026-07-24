@@ -2923,7 +2923,7 @@ function getComboBaseEffectText(c){
 
 function renderComboAdditionalEffectText(c){
   return getComboAdditionalEffects(c)
-    .map(x=>`${x.condition}、${x.value}％強化される`)
+    .map(x=>`${x.condition}${x.value}％強化される`)
     .join("<br>");
 }
 

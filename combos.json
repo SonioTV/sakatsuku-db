@@ -2853,30 +2853,30 @@
     "acquisitionMethod": "その他",
     "acquisitionPlace": "Half Anniversary ログインボーナス",
     "availablePeriod": "2026年8月26日まで",
-    "effect": "タックルが60%アップ、マークが60%アップ、決定力が100%アップ、パスカットが100%アップ。スタメンのブラジル人選手1人につき、上記能力が追加で2%強化される",
+    "effect": "タックルが60%アップ、マークが60%アップ、決定力が100%アップ、パスカットが100%アップ。フィールド上にいるブラジル選手1人あたり、上記能力が追加で2%強化される",
     "effects": [
       {
         "status": "タックル",
         "value": 60,
-        "additionalCondition": "スタメンのブラジル人選手1人につき、上記効果が",
+        "additionalCondition": "フィールド上にいるブラジル選手1人あたり、上記効果が",
         "additionalValue": 2
       },
       {
         "status": "マーク",
         "value": 60,
-        "additionalCondition": "スタメンのブラジル人選手1人につき、上記効果が",
+        "additionalCondition": "フィールド上にいるブラジル選手1人あたり、上記効果が",
         "additionalValue": 2
       },
       {
         "status": "決定力",
         "value": 100,
-        "additionalCondition": "スタメンのブラジル人選手1人につき、上記効果が",
+        "additionalCondition": "フィールド上にいるブラジル選手1人あたり、上記効果が",
         "additionalValue": 2
       },
       {
         "status": "パスカット",
         "value": 100,
-        "additionalCondition": "スタメンのブラジル人選手1人につき、上記効果が",
+        "additionalCondition": "フィールド上にいるブラジル選手1人あたり、上記効果が",
         "additionalValue": 2
       }
     ],
