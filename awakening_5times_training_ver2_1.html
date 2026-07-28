@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【サカつく2026】覚醒5回を狙う育成法｜有利イベントを成長期SP選手に集中させる方法【Ver2.1対応】</title>
+  <meta name="description" content="サカつく2026 Ver2.1対応。SP選手13～14名のチームを作り、成長期イベントを育成したい選手へ集中させて覚醒5回を狙う育成方法を、手順・発生イベント・注意点・Q&A付きで解説します。">
+  <link rel="canonical" href="https://sakatsuku2026-db.com/awakening_5times_training_ver2_1.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="【サカつく2026】覚醒5回を狙う育成法｜有利イベントを成長期SP選手に集中させる方法【Ver2.1対応】">
+  <meta property="og:description" content="SP選手13～14名の編成で有利イベントを集中させ、覚醒5回を狙う育成方法を解説。">
+  <meta property="og:url" content="https://sakatsuku2026-db.com/awakening_5times_training_ver2_1.html">
+  <meta property="og:image" content="https://sakatsuku2026-db.com/img/articles/awakening_5times_training_ver2_1/training_flow.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root{--blue:#0c55b5;--deep:#082856;--light:#eef6ff;--line:#d7e4f3;--text:#1b2a3a;--gold:#fff6d8;--warn:#fff4e5;--green:#ecf8ef}
+    *{box-sizing:border-box}
+    body{margin:0;background:#f4f7fb;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.85}
+    a{color:var(--blue)} img{max-width:100%;height:auto;display:block}
+    .site-header{background:linear-gradient(135deg,#073477,#0d66d4);color:#fff;padding:18px 16px;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+    .site-header-inner,.container{max-width:1100px;margin:auto}.site-title{font-size:1.15rem;font-weight:800;margin:0}
+    .breadcrumb{font-size:.83rem;color:#62758b;margin:16px 0}.breadcrumb a{text-decoration:none}
+    main{background:#fff;border:1px solid #e3eaf2;border-radius:14px;padding:28px;margin-bottom:36px;box-shadow:0 8px 30px rgba(21,61,103,.06)}
+    h1{font-size:clamp(1.65rem,4vw,2.45rem);line-height:1.45;color:var(--deep);margin:0 0 14px}
+    .lead{font-size:1.03rem}.note{background:var(--light);border-left:5px solid var(--blue);padding:16px 18px;border-radius:8px;margin:20px 0}
+    .warning{background:var(--warn);border-left-color:#e48a12}.success{background:var(--green);border-left-color:#29a15a}
+    figure{margin:24px 0}figure img{border-radius:12px;border:1px solid var(--line)}figcaption{font-size:.82rem;color:#6b7d90;text-align:center;margin-top:6px}
+    .video-link{position:relative;display:block;margin:20px 0;border-radius:12px;overflow:hidden;background:#000;box-shadow:0 4px 14px rgba(0,0,0,.16)}.video-link img{width:100%;aspect-ratio:16/9;object-fit:cover}.video-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:82px;height:58px;border-radius:16px;background:rgba(255,0,0,.92);display:grid;place-items:center;box-shadow:0 4px 16px rgba(0,0,0,.35)}.video-play:before{content:"";display:block;margin-left:5px;border-top:13px solid transparent;border-bottom:13px solid transparent;border-left:22px solid #fff}.video-label{position:absolute;left:16px;bottom:14px;background:rgba(0,0,0,.72);color:#fff;padding:7px 11px;border-radius:7px;font-size:.88rem;font-weight:700}
+    .toc{background:#f8fbff;border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:28px 0}.toc-title{font-weight:800;color:var(--deep);font-size:1.1rem}.toc ol{margin:8px 0 0;padding-left:1.5em}.toc a{text-decoration:none}
+    h2{font-size:1.55rem;color:var(--deep);border-left:7px solid var(--blue);padding-left:12px;margin-top:46px;border-bottom:2px solid #e5edf7;padding-bottom:8px}
+    h3{font-size:1.2rem;color:#114b91;margin-top:30px}
+    .summary-box{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.summary-box>div{background:#f7faff;border:1px solid var(--line);border-radius:10px;padding:15px;text-align:center}.summary-box strong{display:block;color:var(--blue);font-size:1.12rem}
+    table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95rem}th,td{border:1px solid var(--line);padding:12px;vertical-align:top}th{background:#eaf3ff;color:var(--deep);text-align:left}
+    .steps{counter-reset:step}.step{position:relative;padding:18px 18px 18px 72px;border:1px solid var(--line);border-radius:12px;margin:14px 0;background:#fff}.step:before{counter-increment:step;content:counter(step);position:absolute;left:18px;top:18px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff;font-weight:900}
+    .faq details{border:1px solid var(--line);border-radius:10px;margin:12px 0;background:#fff}.faq summary{cursor:pointer;padding:15px 18px;font-weight:800;color:var(--deep)}.faq details p{padding:0 18px 16px;margin:0}
+    .related{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.related a{display:block;border:1px solid var(--line);border-radius:10px;padding:15px;text-decoration:none;background:#f9fbfe;font-weight:700}
+    .article-meta{font-size:.84rem;color:#6b7d90;margin-bottom:18px}.source{font-size:.9rem;color:#536679}
+    footer{text-align:center;color:#728096;font-size:.82rem;padding:26px}
+    @media(max-width:700px){main{border-radius:0;border-left:0;border-right:0;padding:20px 15px}.summary-box,.related{grid-template-columns:1fr}table{font-size:.88rem}th,td{padding:9px}.step{padding-left:64px}}
+  </style>
+</head>
+<body>
+<header class="site-header"><div class="site-header-inner"><p class="site-title">サカつく2026 攻略・データベース</p></div></header>
+<div class="container">
+  <nav class="breadcrumb"><a href="index.html">ホーム</a> &gt; <a href="articles.html">攻略記事</a> &gt; 覚醒5回＆有利イベント狙い撃ち育成法</nav>
+  <main>
+    <article>
+      <h1>【サカつく2026】覚醒5回を狙う育成法｜有利イベントを成長期SP選手に集中させる方法【Ver2.1対応】</h1>
+      <div class="article-meta">サカつく2026 攻略記事｜Ver2.1対応</div>
+      <p class="lead">育成したいSP選手に有利なイベントを集中的に発生させ、<strong>覚醒5回と高いパラメータを狙う育成方法</strong>を紹介します。ポイントは、先に12名のSP選手を育成し、最後に育成対象を加えて<strong>SP選手だけの13～14名編成</strong>を作ることです。</p>
+
+      <div class="note warning"><strong>検証上の注意</strong><br>本記事の方法はVer2.1時点の検証結果をもとにしています。動画内では約50シーズンの試行で対象イベントが育成選手へ集中したとされていますが、イベント発生にはランダム要素があるため、毎回同じ結果を保証するものではありません。</div>
+
+      <figure><img src="img/articles/awakening_5times_training_ver2_1/training_flow.png" alt="覚醒5回と有利イベント狙い撃ち育成法の手順"><figcaption>覚醒5回を狙う基本手順</figcaption></figure>
+
+      <p class="source">今回の記事はこちらの動画をベースに作成しました。</p>
+<p class="creator-x-link">
+  動画作成「ユウサクさん」：
+  <a
+    href="https://x.com/yousaku1234"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    @yousaku1234
+  </a>
+</p>
+
+      <a class="video-link" href="https://www.youtube.com/watch?v=4s0lFgVW4PU" target="_blank" rel="noopener noreferrer" aria-label="YouTubeで動画を見る">
+        <img src="https://i.ytimg.com/vi/4s0lFgVW4PU/maxresdefault.jpg" alt="【サカつく2026】超簡単！覚醒5回＆有利イベント狙い撃ち育成法【Ver2.1対応】の動画サムネイル">
+        <span class="video-play" aria-hidden="true"></span>
+        <span class="video-label">クリックしてYouTubeで動画を見る</span>
+      </a>
+
+      <nav class="toc" aria-label="目次"><div class="toc-title">目次</div><ol>
+        <li><a href="#overview">育成法の仕組み</a></li><li><a href="#steps">具体的な育成手順</a></li><li><a href="#events">狙えるイベントと効果</a></li><li><a href="#result">検証結果</a></li><li><a href="#tips">成功率を高めるポイント</a></li><li><a href="#faq">よくある質問</a></li><li><a href="#summary">まとめ</a></li>
+      </ol></nav>
+
+      <h2 id="overview">覚醒5回を狙う育成法の仕組み</h2>
+      <p>通常の育成では、覚醒ポイントやパラメータが上昇するイベントが複数の選手へ分散します。そこで、育成対象以外のSP選手を安定期まで進め、チーム内の<strong>成長期SP選手を1～2名に限定</strong>します。</p>
+      <p>この状態を作ることで、成長期に発生する特定イベントの対象が育成したい選手へ集中しやすくなり、覚醒ポイントとパラメータを効率よく積み上げられる、という仕組みです。</p>
+      <div class="summary-box"><div><strong>先に12名育成</strong>安定期のSP選手を用意</div><div><strong>育成対象1～2名</strong>最後に加入させる</div><div><strong>合計13～14名</strong>SP選手のみで編成</div></div>
+
+      <h2 id="steps">具体的な育成手順</h2>
+      <div class="steps">
+        <div class="step"><h3>SP選手を12名加入させて育成する</h3><p>最初に育成対象ではないSP選手を12名加入させます。ブーストパスを利用している場合は1年に3名ずつ、未利用なら2名ずつなど、加入可能人数に合わせて進めます。</p></div>
+        <div class="step"><h3>12名が安定期に入るまで進める</h3><p>最後に加入させたSP選手が安定期に入るまで育成を進めます。ここで既存12名が成長期を抜けた状態を作ることが重要です。</p></div>
+        <div class="step"><h3>育成したいSP選手を1名または2名加入させる</h3><p>覚醒5回を狙いたい選手を最後に加えます。1名の方がイベントを集中させやすい一方、2名でも覚醒5回の成功例が確認されています。</p></div>
+        <div class="step"><h3>SP選手13～14名のチームで育成する</h3><p>安定期のSP選手12名と、成長期の育成対象1～2名でチームを構成します。リーグ戦とカップ戦で優勝できる環境を選び、覚醒ポイントを確保しながら育成を進めます。</p></div>
+      </div>
+
+      <h2 id="events">狙えるイベントと効果</h2>
+      <p>動画内の検証では、以下の成長期イベントが育成対象へ繰り返し発生しました。覚醒ポイント系イベントだけでなく、トレーニング系イベントによるパラメータ上昇も重なるため、最終能力を大きく伸ばせます。</p>
+      <figure><img src="img/articles/awakening_5times_training_ver2_1/growth_events.png" alt="成長期に発生する有利イベントと効果一覧"><figcaption>確認された主な成長期イベント</figcaption></figure>
+      <table><thead><tr><th>イベント</th><th>主な効果</th><th>ポイント</th></tr></thead><tbody>
+        <tr><td>ベテランだからこそ</td><td>覚醒ポイント</td><td>成長期の育成対象へ集中させたい主要イベント</td></tr>
+        <tr><td>揺るがないメンタル</td><td>覚醒ポイント</td><td>覚醒回数を増やすうえで重要</td></tr>
+        <tr><td>思い悩む選手</td><td>覚醒ポイント</td><td>成長期の選手を対象とするイベント</td></tr>
+        <tr><td>先達に感化されて</td><td>覚醒ポイント</td><td>発生例が少なく、動画内でも成長期イベントと推定</td></tr>
+        <tr><td>○○トレーニング</td><td>パラメータ上昇</td><td>各種能力を継続的に強化</td></tr>
+        <tr><td>ハードな○○トレーニング</td><td>パラメータ上昇</td><td>通常より大きな上昇が期待できる</td></tr>
+        <tr><td>ふたりで○○トレーニング</td><td>覚醒ポイントまたはパラメータ</td><td>育成対象を2名にする利点の一つ</td></tr>
+      </tbody></table>
+
+      <h2 id="result">検証結果：5年間で覚醒5回を達成</h2>
+<figure class="article-image">
+    <img
+        src="img/articles/awakening_5times_training_ver2_1/verification_result.png"
+        alt="覚醒5回育成法の検証結果"
+        loading="lazy">
+</figure>
+      <p>動画の実践例では、育成開始後にイベントが対象選手へ集中し、<strong>5年間で覚醒5回</strong>を達成しています。最終総合力は<strong>14,836</strong>で、展開次第では15,000も狙える可能性があるとされています。</p>
+      <div class="note success"><strong>この育成法の強み</strong><br>覚醒ポイントだけでなく、トレーニングイベントによるパラメータ上昇も継続して受けられるため、単に覚醒回数を増やすだけではなく、選手の最終能力そのものを高めやすい点が特徴です。</div>
+
+      <h2 id="tips">成功率を高めるポイントと注意点</h2>
+      <h3>育成対象は1～2名に絞る</h3><p>イベントの対象候補が少ないほど集中しやすくなります。確実性を優先するなら1名、コンビイベントも狙いたい場合は2名がおすすめです。</p>
+      <h3>継承用のサカつく選手は最大2名まで</h3><p>継承用選手を加えても育成は可能ですが、SP選手向けの成長期イベントがサカつく選手には円熟期でも発生するため、イベントが分散する可能性があります。動画では最大2名までが推奨されています。</p>
+      <h3>育成国は「優勝できるリーグ」を優先</h3><p>イングランド、スペイン、フランス、トルコなど、育成する国自体は問いません。重要なのはリーグ戦とカップ戦で優勝し、覚醒ポイントを安定して獲得できることです。</p>
+      <h3>高レベルリーグは戦力が整ってから</h3><p>高レベルリーグでは大成功時の覚醒ポイントが大きくなる一方、優勝難度も上がります。SP選手の限界突破が十分でない場合は、レベル1～3など確実に勝てるリーグを選びましょう。</p>
+
+      <h2 id="faq">よくある質問</h2>
+      <figure><img src="img/articles/awakening_5times_training_ver2_1/qa.png" alt="覚醒5回育成法に関するQ&A"><figcaption>育成人数・継承選手・育成国・発見経緯のQ&A</figcaption></figure>
+      <div class="faq">
+        <details open><summary>1人ずつ育成するべき？</summary><p>2人同時でも問題ありません。「ふたりで○○トレーニング」など、2人いることで発生するイベントもあります。検証では2人とも覚醒5回に到達した例が複数確認されています。</p></details>
+        <details><summary>継承用のサカつく選手を入れてもよい？</summary><p>入れても構いません。ただしイベントの分散を抑えるため、最大2名までが推奨です。少ないほど育成対象へイベントが集中しやすくなります。</p></details>
+        <details><summary>どこの国で育成するべき？</summary><p>国はどこでも構いません。リーグ戦とカップ戦で優勝できる国を選びましょう。戦力に余裕があるなら、高レベルリーグでより多くの覚醒ポイントを狙う選択肢もあります。</p></details>
+        <details><summary>この育成法はどのように見つかった？</summary><p>Ver2.1以降、2人のCBがともに覚醒5回へ到達したことや、想定値よりパス・タックルなどが高い選手ができたという報告をきっかけに検証され、イベントを集中させる仕組みが判明しました。</p></details>
+      </div>
+
+      <h2 id="summary">まとめ</h2>
+      <div class="note"><strong>覚醒5回を狙う育成法の要点</strong><br>
+        ① SP選手12名を先に育成する<br>
+        ② 12名が安定期に入ってから育成対象を1～2名加入させる<br>
+        ③ SP選手だけの13～14名チームを作る<br>
+        ④ 優勝できるリーグで覚醒ポイントを確保する<br>
+        ⑤ 継承用選手を入れる場合は最大2名までに抑える
+      </div>
+      <p>この方法は、成長期イベントの対象を絞ることで、覚醒ポイントとパラメータ上昇を育成したい選手へ集める育成法です。Ver2.1時点では非常に強力ですが、イベントにはランダム性があります。まずは確実に優勝できるリーグで、育成対象1名から試すのがおすすめです。</p>
+
+      <h2>関連記事</h2>
+      <div class="related">
+        <a href="sp_evaluator.html">SP選手評価ツール</a>
+        <a href="players.html">選手図鑑・選手検索</a>
+        <a href="strongest_team_simulation.html">最強チームシミュレーター</a>
+        <a href="articles.html">サカつく2026攻略記事一覧</a>
+      </div>
+    </article>
+  </main>
+</div>
+<footer>© サカつく2026 攻略・データベース</footer>
+</body>
+</html>
