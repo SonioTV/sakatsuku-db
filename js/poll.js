@@ -6,7 +6,7 @@
   // Supabase Dashboard:
   // Settings → API Keys → Publishable key
   // 下の文字列だけを実際のPublishable keyへ置き換えてください。
-  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_uyGHXw_kIDqcwhIIPOc7uA_N-XgBYAY";
+  const SUPABASE_PUBLISHABLE_KEY = "ここにPublishable Keyを貼り付けてください";
 
   const POLL_SELECTOR = ".site-poll";
   const STORAGE_PREFIX = "sakatsuku_poll_v1:";
@@ -117,13 +117,13 @@
     container.innerHTML = `
       <section class="poll-card" aria-labelledby="${escapeHtml(groupName)}-question">
         <div class="poll-heading">
-          <span class="poll-heading-icon" aria-hidden="true">📊</span>
-          <span>アンケート</span>
+          <span class="poll-heading-dot" aria-hidden="true"></span>
+          <span>みんなはどうする？</span>
         </div>
 
-        <h2 class="poll-question" id="${escapeHtml(groupName)}-question">
+        <div class="poll-question" id="${escapeHtml(groupName)}-question">
           ${escapeHtml(poll.question)}
-        </h2>
+        </div>
 
         <form class="poll-form" novalidate>
           <fieldset class="poll-options">
@@ -207,11 +207,11 @@
     container.innerHTML = `
       <section class="poll-card poll-card--results">
         <div class="poll-heading">
-          <span class="poll-heading-icon" aria-hidden="true">📊</span>
+          <span class="poll-heading-dot" aria-hidden="true"></span>
           <span>${escapeHtml(TEXT.resultTitle)}</span>
         </div>
 
-        <h2 class="poll-question">${escapeHtml(question)}</h2>
+        <div class="poll-question">${escapeHtml(question)}</div>
 
         <div class="poll-results-list">
           ${safeRows
