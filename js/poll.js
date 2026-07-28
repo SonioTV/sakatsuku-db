@@ -16,10 +16,10 @@
     loading: "アンケートを読み込んでいます…",
     vote: "投票する",
     voting: "投票中…",
-    resultTitle: "みんなの投票結果",
+    resultTitle: "みんなの回答",
     totalVotes: "合計",
     votesUnit: "票",
-    alreadyVoted: "投票ありがとうございました",
+    alreadyVoted: "回答ありがとうございました",
     selectRequired: "選択肢を1つ選んでください。",
     loadError: "アンケートを読み込めませんでした。",
     voteError: "投票を送信できませんでした。",
@@ -53,6 +53,19 @@
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
+  }
+
+  function optionIcon(label, index = 0) {
+    const text = String(label || "");
+
+    if (/ガッツリ|天井|全力|本気/.test(text)) return "🔥";
+    if (/ちょっと|少し|おはガチャ|様子/.test(text)) return "🎟";
+    if (/引かない|見送|スルー|やめる/.test(text)) return "✋";
+    if (/最高|とても|大満足/.test(text)) return "✨";
+    if (/普通|まあまあ/.test(text)) return "👍";
+    if (/難しい|不満|低い/.test(text)) return "⚠";
+
+    return ["A", "B", "C", "D", "E"][index] || "•";
   }
 
   function storageKey(pollKey) {
@@ -134,15 +147,16 @@
 
             ${poll.options
               .map(
-                (option) => `
+                (option, index) => `
                   <label class="poll-option">
                     <input
                       type="radio"
                       name="${escapeHtml(groupName)}"
                       value="${escapeHtml(option.id)}"
                     >
-                    <span class="poll-option-control" aria-hidden="true"></span>
+                    <span class="poll-option-icon" aria-hidden="true">${escapeHtml(optionIcon(option.label, index))}</span>
                     <span class="poll-option-label">${escapeHtml(option.label)}</span>
+                    <span class="poll-option-control" aria-hidden="true"></span>
                   </label>
                 `
               )
@@ -228,17 +242,26 @@
 
         <div class="poll-results-list">
           ${safeRows
-            .map((row) => {
+            .map((row, index) => {
               const percentage = Number(row.percentage || 0);
+              const voteCount = Number(row.vote_count || 0);
+              const maxVoteCount = Math.max(
+                ...safeRows.map((item) => Number(item.vote_count || 0))
+              );
+              const isPopular = voteCount > 0 && voteCount === maxVoteCount;
               const isSelected =
                 selectedOptionId && String(row.option_id) === String(selectedOptionId);
 
               return `
-                <div class="poll-result${isSelected ? " poll-result--selected" : ""}">
+                <div class="poll-result${isSelected ? " poll-result--selected" : ""}${isPopular ? " poll-result--popular" : ""}">
                   <div class="poll-result-header">
-                    <span class="poll-result-label">
-                      ${escapeHtml(row.option_label)}
-                      ${isSelected ? '<span class="poll-selected-badge">あなたの投票</span>' : ""}
+                    <span class="poll-result-label-wrap">
+                      <span class="poll-result-icon" aria-hidden="true">${escapeHtml(optionIcon(row.option_label, index))}</span>
+                      <span class="poll-result-label">
+                        ${escapeHtml(row.option_label)}
+                        ${isPopular ? '<span class="poll-popular-badge">人気No.1</span>' : ""}
+                        ${isSelected ? '<span class="poll-selected-badge">あなたの投票</span>' : ""}
+                      </span>
                     </span>
                     <span class="poll-result-value">
                       ${percentage.toFixed(1)}%
@@ -259,8 +282,9 @@
                     ></span>
                   </div>
 
-                  <div class="poll-result-votes">
-                    ${Number(row.vote_count || 0).toLocaleString("ja-JP")} ${escapeHtml(TEXT.votesUnit)}
+                  <div class="poll-result-meta">
+                    <span>${voteCount.toLocaleString("ja-JP")} ${escapeHtml(TEXT.votesUnit)}</span>
+                    <span>${percentage.toFixed(1)}%</span>
                   </div>
                 </div>
               `;
