@@ -284,7 +284,6 @@
 
                   <div class="poll-result-meta">
                     <span>${voteCount.toLocaleString("ja-JP")} ${escapeHtml(TEXT.votesUnit)}</span>
-                    <span>${percentage.toFixed(1)}%</span>
                   </div>
                 </div>
               `;
