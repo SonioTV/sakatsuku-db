@@ -6,7 +6,7 @@
   // Supabase Dashboard:
   // Settings → API Keys → Publishable key
   // 下の文字列だけを実際のPublishable keyへ置き換えてください。
-  const SUPABASE_PUBLISHABLE_KEY = "ここにPublishable Keyを貼り付けてください";
+  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_uyGHXw_kIDqcwhIIPOc7uA_N-XgBYAY";
 
   const POLL_SELECTOR = ".site-poll";
   const STORAGE_PREFIX = "sakatsuku_poll_v1:";
