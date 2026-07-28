@@ -16,10 +16,10 @@
     loading: "アンケートを読み込んでいます…",
     vote: "投票する",
     voting: "投票中…",
-    resultTitle: "投票結果",
+    resultTitle: "みんなの投票結果",
     totalVotes: "合計",
     votesUnit: "票",
-    alreadyVoted: "投票済みです",
+    alreadyVoted: "投票ありがとうございました",
     selectRequired: "選択肢を1つ選んでください。",
     loadError: "アンケートを読み込めませんでした。",
     voteError: "投票を送信できませんでした。",
@@ -116,9 +116,12 @@
 
     container.innerHTML = `
       <section class="poll-card" aria-labelledby="${escapeHtml(groupName)}-question">
-        <div class="poll-heading">
-          <span class="poll-heading-dot" aria-hidden="true"></span>
-          <span>みんなはどうする？</span>
+        <div class="poll-topline">
+          <div class="poll-heading">
+            <span class="poll-heading-icon" aria-hidden="true">Q</span>
+            <span>読者アンケート</span>
+          </div>
+          <span class="poll-private-note">1ブラウザ1票</span>
         </div>
 
         <div class="poll-question" id="${escapeHtml(groupName)}-question">
@@ -149,8 +152,11 @@
           <p class="poll-form-message" aria-live="polite"></p>
 
           <button type="submit" class="poll-submit-button">
-            ${escapeHtml(TEXT.vote)}
+            <span>${escapeHtml(TEXT.vote)}</span>
+            <span class="poll-submit-arrow" aria-hidden="true">→</span>
           </button>
+
+          <p class="poll-before-note">投票すると、みんなの結果が表示されます。</p>
         </form>
       </section>
     `;
@@ -206,9 +212,16 @@
 
     container.innerHTML = `
       <section class="poll-card poll-card--results">
-        <div class="poll-heading">
-          <span class="poll-heading-dot" aria-hidden="true"></span>
-          <span>${escapeHtml(TEXT.resultTitle)}</span>
+        <div class="poll-topline poll-topline--results">
+          <div class="poll-heading">
+            <span class="poll-heading-icon" aria-hidden="true">✓</span>
+            <span>${escapeHtml(TEXT.resultTitle)}</span>
+          </div>
+          <div class="poll-total-chip">
+            <span>合計</span>
+            <strong>${totalVotes.toLocaleString("ja-JP")}</strong>
+            <span>票</span>
+          </div>
         </div>
 
         <div class="poll-question">${escapeHtml(question)}</div>
@@ -253,12 +266,6 @@
               `;
             })
             .join("")}
-        </div>
-
-        <div class="poll-total">
-          ${escapeHtml(TEXT.totalVotes)}
-          <strong>${totalVotes.toLocaleString("ja-JP")}</strong>
-          ${escapeHtml(TEXT.votesUnit)}
         </div>
 
         <p class="poll-voted-note">${escapeHtml(TEXT.alreadyVoted)}</p>
