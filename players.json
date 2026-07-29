@@ -9395,7 +9395,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CF"
     ]
@@ -9420,7 +9420,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "LM",
       "AM"
@@ -9446,7 +9446,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "RM",
       "AM"
@@ -9472,7 +9472,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "LM",
       "LW"
@@ -9498,7 +9498,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "RM",
       "RW"
@@ -9524,7 +9524,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "DM"
     ]
@@ -9549,7 +9549,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "DM"
     ]
@@ -9574,7 +9574,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ]
@@ -9599,7 +9599,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ]
@@ -9624,7 +9624,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ]
@@ -9649,7 +9649,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "GK"
     ]
@@ -9674,7 +9674,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "AM"
     ]
@@ -9699,7 +9699,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-30",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CF"
     ]
@@ -9724,7 +9724,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-30",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "RW"
     ]
@@ -9749,7 +9749,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-07",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "AM"
     ]
@@ -9774,7 +9774,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-07",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ]
@@ -9799,7 +9799,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-07",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "LB"
     ]
@@ -9824,7 +9824,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-07",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ]
@@ -10002,6 +10002,106 @@
     "available": true,
     "suitablePositions": [
       "GK"
+    ]
+  },
+  {
+    "player_id": "P0401",
+    "playerId": "P0401",
+    "name": "ブルーノ・ギマランイス",
+    "overall": 7034,
+    "maxUpgrade": 15682,
+    "policy": "リアクション",
+    "playStyle": "ハードマーカー",
+    "playStyleLv": 2,
+    "mainPosition": "DM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "プレミアムSP選手スカウト（第1弾）",
+    "availablePeriod": "2026年8月26日まで",
+    "mainSkill": "奪還",
+    "mainTrait": "ホットラインを断つ動き",
+    "category": "SP選手",
+    "nationality": "ブラジル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-07-29",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
+  },
+  {
+    "player_id": "P0402",
+    "playerId": "P0402",
+    "name": "ハフィーニャ",
+    "overall": 7173,
+    "maxUpgrade": 15700,
+    "policy": "リアクション",
+    "playStyle": "アタッカー",
+    "playStyleLv": 2,
+    "mainPosition": "AM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "プレミアムSP選手スカウト（第1弾）",
+    "availablePeriod": "2026年8月26日まで",
+    "mainSkill": "ルミナストラップ",
+    "mainTrait": "ゴールに導くターン",
+    "category": "SP選手",
+    "nationality": "ブラジル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-07-29",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
+  },
+  {
+    "player_id": "P0403",
+    "playerId": "P0403",
+    "name": "ロドリゴ",
+    "overall": 6911,
+    "maxUpgrade": 15532,
+    "policy": "リアクション",
+    "playStyle": "ドリブラー",
+    "playStyleLv": 2,
+    "mainPosition": "RW",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "プレミアムSP選手スカウト（第1弾）",
+    "availablePeriod": "2026年8月26日まで",
+    "mainSkill": "ジャックナイフ",
+    "mainTrait": "冷静な突破",
+    "category": "SP選手",
+    "nationality": "ブラジル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-07-29",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
+  },
+  {
+    "player_id": "P0404",
+    "playerId": "P0404",
+    "name": "ブレーメル",
+    "overall": 6832,
+    "maxUpgrade": 15568,
+    "policy": "リアクション",
+    "playStyle": "ストッパー",
+    "playStyleLv": 2,
+    "mainPosition": "CB",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "プレミアムSP選手スカウト（第1弾）",
+    "availablePeriod": "2026年8月26日まで",
+    "mainSkill": "チェーンカッター",
+    "mainTrait": "エアバトラー",
+    "category": "SP選手",
+    "nationality": "ブラジル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-07-29",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CB"
     ]
   }
 ]
