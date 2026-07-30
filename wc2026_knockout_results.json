@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-16",
+  "updatedAt": "2026-07-31",
   "timezone": "JST",
   "teams": {
     "brazil": {
@@ -573,14 +573,20 @@
       "datetime": "7/19 6:00",
       "team1": "france",
       "team2": "england",
-      "status": "scheduled"
+      "status": "finished",
+      "score1": 4,
+      "score2": 6,
+      "winner": "england"
     },
     "final": {
       "round": "決勝",
       "datetime": "7/20 4:00",
       "team1": "spain",
       "team2": "argentina",
-      "status": "scheduled"
+      "status": "finished",
+      "score1": 1,
+      "score2": 0,
+      "winner": "spain"
     }
   }
 }
