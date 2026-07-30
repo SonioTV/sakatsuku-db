@@ -1512,6 +1512,31 @@
   .comboPlayerIcon{ width:22px; height:22px; }
 }
 
+/* ===== プレミアムウォーターバナー ===== */
+.water-banner{
+  max-width:920px;
+  margin:30px auto;
+  padding:0 12px;
+}
+
+.water-banner a{
+  display:block;
+  transition:.2s;
+}
+
+.water-banner a:hover{
+  transform:translateY(-2px);
+  opacity:.95;
+}
+
+.water-banner img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:16px;
+  box-shadow:0 10px 24px rgba(0,0,0,.15);
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -3233,6 +3258,23 @@ function renderComboPlayerCell(arr, type){
       </tbody>
     </table>
   </section>
+
+<div class="water-banner">
+  <p style="text-align:center;font-size:14px;font-weight:bold;color:#666;margin-bottom:8px;">
+    【PR】プレミアムウォーターをご検討中の方はこちら
+  </p>
+
+  <a href="https://premium-water.net/prm/lp19_introduced_sp?remark=3406644&utm_source=mypage&utm_medium=mail&utm_campaign=introduced"
+     target="_blank"
+     rel="noopener noreferrer sponsored nofollow"
+     aria-label="プレミアムウォーター紹介ページを開く">
+
+    <img
+      src="img/banner/waterserver.png"
+      alt="【PR】プレミアムウォーター お友達紹介 初回配送ボトル1セットプレゼント">
+  </a>
+</div>
+
 <!-- ===== AdSense: footer / safe placement ===== -->
 <div class="adWrap" aria-label="広告">
   <div class="adLabel">スポンサーリンク</div>
