@@ -383,6 +383,28 @@
 
   .centerBlock{ text-align:center; }
 
+  /* 選手検索：表示対象 */
+  .playerAvailabilityBoard{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    width:min(620px, 96%);
+    margin:8px auto 4px;
+  }
+  .playerAvailabilityOption{ flex:1 1 0; position:relative; cursor:pointer; }
+  .playerAvailabilityOption input{ position:absolute; opacity:0; pointer-events:none; }
+  .playerAvailabilityOption span{
+    min-height:58px; padding:12px 10px; border:3px solid #bfc6d6;
+    border-radius:16px; background:#fff; display:flex; align-items:center;
+    justify-content:center; text-align:center; font-size:19px; font-weight:900;
+    box-shadow:0 8px 18px rgba(0,0,0,.06);
+  }
+  .playerAvailabilityOption input:checked + span{
+    border-color:var(--blue); background:#e7f2ff; color:var(--blue2);
+    box-shadow:0 12px 22px rgba(30,136,255,.16);
+  }
+  .playerAvailabilityOption input:focus-visible + span{ outline:3px solid #111; outline-offset:2px; }
+
   select.bigSelect{
     width:min(720px, 96%);
     font-size:26px;
@@ -616,6 +638,8 @@
 .lvTile{ width:110px; height:50px; font-size:18px; }
     .bigBtn{ font-size:30px; padding:16px; }
     select.bigSelect{ font-size:20px; }
+    .playerAvailabilityBoard{ gap:8px; width:100%; }
+    .playerAvailabilityOption span{ min-height:54px; padding:10px 6px; font-size:16px; }
     .playerRow a{ font-size:20px; }
     .barRow{ grid-template-columns: 1fr 140px 58px; gap:10px; }
     .barPct{ font-size:13px; }
@@ -1787,10 +1811,16 @@
         <select id="comboSelect" class="bigSelect"></select>
       </div>
 
-      <div class="sectionTitle" style="font-size:24px;margin-top:14px;margin-bottom:6px;">入手場所を絞り込み</div>
-      <div class="centerBlock">
-        <select id="playerAcquisitionPlaceFilter" class="bigSelect"></select>
-        <div class="note" style="margin-top:6px;">※未選択の場合は「すべて」を表示します</div>
+      <div class="sectionTitle" style="font-size:24px;margin-top:14px;margin-bottom:6px;">表示選手</div>
+      <div class="playerAvailabilityBoard" role="radiogroup" aria-label="表示選手">
+        <label class="playerAvailabilityOption">
+          <input type="radio" name="playerAvailability" value="all" checked>
+          <span>全SP選手</span>
+        </label>
+        <label class="playerAvailabilityOption">
+          <input type="radio" name="playerAvailability" value="available">
+          <span>入手可能SP選手</span>
+        </label>
       </div>
 
       <button id="btnShowPlayers" class="bigBtn" type="button" style="width:min(560px,96%);font-size:32px;">対応選手を表示</button>
@@ -2745,7 +2775,7 @@ const acqMethod = getComboField(combo, ["acquisitionMethod","入手方法"], "-"
 ========================= */
 let selectedRanks = new Set(); // 金/銀/銅
 let selectedPlayerPolicy = null; // ポリシー（未選択=null）
-let selectedPlayerAcquisitionPlace = ""; // 入手場所（未選択=""）
+let selectedPlayerAvailability = "all"; // all / available
 
 function setupPlayerSearchUI(){
   // policy tiles (player search)
@@ -2785,7 +2815,13 @@ function setupPlayerSearchUI(){
     document.getElementById("playerResult").innerHTML = "";
   });
 
-  setupPlayerAcquisitionPlaceFilter();
+  document.querySelectorAll('input[name="playerAvailability"]').forEach(radio=>{
+    radio.addEventListener("change", ()=>{
+      if(!radio.checked) return;
+      selectedPlayerAvailability = radio.value === "available" ? "available" : "all";
+      document.getElementById("playerResult").innerHTML = "";
+    });
+  });
 
   document.getElementById("btnShowPlayers").addEventListener("click", ()=>{
     renderComboDetail();
@@ -2794,26 +2830,12 @@ function setupPlayerSearchUI(){
 }
 
 
-function setupPlayerAcquisitionPlaceFilter(){
-  const sel = document.getElementById("playerAcquisitionPlaceFilter");
-  if(!sel) return;
-
-  const places = [...new Set(PLAYERS.map(p=>safeStr(p.acquisitionPlace).trim()).filter(Boolean))]
-    .sort((a,b)=>a.localeCompare(b,"ja"));
-
-  sel.innerHTML = `<option value="">（すべての入手場所）</option>` +
-    places.map(place=>`<option value="${esc(place)}">${esc(place)}</option>`).join("");
-
-  sel.addEventListener("change", ()=>{
-    selectedPlayerAcquisitionPlace = sel.value;
-    document.getElementById("playerResult").innerHTML = "";
+function filterPlayersBySelectedAvailability(players){
+  return (players || []).filter(p=>{
+    const isSp = safeStr(p.category).trim() === "SP選手";
+    const availabilityOk = selectedPlayerAvailability !== "available" || p.available === true;
+    return isSp && availabilityOk;
   });
-}
-
-function filterPlayersBySelectedAcquisitionPlace(players){
-  const place = safeStr(selectedPlayerAcquisitionPlace).trim();
-  if(!place) return players;
-  return players.filter(p => safeStr(p.acquisitionPlace).trim() === place);
 }
 
 function refreshComboSelect(){
@@ -3126,7 +3148,7 @@ function renderPlayersForCombo(){
     return;
   }
 
-  const targetPlayers = filterPlayersBySelectedAcquisitionPlace(PLAYERS);
+  const targetPlayers = filterPlayersBySelectedAvailability(PLAYERS);
   const columns = conds.map((cond, idx)=>{
     const matchedFull = [];
     const matchedPolDiff = [];
