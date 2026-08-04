@@ -1266,7 +1266,48 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
 
     return true;
   }
-function rebuildRankPolicySelect(){
+function comboHasPolicy(combo, policy){
+    if(!policy) return true;
+    const cps = combo?.combo_policys;
+    if(Array.isArray(cps)){
+      return cps.map(x=>String(x).trim()).includes(policy);
+    }
+    return String(cps||"").trim() === policy;
+  }
+
+  function rebuildFormationSelect(){
+    const formationSel = $("formationSel");
+    if(!formationSel) return;
+
+    const currentFormation = String(formationSel.value || "").trim();
+    const selectedRank = getRank();
+    const selectedPolicy = getPolicyFilter();
+
+    // ランク・ポリシーに一致するコンボだけを対象に、フォーメーション候補を生成する
+    const formations = Array.from(new Set(
+      (COMBOS||[])
+        .filter(c=>{
+          if(selectedRank && String(c.rank||"").trim() !== selectedRank) return false;
+          if(!comboHasPolicy(c, selectedPolicy)) return false;
+          return true;
+        })
+        .map(c=>String(c.formation||"").trim())
+        .filter(Boolean)
+    )).sort((a,b)=>a.localeCompare(b,"ja"));
+
+    formationSel.innerHTML =
+      `<option value="">（全て）</option>` +
+      formations.map(f=>`<option value="${esc(f)}">${esc(f)}</option>`).join("");
+
+    // 現在の選択値が新しい候補にも存在する場合だけ維持する
+    if(currentFormation && formations.includes(currentFormation)){
+      formationSel.value = currentFormation;
+    }else{
+      formationSel.value = "";
+    }
+  }
+
+  function rebuildRankPolicySelect(){
     const ranks = Array.from(new Set((COMBOS||[]).map(c=>String(c.rank||"").trim()).filter(Boolean)));
     const order = (r)=>{
       if(r.includes("金")) return 0;
@@ -1293,18 +1334,17 @@ function rebuildRankPolicySelect(){
       polSel.innerHTML = `<option value="">（全て）</option>` + policies.map(p=>`<option value="${esc(p)}">${esc(p)}</option>`).join("");
     }
 
-    const formationSel = $("formationSel");
-    if(formationSel){
-      const formations = Array.from(new Set(
-        (COMBOS||[]).map(c=>String(c.formation||"").trim()).filter(Boolean)
-      )).sort((a,b)=>a.localeCompare(b,"ja"));
-      formationSel.innerHTML = `<option value="">（全て）</option>` + formations.map(f=>`<option value="${esc(f)}">${esc(f)}</option>`).join("");
-    }
+    rebuildFormationSelect();
 
-    rankSel?.addEventListener("change", rebuildComboSelect);
-    polSel?.addEventListener("change", rebuildComboSelect);
-    formationSel?.addEventListener("change", rebuildComboSelect);
-}
+    const handlePrimaryFilterChange = ()=>{
+      rebuildFormationSelect();
+      rebuildComboSelect();
+    };
+
+    rankSel?.addEventListener("change", handlePrimaryFilterChange);
+    polSel?.addEventListener("change", handlePrimaryFilterChange);
+    $("formationSel")?.addEventListener("change", rebuildComboSelect);
+  }
 
 function getPlayerNationality(player){
   return String(
@@ -1728,6 +1768,7 @@ document.querySelectorAll('input[name="playerFilter"]').forEach(el=>{
       if(el) el.selectedIndex = 0;
     });
 
+    rebuildFormationSelect();
     rebuildComboSelect();
     const comboSel = $("comboSel");
     if(comboSel) comboSel.selectedIndex = 0;
