@@ -336,7 +336,7 @@ h1{font-size:clamp(28px,4vw,42px);text-align:center;margin:8px 0 8px;color:#0f17
 .sectionTitle{font-size:20px;font-weight:900;color:#0f172a;margin:4px 0 14px;}
 .ctrl{gap:12px;}
 .row{gap:12px;}
-.ctrl > .row:first-child{display:grid;grid-template-columns:180px 200px 1fr;align-items:end;}
+.ctrl > .row:first-child{display:grid;grid-template-columns:160px 180px 180px 1fr;align-items:end;}
 .ctrl > .row:nth-child(2){display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));}
 .two{gap:6px;}
 label{font-size:13px;color:#334155;font-weight:900;}
@@ -348,6 +348,13 @@ select,input[type="text"]{
 select:focus,input[type="text"]:focus{border-color:#155f80;box-shadow:0 0 0 4px rgba(21,95,128,.10);}
 #comboSel{padding:11px 12px;border-radius:14px;}
 .actionRow{align-items:center;margin-top:2px;}
+.resetBtn{
+  background:#fff;
+  color:#475569;
+  border:2px solid #cbd5e1;
+  box-shadow:none;
+}
+.resetBtn:hover{background:#f1f5f9;border-color:#94a3b8;}
 .btn{
   background:linear-gradient(180deg,#f8a51b,#f59e0b);border:none;border-radius:16px;color:#fff;
   font-size:18px;font-weight:900;padding:14px 22px;box-shadow:0 14px 24px rgba(245,158,11,.25);
@@ -399,6 +406,9 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
   .card{padding:14px;border-radius:20px;}
   .lead{font-size:12px;}
   .btn{width:100%;font-size:17px;padding:13px 16px;}
+  .actionRow{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .actionRow .btn{font-size:15px;padding:13px 8px;}
+  .actionRow #status{grid-column:1 / -1;}
   .viewRow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;}
   .viewRow .pill{justify-content:center;padding:8px 6px;font-size:12px;}
   #gridWrap{border:none;background:transparent;overflow:visible;}
@@ -706,6 +716,10 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
             <select id="policySel"></select>
           </div>
           <div class="two">
+            <label>フォーメーション</label>
+            <select id="formationSel"></select>
+          </div>
+          <div class="two">
             <label>フォーメーションコンボ</label>
             <select id="comboSel"></select>
           </div>
@@ -722,7 +736,7 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
           </div>
         </div>
 
-        <div class="row actionRow"><button class="btn" id="btnSim">最強チームを表示</button><div class="mini" id="status"></div></div>
+        <div class="row actionRow"><button class="btn" id="btnSim">最強チームを表示</button><button class="btn resetBtn" id="btnReset" type="button">選択リセット</button><div class="mini" id="status"></div></div>
 
 <div class="viewBlock">
   <div class="viewLabel">表示形式</div>
@@ -810,6 +824,7 @@ function escapeHtml(str){
   const getMode = ()=>"maxUpgrade";
   const getRank = ()=>$("rankSel")?.value || "";
   const getPolicyFilter = ()=>$("policySel")?.value || "";
+  const getFormationFilter = ()=>$("formationSel")?.value || "";
   const getNationality = ()=>$("nationalitySel")?.value || "";
   const getAcq = ()=>$("acqSel")?.value || "";
 
@@ -1133,8 +1148,10 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
     const baseAll = (COMBOS || []).filter(c=>!slotSet.size || slotSet.has(String(c.comboId)));
     const rSel = getRank();
     const pSel = getPolicyFilter();
+    const fSel = getFormationFilter();
     const base = baseAll.filter(c=>{
       if(rSel && String(c.rank||"").trim() !== rSel) return false;
+      if(fSel && String(c.formation||"").trim() !== fSel) return false;
       if(pSel){
         const cps = c.combo_policys;
         if(Array.isArray(cps)) return cps.map(x=>String(x).trim()).includes(pSel);
@@ -1276,8 +1293,17 @@ function rebuildRankPolicySelect(){
       polSel.innerHTML = `<option value="">（全て）</option>` + policies.map(p=>`<option value="${esc(p)}">${esc(p)}</option>`).join("");
     }
 
+    const formationSel = $("formationSel");
+    if(formationSel){
+      const formations = Array.from(new Set(
+        (COMBOS||[]).map(c=>String(c.formation||"").trim()).filter(Boolean)
+      )).sort((a,b)=>a.localeCompare(b,"ja"));
+      formationSel.innerHTML = `<option value="">（全て）</option>` + formations.map(f=>`<option value="${esc(f)}">${esc(f)}</option>`).join("");
+    }
+
     rankSel?.addEventListener("change", rebuildComboSelect);
     polSel?.addEventListener("change", rebuildComboSelect);
+    formationSel?.addEventListener("change", rebuildComboSelect);
 }
 
 function getPlayerNationality(player){
@@ -1696,8 +1722,30 @@ document.querySelectorAll('input[name="playerFilter"]').forEach(el=>{
   });
 });
 
+  function resetSelections(){
+    ["rankSel", "policySel", "formationSel", "nationalitySel", "acqSel"].forEach(id=>{
+      const el = $(id);
+      if(el) el.selectedIndex = 0;
+    });
+
+    rebuildComboSelect();
+    const comboSel = $("comboSel");
+    if(comboSel) comboSel.selectedIndex = 0;
+
+    const tableView = document.querySelector('input[name="view"][value="table"]');
+    const dyeTeam = document.querySelector('input[name="pitchTeam"][value="dye"]');
+    const allPlayers = document.querySelector('input[name="playerFilter"][value="all"]');
+    if(tableView) tableView.checked = true;
+    if(dyeTeam) dyeTeam.checked = true;
+    if(allPlayers) allPlayers.checked = true;
+
+    updateView();
+    setStatus("");
+  }
+
   // events
   $("btnSim").addEventListener("click", simulate);
+  $("btnReset").addEventListener("click", resetSelections);
   
 
   loadAll().catch(err=>{
