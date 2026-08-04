@@ -12,16 +12,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C001",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C001",
@@ -29,7 +29,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C001",
@@ -37,23 +37,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C001",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C001",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C001",
@@ -61,7 +61,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C001",
@@ -69,23 +69,23 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C001",
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C001",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C002",
@@ -100,8 +100,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C002",
@@ -109,15 +109,15 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C002",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C002",
@@ -125,7 +125,7 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C002",
@@ -133,7 +133,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C002",
@@ -141,14 +141,14 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C002",
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -156,7 +156,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -164,16 +164,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C002",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C003",
@@ -188,8 +188,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C003",
@@ -197,31 +197,31 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C003",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C003",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C003",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C003",
@@ -229,7 +229,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C003",
@@ -237,14 +237,14 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C003",
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -252,7 +252,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -261,7 +261,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C004",
@@ -276,16 +276,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 60.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C004",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C004",
@@ -293,7 +293,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C004",
@@ -301,7 +301,7 @@
     "position": "RB",
     "condition_no": 1,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C004",
@@ -309,14 +309,14 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C004",
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -324,7 +324,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -349,7 +349,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C005",
@@ -364,16 +364,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 60.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C005",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C005",
@@ -381,7 +381,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C005",
@@ -389,23 +389,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C005",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C005",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C005",
@@ -437,7 +437,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C006",
@@ -452,16 +452,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C006",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C006",
@@ -469,7 +469,7 @@
     "position": "LB",
     "condition_no": 1,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C006",
@@ -477,23 +477,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C006",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C006",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C006",
@@ -501,7 +501,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C006",
@@ -509,23 +509,23 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C006",
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C006",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C007",
@@ -540,16 +540,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C007",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C007",
@@ -557,7 +557,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C007",
@@ -565,30 +565,30 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C007",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C007",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C007",
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -596,7 +596,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 1,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -604,16 +604,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C007",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C008",
@@ -628,16 +628,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C008",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C008",
@@ -645,7 +645,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C008",
@@ -653,23 +653,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C008",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C008",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C008",
@@ -677,7 +677,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C008",
@@ -685,7 +685,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C008",
@@ -701,7 +701,7 @@
     "position": "CF",
     "condition_no": 1,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C009",
@@ -716,8 +716,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C009",
@@ -725,15 +725,15 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C009",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C009",
@@ -741,7 +741,7 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C009",
@@ -749,7 +749,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C009",
@@ -757,7 +757,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C009",
@@ -789,7 +789,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C010",
@@ -804,8 +804,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C010",
@@ -813,31 +813,31 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C010",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C010",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C010",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C010",
@@ -845,7 +845,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C010",
@@ -853,7 +853,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C010",
@@ -868,16 +868,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C010",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C011",
@@ -892,16 +892,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C011",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C011",
@@ -909,7 +909,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C011",
@@ -917,15 +917,15 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C011",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C011",
@@ -933,15 +933,15 @@
     "position": "DM",
     "condition_no": 1,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C011",
     "slot_no": 8,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C011",
@@ -956,16 +956,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C011",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C012",
@@ -980,8 +980,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C012",
@@ -989,15 +989,15 @@
     "position": "CB",
     "condition_no": 1,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C012",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C012",
@@ -1005,7 +1005,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C012",
@@ -1013,30 +1013,30 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C012",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C012",
     "slot_no": 8,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C012",
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -1044,7 +1044,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -1053,7 +1053,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C013",
@@ -1068,8 +1068,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C013",
@@ -1077,15 +1077,15 @@
     "position": "CB",
     "condition_no": 1,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C013",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C013",
@@ -1093,7 +1093,7 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C013",
@@ -1101,7 +1101,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C013",
@@ -1109,7 +1109,7 @@
     "position": "RM",
     "condition_no": 1,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C013",
@@ -1141,7 +1141,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C014",
@@ -1156,8 +1156,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C014",
@@ -1165,31 +1165,31 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C014",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C014",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C014",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C014",
@@ -1197,7 +1197,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C014",
@@ -1205,7 +1205,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C014",
@@ -1220,16 +1220,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C014",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C015",
@@ -1244,16 +1244,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 1,
-    "x": 60.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C015",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C015",
@@ -1261,7 +1261,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C015",
@@ -1269,7 +1269,7 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C015",
@@ -1277,14 +1277,14 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C015",
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -1292,7 +1292,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -1317,7 +1317,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C016",
@@ -1332,16 +1332,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C016",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C016",
@@ -1349,7 +1349,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C016",
@@ -1357,7 +1357,7 @@
     "position": "RB",
     "condition_no": 1,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C016",
@@ -1365,7 +1365,7 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C016",
@@ -1373,7 +1373,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C016",
@@ -1381,7 +1381,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C016",
@@ -1396,16 +1396,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C016",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C017",
@@ -1420,16 +1420,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C017",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C017",
@@ -1437,7 +1437,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C017",
@@ -1445,7 +1445,7 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C017",
@@ -1453,14 +1453,14 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C017",
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -1476,7 +1476,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 1,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -1484,16 +1484,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C017",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C018",
@@ -1508,16 +1508,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C018",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C018",
@@ -1525,7 +1525,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C018",
@@ -1533,23 +1533,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C018",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C018",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C018",
@@ -1557,7 +1557,7 @@
     "position": "LM",
     "condition_no": 1,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C018",
@@ -1565,7 +1565,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C018",
@@ -1581,7 +1581,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C019",
@@ -1596,8 +1596,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C019",
@@ -1605,15 +1605,15 @@
     "position": "CB",
     "condition_no": 1,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C019",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C019",
@@ -1621,7 +1621,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C019",
@@ -1629,7 +1629,7 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C019",
@@ -1637,14 +1637,14 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C019",
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -1652,7 +1652,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -1660,16 +1660,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C019",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C020",
@@ -1684,8 +1684,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C020",
@@ -1693,15 +1693,15 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C020",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C020",
@@ -1709,7 +1709,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C020",
@@ -1717,30 +1717,30 @@
     "position": "RB",
     "condition_no": 1,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C020",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C020",
     "slot_no": 8,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C020",
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -1748,7 +1748,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -1757,7 +1757,7 @@
     "position": "CF",
     "condition_no": 1,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C021",
@@ -1772,16 +1772,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 60.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C021",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C021",
@@ -1789,7 +1789,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C021",
@@ -1797,23 +1797,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C021",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C021",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C021",
@@ -1845,7 +1845,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C022",
@@ -1860,8 +1860,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C022",
@@ -1869,38 +1869,38 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C022",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C022",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C022",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C022",
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -1908,7 +1908,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -1933,7 +1933,7 @@
     "position": "CF",
     "condition_no": 1,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C023",
@@ -1948,16 +1948,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C023",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C023",
@@ -1965,7 +1965,7 @@
     "position": "LB",
     "condition_no": 1,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C023",
@@ -1973,7 +1973,7 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C023",
@@ -1981,7 +1981,7 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C023",
@@ -1989,7 +1989,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C023",
@@ -1997,14 +1997,14 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C023",
     "slot_no": 9,
     "position": "AM",
     "condition_no": 1,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -2012,7 +2012,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -2021,7 +2021,7 @@
     "position": "CF",
     "condition_no": 1,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C024",
@@ -2036,8 +2036,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C024",
@@ -2045,15 +2045,15 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C024",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C024",
@@ -2061,7 +2061,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C024",
@@ -2069,23 +2069,23 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C024",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C024",
     "slot_no": 8,
     "position": "DM",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C024",
@@ -2100,16 +2100,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C024",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C025",
@@ -2124,16 +2124,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C025",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C025",
@@ -2141,7 +2141,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C025",
@@ -2149,7 +2149,7 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C025",
@@ -2157,14 +2157,14 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C025",
     "slot_no": 7,
     "position": "AM",
     "condition_no": 1,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -2180,7 +2180,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 1,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -2188,16 +2188,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C025",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C026",
@@ -2212,8 +2212,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C026",
@@ -2221,38 +2221,38 @@
     "position": "CB",
     "condition_no": 1,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C026",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C026",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C026",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C026",
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -2260,7 +2260,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -2285,7 +2285,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C027",
@@ -2300,16 +2300,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C027",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C027",
@@ -2317,7 +2317,7 @@
     "position": "LB",
     "condition_no": 1,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C027",
@@ -2325,15 +2325,15 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C027",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C027",
@@ -2341,15 +2341,15 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C027",
     "slot_no": 8,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C027",
@@ -2364,16 +2364,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C027",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C028",
@@ -2388,8 +2388,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C028",
@@ -2397,31 +2397,31 @@
     "position": "CB",
     "condition_no": 1,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C028",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C028",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C028",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C028",
@@ -2429,7 +2429,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C028",
@@ -2437,7 +2437,7 @@
     "position": "RM",
     "condition_no": 1,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C028",
@@ -2452,16 +2452,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C028",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C029",
@@ -2476,8 +2476,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C029",
@@ -2485,15 +2485,15 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C029",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C029",
@@ -2501,7 +2501,7 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C029",
@@ -2509,7 +2509,7 @@
     "position": "LM",
     "condition_no": 1,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C029",
@@ -2517,7 +2517,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C029",
@@ -2549,7 +2549,7 @@
     "position": "CF",
     "condition_no": 1,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C030",
@@ -2564,16 +2564,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C030",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C030",
@@ -2581,7 +2581,7 @@
     "position": "LB",
     "condition_no": 1,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C030",
@@ -2589,7 +2589,7 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C030",
@@ -2597,7 +2597,7 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C030",
@@ -2605,7 +2605,7 @@
     "position": "LM",
     "condition_no": 1,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C030",
@@ -2613,7 +2613,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C030",
@@ -2628,16 +2628,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C030",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C031",
@@ -2652,8 +2652,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C031",
@@ -2661,31 +2661,31 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C031",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C031",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C031",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C031",
@@ -2693,7 +2693,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C031",
@@ -2701,7 +2701,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C031",
@@ -2725,7 +2725,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C032",
@@ -2740,16 +2740,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 60.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C032",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C032",
@@ -2757,7 +2757,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C032",
@@ -2765,23 +2765,23 @@
     "position": "RB",
     "condition_no": 1,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C032",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C032",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C032",
@@ -2813,7 +2813,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C033",
@@ -2828,8 +2828,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C033",
@@ -2837,31 +2837,31 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C033",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C033",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C033",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C033",
@@ -2869,7 +2869,7 @@
     "position": "LM",
     "condition_no": 1,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C033",
@@ -2877,7 +2877,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C033",
@@ -2901,7 +2901,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C034",
@@ -2916,16 +2916,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C034",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C034",
@@ -2933,7 +2933,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C034",
@@ -2941,7 +2941,7 @@
     "position": "RB",
     "condition_no": 1,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C034",
@@ -2949,7 +2949,7 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C034",
@@ -2957,7 +2957,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C034",
@@ -2965,14 +2965,14 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C034",
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -2980,7 +2980,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -2989,7 +2989,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C035",
@@ -3004,16 +3004,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C035",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C035",
@@ -3021,7 +3021,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C035",
@@ -3029,23 +3029,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C035",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C035",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C035",
@@ -3053,7 +3053,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C035",
@@ -3061,7 +3061,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C035",
@@ -3077,7 +3077,7 @@
     "position": "CF",
     "condition_no": 1,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C036",
@@ -3092,8 +3092,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C036",
@@ -3101,38 +3101,38 @@
     "position": "CB",
     "condition_no": 1,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C036",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C036",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 60.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C036",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 40.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C036",
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 60.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -3140,7 +3140,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 1,
-    "x": 40.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -3165,7 +3165,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C037",
@@ -3180,8 +3180,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C037",
@@ -3189,31 +3189,31 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C037",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C037",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C037",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C037",
@@ -3221,7 +3221,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C037",
@@ -3229,7 +3229,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C037",
@@ -3244,16 +3244,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C037",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C038",
@@ -3268,16 +3268,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 60.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C038",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C038",
@@ -3285,7 +3285,7 @@
     "position": "LB",
     "condition_no": 1,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C038",
@@ -3293,23 +3293,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C038",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C038",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C038",
@@ -3341,7 +3341,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C039",
@@ -3356,8 +3356,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C039",
@@ -3365,23 +3365,23 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C039",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C039",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C039",
@@ -3389,15 +3389,15 @@
     "position": "DM",
     "condition_no": 1,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C039",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C039",
@@ -3405,7 +3405,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C039",
@@ -3413,7 +3413,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C039",
@@ -3429,7 +3429,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C040",
@@ -3444,16 +3444,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C040",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C040",
@@ -3461,7 +3461,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C040",
@@ -3469,23 +3469,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C040",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C040",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C040",
@@ -3493,7 +3493,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C040",
@@ -3501,23 +3501,23 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C040",
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C040",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C041",
@@ -3532,16 +3532,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C041",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C041",
@@ -3549,7 +3549,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C041",
@@ -3557,15 +3557,15 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C041",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C041",
@@ -3573,15 +3573,15 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C041",
     "slot_no": 8,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C041",
@@ -3596,16 +3596,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C041",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C042",
@@ -3620,16 +3620,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C042",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C042",
@@ -3637,7 +3637,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C042",
@@ -3645,23 +3645,23 @@
     "position": "RB",
     "condition_no": 1,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C042",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C042",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C042",
@@ -3669,7 +3669,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C042",
@@ -3677,7 +3677,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C042",
@@ -3693,7 +3693,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C043",
@@ -3708,16 +3708,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C043",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C043",
@@ -3725,7 +3725,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C043",
@@ -3733,30 +3733,30 @@
     "position": "RB",
     "condition_no": 1,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C043",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C043",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C043",
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -3764,7 +3764,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 1,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -3772,16 +3772,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C043",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C044",
@@ -3796,16 +3796,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C044",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C044",
@@ -3813,7 +3813,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C044",
@@ -3821,23 +3821,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C044",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C044",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C044",
@@ -3845,7 +3845,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C044",
@@ -3853,23 +3853,23 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C044",
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C044",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C045",
@@ -3884,16 +3884,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C045",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C045",
@@ -3901,7 +3901,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C045",
@@ -3909,30 +3909,30 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C045",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C045",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C045",
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -3940,7 +3940,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -3948,16 +3948,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C045",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C046",
@@ -3972,16 +3972,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 1,
-    "x": 60.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C046",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C046",
@@ -3989,7 +3989,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C046",
@@ -3997,23 +3997,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C046",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C046",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C046",
@@ -4045,7 +4045,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C047",
@@ -4060,16 +4060,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 60.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C047",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C047",
@@ -4077,7 +4077,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C047",
@@ -4085,23 +4085,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C047",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C047",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C047",
@@ -4133,7 +4133,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C048",
@@ -4148,16 +4148,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C048",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C048",
@@ -4165,7 +4165,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C048",
@@ -4173,15 +4173,15 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C048",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C048",
@@ -4189,15 +4189,15 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C048",
     "slot_no": 8,
     "position": "DM",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C048",
@@ -4212,16 +4212,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C048",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C049",
@@ -4236,16 +4236,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C049",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C049",
@@ -4253,7 +4253,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C049",
@@ -4261,7 +4261,7 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C049",
@@ -4269,7 +4269,7 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C049",
@@ -4277,7 +4277,7 @@
     "position": "LM",
     "condition_no": 0,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C049",
@@ -4285,7 +4285,7 @@
     "position": "RM",
     "condition_no": 1,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C049",
@@ -4300,16 +4300,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C049",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C050",
@@ -4324,8 +4324,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C050",
@@ -4333,15 +4333,15 @@
     "position": "CB",
     "condition_no": 1,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C050",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C050",
@@ -4349,7 +4349,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C050",
@@ -4357,30 +4357,30 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C050",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C050",
     "slot_no": 8,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C050",
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -4388,7 +4388,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -4397,7 +4397,7 @@
     "position": "CF",
     "condition_no": 1,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C051",
@@ -4412,8 +4412,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C051",
@@ -4421,15 +4421,15 @@
     "position": "CB",
     "condition_no": 1,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C051",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C051",
@@ -4437,7 +4437,7 @@
     "position": "LB",
     "condition_no": 1,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C051",
@@ -4445,23 +4445,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C051",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C051",
     "slot_no": 8,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C051",
@@ -4485,7 +4485,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C052",
@@ -4500,16 +4500,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C052",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C052",
@@ -4517,7 +4517,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C052",
@@ -4525,23 +4525,23 @@
     "position": "RB",
     "condition_no": 1,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C052",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C052",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C052",
@@ -4549,7 +4549,7 @@
     "position": "LM",
     "condition_no": 1,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C052",
@@ -4557,7 +4557,7 @@
     "position": "RM",
     "condition_no": 0,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C052",
@@ -4573,7 +4573,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C053",
@@ -4588,16 +4588,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 60.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C053",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C053",
@@ -4605,7 +4605,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C053",
@@ -4613,23 +4613,23 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C053",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C053",
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C053",
@@ -4661,7 +4661,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C054",
@@ -4676,16 +4676,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 1,
-    "x": 60.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C054",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C054",
@@ -4693,7 +4693,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C054",
@@ -4701,7 +4701,7 @@
     "position": "RB",
     "condition_no": 0,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C054",
@@ -4709,14 +4709,14 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C054",
     "slot_no": 7,
     "position": "AM",
     "condition_no": 1,
-    "x": 60.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -4724,7 +4724,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 40.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -4749,7 +4749,7 @@
     "position": "CF",
     "condition_no": 1,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C055",
@@ -4764,16 +4764,16 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C055",
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C055",
@@ -4781,7 +4781,7 @@
     "position": "LB",
     "condition_no": 0,
     "x": 15.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C055",
@@ -4789,7 +4789,7 @@
     "position": "RB",
     "condition_no": 1,
     "x": 85.0,
-    "y": 65.0
+    "y": 60.0
   },
   {
     "combo_id": "C055",
@@ -4797,14 +4797,14 @@
     "position": "DM",
     "condition_no": 0,
     "x": 50.0,
-    "y": 47.0
+    "y": 50.0
   },
   {
     "combo_id": "C055",
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -4820,7 +4820,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -4828,16 +4828,16 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 13.0
+    "x": 75.0,
+    "y": 10.0
   },
   {
     "combo_id": "C055",
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 13.0
+    "x": 25.0,
+    "y": 10.0
   },
   {
     "combo_id": "C056",
@@ -4852,8 +4852,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C056",
@@ -4861,38 +4861,38 @@
     "position": "CB",
     "condition_no": 1,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C056",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C056",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C056",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C056",
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -4900,7 +4900,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 1,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -4925,7 +4925,7 @@
     "position": "CF",
     "condition_no": 1,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C057",
@@ -4940,8 +4940,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C057",
@@ -4949,31 +4949,31 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C057",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C057",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C057",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 1,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C057",
@@ -4981,7 +4981,7 @@
     "position": "LM",
     "condition_no": 1,
     "x": 15.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C057",
@@ -4989,14 +4989,14 @@
     "position": "RM",
     "condition_no": 1,
     "x": 85.0,
-    "y": 35.0
+    "y": 40.0
   },
   {
     "combo_id": "C057",
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -5004,7 +5004,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -5013,7 +5013,7 @@
     "position": "CF",
     "condition_no": 0,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   },
   {
     "combo_id": "C058",
@@ -5028,8 +5028,8 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 74.0
+    "x": 75.0,
+    "y": 70.0
   },
   {
     "combo_id": "C058",
@@ -5037,38 +5037,38 @@
     "position": "CB",
     "condition_no": 0,
     "x": 50.0,
-    "y": 74.0
+    "y": 70.0
   },
   {
     "combo_id": "C058",
     "slot_no": 4,
     "position": "CB",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 74.0
+    "x": 25.0,
+    "y": 70.0
   },
   {
     "combo_id": "C058",
     "slot_no": 5,
     "position": "DM",
     "condition_no": 1,
-    "x": 70.0,
-    "y": 47.0
+    "x": 75.0,
+    "y": 50.0
   },
   {
     "combo_id": "C058",
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 30.0,
-    "y": 47.0
+    "x": 25.0,
+    "y": 50.0
   },
   {
     "combo_id": "C058",
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 70.0,
+    "x": 75.0,
     "y": 30.0
   },
   {
@@ -5076,7 +5076,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 30.0,
+    "x": 25.0,
     "y": 30.0
   },
   {
@@ -5101,6 +5101,6 @@
     "position": "CF",
     "condition_no": 1,
     "x": 50.0,
-    "y": 13.0
+    "y": 10.0
   }
 ]
