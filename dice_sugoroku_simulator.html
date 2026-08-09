@@ -235,6 +235,16 @@
           <div class="stat"><span>ゴール数</span><b><span id="goals">0</span> 回</b></div>
           <div class="stat"><span>使用ダイス数</span><b><span id="diceUsed">0</span> 個</b></div>
           <div class="stat"><span>平均ダイス数</span><b><span id="avgDice">0.0</span> 個</b></div>
+          <div class="stat"><span>ゴールまでの最小ダイス数</span><b><span id="minDiceToGoal">-</span> 個</b></div>
+          <div class="stat"><span>ゴールまでの最大ダイス数</span><b><span id="maxDiceToGoal">-</span> 個</b></div>
+          <div class="stat"><span>現在の連続ゴール</span><b><span id="currentGoalStreak">0</span> 回</b></div>
+          <div class="stat"><span>過去最高の連続ゴール</span><b><span id="maxGoalStreak">0</span> 回</b></div>
+          <div class="stat"><span>現在の連続ゴール失敗</span><b><span id="currentMissStreak">0</span> 回</b></div>
+          <div class="stat"><span>過去最高の連続ゴール失敗</span><b><span id="maxMissStreak">0</span> 回</b></div>
+          <div class="stat" style="display:block">
+            <span style="display:block;margin-bottom:8px">ゴール成功マス TOP5</span>
+            <div id="goalStartTop5" style="font-weight:900;line-height:1.65;color:#172033">記録なし</div>
+          </div>
         </div>
       </section>
 
@@ -292,6 +302,26 @@ let goals = 0;
 let laps = 0;
 let multiplier = 1;
 let rolling = false;
+
+// 周回結果・ゴール開始地点の統計
+let currentGoalStreak = 0;
+let maxGoalStreak = 0;
+let currentMissStreak = 0;
+let maxMissStreak = 0;
+let goalStartCounts = {};
+let rootRollStartPos = null;
+
+// ゴール間のダイス使用数統計
+// diceUsed と同じ基準（1倍=1個、10倍=10個、Replay無料=0個）で集計する。
+let diceUsedAtLastGoal = 0;
+let minDiceToGoal = null;
+let maxDiceToGoal = null;
+
+// ゲーム開始直後の30マス目は「前周回の結果」として数えない。
+// 最初に30→1へ進んだ時点から周回結果の追跡を開始する。
+let lapTrackingStarted = false;
+let lapResultRecorded = false;
+
 let soundEnabled = localStorage.getItem(SOUND_KEY) === '1';
 
 const piece = document.createElement('div');
@@ -402,6 +432,17 @@ function saveState(){
     goals,
     laps,
     multiplier,
+    currentGoalStreak,
+    maxGoalStreak,
+    currentMissStreak,
+    maxMissStreak,
+    goalStartCounts,
+    rootRollStartPos,
+    diceUsedAtLastGoal,
+    minDiceToGoal,
+    maxDiceToGoal,
+    lapTrackingStarted,
+    lapResultRecorded,
     log
   }));
 }
@@ -417,6 +458,46 @@ function loadState(){
     goals = Number.isFinite(Number(data.goals)) ? Number(data.goals) : 0;
     laps = Number.isFinite(Number(data.laps)) ? Number(data.laps) : 0;
     multiplier = Number(data.multiplier) === 10 ? 10 : 1;
+
+    currentGoalStreak = Number.isFinite(Number(data.currentGoalStreak)) ? Number(data.currentGoalStreak) : 0;
+    maxGoalStreak = Number.isFinite(Number(data.maxGoalStreak)) ? Number(data.maxGoalStreak) : 0;
+    currentMissStreak = Number.isFinite(Number(data.currentMissStreak)) ? Number(data.currentMissStreak) : 0;
+    maxMissStreak = Number.isFinite(Number(data.maxMissStreak)) ? Number(data.maxMissStreak) : 0;
+
+    if(data.goalStartCounts && typeof data.goalStartCounts === 'object' && !Array.isArray(data.goalStartCounts)){
+      goalStartCounts = {};
+      Object.entries(data.goalStartCounts).forEach(([key, value]) => {
+        const posKey = Number(key);
+        const count = Number(value);
+        if(Number.isInteger(posKey) && posKey >= 1 && posKey <= 30 && Number.isFinite(count) && count > 0){
+          goalStartCounts[posKey] = count;
+        }
+      });
+    }else{
+      goalStartCounts = {};
+    }
+
+    rootRollStartPos = Number.isInteger(Number(data.rootRollStartPos)) ? Number(data.rootRollStartPos) : null;
+
+    // 旧バージョンの保存データにはこの3項目が存在しないため安全に初期化する。
+    diceUsedAtLastGoal = Number.isFinite(Number(data.diceUsedAtLastGoal))
+      ? Math.max(0, Number(data.diceUsedAtLastGoal))
+      : diceUsed;
+
+    minDiceToGoal = data.minDiceToGoal !== null && Number.isFinite(Number(data.minDiceToGoal))
+      ? Math.max(0, Number(data.minDiceToGoal))
+      : null;
+
+    maxDiceToGoal = data.maxDiceToGoal !== null && Number.isFinite(Number(data.maxDiceToGoal))
+      ? Math.max(0, Number(data.maxDiceToGoal))
+      : null;
+
+    lapTrackingStarted = typeof data.lapTrackingStarted === 'boolean'
+      ? data.lapTrackingStarted
+      : laps > 0;
+    lapResultRecorded = typeof data.lapResultRecorded === 'boolean'
+      ? data.lapResultRecorded
+      : false;
 
     const logEl = document.getElementById('log');
     if(logEl && typeof data.log === 'string'){
@@ -482,6 +563,43 @@ function syncMultiplierButtons(){
   }
 }
 
+function recordLapResult(success){
+  if(success){
+    currentGoalStreak++;
+    maxGoalStreak = Math.max(maxGoalStreak, currentGoalStreak);
+    currentMissStreak = 0;
+  }else{
+    currentMissStreak++;
+    maxMissStreak = Math.max(maxMissStreak, currentMissStreak);
+    currentGoalStreak = 0;
+  }
+}
+
+function recordGoalStartPosition(){
+  if(!Number.isInteger(rootRollStartPos) || rootRollStartPos < 1 || rootRollStartPos > 30) return;
+  goalStartCounts[rootRollStartPos] = (goalStartCounts[rootRollStartPos] || 0) + 1;
+}
+
+function renderGoalTop5(){
+  const el = document.getElementById('goalStartTop5');
+  if(!el) return;
+
+  const ranking = Object.entries(goalStartCounts)
+    .map(([startPos, count]) => ({startPos:Number(startPos), count:Number(count)}))
+    .filter(x => Number.isInteger(x.startPos) && Number.isFinite(x.count) && x.count > 0)
+    .sort((a,b) => b.count - a.count || a.startPos - b.startPos)
+    .slice(0,5);
+
+  if(ranking.length === 0){
+    el.textContent = '記録なし';
+    return;
+  }
+
+  el.innerHTML = ranking
+    .map((x, i) => `${i + 1}位　${x.startPos}マス目　${x.count}回`)
+    .join('<br>');
+}
+
 function render(){
   document.getElementById('posText').textContent = pos;
   document.getElementById('diceUsed').textContent = diceUsed;
@@ -491,6 +609,13 @@ function render(){
 
   const avgDice = goals > 0 ? (diceUsed / goals).toFixed(1) : '0.0';
   document.getElementById('avgDice').textContent = avgDice;
+  document.getElementById('minDiceToGoal').textContent = minDiceToGoal === null ? '-' : minDiceToGoal;
+  document.getElementById('maxDiceToGoal').textContent = maxDiceToGoal === null ? '-' : maxDiceToGoal;
+  document.getElementById('currentGoalStreak').textContent = currentGoalStreak;
+  document.getElementById('maxGoalStreak').textContent = maxGoalStreak;
+  document.getElementById('currentMissStreak').textContent = currentMissStreak;
+  document.getElementById('maxMissStreak').textContent = maxMissStreak;
+  renderGoalTop5();
 
   if(pos >= 1 && pos <= 30){
     cells[pos].appendChild(piece);
@@ -503,8 +628,17 @@ async function moveSteps(steps){
   for(let i = 0; i < steps; i++){
     pos++;
     if(pos > 30){
+      // 直前の周回でゴール結果がまだ確定していなければ「失敗」として記録。
+      // ゲーム開始直後の30マス目からの初回移動は対象外。
+      if(lapTrackingStarted && !lapResultRecorded){
+        recordLapResult(false);
+        addLog('周回結果：ゴールマスに止まれませんでした');
+      }
+
       pos = 1;
       laps++;
+      lapTrackingStarted = true;
+      lapResultRecorded = false;
       addLog('次の周回に入りました');
     }
     render();
@@ -516,7 +650,25 @@ async function resolveSpecial(){
   if(pos === 30){
     playSE('seGoal');
     goals++;
-    addLog('ゴール！');
+
+    // 前回のゴール（初回はゲーム開始）から今回のゴールまでに
+    // 実際に消費したダイス数を記録する。
+    const diceToThisGoal = Math.max(0, diceUsed - diceUsedAtLastGoal);
+    minDiceToGoal = minDiceToGoal === null ? diceToThisGoal : Math.min(minDiceToGoal, diceToThisGoal);
+    maxDiceToGoal = maxDiceToGoal === null ? diceToThisGoal : Math.max(maxDiceToGoal, diceToThisGoal);
+    diceUsedAtLastGoal = diceUsed;
+
+    // 周回結果はゴールした瞬間に成功として確定。
+    if(lapTrackingStarted && !lapResultRecorded){
+      recordLapResult(true);
+      lapResultRecorded = true;
+    }
+
+    // 通常ロール開始地点をゴール成功地点として集計。
+    // Replayや+2/+3を経由しても、最初に「サイコロを振る！」を押した地点を使う。
+    recordGoalStartPosition();
+
+    addLog(`ゴール！${Number.isInteger(rootRollStartPos) ? `（開始：${rootRollStartPos}マス目）` : ''} / ゴールまで：${diceToThisGoal}個`);
     render();
     showGoalModal();
     return;
@@ -554,6 +706,7 @@ async function roll(isFree = false, force = false){
   const isRootRoll = !rolling;
   if(isRootRoll){
     rolling = true;
+    rootRollStartPos = pos;
     document.getElementById('rollBtn').disabled = true;
   }
 
@@ -572,6 +725,8 @@ async function roll(isFree = false, force = false){
     rolling = false;
     document.getElementById('rollBtn').disabled = false;
     render();
+    rootRollStartPos = null;
+    saveState();
   }
 }
 
@@ -605,6 +760,17 @@ function resetGame(){
   laps = 0;
   multiplier = 1;
   rolling = false;
+  currentGoalStreak = 0;
+  maxGoalStreak = 0;
+  currentMissStreak = 0;
+  maxMissStreak = 0;
+  goalStartCounts = {};
+  rootRollStartPos = null;
+  diceUsedAtLastGoal = 0;
+  minDiceToGoal = null;
+  maxDiceToGoal = null;
+  lapTrackingStarted = false;
+  lapResultRecorded = false;
   clearState();
   closeGoalModal();
   setDiceFace(null);
