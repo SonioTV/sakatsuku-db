@@ -4328,7 +4328,7 @@
   {
     "player_id": "P0174",
     "playerId": "P0174",
-    "name": "イ・ドンギョン［K1 2025 BEST11］",
+    "name": "イ・ドンギョン［K12025BEST11］",
     "overall": 6214,
     "maxUpgrade": 14299,
     "policy": "リアクション",
@@ -4353,7 +4353,7 @@
   {
     "player_id": "P0175",
     "playerId": "P0175",
-    "name": "パブロ・サバグ［K1 2025 BEST11］",
+    "name": "パブロ・サバグ［K12025BEST11］",
     "overall": 6128,
     "maxUpgrade": 14356,
     "policy": "リアクション",
@@ -4378,7 +4378,7 @@
   {
     "player_id": "P0176",
     "playerId": "P0176",
-    "name": "ソン・ミンギュ［K1 2025 BEST11］",
+    "name": "ソン・ミンギュ［K12025BEST11］",
     "overall": 6087,
     "maxUpgrade": 14262,
     "policy": "ポゼッション",
@@ -4403,7 +4403,7 @@
   {
     "player_id": "P0177",
     "playerId": "P0177",
-    "name": "キム・ジンギュ［K1 2025 BEST11］",
+    "name": "キム・ジンギュ［K12025BEST11］",
     "overall": 6081,
     "maxUpgrade": 14252,
     "policy": "ポゼッション",
@@ -4428,7 +4428,7 @@
   {
     "player_id": "P0178",
     "playerId": "P0178",
-    "name": "パク・ジンソプ［K1 2025 BEST11］",
+    "name": "パク・ジンソプ［K12025BEST11］",
     "overall": 6077,
     "maxUpgrade": 14251,
     "policy": "ポゼッション",
@@ -4453,7 +4453,7 @@
   {
     "player_id": "P0179",
     "playerId": "P0179",
-    "name": "カン・サンユン［K1 2025 BEST11］",
+    "name": "カン・サンユン［K12025BEST11］",
     "overall": 6138,
     "maxUpgrade": 14229,
     "policy": "ポゼッション",
@@ -4478,7 +4478,7 @@
   {
     "player_id": "P0180",
     "playerId": "P0180",
-    "name": "イ・ミョンジェ［K1 2025 BEST11］",
+    "name": "イ・ミョンジェ［K12025BEST11］",
     "overall": 6095,
     "maxUpgrade": 14300,
     "policy": "リアクション",
@@ -4503,7 +4503,7 @@
   {
     "player_id": "P0181",
     "playerId": "P0181",
-    "name": "キム・ムンファン［K1 2025 BEST11］",
+    "name": "キム・ムンファン［K12025BEST11］",
     "overall": 6045,
     "maxUpgrade": 14270,
     "policy": "リアクション",
@@ -4528,7 +4528,7 @@
   {
     "player_id": "P0182",
     "playerId": "P0182",
-    "name": "ヤザン・アルアラブ［K1 2025 BEST11］",
+    "name": "ヤザン・アルアラブ［K12025BEST11］",
     "overall": 5982,
     "maxUpgrade": 14220,
     "policy": "ムービング",
@@ -4553,7 +4553,7 @@
   {
     "player_id": "P0183",
     "playerId": "P0183",
-    "name": "ホン・ジョンホ［K1 2025 BEST11］",
+    "name": "ホン・ジョンホ［K12025BEST11］",
     "overall": 6056,
     "maxUpgrade": 14328,
     "policy": "ポゼッション",
@@ -4578,7 +4578,7 @@
   {
     "player_id": "P0184",
     "playerId": "P0184",
-    "name": "ソン・ボムグン［K1 2025 BEST11］",
+    "name": "ソン・ボムグン［K12025BEST11］",
     "overall": 6157,
     "maxUpgrade": 14457,
     "policy": "ポゼッション",
@@ -4603,7 +4603,7 @@
   {
     "player_id": "P0185",
     "playerId": "P0185",
-    "name": "ラファエル・エリアス［J1 2025 BEST11］",
+    "name": "ラファエル・エリアス［J12025BEST11］",
     "overall": 6318,
     "maxUpgrade": 14560,
     "policy": "カウンター",
@@ -4628,7 +4628,7 @@
   {
     "player_id": "P0186",
     "playerId": "P0186",
-    "name": "レオ・セアラ［J1 2025 BEST11］",
+    "name": "レオ・セアラ［J12025BEST11］",
     "overall": 6257,
     "maxUpgrade": 14471,
     "policy": "リアクション",
@@ -4653,7 +4653,7 @@
   {
     "player_id": "P0187",
     "playerId": "P0187",
-    "name": "小泉佳穂［J1 2025 BEST11］",
+    "name": "小泉佳穂［J12025BEST11］",
     "overall": 6233,
     "maxUpgrade": 14375,
     "policy": "ムービング",
@@ -4678,7 +4678,7 @@
   {
     "player_id": "P0188",
     "playerId": "P0188",
-    "name": "相馬勇紀［J1 2025 BEST11］",
+    "name": "相馬勇紀［J12025BEST11］",
     "overall": 6391,
     "maxUpgrade": 14491,
     "policy": "カウンター",
@@ -4703,7 +4703,7 @@
   {
     "player_id": "P0189",
     "playerId": "P0189",
-    "name": "伊藤達哉［J1 2025 BEST11］",
+    "name": "伊藤達哉［J12025BEST11］",
     "overall": 6291,
     "maxUpgrade": 14508,
     "policy": "ポゼッション",
@@ -4728,7 +4728,7 @@
   {
     "player_id": "P0190",
     "playerId": "P0190",
-    "name": "稲垣祥［J1 2025 BEST11］",
+    "name": "稲垣祥［J12025BEST11］",
     "overall": 6286,
     "maxUpgrade": 14453,
     "policy": "カウンター",
@@ -4753,7 +4753,7 @@
   {
     "player_id": "P0191",
     "playerId": "P0191",
-    "name": "田中聡［J1 2025 BEST11］",
+    "name": "田中聡［J12025BEST11］",
     "overall": 6322,
     "maxUpgrade": 14490,
     "policy": "ムービング",
@@ -4778,7 +4778,7 @@
   {
     "player_id": "P0192",
     "playerId": "P0192",
-    "name": "荒木隼人［J1 2025 BEST11］",
+    "name": "荒木隼人［J12025BEST11］",
     "overall": 6262,
     "maxUpgrade": 14534,
     "policy": "ムービング",
@@ -4803,7 +4803,7 @@
   {
     "player_id": "P0193",
     "playerId": "P0193",
-    "name": "古賀太陽［J1 2025 BEST11］",
+    "name": "古賀太陽［J12025BEST11］",
     "overall": 6185,
     "maxUpgrade": 14441,
     "policy": "ムービング",
@@ -4828,7 +4828,7 @@
   {
     "player_id": "P0194",
     "playerId": "P0194",
-    "name": "植田直通［J1 2025 BEST11］",
+    "name": "植田直通［J12025BEST11］",
     "overall": 6318,
     "maxUpgrade": 14594,
     "policy": "リアクション",
@@ -4853,7 +4853,7 @@
   {
     "player_id": "P0195",
     "playerId": "P0195",
-    "name": "早川友基［J1 2025 BEST11］",
+    "name": "早川友基［J12025BEST11］",
     "overall": 6322,
     "maxUpgrade": 14650,
     "policy": "リアクション",
@@ -5353,7 +5353,7 @@
   {
     "player_id": "P0215",
     "playerId": "P0215",
-    "name": "中村憲剛［J1 2025 GOAL!DEN］",
+    "name": "中村憲剛［J12025GOAL!DEN］",
     "overall": 6703,
     "maxUpgrade": 15169,
     "policy": "ポゼッション",
@@ -5378,7 +5378,7 @@
   {
     "player_id": "P0216",
     "playerId": "P0216",
-    "name": "柿谷曜一朗［J1 2025 GOAL!DEN］",
+    "name": "柿谷曜一朗［J12025GOAL!DEN］",
     "overall": 6623,
     "maxUpgrade": 15235,
     "policy": "ポゼッション",
@@ -5403,7 +5403,7 @@
   {
     "player_id": "P0217",
     "playerId": "P0217",
-    "name": "佐藤寿人［J1 2025 GOAL!DEN］",
+    "name": "佐藤寿人［J12025GOAL!DEN］",
     "overall": 6632,
     "maxUpgrade": 15216,
     "policy": "ムービング",
@@ -5428,7 +5428,7 @@
   {
     "player_id": "P0218",
     "playerId": "P0218",
-    "name": "林陵平［J1 2025 GOAL!DEN］",
+    "name": "林陵平［J12025GOAL!DEN］",
     "overall": 6573,
     "maxUpgrade": 15171,
     "policy": "リアクション",
@@ -5453,7 +5453,7 @@
   {
     "player_id": "P0219",
     "playerId": "P0219",
-    "name": "坪井慶介［J1 2025 GOAL!DEN］",
+    "name": "坪井慶介［J12025GOAL!DEN］",
     "overall": 6567,
     "maxUpgrade": 15182,
     "policy": "ポゼッション",
@@ -5578,7 +5578,7 @@
   {
     "player_id": "P0224",
     "playerId": "P0224",
-    "name": "小林悠［J1 2025 歴戦の猛者］",
+    "name": "小林悠［J12025歴戦の猛者］",
     "overall": 6397,
     "maxUpgrade": 14896,
     "policy": "ポゼッション",
@@ -5603,7 +5603,7 @@
   {
     "player_id": "P0225",
     "playerId": "P0225",
-    "name": "森重真人［J1 2025 歴戦の猛者］",
+    "name": "森重真人［J12025歴戦の猛者］",
     "overall": 6401,
     "maxUpgrade": 14971,
     "policy": "リアクション",
@@ -5628,7 +5628,7 @@
   {
     "player_id": "P0226",
     "playerId": "P0226",
-    "name": "東慶悟［J1 2025 歴戦の猛者］",
+    "name": "東慶悟［J12025歴戦の猛者］",
     "overall": 6410,
     "maxUpgrade": 14943,
     "policy": "リアクション",
@@ -5653,7 +5653,7 @@
   {
     "player_id": "P0227",
     "playerId": "P0227",
-    "name": "倉田秋［J1 2025 歴戦の猛者］",
+    "name": "倉田秋［J12025歴戦の猛者］",
     "overall": 6396,
     "maxUpgrade": 14817,
     "policy": "ポゼッション",
@@ -5686,7 +5686,7 @@
     "playStyleLv": 2,
     "mainPosition": "RW",
     "acquisitionMethod": "ガチャ",
-    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "acquisitionPlace": "SP選手スカウト",
     "availablePeriod": "終了日未定",
     "mainSkill": "ジャックナイフ",
     "mainTrait": "流氷の一撃",
@@ -5711,7 +5711,7 @@
     "playStyleLv": 3,
     "mainPosition": "AM",
     "acquisitionMethod": "ガチャ",
-    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "acquisitionPlace": "SP選手スカウト",
     "availablePeriod": "終了日未定",
     "mainSkill": "キラーパス",
     "mainTrait": "誘いの遊戯",
@@ -5736,7 +5736,7 @@
     "playStyleLv": 3,
     "mainPosition": "LW",
     "acquisitionMethod": "ガチャ",
-    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "acquisitionPlace": "SP選手スカウト",
     "availablePeriod": "終了日未定",
     "mainSkill": "スリップビート",
     "mainTrait": "懐の深いボールタッチ",
@@ -5761,7 +5761,7 @@
     "playStyleLv": 2,
     "mainPosition": "CF",
     "acquisitionMethod": "ガチャ",
-    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "acquisitionPlace": "SP選手スカウト",
     "availablePeriod": "終了日未定",
     "mainSkill": "変速ギア",
     "mainTrait": "冷静なボールタッチ",
@@ -5778,7 +5778,7 @@
   {
     "player_id": "P0232",
     "playerId": "P0232",
-    "name": "リオネル・メッシ 〔2026〕",
+    "name": "リオネル・メッシ〔2026〕",
     "overall": 7154,
     "maxUpgrade": 15809,
     "policy": "ムービング",
@@ -5803,7 +5803,7 @@
   {
     "player_id": "P0233",
     "playerId": "P0233",
-    "name": "ソン・フンミン 〔2026〕",
+    "name": "ソン・フンミン〔2026〕",
     "overall": 6999,
     "maxUpgrade": 15658,
     "policy": "ムービング",
@@ -5828,7 +5828,7 @@
   {
     "player_id": "P0234",
     "playerId": "P0234",
-    "name": "トーマス・ミュラー 〔2026〕",
+    "name": "トーマス・ミュラー〔2026〕",
     "overall": 7100,
     "maxUpgrade": 15558,
     "policy": "ポゼッション",
@@ -5853,7 +5853,7 @@
   {
     "player_id": "P0235",
     "playerId": "P0235",
-    "name": "マルコ・ロイス 〔2026〕",
+    "name": "マルコ・ロイス〔2026〕",
     "overall": 7024,
     "maxUpgrade": 15496,
     "policy": "リアクション",
@@ -5878,7 +5878,7 @@
   {
     "player_id": "P0236",
     "playerId": "P0236",
-    "name": "クリスティアン・ロルダン 〔2026〕",
+    "name": "クリスティアン・ロルダン〔2026〕",
     "overall": 6750,
     "maxUpgrade": 15253,
     "policy": "ムービング",
@@ -5903,7 +5903,7 @@
   {
     "player_id": "P0237",
     "playerId": "P0237",
-    "name": "荒木遼太郎 (2026)",
+    "name": "荒木遼太郎(2026)",
     "overall": 6153,
     "maxUpgrade": 14517,
     "policy": "リアクション",
@@ -5928,7 +5928,7 @@
   {
     "player_id": "P0238",
     "playerId": "P0238",
-    "name": "早川友基 (2026)",
+    "name": "早川友基(2026)",
     "overall": 6154,
     "maxUpgrade": 14746,
     "policy": "リアクション",
@@ -5953,7 +5953,7 @@
   {
     "player_id": "P0239",
     "playerId": "P0239",
-    "name": "柴崎岳 (2026)",
+    "name": "柴崎岳(2026)",
     "overall": 6256,
     "maxUpgrade": 14651,
     "policy": "リアクション",
@@ -5978,7 +5978,7 @@
   {
     "player_id": "P0240",
     "playerId": "P0240",
-    "name": "西川幸之介 (2026)",
+    "name": "西川幸之介(2026)",
     "overall": 5896,
     "maxUpgrade": 14587,
     "policy": "カウンター",
@@ -6003,7 +6003,7 @@
   {
     "player_id": "P0241",
     "playerId": "P0241",
-    "name": "大崎航詩 (2026)",
+    "name": "大崎航詩(2026)",
     "overall": 6005,
     "maxUpgrade": 14513,
     "policy": "カウンター",
@@ -6028,7 +6028,7 @@
   {
     "player_id": "P0242",
     "playerId": "P0242",
-    "name": "加藤千尋 (2026)",
+    "name": "加藤千尋(2026)",
     "overall": 5989,
     "maxUpgrade": 14335,
     "policy": "カウンター",
@@ -6053,7 +6053,7 @@
   {
     "player_id": "P0243",
     "playerId": "P0243",
-    "name": "根本健太 (2026)",
+    "name": "根本健太(2026)",
     "overall": 6078,
     "maxUpgrade": 14664,
     "policy": "ポゼッション",
@@ -6078,7 +6078,7 @@
   {
     "player_id": "P0244",
     "playerId": "P0244",
-    "name": "肥田野蓮治 (2026)",
+    "name": "肥田野蓮治(2026)",
     "overall": 6122,
     "maxUpgrade": 14699,
     "policy": "ポゼッション",
@@ -6103,7 +6103,7 @@
   {
     "player_id": "P0245",
     "playerId": "P0245",
-    "name": "マテウス・サヴィオ (2026)",
+    "name": "マテウス・サヴィオ(2026)",
     "overall": 6207,
     "maxUpgrade": 14715,
     "policy": "ポゼッション",
@@ -6128,7 +6128,7 @@
   {
     "player_id": "P0246",
     "playerId": "P0246",
-    "name": "石川大地 (2026)",
+    "name": "石川大地(2026)",
     "overall": 6011,
     "maxUpgrade": 14556,
     "policy": "ムービング",
@@ -6153,7 +6153,7 @@
   {
     "player_id": "P0247",
     "playerId": "P0247",
-    "name": "カルリーニョス・ジュニオ (2026)",
+    "name": "カルリーニョス・ジュニオ(2026)",
     "overall": 6079,
     "maxUpgrade": 14473,
     "policy": "ムービング",
@@ -6178,7 +6178,7 @@
   {
     "player_id": "P0248",
     "playerId": "P0248",
-    "name": "姫野誠 (2026)",
+    "name": "姫野誠(2026)",
     "overall": 6054,
     "maxUpgrade": 14511,
     "policy": "ムービング",
@@ -6203,7 +6203,7 @@
   {
     "player_id": "P0249",
     "playerId": "P0249",
-    "name": "小島亨介 (2026)",
+    "name": "小島亨介(2026)",
     "overall": 6079,
     "maxUpgrade": 14724,
     "policy": "ムービング",
@@ -6228,7 +6228,7 @@
   {
     "player_id": "P0250",
     "playerId": "P0250",
-    "name": "久保藤次郎 (2026)",
+    "name": "久保藤次郎(2026)",
     "overall": 6132,
     "maxUpgrade": 14496,
     "policy": "ムービング",
@@ -6253,7 +6253,7 @@
   {
     "player_id": "P0251",
     "playerId": "P0251",
-    "name": "小泉佳穂 (2026)",
+    "name": "小泉佳穂(2026)",
     "overall": 6232,
     "maxUpgrade": 14676,
     "policy": "ムービング",
@@ -6278,7 +6278,7 @@
   {
     "player_id": "P0252",
     "playerId": "P0252",
-    "name": "長倉幹樹 (2026)",
+    "name": "長倉幹樹(2026)",
     "overall": 6087,
     "maxUpgrade": 14541,
     "policy": "リアクション",
@@ -6303,7 +6303,7 @@
   {
     "player_id": "P0253",
     "playerId": "P0253",
-    "name": "佐藤龍之介 (2026)",
+    "name": "佐藤龍之介(2026)",
     "overall": 6198,
     "maxUpgrade": 14738,
     "policy": "リアクション",
@@ -6328,7 +6328,7 @@
   {
     "player_id": "P0254",
     "playerId": "P0254",
-    "name": "室屋成 (2026)",
+    "name": "室屋成(2026)",
     "overall": 6102,
     "maxUpgrade": 14605,
     "policy": "リアクション",
@@ -6353,7 +6353,7 @@
   {
     "player_id": "P0255",
     "playerId": "P0255",
-    "name": "山見大登 (2026)",
+    "name": "山見大登(2026)",
     "overall": 6199,
     "maxUpgrade": 14481,
     "policy": "ムービング",
@@ -6378,7 +6378,7 @@
   {
     "player_id": "P0256",
     "playerId": "P0256",
-    "name": "マテウス (2026)",
+    "name": "マテウス(2026)",
     "overall": 6073,
     "maxUpgrade": 14702,
     "policy": "ムービング",
@@ -6403,7 +6403,7 @@
   {
     "player_id": "P0257",
     "playerId": "P0257",
-    "name": "松橋優安 (2026)",
+    "name": "松橋優安(2026)",
     "overall": 5935,
     "maxUpgrade": 14506,
     "policy": "ムービング",
@@ -6428,7 +6428,7 @@
   {
     "player_id": "P0258",
     "playerId": "P0258",
-    "name": "相馬勇紀 (2026)",
+    "name": "相馬勇紀(2026)",
     "overall": 6267,
     "maxUpgrade": 14628,
     "policy": "カウンター",
@@ -6453,7 +6453,7 @@
   {
     "player_id": "P0259",
     "playerId": "P0259",
-    "name": "望月ヘンリー海輝 (2026)",
+    "name": "望月ヘンリー海輝(2026)",
     "overall": 6073,
     "maxUpgrade": 14501,
     "policy": "カウンター",
@@ -6478,7 +6478,7 @@
   {
     "player_id": "P0260",
     "playerId": "P0260",
-    "name": "昌子源 (2026)",
+    "name": "昌子源(2026)",
     "overall": 6174,
     "maxUpgrade": 14750,
     "policy": "カウンター",
@@ -6503,7 +6503,7 @@
   {
     "player_id": "P0261",
     "playerId": "P0261",
-    "name": "佐々木旭 (2026)",
+    "name": "佐々木旭(2026)",
     "overall": 6056,
     "maxUpgrade": 14592,
     "policy": "ポゼッション",
@@ -6528,7 +6528,7 @@
   {
     "player_id": "P0262",
     "playerId": "P0262",
-    "name": "山本悠樹 (2026)",
+    "name": "山本悠樹(2026)",
     "overall": 6195,
     "maxUpgrade": 14536,
     "policy": "ポゼッション",
@@ -6553,7 +6553,7 @@
   {
     "player_id": "P0263",
     "playerId": "P0263",
-    "name": "河原創 (2026)",
+    "name": "河原創(2026)",
     "overall": 6200,
     "maxUpgrade": 14625,
     "policy": "ポゼッション",
@@ -6578,7 +6578,7 @@
   {
     "player_id": "P0264",
     "playerId": "P0264",
-    "name": "遠野大弥 (2026)",
+    "name": "遠野大弥(2026)",
     "overall": 6234,
     "maxUpgrade": 14597,
     "policy": "リアクション",
@@ -6603,7 +6603,7 @@
   {
     "player_id": "P0265",
     "playerId": "P0265",
-    "name": "山根陸 (2026)",
+    "name": "山根陸(2026)",
     "overall": 6068,
     "maxUpgrade": 14509,
     "policy": "リアクション",
@@ -6628,7 +6628,7 @@
   {
     "player_id": "P0266",
     "playerId": "P0266",
-    "name": "谷村海那 (2026)",
+    "name": "谷村海那(2026)",
     "overall": 6066,
     "maxUpgrade": 14555,
     "policy": "リアクション",
@@ -6653,7 +6653,7 @@
   {
     "player_id": "P0267",
     "playerId": "P0267",
-    "name": "吉田豊 (2026)",
+    "name": "吉田豊(2026)",
     "overall": 6014,
     "maxUpgrade": 14550,
     "policy": "リアクション",
@@ -6678,7 +6678,7 @@
   {
     "player_id": "P0268",
     "playerId": "P0268",
-    "name": "マテウス・ブエノ (2026)",
+    "name": "マテウス・ブエノ(2026)",
     "overall": 6174,
     "maxUpgrade": 14632,
     "policy": "リアクション",
@@ -6703,7 +6703,7 @@
   {
     "player_id": "P0269",
     "playerId": "P0269",
-    "name": "本多勇喜 (2026)",
+    "name": "本多勇喜(2026)",
     "overall": 6060,
     "maxUpgrade": 14399,
     "policy": "リアクション",
@@ -6728,7 +6728,7 @@
   {
     "player_id": "P0270",
     "playerId": "P0270",
-    "name": "シュミット・ダニエル (2026)",
+    "name": "シュミット・ダニエル(2026)",
     "overall": 6113,
     "maxUpgrade": 14812,
     "policy": "カウンター",
@@ -6753,7 +6753,7 @@
   {
     "player_id": "P0271",
     "playerId": "P0271",
-    "name": "藤井陽也 (2026)",
+    "name": "藤井陽也(2026)",
     "overall": 6059,
     "maxUpgrade": 14598,
     "policy": "カウンター",
@@ -6778,7 +6778,7 @@
   {
     "player_id": "P0272",
     "playerId": "P0272",
-    "name": "山岸祐也 (2026)",
+    "name": "山岸祐也(2026)",
     "overall": 6014,
     "maxUpgrade": 14458,
     "policy": "カウンター",
@@ -6803,7 +6803,7 @@
   {
     "player_id": "P0273",
     "playerId": "P0273",
-    "name": "太田岳志 (2026)",
+    "name": "太田岳志(2026)",
     "overall": 6022,
     "maxUpgrade": 14783,
     "policy": "カウンター",
@@ -6828,7 +6828,7 @@
   {
     "player_id": "P0274",
     "playerId": "P0274",
-    "name": "福田心之助 (2026)",
+    "name": "福田心之助(2026)",
     "overall": 6077,
     "maxUpgrade": 14528,
     "policy": "カウンター",
@@ -6853,7 +6853,7 @@
   {
     "player_id": "P0275",
     "playerId": "P0275",
-    "name": "マルコ・トゥーリオ (2026)",
+    "name": "マルコ・トゥーリオ(2026)",
     "overall": 6113,
     "maxUpgrade": 14452,
     "policy": "カウンター",
@@ -6878,7 +6878,7 @@
   {
     "player_id": "P0276",
     "playerId": "P0276",
-    "name": "東口順昭 (2026)",
+    "name": "東口順昭(2026)",
     "overall": 6094,
     "maxUpgrade": 14854,
     "policy": "ポゼッション",
@@ -6903,7 +6903,7 @@
   {
     "player_id": "P0277",
     "playerId": "P0277",
-    "name": "倉田秋 (2026)",
+    "name": "倉田秋(2026)",
     "overall": 6156,
     "maxUpgrade": 14648,
     "policy": "ポゼッション",
@@ -6928,7 +6928,7 @@
   {
     "player_id": "P0278",
     "playerId": "P0278",
-    "name": "デニス・ヒュメット (2026)",
+    "name": "デニス・ヒュメット(2026)",
     "overall": 6117,
     "maxUpgrade": 14561,
     "policy": "ポゼッション",
@@ -6953,7 +6953,7 @@
   {
     "player_id": "P0279",
     "playerId": "P0279",
-    "name": "櫻川ソロモン (2026)",
+    "name": "櫻川ソロモン(2026)",
     "overall": 5995,
     "maxUpgrade": 14470,
     "policy": "ポゼッション",
@@ -6978,7 +6978,7 @@
   {
     "player_id": "P0280",
     "playerId": "P0280",
-    "name": "チアゴ・アンドラーデ (2026)",
+    "name": "チアゴ・アンドラーデ(2026)",
     "overall": 6121,
     "maxUpgrade": 14747,
     "policy": "ポゼッション",
@@ -7003,7 +7003,7 @@
   {
     "player_id": "P0281",
     "playerId": "P0281",
-    "name": "畠中槙之輔 (2026)",
+    "name": "畠中槙之輔(2026)",
     "overall": 6157,
     "maxUpgrade": 14580,
     "policy": "ポゼッション",
@@ -7028,7 +7028,7 @@
   {
     "player_id": "P0282",
     "playerId": "P0282",
-    "name": "前川黛也 (2026)",
+    "name": "前川黛也(2026)",
     "overall": 6134,
     "maxUpgrade": 14895,
     "policy": "カウンター",
@@ -7053,7 +7053,7 @@
   {
     "player_id": "P0283",
     "playerId": "P0283",
-    "name": "酒井高徳 (2026)",
+    "name": "酒井高徳(2026)",
     "overall": 6220,
     "maxUpgrade": 14775,
     "policy": "カウンター",
@@ -7078,7 +7078,7 @@
   {
     "player_id": "P0284",
     "playerId": "P0284",
-    "name": "佐々木大樹 (2026)",
+    "name": "佐々木大樹(2026)",
     "overall": 6212,
     "maxUpgrade": 14437,
     "policy": "カウンター",
@@ -7103,7 +7103,7 @@
   {
     "player_id": "P0285",
     "playerId": "P0285",
-    "name": "立田悠悟 (2026)",
+    "name": "立田悠悟(2026)",
     "overall": 6016,
     "maxUpgrade": 14524,
     "policy": "カウンター",
@@ -7128,7 +7128,7 @@
   {
     "player_id": "P0286",
     "playerId": "P0286",
-    "name": "木村太哉 (2026)",
+    "name": "木村太哉(2026)",
     "overall": 6120,
     "maxUpgrade": 14474,
     "policy": "カウンター",
@@ -7153,7 +7153,7 @@
   {
     "player_id": "P0287",
     "playerId": "P0287",
-    "name": "レナート・モーザー (2026)",
+    "name": "レナート・モーザー(2026)",
     "overall": 6014,
     "maxUpgrade": 14590,
     "policy": "カウンター",
@@ -7178,7 +7178,7 @@
   {
     "player_id": "P0288",
     "playerId": "P0288",
-    "name": "荒木隼人 (2026)",
+    "name": "荒木隼人(2026)",
     "overall": 6147,
     "maxUpgrade": 14684,
     "policy": "ムービング",
@@ -7203,7 +7203,7 @@
   {
     "player_id": "P0289",
     "playerId": "P0289",
-    "name": "塩谷司 (2026)",
+    "name": "塩谷司(2026)",
     "overall": 6174,
     "maxUpgrade": 14754,
     "policy": "ムービング",
@@ -7228,7 +7228,7 @@
   {
     "player_id": "P0290",
     "playerId": "P0290",
-    "name": "川辺駿 (2026)",
+    "name": "川辺駿(2026)",
     "overall": 6205,
     "maxUpgrade": 14684,
     "policy": "ムービング",
@@ -7253,7 +7253,7 @@
   {
     "player_id": "P0291",
     "playerId": "P0291",
-    "name": "名古新太郎 (2026)",
+    "name": "名古新太郎(2026)",
     "overall": 6192,
     "maxUpgrade": 14548,
     "policy": "カウンター",
@@ -7278,7 +7278,7 @@
   {
     "player_id": "P0292",
     "playerId": "P0292",
-    "name": "岡哲平 (2026)",
+    "name": "岡哲平(2026)",
     "overall": 5955,
     "maxUpgrade": 14501,
     "policy": "カウンター",
@@ -7303,7 +7303,7 @@
   {
     "player_id": "P0293",
     "playerId": "P0293",
-    "name": "前嶋洋太 (2026)",
+    "name": "前嶋洋太(2026)",
     "overall": 6029,
     "maxUpgrade": 14469,
     "policy": "カウンター",
@@ -7328,7 +7328,7 @@
   {
     "player_id": "P0294",
     "playerId": "P0294",
-    "name": "後藤雅明 (2026)",
+    "name": "後藤雅明(2026)",
     "overall": 5957,
     "maxUpgrade": 14710,
     "policy": "リアクション",
@@ -7353,7 +7353,7 @@
   {
     "player_id": "P0295",
     "playerId": "P0295",
-    "name": "山口蛍 (2026)",
+    "name": "山口蛍(2026)",
     "overall": 6256,
     "maxUpgrade": 14625,
     "policy": "リアクション",
@@ -7378,7 +7378,7 @@
   {
     "player_id": "P0296",
     "playerId": "P0296",
-    "name": "ノーマン・キャンベル (2026)",
+    "name": "ノーマン・キャンベル(2026)",
     "overall": 6082,
     "maxUpgrade": 14585,
     "policy": "リアクション",
@@ -7403,7 +7403,7 @@
   {
     "player_id": "P0297",
     "playerId": "P0297",
-    "name": "アマドゥ・バカヨコ (2026)",
+    "name": "アマドゥ・バカヨコ(2026)",
     "overall": 5963,
     "maxUpgrade": 14551,
     "policy": "ムービング",
@@ -7428,7 +7428,7 @@
   {
     "player_id": "P0298",
     "playerId": "P0298",
-    "name": "澤上竜二 (2026)",
+    "name": "澤上竜二(2026)",
     "overall": 5864,
     "maxUpgrade": 14287,
     "policy": "ムービング",
@@ -7453,7 +7453,7 @@
   {
     "player_id": "P0299",
     "playerId": "P0299",
-    "name": "林彰洋 (2026)",
+    "name": "林彰洋(2026)",
     "overall": 6023,
     "maxUpgrade": 14668,
     "policy": "リアクション",
@@ -7478,7 +7478,7 @@
   {
     "player_id": "P0300",
     "playerId": "P0300",
-    "name": "中村亮太 (2026)",
+    "name": "中村亮太(2026)",
     "overall": 5893,
     "maxUpgrade": 14331,
     "policy": "カウンター",
@@ -7503,7 +7503,7 @@
   {
     "player_id": "P0301",
     "playerId": "P0301",
-    "name": "氣田亮真 (2026)",
+    "name": "氣田亮真(2026)",
     "overall": 5898,
     "maxUpgrade": 14423,
     "policy": "ポゼッション",
@@ -7528,7 +7528,7 @@
   {
     "player_id": "P0302",
     "playerId": "P0302",
-    "name": "山口大輝 (2026)",
+    "name": "山口大輝(2026)",
     "overall": 5890,
     "maxUpgrade": 14356,
     "policy": "カウンター",
@@ -7553,7 +7553,7 @@
   {
     "player_id": "P0303",
     "playerId": "P0303",
-    "name": "マテイ・ヨニッチ (2026)",
+    "name": "マテイ・ヨニッチ(2026)",
     "overall": 6029,
     "maxUpgrade": 14570,
     "policy": "ムービング",
@@ -7578,7 +7578,7 @@
   {
     "player_id": "P0304",
     "playerId": "P0304",
-    "name": "杉本健勇 (2026)",
+    "name": "杉本健勇(2026)",
     "overall": 6021,
     "maxUpgrade": 14586,
     "policy": "カウンター",
@@ -7603,7 +7603,7 @@
   {
     "player_id": "P0305",
     "playerId": "P0305",
-    "name": "細井響 (2026)",
+    "name": "細井響(2026)",
     "overall": 6903,
     "maxUpgrade": 14470,
     "policy": "リアクション",
@@ -7628,7 +7628,7 @@
   {
     "player_id": "P0306",
     "playerId": "P0306",
-    "name": "石井久継 (2026)",
+    "name": "石井久継(2026)",
     "overall": 5960,
     "maxUpgrade": 14444,
     "policy": "カウンター",
@@ -7653,7 +7653,7 @@
   {
     "player_id": "P0307",
     "playerId": "P0307",
-    "name": "内藤大和 (2026)",
+    "name": "内藤大和(2026)",
     "overall": 5841,
     "maxUpgrade": 14312,
     "policy": "ポゼッション",
@@ -7678,7 +7678,7 @@
   {
     "player_id": "P0308",
     "playerId": "P0308",
-    "name": "マテウス・モラエス (2026)",
+    "name": "マテウス・モラエス(2026)",
     "overall": 6131,
     "maxUpgrade": 14574,
     "policy": "ポゼッション",
@@ -7703,7 +7703,7 @@
   {
     "player_id": "P0309",
     "playerId": "P0309",
-    "name": "亀田歩夢 (2026)",
+    "name": "亀田歩夢(2026)",
     "overall": 5868,
     "maxUpgrade": 14412,
     "policy": "カウンター",
@@ -7728,7 +7728,7 @@
   {
     "player_id": "P0310",
     "playerId": "P0310",
-    "name": "川島永嗣 (2026)",
+    "name": "川島永嗣(2026)",
     "overall": 6149,
     "maxUpgrade": 14810,
     "policy": "ポゼッション",
@@ -7753,7 +7753,7 @@
   {
     "player_id": "P0311",
     "playerId": "P0311",
-    "name": "矢村健 (2026)",
+    "name": "矢村健(2026)",
     "overall": 6002,
     "maxUpgrade": 14472,
     "policy": "ムービング",
@@ -7778,7 +7778,7 @@
   {
     "player_id": "P0312",
     "playerId": "P0312",
-    "name": "ルーカス・バルセロス (2026)",
+    "name": "ルーカス・バルセロス(2026)",
     "overall": 6048,
     "maxUpgrade": 14619,
     "policy": "ポゼッション",
@@ -7803,7 +7803,7 @@
   {
     "player_id": "P0313",
     "playerId": "P0313",
-    "name": "梅木怜 (2026)",
+    "name": "梅木怜(2026)",
     "overall": 6091,
     "maxUpgrade": 14600,
     "policy": "カウンター",
@@ -7828,7 +7828,7 @@
   {
     "player_id": "P0314",
     "playerId": "P0314",
-    "name": "西澤健太 (2026)",
+    "name": "西澤健太(2026)",
     "overall": 6151,
     "maxUpgrade": 14590,
     "policy": "ポゼッション",
@@ -7853,7 +7853,7 @@
   {
     "player_id": "P0315",
     "playerId": "P0315",
-    "name": "清武弘嗣 (2026)",
+    "name": "清武弘嗣(2026)",
     "overall": 6176,
     "maxUpgrade": 14690,
     "policy": "リアクション",
@@ -7878,7 +7878,7 @@
   {
     "player_id": "P0316",
     "playerId": "P0316",
-    "name": "土信田悠生 (2026)",
+    "name": "土信田悠生(2026)",
     "overall": 5906,
     "maxUpgrade": 14425,
     "policy": "ポゼッション",
@@ -7903,7 +7903,7 @@
   {
     "player_id": "P0317",
     "playerId": "P0317",
-    "name": "三浦知良 (2026)",
+    "name": "三浦知良(2026)",
     "overall": 6198,
     "maxUpgrade": 14695,
     "policy": "ムービング",
@@ -7928,7 +7928,7 @@
   {
     "player_id": "P0318",
     "playerId": "P0318",
-    "name": "矢野貴章 (2026)",
+    "name": "矢野貴章(2026)",
     "overall": 5904,
     "maxUpgrade": 14353,
     "policy": "リアクション",
@@ -7953,7 +7953,7 @@
   {
     "player_id": "P0319",
     "playerId": "P0319",
-    "name": "西村恭史 (2026)",
+    "name": "西村恭史(2026)",
     "overall": 5779,
     "maxUpgrade": 14217,
     "policy": "ポゼッション",
@@ -7978,7 +7978,7 @@
   {
     "player_id": "P0320",
     "playerId": "P0320",
-    "name": "武藤雄樹 (2026)",
+    "name": "武藤雄樹(2026)",
     "overall": 5938,
     "maxUpgrade": 14356,
     "policy": "ポゼッション",
@@ -8003,7 +8003,7 @@
   {
     "player_id": "P0321",
     "playerId": "P0321",
-    "name": "田中想来 (2026)",
+    "name": "田中想来(2026)",
     "overall": 5800,
     "maxUpgrade": 14305,
     "policy": "リアクション",
@@ -8028,7 +8028,7 @@
   {
     "player_id": "P0322",
     "playerId": "P0322",
-    "name": "藤川虎太朗 (2026)",
+    "name": "藤川虎太朗(2026)",
     "overall": 5797,
     "maxUpgrade": 14097,
     "policy": "リアクション",
@@ -8053,7 +8053,7 @@
   {
     "player_id": "P0323",
     "playerId": "P0323",
-    "name": "西谷優希 (2026)",
+    "name": "西谷優希(2026)",
     "overall": 5901,
     "maxUpgrade": 14389,
     "policy": "リアクション",
@@ -8078,7 +8078,7 @@
   {
     "player_id": "P0324",
     "playerId": "P0324",
-    "name": "川本梨誉 (2026)",
+    "name": "川本梨誉(2026)",
     "overall": 5905,
     "maxUpgrade": 14399,
     "policy": "ポゼッション",
@@ -8103,7 +8103,7 @@
   {
     "player_id": "P0325",
     "playerId": "P0325",
-    "name": "西山大雅 (2026)",
+    "name": "西山大雅(2026)",
     "overall": 5680,
     "maxUpgrade": 14279,
     "policy": "リアクション",
@@ -8128,7 +8128,7 @@
   {
     "player_id": "P0326",
     "playerId": "P0326",
-    "name": "島田拓海 (2026)",
+    "name": "島田拓海(2026)",
     "overall": 5700,
     "maxUpgrade": 14135,
     "policy": "カウンター",
@@ -8153,7 +8153,7 @@
   {
     "player_id": "P0327",
     "playerId": "P0327",
-    "name": "生駒稀生 (2026)",
+    "name": "生駒稀生(2026)",
     "overall": 5665,
     "maxUpgrade": 14173,
     "policy": "ポゼッション",
@@ -8178,7 +8178,7 @@
   {
     "player_id": "P0328",
     "playerId": "P0328",
-    "name": "東條敦輝 (2026)",
+    "name": "東條敦輝(2026)",
     "overall": 5685,
     "maxUpgrade": 14092,
     "policy": "ムービング",
@@ -8203,7 +8203,7 @@
   {
     "player_id": "P0329",
     "playerId": "P0329",
-    "name": "喜岡佳太 (2026)",
+    "name": "喜岡佳太(2026)",
     "overall": 5723,
     "maxUpgrade": 14269,
     "policy": "リアクション",
@@ -8228,7 +8228,7 @@
   {
     "player_id": "P0330",
     "playerId": "P0330",
-    "name": "後藤優介 (2026)",
+    "name": "後藤優介(2026)",
     "overall": 5857,
     "maxUpgrade": 14159,
     "policy": "カウンター",
@@ -8253,7 +8253,7 @@
   {
     "player_id": "P0331",
     "playerId": "P0331",
-    "name": "竹本雄飛 (2026)",
+    "name": "竹本雄飛(2026)",
     "overall": 5793,
     "maxUpgrade": 14253,
     "policy": "ムービング",
@@ -8278,7 +8278,7 @@
   {
     "player_id": "P0332",
     "playerId": "P0332",
-    "name": "新谷聖基 (2026)",
+    "name": "新谷聖基(2026)",
     "overall": 5932,
     "maxUpgrade": 14469,
     "policy": "カウンター",
@@ -8303,7 +8303,7 @@
   {
     "player_id": "P0333",
     "playerId": "P0333",
-    "name": "髙橋大悟 (2026)",
+    "name": "髙橋大悟(2026)",
     "overall": 5918,
     "maxUpgrade": 14318,
     "policy": "カウンター",
@@ -8328,7 +8328,7 @@
   {
     "player_id": "P0334",
     "playerId": "P0334",
-    "name": "岩下航 (2026)",
+    "name": "岩下航(2026)",
     "overall": 5813,
     "maxUpgrade": 14300,
     "policy": "ムービング",
@@ -8353,7 +8353,7 @@
   {
     "player_id": "P0335",
     "playerId": "P0335",
-    "name": "河村慶人 (2026)",
+    "name": "河村慶人(2026)",
     "overall": 5877,
     "maxUpgrade": 14253,
     "policy": "カウンター",
@@ -8378,7 +8378,7 @@
   {
     "player_id": "P0336",
     "playerId": "P0336",
-    "name": "藤春廣輝 (2026)",
+    "name": "藤春廣輝(2026)",
     "overall": 5919,
     "maxUpgrade": 14409,
     "policy": "ポゼッション",
@@ -9378,7 +9378,7 @@
   {
     "player_id": "P0376",
     "playerId": "P0376",
-    "name": "上田綺世 〔2026〕",
+    "name": "上田綺世〔2026〕",
     "overall": 6915,
     "maxUpgrade": 15640,
     "policy": "カウンター",
@@ -9403,7 +9403,7 @@
   {
     "player_id": "P0377",
     "playerId": "P0377",
-    "name": "三笘薫 〔2026〕",
+    "name": "三笘薫〔2026〕",
     "overall": 6947,
     "maxUpgrade": 15692,
     "policy": "カウンター",
@@ -9429,7 +9429,7 @@
   {
     "player_id": "P0378",
     "playerId": "P0378",
-    "name": "堂安律 〔2026〕",
+    "name": "堂安律〔2026〕",
     "overall": 6792,
     "maxUpgrade": 15471,
     "policy": "カウンター",
@@ -9455,7 +9455,7 @@
   {
     "player_id": "P0379",
     "playerId": "P0379",
-    "name": "中村敬斗 〔2026〕",
+    "name": "中村敬斗〔2026〕",
     "overall": 6713,
     "maxUpgrade": 15263,
     "policy": "カウンター",
@@ -9481,7 +9481,7 @@
   {
     "player_id": "P0380",
     "playerId": "P0380",
-    "name": "伊東純也 〔2026〕",
+    "name": "伊東純也〔2026〕",
     "overall": 6751,
     "maxUpgrade": 15434,
     "policy": "カウンター",
@@ -9507,7 +9507,7 @@
   {
     "player_id": "P0381",
     "playerId": "P0381",
-    "name": "鎌田大地 〔2026〕",
+    "name": "鎌田大地〔2026〕",
     "overall": 6964,
     "maxUpgrade": 15564,
     "policy": "カウンター",
@@ -9532,7 +9532,7 @@
   {
     "player_id": "P0382",
     "playerId": "P0382",
-    "name": "佐野海舟 〔2026〕",
+    "name": "佐野海舟〔2026〕",
     "overall": 6773,
     "maxUpgrade": 15393,
     "policy": "カウンター",
@@ -9557,7 +9557,7 @@
   {
     "player_id": "P0383",
     "playerId": "P0383",
-    "name": "伊藤洋輝 〔2026〕",
+    "name": "伊藤洋輝〔2026〕",
     "overall": 6901,
     "maxUpgrade": 15724,
     "policy": "カウンター",
@@ -9582,7 +9582,7 @@
   {
     "player_id": "P0384",
     "playerId": "P0384",
-    "name": "渡辺剛 〔2026〕",
+    "name": "渡辺剛〔2026〕",
     "overall": 6466,
     "maxUpgrade": 15065,
     "policy": "カウンター",
@@ -9607,7 +9607,7 @@
   {
     "player_id": "P0385",
     "playerId": "P0385",
-    "name": "谷口彰悟 〔2026〕",
+    "name": "谷口彰悟〔2026〕",
     "overall": 6423,
     "maxUpgrade": 14963,
     "policy": "カウンター",
@@ -9632,7 +9632,7 @@
   {
     "player_id": "P0386",
     "playerId": "P0386",
-    "name": "鈴木彩艶 〔2026〕",
+    "name": "鈴木彩艶〔2026〕",
     "overall": 6692,
     "maxUpgrade": 15472,
     "policy": "カウンター",
@@ -9682,7 +9682,7 @@
   {
     "player_id": "P0388",
     "playerId": "P0388",
-    "name": "歐偉倫 〔LEGEND〕",
+    "name": "歐偉倫〔LEGEND〕",
     "overall": 6680,
     "maxUpgrade": 15265,
     "policy": "カウンター",
@@ -9707,7 +9707,7 @@
   {
     "player_id": "P0389",
     "playerId": "P0389",
-    "name": "李健和 〔LEGEND〕",
+    "name": "李健和〔LEGEND〕",
     "overall": 6678,
     "maxUpgrade": 15265,
     "policy": "カウンター",
@@ -9882,7 +9882,7 @@
   {
     "player_id": "P0396",
     "playerId": "P0396",
-    "name": "ペレ 〔SUPER LEGEND〕",
+    "name": "ペレ〔SUPERLEGEND〕",
     "overall": 7341,
     "maxUpgrade": 16269,
     "policy": "リアクション",
@@ -9899,7 +9899,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-20",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CF"
     ]
@@ -9907,7 +9907,7 @@
   {
     "player_id": "P0397",
     "playerId": "P0397",
-    "name": "ヴィニシウス・ジュニオール 〔2025-2026〕",
+    "name": "ヴィニシウス・ジュニオール〔2025-2026〕",
     "overall": 7107,
     "maxUpgrade": 15811,
     "policy": "リアクション",
@@ -9924,7 +9924,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-20",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "LW"
     ]
@@ -9932,7 +9932,7 @@
   {
     "player_id": "P0398",
     "playerId": "P0398",
-    "name": "エデル・ミリトン 〔2025-2026〕",
+    "name": "エデル・ミリトン〔2025-2026〕",
     "overall": 6857,
     "maxUpgrade": 15538,
     "policy": "リアクション",
@@ -9949,7 +9949,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-20",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ]
@@ -9957,7 +9957,7 @@
   {
     "player_id": "P0399",
     "playerId": "P0399",
-    "name": "エデルソン 〔2025-2026〕",
+    "name": "エデルソン〔2025-2026〕",
     "overall": 6905,
     "maxUpgrade": 15433,
     "policy": "リアクション",
@@ -9974,7 +9974,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-20",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "DM"
     ]
@@ -10007,7 +10007,7 @@
   {
     "player_id": "P0401",
     "playerId": "P0401",
-    "name": "ブルーノ・ギマランイス〔2025 - 2026〕",
+    "name": "ブルーノ・ギマランイス",
     "overall": 7034,
     "maxUpgrade": 15682,
     "policy": "リアクション",
@@ -10032,7 +10032,7 @@
   {
     "player_id": "P0402",
     "playerId": "P0402",
-    "name": "ハフィーニャ〔2025 - 2026〕",
+    "name": "ハフィーニャ",
     "overall": 7173,
     "maxUpgrade": 15700,
     "policy": "リアクション",
@@ -10057,7 +10057,7 @@
   {
     "player_id": "P0403",
     "playerId": "P0403",
-    "name": "ロドリゴ〔2025 - 2026〕",
+    "name": "ロドリゴ",
     "overall": 6911,
     "maxUpgrade": 15532,
     "policy": "リアクション",
@@ -10082,7 +10082,7 @@
   {
     "player_id": "P0404",
     "playerId": "P0404",
-    "name": "ブレーメル〔2025 - 2026〕",
+    "name": "ブレーメル",
     "overall": 6832,
     "maxUpgrade": 15568,
     "policy": "リアクション",
@@ -10102,6 +10102,181 @@
     "available": true,
     "suitablePositions": [
       "CB"
+    ]
+  },
+  {
+    "player_id": "P0405",
+    "playerId": "P0405",
+    "name": "レオ・セアラ",
+    "overall": 6709,
+    "maxUpgrade": 15280,
+    "policy": "リアクション",
+    "playStyle": "ラインブレーカー",
+    "playStyleLv": 3,
+    "mainPosition": "CF",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "Jリーグ百年構想リーグ得点王SP選手スカウト",
+    "availablePeriod": "2026年8月26日まで",
+    "mainSkill": "アンストッパブルショット",
+    "mainTrait": "冷静なフィニッシュ",
+    "category": "SP選手",
+    "nationality": "ブラジル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-12",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
+  },
+  {
+    "player_id": "P0406",
+    "playerId": "P0406",
+    "name": "山岸祐也",
+    "overall": 6674,
+    "maxUpgrade": 15298,
+    "policy": "カウンター",
+    "playStyle": "ストライカー",
+    "playStyleLv": 2,
+    "mainPosition": "CF",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "Jリーグ百年構想リーグ得点王SP選手スカウト",
+    "availablePeriod": "2026年8月26日まで",
+    "mainSkill": "上空の覇者",
+    "mainTrait": "上空のスナイパー",
+    "category": "SP選手",
+    "nationality": "日本",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-12",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
+  },
+  {
+    "player_id": "P0407",
+    "playerId": "P0407",
+    "name": "山田寛人",
+    "overall": 6473,
+    "maxUpgrade": 15057,
+    "policy": "カウンター",
+    "playStyle": "ラインブレーカー",
+    "playStyleLv": 2,
+    "mainPosition": "CF",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "Jリーグ百年構想リーグ得点王SP選手スカウト",
+    "availablePeriod": "2026年8月26日まで",
+    "mainSkill": "魂のワンタッチ",
+    "mainTrait": "ムービングスナイパー",
+    "category": "SP選手",
+    "nationality": "日本",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-12",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
+  },
+  {
+    "player_id": "P0408",
+    "playerId": "P0408",
+    "name": "泉柊椰",
+    "overall": 6476,
+    "maxUpgrade": 15098,
+    "policy": "カウンター",
+    "playStyle": "ドリブラー",
+    "playStyleLv": 3,
+    "mainPosition": "LM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "Jリーグ百年構想リーグ得点王SP選手スカウト",
+    "availablePeriod": "2026年8月26日まで",
+    "mainSkill": "ジャックナイフ",
+    "mainTrait": "スピードドリブラー",
+    "category": "SP選手",
+    "nationality": "日本",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-12",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "LM"
+    ]
+  },
+  {
+    "player_id": "P0409",
+    "playerId": "P0409",
+    "name": "山本桜大",
+    "overall": 6579,
+    "maxUpgrade": 14927,
+    "policy": "カウンター",
+    "playStyle": "アタッカー",
+    "playStyleLv": 2,
+    "mainPosition": "AM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "Jリーグ百年構想リーグ得点王SP選手スカウト",
+    "availablePeriod": "2026年8月26日まで",
+    "mainSkill": "ロングキャノン",
+    "mainTrait": "ゴール前の嗅覚",
+    "category": "SP選手",
+    "nationality": "日本",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-12",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ]
+  },
+  {
+    "player_id": "P0410",
+    "playerId": "P0410",
+    "name": "田村翔太",
+    "overall": 6434,
+    "maxUpgrade": 14932,
+    "policy": "ポゼッション",
+    "playStyle": "ストライカー",
+    "playStyleLv": 2,
+    "mainPosition": "CF",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "Jリーグ百年構想リーグ得点王SP選手スカウト",
+    "availablePeriod": "2026年8月26日まで",
+    "mainSkill": "コントロールショット",
+    "mainTrait": "シュートセンス",
+    "category": "SP選手",
+    "nationality": "日本",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-12",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
+  },
+  {
+    "player_id": "P0411",
+    "playerId": "P0411",
+    "name": "土信田悠生",
+    "overall": 6456,
+    "maxUpgrade": 15039,
+    "policy": "ポゼッション",
+    "playStyle": "ポストプレーヤー",
+    "playStyleLv": 2,
+    "mainPosition": "CF",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "Jリーグ百年構想リーグ得点王SP選手スカウト",
+    "availablePeriod": "2026年8月26日まで",
+    "mainSkill": "魂のワンタッチ",
+    "mainTrait": "力強いフィニッシュ",
+    "category": "SP選手",
+    "nationality": "日本",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-12",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CF"
     ]
   }
 ]
