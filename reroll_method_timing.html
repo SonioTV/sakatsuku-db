@@ -2,219 +2,453 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>サカつく2026 リセマラの方法と終了タイミング</title>
-  <meta name="description" content="リセマラの手順、注意点、初心者向けの当たり方針まで整理した攻略記事です。どこでやめるべきかもコース別に解説します。">
-  <meta name="keywords" content="サカつく2026,リセマラ,終了ライン,当たり,初心者,SP選手">
-  <meta name="robots" content="index,follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>【2026年8月最新】サカつく2026 リセマラのやり方・終了ライン｜おすすめSP選手とフォメコン</title>
+  <meta name="description" content="サカつく2026のリセマラ方法と終了タイミングを2026年8月版で解説。1周3～5分の効率的な手順、狙うべきSP選手、リアクション・ポゼッション・ムービング・カウンター別のおすすめ選手とフォーメーションコンボまで画像付きで紹介します。">
+  <meta name="keywords" content="サカつく2026,リセマラ,やり方,終了ライン,当たり,SP選手,フォーメーションコンボ,初心者">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://sakatsuku2026-db.com/reroll_method_timing.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="サカつく2026 攻略・選手データベース">
+  <meta property="og:title" content="【2026年8月最新】サカつく2026 リセマラのやり方・終了ライン">
+  <meta property="og:description" content="リセマラの効率的な手順、終了ライン、おすすめSP選手、4ポリシー別のフォーメーションコンボ育成ルートを画像付きで解説。">
+  <meta property="og:url" content="https://sakatsuku2026-db.com/reroll_method_timing.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#126b46">
   <style>
-:root{
-  --bg:#f3f8f2;
-  --card:#ffffff;
-  --text:#183022;
-  --muted:#5f6f65;
-  --line:#d8e6d8;
-  --accent:#2f7d4b;
-  --accent-dark:#225d38;
-  --soft:#e8f4ea;
-  --warn:#fff5dd;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
-  color:var(--text);
-  background:linear-gradient(180deg,#edf6ee 0%,#f8fbf7 100%);
-  line-height:1.8;
-}
-.wrap{
-  width:min(920px, calc(100% - 28px));
-  margin:0 auto;
-  padding:20px 0 48px;
-}
-.topbar{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-bottom:16px;
-}
-.back-btn{
-  display:inline-block;
-  text-decoration:none;
-  background:var(--accent);
-  color:#fff;
-  padding:10px 14px;
-  border-radius:999px;
-  font-weight:700;
-  box-shadow:0 6px 18px rgba(47,125,75,.18);
-}
-.hero,.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:18px;
-  box-shadow:0 10px 28px rgba(24,48,34,.06);
-}
-.hero{padding:24px 20px;margin-bottom:18px}
-h1{
-  font-size:clamp(1.7rem,4vw,2.4rem);
-  line-height:1.3;
-  margin:0 0 10px;
-}
-.meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px 14px;
-  color:var(--muted);
-  font-size:.95rem;
-  margin:10px 0 12px;
-}
-.lead{
-  font-size:1.03rem;
-}
-.card{padding:22px 18px;margin:16px 0}
-h2{
-  margin:0 0 14px;
-  font-size:1.35rem;
-  line-height:1.4;
-  padding-left:12px;
-  border-left:5px solid var(--accent);
-}
-ul,ol{padding-left:1.4em}
-li+li{margin-top:6px}
-.summary{
-  background:var(--soft);
-  border:1px solid #cde2d1;
-  border-radius:16px;
-  padding:16px 16px 14px;
-}
-.box{
-  border-radius:14px;
-  padding:14px 15px;
-  margin:10px 0 14px;
-  border:1px solid var(--line);
-  background:#fafdfa;
-}
-.rank.high{background:#edf8ef;border-color:#b9dbbe}
-.rank.mid{background:#f5f8ef;border-color:#d7dfbf}
-.rank.low{background:#fbfbf7;border-color:#e6e6d4}
-.footer-note{
-  color:var(--muted);
-  font-size:.92rem;
-}
-.notice{
-  background:var(--warn);
-  border:1px solid #ecdba8;
-  border-radius:14px;
-  padding:14px 15px;
-}
-a{text-underline-offset:3px}
-</style>
+    :root{
+      --bg:#f4f7f6;
+      --surface:#ffffff;
+      --surface-2:#f8fbfa;
+      --text:#16251f;
+      --muted:#62716a;
+      --line:#dbe5e0;
+      --green:#126b46;
+      --green-dark:#0d5136;
+      --green-soft:#e8f4ee;
+      --gold:#9b6900;
+      --gold-soft:#fff6dc;
+      --silver:#68737d;
+      --silver-soft:#f0f3f5;
+      --reaction:#1770a6;
+      --reaction-soft:#eaf6fd;
+      --possession:#9b4d12;
+      --possession-soft:#fff2e7;
+      --moving:#287b47;
+      --moving-soft:#eaf7ee;
+      --counter:#8d2e73;
+      --counter-soft:#f9eefa;
+      --danger:#b63c2e;
+      --shadow:0 9px 28px rgba(20,48,35,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:14px}
+    body{
+      margin:0;
+      color:var(--text);
+      background:linear-gradient(180deg,#edf4f0 0,#f7f9f8 250px,var(--bg) 100%);
+      font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      font-size:16px;
+      line-height:1.85;
+      letter-spacing:.015em;
+      -webkit-text-size-adjust:100%;
+    }
+    img{display:block;max-width:100%;height:auto}
+    a{color:#0b6744;text-underline-offset:3px;text-decoration-thickness:1px}
+    a:hover{text-decoration-thickness:2px}
+    strong{font-weight:800}
+    .page{width:min(1000px,calc(100% - 28px));margin:0 auto;padding:18px 0 56px}
+    .top-nav{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:14px}
+    .nav-btn{display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 4px 14px rgba(20,48,35,.05);font-size:.9rem;font-weight:800;text-decoration:none;color:var(--green-dark)}
+    .nav-btn.primary{background:var(--green);border-color:var(--green);color:#fff}
+    .hero,.section,.toc,.quick-answer{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero{padding:26px 24px;margin-bottom:18px;overflow:hidden;position:relative}
+    .hero:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-80px;top:-95px;background:linear-gradient(135deg,rgba(18,107,70,.14),rgba(18,107,70,0));pointer-events:none}
+    .eyebrow{display:inline-flex;align-items:center;padding:5px 10px;border-radius:999px;background:var(--green-soft);color:var(--green-dark);font-size:.78rem;font-weight:900;letter-spacing:.06em;margin-bottom:10px}
+    h1{font-size:clamp(1.62rem,5vw,2.5rem);line-height:1.35;letter-spacing:0;margin:0 0 12px}
+    .meta{display:flex;gap:8px 16px;flex-wrap:wrap;color:var(--muted);font-size:.88rem;margin:0 0 14px}
+    .lead{font-size:1.04rem;margin:0;color:#263a31}
+    .lead strong{color:var(--green-dark)}
+    .quick-answer{padding:18px 18px 16px;margin:18px 0;border-left:5px solid var(--green)}
+    .quick-answer h2{border:0;padding:0;margin:0 0 8px;font-size:1.2rem;color:var(--green-dark)}
+    .quick-answer p{margin:0}
+    .highlight{background:linear-gradient(transparent 62%,#fff0a8 62%);font-weight:900}
+    .toc{padding:18px;margin:18px 0}
+    .toc-title{font-size:1.06rem;font-weight:900;margin:0 0 10px}
+    .toc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    .toc a{display:flex;align-items:center;gap:7px;padding:10px 11px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);font-size:.9rem;font-weight:750;text-decoration:none;color:#264138;line-height:1.45}
+    .toc a span{display:inline-grid;place-items:center;flex:0 0 24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green-dark);font-size:.75rem;font-weight:900}
+    .section{padding:23px 20px;margin:18px 0}
+    h2{font-size:clamp(1.25rem,4vw,1.55rem);line-height:1.5;margin:0 0 16px;padding-left:12px;border-left:5px solid var(--green);letter-spacing:0}
+    h3{font-size:1.08rem;line-height:1.5;margin:24px 0 12px;color:#20382d}
+    p{margin:0 0 14px}
+    p:last-child{margin-bottom:0}
+    ul,ol{margin:10px 0 0;padding-left:1.45em}
+    li+li{margin-top:7px}
+    .point-list{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+    .point-list li{position:relative;padding:11px 12px 11px 40px;background:var(--surface-2);border:1px solid var(--line);border-radius:13px;margin:0}
+    .point-list li:before{content:"✓";position:absolute;left:12px;top:11px;display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--green);color:#fff;font-size:.74rem;font-weight:900}
+    .steps{counter-reset:step;list-style:none;padding:0;display:grid;gap:10px;margin:0}
+    .steps li{counter-increment:step;display:grid;grid-template-columns:38px 1fr;gap:11px;align-items:start;padding:12px;border:1px solid var(--line);border-radius:13px;background:var(--surface-2);margin:0}
+    .steps li:before{content:counter(step);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;font-weight:900;line-height:1}
+    .note,.warning{padding:13px 14px;border-radius:13px;margin:15px 0}
+    .note{background:var(--green-soft);border:1px solid #c7e3d5}
+    .warning{background:#fff5e9;border:1px solid #efd7b7}
+    .course{--course:var(--green);--course-soft:var(--green-soft);border-top:5px solid var(--course)}
+    .course.reaction{--course:var(--reaction);--course-soft:var(--reaction-soft)}
+    .course.possession{--course:var(--possession);--course-soft:var(--possession-soft)}
+    .course.moving{--course:var(--moving);--course-soft:var(--moving-soft)}
+    .course.counter{--course:var(--counter);--course-soft:var(--counter-soft)}
+    .course h2{border-left-color:var(--course)}
+    .course-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+    .course-label{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;background:var(--course-soft);color:var(--course);font-size:.82rem;font-weight:900;white-space:nowrap}
+    .difficulty{font-size:.79rem;color:var(--muted);font-weight:800}
+    .subbox{border:1px solid var(--line);border-radius:15px;padding:15px;margin:14px 0;background:#fff}
+    .subbox.key{background:linear-gradient(135deg,var(--course-soft),#fff 58%);border-color:color-mix(in srgb,var(--course) 30%,#d8e3de)}
+    .subbox-title{display:flex;align-items:center;gap:8px;font-size:.96rem;font-weight:900;margin:0 0 11px;color:#233a30}
+    .subbox-title .num{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--course);color:#fff;font-size:.76rem}
+    .player-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .player-card{border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden;min-width:0}
+    .player-photo{display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:linear-gradient(145deg,#f6faf8,#eef3f1);padding:8px}
+    .player-photo img{width:100%;height:100%;object-fit:contain}
+    .player-info{padding:10px 10px 11px}
+    .player-name{font-size:.91rem;font-weight:900;line-height:1.45;margin:0 0 7px;word-break:break-word}
+    .player-meta{display:flex;gap:5px;flex-wrap:wrap}
+    .badge{display:inline-flex;align-items:center;min-height:22px;padding:2px 7px;border-radius:999px;background:#eef3f1;color:#41564d;font-size:.7rem;font-weight:800;line-height:1.35}
+    .badge.lv3{background:var(--gold-soft);color:#7e5700;border:1px solid #eed28a}
+    .badge.j{background:#eaf5ff;color:#17608d}
+    .badge.k{background:#fff0f1;color:#9c3e45}
+    .formation-route{display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);align-items:center;gap:8px;margin:15px 0}
+    .formation-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+    .formation-card img{width:100%;aspect-ratio:1525/615;object-fit:contain;background:#f4f5f5}
+    .formation-caption{padding:8px 10px 10px;font-size:.79rem;line-height:1.5;text-align:center;font-weight:850}
+    .formation-caption .rank{display:inline-block;margin-right:5px;padding:2px 7px;border-radius:999px;font-size:.7rem}
+    .rank.gold{background:var(--gold-soft);color:var(--gold)}
+    .rank.silver{background:var(--silver-soft);color:var(--silver)}
+    .arrow{display:grid;place-items:center;font-size:1.6rem;color:var(--course);font-weight:900}
+    .route-note{font-size:.92rem;background:var(--course-soft);border-radius:12px;padding:12px 13px;margin-top:10px}
+    .compare-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:14px}
+    table{width:100%;border-collapse:collapse;min-width:620px;background:#fff;font-size:.88rem}
+    th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+    th{background:#edf5f1;color:#244336;font-weight:900;white-space:nowrap}
+    tr:last-child td{border-bottom:0}
+    .recommend{font-weight:900;color:var(--green-dark)}
+    .tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .tool-link{display:block;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--surface-2);text-decoration:none;color:var(--text)}
+    .tool-link strong{display:block;color:var(--green-dark);margin-bottom:3px}
+    .tool-link span{display:block;color:var(--muted);font-size:.82rem;line-height:1.55}
+    .related-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+    .related-list a{display:block;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:.9rem;font-weight:800;text-decoration:none}
+    .footer-note{color:var(--muted);font-size:.82rem;margin-top:18px}
+    .anchor-top{margin-top:15px;text-align:right}
+    .anchor-top a{font-size:.82rem;font-weight:800;text-decoration:none}
+    @media(max-width:760px){
+      body{font-size:15.5px;line-height:1.8}
+      .page{width:min(100% - 20px,1000px);padding-top:10px}
+      .hero{padding:21px 17px}.section{padding:20px 15px}.toc{padding:15px}
+      .player-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+      .formation-route{grid-template-columns:1fr;gap:8px}
+      .arrow{transform:rotate(90deg);height:24px}
+      .tool-grid,.related-list{grid-template-columns:1fr}
+      .course-head{align-items:flex-start;flex-direction:column;gap:5px}
+    }
+    @media(max-width:390px){
+      .toc-grid{grid-template-columns:1fr}
+      .player-name{font-size:.86rem}.player-info{padding:8px}
+      .badge{font-size:.66rem;padding:2px 6px}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"サカつく2026 リセマラのやり方・終了ライン｜おすすめSP選手とフォメコン",
+    "description":"サカつく2026のリセマラ方法、終了タイミング、おすすめSP選手、4ポリシー別のフォーメーションコンボ育成ルートを解説。",
+    "dateModified":"2026-08-13",
+    "inLanguage":"ja-JP",
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://sakatsuku2026-db.com/reroll_method_timing.html"},
+    "publisher":{"@type":"Organization","name":"サカつく2026 攻略・選手データベース","url":"https://sakatsuku2026-db.com/"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"トップ","item":"https://sakatsuku2026-db.com/"},
+      {"@type":"ListItem","position":2,"name":"攻略記事","item":"https://sakatsuku2026-db.com/articles.html"},
+      {"@type":"ListItem","position":3,"name":"リセマラの方法と終了タイミング","item":"https://sakatsuku2026-db.com/reroll_method_timing.html"}
+    ]
+  }
+  </script>
 </head>
-<body>
-  <main class="wrap">
-    <div class="topbar">
-      <a class="back-btn" href="index.html">← サイトに戻る</a>
-      <a class="back-btn" href="articles.html">攻略記事一覧へ</a>
-    </div>
+<body id="top">
+  <main class="page">
+    <nav class="top-nav" aria-label="ページ上部ナビゲーション">
+      <a class="nav-btn primary" href="index.html">← サイトトップ</a>
+      <a class="nav-btn" href="articles.html">攻略記事一覧</a>
+    </nav>
 
     <article>
-      <section class="hero">
-        <h1>サカつく2026 リセマラの方法と終了タイミング</h1>
+      <header class="hero">
+        <div class="eyebrow">2026年8月最新版・初心者攻略</div>
+        <h1>サカつく2026 リセマラのやり方と終了ライン</h1>
         <div class="meta">
-          <span>最終更新日：2026-03-27</span>
-          <span>カテゴリ：攻略記事</span>
+          <span>最終更新：2026年8月13日</span>
+          <span>カテゴリ：初心者攻略</span>
         </div>
-        <p class="lead">この記事では、サカつく2026のリセマラ方法と、どのタイミングで終了すべきかをわかりやすく解説します。初心者向けに狙いやすい方針から、中級者・上級者向けのコースまで整理しているので、最初のアカウント作りで失敗したくない人はここを基準に進めてください。</p>
+        <p class="lead">サカつく2026のリセマラは<strong>1周約3～5分</strong>。この記事では効率的な手順だけでなく、リセマラ後の育成まで見据えて、<strong>4つのポリシー別に「狙うSP選手」と「目標フォーメーションコンボ」</strong>を画像付きで整理します。</p>
+      </header>
+
+      <section class="quick-answer" aria-labelledby="answer-title">
+        <h2 id="answer-title">結論：リセマラはどこで終わる？</h2>
+        <p>基本の終了ラインは、<span class="highlight">プレースタイルLvⅢのSP選手を1名以上獲得</span>です。特に序盤は得点に直結しやすいCF・AMなどの攻撃ポジションを優先すると進めやすくなります。</p>
       </section>
 
-      <section class="card summary">
+      <nav class="toc" aria-label="目次">
+        <p class="toc-title">目次</p>
+        <div class="toc-grid">
+          <a href="#points"><span>1</span>リセマラ要点</a>
+          <a href="#steps"><span>2</span>効率的な手順</a>
+          <a href="#caution"><span>3</span>注意点</a>
+          <a href="#timing"><span>4</span>終了タイミング</a>
+          <a href="#reaction"><span>A</span>リアクション</a>
+          <a href="#possession"><span>B</span>ポゼッション</a>
+          <a href="#moving"><span>C</span>ムービング</a>
+          <a href="#counter"><span>D</span>カウンター</a>
+          <a href="#summary"><span>5</span>まとめ</a>
+          <a href="#tools"><span>6</span>次に使うツール</a>
+        </div>
+      </nav>
+
+      <section class="section" id="points">
         <h2>リセマラポイントまとめ</h2>
-        <ul>
-          <li>1回のリセマラ時間は約3〜5分で、アカウントリセット機能で周回しやすい</li><li>GBは基本的にSP選手スカウトへ使い、J/Kリーグはチケット中心が安定</li><li>初心者は決定力の高い選手や将来の金コンボにつながる選手を優先</li><li>リセマラ終了ラインは“単体の強さ”だけでなく“編成の伸びしろ”で判断する</li><li>特別練習カードは序盤なら厳選不要で、選手優先で問題ない</li>
+        <ul class="point-list">
+          <li>1回のリセマラ時間は約3～5分。アカウントリセット機能があるため周回しやすい。</li>
+          <li>GBは基本的にSP選手スカウトへ使い、Jリーグ・Kリーグはチケット中心で進める。</li>
+          <li><strong>終了ラインは「プレースタイルLvⅢのSP選手を1名以上」</strong>を目安にする。</li>
+          <li>特別練習カードは序盤なら厳選不要。まずはSP選手の確保を優先する。</li>
         </ul>
       </section>
 
-      <section class="card"><h2>効率的なリセマラ手順</h2>
-<ol>
-<li>ゲームを開始する</li>
-<li>チュートリアルをスキップする</li>
-<li>チュートリアルガチャを回す（★3メッシ確定）</li>
-<li>指示に従ってゲームを進める</li>
-<li>プレゼントボックスから報酬を受け取る</li>
-<li>SP選手ガチャを回す</li>
-<li>ホーム画面右上のメニューから「オプション → アカウントリセット → 確認しましたにチェック → OK」</li>
-<li>以降は⑤〜⑦を繰り返す</li>
-</ol>
-<p>1周あたりの所要時間は約3〜5分です。手順そのものはシンプルなので、最初に終了ラインを決めておくと沼りにくくなります。</p>
-</section><section class="card"><h2>リセマラ時の注意点</h2>
-<ul>
-<li><strong>GBはSP選手スカウトに使う</strong></li>
-<li><strong>JリーグSPガチャ・KリーグSPガチャは基本チケット運用</strong></li>
-<li>JリーグやKリーグの推し選手を狙う場合のみ、GB使用を検討</li>
-<li><strong>特別練習カードは厳選不要</strong>。序盤はチケット産でも十分戦える</li>
-</ul>
-<p>初心者がやりがちなのは、何でもかんでもガチャを回してしまうことです。最初の資源は限られているので、SP選手獲得に集中した方が戦力化しやすくなります。</p>
-</section><section class="card"><h2>終了タイミングの考え方</h2>
-<p>リセマラの終了ラインは、単純に高レアを引けたかどうかだけでは決まりません。重要なのは、<strong>序盤を快適に進められるか</strong>と、<strong>将来のフォーメーションコンボ発動に近づけるか</strong>です。</p>
-<p>特に初心者は、試合で結果を出しやすい<strong>決定力の高い選手</strong>を確保しておくと序盤がかなり楽になります。そのうえで、将来的に目指すポリシーに合わせて選手を集めると、育成方針がブレにくくなります。</p>
-</section><section class="card"><h2>A：初心者向け リアクションコース</h2>
-<div class="box rank high">
-  <p><strong>終了ライン：</strong>★3 CF クリスティアーノ・ロナウド</p>
-</div>
-<ul>
-<li>同時に引けると理想：★3 DM ステファン・エル・シャーラウィ / ★2 DM カラム・ハドソン＝オドイ</li>
-<li>JリーグSPチケットで理想：★3 LB 長友佑都</li>
-<li>長友が出なければ、SP選手スカウトで★3 LB ジョアン・カンセロを狙いたい</li>
-</ul>
-<p>リアクションはカウンターに有利で、将来的には<strong>金のフォーメーションコンボ「セレソン・ダス・キナス'16」</strong>を目指す流れが強力です。</p>
-<p>さらに序盤は4-3-3系でチュートリアルの★3 RW メッシも活かしやすく、スタートダッシュ性能が高めです。初心者が迷ったら、このコースはかなり無難です。</p>
-</section><section class="card"><h2>B：初心者向け ポゼッションコース</h2>
-<div class="box rank high">
-  <p><strong>終了ライン：</strong>★3 RW ブカヨ・サカ</p>
-</div>
-<ul>
-<li>同時に引けると理想：★3 DM ルカ・モドリッチ / ★3 DM ファビアン・ルイス / ★2 DM デイヴィ・クラーセン</li>
-<li>JリーグSPチケットで理想：★3 RB 半田陸 / ★3 RB 藤原奏哉</li>
-<li>代替候補：KリーグSPチケットで★3 RB ファン・ジェウォン</li>
-</ul>
-<p>ポゼッションはリアクションに有利で、将来的には<strong>金のフォーメーションコンボ「ラ・ロハ'24」</strong>を目指す流れが強力です。</p>
-<p>序盤はサカを活かせる3トップ系フォーメーションが使いやすく、強力なCF確保が今後の課題になりますが、チュートリアルメッシでしばらく代用できるのも強みです。</p>
-</section><section class="card"><h2>C：中級者向け ムービングコース</h2>
-<div class="box rank mid">
-  <p><strong>終了ライン：</strong>★3 LM フィル・フォーデン</p>
-</div>
-<ul>
-<li>同時に引けると理想：★2 CF ジェイミー・ヴァーディ</li>
-<li>JリーグSPチケットで理想：★3 CB 古賀太陽</li>
-<li>代替候補：SP選手スカウトで★3 CB フィルジル・ファン・ダイク</li>
-</ul>
-<p>ムービングはポゼッションに有利で、将来的には<strong>金のフォーメーションコンボ「アルビセレステ'01」</strong>を見据えやすいコースです。</p>
-<p>ただし、序盤から噛み合わせを意識した編成が必要になるため、初心者よりは中級者向けです。フォーデン自体は強力でも、周辺パーツの確保まで考えないと真価を出しにくい点は覚えておきたいです。</p>
-</section><section class="card"><h2>D：上級者向け カウンターコース</h2>
-<div class="box rank mid">
-  <p><strong>終了ライン：</strong>★3 LB レオナルド・スピナッツォーラ / ★2 LB ニコラス・タグリアフィコ</p>
-</div>
-<ul>
-<li>JリーグSPチケットで理想：★3 AM 小野瀬康介</li>
-<li>代替候補：SP選手スカウトで★2 AM トゥーン・コープマイネルス</li>
-</ul>
-<p>カウンターはリアクションに有利で、将来的には<strong>金のフォーメーションコンボ「レ・ブルー'98」</strong>を狙う構築です。</p>
-<p>ただし、プレイスタイル「ストライカーⅢ」の確保が必須になるなど、成立条件がやや重めです。序盤の快適さより、最終的な理想編成を見据えて選ぶ人向けと言えます。上級者向けと考えておくのが無難です。</p>
-</section><section class="card"><h2>初心者におすすめの終了ライン</h2>
-<p>総合的に見ると、初心者におすすめしやすいのは次の2つです。</p>
-<ul>
-<li><strong>リアクションコース</strong>：序盤の勝ちやすさと将来性のバランスが良い</li>
-<li><strong>ポゼッションコース</strong>：扱いやすく、人気の高い編成ルートに入りやすい</li>
-</ul>
-<p>特に「強いCFが欲しい」「まず試合で勝ちたい」という人はリアクション寄り、「将来ラ・ロハ'24を狙いたい」「3トップで組みたい」という人はポゼッション寄りで考えると決めやすいです。</p>
-</section><section class="card"><h2>まとめ</h2>
-<p>サカつく2026のリセマラは、1周3〜5分で回しやすく、アカウントリセットもあるため比較的やりやすい部類です。ただし、深追いしすぎると本編開始が遅れるので、<strong>自分が目指すポリシーに合った終了ライン</strong>を先に決めておくことが大切です。</p>
-<p>初心者なら、まずは<strong>決定力の高い選手</strong>か、<strong>将来の金コンボにつながる軸選手</strong>を引けたら十分スタートラインです。</p>
-</section>
+      <section class="section" id="steps">
+        <h2>効率的なリセマラ手順</h2>
+        <ol class="steps">
+          <li><div>ゲームを開始する</div></li>
+          <li><div>チュートリアルをスキップする</div></li>
+          <li><div>チュートリアルガチャを回す（★3リオネル・メッシ確定）</div></li>
+          <li><div>指示に従ってゲームを進める</div></li>
+          <li><div>プレゼントボックスから報酬を受け取る</div></li>
+          <li><div>SP選手ガチャを回す</div></li>
+          <li><div>ホーム画面右上の「メニュー」→「オプション」→「アカウントリセット」→「確認しました」にチェック → OK</div></li>
+          <li><div>以降は⑤～⑦を繰り返す</div></li>
+        </ol>
+        <div class="note"><strong>1周の目安は約3～5分。</strong>手順はシンプルなので、始める前に「どの選手が出たら終了するか」を決めておくと深追いしにくくなります。</div>
+      </section>
 
-      <section class="card">
-        <h2>記事メモ</h2>
-        <p class="footer-note">ベース原稿：タイトル「リセマラの方法と終了タイミング」</p>
+      <section class="section" id="caution">
+        <h2>リセマラ時の注意点</h2>
+        <ul>
+          <li><strong>GBはSP選手スカウトに使う。</strong>将来的な天井交換も序盤から視野に入れます。</li>
+          <li>JリーグSPガチャ・KリーグSPガチャは基本チケット運用。おすすめ選手は各コースで後述します。</li>
+          <li><strong>特別練習カードガチャのリセマラは不要。</strong>理想はSSR1枚以上ですが、排出確率5%のためSP選手との同時厳選は困難です。</li>
+        </ul>
+        <p>ゲーム開始直後はサカつくモードを進めて選抜チームを作成するため、即戦力となりミッション攻略の鍵になるSP選手の獲得が重要です。</p>
+        <p>常設の「SP選手スカウト」は<strong>200連で天井交換が可能</strong>。リセマラに加えて毎日の広告ガチャやチケット分も活用できるため、序盤から将来的な補強まで意識して進めるのがおすすめです。</p>
+        <p>特別練習カードは選手をさらに強く育成するために必要ですが、序盤は入手できるチケット分で進めても問題ありません。</p>
+      </section>
+
+      <section class="section" id="timing">
+        <h2>リセマラ終了タイミングの考え方</h2>
+        <p>最優先は、最高ランクのフォーメーションコンボ発動に必要な<strong>「プレースタイルLvⅢ」のSP選手を1名以上</strong>確保することです。</p>
+        <p>特に序盤は得点に直結する<strong>CFやAMなど攻撃ポジション</strong>の選手が重要。単純な総合力だけでなく、「その選手を軸にどのフォーメーションコンボへ伸ばせるか」まで考えて終了ラインを決めると、その後の育成がスムーズです。</p>
+        <div class="subbox">
+          <div class="subbox-title">チュートリアル確定SP選手</div>
+          <div class="player-grid">
+            <article class="player-card">
+              <div class="player-photo"><img src="img/players/P0002.png" alt="リオネル・メッシ" loading="lazy" width="320" height="320"></div>
+              <div class="player-info"><p class="player-name">リオネル・メッシ</p><div class="player-meta"><span class="badge">RW</span><span class="badge">ドリブラーⅡ</span><span class="badge">リアクション</span></div></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section course reaction" id="reaction">
+        <div class="course-head"><span class="course-label">Aコース｜リアクション</span><span class="difficulty">おすすめ：初心者向け</span></div>
+        <h2>リアクションポリシーのリセマラ終了ライン</h2>
+
+        <div class="subbox key">
+          <div class="subbox-title"><span class="num">1</span>終了ライン</div>
+          <div class="player-grid">
+            <article class="player-card"><div class="player-photo"><img src="img/players/P0229.png" alt="アントワーヌ・グリーズマン" loading="lazy"></div><div class="player-info"><p class="player-name">アントワーヌ・グリーズマン</p><div class="player-meta"><span class="badge">AM</span><span class="badge lv3">アタッカーⅢ</span></div></div></article>
+          </div>
+        </div>
+
+        <div class="subbox">
+          <div class="subbox-title"><span class="num">2</span>同時に引けると理想</div>
+          <div class="player-grid">
+            <article class="player-card"><div class="player-photo"><img src="img/players/P0010.png" alt="フェデリコ・バルベルデ" loading="lazy"></div><div class="player-info"><p class="player-name">フェデリコ・バルベルデ</p><div class="player-meta"><span class="badge">DM</span><span class="badge lv3">セントラルMFⅢ</span></div></div></article>
+            <article class="player-card"><div class="player-photo"><img src="img/players/P0006.png" alt="クリスティアーノ・ロナウド" loading="lazy"></div><div class="player-info"><p class="player-name">クリスティアーノ・ロナウド</p><div class="player-meta"><span class="badge">CF</span><span class="badge lv3">ストライカーⅢ</span></div></div></article>
+          </div>
+        </div>
+
+        <div class="subbox">
+          <div class="subbox-title"><span class="num">3</span>JリーグSPで獲得したい選手</div>
+          <div class="player-grid">
+            <article class="player-card"><div class="player-photo"><img src="img/players/P0305.png" alt="細井響(2026)" loading="lazy"></div><div class="player-info"><p class="player-name">細井響(2026)</p><div class="player-meta"><span class="badge j">J</span><span class="badge">CB</span><span class="badge">組立CBⅡ</span></div></div></article>
+            <article class="player-card"><div class="player-photo"><img src="img/players/P0265.png" alt="山根陸(2026)" loading="lazy"></div><div class="player-info"><p class="player-name">山根陸(2026)</p><div class="player-meta"><span class="badge j">J</span><span class="badge">DM</span><span class="badge">セントラルMFⅡ</span></div></div></article>
+            <article class="player-card"><div class="player-photo"><img src="img/players/P0266.png" alt="谷村海那(2026)" loading="lazy"></div><div class="player-info"><p class="player-name">谷村海那(2026)</p><div class="player-meta"><span class="badge j">J</span><span class="badge">CF</span><span class="badge">ストライカーⅡ</span></div></div></article>
+          </div>
+        </div>
+
+        <div class="subbox">
+          <div class="subbox-title"><span class="num">4</span>リセマラ終了後の流れ</div>
+          <p>最終目標は金のフォーメーションコンボ<strong>「エンカルナードス'23 / 4-3-3B」</strong>です。必須枠はアントワーヌ・グリーズマン。補強枠としてフェデリコ・バルベルデ、細井響(2026)を揃えていきます。</p>
+          <p>フェデリコ・バルベルデはJリーグSPの山根陸(2026)やサカつくモード内の選手で代用可能。細井響(2026)は★2SPのゼノ・デバストやサカつくモード内の選手でも代用できます。</p>
+          <div class="player-grid">
+            <article class="player-card"><div class="player-photo"><img src="img/players/P0034.png" alt="ゼノ・デバスト" loading="lazy"></div><div class="player-info"><p class="player-name">ゼノ・デバスト</p><div class="player-meta"><span class="badge">★2 SP</span><span class="badge">CB</span><span class="badge">組立CBⅡ</span></div></div></article>
+          </div>
+          <div class="formation-route">
+            <figure class="formation-card"><img src="img/formation_combo/C024.png" alt="クロチャーティ'99 5-3-2B" loading="lazy"><figcaption class="formation-caption"><span class="rank silver">銀</span>クロチャーティ'99 / 5-3-2B<br>監督Lv10までのつなぎ</figcaption></figure>
+            <div class="arrow" aria-hidden="true">→</div>
+            <figure class="formation-card"><img src="img/formation_combo/C046.png" alt="エンカルナードス'23 4-3-3B" loading="lazy"><figcaption class="formation-caption"><span class="rank gold">金</span>エンカルナードス'23 / 4-3-3B<br>監督Lv10で獲得</figcaption></figure>
+          </div>
+          <p class="route-note">クロチャーティ'99は「クリスティアーノ・ロナウド / アントワーヌ・グリーズマン / フェデリコ・バルベルデ」を軸に発動。ロナウドは谷村海那(2026)、バルベルデは山根陸(2026)などで代用できます。</p>
+        </div>
+        <p><strong>リアクションはカウンターに有利。</strong>チュートリアルで獲得できる★3リオネル・メッシも起用しやすく、初心者におすすめのルートです。</p>
+        <div class="anchor-top"><a href="#top">ページ上部へ ↑</a></div>
+      </section>
+
+      <section class="section course possession" id="possession">
+        <div class="course-head"><span class="course-label">Bコース｜ポゼッション</span><span class="difficulty">おすすめ：中級者向け</span></div>
+        <h2>ポゼッションポリシーのリセマラ終了ライン</h2>
+        <div class="subbox key"><div class="subbox-title"><span class="num">1</span>終了ライン</div><div class="player-grid">
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0372.png" alt="ウスマン・デンベレ" loading="lazy"></div><div class="player-info"><p class="player-name">ウスマン・デンベレ</p><div class="player-meta"><span class="badge">CF</span><span class="badge lv3">ストライカーⅢ</span></div></div></article>
+        </div></div>
+        <div class="subbox"><div class="subbox-title"><span class="num">2</span>同時に引けると理想</div><div class="player-grid">
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0374.png" alt="ハカン・チャルハノール" loading="lazy"></div><div class="player-info"><p class="player-name">ハカン・チャルハノール</p><div class="player-meta"><span class="badge">AM</span><span class="badge">セントラルMFⅡ</span></div></div></article>
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0164.png" alt="イスコ" loading="lazy"></div><div class="player-info"><p class="player-name">イスコ</p><div class="player-meta"><span class="badge">AM</span><span class="badge">セントラルMFⅡ</span><span class="badge">代用候補</span></div></div></article>
+        </div></div>
+        <div class="subbox"><div class="subbox-title"><span class="num">3</span>J/KリーグSPで獲得したい選手</div><div class="player-grid">
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0281.png" alt="畠中槙之輔(2026)" loading="lazy"></div><div class="player-info"><p class="player-name">畠中槙之輔(2026)</p><div class="player-meta"><span class="badge j">J</span><span class="badge">CB</span><span class="badge">組立CBⅡ</span></div></div></article>
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0243.png" alt="根本健太(2026)" loading="lazy"></div><div class="player-info"><p class="player-name">根本健太(2026)</p><div class="player-meta"><span class="badge j">J</span><span class="badge">CB</span><span class="badge">組立CBⅡ</span></div></div></article>
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0341.png" alt="イ・ヒギュン" loading="lazy"></div><div class="player-info"><p class="player-name">イ・ヒギュン</p><div class="player-meta"><span class="badge k">K</span><span class="badge">AM</span><span class="badge">セントラルMFⅡ</span></div></div></article>
+        </div></div>
+        <div class="subbox"><div class="subbox-title"><span class="num">4</span>リセマラ終了後の流れ</div>
+          <p>最終目標は金のフォーメーションコンボ<strong>「ブラウ・グラーナ'15 / 4-3-3A」</strong>。必須枠はウスマン・デンベレ、補強枠はハカン・チャルハノールと畠中槙之輔(2026)または根本健太(2026)です。</p>
+          <p>補強枠は、必要なプレースタイルを持つサカつくモード選手でも代用できます。</p>
+          <div class="formation-route" style="grid-template-columns:minmax(0,1fr)"><figure class="formation-card"><img src="img/formation_combo/C054.png" alt="ブラウ・グラーナ'15 4-3-3A" loading="lazy"><figcaption class="formation-caption"><span class="rank gold">金</span>ブラウ・グラーナ'15 / 4-3-3A<br>交換所で入手可能</figcaption></figure></div>
+        </div>
+        <p><strong>ポゼッションはリアクションに有利。</strong>金フォメコンまでのつなぎとして使いやすい銀フォメコンがないため、4コースの中ではやや中級者向けです。</p>
+        <div class="anchor-top"><a href="#top">ページ上部へ ↑</a></div>
+      </section>
+
+      <section class="section course moving" id="moving">
+        <div class="course-head"><span class="course-label">Cコース｜ムービング</span><span class="difficulty">おすすめ：上級者向け</span></div>
+        <h2>ムービングポリシーのリセマラ終了ライン</h2>
+        <div class="subbox key"><div class="subbox-title"><span class="num">1</span>終了ライン</div><div class="player-grid">
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0220.png" alt="スコット・マクトミネイ" loading="lazy"></div><div class="player-info"><p class="player-name">スコット・マクトミネイ</p><div class="player-meta"><span class="badge">DM</span><span class="badge lv3">ハードマーカーⅢ</span></div></div></article>
+        </div></div>
+        <div class="subbox"><div class="subbox-title"><span class="num">2</span>同時に引けると理想</div><div class="player-grid">
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0165.png" alt="フィルジル・ファン・ダイク" loading="lazy"></div><div class="player-info"><p class="player-name">フィルジル・ファン・ダイク</p><div class="player-meta"><span class="badge">CB</span><span class="badge lv3">組立CBⅢ</span></div></div></article>
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0016.png" alt="南野拓実" loading="lazy"></div><div class="player-info"><p class="player-name">南野拓実</p><div class="player-meta"><span class="badge">AM</span><span class="badge">アタッカーⅡ</span></div></div></article>
+        </div></div>
+        <div class="subbox"><div class="subbox-title"><span class="num">3</span>J/KリーグSPで獲得したい選手</div><div class="player-grid">
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0349.png" alt="ヤコブ・トランジスカ" loading="lazy"></div><div class="player-info"><p class="player-name">ヤコブ・トランジスカ</p><div class="player-meta"><span class="badge k">K</span><span class="badge">CF</span><span class="badge">ストライカーⅡ</span></div></div></article>
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0353.png" alt="ジュリアン・セレスティン" loading="lazy"></div><div class="player-info"><p class="player-name">ジュリアン・セレスティン</p><div class="player-meta"><span class="badge k">K</span><span class="badge">CB</span><span class="badge">ストッパーⅡ</span></div></div></article>
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0288.png" alt="荒木隼人(2026)" loading="lazy"></div><div class="player-info"><p class="player-name">荒木隼人(2026)</p><div class="player-meta"><span class="badge j">J</span><span class="badge">CB</span><span class="badge">ストッパーⅡ</span></div></div></article>
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0303.png" alt="マテイ・ヨニッチ(2026)" loading="lazy"></div><div class="player-info"><p class="player-name">マテイ・ヨニッチ(2026)</p><div class="player-meta"><span class="badge j">J</span><span class="badge">CB</span><span class="badge">ストッパーⅡ</span></div></div></article>
+        </div></div>
+        <div class="subbox"><div class="subbox-title"><span class="num">4</span>リセマラ終了後の流れ</div>
+          <p>最終目標は金のフォーメーションコンボ<strong>「カナリア軍団'06 / 4-4-2C」</strong>。必須枠はスコット・マクトミネイ、補強枠はストライカーⅡとストッパーⅡの選手です。</p>
+          <p>ストライカーⅡは★2SPのジェイミー・ヴァーディでも代用可能です。</p>
+          <div class="player-grid"><article class="player-card"><div class="player-photo"><img src="img/players/P0041.png" alt="ジェイミー・ヴァーディ" loading="lazy"></div><div class="player-info"><p class="player-name">ジェイミー・ヴァーディ</p><div class="player-meta"><span class="badge">★2 SP</span><span class="badge">CF</span><span class="badge">ストライカーⅡ</span></div></div></article></div>
+          <div class="formation-route">
+            <figure class="formation-card"><img src="img/formation_combo/C014.png" alt="ダニッシュ・ダイナマイト'86 3-5-2B" loading="lazy"><figcaption class="formation-caption"><span class="rank silver">銀</span>ダニッシュ・ダイナマイト'86 / 3-5-2B<br>監督Lv10までのつなぎ</figcaption></figure>
+            <div class="arrow" aria-hidden="true">→</div>
+            <figure class="formation-card"><img src="img/formation_combo/C045.png" alt="カナリア軍団'06 4-4-2C" loading="lazy"><figcaption class="formation-caption"><span class="rank gold">金</span>カナリア軍団'06 / 4-4-2C<br>監督Lv10で獲得</figcaption></figure>
+          </div>
+          <p class="route-note">ダニッシュ・ダイナマイト'86はスコット・マクトミネイを必須枠に、ラインブレーカーⅡの選手を補強。ラインブレーカーⅡはサカつくモードの選手でOKです。</p>
+        </div>
+        <p><strong>ムービングはポゼッションに有利。</strong>他ポリシーに比べてSP選手に強力なCFやAMが少ないため、序盤の編成難度は高めです。</p>
+        <div class="anchor-top"><a href="#top">ページ上部へ ↑</a></div>
+      </section>
+
+      <section class="section course counter" id="counter">
+        <div class="course-head"><span class="course-label">Dコース｜カウンター</span><span class="difficulty">おすすめ：超初心者向け</span></div>
+        <h2>カウンターポリシーのリセマラ終了ライン</h2>
+        <div class="subbox key"><div class="subbox-title"><span class="num">1</span>終了ライン</div><div class="player-grid">
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0230.png" alt="ニコ・ウィリアムズ" loading="lazy"></div><div class="player-info"><p class="player-name">ニコ・ウィリアムズ</p><div class="player-meta"><span class="badge">LW</span><span class="badge lv3">ドリブラーⅢ</span></div></div></article>
+        </div></div>
+        <div class="subbox"><div class="subbox-title"><span class="num">2</span>同時に引けると理想</div><div class="player-grid">
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0205.png" alt="エドゥアルド・カマヴィンガ" loading="lazy"></div><div class="player-info"><p class="player-name">エドゥアルド・カマヴィンガ</p><div class="player-meta"><span class="badge">DM</span><span class="badge">ハードマーカーⅡ</span></div></div></article>
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0228.png" alt="モハメド・サラー" loading="lazy"></div><div class="player-info"><p class="player-name">モハメド・サラー</p><div class="player-meta"><span class="badge">RW</span><span class="badge">ドリブラーⅡ</span></div></div></article>
+        </div></div>
+        <div class="subbox"><div class="subbox-title"><span class="num">3</span>JリーグSPで獲得したい選手</div><div class="player-grid">
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0272.png" alt="山岸祐也(2026)" loading="lazy"></div><div class="player-info"><p class="player-name">山岸祐也(2026)</p><div class="player-meta"><span class="badge j">J</span><span class="badge">CF</span><span class="badge">ストライカーⅡ</span></div></div></article>
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0285.png" alt="立田悠悟(2026)" loading="lazy"></div><div class="player-info"><p class="player-name">立田悠悟(2026)</p><div class="player-meta"><span class="badge j">J</span><span class="badge">CB</span><span class="badge">ストッパーⅡ</span></div></div></article>
+          <article class="player-card"><div class="player-photo"><img src="img/players/P0292.png" alt="岡哲平(2026)" loading="lazy"></div><div class="player-info"><p class="player-name">岡哲平(2026)</p><div class="player-meta"><span class="badge j">J</span><span class="badge">CB</span><span class="badge">ストッパーⅡ</span></div></div></article>
+        </div></div>
+        <div class="subbox"><div class="subbox-title"><span class="num">4</span>リセマラ終了後の流れ</div>
+          <p>最終目標は金のフォーメーションコンボ<strong>「リーベル'18 / 4-3-3B」</strong>。必須枠はニコ・ウィリアムズ。補強枠としてハードマーカーⅡ、RWのドリブラーⅡを揃えます。</p>
+          <p>ハードマーカーⅡはウィークリーミッションのSP選手引換券で入手できる「透明男」、ドリブラーⅡは「J・ラマンベラ」で代用可能です。</p>
+          <div class="player-grid">
+            <article class="player-card"><div class="player-photo"><img src="img/players/P0367.png" alt="透明男" loading="lazy"></div><div class="player-info"><p class="player-name">透明男</p><div class="player-meta"><span class="badge">DM</span><span class="badge">ハードマーカーⅡ</span><span class="badge">引換券</span></div></div></article>
+            <article class="player-card"><div class="player-photo"><img src="img/players/P0370.png" alt="J・ラマンベラ" loading="lazy"></div><div class="player-info"><p class="player-name">J・ラマンベラ</p><div class="player-meta"><span class="badge">RW</span><span class="badge">ドリブラーⅡ</span><span class="badge">引換券</span></div></div></article>
+            <article class="player-card"><div class="player-photo"><img src="img/players/P0362.png" alt="バルフィー" loading="lazy"></div><div class="player-info"><p class="player-name">バルフィー</p><div class="player-meta"><span class="badge">CB</span><span class="badge">ストッパーⅡ</span><span class="badge">引換券</span></div></div></article>
+          </div>
+          <div class="formation-route">
+            <figure class="formation-card"><img src="img/formation_combo/C022.png" alt="ヒノマルスタイル'68 3-4-3C" loading="lazy"><figcaption class="formation-caption"><span class="rank silver">銀</span>ヒノマルスタイル'68 / 3-4-3C<br>監督Lv10までのつなぎ</figcaption></figure>
+            <div class="arrow" aria-hidden="true">→</div>
+            <figure class="formation-card"><img src="img/formation_combo/C047.png" alt="リーベル'18 4-3-3B" loading="lazy"><figcaption class="formation-caption"><span class="rank gold">金</span>リーベル'18 / 4-3-3B<br>監督Lv10で獲得</figcaption></figure>
+          </div>
+          <p class="route-note">ヒノマルスタイル'68はニコ・ウィリアムズを必須枠に、ストライカーⅡ・ストッパーⅡを補強。ストッパーⅡはSP選手引換券のバルフィーで代用できます。</p>
+        </div>
+        <p><strong>カウンターはムービングに有利。</strong>ニコ・ウィリアムズさえ獲得できれば、交換選手を使ってフォーメーションコンボを組みやすいため、リセマラ終了が最も簡単な超初心者向けルートです。</p>
+        <div class="anchor-top"><a href="#top">ページ上部へ ↑</a></div>
+      </section>
+
+      <section class="section" id="summary">
+        <h2>4コースのおすすめ度を比較</h2>
+        <div class="compare-table-wrap">
+          <table>
+            <thead><tr><th>ポリシー</th><th>リセマラ終了ライン</th><th>難易度</th><th>特徴</th></tr></thead>
+            <tbody>
+              <tr><td>リアクション</td><td>グリーズマン</td><td class="recommend">初心者向け</td><td>メッシを使いやすく、銀→金フォメコンへ繋げやすい</td></tr>
+              <tr><td>ポゼッション</td><td>デンベレ</td><td>中級者向け</td><td>金フォメコンまでのつなぎがやや難しい</td></tr>
+              <tr><td>ムービング</td><td>マクトミネイ</td><td>上級者向け</td><td>序盤の攻撃SP選手が少なく編成難度が高め</td></tr>
+              <tr><td>カウンター</td><td>ニコ・ウィリアムズ</td><td class="recommend">超初心者向け</td><td>交換選手で必要プレースタイルを補いやすい</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>リセマラは深追いしすぎなくてOK</h3>
+        <p>サカつく2026のリセマラは1周3～5分で回しやすく、アカウントリセットもあるため比較的やりやすいです。ただし、目的の選手が出るまで厳選すると想像以上に時間がかかることがあります。</p>
+        <p>まずは自分が目指すポリシーの終了ラインを決めつつ、狙いの選手が出ない場合は<strong>実際に当たった★3SP選手を軸に編成を考える</strong>ことも重要です。</p>
+      </section>
+
+      <section class="section" id="tools">
+        <h2>リセマラ後に使いたい攻略ツール</h2>
+        <p>当たったSP選手を起点に、その後のフォーメーションコンボや最強構成を調べたい場合は、当サイトのツールを活用してください。</p>
+        <div class="tool-grid">
+          <a class="tool-link" href="sp_evaluator.html"><strong>選手評価ツール</strong><span>★3SP選手から、その選手をキーに発動できるフォーメーションコンボを確認。</span></a>
+          <a class="tool-link" href="favorite_combos.html"><strong>フォメコン診断ツール</strong><span>お気に入り登録した手持ち選手で発動できるフォーメーションコンボを逆引き。</span></a>
+          <a class="tool-link" href="strongest_team_simulation.html"><strong>最強チームシミュレーション</strong><span>フォーメーションコンボを軸に、各ポジションの最強選手をリストアップ。</span></a>
+          <a class="tool-link" href="player_catalog.html"><strong>選手図鑑</strong><span>現在入手可能な選手から入手不可のSP選手まで検索・確認。</span></a>
+        </div>
+        <div class="warning">当サイトの選手データ・ツールは<strong>プレースタイルLvⅡ以上の選手</strong>に対応しています。</div>
+
+        <h3>サカつくモード攻略もチェック</h3>
+        <div class="related-list">
+          <a href="training_menu_recommend.html">練習メニューのオススメ</a>
+          <a href="investment_recommend.html">投資のオススメ</a>
+          <a href="loan_matching_tool.html">期限付き移籍ツール</a>
+          <a href="clubhouse_simulation.html">クラブハウス設備</a>
+          <a href="stadium_simulation.html">スタジアム施設</a>
+          <a href="articles.html">最新SP選手レビュー・攻略記事</a>
+        </div>
+        <p class="footer-note">新しいSP選手が実装された際はレビュー記事を更新しています。最新情報はサイトトップまたは攻略記事一覧から確認してください。</p>
       </section>
     </article>
   </main>
