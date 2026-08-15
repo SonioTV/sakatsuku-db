@@ -63,7 +63,101 @@
     .shareGrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}.shareBox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px}.shareTitle{font-weight:1000;margin-bottom:10px}.barRow{display:grid;grid-template-columns:110px 1fr 48px;gap:8px;align-items:center;margin:9px 0}.barName{font-size:12px;font-weight:900;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.barTrack{height:12px;background:#eef2f7;border-radius:999px;overflow:hidden}.barFill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--green))}.barPct{text-align:right;font-size:12px;font-weight:1000;color:#3c4658}
     .modalBack{position:fixed;inset:0;background:rgba(4,10,20,.65);display:none;align-items:center;justify-content:center;padding:16px;z-index:100}.modalBack.show{display:flex}.modal{width:min(760px,100%);background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 34px 80px rgba(0,0,0,.34)}.modalHero{display:grid;grid-template-columns:120px 1fr auto;gap:16px;align-items:center;padding:18px;background:linear-gradient(135deg,#101a2d,#163c7a);color:#fff}.avatar{width:112px;height:112px;border-radius:24px;background:linear-gradient(135deg,#edf5ff,#d6e6ff);display:flex;align-items:center;justify-content:center;overflow:hidden;border:2px solid rgba(255,255,255,.3)}.avatar img{width:100%;height:100%;object-fit:cover}.avatar .fallback{color:#0b5bd3;font-size:24px;font-weight:1000}.modalName{font-size:26px;font-weight:1000;margin:0 0 8px}.modalTags{display:flex;flex-wrap:wrap;gap:6px}.modalClose{border:0;background:rgba(255,255,255,.12);color:#fff;width:42px;height:42px;border-radius:14px;font-size:24px;cursor:pointer}.modalBody{padding:18px}.detailGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.detail{border:1px solid var(--line);border-radius:16px;padding:11px;background:#fbfdff}.detail .k{font-size:12px;color:var(--muted);font-weight:900}.detail .v{font-size:15px;font-weight:1000;margin-top:3px}.toTop{position:fixed;right:16px;bottom:18px;width:54px;height:54px;border-radius:18px;border:1px solid rgba(255,255,255,.7);background:#fff;box-shadow:var(--shadow);display:none;align-items:center;justify-content:center;font-weight:1000;cursor:pointer;z-index:80}.toTop.show{display:flex}
     @media(max-width:900px){.grid{grid-template-columns:1fr}.heroStats{grid-template-columns:repeat(2,1fr)}.filters{grid-template-columns:1fr 1fr}.button{grid-column:1/-1}.filteredGrid{grid-template-columns:1fr 1fr}.shareGrid{grid-template-columns:1fr}.card.full{grid-column:auto}}
-    @media(max-width:520px){.wrap{padding:12px 10px 80px}.hero{padding:20px;border-radius:22px}.topbar{align-items:stretch}.backLink,.miniBtn{font-size:13px;padding:9px 10px}.cardHead{padding:16px 14px 10px}.cardBody{padding:0 14px 16px}.rankItem{grid-template-columns:42px 1fr;gap:10px}.score{grid-column:2;text-align:left;display:flex;align-items:baseline;gap:6px}.score .num{font-size:20px}.filters{grid-template-columns:1fr 1fr;gap:8px}.select{font-size:13px;padding:0 8px}.filteredGrid{grid-template-columns:1fr 1fr;gap:8px}.miniCard{padding:10px;min-height:132px}.modalHero{grid-template-columns:78px 1fr auto;padding:14px;gap:10px}.avatar{width:76px;height:76px;border-radius:18px}.modalName{font-size:21px}.detailGrid{grid-template-columns:1fr}.barRow{grid-template-columns:92px 1fr 44px}.heroStats .stat{padding:10px}.stat .v{font-size:20px}}
+    @media(max-width:520px){
+      .wrap{padding:12px 10px 80px}
+      .hero{padding:20px;border-radius:22px}
+      .topbar{align-items:stretch}
+      .backLink,.miniBtn{font-size:13px;padding:9px 10px}
+      .cardHead{padding:16px 14px 10px}
+      .cardBody{padding:0 14px 16px}
+      .rankItem{grid-template-columns:42px 1fr;gap:10px}
+      .score{grid-column:2;text-align:left;display:flex;align-items:baseline;gap:6px}
+      .score .num{font-size:20px}
+      .filters{grid-template-columns:1fr 1fr;gap:8px}
+      .select{font-size:13px;padding:0 8px}
+      .filteredGrid{grid-template-columns:1fr 1fr;gap:8px}
+      .miniCard{padding:10px;min-height:132px}
+
+      /* スマホ版：選手詳細ポップアップをコンパクト化 */
+      .modalBack{
+        padding:10px;
+        align-items:center;
+      }
+      .modal{
+        width:min(94vw,480px);
+        max-height:90dvh;
+        border-radius:20px;
+        display:flex;
+        flex-direction:column;
+      }
+      .modalHero{
+        grid-template-columns:64px minmax(0,1fr) 36px;
+        padding:10px;
+        gap:8px;
+        flex:0 0 auto;
+      }
+      .avatar{
+        width:62px;
+        height:62px;
+        border-radius:15px;
+      }
+      .modalName{
+        font-size:18px;
+        line-height:1.2;
+        margin:0 0 5px;
+      }
+      .modalTags{
+        gap:4px;
+      }
+      .modalTags .tag{
+        padding:3px 6px;
+        font-size:10px;
+      }
+      .modalClose{
+        width:36px;
+        height:36px;
+        border-radius:11px;
+        font-size:21px;
+      }
+      .modalBody{
+        padding:10px;
+        overflow-y:auto;
+        overscroll-behavior:contain;
+        -webkit-overflow-scrolling:touch;
+      }
+      .detailGrid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:7px;
+      }
+      .detail{
+        min-width:0;
+        border-radius:12px;
+        padding:8px;
+      }
+      .detail .k{
+        font-size:10px;
+        line-height:1.25;
+      }
+      .detail .v{
+        font-size:13px;
+        line-height:1.35;
+        margin-top:2px;
+        overflow-wrap:anywhere;
+        word-break:break-word;
+      }
+
+      /* 長い文字列になりやすい項目は横幅いっぱいで表示 */
+      .detail:nth-child(6),
+      .detail:nth-child(7),
+      .detail:nth-child(8),
+      .detail:nth-child(9){
+        grid-column:1/-1;
+      }
+
+      .barRow{grid-template-columns:92px 1fr 44px}
+      .heroStats .stat{padding:10px}
+      .stat .v{font-size:20px}
+    }
   </style>
 </head>
 <body>
@@ -217,9 +311,15 @@ function openModal(p){
   $("modalAvatar").innerHTML = img ? `<img src="${esc(img)}" alt="${esc(p.name)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'fallback',textContent:'${esc((p.name||'?').slice(0,1))}'}))">` : `<div class="fallback">${esc((p.name||"?").slice(0,1))}</div>`;
   const details=[["初期総合力",fmt(p.overall)],["最大強化",fmt(p.maxUpgrade)],["国籍",p.nationality],["成長タイプ",p.growthType],["入手方法",p.acquisitionMethod],["入手場所",p.acquisitionPlace],["入手可能期間",p.availablePeriod],["メインスキル",p.mainSkill],["メイントレイト",p.mainTrait],["実装日",p.implementedDate]];
   $("modalDetails").innerHTML=details.map(([k,v])=>`<div class="detail"><div class="k">${esc(k)}</div><div class="v">${esc(v || "-")}</div></div>`).join("");
-  $("modalBack").classList.add("show"); $("modalBack").setAttribute("aria-hidden","false");
+  $("modalBack").classList.add("show");
+  $("modalBack").setAttribute("aria-hidden","false");
+  document.body.style.overflow="hidden";
 }
-function closeModal(){ $("modalBack").classList.remove("show"); $("modalBack").setAttribute("aria-hidden","true"); }
+function closeModal(){
+  $("modalBack").classList.remove("show");
+  $("modalBack").setAttribute("aria-hidden","true");
+  document.body.style.overflow="";
+}
 async function init(){
   await loadPlayers(); renderStats(); renderRankings(); setupFilters(); renderShare();
 }
