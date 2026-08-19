@@ -59,7 +59,7 @@
     .navChips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px;margin-bottom:8px}.navChips a{white-space:nowrap;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-weight:900;box-shadow:var(--shadow2);color:#234}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{background:rgba(255,255,255,.90);border:1px solid rgba(255,255,255,.85);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.card.full{grid-column:1/-1}.cardHead{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:18px 18px 12px;border-top:7px solid var(--blue)}.cardHead.purple{border-top-color:var(--purple)}.cardHead.green{border-top-color:var(--green)}.cardHead.orange{border-top-color:var(--orange)}.cardTitle{font-size:22px;font-weight:1000;margin:0}.cardNote{font-size:13px;color:var(--muted);font-weight:800;margin:5px 0 0;line-height:1.45}.metricPill{white-space:nowrap;border-radius:999px;padding:8px 10px;background:#edf5ff;color:var(--blue2);font-size:12px;font-weight:1000}.cardBody{padding:0 18px 18px}
     .rankList{display:grid;gap:10px}.rankItem{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#fff,#f9fbff);cursor:pointer;transition:.15s transform,.15s box-shadow}.rankItem:hover{transform:translateY(-2px);box-shadow:var(--shadow2)}.rankNo{width:44px;height:44px;border-radius:15px;background:#edf3fb;display:flex;align-items:center;justify-content:center;font-weight:1000;color:#41516a}.rankItem:nth-child(1) .rankNo{background:linear-gradient(135deg,#ffe68a,#ffb92f);color:#5b3900}.rankItem:nth-child(2) .rankNo{background:linear-gradient(135deg,#f4f6fb,#b8c2d6);color:#374151}.rankItem:nth-child(3) .rankNo{background:linear-gradient(135deg,#ffc58a,#c6762a);color:#4a2600}.rankName{font-size:16px;font-weight:1000;line-height:1.25}.rankMeta{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.tag{display:inline-flex;align-items:center;border-radius:999px;padding:4px 8px;background:#eef3fb;color:#4b5870;font-size:11px;font-weight:900}.tag.policy{background:#eef7ff;color:#0b63d1}.score{text-align:right}.score .num{font-size:22px;font-weight:1000;letter-spacing:.01em}.score .lbl{font-size:11px;color:var(--muted);font-weight:900}
-    .filters{display:grid;grid-template-columns:repeat(5,1fr) auto;gap:10px;margin-bottom:14px}.select,.button{height:46px;border-radius:14px;border:1px solid var(--line);background:#fff;color:#172033;padding:0 12px;font-size:14px;font-weight:900;outline:none}.select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(30,136,255,.12)}.button{cursor:pointer;background:#101a2d;color:#fff;border-color:#101a2d;padding:0 16px}.filteredGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.miniCard{border:1px solid var(--line);background:#fff;border-radius:18px;padding:12px;cursor:pointer;min-height:138px}.miniCard .miniRank{font-weight:1000;color:var(--blue2);font-size:13px}.miniCard .miniName{font-size:16px;font-weight:1000;margin:8px 0;line-height:1.25}.miniCard .miniScore{font-size:24px;font-weight:1000}.miniCard .miniMeta{font-size:12px;color:var(--muted);font-weight:800;line-height:1.5;margin-top:4px}.empty{text-align:center;color:var(--muted);font-weight:900;padding:18px;border:1px dashed var(--line);border-radius:18px;background:#fff}
+    .filters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:14px}.select,.button{height:46px;border-radius:14px;border:1px solid var(--line);background:#fff;color:#172033;padding:0 12px;font-size:14px;font-weight:900;outline:none}.select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(30,136,255,.12)}.button{cursor:pointer;background:#101a2d;color:#fff;border-color:#101a2d;padding:0 16px}.filteredGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.miniCard{border:1px solid var(--line);background:#fff;border-radius:18px;padding:12px;cursor:pointer;min-height:138px}.miniCard .miniRank{font-weight:1000;color:var(--blue2);font-size:13px}.miniCard .miniName{font-size:16px;font-weight:1000;margin:8px 0;line-height:1.25}.miniCard .miniScore{font-size:24px;font-weight:1000}.miniCard .miniMeta{font-size:12px;color:var(--muted);font-weight:800;line-height:1.5;margin-top:4px}.empty{text-align:center;color:var(--muted);font-weight:900;padding:18px;border:1px dashed var(--line);border-radius:18px;background:#fff}
     .shareGrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}.shareBox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px}.shareTitle{font-weight:1000;margin-bottom:10px}.barRow{display:grid;grid-template-columns:110px 1fr 48px;gap:8px;align-items:center;margin:9px 0}.barName{font-size:12px;font-weight:900;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.barTrack{height:12px;background:#eef2f7;border-radius:999px;overflow:hidden}.barFill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--green))}.barPct{text-align:right;font-size:12px;font-weight:1000;color:#3c4658}
     .modalBack{position:fixed;inset:0;background:rgba(4,10,20,.65);display:none;align-items:center;justify-content:center;padding:16px;z-index:100}.modalBack.show{display:flex}.modal{width:min(760px,100%);background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 34px 80px rgba(0,0,0,.34)}.modalHero{display:grid;grid-template-columns:120px 1fr auto;gap:16px;align-items:center;padding:18px;background:linear-gradient(135deg,#101a2d,#163c7a);color:#fff}.avatar{width:112px;height:112px;border-radius:24px;background:linear-gradient(135deg,#edf5ff,#d6e6ff);display:flex;align-items:center;justify-content:center;overflow:hidden;border:2px solid rgba(255,255,255,.3)}.avatar img{width:100%;height:100%;object-fit:cover}.avatar .fallback{color:#0b5bd3;font-size:24px;font-weight:1000}.modalName{font-size:26px;font-weight:1000;margin:0 0 8px}.modalTags{display:flex;flex-wrap:wrap;gap:6px}.modalClose{border:0;background:rgba(255,255,255,.12);color:#fff;width:42px;height:42px;border-radius:14px;font-size:24px;cursor:pointer}.modalBody{padding:18px}.detailGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.detail{border:1px solid var(--line);border-radius:16px;padding:11px;background:#fbfdff}.detail .k{font-size:12px;color:var(--muted);font-weight:900}.detail .v{font-size:15px;font-weight:1000;margin-top:3px}.toTop{position:fixed;right:16px;bottom:18px;width:54px;height:54px;border-radius:18px;border:1px solid rgba(255,255,255,.7);background:#fff;box-shadow:var(--shadow);display:none;align-items:center;justify-content:center;font-weight:1000;cursor:pointer;z-index:80}.toTop.show{display:flex}
     @media(max-width:900px){.grid{grid-template-columns:1fr}.heroStats{grid-template-columns:repeat(2,1fr)}.filters{grid-template-columns:1fr 1fr}.button{grid-column:1/-1}.filteredGrid{grid-template-columns:1fr 1fr}.shareGrid{grid-template-columns:1fr}.card.full{grid-column:auto}}
@@ -195,14 +195,19 @@
       </section>
 
       <section id="filter" class="card full">
-        <div class="cardHead green"><div><h2 class="cardTitle">総合フィルターランキング TOP5</h2><p class="cardNote">ポリシー・適性ポジション・プレイスタイル・入手場所を組み合わせて表示</p></div><div class="metricPill">FILTER</div></div>
+        <div class="cardHead green"><div><h2 class="cardTitle">総合フィルターランキング TOP5</h2><p class="cardNote">国籍・レアリティ・成長タイプ・ポリシー・適性ポジション・入手方法・入手場所・プレイスタイル・Lvを組み合わせて表示</p></div><div class="metricPill">FILTER</div></div>
         <div class="cardBody">
           <div class="filters">
-            <select id="fPolicy" class="select"></select>
-            <select id="fPos" class="select"></select>
-            <select id="fStyle" class="select"></select>
-            <select id="fPlace" class="select"></select>
-            <select id="fMetric" class="select"><option value="overall">初期総合力</option><option value="maxUpgrade">最大強化</option></select>
+            <select id="fNationality" class="select" aria-label="国籍"></select>
+            <select id="fRarity" class="select" aria-label="レアリティ"></select>
+            <select id="fGrowthType" class="select" aria-label="成長タイプ"></select>
+            <select id="fPolicy" class="select" aria-label="ポリシー"></select>
+            <select id="fPos" class="select" aria-label="適性ポジション"></select>
+            <select id="fAcqMethod" class="select" aria-label="入手方法"></select>
+            <select id="fPlace" class="select" aria-label="入手場所"></select>
+            <select id="fStyle" class="select" aria-label="プレイスタイル"></select>
+            <select id="fStyleLv" class="select" aria-label="プレイスタイルLv"></select>
+            <select id="fMetric" class="select" aria-label="ランキング基準"><option value="overall">初期総合力</option><option value="maxUpgrade">最大強化</option></select>
             <button id="resetBtn" class="button" type="button">リセット</button>
           </div>
           <div id="filteredList" class="filteredGrid"></div>
@@ -276,22 +281,110 @@ function renderRankings(){
   $("maxList").innerHTML = topBy("maxUpgrade",10).map((p,i)=>rankHtml(p,i,"maxUpgrade","最大")).join("");
   bindCards($("overallList")); bindCards($("maxList"));
 }
+function getSuitablePositions(p){
+  const raw = Array.isArray(p?.suitablePositions) ? p.suitablePositions : [];
+  const main = p?.mainPosition ? [p.mainPosition] : [];
+  return [...new Set([...main, ...raw].map(v=>String(v ?? "").trim().toUpperCase()).filter(Boolean))];
+}
+
+function normalized(v){ return String(v ?? "").trim(); }
+function facetUniq(values){
+  return [...new Set(values.map(normalized).filter(Boolean))]
+    .sort((a,b)=>String(a).localeCompare(String(b),"ja",{numeric:true}));
+}
+
+const FACETS = [
+  {id:"fNationality", label:"国籍", values:p=>[p.nationality]},
+  {id:"fRarity", label:"レアリティ", values:p=>[p.rarity], formatter:v=>String(v).includes("★") ? v : (Number.isFinite(Number(v)) ? `★${Number(v)}` : v)},
+  {id:"fGrowthType", label:"成長タイプ", values:p=>[p.growthType]},
+  {id:"fPolicy", label:"ポリシー", values:p=>[p.policy]},
+  {id:"fPos", label:"適性ポジション", values:p=>getSuitablePositions(p)},
+  {id:"fAcqMethod", label:"入手方法", values:p=>[p.acquisitionMethod]},
+  {id:"fPlace", label:"入手場所", values:p=>[p.acquisitionPlace]},
+  {id:"fStyle", label:"プレイスタイル", values:p=>[p.playStyle]},
+  {id:"fStyleLv", label:"プレイスタイルLv", values:p=>[p.playStyleLv], formatter:v=>romanLv(v) || v}
+];
+
+function getFacetState(){
+  const state={};
+  FACETS.forEach(f=>state[f.id]=normalized($(f.id).value));
+  return state;
+}
+
+function playerMatchesFacet(p, facet, value){
+  if(!value) return true;
+  return facet.values(p).map(normalized).includes(value);
+}
+
+function matchesAllFacets(p, state, exceptId=""){
+  return FACETS.every(f=>f.id===exceptId || playerMatchesFacet(p,f,state[f.id]));
+}
+
+function setFacetOptions(facet, items, selectedValue){
+  const sel=$(facet.id);
+  const formatter=facet.formatter || (v=>v);
+  sel.innerHTML=`<option value="">${facet.label}</option>` + items.map(v=>`<option value="${esc(v)}">${esc(formatter(v))}</option>`).join("");
+  sel.value = selectedValue && items.includes(selectedValue) ? selectedValue : "";
+}
+
+function rebuildFacetOptions(){
+  // 他の項目だけを条件にして各候補を作る。矛盾した選択値は自動解除し、整合するまで再計算。
+  for(let pass=0; pass<12; pass++){
+    const state=getFacetState();
+    let changed=false;
+    for(const facet of FACETS){
+      const pool=PLAYERS.filter(p=>matchesAllFacets(p,state,facet.id));
+      const items=facetUniq(pool.flatMap(p=>facet.values(p)));
+      const cur=state[facet.id];
+      if(cur && !items.includes(cur)){
+        $(facet.id).value="";
+        changed=true;
+      }
+    }
+    if(!changed) break;
+  }
+
+  const state=getFacetState();
+  FACETS.forEach(facet=>{
+    const pool=PLAYERS.filter(p=>matchesAllFacets(p,state,facet.id));
+    const items=facetUniq(pool.flatMap(p=>facet.values(p)));
+    setFacetOptions(facet,items,state[facet.id]);
+  });
+}
+
 function setupFilters(){
-  const fill=(id,label,items)=>$(id).innerHTML=`<option value="">${label}</option>` + items.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
-  fill("fPolicy","ポリシー",uniq("policy")); fill("fPos","適性ポジション",[...new Set(PLAYERS.flatMap(p=>Array.isArray(p.suitablePositions)?p.suitablePositions:[p.mainPosition]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),"ja"))); fill("fStyle","プレイスタイル",uniq("playStyle")); fill("fPlace","入手場所",uniq("acquisitionPlace"));
-  ["fPolicy","fPos","fStyle","fPlace","fMetric"].forEach(id=>$(id).addEventListener("change",renderFiltered));
-  $("resetBtn").addEventListener("click",()=>{["fPolicy","fPos","fStyle","fPlace"].forEach(id=>$(id).value="");$("fMetric").value="overall";renderFiltered();});
+  rebuildFacetOptions();
+  FACETS.forEach(f=>$(f.id).addEventListener("change",()=>{
+    rebuildFacetOptions();
+    renderFiltered();
+  }));
+  $("fMetric").addEventListener("change",renderFiltered);
+  $("resetBtn").addEventListener("click",()=>{
+    FACETS.forEach(f=>$(f.id).value="");
+    $("fMetric").value="overall";
+    rebuildFacetOptions();
+    renderFiltered();
+  });
   renderFiltered();
 }
+
 function renderFiltered(){
-  const fp=$("fPolicy").value, fpos=$("fPos").value, fs=$("fStyle").value, fpl=$("fPlace").value, key=$("fMetric").value || "overall";
-  let arr=[...PLAYERS];
-  if(fp) arr=arr.filter(p=>p.policy===fp); if(fpos) arr=arr.filter(p=>((Array.isArray(p.suitablePositions)?p.suitablePositions:[p.mainPosition])||[]).includes(fpos)); if(fs) arr=arr.filter(p=>p.playStyle===fs); if(fpl) arr=arr.filter(p=>p.acquisitionPlace===fpl);
-  arr=arr.filter(p=>num(p[key])>0).sort((a,b)=>num(b[key])-num(a[key])).slice(0,5);
+  const state=getFacetState();
+  const key=$("fMetric").value || "overall";
+  let arr=PLAYERS.filter(p=>matchesAllFacets(p,state));
+  arr=arr.filter(p=>num(p[key])>0).sort((a,b)=>{
+    const diff=num(b[key])-num(a[key]);
+    if(diff!==0) return diff;
+    const subKey=key==="overall" ? "maxUpgrade" : "overall";
+    const subDiff=num(b[subKey])-num(a[subKey]);
+    if(subDiff!==0) return subDiff;
+    return normalized(a.name).localeCompare(normalized(b.name),"ja");
+  }).slice(0,5);
   if(!arr.length){$("filteredList").innerHTML=`<div class="empty" style="grid-column:1/-1">対象選手がいません</div>`;return;}
-  $("filteredList").innerHTML=arr.map((p,i)=>`<div class="miniCard" data-id="${esc(getId(p))}"><div class="miniRank">#${i+1}</div><div class="miniName">${esc(p.name)}</div><div class="miniScore">${fmt(p[key])}</div><div class="miniMeta">${esc(p.rarity || "-")} / ${esc((Array.isArray(p.suitablePositions)?p.suitablePositions:[p.mainPosition]).join("/") || "-")}<br>${esc(p.policy || "-")} / ${esc(p.playStyle || "-")}</div></div>`).join("");
+  $("filteredList").innerHTML=arr.map((p,i)=>`<div class="miniCard" data-id="${esc(getId(p))}"><div class="miniRank">#${i+1}</div><div class="miniName">${esc(p.name)}</div><div class="miniScore">${fmt(p[key])}</div><div class="miniMeta">${esc(p.rarity || "-")} / ${esc(getSuitablePositions(p).join("/") || "-")}<br>${esc(p.policy || "-")} / ${esc((p.playStyle || "-") + (p.playStyleLv ? " " + romanLv(p.playStyleLv) : ""))}</div></div>`).join("");
   bindCards($("filteredList"));
 }
+
 function renderBars(containerId, key, order=[]){
   const m=new Map(); PLAYERS.forEach(p=>{const k=p[key]; if(k)m.set(k,(m.get(k)||0)+1);});
   const total=PLAYERS.length||1;

@@ -588,7 +588,7 @@
           <select id="fStyleLv"><option value="">（指定なし）</option></select>
         </div>
         <div class="btnRow ctrlFullRow">
-          <button class="btn primary" id="btnApply">絞り込み</button>
+          <button class="btn primary" id="btnApply">再検索</button>
           <button class="btn gray" id="btnReset">リセット</button>
         </div>
       </div>
@@ -778,17 +778,69 @@ function toggleFavoritePlayer(playerId){
   saveFavoritePlayerIds();
   applyFilters();
 }
+const FILTER_DEFS = [
+  { key:"nationality",        id:"fNationality", getter:r=>r.nationality },
+  { key:"rarity",             id:"fRarity",      getter:r=>r.rarity, formatter:showRarity },
+  { key:"growthType",         id:"fGrowthType",  getter:r=>r.growthType },
+  { key:"policy",             id:"fPolicy",      getter:r=>r.policy },
+  { key:"position",           id:"fPosition",    getter:r=>r.suitablePositions || [], multi:true },
+  { key:"acquisitionMethod",  id:"fAcqMethod",   getter:r=>r.acquisitionMethod },
+  { key:"acquisitionPlace",   id:"fAcqPlace",    getter:r=>r.acquisitionPlace },
+  { key:"playStyle",          id:"fStyle",       getter:r=>r.playStyle },
+  { key:"playStyleLv",        id:"fStyleLv",     getter:r=>String(r.playStyleLv || ""), formatter:romanLv }
+];
+
+function matchesFilterValue(player, key, value){
+  if(!value) return true;
+  switch(key){
+    case "nationality":       return player.nationality === value;
+    case "growthType":        return player.growthType === value;
+    case "rarity":            return player.rarity === value;
+    case "acquisitionMethod": return player.acquisitionMethod === value;
+    case "acquisitionPlace":  return player.acquisitionPlace === value;
+    case "policy":            return player.policy === value;
+    case "playStyle":         return player.playStyle === value;
+    case "playStyleLv":       return String(player.playStyleLv) === String(value);
+    case "position":          return (player.suitablePositions || []).includes(value);
+    default:                    return true;
+  }
+}
+
+function getRowsMatchingAllExcept(excludedKey){
+  const f = currentFilterState();
+  return PLAYERS.map(getPlayerCore).filter(p=>{
+    if(excludedKey !== "name" && f.name && !p.name.toLowerCase().includes(f.name)) return false;
+    if(f.favoriteOnly && !isFavoritePlayer(p)) return false;
+
+    for(const def of FILTER_DEFS){
+      if(def.key === excludedKey) continue;
+      if(!matchesFilterValue(p, def.key, f[def.key])) return false;
+    }
+    return true;
+  });
+}
+
+function refreshLinkedOptions(){
+  for(const def of FILTER_DEFS){
+    const select = $(def.id);
+    const selected = normalize(select.value);
+    const rows = getRowsMatchingAllExcept(def.key);
+
+    let values;
+    if(def.multi){
+      values = uniqueSorted(rows.flatMap(r=>def.getter(r)));
+    }else{
+      values = uniqueSorted(rows.map(r=>def.getter(r)));
+    }
+
+    fillSelect(select, values, def.formatter || null);
+    if(selected && values.includes(selected)) select.value = selected;
+    else select.value = "";
+  }
+}
+
 function loadOptions(){
-  const rows = PLAYERS.map(getPlayerCore);
-  fillSelect($("fNationality"), uniqueSorted(rows.map(r=>r.nationality)));
-  fillSelect($("fGrowthType"), uniqueSorted(rows.map(r=>r.growthType)));
-  fillSelect($("fRarity"), uniqueSorted(rows.map(r=>r.rarity)), showRarity);
-  fillSelect($("fAcqMethod"), uniqueSorted(rows.map(r=>r.acquisitionMethod)));
-  fillSelect($("fAcqPlace"), uniqueSorted(rows.map(r=>r.acquisitionPlace)));
-  fillSelect($("fPolicy"), uniqueSorted(rows.map(r=>r.policy)));
-  fillSelect($("fStyle"), uniqueSorted(rows.map(r=>r.playStyle)));
-  fillSelect($("fStyleLv"), uniqueSorted(rows.map(r=>String(r.playStyleLv || ""))), romanLv);
-  fillSelect($("fPosition"), uniqueSorted(rows.flatMap(r=>r.suitablePositions || [])));
+  refreshLinkedOptions();
 }
 
 function currentFilterState(){
@@ -918,6 +970,8 @@ function renderCatalog(list){
   <div class="k">プレイスタイル</div><div class="v">${esc(styleDisplay)}</div>
   <div class="k">ポジション</div><div class="v">${esc(p.mainPosition || "-")}</div>
   <div class="k">適性ポジション</div><div class="v">${esc(showSuitablePositions(p.suitablePositions))}</div>
+  <div class="k">メインスキル</div><div class="v">${esc(p.mainSkill || "-")}</div>
+  <div class="k">メイン特徴</div><div class="v">${esc(p.mainTrait || "-")}</div>
   <div class="k">入手方法</div><div class="v">${esc(p.acquisitionMethod || "-")}</div>
   <div class="k">入手場所</div><div class="v">${esc(p.acquisitionPlace || "-")}</div>
 </div>
@@ -943,6 +997,7 @@ function renderCatalog(list){
 }
 
 function applyFilters(){
+  refreshLinkedOptions();
   renderCurrentFilters();
   renderCatalog(filterPlayers());
 }
@@ -1043,13 +1098,16 @@ $("btnReset").addEventListener("click", resetFilters);
 $("favoriteOnlyCheck").addEventListener("change", applyFilters);
 $("sortOrder").addEventListener("change", applyFilters);
 
-// Enterキーでも絞り込み実行
-$("fName").addEventListener("keydown", (e)=>{
-  if(e.key === "Enter"){
-    e.preventDefault();
-    applyFilters();
-  }
+// すべての絞り込み項目をリアルタイム連動
+[
+  "fNationality", "fRarity", "fGrowthType", "fPolicy", "fPosition",
+  "fAcqMethod", "fAcqPlace", "fStyle", "fStyleLv"
+].forEach(id=>{
+  $(id).addEventListener("change", applyFilters);
 });
+
+// 選手名も入力中にリアルタイム絞り込み
+$("fName").addEventListener("input", applyFilters);
 
 setupToTopButton();
 init();
