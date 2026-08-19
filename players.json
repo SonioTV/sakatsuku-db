@@ -10278,5 +10278,105 @@
     "suitablePositions": [
       "CF"
     ]
+  },
+  {
+    "player_id": "P0412",
+    "playerId": "P0412",
+    "name": "アリソン",
+    "overall": 6978,
+    "maxUpgrade": 15928,
+    "policy": "リアクション",
+    "playStyle": "オーソドックスGK",
+    "playStyleLv": 2,
+    "mainPosition": "GK",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年9月2日まで",
+    "mainSkill": "エレガントセーブ",
+    "mainTrait": "守護神",
+    "category": "SP選手",
+    "nationality": "ブラジル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-19",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ]
+  },
+  {
+    "player_id": "P0413",
+    "playerId": "P0413",
+    "name": "エンドリッキ",
+    "overall": 6866,
+    "maxUpgrade": 15470,
+    "policy": "リアクション",
+    "playStyle": "ラインブレーカー",
+    "playStyleLv": 3,
+    "mainPosition": "CF",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年9月2日まで",
+    "mainSkill": "コントロールショット",
+    "mainTrait": "ターゲットマン",
+    "category": "SP選手",
+    "nationality": "ブラジル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-19",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ]
+  },
+  {
+    "player_id": "P0414",
+    "playerId": "P0414",
+    "name": "メイソン・グリーンウッド",
+    "overall": 6649,
+    "maxUpgrade": 15086,
+    "policy": "ムービング",
+    "playStyle": "ワイドストライカー",
+    "playStyleLv": 3,
+    "mainPosition": "RW",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年9月2日まで",
+    "mainSkill": "スリップビート",
+    "mainTrait": "失わないドリブラー",
+    "category": "SP選手",
+    "nationality": "ジャマイカ",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-19",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
+  },
+  {
+    "player_id": "P0415",
+    "playerId": "P0415",
+    "name": "マヌエル・アカンジ",
+    "overall": 6574,
+    "maxUpgrade": 15166,
+    "policy": "ポゼッション",
+    "playStyle": "ストッパー",
+    "playStyleLv": 2,
+    "mainPosition": "CB",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年9月2日まで",
+    "mainSkill": "鋭角的なタックル",
+    "mainTrait": "ハードタックラー",
+    "category": "SP選手",
+    "nationality": "スイス",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-19",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
   }
 ]
