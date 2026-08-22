@@ -1827,6 +1827,141 @@
   }
 }
 
+
+/* ==========================================================
+   最終UX調整 2026-08-22
+   ========================================================== */
+.toolListCard,
+.articleListCard{margin-top:18px}
+.toolListCard>.sectionTitle,
+.articleListCard>.sectionTitle{text-align:left}
+.articleBannerGrid{margin-top:10px}
+.articleMoreCard{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#4a90e2,#276fc1);
+  color:#fff;
+  font-weight:900;
+  line-height:1.45;
+  text-align:center;
+  font-size:15px;
+}
+.articleMoreCard:hover{color:#fff}
+
+@media (max-width:768px){
+  .wrap{padding:9px 10px 64px}
+  h1{margin:10px 0 8px;font-size:28px}
+  .quick-links a{min-height:40px;padding:8px 3px;font-size:12px;line-height:1.2}
+  .homeLead{margin:6px 0 11px;padding:10px 11px;font-size:13px;line-height:1.6}
+  .homeLatest .sectionTitle{font-size:20px}
+  .homeLatestTitle{font-size:12.5px;line-height:1.45}
+  .homeLatestDate{font-size:11px}
+  .homeLatestMore{font-size:12px;padding:8px}
+  .compactWcBanner .wc-banner-title{font-size:15px}
+  .compactWcBanner .wc-banner-sub{font-size:11px}
+
+  .tabbtn{padding:10px 8px;font-size:16px}
+  .panel>.card{padding:14px 10px}
+  .sectionTitle{margin:9px 0;font-size:22px}
+  .note{margin:7px 0 10px;font-size:13px;line-height:1.5}
+
+  #policyGrid.imgGrid{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:6px;width:100%;max-width:none;
+  }
+  #policyGrid .imgTile{
+    width:100%;min-width:0;min-height:74px;
+    padding:7px 3px 5px;border-width:2px;border-radius:12px;
+  }
+  #policyGrid .imgTile img{width:64px;height:43px;margin-bottom:4px}
+  #policyGrid .imgTile .lbl{font-size:12px;line-height:1.15}
+
+  .posBoard{grid-template-columns:repeat(3,70px);gap:7px;padding:9px}
+  .posBtn{width:70px;height:48px;font-size:16px}
+  .posBtn.tall{height:103px}
+
+  #playStyleGrid.imgGrid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:6px;width:100%;max-width:none;
+  }
+  #playStyleGrid .imgTile{
+    width:100%;min-width:0;min-height:84px;
+    padding:6px 3px 5px;border-width:2px;border-radius:11px;
+  }
+  #playStyleGrid .imgTile img{width:64px;height:43px;margin-bottom:4px}
+  #playStyleGrid .imgTile .lbl{
+    font-size:12px;line-height:1.18;white-space:normal;
+  }
+
+  .lvBoard{gap:7px;margin:9px 0 5px}
+  .lvTile{width:30%;height:44px;font-size:16px}
+  .bigBtn{padding:13px;font-size:24px}
+  .comboClearBtn{width:100px;font-size:17px}
+  #comboSelectedCond{font-size:12px!important;line-height:1.5}
+
+  #playerPolicyGrid.imgGrid{
+    grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;
+  }
+  #playerPolicyGrid .imgTile{min-height:72px;padding:6px 3px 5px}
+  #playerPolicyGrid .imgTile img{width:60px;height:40px;margin-bottom:4px}
+  #playerPolicyGrid .imgTile .lbl{font-size:11.5px}
+
+  .rankTile{width:78px;height:68px;font-size:19px}
+  select.bigSelect{padding:11px;font-size:18px}
+  .playerAvailabilityOption span{min-height:48px;padding:8px 6px;font-size:13px}
+
+  .compactGuideCard{padding:12px}
+  .compactGuideCard .sectionTitle{margin-bottom:9px;font-size:20px}
+  .toolBannerGrid{gap:8px}
+  .toolBannerCard{padding:4px}
+  .articleMoreCard{min-height:64px;font-size:13px}
+
+  .compactUpdate .sectionTitle{font-size:20px}
+  .compactUpdate .updateDate{font-size:13px}
+  .compactUpdate .updateText{font-size:13px;line-height:1.5}
+}
+
+@media (max-width:390px){
+  #policyGrid .imgTile img{width:56px;height:37px}
+  #policyGrid .imgTile .lbl{font-size:11px}
+  #playStyleGrid .imgTile{min-height:78px}
+  #playStyleGrid .imgTile img{width:56px;height:37px}
+  #playStyleGrid .imgTile .lbl{font-size:11px}
+  .posBoard{grid-template-columns:repeat(3,65px);gap:6px}
+  .posBtn{width:65px;height:45px;font-size:15px}
+  .posBtn.tall{height:96px}
+  .articleMoreCard{min-height:58px;font-size:12px}
+}
+
+@media (min-width:769px){
+  body{font-size:18px}
+  h1{font-size:40px}
+  .quick-links a{font-size:17px}
+  .topUtilityLinks a{min-height:48px;font-size:18px}
+  .homeLead{font-size:17px}
+  .homeLatest .sectionTitle{font-size:28px}
+  .homeLatestDate{font-size:14px}
+  .homeLatestTitle{font-size:18px;line-height:1.5}
+  .homeLatestMore{font-size:16px}
+  .tabbtn{font-size:21px}
+  .sectionTitle{font-size:30px}
+  .note{font-size:17px}
+  #policyGrid .imgTile img,
+  #playStyleGrid .imgTile img{width:120px;height:80px}
+  #policyGrid .imgTile .lbl,
+  #playStyleGrid .imgTile .lbl{font-size:17px}
+  .posBtn{font-size:18px}
+  .lvTile{font-size:21px}
+  .toolListCard>.sectionTitle,
+  .articleListCard>.sectionTitle{font-size:28px}
+  .plainLinkBtn{font-size:18px}
+  .snsBtn{font-size:19px}
+  .site-pages-table{font-size:16px}
+  .articleMoreCard{min-height:86px;font-size:18px}
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -2005,16 +2140,8 @@
   </section>
   <!-- ===== トップ表示リンク群 ===== -->
 <section id="panelBonus" class="compactBonus">
-  <div class="card compactGuideCard">
-    <h2 class="sectionTitle">定番攻略</h2>
-    <div class="compactGuideGrid">
-      <a href="beginner_guide.html">初心者攻略</a>
-      <a href="reroll_method_timing.html">リセマラ</a>
-      <a href="training_menu_recommend.html">練習メニュー</a>
-      <a href="loan_recommend.html">期限付き移籍</a>
-      <a href="combo_guide.html">コンボ攻略</a>
-      <a href="investment_recommend.html">投資の選び方</a>
-    </div>
+  <div class="card compactGuideCard toolListCard">
+    <h2 class="sectionTitle">ツール一覧</h2>
 
     <div class="toolBannerMore">
   <div class="toolBannerGrid" aria-label="攻略ツール一覧">
@@ -2067,43 +2194,30 @@
   </div>
 </section>
 
-<div class="card articleBannerCard" style="margin-top:20px;margin-bottom:20px;">
-    <h2 class="sectionTitle" style="text-align:left;">攻略記事一覧</h2>
-    <div class="bannerList">
+<div class="card compactGuideCard articleListCard" style="margin-bottom:20px;">
+  <h2 class="sectionTitle">攻略記事一覧</h2>
 
-      <a class="bannerLink" href="sonio_tv_matome.html">
-        <img src="img/label/sonio_tv_matome.png" alt="ソニオTVのサカつく2026動画まとめ" loading="lazy" decoding="async">
-      </a>
-      <a href="sonio_tv_matome.html">ソニオTVのサカつく2026動画まとめ</a>
-
-      <a class="bannerLink" href="reroll_method_timing.html">
-        <img src="img/label/reroll_method_timing.png" alt="リセマラの方法と終了タイミング" loading="lazy" decoding="async">
-      </a>
-      <a href="reroll_method_timing.html">リセマラの方法と終了タイミング</a>
-
-      <a class="bannerLink" href="training_menu_recommend.html">
-        <img src="img/label/training_menu_recommend.png" alt="練習メニューのおすすめ" loading="lazy" decoding="async">
-      </a>
-      <a href="training_menu_recommend.html">練習メニューのおすすめ</a>
-
-      <a class="bannerLink" href="investment_recommend.html">
-        <img src="img/label/investment_recommend.png" alt="投資選択のおすすめ" loading="lazy" decoding="async">
-      </a>
-      <a href="investment_recommend.html">投資選択のおすすめ</a>
-
-      <a class="bannerLink" href="loan_recommend.html">
-        <img src="img/label/loan_recommend.png" alt="期限付き移籍のおすすめと選び方" loading="lazy" decoding="async">
-      </a>
-      <a href="loan_recommend.html">期限付き移籍のおすすめと選び方</a>
-
-      <a href="articles.html"
-         class="plainLinkBtn"
-         style="background:#4a90e2; color:#fff;">
-        その他の攻略記事一覧
-      </a>
-
-    </div>
+  <div class="toolBannerGrid articleBannerGrid" aria-label="攻略記事一覧">
+    <a class="toolBannerCard" href="sonio_tv_matome.html">
+      <img src="img/label/sonio_tv_matome.png" alt="ソニオTVのサカつく2026動画まとめ" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="reroll_method_timing.html">
+      <img src="img/label/reroll_method_timing.png" alt="リセマラの方法と終了タイミング" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="training_menu_recommend.html">
+      <img src="img/label/training_menu_recommend.png" alt="練習メニューのおすすめ" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="investment_recommend.html">
+      <img src="img/label/investment_recommend.png" alt="投資選択のおすすめ" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="loan_recommend.html">
+      <img src="img/label/loan_recommend.png" alt="期限付き移籍のおすすめと選び方" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard articleMoreCard" href="articles.html">
+      <span>その他の攻略記事<br>一覧を見る →</span>
+    </a>
   </div>
+</div>
 
 <!-- ===== 更新履歴 ===== -->
 
