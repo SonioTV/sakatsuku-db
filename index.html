@@ -9,12 +9,12 @@
 
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
-<title>サカつく2026攻略DB｜選手・フォメコン検索＆攻略ツール</title>
-  <meta name="description" content="サカつく2026の攻略データベース。フォーメーションコンボ検索、選手図鑑、SP選手評価、総合力ランキング、期限付き移籍、施設・最強チームシミュレーションを無料で利用できます。">
+<title>サカつく2026攻略DB｜選手・フォメコン検索＆攻略情報</title>
+  <meta name="description" content="サカつく2026の攻略・データベースサイト。実際のプレイと検証データをもとに、フォーメーションコンボ検索、選手図鑑、SP選手評価、総合力ランキング、育成・期限付き移籍・ガチャ攻略などを掲載しています。">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://sakatsuku2026-db.com/">
-  <meta property="og:title" content="サカつく2026攻略DB｜選手・フォメコン検索＆攻略ツール">
-  <meta property="og:description" content="サカつく2026の攻略データベース。フォーメーションコンボ検索、選手図鑑、SP選手評価、総合力ランキング、期限付き移籍、施設・最強チームシミュレーションを無料で利用できます。">
+  <meta property="og:title" content="サカつく2026攻略DB｜選手・フォメコン検索＆攻略情報">
+  <meta property="og:description" content="サカつく2026の攻略・データベースサイト。実際のプレイと検証データをもとに、フォーメーションコンボ検索、選手図鑑、SP選手評価、総合力ランキング、育成・期限付き移籍・ガチャ攻略などを掲載しています。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sakatsuku2026-db.com/">
   <meta name="twitter:card" content="summary">
@@ -1564,6 +1564,404 @@
   box-shadow:0 10px 24px rgba(0,0,0,.15);
 }
 
+
+/* ==========================================================
+   Mobile-first home optimization 2026-08-22
+   ========================================================== */
+.homeLead{max-width:820px;margin:8px auto 14px;padding:12px 14px;border:1px solid #e1e5ec;border-radius:14px;background:#fff;color:#333;font-size:14px;line-height:1.7;text-align:center}
+.topUtilityLinks{max-width:920px;margin:8px auto 10px;padding:0 14px;display:flex;justify-content:center;gap:8px}
+.topUtilityLinks a{flex:0 1 280px;display:flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;border-radius:11px;text-decoration:none;font-size:13px;font-weight:900}
+.topUtilityLinks .guideBtn{color:#0b5bd3;background:#fff;border:1px solid #bfd5f4}
+.topUtilityLinks .officialMiniBtn{color:#fff;background:#22c55e;border:1px solid #18a84b}
+
+.homeLatest{margin:12px 0 14px;padding:14px}
+.homeLatest .sectionTitle{margin:0 0 10px;font-size:22px}
+.homeLatestList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.homeLatestItem{display:block;min-width:0;padding:10px 11px;border:1px solid #e3e7ee;border-radius:12px;background:#fafbfc;color:#0b63d1;text-decoration:none}
+.homeLatestDate{margin-bottom:3px;color:#2e7d32;font-size:11px;font-weight:900}
+.homeLatestTitle{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;font-size:14px;font-weight:900;line-height:1.45}
+.homeLatestMore{display:block;width:100%;margin-top:8px;padding:9px 10px;border:1px solid #bfd5f4;border-radius:10px;background:#eef6ff;color:#0b63d1;text-align:center;text-decoration:none;font-size:13px;font-weight:900}
+
+/* ===== 最新攻略記事：TOP画像 ===== */
+.homeLatestThumb{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16 / 9;
+  object-fit:cover;
+  border-radius:9px;
+  margin:0 0 7px;
+  background:#eef1f5;
+}
+@media (max-width:768px){
+  .homeLatestThumb{
+    border-radius:7px;
+    margin-bottom:6px;
+  }
+}
+
+
+.wc-banner.compactWcBanner{margin:10px 0 14px;padding:11px 14px;border-width:2px;border-radius:13px}
+.compactWcBanner .wc-banner-title{font-size:18px;line-height:1.35}
+.compactWcBanner .wc-banner-sub{display:inline;margin-left:6px;font-size:12px}
+
+.compactGuideCard{margin-top:18px;padding:14px}
+.compactGuideCard .sectionTitle{margin:0 0 10px;text-align:left;font-size:21px}
+.compactGuideGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.compactGuideGrid a{display:flex;align-items:center;justify-content:center;min-height:46px;padding:8px 7px;border:1px solid #d9e3f0;border-radius:11px;background:#f8fbff;color:#0b63d1;text-align:center;text-decoration:none;font-size:13px;font-weight:900;line-height:1.3}
+
+.compactDisclosure{margin:12px 0 0;border:1px solid #e0e4ea;border-radius:13px;background:#fff;overflow:hidden}
+.compactDisclosure>summary{cursor:pointer;list-style:none;position:relative;padding:12px 40px 12px 14px;color:#222;font-size:15px;font-weight:900}
+.compactDisclosure>summary::-webkit-details-marker{display:none}
+.compactDisclosure>summary::after{content:"＋";position:absolute;right:14px;top:50%;transform:translateY(-50%);color:#0b63d1;font-size:20px;font-weight:900}
+.compactDisclosure[open]>summary::after{content:"−"}
+.compactDisclosureBody{padding:0 12px 12px}
+.compactLinkGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.compactLinkGrid a{display:flex;align-items:center;justify-content:center;min-height:40px;padding:7px;border:1px solid #e0e5ec;border-radius:9px;background:#fafbfc;color:#0b63d1;text-align:center;text-decoration:none;font-size:12px;font-weight:900;line-height:1.25}
+
+.updateCard.compactUpdate{margin-top:14px;padding:12px 14px;border-left-width:4px}
+.compactUpdate .sectionTitle{margin:0 0 4px;text-align:left;font-size:18px}
+.compactUpdate #latestChangelogTop{max-height:112px;overflow:auto}
+.compactUpdate .updateItem{padding:8px 2px}
+.compactUpdate .updateDate{font-size:12px}
+.compactUpdate .updateText{font-size:12px;line-height:1.45}
+#panelBonus.compactBonus{margin-top:14px!important}
+.secondaryArea{margin-top:14px}
+
+@media (max-width:768px){
+  .wrap{padding:8px 10px 64px}
+  h1{margin:8px 0 6px;font-size:25px}
+  .site-banner{padding:4px 8px 0}
+  .quick-links{margin:4px 8px 6px}
+  .quick-links a{min-height:38px;padding:7px 3px;font-size:11px;line-height:1.15}
+  .topUtilityLinks{margin:5px auto 8px;padding:0 8px}
+  .topUtilityLinks a{min-height:36px;padding:7px 8px;font-size:15px}
+  .homeLead{margin:5px 0 10px;padding:9px 10px;font-size:12px;line-height:1.55;text-align:left}
+  .homeLatest{margin:8px 0 10px;padding:10px;border-radius:14px}
+  .homeLatest .sectionTitle{font-size:18px;margin-bottom:7px;text-align:left}
+  .homeLatestList{grid-template-columns:1fr 1fr;gap:6px}
+  .homeLatestItem{padding:8px}
+  .homeLatestTitle{-webkit-line-clamp:3;font-size:11.5px;line-height:1.4}
+  .homeLatestDate{font-size:10px}
+  .homeLatestMore{margin-top:6px;padding:7px;font-size:11px}
+  .wc-banner.compactWcBanner{margin:7px 0 9px;padding:8px 9px;border-radius:10px}
+  .compactWcBanner .wc-banner-title{font-size:14px}
+  .compactWcBanner .wc-banner-sub{font-size:10px}
+
+  .tabs{position:sticky;top:0;z-index:20;margin:8px -2px 10px;padding:6px 2px;gap:6px;background:rgba(246,247,251,.96);backdrop-filter:blur(8px)}
+  .tabbtn{width:50%;min-width:0;padding:9px 8px;border-radius:11px;font-size:14px}
+  .panel>.card{padding:12px 9px;border-radius:15px}
+  .sectionTitle{margin:8px 0;font-size:20px}
+  .note{margin:6px 0 9px;font-size:11.5px;line-height:1.4}
+
+  #policyGrid.imgGrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;width:100%;max-width:none}
+  #policyGrid .imgTile{width:100%;min-width:0;padding:5px 2px 4px;border-width:2px;border-radius:11px}
+  #policyGrid .imgTile img{width:48px;height:32px;margin-bottom:3px}
+  #policyGrid .imgTile .lbl{font-size:10px}
+
+  .posBoard{grid-template-columns:repeat(3,64px);gap:6px;padding:8px;border-radius:12px}
+  .posBtn{width:64px;height:43px;border-width:2px;border-radius:10px;font-size:14px}
+  .posBtn.tall{height:92px}
+
+  #playStyleGrid.imgGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;width:100%;max-width:none}
+  #playStyleGrid .imgTile{width:100%;min-width:0;min-height:64px;padding:4px 2px;border-width:2px;border-radius:10px}
+  #playStyleGrid .imgTile img{width:46px;height:30px;margin-bottom:3px}
+  #playStyleGrid .imgTile .lbl{font-size:10px;line-height:1.15;white-space:normal}
+
+  .lvBoard{gap:6px;margin:7px 0 4px}
+  .lvTile{width:30%;height:39px;border-width:2px;border-radius:10px;font-size:14px}
+  .comboBtnRow{width:100%;margin:10px auto 4px;gap:6px}
+  .bigBtn{padding:11px;border-radius:12px;font-size:22px}
+  .comboClearBtn{width:94px;border-radius:12px;font-size:16px}
+  #comboSelectedCond{margin-top:6px!important;font-size:11px!important}
+
+  #playerPolicyGrid.imgGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;width:100%;max-width:none;overflow:visible;padding:0}
+  #playerPolicyGrid .imgTile{width:100%;min-width:0;padding:5px 2px 4px;border-width:2px;border-radius:11px}
+  #playerPolicyGrid .imgTile img{width:46px;height:30px;margin-bottom:3px}
+  #playerPolicyGrid .imgTile .lbl{font-size:9.5px;white-space:normal}
+  .rankBoard{gap:8px;margin:6px auto}
+  .rankTile{width:70px;height:58px;border-radius:11px;font-size:18px}
+  select.bigSelect{width:100%;padding:10px;border-radius:12px;font-size:16px}
+  .playerAvailabilityBoard{gap:6px}
+  .playerAvailabilityOption span{min-height:44px;padding:7px 5px;border-width:2px;border-radius:10px;font-size:12px}
+  #btnShowPlayers{width:100%!important;padding:11px!important;font-size:20px!important}
+
+  .compactGuideCard{margin-top:12px;padding:11px;border-radius:14px}
+  .compactGuideCard .sectionTitle{font-size:17px;margin-bottom:7px}
+  .compactGuideGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+  .compactGuideGrid a{min-height:40px;padding:6px 4px;border-radius:9px;font-size:10.5px}
+  .compactDisclosure{margin-top:8px;border-radius:11px}
+  .compactDisclosure>summary{padding:10px 36px 10px 11px;font-size:13px}
+  .compactDisclosureBody{padding:0 8px 8px}
+  .compactLinkGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+  .compactLinkGrid a{min-height:36px;padding:6px 4px;font-size:10.5px}
+  .compactUpdate{margin-top:10px!important}
+
+  .toTop{right:10px;bottom:14px;width:48px;height:48px;border-radius:12px}
+}
+@media (max-width:370px){
+  .quick-links{grid-template-columns:repeat(3,1fr)}
+  #policyGrid.imgGrid,#playerPolicyGrid.imgGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .compactGuideGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+
+/* ===== ツール画像バナー：2列カード ===== */
+.toolBannerGrid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-top:10px;
+}
+.toolBannerCard{
+  display:block;
+  min-width:0;
+  padding:5px;
+  border:1px solid #dfe4ec;
+  border-radius:14px;
+  background:#fff;
+  text-decoration:none;
+  box-shadow:0 5px 12px rgba(15,23,42,.06);
+  transition:transform .1s ease, box-shadow .12s ease;
+}
+.toolBannerCard:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 16px rgba(15,23,42,.10);
+}
+.toolBannerCard:active{transform:scale(.985)}
+.toolBannerCard img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:10px;
+}
+.toolBannerMore{margin-top:8px}
+@media (max-width:480px){
+  .toolBannerGrid{gap:7px}
+  .toolBannerCard{padding:3px;border-radius:11px}
+  .toolBannerCard img{border-radius:8px}
+}
+
+
+/* ===== PC版：可読性強化（769px以上のみ） ===== */
+@media (min-width:769px){
+  body{font-size:17px;}
+
+  h1{
+    font-size:38px;
+    margin:14px 0 14px;
+  }
+
+  .quick-links a{
+    font-size:16px;
+    padding:14px 6px;
+  }
+
+  .topUtilityLinks a{
+    min-height:46px;
+    font-size:17px;
+    padding:10px 14px;
+  }
+
+  .homeLead{
+    font-size:16px;
+    line-height:1.75;
+    padding:14px 18px;
+  }
+
+  .homeLatest{
+    padding:18px;
+  }
+  .homeLatest .sectionTitle{
+    font-size:26px;
+  }
+  .homeLatestDate{
+    font-size:13px;
+  }
+  .homeLatestTitle{
+    font-size:17px;
+    line-height:1.5;
+  }
+  .homeLatestMore{
+    font-size:15px;
+    padding:11px 12px;
+  }
+
+  .compactWcBanner .wc-banner-title{
+    font-size:21px;
+  }
+  .compactWcBanner .wc-banner-sub{
+    font-size:14px;
+  }
+
+  .tabbtn{
+    font-size:20px;
+    padding:15px 22px;
+  }
+
+  .compactGuideCard .sectionTitle{
+    font-size:24px;
+  }
+  .compactGuideGrid a{
+    min-height:50px;
+    font-size:15px;
+  }
+
+  .articleBannerCard .sectionTitle{
+    font-size:26px;
+  }
+  .articleBannerCard .bannerList > a:not(.bannerLink):not(.plainLinkBtn){
+    font-size:16px;
+    font-weight:800;
+  }
+
+  .compactUpdate .sectionTitle{
+    font-size:22px;
+  }
+  .compactUpdate .updateDate{
+    font-size:14px;
+  }
+  .compactUpdate .updateText{
+    font-size:14px;
+    line-height:1.55;
+  }
+}
+
+
+/* ==========================================================
+   最終UX調整 2026-08-22
+   ========================================================== */
+.toolListCard,
+.articleListCard{margin-top:18px}
+.toolListCard>.sectionTitle,
+.articleListCard>.sectionTitle{text-align:left}
+.articleBannerGrid{margin-top:10px}
+.articleMoreCard{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#4a90e2,#276fc1);
+  color:#fff;
+  font-weight:900;
+  line-height:1.45;
+  text-align:center;
+  font-size:15px;
+}
+.articleMoreCard:hover{color:#fff}
+
+@media (max-width:768px){
+  .wrap{padding:9px 10px 64px}
+  h1{margin:10px 0 8px;font-size:28px}
+  .quick-links a{min-height:40px;padding:8px 3px;font-size:12px;line-height:1.2}
+  .homeLead{margin:6px 0 11px;padding:10px 11px;font-size:13px;line-height:1.6}
+  .homeLatest .sectionTitle{font-size:20px}
+  .homeLatestTitle{font-size:12.5px;line-height:1.45}
+  .homeLatestDate{font-size:11px}
+  .homeLatestMore{font-size:12px;padding:8px}
+  .compactWcBanner .wc-banner-title{font-size:15px}
+  .compactWcBanner .wc-banner-sub{font-size:11px}
+
+  .tabbtn{padding:10px 8px;font-size:16px}
+  .panel>.card{padding:14px 10px}
+  .sectionTitle{margin:9px 0;font-size:22px}
+  .note{margin:7px 0 10px;font-size:13px;line-height:1.5}
+
+  #policyGrid.imgGrid{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:6px;width:100%;max-width:none;
+  }
+  #policyGrid .imgTile{
+    width:100%;min-width:0;min-height:74px;
+    padding:7px 3px 5px;border-width:2px;border-radius:12px;
+  }
+  #policyGrid .imgTile img{width:64px;height:43px;margin-bottom:4px}
+  #policyGrid .imgTile .lbl{font-size:12px;line-height:1.15}
+
+  .posBoard{grid-template-columns:repeat(3,70px);gap:7px;padding:9px}
+  .posBtn{width:70px;height:48px;font-size:16px}
+  .posBtn.tall{height:103px}
+
+  #playStyleGrid.imgGrid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:6px;width:100%;max-width:none;
+  }
+  #playStyleGrid .imgTile{
+    width:100%;min-width:0;min-height:84px;
+    padding:6px 3px 5px;border-width:2px;border-radius:11px;
+  }
+  #playStyleGrid .imgTile img{width:64px;height:43px;margin-bottom:4px}
+  #playStyleGrid .imgTile .lbl{
+    font-size:12px;line-height:1.18;white-space:normal;
+  }
+
+  .lvBoard{gap:7px;margin:9px 0 5px}
+  .lvTile{width:30%;height:44px;font-size:16px}
+  .bigBtn{padding:13px;font-size:24px}
+  .comboClearBtn{width:100px;font-size:17px}
+  #comboSelectedCond{font-size:12px!important;line-height:1.5}
+
+  #playerPolicyGrid.imgGrid{
+    grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;
+  }
+  #playerPolicyGrid .imgTile{min-height:72px;padding:6px 3px 5px}
+  #playerPolicyGrid .imgTile img{width:60px;height:40px;margin-bottom:4px}
+  #playerPolicyGrid .imgTile .lbl{font-size:11.5px}
+
+  .rankTile{width:78px;height:68px;font-size:19px}
+  select.bigSelect{padding:11px;font-size:18px}
+  .playerAvailabilityOption span{min-height:48px;padding:8px 6px;font-size:13px}
+
+  .compactGuideCard{padding:12px}
+  .compactGuideCard .sectionTitle{margin-bottom:9px;font-size:20px}
+  .toolBannerGrid{gap:8px}
+  .toolBannerCard{padding:4px}
+  .articleMoreCard{min-height:64px;font-size:13px}
+
+  .compactUpdate .sectionTitle{font-size:20px}
+  .compactUpdate .updateDate{font-size:13px}
+  .compactUpdate .updateText{font-size:13px;line-height:1.5}
+}
+
+@media (max-width:390px){
+  #policyGrid .imgTile img{width:56px;height:37px}
+  #policyGrid .imgTile .lbl{font-size:11px}
+  #playStyleGrid .imgTile{min-height:78px}
+  #playStyleGrid .imgTile img{width:56px;height:37px}
+  #playStyleGrid .imgTile .lbl{font-size:11px}
+  .posBoard{grid-template-columns:repeat(3,65px);gap:6px}
+  .posBtn{width:65px;height:45px;font-size:15px}
+  .posBtn.tall{height:96px}
+  .articleMoreCard{min-height:58px;font-size:12px}
+}
+
+@media (min-width:769px){
+  body{font-size:18px}
+  h1{font-size:40px}
+  .quick-links a{font-size:17px}
+  .topUtilityLinks a{min-height:48px;font-size:18px}
+  .homeLead{font-size:17px}
+  .homeLatest .sectionTitle{font-size:28px}
+  .homeLatestDate{font-size:14px}
+  .homeLatestTitle{font-size:18px;line-height:1.5}
+  .homeLatestMore{font-size:16px}
+  .tabbtn{font-size:21px}
+  .sectionTitle{font-size:30px}
+  .note{font-size:17px}
+  #policyGrid .imgTile img,
+  #playStyleGrid .imgTile img{width:120px;height:80px}
+  #policyGrid .imgTile .lbl,
+  #playStyleGrid .imgTile .lbl{font-size:17px}
+  .posBtn{font-size:18px}
+  .lvTile{font-size:21px}
+  .toolListCard>.sectionTitle,
+  .articleListCard>.sectionTitle{font-size:28px}
+  .plainLinkBtn{font-size:18px}
+  .snsBtn{font-size:19px}
+  .site-pages-table{font-size:16px}
+  .articleMoreCard{min-height:86px;font-size:18px}
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -1571,7 +1969,7 @@
   "@type": "WebSite",
   "name": "サカつく2026攻略DB",
   "url": "https://sakatsuku2026-db.com/",
-  "description": "サカつく2026のフォーメーションコンボ検索・選手検索ができる攻略データベース。"
+  "description": "サカつく2026の攻略情報、選手データベース、フォーメーションコンボ検索、選手評価、ランキング、各種シミュレーターを提供する攻略サイト。"
 }
 </script>
 
@@ -1588,174 +1986,62 @@
 <body>
   <div class="site-banner"><img src="img/title.png" alt="ソニオTVの サカつく攻略データベース" class="title-img"></div>
 
-<div class="quick-links">
-  <a href="articles.html">攻略記事</a>
-  <a href="player_catalog.html">選手図鑑</a>
-  <a href="sp_evaluator.html">SP選手評価</a>
-  <a href="overall_ranking.html">最強ランキング</a>
-  <a href="favorite_combos.html">コンボ診断</a>
-  <a href="loan_matching_tool.html">期限付き移籍</a>
-  <a href="stadium_simulation.html">スタジアム</a>
-  <a href="clubhouse_simulation.html">クラブハウス</a>
-  <a href="strongest_team_simulation.html">最強チームSim</a>
-  <a href="tier_list.html">Tire表メーカー</a>
-  <a href="reroll_method_timing.html">リセマラ</a>
-  <a href="dice_sugoroku_simulator.html">すごろく</a>
+  <nav class="quick-links" aria-label="主要コンテンツ">
+    <a href="articles.html">攻略記事</a>
+    <a href="player_catalog.html">選手図鑑</a>
+    <a href="sp_evaluator.html">SP選手評価</a>
+    <a href="overall_ranking.html">最強ランキング</a>
+    <a href="favorite_combos.html">コンボ診断</a>
+    <a href="loan_matching_tool.html">期限付き移籍</a>
+    <a href="stadium_simulation.html">スタジアム</a>
+    <a href="clubhouse_simulation.html">クラブハウス</a>
+    <a href="strongest_team_simulation.html">最強チームSim</a>
+    <a href="tier_list.html">Tier表メーカー</a>
+    <a href="reroll_method_timing.html">リセマラ</a>
+    <a href="dice_sugoroku_simulator.html">すごろく</a>
+  </nav>
 
+  <div class="topUtilityLinks">
+    <a class="guideBtn" href="howto.html">📖 初めての方・使い方 📖</a>
+    <a class="officialMiniBtn" href="https://segafcchampions.sega.com/ja/" target="_blank" rel="noopener noreferrer">⚽ 公式サイト ⚽</a>
+  </div>
+
+  <main class="wrap">
+    <h1>サカつく2026攻略DB</h1>
+    <div class="homeLead">実際のゲームプレイと検証データをもとに、選手評価・育成・フォーメーションコンボなどを攻略。記事で確認し、データベースや検索ツールですぐ比較できます。</div>
+
+
+<div class="card homeLatest">
+  <h2 class="sectionTitle">最新の攻略記事</h2>
+  <div class="homeLatestList">
+    <a href="20260819_pickup_sp_scout_review.html" class="homeLatestItem">
+      <img
+        class="homeLatestThumb"
+        src="img/articles/20260819_pickup_sp_scout_review/top.png"
+        alt="アリソンら新SP選手4名のピックアップSP選手スカウト評価"
+        decoding="async">
+      <div class="homeLatestDate">2026/08/19</div>
+      <div class="homeLatestTitle">【サカつく2026】限定SP選手の下位互換!?新SP「アリソン」のピックアップSP選手スカウトは引くべき？新SP選手4名を徹底評価</div>
+    </a>
+    <a href="reroll_method_timing.html" class="homeLatestItem">
+      <img
+        class="homeLatestThumb"
+        src="img/articles/top.png"
+        alt="サカつく2026 SP選手スカウト リセマラ攻略"
+        width="278"
+        height="161"
+        decoding="async">
+      <div class="homeLatestDate">2026/08/13</div>
+      <div class="homeLatestTitle">【最新版】効率の良いリセマラのやり方と終了ライン</div>
+    </a>
+  </div>
+  <a href="articles.html" class="homeLatestMore">攻略記事をもっと見る →</a>
 </div>
 
-<div class="howtoLink">
-  <a href="howto.html">📖 このサイトの遊び方はこちら（初めての方向け）</a>
-</div>
-
-<div class="officialLink">
-  <a href="https://segafcchampions.sega.com/ja/" target="_blank" rel="noopener noreferrer" class="officialBtn">
-    ⚽ サカつく2026公式HP⚽
-  </a>
-</div>
-
-<a href="wc2026_special.html" class="wc-banner">
-  <div class="wc-banner-title">🏆 ワールドカップ2026特集 🏆</div>
-  <div class="wc-banner-sub">▶ 特集を見る</div>
+<a href="wc2026_special.html" class="wc-banner compactWcBanner">
+  <span class="wc-banner-title">🏆 ワールドカップ2026特集</span>
+  <span class="wc-banner-sub">見る →</span>
 </a>
-
-<!-- ===== 最新攻略記事 ===== -->
-<div class="card latestArticleCard">
-<div class="sectionTitle">最新の攻略記事</div>
-
-<div class="note" style="margin-top:-4px; margin-bottom:10px; font-size:13px; font-weight:900;">
-  ※スクロールで過去記事を確認できます※
-</div>
-
-  <!-- 1件目から全てスクロール対象。高さは「記事2件分くらい」で固定 -->
-  <div class="latestArticleList latestArticleScroll">
-
-    <a href="20260819_pickup_sp_scout_review.html" class="latestArticleItem">
-      <div class="latestArticleDate">2026/08/19</div>
-      <div class="latestArticleTitle">【サカつく2026】限定SP選手の下位互換!?新SP「アリソン」のピックアップSP選手スカウトは引くべき？新SP選手4名を徹底評価</div>
-    </a>
-
-    <a href="reroll_method_timing.html" class="latestArticleItem">
-      <div class="latestArticleDate">2026/08/13</div>
-      <div class="latestArticleTitle">【最新版】効率の良いリセマラのやり方と終了ライン</div>
-    </a>
-
-    <a href="20260812_jleague_centenaryplan_scout_review.html" class="latestArticleItem">
-      <div class="latestArticleDate">2026/08/12</div>
-      <div class="latestArticleTitle">【サカつく2026】★3はピックアップ確定のお得ガチャ!!Jリーグ百年構想リーグ得点王SP選手スカウトは引くべき？</div>
-    </a>
-
-    <a href="20260804_brazil_selection_spscout_100pull_result.html" class="latestArticleItem">
-      <div class="latestArticleDate">2026/08/04</div>
-      <div class="latestArticleTitle">【サカつく2026】ブラジルセレクションSP選手スカウト100連引いてみた！</div>
-    </a>
-
-    <a href="20260729_premium_sp_scout_review.html" class="latestArticleItem">
-      <div class="latestArticleDate">2026/07/29</div>
-      <div class="latestArticleTitle">【サカつく2026】リアクション強化が止まらない!!新SP「ギマランイス」は引くべき？プレミアムSP選手スカウト評価</div>
-    </a>
-
-    <a href="yousaku1234_awakening_5times_training_ver2_1.html" class="latestArticleItem">
-      <div class="latestArticleDate">2026/07/28</div>
-      <div class="latestArticleTitle">【サカつく2026】覚醒5回を狙う育成法｜有利イベントを成長期SP選手に集中させる方法【Ver2.1対応】</div>
-    </a>
-
-    <a href="20260720_Brazil_pickup_sp_scout_review.html" class="latestArticleItem">
-      <div class="latestArticleDate">2026/07/20</div>
-      <div class="latestArticleTitle">リアクション大幅強化!!新SP「ペレ」のHalf AnniversaryレジェンドSP選手スカウトは引くべき？新SP選手4名を徹底評価</div>
-    </a>
-
-    <a href="sakatsuku_tv9_ver2.1_update_summary.html" class="latestArticleItem">
-      <div class="latestArticleDate">2026/07/14</div>
-      <div class="latestArticleTitle">【サカつくTV #9】Ver2.1アップデート・ハーフアニバーサリーまとめ｜新イベント・ペレ・影山優佳</div>
-    </a>
-
-    <a href="20260707_pickup_sp_scout_review.html" class="latestArticleItem">
-      <div class="latestArticleDate">2026/07/07</div>
-      <div class="latestArticleTitle">カウンター強化が止まらない!!新SP「ジュード・ベリンガム」のピックアップSP選手スカウトは引くべき？新SP選手4名を徹底評価</div>
-    </a>
-
-    <a href="wc2026_knockout_sp_players_article.html" class="latestArticleItem">
-      <div class="latestArticleDate">2026/07/01</div>
-      <div class="latestArticleTitle">【ワールドカップ2026】決勝トーナメント進出国の★3SP選手まとめ！サカつく2026で使えるスター選手を紹介</div>
-    </a>
-
-    <a href="hongkong_pickup_sp_scout_review_20260630.html" class="latestArticleItem">
-      <div class="latestArticleDate">2026/06/30</div>
-      <div class="latestArticleTitle">香港サッカー界のレジェンド選手が登場!!歐偉倫（オウ・ワイルン）と李健和（リー・キンワ）の香港レジェンドSP選手スカウトは引くべき？新SP選手2名を徹底評価</div>
-    </a>
-
-    <a href="articles.html" class="latestArticleItem">
-      <div class="latestArticleTitle">過去の記事はコチラ</div>
-    </a>
-
-</div>
-</div>
-
-<div class="wrap">
-<h1>サカつく2026攻略DB</h1>
-<div class="card" style="margin-bottom:20px;">
-  <div class="sectionTitle">サイトについて</div>
-  <div style="text-align:left; line-height:1.8; font-size:14px; padding:10px 6px;">
-    本サイトは「サカつく2026」の攻略・データベースサイトです。<br><br>
-
-    フォーメーションコンボ、選手検索、期限付き移籍などの情報を、
-    実際のゲームプレイおよび検証データをもとに整理しています。<br><br>
-
-    「どの選手を使えばいいか」「どのコンボを狙うべきか」を
-    分かりやすく判断できるように設計しており、
-    初心者から上級者まで活用できる内容になっています。
-
-    <div class="aboutGuideBox">
-      <div class="aboutGuideTitle">サカつく2026攻略DBもくじ</div>
-      <div class="aboutGuideGrid">
-        <a class="aboutGuideItem" href="howto_combo_search.html">
-          <strong>コンボ検索</strong>
-          <span>選手から発動候補のコンボを探す</span>
-        </a>
-        <a class="aboutGuideItem" href="howto_player_search.html">
-          <strong>選手検索</strong>
-          <span>コンボから対応SP選手を逆引き</span>
-        </a>
-        <a class="aboutGuideItem" href="howto_sp_evaluator.html">
-          <strong>選手評価ツール</strong>
-          <span>順位・性能・金コンボ適性を確認</span>
-        </a>
-        <a class="aboutGuideItem" href="howto_overall_ranking.html">
-          <strong>総合力ランキング</strong>
-          <span>初期総合力・最大強化を比較</span>
-        </a>
-        <a class="aboutGuideItem" href="howto_loan_matching_tool.html">
-          <strong>期限付き移籍<br>マッチングツール</strong>
-          <span>育成目的に合う移籍先を探す</span>
-        </a>
-        <a class="aboutGuideItem" href="howto_strongest_team_simulation.html">
-          <strong>最強チーム<br>シミュレーション</strong>
-          <span>コンボ軸の理想編成を確認</span>
-        </a>
-      </div>
-    </div>
-
-  <small style="display:block;margin-top:10px;opacity:.75;">
-    このサイトはソニオTVとChatGPTが共同開発しました
-  </small>
-  </div>
-</div>
-
-  <!-- Site pages (About/Policy/Contact etc.) -->
-  
-
-
-<!-- ===== 更新履歴 ===== -->
-
-<div class="card updateCard" style="margin-bottom:20px;">
-  <div class="sectionTitle">更新履歴</div>
-  <div id="latestChangelogTop">
-    <div class="updateItem">
-      <div class="updateText">最新の更新履歴を読み込み中です...</div>
-    </div>
-  </div>
-</div>
 
   <div class="tabs">
     <button id="tabCombo" class="tabbtn active" type="button">コンボ検索</button>
@@ -1853,121 +2139,96 @@
     </div>
   </section>
   <!-- ===== トップ表示リンク群 ===== -->
-<section id="panelBonus" style="margin-top:20px;">
+<section id="panelBonus" class="compactBonus">
+  <div class="card compactGuideCard toolListCard">
+    <h2 class="sectionTitle">ツール一覧</h2>
 
-  <div class="card" style="margin-bottom:20px;">
-    <div class="sectionTitle" style="text-align:left;">ツール一覧</div>
-      <div class="bannerList">
+    <div class="toolBannerMore">
+  <div class="toolBannerGrid" aria-label="攻略ツール一覧">
+    <a class="toolBannerCard" href="player_catalog.html">
+      <img src="img/label/player_catalog.png" alt="選手図鑑" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="favorite_combos.html">
+      <img src="img/label/favorite_combos.png" alt="フォメコン診断" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="sp_evaluator.html">
+      <img src="img/label/sp_evaluator.png" alt="選手評価ツール" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="overall_ranking.html">
+      <img src="img/label/overall_ranking.png" alt="総合力ランキング" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="loan_matching_tool.html">
+      <img src="img/label/loan_matching_tool.png" alt="期限付き移籍マッチングツール" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="strongest_team_simulation.html">
+      <img src="img/label/strongest_team_simulation.png" alt="最強チームシミュレーション" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="stadium.html">
+      <img src="img/label/stadium.png" alt="スタジアム施設一覧" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="stadium_simulation.html">
+      <img src="img/label/stadium_simulation.png" alt="スタジアム施設シミュレーション" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="clubhouse.html">
+      <img src="img/label/clubhouse.png" alt="クラブハウス設備一覧" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="clubhouse_simulation.html">
+      <img src="img/label/clubhouse_simulation.png" alt="クラブハウス設備シミュレーション" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="tier_list.html">
+      <img src="img/label/tier_list.png" alt="サカつく2026Tier表メーカー" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="dice_sugoroku_simulator.html">
+      <img src="img/label/dice_sugoroku_simulator.png" alt="ダイスすごろくシミュレーター" loading="lazy" decoding="async">
+    </a>
+  </div>
+</div>
 
-      <a class="bannerLink" href="player_catalog.html">
-        <img src="img/label/player_catalog.png" alt="選手図鑑">
-      </a>
-<a href="player_catalog.html">選手図鑑</a>
-
-      <a class="bannerLink" href="favorite_combos.html">
-        <img src="img/label/favorite_combos.png" alt="フォメコン診断">
-      </a>
-<a href="favorite_combos.html">フォメコン診断</a>
-
-      <a class="bannerLink" href="sp_evaluator.html">
-        <img src="img/label/sp_evaluator.png" alt="選手評価ツール">
-      </a>
-<a href="sp_evaluator.html">選手評価ツール</a>
-
-      <a class="bannerLink" href="overall_ranking.html">
-        <img src="img/label/overall_ranking.png" alt="総合力ランキング">
-      </a>
-<a href="overall_ranking.html">総合力ランキング</a>
-
-      <a class="bannerLink" href="loan_matching_tool.html">
-        <img src="img/label/loan_matching_tool.png" alt="期限付き移籍マッチングツール">
-      </a>
-<a href="loan_matching_tool.html">期限付き移籍マッチングツール</a>
-
-      <a class="bannerLink" href="strongest_team_simulation.html">
-        <img src="img/label/strongest_team_simulation.png" alt="最強チームシミュレーション">
-      </a>
-<a href="strongest_team_simulation.html">最強チームシミュレーション</a>
-
-      <a class="bannerLink" href="stadium.html">
-        <img src="img/label/stadium.png" alt="スタジアム施設一覧">
-      </a>
-<a href="stadium.html">スタジアム施設一覧</a>
-
-      <a class="bannerLink" href="stadium_simulation">
-        <img src="img/label/stadium_simulation.png" alt="スタジアム施設シミュレーション">
-      </a>
-<a href="stadium_simulation">スタジアム施設シミュレーション</a>
-
-      <a class="bannerLink" href="clubhouse.html">
-        <img src="img/label/clubhouse.png" alt="クラブハウス設備一覧">
-      </a>
-<a href="clubhouse.html">クラブハウス設備一覧</a>
-
-      <a class="bannerLink" href="clubhouse_simulation.html">
-        <img src="img/label/clubhouse_simulation.png" alt="クラブハウス設備シミュレーション">
-      </a>
-<a href="clubhouse_simulation.html">クラブハウス設備シミュレーション</a>
-
-      <a class="bannerLink" href="tier_list.html">
-        <img src="img/label/tier_list.png" alt="サカつく2026ティア表メーカー">
-      </a>
-<a href="tier_list.html">サカつく2026ティア表メーカー</a>
-
-      <a class="bannerLink" href="dice_sugoroku_simulator.html">
-        <img src="img/label/dice_sugoroku_simulator.png" alt="ダイスすごろくシミュレーター">
-      </a>
-<a href="dice_sugoroku_simulator.html">ダイスすごろくシミュレーター</a>
 
       <a href="https://forms.gle/TLRL3Qy9qzftd5zZ7"
          target="_blank" rel="noopener noreferrer"
          class="plainLinkBtn"
-         style="background:#10b981; color:#fff;">
+         style="background:#10b981; color:#fff; margin-top:12px;">
         選手情報の提供はこちら
       </a>
-
-    </div>
   </div>
-
-  <div class="card" style="margin-bottom:20px;">
-    <div class="sectionTitle" style="text-align:left;">攻略記事一覧</div>
-    <div class="bannerList">
-
-      <a class="bannerLink" href="sonio_tv_matome.html">
-        <img src="img/label/sonio_tv_matome.png" alt="ソニオTVのサカつく2026動画まとめ">
-      </a>
-<a href="sonio_tv_matome.html">ソニオTVのサカつく2026動画まとめ</a>
-
-      <a class="bannerLink" href="reroll_method_timing.html">
-        <img src="img/label/reroll_method_timing.png" alt="リセマラの方法と終了タイミング">
-      </a>
-<a href="reroll_method_timing.html">リセマラの方法と終了タイミング</a>
-
-      <a class="bannerLink" href="training_menu_recommend.html">
-        <img src="img/label/training_menu_recommend.png" alt="練習メニューのおすすめ">
-      </a>
-<a href="training_menu_recommend.html">練習メニューのおすすめ</a>
-
-      <a class="bannerLink" href="investment_recommend.html">
-        <img src="img/label/investment_recommend.png" alt="投資選択のおすすめ">
-      </a>
-<a href="investment_recommend.html">投資選択のおすすめ</a>
-
-      <a class="bannerLink" href="loan_recommend.html">
-        <img src="img/label/loan_recommend.png" alt="期限付き移籍のおすすめと選び方">
-      </a>
-<a href="loan_recommend.html">期限付き移籍のおすすめと選び方</a>
-
-      <a href="articles.html"
-         class="plainLinkBtn"
-         style="background:#4a90e2; color:#fff;">
-        その他の攻略記事一覧
-      </a>
-
-    </div>
-  </div>
-
 </section>
+
+<div class="card compactGuideCard articleListCard" style="margin-bottom:20px;">
+  <h2 class="sectionTitle">攻略記事一覧</h2>
+
+  <div class="toolBannerGrid articleBannerGrid" aria-label="攻略記事一覧">
+    <a class="toolBannerCard" href="sonio_tv_matome.html">
+      <img src="img/label/sonio_tv_matome.png" alt="ソニオTVのサカつく2026動画まとめ" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="reroll_method_timing.html">
+      <img src="img/label/reroll_method_timing.png" alt="リセマラの方法と終了タイミング" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="training_menu_recommend.html">
+      <img src="img/label/training_menu_recommend.png" alt="練習メニューのおすすめ" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="investment_recommend.html">
+      <img src="img/label/investment_recommend.png" alt="投資選択のおすすめ" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="loan_recommend.html">
+      <img src="img/label/loan_recommend.png" alt="期限付き移籍のおすすめと選び方" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard articleMoreCard" href="articles.html">
+      <span>その他の攻略記事<br>一覧を見る →</span>
+    </a>
+  </div>
+</div>
+
+<!-- ===== 更新履歴 ===== -->
+
+<div class="card updateCard compactUpdate" style="margin-bottom:20px;">
+  <h2 class="sectionTitle">更新履歴</h2>
+  <div id="latestChangelogTop">
+    <div class="updateItem">
+      <div class="updateText">最新の更新履歴を読み込み中です...</div>
+    </div>
+  </div>
+</div>
 
 <!-- ===== SNSリンク ===== -->
 <div class="card" style="margin-bottom:20px;">
@@ -2058,6 +2319,7 @@
     </table>
   </div>
 </div>
+</main>
 
 <!-- モーダル -->
 <div id="modalBack" class="modalBack" role="dialog" aria-modal="true" aria-hidden="true">
