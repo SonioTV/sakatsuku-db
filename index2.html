@@ -1742,6 +1742,91 @@
   .toolBannerCard img{border-radius:8px}
 }
 
+
+/* ===== PC版：可読性強化（769px以上のみ） ===== */
+@media (min-width:769px){
+  body{font-size:17px;}
+
+  h1{
+    font-size:38px;
+    margin:14px 0 14px;
+  }
+
+  .quick-links a{
+    font-size:16px;
+    padding:14px 6px;
+  }
+
+  .topUtilityLinks a{
+    min-height:46px;
+    font-size:17px;
+    padding:10px 14px;
+  }
+
+  .homeLead{
+    font-size:16px;
+    line-height:1.75;
+    padding:14px 18px;
+  }
+
+  .homeLatest{
+    padding:18px;
+  }
+  .homeLatest .sectionTitle{
+    font-size:26px;
+  }
+  .homeLatestDate{
+    font-size:13px;
+  }
+  .homeLatestTitle{
+    font-size:17px;
+    line-height:1.5;
+  }
+  .homeLatestMore{
+    font-size:15px;
+    padding:11px 12px;
+  }
+
+  .compactWcBanner .wc-banner-title{
+    font-size:21px;
+  }
+  .compactWcBanner .wc-banner-sub{
+    font-size:14px;
+  }
+
+  .tabbtn{
+    font-size:20px;
+    padding:15px 22px;
+  }
+
+  .compactGuideCard .sectionTitle{
+    font-size:24px;
+  }
+  .compactGuideGrid a{
+    min-height:50px;
+    font-size:15px;
+  }
+
+  .articleBannerCard .sectionTitle{
+    font-size:26px;
+  }
+  .articleBannerCard .bannerList > a:not(.bannerLink):not(.plainLinkBtn){
+    font-size:16px;
+    font-weight:800;
+  }
+
+  .compactUpdate .sectionTitle{
+    font-size:22px;
+  }
+  .compactUpdate .updateDate{
+    font-size:14px;
+  }
+  .compactUpdate .updateText{
+    font-size:14px;
+    line-height:1.55;
+  }
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -1972,19 +2057,53 @@
   </div>
 </div>
 
-    <details class="compactDisclosure">
-      <summary>その他の攻略コンテンツ</summary>
-      <div class="compactDisclosureBody">
-        <div class="compactLinkGrid">
-          <a href="sonio_tv_matome.html">動画まとめ</a>
-          <a href="articles.html">攻略記事一覧</a>
-          <a href="howto.html">サイトの使い方</a>
-          <a href="wc2026_special.html">W杯2026特集</a>
-        </div>
-      </div>
-    </details>
+
+      <a href="https://forms.gle/TLRL3Qy9qzftd5zZ7"
+         target="_blank" rel="noopener noreferrer"
+         class="plainLinkBtn"
+         style="background:#10b981; color:#fff; margin-top:12px;">
+        選手情報の提供はこちら
+      </a>
   </div>
 </section>
+
+<div class="card articleBannerCard" style="margin-top:20px;margin-bottom:20px;">
+    <h2 class="sectionTitle" style="text-align:left;">攻略記事一覧</h2>
+    <div class="bannerList">
+
+      <a class="bannerLink" href="sonio_tv_matome.html">
+        <img src="img/label/sonio_tv_matome.png" alt="ソニオTVのサカつく2026動画まとめ" loading="lazy" decoding="async">
+      </a>
+      <a href="sonio_tv_matome.html">ソニオTVのサカつく2026動画まとめ</a>
+
+      <a class="bannerLink" href="reroll_method_timing.html">
+        <img src="img/label/reroll_method_timing.png" alt="リセマラの方法と終了タイミング" loading="lazy" decoding="async">
+      </a>
+      <a href="reroll_method_timing.html">リセマラの方法と終了タイミング</a>
+
+      <a class="bannerLink" href="training_menu_recommend.html">
+        <img src="img/label/training_menu_recommend.png" alt="練習メニューのおすすめ" loading="lazy" decoding="async">
+      </a>
+      <a href="training_menu_recommend.html">練習メニューのおすすめ</a>
+
+      <a class="bannerLink" href="investment_recommend.html">
+        <img src="img/label/investment_recommend.png" alt="投資選択のおすすめ" loading="lazy" decoding="async">
+      </a>
+      <a href="investment_recommend.html">投資選択のおすすめ</a>
+
+      <a class="bannerLink" href="loan_recommend.html">
+        <img src="img/label/loan_recommend.png" alt="期限付き移籍のおすすめと選び方" loading="lazy" decoding="async">
+      </a>
+      <a href="loan_recommend.html">期限付き移籍のおすすめと選び方</a>
+
+      <a href="articles.html"
+         class="plainLinkBtn"
+         style="background:#4a90e2; color:#fff;">
+        その他の攻略記事一覧
+      </a>
+
+    </div>
+  </div>
 
 <!-- ===== 更新履歴 ===== -->
 
