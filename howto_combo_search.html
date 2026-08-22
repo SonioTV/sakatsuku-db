@@ -1,486 +1,112 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="keywords" content="サカつく2026,コンボ検索,フォーメーションコンボ,使い方,攻略,ポリシー,プレイスタイル,SP選手,ソニオTV">
-<title>コンボ検索の使い方｜発動できるフォメコンを探す方法｜サカつく2026攻略DB</title>
-  <meta name="description" content="サカつく2026攻略DBのコンボ検索を詳しく解説。ポリシー・ポジション・プレイスタイルLvを入力し、選手条件から発動候補のフォーメーションコンボを探す手順と活用法を紹介します。">
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="canonical" href="https://sakatsuku2026-db.com/howto_combo_search.html">
-  <meta property="og:title" content="コンボ検索の使い方｜発動できるフォメコンを探す方法｜サカつく2026攻略DB">
-  <meta property="og:description" content="サカつく2026攻略DBのコンボ検索を詳しく解説。ポリシー・ポジション・プレイスタイルLvを入力し、選手条件から発動候補のフォーメーションコンボを探す手順と活用法を紹介します。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sakatsuku2026-db.com/howto_combo_search.html">
-  <meta name="twitter:card" content="summary">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>コンボ検索の使い方｜選手から発動候補のフォメコンを逆引き｜サカつく2026攻略DB</title>
+<meta name="description" content="サカつく2026攻略DBのコンボ検索を解説。ポリシー・赤適性ポジション・プレイスタイル・Lvから発動候補のフォーメーションコンボを探し、検索結果を編成判断に使う方法を紹介します。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://sakatsuku2026-db.com/howto_combo_search.html">
+<meta property="og:title" content="コンボ検索の使い方｜選手から発動候補のフォメコンを逆引き｜サカつく2026攻略DB">
+<meta property="og:description" content="サカつく2026攻略DBのコンボ検索を解説。ポリシー・赤適性ポジション・プレイスタイル・Lvから発動候補のフォーメーションコンボを探し、検索結果を編成判断に使う方法を紹介します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sakatsuku2026-db.com/howto_combo_search.html">
+<meta name="twitter:card" content="summary">
 <style>
 :root{
-  --fg:#111;
-  --muted:#555;
-  --border:#e5e7eb;
-  --bg:#f6f7fb;
-  --card:#fff;
-  --panel:#f7f7f7;
-  --green:#22c55e;
-  --green-dark:#15803d;
-  --blue:#0b5ed7;
-  --orange:#f59e0b;
-  --shadow:0 10px 28px rgba(0,0,0,.08);
+  --green:#22c55e;--green-dark:#15803d;--green-soft:#ecfdf3;
+  --blue:#0b63d1;--blue-soft:#eef6ff;--orange:#f59e0b;--red:#dc2626;
+  --text:#111827;--muted:#5f6368;--line:#e5e7eb;--bg:#f6f7fb;--card:#fff;
+  --shadow:0 10px 26px rgba(0,0,0,.08);
 }
-*{box-sizing:border-box;}
-body{
-  font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
-  line-height:1.85;
-  margin:0;
-  background:var(--bg);
-  color:var(--fg);
-}
-main{
-  max-width:920px;
-  margin:0 auto;
-  padding:18px 14px 60px;
-}
-a{color:var(--blue);font-weight:800;}
-h1{
-  font-size:30px;
-  line-height:1.35;
-  margin:12px 0 8px;
-}
-h2{
-  font-size:23px;
-  margin:30px 0 12px;
-  padding-left:12px;
-  border-left:6px solid var(--green);
-}
-h3{
-  font-size:18px;
-  margin:22px 0 8px;
-}
-p{margin:10px 0;}
-ul,ol{padding-left:24px;}
-li{margin:6px 0;}
-small{color:var(--muted);}
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:18px;
-  box-shadow:var(--shadow);
-  padding:18px;
-  margin:16px 0;
-}
-.lead{
-  background:#f0fdf4;
-  border-left:6px solid var(--green);
-}
-.noteBox{
-  background:#fff7ed;
-  border:1px solid #fed7aa;
-  border-radius:14px;
-  padding:14px 16px;
-  margin:14px 0;
-}
-.pointBox{
-  background:#f8fafc;
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:14px 16px;
-  margin:14px 0;
-}
-.badge{
-  display:inline-block;
-  background:#dcfce7;
-  color:#166534;
-  padding:3px 9px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:900;
-  vertical-align:middle;
-}
-.toc{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:16px;
-  margin:18px 0;
-}
-.toc strong{display:block;margin-bottom:8px;}
-.toc a{text-decoration:none;}
-.tableWrap{overflow-x:auto;}
-table{
-  width:100%;
-  border-collapse:collapse;
-  background:#fff;
-  border-radius:12px;
-  overflow:hidden;
-  min-width:620px;
-}
-th,td{
-  border:1px solid var(--border);
-  padding:10px 12px;
-  text-align:left;
-  vertical-align:top;
-}
-th{
-  background:#f1f5f9;
-  font-weight:900;
-}
-.ctaArea{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  justify-content:center;
-  margin:24px 0 10px;
-}
-.ctaBtn{
-  display:inline-block;
-  min-width:240px;
-  text-align:center;
-  text-decoration:none;
-  color:#fff;
-  background:var(--green);
-  padding:14px 18px;
-  border-radius:14px;
-  font-size:17px;
-  font-weight:900;
-  box-shadow:0 10px 18px rgba(0,0,0,.14);
-}
-.ctaBtn.sub{background:#4a90e2;}
-.ctaBtn.dark{background:#111827;}
-.backLink{
-  margin-top:30px;
-  text-align:center;
-}
-.relatedGrid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:12px;
-}
-.relatedGrid a{
-  display:block;
-  background:#f8fafc;
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:12px 14px;
-  text-decoration:none;
-}
-@media(max-width:600px){
-  h1{font-size:26px;}
-  h2{font-size:21px;}
-  main{padding:14px 10px 50px;}
-  .card{padding:15px;}
-  .relatedGrid{grid-template-columns:1fr;}
-  .ctaBtn{width:100%;min-width:0;}
-}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.85;background:var(--bg);color:var(--text)}
+main{max-width:940px;margin:0 auto;padding:18px 14px 60px}
+a{color:var(--blue);font-weight:800}
+.hero{background:linear-gradient(180deg,#fff,#f0fff5);border:1px solid #dff3e5;border-left:7px solid var(--green);border-radius:22px;box-shadow:var(--shadow);padding:22px 18px;margin-bottom:18px}
+h1{font-size:28px;line-height:1.38;margin:0 0 10px}
+h2{font-size:22px;line-height:1.45;margin:0 0 14px;padding-left:10px;border-left:6px solid var(--green)}
+h3{font-size:18px;line-height:1.55;margin:20px 0 8px}
+p{margin:10px 0} ul,ol{padding-left:24px} li{margin:7px 0}
+strong{background:linear-gradient(transparent 62%,#d9fbe4 62%)}
+.update{color:var(--muted);font-size:13px;font-weight:800}.lead{font-size:16px;color:#263238;margin:10px 0 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:18px;margin:16px 0}
+.badge{display:inline-block;padding:3px 9px;border-radius:999px;background:var(--green-soft);color:var(--green-dark);font-size:12px;font-weight:900;vertical-align:middle}
+.toc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px 16px;margin:16px 0}.toc strong{display:block;margin-bottom:6px}.toc a{text-decoration:none}
+.summary{background:var(--green-soft);border:1px solid #bde8ca;border-left:6px solid var(--green);border-radius:16px;padding:14px 16px;margin:14px 0}
+.note{background:#fff8e6;border:1px solid #f5d28a;border-left:6px solid var(--orange);border-radius:16px;padding:14px 16px;margin:14px 0}
+.caution{background:#fff1f2;border:1px solid #fecdd3;border-left:6px solid #e11d48;border-radius:16px;padding:14px 16px;margin:14px 0}
+.example{background:var(--blue-soft);border:1px solid #d5e8ff;border-left:6px solid #4a90e2;border-radius:16px;padding:14px 16px;margin:14px 0}
+.pointList{display:grid;gap:10px;margin-top:12px}.point{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:13px 14px}.point b{display:block;color:var(--green-dark);margin-bottom:3px}
+.stepBox{counter-reset:step;display:grid;gap:12px}.step{position:relative;background:#fff;border:1px solid #dfe8e2;border-radius:16px;padding:14px 14px 14px 54px}.step::before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:16px;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
+.linkBox,.ctaArea{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.btn{display:inline-block;min-width:220px;text-align:center;text-decoration:none;font-weight:900;border-radius:16px;padding:13px 16px;box-shadow:0 10px 20px rgba(0,0,0,.12)}.btn-main{background:var(--green);color:#fff}.btn-sub{background:#4a90e2;color:#fff}.btn-gray{background:#fff;color:var(--blue);border:1px solid var(--line);box-shadow:none}
+.tableWrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff;min-width:620px}th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}th{background:#f1f5f9;font-weight:900}
+.related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.related a{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px;text-decoration:none;color:var(--blue);font-weight:900}
+.faq dt{font-weight:900;color:var(--green-dark);margin-top:14px}.faq dd{margin:6px 0 12px;padding:0 0 0 12px;border-left:3px solid #d9fbe4}
+.source{font-size:13px;color:var(--muted);background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px 14px}.source a{font-weight:700}
+.footerLink{text-align:center;margin-top:24px}
+.kicker{font-size:13px;font-weight:900;color:var(--green-dark);letter-spacing:.03em}.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px}.flow span{background:#f8fafc;border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-weight:800}.flow i{font-style:normal;color:var(--muted)}
+@media(max-width:600px){main{padding:14px 10px 44px}h1{font-size:24px}h2{font-size:20px}.card,.hero{padding:16px}.related{grid-template-columns:1fr}.btn{width:100%;min-width:0}table{min-width:560px}}
 </style>
-
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "コンボ検索の使い方｜できること・おすすめ活用法｜サカつく2026攻略DB",
-  "description": "サカつく2026攻略DBのコンボ検索の使い方を詳しく解説。ポリシー・ポジション・プレイスタイルLvを入力して、発動できるフォーメーションコンボを探す方法とおすすめの活用法を紹介。",
-  "dateModified": "2026-05-20",
-  "author": {
-    "@type": "Organization",
-    "name": "ソニオTV"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "サカつく2026攻略DB"
-  },
-  "mainEntityOfPage": "https://sakatsuku2026-db.com/howto_combo_search.html"
-}
-</script>
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "コンボ検索の使い方｜選手から発動候補のフォメコンを逆引き｜サカつく2026攻略DB",
+      "name": "コンボ検索の使い方｜選手から発動候補のフォメコンを逆引き｜サカつく2026攻略DB",
+      "description": "サカつく2026攻略DBのコンボ検索を解説。ポリシー・赤適性ポジション・プレイスタイル・Lvから発動候補のフォーメーションコンボを探し、検索結果を編成判断に使う方法を紹介します。",
+      "dateModified": "2026-08-22",
+      "author": {
+        "@type": "Organization",
+        "name": "ソニオTV"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "サカつく2026攻略DB"
+      },
+      "mainEntityOfPage": "https://sakatsuku2026-db.com/howto_combo_search.html",
+      "url": "https://sakatsuku2026-db.com/howto_combo_search.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "サカつく2026攻略DB",
+          "item": "https://sakatsuku2026-db.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "使い方ガイド",
+          "item": "https://sakatsuku2026-db.com/howto.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "コンボ検索の使い方｜選手から発動候補のフォメコンを逆引き｜サカつく2026攻略DB",
+          "item": "https://sakatsuku2026-db.com/howto_combo_search.html"
+        }
+      ]
+    }
+  ]
+}</script>
 </head>
+<body><main><article>
+<section class="hero"><div class="update">最終更新日：2026-08-22</div><h1>コンボ検索の使い方｜選手から発動候補のフォメコンを探す方法</h1><p class="lead">「この選手を活かせるフォーメーションコンボはどれ？」を調べる逆引きツールです。<strong>ポリシー・赤適性ポジション・プレイスタイル・Lv</strong>を入力し、選手がキーポジション条件に入り得るコンボを確認できます。</p></section>
+<section class="card"><h2>このツールを使う</h2><div class="linkBox"><a class="btn btn-main" href="index.html#panelCombo">コンボ検索を使う</a><a class="btn btn-sub" href="howto.html">使い方ガイド一覧へ</a></div></section>
+<section class="card"><h2>先に結論：コンボ検索は「1人の使い道」を調べるツール</h2><div class="summary"><p>新SP選手を入手した時や、育てようとしている選手の編成先を探したい時に使います。検索結果は<strong>「その選手だけでコンボが発動する」意味ではなく、その選手が条件の一部を満たせる候補</strong>です。実際に手持ち全体で発動できるかはフォメコン診断で確認してください。</p></div></section>
+<section class="card"><h2>検索前に知っておきたいゲーム仕様</h2><h3>フォーメーションコンボにはキーポジション条件がある</h3><p>公式TIPSでは、フォーメーションだけで発動するものに加え、キーポジションへ特定プレースタイルの選手を配置する条件があると説明されています。高ランクほど条件のハードルも高くなります。</p><h3>ポジションは赤適性を入力する</h3><p>公式TIPSでは赤適性は能力100％、黄適性は70％、その他は55％です。このサイトのコンボ検索では、<strong>その選手が赤適性を持つポジションをすべて選択</strong>するのが基本です。</p><h3>プレイスタイルLvは条件を満たすか確認する</h3><p>LvII・LvIIIなどの指定があるコンボでは、同じプレイスタイル名でもLv不足なら条件を満たせません。特にSP選手は、公式が案内したプレースタイルLv上昇用の特別な期限付き移籍ではLv上昇対象外とされています。</p><div class="source"><strong>ゲーム仕様の確認元：</strong>SEGA公式「攻略TIPS」。ポリシー、フォーメーションコンボ、ポジション適性などの基本仕様は公式情報を基準にしています。<br><a href="https://segafcchampions.sega.com/ja/news/tips000061/" target="_blank" rel="noopener noreferrer">サカつく2026公式 攻略TIPSを確認する</a></div><div class="source" style="margin-top:10px"><a href="https://segafcchampions.sega.com/ja/news/gb7ib796bfzf8000199/" target="_blank" rel="noopener noreferrer">公式：プレースタイルLv上昇イベントの注意事項</a></div></section>
+<section class="card"><h2>基本的な使い方</h2><div class="stepBox"><div class="step"><h3>ポリシーを選ぶ</h3><p>選手のポリシーを選択します。ポリシーが違うコンボまで広く見たい場合は、検索結果の条件差も確認してください。</p></div><div class="step"><h3>赤適性ポジションをすべて選ぶ</h3><p>メインポジション1つだけではなく、ゲーム内で赤く表示されている適性をすべて選びます。これにより「別ポジションなら条件に入れるコンボ」の見落としを防げます。</p></div><div class="step"><h3>プレイスタイルとLvを選ぶ</h3><p>選手カードのプレイスタイル（プレースタイル）名とLvを指定します。コンボの条件判定で重要な項目です。</p></div><div class="step"><h3>検索して候補を比較する</h3><p>表示されたコンボのランク・ポリシー・キーポジション条件・効果を確認し、残り条件を手持ちで埋められるか考えます。</p></div></div></section>
+<section class="card"><h2>検索結果はこう読む</h2><div class="pointList"><div class="point"><b>完全一致</b>入力したポリシー・ポジション・プレイスタイル・Lvがコンボ条件と噛み合う候補。まずここから確認します。</div><div class="point"><b>条件差がある候補</b>ポリシーやポジションなど一部条件が違う場合は、「選手を変えれば成立するコンボ」「別編成なら候補」という意味で使います。</div><div class="point"><b>ランクと効果</b>高ランクほど強力な傾向がありますが、発動条件も厳しくなります。現在の手持ちで成立するかを優先して比較します。</div><div class="point"><b>残りのキーポジション</b>この選手以外の必要条件が重要です。候補コンボを決めたら、次は選手検索で残り枠を逆引きします。</div></div></section>
+<section class="card"><h2>実戦的なおすすめ活用法</h2><h3>新SP選手の価値を「新しく開くコンボ」で見る</h3><p>単体総合力だけでなく、その選手が加入することで今まで組めなかったフォメコンが成立するなら、編成上の価値は高まります。逆に、既存選手で同じ条件を満たせるなら代替可能性もあります。</p><h3>ガチャ前に「必須枠か代用可能か」を確認する</h3><p>気になる新選手をコンボ検索にかけた後、該当コンボを選手検索で逆引きすると、同じ条件を満たすSP候補を比較できます。ガチャ判断では「強いか」だけでなく<strong>「この選手でないと困るか」</strong>を見るのが有効です。</p><h3>最終的にはフォメコン診断で手持ち全体を確認</h3><p>1人単位の検索結果だけで編成を決めず、<a href="favorite_combos.html">フォメコン診断</a>でお気に入り選手全体から実際の発動可否を確認してください。</p></section>
+<section class="card"><h2>おすすめの使い分け</h2><div class="tableWrap"><table><thead><tr><th>知りたいこと</th><th>使う機能</th></tr></thead><tbody><tr><td>この選手が使えるコンボ</td><td><strong>コンボ検索</strong></td></tr><tr><td>このコンボを満たすSP選手</td><td><a href="howto_player_search.html">選手検索</a></td></tr><tr><td>手持ちだけで発動できるコンボ</td><td><a href="favorite_combos.html">フォメコン診断</a></td></tr><tr><td>コンボを軸に11人を組みたい</td><td><a href="howto_strongest_team_simulation.html">最強チームSim</a></td></tr></tbody></table></div></section>
+<section class="card"><h2>よくある誤解・注意点</h2><div class="caution"><p><strong>検索に出た＝その選手だけで発動、ではありません。</strong>フォメコンはフォーメーション・ポリシー・複数のキーポジション条件を満たす必要があります。</p></div><h3>黄適性まで入力してしまう</h3><p>この検索は赤適性を基準に使うのがおすすめです。黄適性はゲーム上の能力発揮率が赤適性より低いため、同じ扱いにすると実戦の評価とずれる可能性があります。</p><h3>金コンボだけで判断する</h3><p>高ランクは強力ですが、条件を満たせずチーム全体が崩れるなら本末転倒です。まず成立しやすい候補を作り、手持ちの成長に合わせて更新してください。</p></section>
+<section class="card"><h2>よくある質問</h2><dl class="faq"><dt>Q. ポジションは1つだけ選ぶ？</dt><dd>いいえ。選手が赤適性を持つポジションはすべて選ぶのがおすすめです。</dd><dt>Q. 完全一致が少ない選手は弱い？</dt><dd>弱いとは限りません。コンボ適性は選手価値の一要素です。単体性能や別の編成では高い価値を持つ場合があります。</dd><dt>Q. LvIII条件にLvIIのSP選手を使える？</dt><dd>条件上は満たせません。プレイスタイルLvを含めて一致する候補を探してください。</dd><dt>Q. コンボ検索の次は何を見る？</dt><dd>使いたいコンボが決まったら選手検索、実際の手持ちで組めるか確認するならフォメコン診断が便利です。</dd></dl></section>
+<section class="card"><h2>関連ツール</h2><div class="related"><a href="howto_player_search.html">選手検索の使い方</a><a href="favorite_combos.html">フォメコン診断</a><a href="howto_sp_evaluator.html">選手評価ツールの使い方</a><a href="howto_strongest_team_simulation.html">最強チームSimの使い方</a></div></section>
 
-<body>
-<main>
-
-<article>
-
-<h1>コンボ検索の使い方｜できること・おすすめ活用法</h1>
-<small>最終更新日：2026-05-20</small>
-
-<div class="card lead">
-<p>
-このページでは、サカつく2026攻略DBの<strong>「コンボ検索」</strong>の使い方を詳しく解説します。
-</p>
-<p>
-コンボ検索は、手持ちの選手や新しく入手したSP選手の情報から、
-<strong>どのフォーメーションコンボを狙えるのか</strong>を調べるための機能です。
-ポリシー・ポジション・プレイスタイル・プレイスタイルLvを入力することで、条件に合うコンボを一覧で確認できます。
-</p>
-<p>
-「この選手をどこで使えばいいのか分からない」「ガチャで引いた選手がコンボ要員になるか知りたい」
-という時に使うと、編成の方向性を決めやすくなります。
-</p>
-</div>
-
-<div class="ctaArea">
-  <a class="ctaBtn" href="index.html#panelCombo">コンボ検索を使う</a>
-  <a class="ctaBtn sub" href="howto.html">使い方ガイド一覧へ</a>
-</div>
-
-<div class="toc">
-<strong>この記事でわかること</strong>
-<ol>
-  <li><a href="#what">コンボ検索でできること</a></li>
-  <li><a href="#how">基本的な使い方</a></li>
-  <li><a href="#result">検索結果の見方</a></li>
-  <li><a href="#recommend">おすすめの活用法</a></li>
-  <li><a href="#faq">よくある質問</a></li>
-</ol>
-</div>
-
-<h2 id="what">コンボ検索でできること <span class="badge">機能解説</span></h2>
-<div class="card">
-<p>
-コンボ検索では、選手の条件を入力して、発動候補になるフォーメーションコンボを探せます。
-サカつく2026では、強い選手を単体で並べるだけでなく、フォーメーションコンボを発動できるかどうかがチーム強化の重要なポイントになります。
-</p>
-
-<h3>主にできること</h3>
-<ul>
-  <li>選手の情報から、条件に合うフォーメーションコンボを探す</li>
-  <li>ポリシーが一致しているコンボを確認する</li>
-  <li>ポジションやプレイスタイルLvの条件を満たすコンボを確認する</li>
-  <li>完全一致・ポリシー違い・ポジション違いの候補を比較する</li>
-  <li>コンボのランク、効果、必要人数、入手方法などを確認する</li>
-</ul>
-
-<div class="noteBox">
-<strong>ポイント：</strong><br>
-コンボ検索は「選手からコンボを探す」ための機能です。逆に「このコンボを発動するために必要な選手を探したい」場合は、トップページの<strong>選手検索</strong>を使うのがおすすめです。
-</div>
-</div>
-
-<h2 id="how">コンボ検索の基本的な使い方</h2>
-<div class="card">
-<p>
-コンボ検索では、以下の4つの情報を入力して検索します。
-</p>
-
-<div class="tableWrap">
-<table>
-  <thead>
-    <tr>
-      <th>入力項目</th>
-      <th>内容</th>
-      <th>確認する場所</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ポリシー</td>
-      <td>カウンター、ムービング、リアクション、ポゼッションなど</td>
-      <td>選手詳細画面・選手データ</td>
-    </tr>
-    <tr>
-      <td>ポジション</td>
-      <td>CF、AM、CB、GKなどの適正ポジション</td>
-      <td>選手のポジション適正</td>
-    </tr>
-    <tr>
-      <td>プレイスタイル</td>
-      <td>ストライカー、パサー、ハードマーカーなど</td>
-      <td>選手詳細のプレイスタイル</td>
-    </tr>
-    <tr>
-      <td>プレイスタイルLv</td>
-      <td>Lv1、Lv2、Lv3</td>
-      <td>選手詳細のプレイスタイルLv</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h3>手順1：ポリシーを選ぶ</h3>
-<p>
-まずは検索したい選手のポリシーを選びます。
-ポリシーはコンボ発動に大きく関わるため、最初に確認しておきたい項目です。
-</p>
-
-<h3>手順2：ポジションを選ぶ</h3>
-<p>
-次に選手のポジションを選びます。
-複数のポジションに適正がある選手の場合は、該当するポジションを複数選択できます。
-特に赤適正が複数ある選手は、すべて選択して検索すると候補を見逃しにくくなります。
-</p>
-
-<h3>手順3：プレイスタイルを選ぶ</h3>
-<p>
-選手のプレイスタイルを選びます。
-コンボによっては「ストライカー」「パサー」「組立CB」など、特定のプレイスタイルが条件になっているため、ここを正しく選ぶことが重要です。
-</p>
-
-<h3>手順4：プレイスタイルLvを選ぶ</h3>
-<p>
-最後にプレイスタイルLvを選びます。
-サカつく2026では、Lvが高い選手ほど対応できる条件が増える場合があります。
-そのため、Lv3の選手はコンボ要員として非常に使いやすくなります。
-</p>
-
-<div class="pointBox">
-<strong>おすすめ：</strong><br>
-新SP選手を入手したら、まず「ポリシー・ポジション・プレイスタイル・Lv」を入力して検索するのがおすすめです。
-その選手がどのコンボに絡めるかを確認してから育成方針を決めると、素材や資金を無駄にしにくくなります。
-</div>
-</div>
-
-<h2 id="result">検索結果の見方</h2>
-<div class="card">
-<p>
-コンボ検索の結果は、条件の一致度によって分かれて表示されます。
-それぞれの意味を理解しておくと、どのコンボを優先すべきか判断しやすくなります。
-</p>
-
-<h3>完全一致</h3>
-<p>
-入力した選手情報と、コンボ条件がしっかり合っている候補です。
-基本的にはこの欄に出てきたコンボを最優先で確認しましょう。
-</p>
-<ul>
-  <li>ポリシーが合っている</li>
-  <li>ポジションが合っている</li>
-  <li>プレイスタイルとLv条件を満たしている</li>
-</ul>
-
-<h3>ポリシー違い</h3>
-<p>
-ポジションやプレイスタイル条件は近いものの、ポリシーが異なる候補です。
-完全一致ではありませんが、編成の方向性を変えれば活用できる場合があります。
-</p>
-<p>
-例えば、選手自体は強いものの現在のチーム方針とポリシーが合わない場合、将来的に別ポリシー編成を作る時の候補として覚えておくと便利です。
-</p>
-
-<h3>ポジション違い</h3>
-<p>
-ポリシーやプレイスタイルは近いものの、ポジション条件が合わない候補です。
-選手のサブポジションや配置変更で対応できる可能性があります。
-</p>
-
-<h3>コンボ詳細で見るべき項目</h3>
-<ul>
-  <li><strong>ランク：</strong>金・銀・銅のどれか</li>
-  <li><strong>フォーメーション：</strong>必要な陣形</li>
-  <li><strong>効果：</strong>どの能力が上がるか</li>
-  <li><strong>必要人数：</strong>発動に必要な条件人数</li>
-  <li><strong>入手方法：</strong>コンボの入手先や期間</li>
-</ul>
-
-<div class="noteBox">
-<strong>注意：</strong><br>
-金ランクコンボは強力ですが、必要条件が厳しい場合があります。序盤は銀・銅コンボも含めて確認し、手持ちで発動できるものから狙うと編成を作りやすくなります。
-</div>
-</div>
-
-<h2 id="recommend">おすすめの使い方</h2>
-<div class="card">
-<h3>1. 新選手を引いた直後に使う</h3>
-<p>
-ガチャやイベントで新しいSP選手を入手したら、まずコンボ検索で発動候補を確認しましょう。
-単純な総合力だけで判断するよりも、強いコンボに絡めるかどうかを見た方が、実戦での価値を判断しやすくなります。
-</p>
-
-<h3>2. 育成前の確認に使う</h3>
-<p>
-育成素材や資金を使う前に、その選手がどのコンボに使えるか確認するのがおすすめです。
-特に序盤から中盤は育成リソースが限られるため、コンボに絡みやすい選手を優先すると効率よくチームを強化できます。
-</p>
-
-<h3>3. チーム方針を決める時に使う</h3>
-<p>
-カウンター、ムービング、リアクション、ポゼッションなど、どのポリシーでチームを作るか迷った時にもコンボ検索は役立ちます。
-手持ちの主力選手を何人か検索してみると、どのポリシーに寄せるとコンボを発動しやすいか見えてきます。
-</p>
-
-<h3>4. 最強チームシミュレーションと組み合わせる</h3>
-<p>
-コンボ検索で狙いたいフォーメーションコンボを見つけたら、次に最強チームシミュレーションで実際の編成候補を確認する流れがおすすめです。
-「発動できそうなコンボ」を見つけるだけでなく、「どの選手を配置すると強いのか」まで確認できます。
-</p>
-
-<h3>5. 選手検索と組み合わせる</h3>
-<p>
-コンボ検索で気になるコンボが見つかったら、選手検索を使って条件に合う選手を逆引きしましょう。
-足りないポジションやプレイスタイルが分かるため、今後のガチャ・交換・育成の判断材料になります。
-</p>
-</div>
-
-<h2>コンボ検索を使うべきタイミング</h2>
-<div class="card">
-<ul>
-  <li>新しいSP選手を入手した時</li>
-  <li>ガチャを引くか迷っている時</li>
-  <li>手持ち選手の使い道を確認したい時</li>
-  <li>フォーメーションコンボを発動したい時</li>
-  <li>チームのポリシーを決めたい時</li>
-  <li>育成する選手を選びたい時</li>
-  <li>最強チームを作る前に候補を整理したい時</li>
-</ul>
-<p>
-特に、ガチャ評価や新選手レビューを見る時は、総合力だけでなく「どのコンボに絡めるか」を確認しておくと失敗しにくくなります。
-</p>
-</div>
-
-<h2 id="faq">よくある質問</h2>
-<div class="card">
-<h3>Q. 何を入力すればいいですか？</h3>
-<p>
-検索したい選手のポリシー、ポジション、プレイスタイル、プレイスタイルLvを入力してください。
-</p>
-
-<h3>Q. ポジションは1つだけ選べばいいですか？</h3>
-<p>
-複数の適正ポジションがある選手は、該当するポジションを複数選択するのがおすすめです。
-候補を広く確認できます。
-</p>
-
-<h3>Q. 完全一致が出ない場合は弱い選手ですか？</h3>
-<p>
-必ずしも弱いわけではありません。
-手持ちのフォーメーションやポリシーと合っていないだけの可能性があります。
-ポリシー違い・ポジション違いの候補も確認して、別編成で使えないか検討しましょう。
-</p>
-
-<h3>Q. 金ランクコンボだけ狙えばいいですか？</h3>
-<p>
-最終的には金ランクコンボが強力ですが、序盤や手持ちが少ない時は銀・銅コンボも重要です。
-発動しやすいコンボから使ってチームを強化し、選手が揃ってきたら金コンボを狙う流れがおすすめです。
-</p>
-
-<h3>Q. コンボ検索と選手検索の違いは？</h3>
-<p>
-コンボ検索は「選手情報から発動候補のコンボを探す機能」です。
-選手検索は「コンボ条件から必要な選手を探す機能」です。
-先に選手を見たい時はコンボ検索、先にコンボを決めている時は選手検索を使うと分かりやすいです。
-</p>
-</div>
-
-<h2>関連ツール</h2>
-<div class="card">
-<div class="relatedGrid">
-  <a href="index.html#panelPlayer">選手検索<br><small>コンボ条件から対応選手を探す</small></a>
-  <a href="sp_evaluator.html">選手評価ツール<br><small>SP選手の強さや適性を確認する</small></a>
-  <a href="strongest_team_simulation.html">最強チームシミュレーション<br><small>コンボに合う編成候補を確認する</small></a>
-  <a href="overall_ranking.html">総合力ランキング<br><small>総合力・最大強化の上位選手を見る</small></a>
-</div>
-</div>
-
-<div class="ctaArea">
-  <a class="ctaBtn" href="index.html#panelCombo">コンボ検索を使う</a>
-  <a class="ctaBtn sub" href="index.html">サイトトップへ戻る</a>
-  <a class="ctaBtn dark" href="articles.html">攻略記事一覧へ</a>
-</div>
-
-<div class="backLink">
-<a href="index.html">← サカつく2026攻略DBトップへ戻る</a>
-</div>
-
-</article>
-
-</main>
-</body>
-</html>
+<p class="footerLink"><a class="btn btn-gray" href="index.html">← サイトトップに戻る</a></p>
+</article></main></body></html>

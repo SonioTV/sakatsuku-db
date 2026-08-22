@@ -1,262 +1,137 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="keywords" content="サカつく2026,攻略DB,使い方,コンボ検索,選手検索,選手評価ツール,総合力ランキング,期限付き移籍,最強チームシミュレーション,ソニオTV">
-<title>サカつく2026攻略DBの使い方｜検索・評価・シミュレーター活用ガイド</title>
-  <meta name="description" content="サカつく2026攻略DBの使い方を総合解説。コンボ検索、選手検索、選手評価、総合力ランキング、期限付き移籍、最強チームシミュレーションの役割と使い分けを紹介します。">
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="canonical" href="https://sakatsuku2026-db.com/howto.html">
-  <meta property="og:title" content="サカつく2026攻略DBの使い方｜検索・評価・シミュレーター活用ガイド">
-  <meta property="og:description" content="サカつく2026攻略DBの使い方を総合解説。コンボ検索、選手検索、選手評価、総合力ランキング、期限付き移籍、最強チームシミュレーションの役割と使い分けを紹介します。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sakatsuku2026-db.com/howto.html">
-  <meta name="twitter:card" content="summary">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>サカつく2026攻略DBの使い方｜攻略・検索・編成ツール活用ガイド</title>
+<meta name="description" content="サカつく2026攻略DBの使い方を総合解説。選手図鑑、フォメコン診断、選手評価、総合力ランキング、期限付き移籍、最強チームシミュレーションなどを目的別に案内します。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://sakatsuku2026-db.com/howto.html">
+<meta property="og:title" content="サカつく2026攻略DBの使い方｜攻略・検索・編成ツール活用ガイド">
+<meta property="og:description" content="サカつく2026攻略DBの使い方を総合解説。選手図鑑、フォメコン診断、選手評価、総合力ランキング、期限付き移籍、最強チームシミュレーションなどを目的別に案内します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sakatsuku2026-db.com/howto.html">
+<meta name="twitter:card" content="summary">
 <style>
 :root{
-  --green:#22c55e;
-  --green-dark:#15803d;
-  --green-soft:#ecfdf3;
-  --blue:#0b63d1;
-  --blue-soft:#eef6ff;
-  --orange:#f59e0b;
-  --orange-soft:#fff7ed;
-  --text:#111827;
-  --muted:#5f6368;
-  --line:#e5e7eb;
-  --bg:#f6f7fb;
-  --card:#ffffff;
+  --green:#22c55e;--green-dark:#15803d;--green-soft:#ecfdf3;
+  --blue:#0b63d1;--blue-soft:#eef6ff;--orange:#f59e0b;--red:#dc2626;
+  --text:#111827;--muted:#5f6368;--line:#e5e7eb;--bg:#f6f7fb;--card:#fff;
   --shadow:0 10px 26px rgba(0,0,0,.08);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
-  line-height:1.85;
-  background:var(--bg);
-  color:var(--text);
-}
-a{color:var(--blue);font-weight:900}
-main{max-width:920px;margin:0 auto;padding:18px 14px 70px}
-.topbar{background:#fff;border-bottom:1px solid var(--line)}
-.topbarInner{max-width:920px;margin:0 auto;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.brand a{color:#111;text-decoration:none;font-weight:900}
-.nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-.nav a{font-size:13px;text-decoration:none;color:var(--blue)}
-.hero{
-  background:linear-gradient(180deg,#ffffff,#f0fff5);
-  border:1px solid #dff3e5;
-  border-left:7px solid var(--green);
-  border-radius:24px;
-  box-shadow:var(--shadow);
-  padding:24px 20px;
-  margin:18px 0;
-}
-h1{font-size:30px;line-height:1.35;margin:0 0 10px;letter-spacing:.01em}
-.lead{font-size:16px;color:#263238;margin:12px 0 0}
-.update{color:var(--muted);font-size:13px;font-weight:800;margin-bottom:4px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:18px;margin:16px 0}
-h2{font-size:23px;line-height:1.4;margin:0 0 12px;padding-left:10px;border-left:6px solid var(--green)}
-h3{font-size:18px;margin:18px 0 8px}
-p{margin:10px 0}ul,ol{padding-left:22px}li{margin:7px 0}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.85;background:var(--bg);color:var(--text)}
+main{max-width:940px;margin:0 auto;padding:18px 14px 60px}
+a{color:var(--blue);font-weight:800}
+.hero{background:linear-gradient(180deg,#fff,#f0fff5);border:1px solid #dff3e5;border-left:7px solid var(--green);border-radius:22px;box-shadow:var(--shadow);padding:22px 18px;margin-bottom:18px}
+h1{font-size:28px;line-height:1.38;margin:0 0 10px}
+h2{font-size:22px;line-height:1.45;margin:0 0 14px;padding-left:10px;border-left:6px solid var(--green)}
+h3{font-size:18px;line-height:1.55;margin:20px 0 8px}
+p{margin:10px 0} ul,ol{padding-left:24px} li{margin:7px 0}
 strong{background:linear-gradient(transparent 62%,#d9fbe4 62%)}
+.update{color:var(--muted);font-size:13px;font-weight:800}.lead{font-size:16px;color:#263238;margin:10px 0 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:18px;margin:16px 0}
 .badge{display:inline-block;padding:3px 9px;border-radius:999px;background:var(--green-soft);color:var(--green-dark);font-size:12px;font-weight:900;vertical-align:middle}
-.ctaArea{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:18px 0 4px}
-.btn{display:inline-block;text-align:center;text-decoration:none;font-weight:900;border-radius:16px;padding:13px 16px;box-shadow:0 10px 20px rgba(0,0,0,.12)}
-.btn-main{background:var(--green);color:#fff}.btn-sub{background:#4a90e2;color:#fff}.btn-dark{background:#111827;color:#fff}.btn-white{background:#fff;color:var(--blue);border:1px solid var(--line);box-shadow:none}
-.summaryGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
-.summaryBox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;text-align:center}.summaryBox b{display:block;background:none;color:var(--green-dark);font-size:20px}.summaryBox span{display:block;font-size:13px;color:var(--muted);font-weight:800}
-.toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.toc a{display:block;background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px 14px;text-decoration:none}.toc small{display:block;color:var(--muted);font-weight:700;margin-top:2px}
-.flow{display:grid;gap:10px}.flowItem{position:relative;background:#fff;border:1px solid #dfe8e2;border-radius:16px;padding:14px 14px 14px 56px}.flowItem::before{content:attr(data-step);position:absolute;left:14px;top:16px;width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}.flowItem b{display:block;background:none;color:var(--green-dark);font-size:17px}
-.toolGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.toolCard{display:flex;flex-direction:column;gap:8px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;text-decoration:none;color:inherit;box-shadow:0 6px 16px rgba(0,0,0,.04);transition:.12s}.toolCard:active{transform:scale(.98)}.toolHead{display:flex;align-items:center;gap:10px}.toolIcon{width:38px;height:38px;border-radius:12px;background:var(--green-soft);display:flex;align-items:center;justify-content:center;font-size:20px}.toolTitle{font-size:18px;font-weight:900;color:#111}.toolText{font-size:14px;color:#374151;line-height:1.65}.toolLinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}.miniBtn{display:inline-block;border-radius:999px;padding:5px 10px;background:#f8fafc;border:1px solid var(--line);font-size:12px;text-decoration:none;color:var(--blue);font-weight:900}
-.pointList{display:grid;gap:10px;margin-top:12px}.point{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:13px 14px}.point b{display:block;background:none;color:var(--green-dark);margin-bottom:3px}.note{background:var(--orange-soft);border:1px solid #fed7aa;border-left:6px solid var(--orange);border-radius:16px;padding:14px;margin:14px 0}.example{background:var(--blue-soft);border:1px solid #d5e8ff;border-left:6px solid #4a90e2;border-radius:16px;padding:14px;margin:14px 0}.tableWrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;min-width:620px}th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}th{background:#f1f5f9;font-weight:900}
-.faq dt{font-weight:900;color:var(--green-dark);margin-top:14px}.faq dd{margin:6px 0 12px 0;padding-left:12px;border-left:3px solid #d9fbe4}.bottomNav{text-align:center;margin-top:26px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-@media(max-width:640px){main{padding:14px 10px 54px}.nav{display:none}h1{font-size:25px}h2{font-size:21px}.hero,.card{padding:16px}.summaryGrid,.toc,.toolGrid{grid-template-columns:1fr}.btn{width:100%}.toolTitle{font-size:17px}table{min-width:560px}}
+.toc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px 16px;margin:16px 0}.toc strong{display:block;margin-bottom:6px}.toc a{text-decoration:none}
+.summary{background:var(--green-soft);border:1px solid #bde8ca;border-left:6px solid var(--green);border-radius:16px;padding:14px 16px;margin:14px 0}
+.note{background:#fff8e6;border:1px solid #f5d28a;border-left:6px solid var(--orange);border-radius:16px;padding:14px 16px;margin:14px 0}
+.caution{background:#fff1f2;border:1px solid #fecdd3;border-left:6px solid #e11d48;border-radius:16px;padding:14px 16px;margin:14px 0}
+.example{background:var(--blue-soft);border:1px solid #d5e8ff;border-left:6px solid #4a90e2;border-radius:16px;padding:14px 16px;margin:14px 0}
+.pointList{display:grid;gap:10px;margin-top:12px}.point{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:13px 14px}.point b{display:block;color:var(--green-dark);margin-bottom:3px}
+.stepBox{counter-reset:step;display:grid;gap:12px}.step{position:relative;background:#fff;border:1px solid #dfe8e2;border-radius:16px;padding:14px 14px 14px 54px}.step::before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:16px;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
+.linkBox,.ctaArea{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.btn{display:inline-block;min-width:220px;text-align:center;text-decoration:none;font-weight:900;border-radius:16px;padding:13px 16px;box-shadow:0 10px 20px rgba(0,0,0,.12)}.btn-main{background:var(--green);color:#fff}.btn-sub{background:#4a90e2;color:#fff}.btn-gray{background:#fff;color:var(--blue);border:1px solid var(--line);box-shadow:none}
+.tableWrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff;min-width:620px}th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}th{background:#f1f5f9;font-weight:900}
+.related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.related a{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px;text-decoration:none;color:var(--blue);font-weight:900}
+.faq dt{font-weight:900;color:var(--green-dark);margin-top:14px}.faq dd{margin:6px 0 12px;padding:0 0 0 12px;border-left:3px solid #d9fbe4}
+.source{font-size:13px;color:var(--muted);background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px 14px}.source a{font-weight:700}
+.footerLink{text-align:center;margin-top:24px}
+.kicker{font-size:13px;font-weight:900;color:var(--green-dark);letter-spacing:.03em}.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px}.flow span{background:#f8fafc;border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-weight:800}.flow i{font-style:normal;color:var(--muted)}
+@media(max-width:600px){main{padding:14px 10px 44px}h1{font-size:24px}h2{font-size:20px}.card,.hero{padding:16px}.related{grid-template-columns:1fr}.btn{width:100%;min-width:0}table{min-width:560px}}
 </style>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "headline":"サカつく2026攻略DBの使い方｜コンボ検索・選手検索・ツール活用ガイド",
-  "description":"サカつく2026攻略DBの使い方を総合解説。コンボ検索、選手検索、選手評価ツール、総合力ランキング、期限付き移籍マッチング、最強チームシミュレーションの活用方法を初心者にもわかりやすく紹介。",
-  "dateModified":"2026-05-26",
-  "author":{"@type":"Organization","name":"ソニオTV"},
-  "publisher":{"@type":"Organization","name":"サカつく2026攻略DB"},
-  "mainEntityOfPage":"https://sakatsuku2026-db.com/howto.html"
-}
-</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "headline": "サカつく2026攻略DBの使い方｜攻略・検索・編成ツール活用ガイド",
+      "name": "サカつく2026攻略DBの使い方｜攻略・検索・編成ツール活用ガイド",
+      "description": "サカつく2026攻略DBの使い方を総合解説。選手図鑑、フォメコン診断、選手評価、総合力ランキング、期限付き移籍、最強チームシミュレーションなどを目的別に案内します。",
+      "dateModified": "2026-08-22",
+      "author": {
+        "@type": "Organization",
+        "name": "ソニオTV"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "サカつく2026攻略DB"
+      },
+      "mainEntityOfPage": "https://sakatsuku2026-db.com/howto.html",
+      "url": "https://sakatsuku2026-db.com/howto.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "サカつく2026攻略DB",
+          "item": "https://sakatsuku2026-db.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "使い方ガイド",
+          "item": "https://sakatsuku2026-db.com/howto.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "サカつく2026攻略DBの使い方｜攻略・検索・編成ツール活用ガイド",
+          "item": "https://sakatsuku2026-db.com/howto.html"
+        }
+      ]
+    }
+  ]
+}</script>
 </head>
-<body>
-<header class="topbar">
-  <div class="topbarInner">
-    <div class="brand"><a href="index.html">サカつく2026攻略DB</a></div>
-    <nav class="nav">
-      <a href="index.html">トップ</a>
-      <a href="articles.html">攻略記事一覧</a>
-      <a href="contact.html">お問い合わせ</a>
-    </nav>
-  </div>
-</header>
+<body><main><article>
+<section class="hero"><div class="update">最終更新日：2026-08-22</div><h1>サカつく2026攻略DBの使い方｜目的から最短で答えにたどり着くガイド</h1><p class="lead">このページは、サイト内の攻略記事・データベース・シミュレーターを「何を知りたい時に、どれを使えばいいか」で整理した総合案内です。<strong>選手を探す・比べる・フォメコンを組む・育成先を選ぶ</strong>という実際の攻略判断に合わせて使い分けてください。</p></section>
 
-<main>
-<article>
-<section class="hero">
-  <div class="update">最終更新日：2026-05-26</div>
-  <h1>サカつく2026攻略DBの使い方</h1>
-  <p class="lead">
-    このページでは、サカつく2026攻略DBで使える主要ツールの役割と、効率のよい使い方をまとめています。
-    本サイトは、フォーメーションコンボ、SP選手、育成、期限付き移籍、ランキング情報を整理し、
-    <strong>「どの選手を使うべきか」「どのコンボを狙うべきか」「どこを強化すべきか」</strong>を判断しやすくするための攻略データベースです。
-  </p>
-  <div class="ctaArea">
-    <a class="btn btn-main" href="index.html#panelCombo">コンボ検索を使う</a>
-    <a class="btn btn-sub" href="index.html#panelPlayer">選手検索を使う</a>
-    <a class="btn btn-dark" href="articles.html">攻略記事一覧を見る</a>
-  </div>
-  <div class="summaryGrid">
-    <div class="summaryBox"><b>探す</b><span>コンボ・選手を逆引き</span></div>
-    <div class="summaryBox"><b>比べる</b><span>総合力・順位・適性を比較</span></div>
-    <div class="summaryBox"><b>組む</b><span>編成・育成方針を決める</span></div>
-  </div>
-</section>
+<section class="card"><h2>先に結論：迷ったらこの順番</h2><div class="summary"><div class="flow"><span>① 選手図鑑で手持ち確認</span><i>→</i><span>② フォメコン診断</span><i>→</i><span>③ 選手評価</span><i>→</i><span>④ 最強チームSim</span></div><p>「今持っている選手で何ができるか」を起点にすると、ガチャや育成を必要以上に広げずに済みます。新SP選手の使い道だけ知りたい場合は、トップページの<strong>コンボ検索 → 選手評価ツール</strong>が最短です。</p></div></section>
+<section class="card"><h2>サカつく2026攻略DBでできること</h2><div class="pointList">
+<div class="point"><b>探す</b>選手図鑑・選手検索・コンボ検索で「条件に合う選手」「この選手が使えるコンボ」を逆引きできます。</div>
+<div class="point"><b>比べる</b>選手評価ツールと総合力ランキングで、全体順位だけでなく同ポジション・同ポリシーなど同じ土俵の候補を比較できます。</div>
+<div class="point"><b>組む</b>フォメコン診断と最強チームシミュレーションで、発動可能コンボや理想編成、不足している条件を確認できます。</div>
+<div class="point"><b>育てる・運営する</b>期限付き移籍、スタジアム、クラブハウスの各ツールで、育成・施設運営の候補をデータから比較できます。</div>
+</div></section>
+<section class="card"><h2>ゲーム攻略で共通して意識したい3つの前提</h2>
+<h3>1. 総合力だけで最終判断しない</h3><p>総合力は比較しやすい共通指標ですが、実際の編成では<strong>ポジション適性・ポリシー・プレイスタイル・フォーメーションコンボ</strong>も重要です。サイト内のランキングは「答え」ではなく、候補を絞るための入口として使います。</p>
+<h3>2. ポジションは「赤適性」を優先</h3><p>公式TIPSでは、赤い適性エリアで能力を100％、黄色で70％、その他で55％発揮すると案内されています。同じメインポジションでも適性範囲は選手ごとに違うため、編成時はポジション名だけでなく適性も確認してください。</p>
+<h3>3. フォメコンは「発動できるか」と「誰で満たすか」を分けて考える</h3><p>高ランクのフォーメーションコンボは強力ですが、キーポジションの条件も厳しくなります。まず手持ちで無理なく成立する候補を確認し、そこから上位コンボへの更新を考えると効率的です。</p><div class="source"><strong>ゲーム仕様の確認元：</strong>SEGA公式「攻略TIPS」。ポリシー、フォーメーションコンボ、ポジション適性などの基本仕様は公式情報を基準にしています。<br><a href="https://segafcchampions.sega.com/ja/news/tips000061/" target="_blank" rel="noopener noreferrer">サカつく2026公式 攻略TIPSを確認する</a></div></section>
+<section class="card"><h2>目的別：どの機能を使えばいい？</h2><div class="tableWrap"><table><thead><tr><th>やりたいこと</th><th>使う機能</th><th>見るポイント</th></tr></thead><tbody>
+<tr><td>所持選手を整理したい</td><td><a href="player_catalog.html">選手図鑑</a></td><td>お気に入り、入手状況、ポリシー、適性、プレイスタイルLv</td></tr>
+<tr><td>この選手で使えるフォメコンを知りたい</td><td><a href="index.html#panelCombo">コンボ検索</a></td><td>ポリシー、赤適性ポジション、プレイスタイル、Lv</td></tr>
+<tr><td>このフォメコンを組めるSP選手を知りたい</td><td><a href="index.html#panelPlayer">選手検索</a></td><td>キーポジション条件、入手可否</td></tr>
+<tr><td>手持ちで発動できるコンボを知りたい</td><td><a href="favorite_combos.html">フォメコン診断</a></td><td>発動可能、あと1名、不足条件</td></tr>
+<tr><td>特定SP選手の価値を比較したい</td><td><a href="sp_evaluator.html">選手評価ツール</a></td><td>同条件順位、最大強化、コンボ適性、互換候補</td></tr>
+<tr><td>強い選手を条件別に探したい</td><td><a href="overall_ranking.html">総合力ランキング</a></td><td>初期、最大強化、同ポジション・同ポリシー</td></tr>
+<tr><td>フォメコン軸の理想編成を作りたい</td><td><a href="strongest_team_simulation.html">最強チームSim</a></td><td>ポリシー染め/自由、入手可能SP、お気に入り</td></tr>
+<tr><td>期限付き移籍先を比較したい</td><td><a href="loan_matching_tool.html">期限付き移籍マッチング</a></td><td>プレイスタイル、期間、成長項目、上限育成</td></tr>
+<tr><td>施設構成を最適化したい</td><td><a href="stadium_simulation.html">スタジアム</a> / <a href="clubhouse_simulation.html">クラブハウス</a></td><td>優先効果、Lv、上限コスト</td></tr>
+</tbody></table></div></section>
+<section class="card"><h2>主要6ツールの詳しい使い方</h2><div class="related">
+<a href="howto_combo_search.html">コンボ検索の使い方<br><small>選手 → フォメコン</small></a><a href="howto_player_search.html">選手検索の使い方<br><small>フォメコン → SP選手</small></a><a href="howto_sp_evaluator.html">選手評価ツールの使い方<br><small>特定選手を多角比較</small></a><a href="howto_overall_ranking.html">総合力ランキングの使い方<br><small>条件別の強さ比較</small></a><a href="howto_loan_matching_tool.html">期限付き移籍の使い方<br><small>育成先を比較</small></a><a href="howto_strongest_team_simulation.html">最強チームSimの使い方<br><small>コンボ軸で編成</small></a>
+</div></section>
+<section class="card"><h2>初心者におすすめの進め方</h2><div class="stepBox">
+<div class="step"><h3>お気に入り選手を登録する</h3><p><a href="player_catalog.html">選手図鑑</a>で、実際に使いたい選手・育てたい選手をお気に入り登録します。</p></div>
+<div class="step"><h3>今の手持ちで発動できるコンボを確認する</h3><p><a href="favorite_combos.html">フォメコン診断</a>で「発動できる」「あと1名」を見れば、最小限の補強ポイントが分かります。</p></div>
+<div class="step"><h3>足りない1人を探す</h3><p>選手検索や選手評価ツールで、条件を満たす候補を比較します。現在入手できる選手だけに絞ると、実現可能な補強計画になります。</p></div>
+<div class="step"><h3>理想編成と現在地を比較する</h3><p>最強チームシミュレーションで、理想候補と手持ちとの差を確認します。ここで初めてガチャ・交換・育成の優先順位を決めます。</p></div>
+</div><div class="note"><strong>初心者向けポイント：</strong>最初から「金コンボだけ」を目標にする必要はありません。高ランクほど条件が厳しくなるため、現在の手持ちで成立しやすいコンボから段階的に更新する方が無理がありません。</div></section>
+<section class="card"><h2>中級者以上におすすめの使い方</h2><p>中級者以上は、単体の強さではなく<strong>「編成の希少枠」「代用の有無」「入手可能か」「どのコンボを新しく開けるか」</strong>まで見ると、ガチャや育成判断の精度が上がります。</p><div class="example"><ol><li>フォメコン診断で不足条件を確認</li><li>選手検索で候補を列挙</li><li>選手評価で同条件順位と互換候補を比較</li><li>最強チームSimで加入前後の編成を比較</li><li>必要なら期限付き移籍・施設ツールで育成と運営を詰める</li></ol></div></section>
+<section class="card"><h2>よくある質問</h2><dl class="faq"><dt>Q. コンボ検索とフォメコン診断は何が違う？</dt><dd>コンボ検索は「1人の選手条件からコンボ候補を探す」機能、フォメコン診断は「お気に入り登録した複数選手から、実際に発動できるコンボを判定する」機能です。</dd><dt>Q. 総合力が高い選手を選べばいい？</dt><dd>総合力は重要な比較材料ですが、それだけでは決まりません。赤適性、ポリシー、プレイスタイル、コンボ条件、入手状況まで合わせて見てください。</dd><dt>Q. データはいつの状態？</dt><dd>サイト更新時点の収録データを基準にしています。スカウト期間やアップデートで入手状況・新選手・新コンボが変わる場合があります。</dd></dl></section>
+<section class="card"><h2>関連ページ</h2><div class="related"><a href="articles.html">攻略記事一覧</a><a href="player_catalog.html">選手図鑑</a><a href="favorite_combos.html">フォメコン診断</a><a href="changelog.html">更新履歴</a></div></section>
 
-<section class="card">
-  <h2>まず知っておきたい基本の使い方</h2>
-  <p>
-    最初から全ツールを使いこなす必要はありません。
-    基本は、<strong>選手から調べる</strong>か、<strong>コンボから調べる</strong>かで入口を選べばOKです。
-  </p>
-  <div class="flow">
-    <div class="flowItem" data-step="1"><b>新しく選手を入手したら「コンボ検索」</b>その選手がどのフォーメーションコンボに絡めるかを確認します。</div>
-    <div class="flowItem" data-step="2"><b>使いたいコンボが決まったら「選手検索」</b>そのコンボ条件を満たせるSP選手を逆引きします。</div>
-    <div class="flowItem" data-step="3"><b>候補が複数いる時は「選手評価ツール」</b>総合力、最大強化、ポジション内順位、コンボ適性を見て優先度を決めます。</div>
-    <div class="flowItem" data-step="4"><b>編成全体を考える時は「最強チームシミュレーション」</b>フォーメーションコンボを軸に、ポジションごとの候補選手を確認します。</div>
-  </div>
-</section>
-
-<section class="card">
-  <h2>サカつく2026攻略DBもくじ</h2>
-  <p>各ツールの詳しい使い方は、専用ガイドでも確認できます。</p>
-  <div class="toc">
-    <a href="howto_combo_search.html">コンボ検索の使い方<small>選手情報から発動できるコンボを探す</small></a>
-    <a href="howto_player_search.html">選手検索の使い方<small>コンボ条件から必要なSP選手を探す</small></a>
-    <a href="howto_sp_evaluator.html">選手評価ツールの使い方<small>SP選手の強さとコンボ適性を確認</small></a>
-    <a href="howto_overall_ranking.html">総合力ランキングの使い方<small>初期総合力・最大強化を比較</small></a>
-    <a href="howto_loan_matching_tool.html">期限付き移籍マッチングツールの使い方<small>育成目的に合う移籍先を探す</small></a>
-    <a href="howto_strongest_team_simulation.html">最強チームシミュレーションの使い方<small>コンボ条件から最強編成を考える</small></a>
-  </div>
-</section>
-
-<section class="card" id="tools">
-  <h2>主要ツールの役割とおすすめ活用法</h2>
-  <div class="toolGrid">
-    <div class="toolCard">
-      <div class="toolHead"><div class="toolIcon">🔍</div><div class="toolTitle">コンボ検索</div></div>
-      <div class="toolText">手持ち選手や新SP選手の情報から、発動候補になるフォーメーションコンボを探す機能です。ポリシー、ポジション、プレイスタイル、Lvを入力して使います。</div>
-      <div class="toolLinks"><a class="miniBtn" href="index.html#panelCombo">使う</a><a class="miniBtn" href="howto_combo_search.html">詳しい使い方</a></div>
-    </div>
-    <div class="toolCard">
-      <div class="toolHead"><div class="toolIcon">👤</div><div class="toolTitle">選手検索</div></div>
-      <div class="toolText">使いたいフォーメーションコンボを選び、その条件に対応できるSP選手を逆引きできます。足りないポジションやプレイスタイルを確認する時に便利です。</div>
-      <div class="toolLinks"><a class="miniBtn" href="index.html#panelPlayer">使う</a><a class="miniBtn" href="howto_player_search.html">詳しい使い方</a></div>
-    </div>
-    <div class="toolCard">
-      <div class="toolHead"><div class="toolIcon">📊</div><div class="toolTitle">選手評価ツール</div></div>
-      <div class="toolText">気になるSP選手の全体順位、ポリシー別順位、ポジション別順位、プレイスタイル別順位、金コンボ適性をまとめて確認できます。</div>
-      <div class="toolLinks"><a class="miniBtn" href="sp_evaluator.html">使う</a><a class="miniBtn" href="howto_sp_evaluator.html">詳しい使い方</a></div>
-    </div>
-    <div class="toolCard">
-      <div class="toolHead"><div class="toolIcon">🏆</div><div class="toolTitle">総合力ランキング</div></div>
-      <div class="toolText">SP選手の初期総合力、最大強化、条件別ランキングを確認できます。ガチャ判断や育成優先度の比較に使いやすいページです。</div>
-      <div class="toolLinks"><a class="miniBtn" href="overall_ranking.html">使う</a><a class="miniBtn" href="howto_overall_ranking.html">詳しい使い方</a></div>
-    </div>
-    <div class="toolCard">
-      <div class="toolHead"><div class="toolIcon">✈️</div><div class="toolTitle">期限付き移籍マッチング</div></div>
-      <div class="toolText">プレイスタイル、移籍期間、伸ばしたい能力から候補の移籍先を探せます。長所強化や育成方針を決める時に役立ちます。</div>
-      <div class="toolLinks"><a class="miniBtn" href="loan_matching_tool.html">使う</a><a class="miniBtn" href="howto_loan_matching_tool.html">詳しい使い方</a></div>
-    </div>
-    <div class="toolCard">
-      <div class="toolHead"><div class="toolIcon">⚽</div><div class="toolTitle">最強チームシミュレーション</div></div>
-      <div class="toolText">フォーメーションコンボを選び、各ポジションにどの選手を置くと強い編成になりやすいかを確認できます。ピッチ表示で全体バランスも見やすいです。</div>
-      <div class="toolLinks"><a class="miniBtn" href="strongest_team_simulation.html">使う</a><a class="miniBtn" href="howto_strongest_team_simulation.html">詳しい使い方</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="card">
-  <h2>目的別：どのツールを使えばいい？</h2>
-  <div class="tableWrap">
-    <table>
-      <thead><tr><th>やりたいこと</th><th>使うツール</th><th>見るポイント</th></tr></thead>
-      <tbody>
-        <tr><td>ガチャで引いた選手の使い道を知りたい</td><td>コンボ検索 → 選手評価ツール</td><td>対応コンボ、ポリシー別順位、ポジション別順位</td></tr>
-        <tr><td>特定の金コンボを発動したい</td><td>選手検索 → 最強チームシミュレーション</td><td>必要ポジション、プレイスタイル、Lv、候補選手</td></tr>
-        <tr><td>育成する選手を決めたい</td><td>総合力ランキング → 選手評価ツール</td><td>最大強化、同ポジション内順位、コンボ適性</td></tr>
-        <tr><td>期限付き移籍先を選びたい</td><td>期限付き移籍マッチング</td><td>伸ばしたい能力、移籍期間、上限条件</td></tr>
-        <tr><td>チーム全体を強化したい</td><td>最強チームシミュレーション</td><td>ポリシー染め、ポリシー自由、ピッチ配置</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section class="card">
-  <h2>初心者におすすめの使い方</h2>
-  <div class="pointList">
-    <div class="point"><b>① まずは金コンボを意識する</b>チームを強くしたい場合、強い選手を単体で並べるだけでなく、効果の大きいフォーメーションコンボを発動できるかが重要です。</div>
-    <div class="point"><b>② 新SP選手は必ずコンボ検索にかける</b>新しく入手した選手は、どのコンボに絡めるかを確認してから育成すると失敗しにくくなります。</div>
-    <div class="point"><b>③ 総合力だけで判断しない</b>総合力が高くても、狙っているコンボに合わない場合があります。ポリシー・ポジション・プレイスタイルも一緒に確認しましょう。</div>
-    <div class="point"><b>④ 足りない選手は選手検索で逆引きする</b>コンボを選んで候補選手を確認すれば、今後のガチャや交換で狙うべき選手が見えやすくなります。</div>
-  </div>
-</section>
-
-<section class="card">
-  <h2>中級者以上におすすめの使い方</h2>
-  <div class="example">
-    <strong>おすすめの流れ：</strong><br>
-    ① 最強チームシミュレーションで使いたいコンボを選ぶ<br>
-    ② 選手検索で条件を満たせるSP選手を確認する<br>
-    ③ 選手評価ツールで候補選手の順位と適性を比較する<br>
-    ④ 期限付き移籍マッチングで役割に合う能力を伸ばす<br>
-    ⑤ 総合力ランキングで長期的な育成優先度を確認する
-  </div>
-  <p>
-    中級者以上は、単体性能だけではなく、<strong>コンボ発動・ポリシー統一・不足ポジションの補強</strong>まで含めて見ると、チーム全体の完成度を高めやすくなります。
-  </p>
-</section>
-
-<section class="card">
-  <h2>よくある質問</h2>
-  <dl class="faq">
-    <dt>Q. コンボ検索と選手検索は何が違う？</dt>
-    <dd>コンボ検索は「選手からコンボを探す」機能です。選手検索は「コンボから必要な選手を探す」機能です。</dd>
-    <dt>Q. 検索結果に出ない選手がいる</dt>
-    <dd>条件が一致していない、またはデータ更新前の可能性があります。選手のポリシー、ポジション、プレイスタイルLvを確認してください。</dd>
-    <dt>Q. 総合力が高い選手を使えば正解？</dt>
-    <dd>必ずしも正解ではありません。コンボ条件に合うか、ポリシーが噛み合うか、同じポジションで上位かをあわせて見るのがおすすめです。</dd>
-    <dt>Q. データの更新内容を確認したい</dt>
-    <dd><a href="changelog.html">更新履歴</a>で最新の追加・修正内容を確認できます。</dd>
-    <dt>Q. 要望や不具合を送りたい</dt>
-    <dd><a href="contact.html">お問い合わせ</a>から連絡できます。選手情報の提供も歓迎しています。</dd>
-  </dl>
-</section>
-
-<section class="card">
-  <h2>関連ページ</h2>
-  <div class="ctaArea">
-    <a class="btn btn-main" href="index.html">トップページへ戻る</a>
-    <a class="btn btn-sub" href="articles.html">攻略記事一覧</a>
-    <a class="btn btn-white" href="changelog.html">更新履歴を見る</a>
-  </div>
-</section>
-
-<div class="bottomNav">
-  <a class="btn btn-white" href="index.html">← サイトに戻る</a>
-</div>
-</article>
-</main>
-</body>
-</html>
+<p class="footerLink"><a class="btn btn-gray" href="index.html">← サイトトップに戻る</a></p>
+</article></main></body></html>

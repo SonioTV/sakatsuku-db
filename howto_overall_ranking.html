@@ -1,296 +1,112 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>総合力ランキングの使い方｜SP選手を条件別に比較｜サカつく2026攻略DB</title>
-  <meta name="description" content="総合力ランキングの使い方を解説。初期総合力・最大強化・条件別ランキングやSP選手の構成比を確認し、育成やガチャ判断の比較材料として活用する方法を紹介します。">
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="canonical" href="https://sakatsuku2026-db.com/howto_overall_ranking.html">
-  <meta property="og:title" content="総合力ランキングの使い方｜SP選手を条件別に比較｜サカつく2026攻略DB">
-  <meta property="og:description" content="総合力ランキングの使い方を解説。初期総合力・最大強化・条件別ランキングやSP選手の構成比を確認し、育成やガチャ判断の比較材料として活用する方法を紹介します。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sakatsuku2026-db.com/howto_overall_ranking.html">
-  <meta name="twitter:card" content="summary">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>総合力ランキングの使い方｜初期・最大強化・条件別にSP選手を比較｜サカつく2026攻略DB</title>
+<meta name="description" content="サカつく2026攻略DBの総合力ランキングを解説。初期総合力、最大強化、国籍・ポリシー・ポジション・入手場所・プレイスタイルLvなどの条件別ランキングを正しく比較する方法を紹介します。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://sakatsuku2026-db.com/howto_overall_ranking.html">
+<meta property="og:title" content="総合力ランキングの使い方｜初期・最大強化・条件別にSP選手を比較｜サカつく2026攻略DB">
+<meta property="og:description" content="サカつく2026攻略DBの総合力ランキングを解説。初期総合力、最大強化、国籍・ポリシー・ポジション・入手場所・プレイスタイルLvなどの条件別ランキングを正しく比較する方法を紹介します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sakatsuku2026-db.com/howto_overall_ranking.html">
+<meta name="twitter:card" content="summary">
 <style>
 :root{
-  --green:#22c55e; --green-dark:#15803d; --green-soft:#ecfdf3;
-  --blue:#0b63d1; --blue-soft:#eef6ff; --orange:#f59e0b;
-  --text:#111827; --muted:#5f6368; --line:#e5e7eb;
-  --bg:#f6f7fb; --card:#ffffff; --shadow:0 10px 26px rgba(0,0,0,.08);
+  --green:#22c55e;--green-dark:#15803d;--green-soft:#ecfdf3;
+  --blue:#0b63d1;--blue-soft:#eef6ff;--orange:#f59e0b;--red:#dc2626;
+  --text:#111827;--muted:#5f6368;--line:#e5e7eb;--bg:#f6f7fb;--card:#fff;
+  --shadow:0 10px 26px rgba(0,0,0,.08);
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.85;background:var(--bg);color:var(--text)}
-main{max-width:920px;margin:0 auto;padding:18px 14px 60px}
-.hero{background:linear-gradient(180deg,#ffffff,#f0fff5);border:1px solid #dff3e5;border-left:7px solid var(--green);border-radius:22px;box-shadow:var(--shadow);padding:22px 18px;margin-bottom:18px}
-h1{font-size:28px;line-height:1.35;margin:0 0 10px}
-.lead{font-size:16px;color:#263238;margin:10px 0 0}
-.update{color:var(--muted);font-size:13px;font-weight:700}
-.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:18px;margin:16px 0}
-h2{font-size:22px;line-height:1.4;margin:0 0 12px;padding-left:10px;border-left:6px solid var(--green)}
-h3{font-size:18px;margin:18px 0 8px}
-p{margin:10px 0}
-ul,ol{padding-left:22px}
-li{margin:7px 0}
+main{max-width:940px;margin:0 auto;padding:18px 14px 60px}
+a{color:var(--blue);font-weight:800}
+.hero{background:linear-gradient(180deg,#fff,#f0fff5);border:1px solid #dff3e5;border-left:7px solid var(--green);border-radius:22px;box-shadow:var(--shadow);padding:22px 18px;margin-bottom:18px}
+h1{font-size:28px;line-height:1.38;margin:0 0 10px}
+h2{font-size:22px;line-height:1.45;margin:0 0 14px;padding-left:10px;border-left:6px solid var(--green)}
+h3{font-size:18px;line-height:1.55;margin:20px 0 8px}
+p{margin:10px 0} ul,ol{padding-left:24px} li{margin:7px 0}
 strong{background:linear-gradient(transparent 62%,#d9fbe4 62%)}
+.update{color:var(--muted);font-size:13px;font-weight:800}.lead{font-size:16px;color:#263238;margin:10px 0 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:18px;margin:16px 0}
 .badge{display:inline-block;padding:3px 9px;border-radius:999px;background:var(--green-soft);color:var(--green-dark);font-size:12px;font-weight:900;vertical-align:middle}
-.pointList{display:grid;gap:10px;margin-top:12px}
-.point{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:13px 14px}
-.point b{display:block;color:var(--green-dark);margin-bottom:3px}
-.stepBox{counter-reset:step;display:grid;gap:12px}
-.step{position:relative;background:#fff;border:1px solid #dfe8e2;border-radius:16px;padding:14px 14px 14px 54px}
-.step::before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:16px;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
-.note{background:#fff8e6;border:1px solid #f5d28a;border-left:6px solid var(--orange);border-radius:16px;padding:14px}
-.example{background:var(--blue-soft);border:1px solid #d5e8ff;border-left:6px solid #4a90e2;border-radius:16px;padding:14px}
-.linkBox{display:grid;gap:10px}
-.btn{display:block;text-align:center;text-decoration:none;font-weight:900;border-radius:16px;padding:14px 16px;box-shadow:0 10px 20px rgba(0,0,0,.12)}
-.btn-main{background:var(--green);color:#fff}
-.btn-sub{background:#4a90e2;color:#fff}
-.btn-gray{background:#fff;color:var(--blue);border:1px solid var(--line);box-shadow:none}
-.related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.related a{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px;text-decoration:none;color:var(--blue);font-weight:900}
-.faq dt{font-weight:900;color:var(--green-dark);margin-top:14px}
-.faq dd{margin:6px 0 12px 0;padding:0 0 0 12px;border-left:3px solid #d9fbe4}
+.toc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px 16px;margin:16px 0}.toc strong{display:block;margin-bottom:6px}.toc a{text-decoration:none}
+.summary{background:var(--green-soft);border:1px solid #bde8ca;border-left:6px solid var(--green);border-radius:16px;padding:14px 16px;margin:14px 0}
+.note{background:#fff8e6;border:1px solid #f5d28a;border-left:6px solid var(--orange);border-radius:16px;padding:14px 16px;margin:14px 0}
+.caution{background:#fff1f2;border:1px solid #fecdd3;border-left:6px solid #e11d48;border-radius:16px;padding:14px 16px;margin:14px 0}
+.example{background:var(--blue-soft);border:1px solid #d5e8ff;border-left:6px solid #4a90e2;border-radius:16px;padding:14px 16px;margin:14px 0}
+.pointList{display:grid;gap:10px;margin-top:12px}.point{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:13px 14px}.point b{display:block;color:var(--green-dark);margin-bottom:3px}
+.stepBox{counter-reset:step;display:grid;gap:12px}.step{position:relative;background:#fff;border:1px solid #dfe8e2;border-radius:16px;padding:14px 14px 14px 54px}.step::before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:16px;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
+.linkBox,.ctaArea{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.btn{display:inline-block;min-width:220px;text-align:center;text-decoration:none;font-weight:900;border-radius:16px;padding:13px 16px;box-shadow:0 10px 20px rgba(0,0,0,.12)}.btn-main{background:var(--green);color:#fff}.btn-sub{background:#4a90e2;color:#fff}.btn-gray{background:#fff;color:var(--blue);border:1px solid var(--line);box-shadow:none}
+.tableWrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff;min-width:620px}th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}th{background:#f1f5f9;font-weight:900}
+.related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.related a{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px;text-decoration:none;color:var(--blue);font-weight:900}
+.faq dt{font-weight:900;color:var(--green-dark);margin-top:14px}.faq dd{margin:6px 0 12px;padding:0 0 0 12px;border-left:3px solid #d9fbe4}
+.source{font-size:13px;color:var(--muted);background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px 14px}.source a{font-weight:700}
 .footerLink{text-align:center;margin-top:24px}
-@media(max-width:560px){
-  main{padding:14px 10px 44px}
-  h1{font-size:24px}
-  h2{font-size:20px}
-  .card,.hero{padding:16px}
-  .related{grid-template-columns:1fr}
-}
+.kicker{font-size:13px;font-weight:900;color:var(--green-dark);letter-spacing:.03em}.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px}.flow span{background:#f8fafc;border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-weight:800}.flow i{font-style:normal;color:var(--muted)}
+@media(max-width:600px){main{padding:14px 10px 44px}h1{font-size:24px}h2{font-size:20px}.card,.hero{padding:16px}.related{grid-template-columns:1fr}.btn{width:100%;min-width:0}table{min-width:560px}}
 </style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "総合力ランキングの使い方｜初期・最大強化・条件別にSP選手を比較｜サカつく2026攻略DB",
+      "name": "総合力ランキングの使い方｜初期・最大強化・条件別にSP選手を比較｜サカつく2026攻略DB",
+      "description": "サカつく2026攻略DBの総合力ランキングを解説。初期総合力、最大強化、国籍・ポリシー・ポジション・入手場所・プレイスタイルLvなどの条件別ランキングを正しく比較する方法を紹介します。",
+      "dateModified": "2026-08-22",
+      "author": {
+        "@type": "Organization",
+        "name": "ソニオTV"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "サカつく2026攻略DB"
+      },
+      "mainEntityOfPage": "https://sakatsuku2026-db.com/howto_overall_ranking.html",
+      "url": "https://sakatsuku2026-db.com/howto_overall_ranking.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "サカつく2026攻略DB",
+          "item": "https://sakatsuku2026-db.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "使い方ガイド",
+          "item": "https://sakatsuku2026-db.com/howto.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "総合力ランキングの使い方｜初期・最大強化・条件別にSP選手を比較｜サカつく2026攻略DB",
+          "item": "https://sakatsuku2026-db.com/howto_overall_ranking.html"
+        }
+      ]
+    }
+  ]
+}</script>
 </head>
+<body><main><article>
+<section class="hero"><div class="update">最終更新日：2026-08-22</div><h1>総合力ランキングの使い方｜「強い選手」を条件別に比較する方法</h1><p class="lead">登録選手を<strong>初期総合力・最大強化・条件別ランキング</strong>で比較するページです。全体TOPだけを見るのではなく、ポジション・ポリシー・プレイスタイルなど「同じ土俵」に絞ることで、補強候補を探しやすくなります。</p></section>
+<section class="card"><h2>このツールを使う</h2><div class="linkBox"><a class="btn btn-main" href="overall_ranking.html">総合力ランキングを見る</a><a class="btn btn-sub" href="howto.html">使い方ガイド一覧へ</a></div></section>
+<section class="card"><h2>先に結論：総合力ランキングは「候補を見つける入口」</h2><div class="summary"><p>ランキング上位＝どの編成でも絶対に最強、ではありません。<strong>初期総合力で即戦力を見る → 最大強化で長期価値を見る → 条件別で自分の編成に近い候補へ絞る</strong>、という順番が基本です。</p></div></section>
+<section class="card"><h2>現在確認できるランキング</h2><div class="pointList"><div class="point"><b>初期総合力 TOP10</b>獲得・登録時点の強さを比較。即戦力候補を探す時に便利です。</div><div class="point"><b>最大強化 TOP10</b>選手強化後の最大値で比較。長期育成の到達点を見る指標です。</div><div class="point"><b>総合フィルターランキング TOP5</b>国籍、レアリティ、成長タイプ、ポリシー、適性ポジション、入手方法、入手場所、プレイスタイル、Lvなどを組み合わせて比較できます。</div><div class="point"><b>SP選手の割合</b>ポリシー・プレイスタイル・メイン適性ポジションなどの構成比を確認できます。</div></div></section>
+<section class="card"><h2>総合力だけで最終評価を決めない理由</h2><p>公式TIPSでは、チームと選手のポリシー一致で能力が上昇し、ポジション適性によって能力発揮率も変わると説明されています。また、フォーメーションコンボには特定のキーポジション条件があります。</p><p>そのため同じ総合力でも、<strong>赤適性で置ける場所、チームポリシー、コンボ適性、入手状況</strong>によって実際の価値は変わります。</p><div class="source"><strong>ゲーム仕様の確認元：</strong>SEGA公式「攻略TIPS」。ポリシー、フォーメーションコンボ、ポジション適性などの基本仕様は公式情報を基準にしています。<br><a href="https://segafcchampions.sega.com/ja/news/tips000061/" target="_blank" rel="noopener noreferrer">サカつく2026公式 攻略TIPSを確認する</a></div><div class="note"><strong>検証情報について：</strong>外部では総合力計算ロジックの逆算検証もありますが、公式が計算式を公開しているわけではありません。本サイトのhowtoでは、検証説と公式仕様を分けて扱います。</div></section>
+<section class="card"><h2>基本的な使い方</h2><div class="stepBox"><div class="step"><h3>初期総合力で即戦力を確認</h3><p>育成前から戦力になりやすい候補を探します。新SPの第一印象を比較する時にも便利です。</p></div><div class="step"><h3>最大強化で育成後を確認</h3><p>長期的に使うなら最大強化も確認します。初期順位と最大順位の差も見どころです。</p></div><div class="step"><h3>フィルターで同じ土俵に絞る</h3><p>「カウンターのCF」「LvIIIのCB」「特定入手場所」など、実際の補強条件に近い選手だけでランキングを作ります。</p></div><div class="step"><h3>気になる選手を個別評価へ</h3><p>候補を見つけたら選手評価ツールでコンボ適性や互換候補まで確認します。</p></div></div></section>
+<section class="card"><h2>目的別の見方</h2><div class="tableWrap"><table><thead><tr><th>目的</th><th>優先して見るもの</th><th>次に確認</th></tr></thead><tbody><tr><td>獲得直後から使いたい</td><td>初期総合力</td><td>赤適性・ポリシー</td></tr><tr><td>育成投資先を決めたい</td><td>最大強化</td><td>同ポジション順位・コンボ適性</td></tr><tr><td>不足ポジションを補強</td><td>適性ポジションでフィルター</td><td>入手可否・ポリシー</td></tr><tr><td>特定コンボ要員を比較</td><td>プレイスタイル＋Lv＋ポジション</td><td>選手評価・選手検索</td></tr><tr><td>ガチャ価値を判断</td><td>既存同条件選手との順位</td><td>互換候補・入手状況</td></tr></tbody></table></div></section>
+<section class="card"><h2>「SP選手の割合」も攻略に使える</h2><p>割合表示は単なる統計ではありません。特定ポリシーやポジションのSPが少ない場合、そこは<strong>選手追加によって環境価値が動きやすい希少枠</strong>になり得ます。逆に候補が多い枠では、少し総合力が高いだけでは差別化しにくいことがあります。</p></section>
+<section class="card"><h2>よくある失敗と注意点</h2><h3>TOP10にいないから弱いと判断する</h3><p>全体TOP10に入らなくても、特定ポジション・特定ポリシー・特定プレイスタイルでは上位という選手はいます。条件別ランキングを使ってください。</p><h3>初期総合力だけで育成優先度を決める</h3><p>長期利用なら最大強化も必要です。逆に短期の即戦力なら初期総合力の価値が高くなります。</p><h3>総合力の数字を実戦力そのものとみなす</h3><p>実戦では編成条件やスキル等も関わります。ランキングは客観比較の一軸として使います。</p></section>
+<section class="card"><h2>よくある質問</h2><dl class="faq"><dt>Q. 初期と最大強化、どちらが重要？</dt><dd>目的次第です。すぐ使うなら初期、長期育成なら最大強化を重視し、可能なら両方見てください。</dd><dt>Q. 全体ランキングと条件別、どちらを優先？</dt><dd>実際の補強判断では条件別の方が重要です。全体は大まかな位置を知るために使います。</dd><dt>Q. ランキング上位ならガチャで引くべき？</dt><dd>それだけでは決まりません。所持選手、互換候補、コンボ適性、入手可能性まで合わせて判断してください。</dd><dt>Q. 総合力の計算式は公式発表？</dt><dd>公式から具体的な計算式は明示されていません。外部の逆算検証は参考情報として扱うのが適切です。</dd></dl></section>
+<section class="card"><h2>関連ツール</h2><div class="related"><a href="howto_sp_evaluator.html">選手評価ツールの使い方</a><a href="player_catalog.html">選手図鑑</a><a href="howto_combo_search.html">コンボ検索の使い方</a><a href="howto_strongest_team_simulation.html">最強チームSimの使い方</a></div></section>
 
-<body>
-<main>
-
-<section class="hero">
-  <div class="update">最終更新日：2026-05-20</div>
-  <h1>総合力ランキングの使い方｜強いSP選手を比較する方法</h1>
-  <p class="lead">
-    サカつく2026攻略DBの「総合力ランキング」は、SP選手の強さを
-    <strong>初期総合力・最大強化・条件別ランキング</strong>で比較できるページです。
-    ガチャで狙う選手、育成する選手、編成に入れる選手を判断したい時に役立ちます。
-  </p>
-</section>
-
-<section class="card">
-  <h2>このツールを使う</h2>
-  <div class="linkBox">
-    <a class="btn btn-main" href="overall_ranking.html">総合力ランキングを見る</a>
-    <a class="btn btn-sub" href="index.html">サカつく2026攻略DBトップへ</a>
-  </div>
-</section>
-
-<section class="card">
-  <h2>総合力ランキングでできること <span class="badge">選手比較</span></h2>
-  <p>
-    総合力ランキングは、選手の強さを数値で比較したい時に便利な機能です。
-    特に、複数のSP選手で迷っている時に<strong>客観的な判断材料</strong>として使えます。
-  </p>
-
-  <div class="pointList">
-    <div class="point"><b>① 初期総合力の高い選手を確認できる</b>入手直後から強い選手を探したい時に便利です。</div>
-    <div class="point"><b>② 最大強化後のランキングを確認できる</b>育成後にどこまで伸びるかを見られるため、長期的な育成判断に使えます。</div>
-    <div class="point"><b>③ 条件別に強い選手を比較できる</b>ポジションや条件を絞って、目的に合う選手を探しやすくなります。</div>
-    <div class="point"><b>④ SP選手の傾向を把握できる</b>どのポジションやポリシーに強力な選手が多いかを確認し、補強方針を考えやすくなります。</div>
-  </div>
-</section>
-
-<section class="card">
-  <h2>基本的な使い方</h2>
-
-  <div class="stepBox">
-    <div class="step">
-      <h3>ランキングページを開く</h3>
-      <p>
-        まずは「総合力ランキング」を開きます。
-        初期総合力、最大強化、条件別ランキングなど、目的に応じたランキングを確認できます。
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>見たいランキングを選ぶ</h3>
-      <p>
-        入手直後の強さを見たいなら初期総合力、育成後の強さを見たいなら最大強化を確認します。
-        どちらを見るかで、評価が変わる選手もいます。
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>気になる選手を比較する</h3>
-      <p>
-        上位にいる選手だけでなく、自分が所持している選手やガチャで狙っている選手がどの位置にいるかを確認しましょう。
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>他のツールで詳細を確認する</h3>
-      <p>
-        総合力ランキングで気になる選手を見つけたら、選手評価ツールやコンボ検索で詳細を確認すると、編成で使えるか判断しやすくなります。
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="card">
-  <h2>ランキングの見方</h2>
-
-  <h3>初期総合力ランキング</h3>
-  <p>
-    入手直後の総合力を基準にしたランキングです。
-    すぐに戦力として使いたい選手を探す時に役立ちます。
-    序盤や育成素材が不足している時は、初期総合力の高さが重要になります。
-  </p>
-
-  <h3>最大強化ランキング</h3>
-  <p>
-    最大まで育成した時の強さを基準にしたランキングです。
-    長期的に使う選手を選びたい場合は、こちらを重視しましょう。
-    初期値では目立たなくても、育成後に上位へ伸びる選手もいます。
-  </p>
-
-  <h3>条件別ランキング</h3>
-  <p>
-    特定条件で絞って確認するランキングです。
-    例えば「CFで強い選手」「CBで強い選手」など、補強したい場所が決まっている時に便利です。
-  </p>
-
-  <h3>SP選手の割合・傾向</h3>
-  <p>
-    SP選手がどのような分布になっているかを確認できます。
-    強力な選手が多いポジション、候補が少ないポジションを把握することで、ガチャや交換の優先度を考えやすくなります。
-  </p>
-</section>
-
-<section class="card">
-  <h2>おすすめの使い方</h2>
-
-  <h3>① ガチャ前の性能確認に使う</h3>
-  <p>
-    新SP選手が登場した時、その選手がランキング上位に入るかを確認しましょう。
-    上位に入る選手であれば、単体性能の面では狙う価値が高いと判断しやすくなります。
-  </p>
-
-  <h3>② 育成優先度を決める</h3>
-  <p>
-    育成素材が限られている場合、最大強化ランキングを見て、伸びが大きい選手を優先するのがおすすめです。
-    初期総合力だけで判断すると、育成後に強くなる選手を見逃すことがあります。
-  </p>
-
-  <h3>③ ポジション補強に使う</h3>
-  <p>
-    チームの弱点ポジションが分かっている場合は、そのポジションの上位選手を確認しましょう。
-    「FWは強いけどCBが弱い」など、補強ポイントが明確になります。
-  </p>
-
-  <h3>④ コンボ適性と合わせて判断する</h3>
-  <p>
-    総合力が高い選手でも、コンボ条件に合わない場合は編成に入れにくいことがあります。
-    ランキングで強さを確認した後は、コンボ検索や選手評価ツールで適性も確認しましょう。
-  </p>
-</section>
-
-<section class="card">
-  <h2>具体的な活用例</h2>
-
-  <div class="example">
-    <h3>例：どのSP選手を育成するか迷っている場合</h3>
-    <ol>
-      <li>総合力ランキングを開く</li>
-      <li>所持しているSP選手の順位を確認する</li>
-      <li>初期総合力と最大強化の両方を見る</li>
-      <li>ポジション別に不足している場所を確認する</li>
-      <li>候補選手を選手評価ツールで詳しく見る</li>
-      <li>コンボ適性がある選手を優先して育成する</li>
-    </ol>
-    <p>
-      この流れで使うと、単純な数値比較だけでなく、
-      <strong>実際の編成で活躍しやすい選手</strong>を選びやすくなります。
-    </p>
-  </div>
-</section>
-
-<section class="card">
-  <h2>初心者におすすめの見方</h2>
-
-  <p>
-    はじめて使う場合は、まず次の3つを確認するのがおすすめです。
-  </p>
-
-  <ol>
-    <li><strong>初期総合力：</strong>すぐ使いやすい選手か</li>
-    <li><strong>最大強化：</strong>育成後も強い選手か</li>
-    <li><strong>ポジション：</strong>自分のチームに必要な場所か</li>
-  </ol>
-
-  <p>
-    この3つを見れば、ガチャで引いた選手や手持ち選手の価値をざっくり判断できます。
-    慣れてきたら、ポリシーやプレイスタイル、コンボ適性まで確認しましょう。
-  </p>
-</section>
-
-<section class="card">
-  <h2>よくある失敗と注意点</h2>
-
-  <h3>初期総合力だけで判断してしまう</h3>
-  <p>
-    初期総合力が高い選手は即戦力になりやすいですが、最大強化後に他の選手へ逆転されることもあります。
-    長く使う選手を選ぶ場合は、最大強化も確認しましょう。
-  </p>
-
-  <h3>ランキング上位だけを見てしまう</h3>
-  <p>
-    ランキング上位の選手は強力ですが、自分のチーム方針やコンボ条件に合うとは限りません。
-    強さと相性の両方を見ることが重要です。
-  </p>
-
-  <h3>ポジションバランスを無視してしまう</h3>
-  <p>
-    強いFWばかり集めても、DFやGKが弱いとチーム全体の安定感は落ちます。
-    ランキングは、足りないポジションを見つける目的でも活用しましょう。
-  </p>
-
-  <div class="note">
-    <strong>ポイント：</strong>
-    総合力ランキングは「誰が強いか」を見る入口です。
-    最終判断は、選手評価ツール・コンボ検索・最強チームシミュレーションと組み合わせるのがおすすめです。
-  </div>
-</section>
-
-<section class="card">
-  <h2>関連ツール・関連記事</h2>
-  <div class="related">
-    <a href="howto_sp_evaluator.html">選手評価ツールの使い方</a>
-    <a href="howto_player_search.html">選手検索の使い方</a>
-    <a href="howto_combo_search.html">コンボ検索の使い方</a>
-    <a href="howto_strongest_team_simulation.html">最強チームシミュレーションの使い方</a>
-  </div>
-</section>
-
-<section class="card">
-  <h2>よくある質問</h2>
-  <dl class="faq">
-    <dt>Q. 総合力ランキングはどんな時に使えばいい？</dt>
-    <dd>強いSP選手を比較したい時、育成する選手を決めたい時、ガチャで狙う選手の性能を確認したい時に使うのがおすすめです。</dd>
-
-    <dt>Q. 初期総合力と最大強化はどちらを重視すべき？</dt>
-    <dd>すぐに使いたいなら初期総合力、長く使う予定なら最大強化を重視しましょう。理想は両方を確認することです。</dd>
-
-    <dt>Q. ランキング上位なら必ず編成に入れるべき？</dt>
-    <dd>必ずではありません。ポジション、ポリシー、プレイスタイル、コンボ適性がチームに合うかも確認しましょう。</dd>
-
-    <dt>Q. 選手評価ツールとの違いは？</dt>
-    <dd>総合力ランキングは全体比較に向いています。選手評価ツールは、特定の選手を詳しく確認する時に向いています。</dd>
-  </dl>
-</section>
-
-<p class="footerLink">
-  <a class="btn btn-gray" href="index.html">← サイトトップに戻る</a>
-</p>
-
-</main>
-</body>
-</html>
+<p class="footerLink"><a class="btn btn-gray" href="index.html">← サイトトップに戻る</a></p>
+</article></main></body></html>

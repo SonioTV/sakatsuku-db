@@ -1,442 +1,112 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>選手検索の使い方｜フォメコン条件からSP選手を逆引き｜サカつく2026攻略DB</title>
-  <meta name="description" content="サカつく2026攻略DBの選手検索を解説。フォーメーションコンボ側から条件を満たすSP選手を逆引きし、入手方法や対応条件を確認する手順と活用法を紹介します。">
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="canonical" href="https://sakatsuku2026-db.com/howto_player_search.html">
-  <meta property="og:title" content="選手検索の使い方｜フォメコン条件からSP選手を逆引き｜サカつく2026攻略DB">
-  <meta property="og:description" content="サカつく2026攻略DBの選手検索を解説。フォーメーションコンボ側から条件を満たすSP選手を逆引きし、入手方法や対応条件を確認する手順と活用法を紹介します。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sakatsuku2026-db.com/howto_player_search.html">
-  <meta name="twitter:card" content="summary">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>選手検索の使い方｜フォメコン条件から対応SP選手を逆引き｜サカつく2026攻略DB</title>
+<meta name="description" content="サカつく2026攻略DBの選手検索を解説。コンボランク・ポリシー・フォーメーションコンボから条件を満たすSP選手を逆引きし、入手可能選手や補強候補を判断する方法を紹介します。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://sakatsuku2026-db.com/howto_player_search.html">
+<meta property="og:title" content="選手検索の使い方｜フォメコン条件から対応SP選手を逆引き｜サカつく2026攻略DB">
+<meta property="og:description" content="サカつく2026攻略DBの選手検索を解説。コンボランク・ポリシー・フォーメーションコンボから条件を満たすSP選手を逆引きし、入手可能選手や補強候補を判断する方法を紹介します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sakatsuku2026-db.com/howto_player_search.html">
+<meta name="twitter:card" content="summary">
 <style>
 :root{
-  --green:#22c55e;
-  --green-dark:#15803d;
-  --green-soft:#ecfdf3;
-  --blue:#0b63d1;
-  --blue-soft:#eef6ff;
-  --orange:#f59e0b;
-  --text:#111827;
-  --muted:#5f6368;
-  --line:#e5e7eb;
-  --bg:#f6f7fb;
-  --card:#ffffff;
+  --green:#22c55e;--green-dark:#15803d;--green-soft:#ecfdf3;
+  --blue:#0b63d1;--blue-soft:#eef6ff;--orange:#f59e0b;--red:#dc2626;
+  --text:#111827;--muted:#5f6368;--line:#e5e7eb;--bg:#f6f7fb;--card:#fff;
   --shadow:0 10px 26px rgba(0,0,0,.08);
 }
 *{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
-  line-height:1.85;
-  background:var(--bg);
-  color:var(--text);
-}
-main{
-  max-width:920px;
-  margin:0 auto;
-  padding:18px 14px 60px;
-}
-.hero{
-  background:linear-gradient(180deg,#ffffff,#f0fff5);
-  border:1px solid #dff3e5;
-  border-left:7px solid var(--green);
-  border-radius:22px;
-  box-shadow:var(--shadow);
-  padding:22px 18px;
-  margin-bottom:18px;
-}
-h1{
-  font-size:28px;
-  line-height:1.35;
-  margin:0 0 10px;
-}
-.lead{
-  font-size:16px;
-  color:#263238;
-  margin:10px 0 0;
-}
-.update{
-  color:var(--muted);
-  font-size:13px;
-  font-weight:700;
-}
-.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:20px;
-  box-shadow:var(--shadow);
-  padding:18px;
-  margin:16px 0;
-}
-h2{
-  font-size:22px;
-  line-height:1.4;
-  margin:0 0 12px;
-  padding-left:10px;
-  border-left:6px solid var(--green);
-}
-h3{
-  font-size:18px;
-  margin:18px 0 8px;
-}
-p{margin:10px 0}
-ul,ol{padding-left:22px}
-li{margin:7px 0}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.85;background:var(--bg);color:var(--text)}
+main{max-width:940px;margin:0 auto;padding:18px 14px 60px}
+a{color:var(--blue);font-weight:800}
+.hero{background:linear-gradient(180deg,#fff,#f0fff5);border:1px solid #dff3e5;border-left:7px solid var(--green);border-radius:22px;box-shadow:var(--shadow);padding:22px 18px;margin-bottom:18px}
+h1{font-size:28px;line-height:1.38;margin:0 0 10px}
+h2{font-size:22px;line-height:1.45;margin:0 0 14px;padding-left:10px;border-left:6px solid var(--green)}
+h3{font-size:18px;line-height:1.55;margin:20px 0 8px}
+p{margin:10px 0} ul,ol{padding-left:24px} li{margin:7px 0}
 strong{background:linear-gradient(transparent 62%,#d9fbe4 62%)}
-.badge{
-  display:inline-block;
-  padding:3px 9px;
-  border-radius:999px;
-  background:var(--green-soft);
-  color:var(--green-dark);
-  font-size:12px;
-  font-weight:900;
-  vertical-align:middle;
-}
-.pointList{
-  display:grid;
-  gap:10px;
-  margin-top:12px;
-}
-.point{
-  background:#f8fafc;
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:13px 14px;
-}
-.point b{
-  display:block;
-  color:var(--green-dark);
-  margin-bottom:3px;
-}
-.stepBox{
-  counter-reset:step;
-  display:grid;
-  gap:12px;
-}
-.step{
-  position:relative;
-  background:#fff;
-  border:1px solid #dfe8e2;
-  border-radius:16px;
-  padding:14px 14px 14px 54px;
-}
-.step::before{
-  counter-increment:step;
-  content:counter(step);
-  position:absolute;
-  left:14px;
-  top:16px;
-  width:28px;
-  height:28px;
-  border-radius:50%;
-  background:var(--green);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
-}
-.note{
-  background:#fff8e6;
-  border:1px solid #f5d28a;
-  border-left:6px solid var(--orange);
-  border-radius:16px;
-  padding:14px;
-}
-.linkBox{
-  display:grid;
-  gap:10px;
-}
-.btn{
-  display:block;
-  text-align:center;
-  text-decoration:none;
-  font-weight:900;
-  border-radius:16px;
-  padding:14px 16px;
-  box-shadow:0 10px 20px rgba(0,0,0,.12);
-}
-.btn-main{
-  background:var(--green);
-  color:#fff;
-}
-.btn-sub{
-  background:#4a90e2;
-  color:#fff;
-}
-.btn-gray{
-  background:#fff;
-  color:var(--blue);
-  border:1px solid var(--line);
-  box-shadow:none;
-}
-.related{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:10px;
-}
-.related a{
-  background:#f8fafc;
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:12px;
-  text-decoration:none;
-  color:var(--blue);
-  font-weight:900;
-}
-.faq dt{
-  font-weight:900;
-  color:var(--green-dark);
-  margin-top:14px;
-}
-.faq dd{
-  margin:6px 0 12px 0;
-  padding:0 0 0 12px;
-  border-left:3px solid #d9fbe4;
-}
-.footerLink{
-  text-align:center;
-  margin-top:24px;
-}
-@media(max-width:560px){
-  main{padding:14px 10px 44px}
-  h1{font-size:24px}
-  h2{font-size:20px}
-  .card,.hero{padding:16px}
-  .related{grid-template-columns:1fr}
-}
+.update{color:var(--muted);font-size:13px;font-weight:800}.lead{font-size:16px;color:#263238;margin:10px 0 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:18px;margin:16px 0}
+.badge{display:inline-block;padding:3px 9px;border-radius:999px;background:var(--green-soft);color:var(--green-dark);font-size:12px;font-weight:900;vertical-align:middle}
+.toc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px 16px;margin:16px 0}.toc strong{display:block;margin-bottom:6px}.toc a{text-decoration:none}
+.summary{background:var(--green-soft);border:1px solid #bde8ca;border-left:6px solid var(--green);border-radius:16px;padding:14px 16px;margin:14px 0}
+.note{background:#fff8e6;border:1px solid #f5d28a;border-left:6px solid var(--orange);border-radius:16px;padding:14px 16px;margin:14px 0}
+.caution{background:#fff1f2;border:1px solid #fecdd3;border-left:6px solid #e11d48;border-radius:16px;padding:14px 16px;margin:14px 0}
+.example{background:var(--blue-soft);border:1px solid #d5e8ff;border-left:6px solid #4a90e2;border-radius:16px;padding:14px 16px;margin:14px 0}
+.pointList{display:grid;gap:10px;margin-top:12px}.point{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:13px 14px}.point b{display:block;color:var(--green-dark);margin-bottom:3px}
+.stepBox{counter-reset:step;display:grid;gap:12px}.step{position:relative;background:#fff;border:1px solid #dfe8e2;border-radius:16px;padding:14px 14px 14px 54px}.step::before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:16px;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
+.linkBox,.ctaArea{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.btn{display:inline-block;min-width:220px;text-align:center;text-decoration:none;font-weight:900;border-radius:16px;padding:13px 16px;box-shadow:0 10px 20px rgba(0,0,0,.12)}.btn-main{background:var(--green);color:#fff}.btn-sub{background:#4a90e2;color:#fff}.btn-gray{background:#fff;color:var(--blue);border:1px solid var(--line);box-shadow:none}
+.tableWrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff;min-width:620px}th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}th{background:#f1f5f9;font-weight:900}
+.related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.related a{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px;text-decoration:none;color:var(--blue);font-weight:900}
+.faq dt{font-weight:900;color:var(--green-dark);margin-top:14px}.faq dd{margin:6px 0 12px;padding:0 0 0 12px;border-left:3px solid #d9fbe4}
+.source{font-size:13px;color:var(--muted);background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px 14px}.source a{font-weight:700}
+.footerLink{text-align:center;margin-top:24px}
+.kicker{font-size:13px;font-weight:900;color:var(--green-dark);letter-spacing:.03em}.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px}.flow span{background:#f8fafc;border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-weight:800}.flow i{font-style:normal;color:var(--muted)}
+@media(max-width:600px){main{padding:14px 10px 44px}h1{font-size:24px}h2{font-size:20px}.card,.hero{padding:16px}.related{grid-template-columns:1fr}.btn{width:100%;min-width:0}table{min-width:560px}}
 </style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "選手検索の使い方｜フォメコン条件から対応SP選手を逆引き｜サカつく2026攻略DB",
+      "name": "選手検索の使い方｜フォメコン条件から対応SP選手を逆引き｜サカつく2026攻略DB",
+      "description": "サカつく2026攻略DBの選手検索を解説。コンボランク・ポリシー・フォーメーションコンボから条件を満たすSP選手を逆引きし、入手可能選手や補強候補を判断する方法を紹介します。",
+      "dateModified": "2026-08-22",
+      "author": {
+        "@type": "Organization",
+        "name": "ソニオTV"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "サカつく2026攻略DB"
+      },
+      "mainEntityOfPage": "https://sakatsuku2026-db.com/howto_player_search.html",
+      "url": "https://sakatsuku2026-db.com/howto_player_search.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "サカつく2026攻略DB",
+          "item": "https://sakatsuku2026-db.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "使い方ガイド",
+          "item": "https://sakatsuku2026-db.com/howto.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "選手検索の使い方｜フォメコン条件から対応SP選手を逆引き｜サカつく2026攻略DB",
+          "item": "https://sakatsuku2026-db.com/howto_player_search.html"
+        }
+      ]
+    }
+  ]
+}</script>
 </head>
+<body><main><article>
+<section class="hero"><div class="update">最終更新日：2026-08-22</div><h1>選手検索の使い方｜フォメコン条件から必要なSP選手を探す方法</h1><p class="lead">使いたいフォーメーションコンボを起点に、<strong>キーポジション条件を満たせるSP選手を逆引き</strong>する機能です。「このコンボを組むには誰が必要？」「現在入手できる候補は？」を調べる時に使います。</p></section>
+<section class="card"><h2>このツールを使う</h2><div class="linkBox"><a class="btn btn-main" href="index.html#panelPlayer">選手検索を使う</a><a class="btn btn-sub" href="howto.html">使い方ガイド一覧へ</a></div></section>
+<section class="card"><h2>先に結論：選手検索は「不足枠を埋める」ために使う</h2><div class="summary"><p>コンボ名が決まっているなら、まず選手検索で必要条件ごとのSP候補を確認します。<strong>「全SP選手」と「入手可能SP選手」を切り替える</strong>ことで、理想候補と今すぐ狙える候補を分けて考えられます。</p></div></section>
+<section class="card"><h2>ゲーム仕様として押さえる前提</h2><p>フォーメーションコンボは、フォーメーションに加えてキーポジションへ特定プレースタイルの選手を配置する条件を持つ場合があります。また、ポジション適性は赤100％・黄70％・その他55％と公式TIPSで案内されています。</p><p>そのため、検索結果で条件に合う選手が見つかっても、<strong>「該当条件を満たす」ことと「そのポジションで最も強い」ことは別</strong>です。最終的には総合力・赤適性範囲・ポリシー・入手状況まで確認してください。</p><div class="source"><strong>ゲーム仕様の確認元：</strong>SEGA公式「攻略TIPS」。ポリシー、フォーメーションコンボ、ポジション適性などの基本仕様は公式情報を基準にしています。<br><a href="https://segafcchampions.sega.com/ja/news/tips000061/" target="_blank" rel="noopener noreferrer">サカつく2026公式 攻略TIPSを確認する</a></div></section>
+<section class="card"><h2>基本的な使い方</h2><div class="stepBox"><div class="step"><h3>コンボランクを選ぶ</h3><p>金・銀・銅から絞り込みます。未選択ならすべてのランクを対象にできます。初心者は「今の手持ちで成立しそうなランク」から見るのがおすすめです。</p></div><div class="step"><h3>ポリシーを選ぶ</h3><p>チーム方針が決まっている場合はカウンター・ポゼッション・ムービング・リアクションなどから絞ります。</p></div><div class="step"><h3>フォーメーションコンボを選ぶ</h3><p>候補から調べたいコンボを選択します。ここでキーポジション条件と必要プレイスタイルLvを確認してください。</p></div><div class="step"><h3>表示選手を選ぶ</h3><p><strong>全SP選手</strong>は理想編成の確認、<strong>入手可能SP選手</strong>は現実的な補強候補の確認に向いています。</p></div><div class="step"><h3>対応選手を表示する</h3><p>条件別に該当するSP選手と入手情報を確認し、候補を比較します。</p></div></div></section>
+<section class="card"><h2>検索結果で見るべきポイント</h2><div class="pointList"><div class="point"><b>キーポジション条件</b>ポジション・プレイスタイル・Lvがどの組み合わせで必要なのかを先に確認します。</div><div class="point"><b>候補人数</b>候補が極端に少ない条件は編成上の希少枠です。ガチャ・交換の優先度を考える材料になります。</div><div class="point"><b>入手可否</b>過去限定選手しかいない条件と、現在入手可能な選手で埋められる条件を分けて考えます。</div><div class="point"><b>入手方法・入手場所</b>どこで獲得できるかを確認し、今すぐ組む編成か将来目標の編成かを決めます。</div></div></section>
+<section class="card"><h2>攻略判断に使う4つの方法</h2><h3>1. 「候補が少ない条件」を補強優先枠にする</h3><p>同じコンボ内でも、対応SPが多い条件と少ない条件があります。希少条件を先に確保すると、編成の自由度が上がります。</p><h3>2. ガチャでは「既存の代用」がいるかを見る</h3><p>新SPが条件を満たしていても、既に同条件の強い選手を持っているなら優先度は下がることがあります。逆に、手持ちに該当者がいない条件を埋める新SPは価値が上がります。</p><h3>3. 全SP → 入手可能SPの順に見る</h3><p>先に全SPで理想形を把握し、その後「入手可能SP」に切り替えると、理想と現実の差が分かります。</p><h3>4. 候補が決まったら選手評価へ</h3><p>条件一致だけで決めず、<a href="sp_evaluator.html">選手評価ツール</a>で同ポジション・同ポリシー・同プレイスタイルなどの順位を比較してください。</p></section>
+<section class="card"><h2>おすすめワークフロー</h2><div class="example"><ol><li>コンボ検索またはフォメコン診断で使いたいコンボを決める</li><li>選手検索で不足条件の候補を確認</li><li>「入手可能SP選手」に切り替えて現実的な候補を確認</li><li>選手評価で候補同士を比較</li><li>最強チームSimで11人全体に入れた時の形を確認</li></ol></div></section>
+<section class="card"><h2>よくある失敗と注意点</h2><h3>「条件一致＝おすすめ順位」と考える</h3><p>この検索は条件一致を探す機能です。表示順や該当自体が実戦評価を保証するものではありません。</p><h3>過去限定選手だけの理想編成を前提にする</h3><p>まず全SPで理想を知るのは有効ですが、実際に補強する時は入手可能SPへ切り替えてください。</p><h3>メインポジションだけで選手を見る</h3><p>同じメインポジションでも赤適性範囲は異なります。候補の詳細を確認し、実際にキーポジションへ無理なく配置できるか見てください。</p></section>
+<section class="card"><h2>よくある質問</h2><dl class="faq"><dt>Q. 金コンボだけ見ればいい？</dt><dd>高ランクは強力ですが、手持ちが揃わないなら発動できません。成立しやすい銀・銅も含め、現在の戦力に合わせて比較してください。</dd><dt>Q. 全SPと入手可能SPはどう使い分ける？</dt><dd>全SPは理想編成の研究、入手可能SPは現在のガチャ・交換・補強判断に向いています。</dd><dt>Q. 表示された選手の中で誰が一番強い？</dt><dd>選手検索だけでは決めません。候補を選手評価ツールや総合力ランキングで比較してください。</dd><dt>Q. コンボ検索との違いは？</dt><dd>コンボ検索は「選手→コンボ」、選手検索は「コンボ→SP選手」です。</dd></dl></section>
+<section class="card"><h2>関連ツール</h2><div class="related"><a href="howto_combo_search.html">コンボ検索の使い方</a><a href="howto_sp_evaluator.html">選手評価ツールの使い方</a><a href="favorite_combos.html">フォメコン診断</a><a href="howto_strongest_team_simulation.html">最強チームSimの使い方</a></div></section>
 
-<body>
-<main>
-
-<section class="hero">
-  <div class="update">最終更新日：2026-05-20</div>
-  <h1>選手検索の使い方｜コンボから必要なSP選手を探す方法</h1>
-  <p class="lead">
-    サカつく2026攻略DBの「選手検索」は、使いたいフォーメーションコンボを選び、
-    <strong>そのコンボ条件に対応できるSP選手を逆引きするための機能</strong>です。
-    「このコンボを発動したいけど、誰を使えばいい？」という場面で特に役立ちます。
-  </p>
-</section>
-
-<section class="card">
-  <h2>このツールを使う</h2>
-  <div class="linkBox">
-    <a class="btn btn-main" href="index.html#panelPlayer">選手検索を使う</a>
-    <a class="btn btn-sub" href="index.html">サカつく2026攻略DBトップへ</a>
-  </div>
-</section>
-
-<section class="card">
-  <h2>選手検索でできること <span class="badge">逆引き検索</span></h2>
-  <p>
-    コンボ検索が「手持ち選手から発動できるコンボを探す機能」なのに対して、
-    選手検索は<strong>コンボ側から必要な選手を探す機能</strong>です。
-  </p>
-
-  <div class="pointList">
-    <div class="point">
-      <b>① コンボ条件に合うSP選手を探せる</b>
-      選択したフォーメーションコンボに対して、必要なポジション・プレイスタイル・Lvに合う選手を確認できます。
-    </div>
-    <div class="point">
-      <b>② ランク別にコンボを絞り込める</b>
-      金・銀・銅のランクを指定できるため、強力な金コンボだけを確認したい時にも便利です。
-    </div>
-    <div class="point">
-      <b>③ ポリシーで候補を絞り込める</b>
-      カウンター、ポゼッション、ムービング、リアクションなど、狙いたいチーム方針に合わせて探せます。
-    </div>
-    <div class="point">
-      <b>④ 入手方法・入手場所も確認できる</b>
-      候補選手がどこで入手できるのかを確認できるので、ガチャや交換の優先度判断にも使えます。
-    </div>
-  </div>
-</section>
-
-<section class="card">
-  <h2>基本的な使い方</h2>
-
-  <div class="stepBox">
-    <div class="step">
-      <h3>ランクを選択する</h3>
-      <p>
-        まずは探したいコンボランクを選びます。
-        強力な編成を目指すなら、最初は<strong>金ランク</strong>を中心に確認するのがおすすめです。
-        未選択の場合は、すべてのランクが対象になります。
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>ポリシーを選択する</h3>
-      <p>
-        自分のチーム方針に合わせてポリシーを選択します。
-        例えばカウンター中心のチームなら「カウンター」を選ぶことで、
-        その方針に合ったコンボを見つけやすくなります。
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>フォーメーションコンボを選択する</h3>
-      <p>
-        表示されたプルダウンから、調べたいフォーメーションコンボを選びます。
-        ここで選んだコンボの発動条件に対して、対応できる選手が一覧表示されます。
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>「対応選手を表示」を押す</h3>
-      <p>
-        条件に合うSP選手が表示されます。
-        選手名の横には入手方法や入手場所が表示されるため、
-        「今すぐ使える選手なのか」「今後狙うべき選手なのか」を判断しやすくなります。
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="card">
-  <h2>結果画面の見方</h2>
-
-  <h3>選手名</h3>
-  <p>
-    条件に対応できるSP選手が表示されます。
-    同じ条件を満たす選手が複数いる場合は、候補の中から総合力や入手状況を見て選びましょう。
-  </p>
-
-  <h3>入手方法・入手場所</h3>
-  <p>
-    選手名の横に、ガチャ・期間限定ガチャ・その他などの入手情報が表示されます。
-    期間限定の選手はいつでも入手できるとは限らないため、編成を考える時は注意が必要です。
-  </p>
-
-  <h3>コンボ詳細</h3>
-  <p>
-    選択したコンボのランク、効果、必要人数、条件などを確認できます。
-    特に金ランクコンボは発動条件が重要なので、必要なポジションとプレイスタイルを必ず確認しましょう。
-  </p>
-
-  <div class="note">
-    <strong>ポイント：</strong>
-    選手検索は「このコンボを使いたい」と決めてから使うと効果的です。
-    まだ使うコンボが決まっていない場合は、先にコンボ検索で候補を探すのがおすすめです。
-  </div>
-</section>
-
-<section class="card">
-  <h2>おすすめの使い方</h2>
-
-  <h3>① 金コンボの必要選手を確認する</h3>
-  <p>
-    まずは金ランクコンボを選び、どの選手が対応しているかを確認しましょう。
-    金コンボは効果が大きいため、チーム強化の軸にしやすいです。
-  </p>
-
-  <h3>② 足りないポジションを把握する</h3>
-  <p>
-    コンボ条件を見ながら、どのポジションやプレイスタイルが不足しているかを確認します。
-    例えば「CFのストライカーが足りない」「CBの組立CBが必要」など、補強ポイントが明確になります。
-  </p>
-
-  <h3>③ ガチャを引く前の判断材料にする</h3>
-  <p>
-    新しいSP選手が登場した時、その選手が狙っているコンボに対応しているかを確認できます。
-    強い選手でも、自分の編成コンセプトに合わない場合は優先度が下がることがあります。
-  </p>
-
-  <h3>④ コンボ検索とセットで使う</h3>
-  <p>
-    コンボ検索で「発動できそうなコンボ」を見つけた後に、
-    選手検索で「他に誰が対応できるか」を確認すると、編成の幅が広がります。
-  </p>
-</section>
-
-<section class="card">
-  <h2>初心者におすすめの流れ</h2>
-
-  <ol>
-    <li>まずはコンボ検索で、手持ち選手が関係するコンボを探す</li>
-    <li>気になるコンボ名を覚える</li>
-    <li>選手検索でそのコンボを選ぶ</li>
-    <li>対応選手を確認する</li>
-    <li>足りないポジションやプレイスタイルを補強する</li>
-  </ol>
-
-  <p>
-    この流れで使うと、単に総合力が高い選手を並べるだけではなく、
-    <strong>コンボ発動を前提にした強いチーム作り</strong>がしやすくなります。
-  </p>
-</section>
-
-<section class="card">
-  <h2>よくある失敗と注意点</h2>
-
-  <h3>総合力だけで選んでしまう</h3>
-  <p>
-    総合力が高い選手でも、コンボ条件に合わなければ狙ったコンボは発動しません。
-    選手検索では、総合力だけでなく<strong>ポジション・プレイスタイル・Lv</strong>をセットで確認しましょう。
-  </p>
-
-  <h3>ポリシーを無視してしまう</h3>
-  <p>
-    ポリシーが合っていないと、チーム全体の方向性が崩れることがあります。
-    最終的には同じポリシーで揃えることを意識すると、編成の完成度が上がります。
-  </p>
-
-  <h3>期間限定選手を前提にしすぎる</h3>
-  <p>
-    期間限定ガチャの選手は、入手タイミングが限られる場合があります。
-    今すぐ組める編成なのか、将来的に狙う編成なのかを分けて考えるのがおすすめです。
-  </p>
-</section>
-
-<section class="card">
-  <h2>関連ツール・関連記事</h2>
-  <div class="related">
-    <a href="howto_combo_search.html">コンボ検索の使い方</a>
-    <a href="howto_sp_evaluator.html">選手評価ツールの使い方</a>
-    <a href="howto_strongest_team_simulation.html">最強チームシミュレーションの使い方</a>
-    <a href="overall_ranking.html">総合力ランキングを見る</a>
-  </div>
-</section>
-
-<section class="card">
-  <h2>よくある質問</h2>
-  <dl class="faq">
-    <dt>Q. 選手検索はどんな時に使えばいい？</dt>
-    <dd>
-      使いたいフォーメーションコンボが決まっていて、その条件に合うSP選手を探したい時に使うのがおすすめです。
-    </dd>
-
-    <dt>Q. 金・銀・銅のどれを選べばいい？</dt>
-    <dd>
-      迷ったら金ランクから確認しましょう。金コンボは効果が大きく、編成の軸にしやすいです。
-    </dd>
-
-    <dt>Q. 表示された選手は全員おすすめ？</dt>
-    <dd>
-      条件に対応できる選手という意味では候補になりますが、最終的には総合力、最大強化、入手しやすさ、チーム方針を見て選ぶのがおすすめです。
-    </dd>
-
-    <dt>Q. コンボ検索との違いは？</dt>
-    <dd>
-      コンボ検索は「選手からコンボを探す」機能、選手検索は「コンボから必要選手を探す」機能です。両方をセットで使うと効果的です。
-    </dd>
-  </dl>
-</section>
-
-<p class="footerLink">
-  <a class="btn btn-gray" href="index.html">← サイトトップに戻る</a>
-</p>
-
-</main>
-</body>
-</html>
+<p class="footerLink"><a class="btn btn-gray" href="index.html">← サイトトップに戻る</a></p>
+</article></main></body></html>
