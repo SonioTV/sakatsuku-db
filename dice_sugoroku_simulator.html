@@ -3,7 +3,16 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ダイスすごろく体験ツール</title>
+<title>ダイスすごろく検証ツール｜周回・ゴール結果を記録｜サカつく2026攻略DB</title>
+  <meta name="description" content="30マスのダイスすごろくをブラウザ上で再現し、ゴール回数、使用ダイス数、連続ゴール、ゴール停止マスなどを記録できる検証ツールです。1倍・10倍モードにも対応。">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://sakatsuku2026-db.com/dice_sugoroku_simulator.html">
+  <meta property="og:title" content="ダイスすごろく検証ツール｜周回・ゴール結果を記録｜サカつく2026攻略DB">
+  <meta property="og:description" content="30マスのダイスすごろくをブラウザ上で再現し、ゴール回数、使用ダイス数、連続ゴール、ゴール停止マスなどを記録できる検証ツールです。1倍・10倍モードにも対応。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sakatsuku2026-db.com/dice_sugoroku_simulator.html">
+  <meta name="twitter:card" content="summary">
+
 <style>
   :root{
     --sky:#dff5ff;
@@ -173,6 +182,22 @@
     .wrap{padding:8px}.board-wrap{padding:6px}.cell{font-size:clamp(9px,3.05vw,14px);border-radius:3px}.cell small{font-size:.7em}.legend{display:none}.main{gap:10px}.panel.pad{padding:10px}.cardTitle{margin:-10px -10px 10px;padding:9px 12px}.side{gap:10px}.stat{padding:9px 11px}.btn{font-size:16px}.mult button{padding:9px 6px;font-size:14px}.hint{font-size:12px}.diceCube{width:58px;border-width:3px;box-shadow:0 0 0 4px rgba(116,185,255,.15),0 8px 18px rgba(32,93,164,.2);}.diceCenterTitle{display:none}.diceRibbon{font-size:18px}.diceUsedBadge{min-width:82px;padding:5px 7px;font-size:11px}.diceUsedBadge b{font-size:24px}.rollArea .btn{font-size:16px;min-width:0;width:100%}
   }
 </style>
+
+<style id="review-content-styles">
+.review-content-shell{max-width:1180px;margin:24px auto 40px;padding:0 16px;box-sizing:border-box;font-family:inherit;color:#1f2937;}
+.review-content{background:#fff;border:1px solid rgba(15,23,42,.12);border-radius:18px;padding:24px;box-shadow:0 8px 24px rgba(15,23,42,.06);line-height:1.85;}
+.review-content h2{margin:0 0 14px;font-size:clamp(21px,2.8vw,28px);line-height:1.35;color:#0f172a;}
+.review-content h3{margin:22px 0 8px;font-size:18px;line-height:1.45;color:#1e3a5f;}
+.review-content p{margin:0 0 12px;}
+.review-content ul,.review-content ol{margin:8px 0 14px;padding-left:1.4em;}
+.review-content li{margin:5px 0;}
+.review-content .review-note{margin-top:16px;padding:12px 14px;border-radius:12px;background:#f8fafc;border-left:4px solid #64748b;font-size:14px;}
+.review-content .review-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.review-content .review-links a{display:inline-flex;align-items:center;min-height:40px;padding:8px 13px;border:1px solid #cbd5e1;border-radius:999px;background:#fff;color:#0f5db3;text-decoration:none;font-weight:700;}
+.review-content .review-links a:hover{text-decoration:underline;}
+@media(max-width:600px){.review-content-shell{padding:0 10px;margin-top:18px}.review-content{padding:18px 14px;border-radius:14px}.review-content h3{font-size:17px}.review-content .review-links{gap:8px}.review-content .review-links a{font-size:13px}}
+</style>
+
 </head>
 <body>
 <div class="wrap">
@@ -278,6 +303,22 @@
 <audio id="seM2M3" src="sound/M2M3.mp3" preload="auto"></audio>
 <audio id="seReplay" src="sound/Replay.mp3" preload="auto"></audio>
 <audio id="seGoal" src="sound/goal.mp3" preload="auto"></audio>
+
+
+<section class="review-content-shell" aria-labelledby="dice-guide-title">
+  <div class="review-content">
+    <h2 id="dice-guide-title">ダイスすごろく検証ツールについて</h2>
+    <p>このツールは、30マスのすごろくをブラウザ上で繰り返し試し、ゴールまでに必要だったダイス数や停止マスの傾向を記録するための検証用シミュレーターです。1回の結果だけで判断せず、複数周回の実績を残して体感と記録を比較できるようにしています。</p>
+    <h3>記録できる主なデータ</h3>
+    <ul><li>周回数・ゴール数・使用ダイス数・1ゴールあたりの平均ダイス数</li><li>ゴールまでに使った最小／最大ダイス数</li><li>連続でゴールできた回数、連続でゴールできなかった回数</li><li>ゴールに停止したマスの集計と上位記録</li><li>各周回のイベント履歴</li></ul>
+    <h3>特殊マスと倍率モード</h3>
+    <p>盤面には、もう一度ダイスを振るRマス、追加で2マス・3マス進むマス、ゴールマスがあります。1倍と10倍は報酬倍率の違いを再現するための切り替えで、サイコロ自体の出目はどちらも1～6です。</p>
+    <h3>検証するときのポイント</h3>
+    <p>短い試行回数では偏りが大きく見えるため、確率や平均値を確認したい場合は周回数を増やして記録を見るのがおすすめです。リセットするまではブラウザに現在の集計を保持するため、複数回に分けた検証にも利用できます。</p>
+    <p class="review-note">本ツールは攻略・検証を目的とした独自シミュレーターです。実際のゲーム内抽選結果を保証するものではありません。</p>
+    <div class="review-links"><a href="strikeout_simulator.html">連動ストラックアウト</a><a href="index.html">攻略DBトップへ</a></div>
+  </div>
+</section>
 
 <script>
 const STORAGE_KEY = 'diceSugorokuStateV1';

@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ストラックアウト サンプル</title>
+  <title>ストラックアウト｜ダイスすごろく連動ミニゲーム｜サカつく2026攻略DB</title>
+  <meta name="description" content="ダイスすごろくのゴール後に遊べるストラックアウト形式の連動ミニゲーム。9マスから3回選び、獲得した報酬を確認してすごろくへ戻れます。">
+  <meta name="robots" content="noindex,follow,max-image-preview:large">
+  <link rel="canonical" href="https://sakatsuku2026-db.com/strikeout_simulator.html">
+  <meta property="og:title" content="ストラックアウト｜ダイスすごろく連動ミニゲーム｜サカつく2026攻略DB">
+  <meta property="og:description" content="ダイスすごろくのゴール後に遊べるストラックアウト形式の連動ミニゲーム。9マスから3回選び、獲得した報酬を確認してすごろくへ戻れます。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sakatsuku2026-db.com/strikeout_simulator.html">
+  <meta name="twitter:card" content="summary">
+
   <style>
     :root{
       --sky:#dff7ff;
@@ -362,6 +371,22 @@
       .reward-row img{width:52px;height:52px}
     }
 </style>
+
+<style id="review-content-styles">
+.review-content-shell{max-width:1180px;margin:24px auto 40px;padding:0 16px;box-sizing:border-box;font-family:inherit;color:#1f2937;}
+.review-content{background:#fff;border:1px solid rgba(15,23,42,.12);border-radius:18px;padding:24px;box-shadow:0 8px 24px rgba(15,23,42,.06);line-height:1.85;}
+.review-content h2{margin:0 0 14px;font-size:clamp(21px,2.8vw,28px);line-height:1.35;color:#0f172a;}
+.review-content h3{margin:22px 0 8px;font-size:18px;line-height:1.45;color:#1e3a5f;}
+.review-content p{margin:0 0 12px;}
+.review-content ul,.review-content ol{margin:8px 0 14px;padding-left:1.4em;}
+.review-content li{margin:5px 0;}
+.review-content .review-note{margin-top:16px;padding:12px 14px;border-radius:12px;background:#f8fafc;border-left:4px solid #64748b;font-size:14px;}
+.review-content .review-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.review-content .review-links a{display:inline-flex;align-items:center;min-height:40px;padding:8px 13px;border:1px solid #cbd5e1;border-radius:999px;background:#fff;color:#0f5db3;text-decoration:none;font-weight:700;}
+.review-content .review-links a:hover{text-decoration:underline;}
+@media(max-width:600px){.review-content-shell{padding:0 10px;margin-top:18px}.review-content{padding:18px 14px;border-radius:14px}.review-content h3{font-size:17px}.review-content .review-links{gap:8px}.review-content .review-links a{font-size:13px}}
+</style>
+
 </head>
 <body>
   <div class="wrap">
@@ -413,7 +438,21 @@
   <audio id="sePanelB" src="sound/panel_B.mp3" preload="auto"></audio>
   <audio id="seResult" src="sound/Result.mp3" preload="auto"></audio>
 
-  <script>
+  
+<section class="review-content-shell" aria-labelledby="strikeout-guide-title">
+  <div class="review-content">
+    <h2 id="strikeout-guide-title">ストラックアウトの遊び方</h2>
+    <p>このページは、ダイスすごろくでゴールしたあとに続けて遊ぶ連動ミニゲームです。9マスのパネルから3回選択し、開いたパネルの報酬を獲得する流れをブラウザ上で再現しています。</p>
+    <h3>基本ルール</h3>
+    <ol><li>9枚のパネルから好きな場所を1つ選びます。</li><li>パネルを開くたびに残り挑戦回数が1回減ります。</li><li>3回の挑戦が終わるとResult画面で獲得内容をまとめて確認できます。</li><li>結果確認後はすごろくへ戻り、次の周回を続けられます。</li></ol>
+    <h3>すごろくと組み合わせて使う</h3>
+    <p>単体で結果を競うページではなく、すごろくのゴール後に発生する報酬体験をつなぐ補助画面として設計しています。すごろく側では周回数やゴール記録を残せるため、検証する場合は両方をセットで利用してください。</p>
+    <p class="review-note">本ページは攻略DB内の独自シミュレーション用ミニゲームです。実際のゲーム内報酬や抽選結果を保証するものではありません。</p>
+    <div class="review-links"><a href="dice_sugoroku_simulator.html">ダイスすごろくへ戻る</a><a href="index.html">攻略DBトップへ</a></div>
+  </div>
+</section>
+
+<script>
     const IMG_DIR = 'img/strikeout_rewards/';
     const MAX_ATTEMPTS = 3;
 

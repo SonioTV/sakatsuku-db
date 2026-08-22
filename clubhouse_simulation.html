@@ -3,8 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>クラブハウス設備シミュレーション | サカつく2026 DB</title>
-<link rel="canonical" href="https://sakatsuku2026-db.com/clubhouse_simulation.html">
+<title>クラブハウス設備シミュレーション｜おすすめ構成を自動計算｜サカつく2026攻略DB</title>
+  <meta name="description" content="サカつく2026のクラブハウス設備構成を自動計算。伸ばしたい効果を優先順位で指定し、クラブハウスLvごとの上限コスト内から条件に合う設備の組み合わせを比較できます。">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://sakatsuku2026-db.com/clubhouse_simulation.html">
+  <meta property="og:title" content="クラブハウス設備シミュレーション｜おすすめ構成を自動計算｜サカつく2026攻略DB">
+  <meta property="og:description" content="サカつく2026のクラブハウス設備構成を自動計算。伸ばしたい効果を優先順位で指定し、クラブハウスLvごとの上限コスト内から条件に合う設備の組み合わせを比較できます。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sakatsuku2026-db.com/clubhouse_simulation.html">
+  <meta name="twitter:card" content="summary">
+
 <style>
 
 :root{
@@ -111,6 +119,22 @@ h1{position:relative;z-index:1;font-size:34px;line-height:1.18;margin:8px 0 8px;
 @media (max-width:560px){.wrap{padding:10px 8px 44px;}.hero{border-radius:22px;padding:14px 10px 16px;}h1{font-size:25px;}.heroLead{font-size:12px;}.pageTitleImg img{width:86%;}.nav{gap:8px;}.nav a{font-size:12px;padding:9px 12px;}.card{padding:12px 10px;border-radius:22px;}.sectionTitle{font-size:20px;}.sectionSub{font-size:12px;}.helperPill{font-size:11px;padding:7px 9px;}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}.field label{font-size:11px;line-height:1.35;}.bigSelect{font-size:13px;padding:10px 8px;border-radius:13px;}.actions{gap:8px;}.bigBtn{min-width:100%;font-size:18px;padding:13px;border-radius:16px;}.subBtn{min-width:100%;font-size:15px;padding:11px;border-radius:15px;}.noteBox{font-size:11px;padding:10px 11px;}.kpiGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}.kpi{padding:11px 6px;border-radius:16px;}.kpiLabel{font-size:10px;}.kpiValue{font-size:22px;}.summaryCard{padding:12px;border-radius:20px;}.summaryTitle{font-size:18px;}.badge{font-size:11px;padding:5px 8px;}.item{padding:10px;border-radius:18px;}.itemTop{grid-template-columns:94px 1fr;gap:9px;}.itemImageWrap{width:94px;height:72px;border-radius:14px;}.itemSub{gap:5px;}.itemSub .badge{font-size:10px;padding:5px 7px;}.itemEffectLine{font-size:12px;padding:8px 9px;margin-top:9px;}.footerNote{font-size:10px;}#scrollTopBtn{width:44px;height:44px;right:12px;bottom:14px;}}
 
 </style>
+
+<style id="review-content-styles">
+.review-content-shell{max-width:1180px;margin:24px auto 40px;padding:0 16px;box-sizing:border-box;font-family:inherit;color:#1f2937;}
+.review-content{background:#fff;border:1px solid rgba(15,23,42,.12);border-radius:18px;padding:24px;box-shadow:0 8px 24px rgba(15,23,42,.06);line-height:1.85;}
+.review-content h2{margin:0 0 14px;font-size:clamp(21px,2.8vw,28px);line-height:1.35;color:#0f172a;}
+.review-content h3{margin:22px 0 8px;font-size:18px;line-height:1.45;color:#1e3a5f;}
+.review-content p{margin:0 0 12px;}
+.review-content ul,.review-content ol{margin:8px 0 14px;padding-left:1.4em;}
+.review-content li{margin:5px 0;}
+.review-content .review-note{margin-top:16px;padding:12px 14px;border-radius:12px;background:#f8fafc;border-left:4px solid #64748b;font-size:14px;}
+.review-content .review-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.review-content .review-links a{display:inline-flex;align-items:center;min-height:40px;padding:8px 13px;border:1px solid #cbd5e1;border-radius:999px;background:#fff;color:#0f5db3;text-decoration:none;font-weight:700;}
+.review-content .review-links a:hover{text-decoration:underline;}
+@media(max-width:600px){.review-content-shell{padding:0 10px;margin-top:18px}.review-content{padding:18px 14px;border-radius:14px}.review-content h3{font-size:17px}.review-content .review-links{gap:8px}.review-content .review-links a{font-size:13px}}
+</style>
+
 </head>
 <body>
 <div class="wrap">
@@ -210,6 +234,22 @@ h1{position:relative;z-index:1;font-size:34px;line-height:1.18;margin:8px 0 8px;
     </div>
   </div>
 </div>
+
+<section class="review-content-shell" aria-labelledby="clubhouse-sim-guide-title">
+  <div class="review-content">
+    <h2 id="clubhouse-sim-guide-title">シミュレーションの判定基準</h2>
+    <p>クラブハウス設備シミュレーションは、設備を単純に効果量の合計だけで並べるのではなく、「1番目に伸ばしたい効果」から「4番目に伸ばしたい効果」までの優先順位とクラブハウスLvを条件にして、設置可能な構成を比較します。</p>
+    <h3>優先順位は1番目から順に評価</h3>
+    <p>まず1番目の効果をより高くできる構成を優先し、同条件なら2番目、さらに3番目、4番目の順に比較します。複数能力をバランス良く伸ばしたい場合でも、「絶対に落としたくない効果」を1番目に指定しておくと意図に近い結果を得やすくなります。</p>
+    <h3>クラブハウスLvと上限コストを反映</h3>
+    <p>選択したクラブハウスLvから利用可能な設備と上限コストを判定し、その範囲で組み合わせを計算します。同点の構成がある場合は合計コストが低い構成を優先するため、余剰コストを残したい場合の比較にも利用できます。</p>
+    <h3>おすすめの使い方</h3>
+    <ol><li>現在のクラブハウスLvを選ぶ</li><li>最優先で伸ばしたい効果を1番目に設定する</li><li>補助的に伸ばしたい効果を2～4番目へ設定する</li><li>結果の合計効果と採用設備を確認し、設備一覧で個別データを再確認する</li></ol>
+    <p class="review-note">表示される「最適構成」は、入力した優先順位と収録データに基づく計算結果です。チームの育成方針によって最適な優先項目は変わります。</p>
+    <div class="review-links"><a href="clubhouse.html">クラブハウス設備一覧</a><a href="index.html">攻略DBトップへ</a></div>
+  </div>
+</section>
+
 <script>
 const JSON_PATH = "club_facilities.json";
 const EXPANSIONS_PATH = "clubhouse_expansions.json";
@@ -331,7 +371,7 @@ function createFacilityImage(facilityId, facilityName){
 
   const trySetSrc = (index) => {
     if (index >= IMAGE_EXTS.length) {
-      wrap.innerHTML = `<div class="itemImagePlaceholder">画像準備中<br>${escapeHtml(facilityId)}</div>`;
+      wrap.innerHTML = `<div class="itemImagePlaceholder">画像なし<br>${escapeHtml(facilityId)}</div>`;
       return;
     }
     img.dataset.index = String(index);

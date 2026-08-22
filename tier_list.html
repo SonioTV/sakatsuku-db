@@ -3,9 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>ティア表メーカー | サカつく2026 DB</title>
+  <title>ティア表メーカー｜選手カードをS・A・B・Cに分類｜サカつく2026攻略DB</title>
+  <meta name="description" content="サカつく2026の選手カードをドラッグしてS・A・B・Cに自由に分類できるティア表メーカー。ポリシー、適性ポジション、入手場所で絞り込み、配置をブラウザに保存できます。">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://sakatsuku2026-db.com/tier_list.html">
-  <style>
+  <meta property="og:title" content="ティア表メーカー｜選手カードをS・A・B・Cに分類｜サカつく2026攻略DB">
+  <meta property="og:description" content="サカつく2026の選手カードをドラッグしてS・A・B・Cに自由に分類できるティア表メーカー。ポリシー、適性ポジション、入手場所で絞り込み、配置をブラウザに保存できます。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sakatsuku2026-db.com/tier_list.html">
+  <meta name="twitter:card" content="summary">
+
+<style>
     :root{
       --bg:#f4f7fb;
       --ink:#102033;
@@ -120,6 +128,22 @@
     @media(max-width:760px){:root{--card-w:56px;--label-w:48px;--gap:4px}.page{padding:10px}.hero{border-radius:24px;padding:20px}.heroInner{grid-template-columns:1fr}.heroStats{justify-content:flex-start}.controls{grid-template-columns:repeat(2,minmax(0,1fr));padding:12px;border-radius:20px}.tierZone{min-height:68px;border-radius:16px}.tierCanvas{min-height:68px;padding:5px}.poolRow{min-height:70px}.tierLabel .grade{font-size:22px}.panelTitle{font-size:18px}}
     @media(max-width:480px){.controls{grid-template-columns:1fr}.statPill{min-width:calc(50% - 4px)}.field input,.field select,.btn{height:42px}.panelHead{padding:14px}.boardWrap,.poolWrap{padding:10px}}
   </style>
+
+<style id="review-content-styles">
+.review-content-shell{max-width:1180px;margin:24px auto 40px;padding:0 16px;box-sizing:border-box;font-family:inherit;color:#1f2937;}
+.review-content{background:#fff;border:1px solid rgba(15,23,42,.12);border-radius:18px;padding:24px;box-shadow:0 8px 24px rgba(15,23,42,.06);line-height:1.85;}
+.review-content h2{margin:0 0 14px;font-size:clamp(21px,2.8vw,28px);line-height:1.35;color:#0f172a;}
+.review-content h3{margin:22px 0 8px;font-size:18px;line-height:1.45;color:#1e3a5f;}
+.review-content p{margin:0 0 12px;}
+.review-content ul,.review-content ol{margin:8px 0 14px;padding-left:1.4em;}
+.review-content li{margin:5px 0;}
+.review-content .review-note{margin-top:16px;padding:12px 14px;border-radius:12px;background:#f8fafc;border-left:4px solid #64748b;font-size:14px;}
+.review-content .review-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.review-content .review-links a{display:inline-flex;align-items:center;min-height:40px;padding:8px 13px;border:1px solid #cbd5e1;border-radius:999px;background:#fff;color:#0f5db3;text-decoration:none;font-weight:700;}
+.review-content .review-links a:hover{text-decoration:underline;}
+@media(max-width:600px){.review-content-shell{padding:0 10px;margin-top:18px}.review-content{padding:18px 14px;border-radius:14px}.review-content h3{font-size:17px}.review-content .review-links{gap:8px}.review-content .review-links a{font-size:13px}}
+</style>
+
 </head>
 <body>
   <div class="page">
@@ -171,7 +195,23 @@
     <div class="footerNote">※配置はブラウザの localStorage に保存されます。スクショモードはもう一度押すと通常表示に戻ります。</div>
   </div>
 
-  <script>
+  
+<section class="review-content-shell" aria-labelledby="tier-guide-title">
+  <div class="review-content">
+    <h2 id="tier-guide-title">ティア表メーカーの使い方と評価の決め方</h2>
+    <p>ティア表メーカーは、選手カードをS・A・B・Cの4段階へドラッグして、自分の評価基準で整理するためのツールです。サイト側が一方的に順位を決めるランキングではなく、手持ち・戦術・使用感などを含めてユーザー自身の評価表を作れます。</p>
+    <h3>先に比較対象を絞る</h3>
+    <p>ポリシー、適性ポジション、入手場所を指定すると、比較したい選手群だけを表示できます。GKとFWを同じ尺度で比べるより、同ポジションや同じ編成候補の中でティア分けすると評価基準を揃えやすくなります。</p>
+    <h3>同じティア内でも並び順を調整</h3>
+    <p>S・A・B・Cへ配置したあと、同じティア内でカードの順番もドラッグして変更できます。「同じSでも左ほど高評価」のように自分なりのルールを決めれば、より細かい比較表として使えます。</p>
+    <h3>配置はブラウザに保存</h3>
+    <p>作成した配置はブラウザのlocalStorageに保存されるため、同じ端末・ブラウザであればページを開き直しても続きから編集できます。スクショモードを使えば、操作ボタンを抑えた表示で作成したティア表を共有しやすくなります。</p>
+    <p class="review-note">ティアはユーザー自身が決める主観評価です。客観的な総合力比較が必要な場合は総合力ランキングや選手評価ツールも併用してください。</p>
+    <div class="review-links"><a href="overall_ranking.html">総合力ランキング</a><a href="sp_evaluator.html">SP選手評価ツール</a><a href="player_catalog.html">選手図鑑</a></div>
+  </div>
+</section>
+
+<script>
     (() => {
       const STORAGE_KEY = "sakatsuku2026_tier_list_v4_suitable_positions";
       const IMAGE_BASE = "img/players/";
