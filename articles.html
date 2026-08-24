@@ -124,6 +124,180 @@ a:hover{opacity:.85}
     line-height:1.4;
   }
 }
+
+/* ==========================================================
+   攻略記事アーカイブ：カテゴリ・検索・並び替え
+   ========================================================== */
+.articleControls{
+  margin:0 0 18px;
+  padding:16px;
+  border:1px solid #dfe5ec;
+  border-radius:16px;
+  background:#f8fafc;
+}
+.articleSearchRow{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 180px;
+  gap:12px;
+  align-items:end;
+}
+.articleSearch,
+.articleSort{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.articleControlLabel{
+  font-size:13px;
+  font-weight:900;
+  color:#334155;
+}
+.articleSearch input,
+.articleSort select{
+  width:100%;
+  min-height:46px;
+  border:1px solid #cbd5e1;
+  border-radius:11px;
+  background:#fff;
+  color:#111;
+  font:inherit;
+  font-size:15px;
+  padding:10px 12px;
+  outline:none;
+}
+.articleSearch input:focus,
+.articleSort select:focus{
+  border-color:#4a90e2;
+  box-shadow:0 0 0 3px rgba(74,144,226,.16);
+}
+.articleCategoryTabs{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:7px;
+  margin-top:14px;
+}
+.articleTab{
+  min-width:0;
+  min-height:48px;
+  padding:8px 6px;
+  border:1px solid #cfd8e3;
+  border-radius:11px;
+  background:#fff;
+  color:#334155;
+  cursor:pointer;
+  font-weight:900;
+  line-height:1.25;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+}
+.articleTab:hover{background:#f1f5f9}
+.articleTab.active{
+  border-color:#2e7d32;
+  background:#e7f5ea;
+  color:#14532d;
+  box-shadow:0 5px 12px rgba(46,125,50,.10);
+}
+.articleTabCount{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:22px;
+  height:22px;
+  padding:0 5px;
+  border-radius:999px;
+  background:#eef2f7;
+  color:#475569;
+  font-size:10px;
+  line-height:1;
+}
+.articleTab.active .articleTabCount{
+  background:#fff;
+  color:#14532d;
+}
+.articleResultBar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:13px;
+  padding-top:12px;
+  border-top:1px solid #e2e8f0;
+}
+#articleResultCount{
+  font-size:13px;
+  color:#475569;
+}
+.articleResetBtn{
+  border:0;
+  background:transparent;
+  color:#0b5ed7;
+  font-size:12px;
+  font-weight:900;
+  cursor:pointer;
+  padding:5px 0;
+}
+.articleGrid .articleCard[hidden]{display:none !important}
+.articleEmpty{
+  margin:18px 0 0;
+  padding:18px;
+  border:1px dashed #cbd5e1;
+  border-radius:14px;
+  background:#f8fafc;
+  color:#475569;
+  text-align:center;
+  font-weight:800;
+}
+@media (max-width:640px){
+  .articleArchive{
+    display:block !important;
+  }
+  .articleControls{
+    padding:12px;
+    margin-bottom:14px;
+    border-radius:14px;
+  }
+  .articleSearchRow{
+    grid-template-columns:minmax(0,1fr) 112px;
+    gap:8px;
+  }
+  .articleControlLabel{font-size:11px}
+  .articleSearch input,
+  .articleSort select{
+    min-height:42px;
+    padding:8px 9px;
+    font-size:12px;
+  }
+  .articleCategoryTabs{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:6px;
+    margin-top:10px;
+  }
+  .articleTab{
+    min-height:43px;
+    padding:6px 4px;
+    border-radius:9px;
+    font-size:10.5px;
+    gap:3px;
+  }
+  .articleTabCount{
+    min-width:19px;
+    height:19px;
+    padding:0 4px;
+    font-size:9px;
+  }
+  .articleResultBar{
+    margin-top:10px;
+    padding-top:9px;
+  }
+  #articleResultCount{font-size:11px}
+  .articleResetBtn{font-size:10.5px}
+}
+@media (max-width:370px){
+  .articleSearchRow{grid-template-columns:1fr}
+  .articleCategoryTabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 </style>
 </head>
 <body>
@@ -145,17 +319,50 @@ a:hover{opacity:.85}
 <h1>攻略記事一覧</h1>
 <small>サカつく2026の攻略情報をテーマ別にまとめています。</small>
 <div class="section box">
-<p>
-      このページでは、サカつく2026攻略DBに掲載している攻略情報をテーマ別にまとめています。<br/><br/>
-      SP選手・ガチャ評価、育成、フォーメーションコンボ、期限付き移籍、初心者向け攻略、アップデート情報など、
-      実際のゲームプレイや検証データをもとに、選手選び・育成・編成の判断に役立つ情報を掲載しています。
-      各記事の関連ツールとあわせてご活用ください。
-    </p>
+<p>このページでは、サカつく2026攻略DBに掲載している攻略記事を5つのカテゴリに整理しています。<br/><br/>スカウト・ガチャ、育成・初心者、選手・編成、イベント・特集、アップデート・情報から絞り込みでき、キーワード検索と最新順・古い順の並び替えにも対応しています。目的の記事を探す際にご活用ください。</p>
 </div>
-<div class="section">
-<h2>攻略記事</h2>
-<div class="grid"><article class="card">
-<div class="meta">ガチャ</div>
+<div class="section articleArchive">
+<h2>攻略記事を探す</h2>
+<div aria-label="記事の絞り込みと並び替え" class="articleControls">
+<div class="articleSearchRow">
+<label class="articleSearch" for="articleSearchInput">
+<span class="articleControlLabel">キーワード検索</span>
+<input autocomplete="off" enterkeyhint="search" id="articleSearchInput" placeholder="選手名・ガチャ名・攻略内容など" type="search"/>
+</label>
+<label class="articleSort" for="articleSortSelect">
+<span class="articleControlLabel">並び順</span>
+<select id="articleSortSelect">
+<option selected="" value="latest">最新順</option>
+<option value="oldest">古い順</option>
+</select>
+</label>
+</div>
+<div aria-label="記事カテゴリ" class="articleCategoryTabs" role="group">
+<button aria-pressed="true" class="articleTab active" data-filter="all" type="button">
+<span>すべて</span><small class="articleTabCount">32</small>
+</button>
+<button aria-pressed="false" class="articleTab" data-filter="scout" type="button">
+<span>スカウト・ガチャ</span><small class="articleTabCount">17</small>
+</button>
+<button aria-pressed="false" class="articleTab" data-filter="training" type="button">
+<span>育成・初心者</span><small class="articleTabCount">4</small>
+</button>
+<button aria-pressed="false" class="articleTab" data-filter="team" type="button">
+<span>選手・編成</span><small class="articleTabCount">4</small>
+</button>
+<button aria-pressed="false" class="articleTab" data-filter="event" type="button">
+<span>イベント・特集</span><small class="articleTabCount">4</small>
+</button>
+<button aria-pressed="false" class="articleTab" data-filter="info" type="button">
+<span>アップデート・情報</span><small class="articleTabCount">3</small>
+</button>
+</div>
+<div class="articleResultBar">
+<strong aria-live="polite" id="articleResultCount">32件の記事を表示中</strong>
+<button class="articleResetBtn" id="articleResetBtn" type="button">条件をリセット</button>
+</div>
+</div><div class="grid articleGrid" id="articleGrid"><article class="card articleCard" data-category="scout" data-order="0">
+<div class="meta">スカウト・ガチャ</div>
 <h3>【サカつく2026】限定SP選手の下位互換!?新SP「アリソン」のピックアップSP選手スカウトは引くべき？新SP選手4名を徹底評価</h3>
 <p class="desc">アリソン、エンドリッキ、メイソン・グリーンウッド、マヌエル・アカンジの性能とおすすめ度を徹底評価。代用選手・互換選手を画像付きで比較し、現在の入手可否まで含めてガチャを引くべきか解説します。</p>
 <div class="linkrow"><a class="linkbtn" href="20260819_pickup_sp_scout_review.html">記事を読む</a></div>
@@ -164,8 +371,8 @@ a:hover{opacity:.85}
 <a href="overall_ranking.html">最強ランキング</a> /
 <a href="favorite_combos.html">フォメコン診断</a>
 </div>
-</article><article class="card">
-<div class="meta">ガチャ</div>
+</article><article class="card articleCard" data-category="scout" data-order="1">
+<div class="meta">スカウト・ガチャ</div>
 <h3>【サカつく2026】★3はピックアップ確定のお得ガチャ!!Jリーグ百年構想リーグ得点王SP選手スカウトは引くべき？SP選手スカウト評価</h3>
 <p class="desc">★3排出率10.5％＆★3はピックアップ確定。レオ・セアラ、山岸祐也、山田寛人、泉柊椰、山本桜大、田村翔太、土信田悠生の性能・おすすめ度と、ガチャを引くべきかを徹底評価します。</p>
 <div class="linkrow"><a class="linkbtn" href="20260812_jleague_centenaryplan_scout_review.html">記事を読む</a></div>
@@ -174,8 +381,8 @@ a:hover{opacity:.85}
 <a href="overall_ranking.html">最強ランキング</a> /
 <a href="favorite_combos.html">フォメコン診断</a>
 </div>
-</article><article class="card">
-<div class="meta">ガチャ結果</div>
+</article><article class="card articleCard" data-category="scout" data-order="2">
+<div class="meta">スカウト・ガチャ</div>
 <h3>【サカつく2026】ブラジルセレクションSP選手スカウト100連引いてみた！</h3>
 <p class="desc">イベント限定「ブラジルセレクションSP選手スカウト」を無料チケットで100連！10連ごとの演出や★3排出結果、確率、メダル交換まで画像付きで紹介します。</p>
 <div class="linkrow"><a class="linkbtn" href="20260804_brazil_selection_spscout_100pull_result.html">記事を読む</a></div>
@@ -183,9 +390,9 @@ a:hover{opacity:.85}
 <a href="sp_evaluator.html">選手評価ツール</a> /
 <a href="overall_ranking.html">最強ランキング</a>
 </div>
-</article><article class="card"><div class="meta">育成</div><h3>【サカつく2026】覚醒5回を狙う育成法｜有利イベントを成長期SP選手に集中させる方法【Ver2.1対応】</h3><p class="desc">サカつく2026 Ver2.1対応。SP選手13～14名のチームを作り、成長期イベントを育成したい選手へ集中させて覚醒5回を狙う育成方法を、手順・発生イベント・注意点・Q&amp;A付きで解説します。</p><div class="linkrow"><a class="linkbtn" href="yousaku1234_awakening_5times_training_ver2_1.html">記事を読む</a></div><div class="subLinks">関連ツール：<a href="sp_evaluator.html">選手評価ツール</a></div></article><article class="card"><div class="meta">公式番組まとめ</div><h3>【サカつくTV #9】Ver2.1アップデート・ハーフアニバーサリーまとめ｜新イベント・ペレ・影山優佳</h3><p class="desc">サカつくTV #9で発表されたVer2.1アップデートとハーフアニバーサリー情報を総まとめ。インターナショナルカップ、SPECIAL 1vs1、ブラジルセレクション100連、ペレ、影山優佳、新機能・改善内容まで詳しく解説します。</p><div class="linkrow"><a class="linkbtn" href="sakatsuku_tv9_ver2.1_update_summary.html">記事を読む</a></div><div class="subLinks">関連ツール：<a href="sp_evaluator.html">選手評価ツール</a> / <a href="index.html">フォーメーションコンボ検索</a></div></article>
-<article class="card">
-<div class="meta">ガチャ</div>
+</article><article class="card articleCard" data-category="training" data-order="3"><div class="meta">育成・初心者</div><h3>【サカつく2026】覚醒5回を狙う育成法｜有利イベントを成長期SP選手に集中させる方法【Ver2.1対応】</h3><p class="desc">サカつく2026 Ver2.1対応。SP選手13～14名のチームを作り、成長期イベントを育成したい選手へ集中させて覚醒5回を狙う育成方法を、手順・発生イベント・注意点・Q&amp;A付きで解説します。</p><div class="linkrow"><a class="linkbtn" href="yousaku1234_awakening_5times_training_ver2_1.html">記事を読む</a></div><div class="subLinks">関連ツール：<a href="sp_evaluator.html">選手評価ツール</a></div></article><article class="card articleCard" data-category="info" data-order="4"><div class="meta">アップデート・情報</div><h3>【サカつくTV #9】Ver2.1アップデート・ハーフアニバーサリーまとめ｜新イベント・ペレ・影山優佳</h3><p class="desc">サカつくTV #9で発表されたVer2.1アップデートとハーフアニバーサリー情報を総まとめ。インターナショナルカップ、SPECIAL 1vs1、ブラジルセレクション100連、ペレ、影山優佳、新機能・改善内容まで詳しく解説します。</p><div class="linkrow"><a class="linkbtn" href="sakatsuku_tv9_ver2.1_update_summary.html">記事を読む</a></div><div class="subLinks">関連ツール：<a href="sp_evaluator.html">選手評価ツール</a> / <a href="index.html">フォーメーションコンボ検索</a></div></article>
+<article class="card articleCard" data-category="scout" data-order="5">
+<div class="meta">スカウト・ガチャ</div>
 <h3>【サカつく2026】リアクション強化が止まらない!!新SP「ギマランイス」は引くべき？プレミアムSP選手スカウト評価</h3>
 <p class="desc">
 ブルーノ・ギマランイス、ハフィーニャ、ロドリゴ、ブレーメルの性能・Tier評価・代用候補・ガシャ優先度を徹底解説。ハーフアニバーサリーとの優先順位も紹介します。
@@ -199,8 +406,8 @@ a:hover{opacity:.85}
 <a href="overall_ranking.html">最強ランキング</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ガチャ</div>
+<article class="card articleCard" data-category="scout" data-order="6">
+<div class="meta">スカウト・ガチャ</div>
 <h3>リアクション大幅強化!!新SP「ペレ」のHalf AnniversaryレジェンドSP選手スカウトは引くべき？新SP選手4名を徹底評価</h3>
 <p class="desc">
     Half AnniversaryレジェンドSP選手スカウトに登場したペレ、ヴィニシウス・ジュニオール、エデル・ミリトン、エデルソンを徹底評価。
@@ -215,8 +422,8 @@ a:hover{opacity:.85}
     <a href="overall_ranking.html">最強ランキング</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ガチャ</div>
+<article class="card articleCard" data-category="scout" data-order="7">
+<div class="meta">スカウト・ガチャ</div>
 <h3>カウンター強化が止まらない!!新SP「ジュード・ベリンガム」のピックアップSP選手スカウトは引くべき？新SP選手4名を徹底評価</h3>
 <p class="desc">
     ジュード・ベリンガム、ヨシュコ・グヴァルディオル、アレハンドロ・バルデ、ダンテの性能・おすすめ度・Tier評価を掲載。RB確定10連の注意点や、日本代表SP選手スカウトとの優先順位も解説します。
@@ -230,8 +437,8 @@ a:hover{opacity:.85}
     <a href="overall_ranking.html">最強ランキング</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ガチャ</div>
+<article class="card articleCard" data-category="scout" data-order="8">
+<div class="meta">スカウト・ガチャ</div>
 <h3>香港サッカー界のレジェンド選手が登場!!歐偉倫（オウ・ワイルン）と李健和（リー・キンワ）の香港レジェンドSP選手スカウトは引くべき？新SP選手2名を徹底評価</h3>
 <p class="desc">
     香港レジェンドSP選手スカウトに登場した歐偉倫（オウ・ワイルン）と李健和（リー・キンワ）を評価。★3排出率5%、RB1回限定10連の注意点、サイン付きカード、フォメコン要員としての価値まで解説します。
@@ -245,8 +452,8 @@ a:hover{opacity:.85}
     <a href="20260626_japan_sp_scout_review.html">日本代表SP選手スカウト評価</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ワールドカップ2026</div>
+<article class="card articleCard" data-category="event" data-order="9">
+<div class="meta">イベント・特集</div>
 <h3>【ワールドカップ2026】決勝トーナメント進出国の★3SP選手まとめ！サカつく2026で使えるスター選手を紹介</h3>
 <p class="desc">
     ワールドカップ2026決勝トーナメント進出32か国の中から、
@@ -262,8 +469,8 @@ a:hover{opacity:.85}
     <a href="wc2026_special.html">ワールドカップ2026特集</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ガチャ</div>
+<article class="card articleCard" data-category="scout" data-order="10">
+<div class="meta">スカウト・ガチャ</div>
 <h3>日本代表SP選手スカウトは引くべき？新SP選手11名をTier評価！カウンター超強化ガチャを徹底解説</h3>
 <p class="desc">
     日本代表SP選手11名をTier表で評価。★3排出率11%、カウンター金フォメコン対応、新スキル・新特徴、初の赤適性ポジション持ちなど、引くべきかを攻略目線で解説します。
@@ -277,8 +484,8 @@ a:hover{opacity:.85}
     <a href="strongest_team_simulation.html">最強チームシミュレーション</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ガチャ</div>
+<article class="card articleCard" data-category="scout" data-order="11">
+<div class="meta">スカウト・ガチャ</div>
 <h3>W杯2026で活躍中の選手が登場!!ウスマン・デンベレのピックアップSP選手スカウトは引くべき？新SP選手4名を徹底評価</h3>
 <p class="desc">
     ウスマン・デンベレ、ヤン・オブラク、ハカン・チャルハノール、カイル・ウォーカーの性能とおすすめ度を、
@@ -292,8 +499,8 @@ a:hover{opacity:.85}
     <a href="sp_evaluator.html">選手評価ツール</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ワールドカップ2026</div>
+<article class="card articleCard" data-category="event" data-order="12">
+<div class="meta">イベント・特集</div>
 <h3>【サカつく2026】6月19日公開!!次回SP選手は誰？匂わせ画像から新ガシャ選手を予想！</h3>
 <p class="desc">
     次回ガシャで追加される新SP選手を、公開された匂わせ画像の国旗・ポジション・シルエットから予想。エムバペ、オブラク、アルダ・ギュレル、アレクサンダー＝アーノルド実装の可能性を考察します。
@@ -306,8 +513,8 @@ a:hover{opacity:.85}
     <a href="sp_evaluator.html">選手評価ツール</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ワールドカップ2026</div>
+<article class="card articleCard" data-category="event" data-order="13">
+<div class="meta">イベント・特集</div>
 <h3>【ワールドカップ2026】未実装国なのがもったいない！サカつく2026に来たら絶対欲しい最強SP選手10選！</h3>
 <p class="desc">
     ドイツ、ブラジル、カナダなど、ワールドカップ2026出場国の中でまだサカつく2026に実装されていない国に注目。
@@ -321,8 +528,8 @@ a:hover{opacity:.85}
     <a href="sp_evaluator.html">選手評価ツール</a> /
   </div>
 </article>
-<article class="card">
-<div class="meta">ワールドカップ2026</div>
+<article class="card articleCard" data-category="event" data-order="14">
+<div class="meta">イベント・特集</div>
 <h3>【ワールドカップ2026】サカつく2026に登場している★3SP選手まとめ！日本代表から各国スター選手まで紹介！</h3>
 <p class="desc">
     FIFA公式日本語サイトの登録メンバーをもとに、
@@ -337,8 +544,8 @@ a:hover{opacity:.85}
     <a href="sp_evaluator.html">選手評価ツール</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">配布・受取方法</div>
+<article class="card articleCard" data-category="info" data-order="15">
+<div class="meta">アップデート・情報</div>
 <h3>【6月14日更新】★3確定チケットの受け取り方法まとめ！アイテムコード入力手順とSEGAアカウント設定を画像付きで解説</h3>
 <p class="desc">
     無料で受け取れる★3確定チケットの入手方法を画像付きで解説。
@@ -352,8 +559,8 @@ a:hover{opacity:.85}
     <a href="sp_evaluator.html">選手評価ツール</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">保存版</div>
+<article class="card articleCard" data-category="team" data-order="16">
+<div class="meta">選手・編成</div>
 <h3>第二弾JリーグSP・KリーグSPのおすすめ選手まとめ！唯一無二の性能と金フォメコン適性を徹底解説</h3>
 <p class="desc">
     Ver2.0で刷新されたJリーグSP100名、KリーグSP24名の中から、
@@ -368,8 +575,8 @@ a:hover{opacity:.85}
     <a href="sp_evaluator.html">選手評価ツール</a> /
   </div>
 </article>
-<article class="card">
-<div class="meta">ガチャ</div>
+<article class="card articleCard" data-category="scout" data-order="17">
+<div class="meta">スカウト・ガチャ</div>
 <h3>これはインフレスタータパック!?リオネル・メッシのMLS実装記念SP選手スカウトは引くべき？新SP選手5名を徹底評価</h3>
 <p class="desc">
     リオネル・メッシ、ソン・フンミン、トーマス・ミュラー、
@@ -384,8 +591,8 @@ a:hover{opacity:.85}
     <a href="sp_evaluator.html">選手評価ツール</a> /
   </div>
 </article>
-<article class="card">
-<div class="meta">公式番組まとめ</div>
+<article class="card articleCard" data-category="info" data-order="18">
+<div class="meta">アップデート・情報</div>
 <h3>【サカつくTV #8】サカつく2026Ver2.0大型アップデート公式番組まとめ｜MLS・日本代表ライセンス・新プレスタ・新ガチャ情報</h3>
 <p class="desc">
     サカつくTV #8で発表されたVer2.0大型アップデート情報を整理。
@@ -399,8 +606,8 @@ a:hover{opacity:.85}
     <a href="sp_evaluator.html">選手評価ツール</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">課金パック</div>
+<article class="card articleCard" data-category="scout" data-order="19">
+<div class="meta">スカウト・ガチャ</div>
 <h3>【4800円のお得パック】「300万DL記念パック」は買うべき？当たる★3SP選手とSSR特連カードから徹底解説！</h3>
 <p class="desc">
     300万DL記念パックの内容を徹底検証。
@@ -414,8 +621,8 @@ a:hover{opacity:.85}
     <a href="sp_evaluator.html">選手評価ツール</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ガチャ</div>
+<article class="card articleCard" data-category="scout" data-order="20">
+<div class="meta">スカウト・ガチャ</div>
 <h3>ついにカウンター最強時代!?モハメド・サラーのピックアップSP選手スカウトは引くべき？新SP選手4名を徹底評価</h3>
 <p class="desc">
     モハメド・サラー、アントワーヌ・グリーズマン、
@@ -430,8 +637,8 @@ a:hover{opacity:.85}
     <a href="sp_evaluator.html">選手評価ツール</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">フォメコン</div>
+<article class="card articleCard" data-category="team" data-order="21">
+<div class="meta">選手・編成</div>
 <h3>ついに5-2-3にコンボ追加！新フォーメーションコンボ4種を徹底評価</h3>
 <p class="desc">
     新たに追加された銀ランクフォーメーションコンボ4種を徹底解説。
@@ -446,8 +653,8 @@ a:hover{opacity:.85}
     <a href="strongest_team_simulation.html">最強チームシミュレーション</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ガチャ</div>
+<article class="card articleCard" data-category="scout" data-order="22">
+<div class="meta">スカウト・ガチャ</div>
 <h3>★３排出確率2倍!!Jリーグ歴戦の猛者SP選手スカウトは引くべき？新SP選手8名を徹底評価</h3>
 <p class="desc">
     東慶悟、森重真人、小林悠、倉田秋、西川周作、家長昭博、
@@ -461,8 +668,8 @@ a:hover{opacity:.85}
     関連ツール：<a href="sp_evaluator.html">選手評価ツール</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ガチャ</div>
+<article class="card articleCard" data-category="scout" data-order="23">
+<div class="meta">スカウト・ガチャ</div>
 <h3>サカつくGOAL!DEN SP選手スカウトは引くべき？新SP選手5名を徹底評価</h3>
 <p class="desc">
           中村憲剛、柿谷曜一朗、佐藤寿人、林陵平、坪井慶介の性能とおすすめ度を、
@@ -475,8 +682,8 @@ a:hover{opacity:.85}
           関連ツール：<a href="sp_evaluator.html">選手評価ツール</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ガチャ</div>
+<article class="card articleCard" data-category="scout" data-order="24">
+<div class="meta">スカウト・ガチャ</div>
 <h3>待望のプレスタ実装!!スコット・マクトミネイのピックアップガチャは引くべき？新SP選手4名を徹底評価</h3>
 <p class="desc">
           スコット・マクトミネイ、ウィリアム・サリバ、ディマルコ、ジョアン・ガルシアの性能とおすすめ度を、
@@ -489,8 +696,8 @@ a:hover{opacity:.85}
           関連ツール：<a href="sp_evaluator.html">選手評価ツール</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">交換・メダル</div>
+<article class="card articleCard" data-category="team" data-order="25">
+<div class="meta">選手・編成</div>
 <h3>Jリーグ・KリーグSP選手メダルは誰と交換すべき？おすすめ交換選手8選</h3>
 <p class="desc">
           配布されたSP選手メダルのおすすめ交換先を解説。
@@ -503,8 +710,8 @@ a:hover{opacity:.85}
           関連ツール：<a href="sp_evaluator.html">選手評価ツール</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ガチャ</div>
+<article class="card articleCard" data-category="scout" data-order="26">
+<div class="meta">スカウト・ガチャ</div>
 <h3>レヴァンドフスキのピックアップガチャは引くべき？新SP選手4名を徹底評価</h3>
 <p class="desc">
           レヴァンドフスキ、バストーニ、チュアメニ、マッケニーの性能と当たり度を、
@@ -517,8 +724,8 @@ a:hover{opacity:.85}
           関連ツール：<a href="sp_evaluator.html">選手評価ツール</a>
 </div>
 </article>
-<article class="card">
-<div class="meta">ガチャ</div>
+<article class="card articleCard" data-category="scout" data-order="27">
+<div class="meta">スカウト・ガチャ</div>
 <h3>マンチェスター・シティ記念ガチャは引くべき？新SP選手性能解説</h3>
 <p class="desc">
           マンチェスター・シティ記念SP選手スカウトで追加された
@@ -531,10 +738,8 @@ a:hover{opacity:.85}
           関連ツール：<a href="sp_evaluator.html">選手評価ツール</a>
 </div>
 </article>
-</div>
-<div class="grid">
-<article class="card">
-<div class="meta">育成</div>
+<article class="card articleCard" data-category="training" data-order="28">
+<div class="meta">育成・初心者</div>
 <h3>期限付き移籍のおすすめと最適な選び方</h3>
 <p class="desc">
           プレイスタイル一致・上限上昇・移籍期間の考え方など、
@@ -546,9 +751,8 @@ a:hover{opacity:.85}
 <div class="subLinks">
           関連ツール：<a href="loan_matching_tool.html">期限付き移籍マッチングツール</a>
 </div>
-</article>
-<article class="card">
-<div class="meta">コンボ</div>
+</article><article class="card articleCard" data-category="team" data-order="29">
+<div class="meta">選手・編成</div>
 <h3>最強コンボの作り方とおすすめ編成</h3>
 <p class="desc">
           コンボ検索の使い方、強いコンボを探す時の考え方、
@@ -560,9 +764,8 @@ a:hover{opacity:.85}
 <div class="subLinks">
           関連ツール：<a href="index.html">コンボ検索</a>
 </div>
-</article>
-<article class="card">
-<div class="meta">育成</div>
+</article><article class="card articleCard" data-category="training" data-order="30">
+<div class="meta">育成・初心者</div>
 <h3>選手評価ツールの使い方と見方</h3>
 <p class="desc">
           選手評価ツールを使って、育成方針や比較判断を行うための見方を解説する記事です。
@@ -573,9 +776,8 @@ a:hover{opacity:.85}
 <div class="subLinks">
           関連ツール：<a href="sp_evaluator.html">選手評価ツール</a>
 </div>
-</article>
-<article class="card">
-<div class="meta">初心者向け</div>
+</article><article class="card articleCard" data-category="training" data-order="31">
+<div class="meta">育成・初心者</div>
 <h3>初心者が最初にやるべき育成手順</h3>
 <p class="desc">
           序盤で意識したい選手育成、コンボ確認、施設強化の優先順位をまとめた記事です。
@@ -586,8 +788,9 @@ a:hover{opacity:.85}
 <div class="subLinks">
           関連ページ：<a href="howto.html">このサイトの遊び方</a>
 </div>
-</article>
-</div>
+</article></div><p class="articleEmpty" hidden="" id="articleEmpty">
+  条件に一致する記事がありません。キーワードやカテゴリを変更してください。
+</p>
 </div>
 <div class="backlink">
 <a class="backbtn" href="index.html">← サイトに戻る</a>
@@ -598,5 +801,109 @@ a:hover{opacity:.85}
     <a href="contact.html">お問い合わせ</a>
 </div>
 </main>
-</body>
+<script>
+(() => {
+  const grid = document.getElementById('articleGrid');
+  const searchInput = document.getElementById('articleSearchInput');
+  const sortSelect = document.getElementById('articleSortSelect');
+  const tabs = Array.from(document.querySelectorAll('.articleTab'));
+  const resultCount = document.getElementById('articleResultCount');
+  const resetBtn = document.getElementById('articleResetBtn');
+  const empty = document.getElementById('articleEmpty');
+
+  if (!grid || !searchInput || !sortSelect || !tabs.length) return;
+
+  const cards = Array.from(grid.querySelectorAll('.articleCard'));
+
+  // HTMLに並んでいる順番を「最新順」の基準にする。
+  // 今後も新記事を一番上へ追加すれば、日付データの追記なしで最新/古い順が機能する。
+  cards.forEach((card, index) => {
+    card.dataset.initialOrder = String(index);
+  });
+
+  let activeCategory = 'all';
+
+  const normalize = (value) =>
+    (value || '')
+      .normalize('NFKC')
+      .toLocaleLowerCase('ja')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+  function updateTabCounts(){
+    tabs.forEach(tab => {
+      const filter = tab.dataset.filter;
+      const count = filter === 'all'
+        ? cards.length
+        : cards.filter(card => card.dataset.category === filter).length;
+      const countEl = tab.querySelector('.articleTabCount');
+      if (countEl) countEl.textContent = String(count);
+    });
+  }
+
+  function render(){
+    const keyword = normalize(searchInput.value);
+    const oldestFirst = sortSelect.value === 'oldest';
+
+    const ordered = [...cards].sort((a, b) => {
+      const aOrder = Number(a.dataset.initialOrder);
+      const bOrder = Number(b.dataset.initialOrder);
+      return oldestFirst ? bOrder - aOrder : aOrder - bOrder;
+    });
+
+    ordered.forEach(card => grid.appendChild(card));
+
+    let visible = 0;
+    ordered.forEach(card => {
+      const categoryMatch =
+        activeCategory === 'all' || card.dataset.category === activeCategory;
+
+      const searchableText = normalize(card.textContent);
+      const keywordMatch = !keyword || searchableText.includes(keyword);
+
+      const show = categoryMatch && keywordMatch;
+      card.hidden = !show;
+      if (show) visible++;
+    });
+
+    resultCount.textContent =
+      visible === cards.length
+        ? `${visible}件の記事を表示中`
+        : `${visible}件 / 全${cards.length}件`;
+
+    empty.hidden = visible !== 0;
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      activeCategory = tab.dataset.filter || 'all';
+      tabs.forEach(btn => {
+        const active = btn === tab;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      render();
+    });
+  });
+
+  searchInput.addEventListener('input', render);
+  sortSelect.addEventListener('change', render);
+
+  resetBtn.addEventListener('click', () => {
+    activeCategory = 'all';
+    searchInput.value = '';
+    sortSelect.value = 'latest';
+    tabs.forEach(btn => {
+      const active = btn.dataset.filter === 'all';
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    render();
+    searchInput.focus();
+  });
+
+  updateTabCounts();
+  render();
+})();
+</script></body>
 </html>
