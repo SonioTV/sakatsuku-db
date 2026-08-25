@@ -12,7 +12,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -20,7 +20,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -44,7 +44,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -52,7 +52,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -76,7 +76,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -84,7 +84,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -148,7 +148,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -156,7 +156,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -164,7 +164,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -172,7 +172,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -212,7 +212,7 @@
     "slot_no": 5,
     "position": "DM",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -220,7 +220,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -244,7 +244,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -252,7 +252,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -276,7 +276,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -284,7 +284,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -316,7 +316,7 @@
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -324,7 +324,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -364,7 +364,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -372,7 +372,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -396,7 +396,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -404,7 +404,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -452,7 +452,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -460,7 +460,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -484,7 +484,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -492,7 +492,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -516,7 +516,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -524,7 +524,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -540,7 +540,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -548,7 +548,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -572,7 +572,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -580,7 +580,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -588,7 +588,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -596,7 +596,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -604,7 +604,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -612,7 +612,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -628,7 +628,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -636,7 +636,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -660,7 +660,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -668,7 +668,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -828,7 +828,7 @@
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -836,7 +836,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -868,7 +868,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -876,7 +876,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -892,7 +892,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -900,7 +900,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -956,7 +956,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -964,7 +964,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -1020,7 +1020,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -1028,7 +1028,7 @@
     "slot_no": 8,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -1036,7 +1036,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -1044,7 +1044,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -1180,7 +1180,7 @@
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -1188,7 +1188,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -1220,7 +1220,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -1228,7 +1228,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -1244,7 +1244,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -1252,7 +1252,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -1284,7 +1284,7 @@
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -1292,7 +1292,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -1332,7 +1332,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -1340,7 +1340,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -1396,7 +1396,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -1404,7 +1404,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -1420,7 +1420,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -1428,7 +1428,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -1484,7 +1484,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -1492,7 +1492,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -1508,7 +1508,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -1516,7 +1516,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -1540,7 +1540,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -1548,7 +1548,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -1644,7 +1644,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -1652,7 +1652,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -1660,7 +1660,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -1668,7 +1668,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -1724,7 +1724,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -1732,7 +1732,7 @@
     "slot_no": 8,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -1740,7 +1740,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -1748,7 +1748,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -1772,7 +1772,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -1780,7 +1780,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -1804,7 +1804,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -1812,7 +1812,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -1884,7 +1884,7 @@
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -1892,7 +1892,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -1900,7 +1900,7 @@
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -1908,7 +1908,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -1948,7 +1948,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -1956,7 +1956,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -2004,7 +2004,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -2012,7 +2012,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -2076,7 +2076,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -2084,7 +2084,7 @@
     "slot_no": 8,
     "position": "DM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -2100,7 +2100,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -2108,7 +2108,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -2124,7 +2124,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -2132,7 +2132,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -2188,7 +2188,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -2196,7 +2196,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -2236,7 +2236,7 @@
     "slot_no": 5,
     "position": "DM",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -2244,7 +2244,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -2252,7 +2252,7 @@
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -2260,7 +2260,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -2300,7 +2300,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -2308,7 +2308,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -2364,7 +2364,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -2372,7 +2372,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -2412,7 +2412,7 @@
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -2420,7 +2420,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -2452,7 +2452,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -2460,7 +2460,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -2564,7 +2564,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -2572,7 +2572,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -2628,7 +2628,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -2636,7 +2636,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -2676,7 +2676,7 @@
     "slot_no": 5,
     "position": "DM",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -2684,7 +2684,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -2740,7 +2740,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -2748,7 +2748,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -2772,7 +2772,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -2780,7 +2780,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -2852,7 +2852,7 @@
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -2860,7 +2860,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -2916,7 +2916,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -2924,7 +2924,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -2972,7 +2972,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -2980,7 +2980,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -3004,7 +3004,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -3012,7 +3012,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -3036,7 +3036,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -3044,7 +3044,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -3116,7 +3116,7 @@
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -3124,7 +3124,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -3132,7 +3132,7 @@
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -3140,7 +3140,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -3204,7 +3204,7 @@
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -3212,7 +3212,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -3244,7 +3244,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -3252,7 +3252,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -3268,7 +3268,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -3276,7 +3276,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -3300,7 +3300,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -3308,7 +3308,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -3444,7 +3444,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -3452,7 +3452,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -3476,7 +3476,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -3484,7 +3484,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -3508,7 +3508,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -3516,7 +3516,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -3532,7 +3532,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -3540,7 +3540,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -3596,7 +3596,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -3604,7 +3604,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -3620,7 +3620,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -3628,7 +3628,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -3652,7 +3652,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -3660,7 +3660,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -3708,7 +3708,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -3716,7 +3716,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -3740,7 +3740,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -3748,7 +3748,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -3756,7 +3756,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -3764,7 +3764,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -3772,7 +3772,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -3780,7 +3780,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -3796,7 +3796,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -3804,7 +3804,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -3828,7 +3828,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -3836,7 +3836,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -3860,7 +3860,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -3868,7 +3868,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -3884,7 +3884,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -3892,7 +3892,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -3916,7 +3916,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -3924,7 +3924,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -3932,7 +3932,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -3940,7 +3940,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -3948,7 +3948,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -3956,7 +3956,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -3972,7 +3972,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -3980,7 +3980,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -4004,7 +4004,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -4012,7 +4012,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -4060,7 +4060,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -4068,7 +4068,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -4092,7 +4092,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -4100,7 +4100,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -4148,7 +4148,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -4156,7 +4156,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -4212,7 +4212,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -4220,7 +4220,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -4236,7 +4236,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -4244,7 +4244,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -4300,7 +4300,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -4308,7 +4308,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -4364,7 +4364,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -4372,7 +4372,7 @@
     "slot_no": 8,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -4380,7 +4380,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -4388,7 +4388,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -4452,7 +4452,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -4460,7 +4460,7 @@
     "slot_no": 8,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -4500,7 +4500,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -4508,7 +4508,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -4532,7 +4532,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -4540,7 +4540,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -4588,7 +4588,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -4596,7 +4596,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -4620,7 +4620,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -4628,7 +4628,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -4676,7 +4676,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -4684,7 +4684,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -4716,7 +4716,7 @@
     "slot_no": 7,
     "position": "AM",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -4724,7 +4724,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -4764,7 +4764,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -4772,7 +4772,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -4828,7 +4828,7 @@
     "slot_no": 10,
     "position": "CF",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 10.0
   },
   {
@@ -4836,7 +4836,7 @@
     "slot_no": 11,
     "position": "CF",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 10.0
   },
   {
@@ -4876,7 +4876,7 @@
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -4884,7 +4884,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -4892,7 +4892,7 @@
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -4900,7 +4900,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -4964,7 +4964,7 @@
     "slot_no": 5,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -4972,7 +4972,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -4996,7 +4996,7 @@
     "slot_no": 9,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -5004,7 +5004,7 @@
     "slot_no": 10,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -5052,7 +5052,7 @@
     "slot_no": 5,
     "position": "DM",
     "condition_no": 1,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -5060,7 +5060,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
@@ -5068,7 +5068,7 @@
     "slot_no": 7,
     "position": "AM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 30.0
   },
   {
@@ -5076,7 +5076,7 @@
     "slot_no": 8,
     "position": "AM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 30.0
   },
   {
@@ -5116,7 +5116,7 @@
     "slot_no": 2,
     "position": "CB",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 70.0
   },
   {
@@ -5124,7 +5124,7 @@
     "slot_no": 3,
     "position": "CB",
     "condition_no": 1,
-    "x": 25.0,
+    "x": 40.0,
     "y": 70.0
   },
   {
@@ -5148,7 +5148,7 @@
     "slot_no": 6,
     "position": "DM",
     "condition_no": 0,
-    "x": 75.0,
+    "x": 60.0,
     "y": 50.0
   },
   {
@@ -5156,7 +5156,7 @@
     "slot_no": 7,
     "position": "DM",
     "condition_no": 0,
-    "x": 25.0,
+    "x": 40.0,
     "y": 50.0
   },
   {
