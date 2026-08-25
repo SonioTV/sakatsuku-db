@@ -2853,30 +2853,30 @@
     "acquisitionMethod": "その他",
     "acquisitionPlace": "Half Anniversary ログインボーナス",
     "availablePeriod": "2026年8月26日まで",
-    "effect": "タックルが60%アップ、マークが60%アップ、決定力が100%アップ、パスカットが100%アップ。スタメンのブラジル人選手1人につき、上記効果が、上記能力が追加で2%強化される",
+    "effect": "タックルが60%アップ、マークが60%アップ、決定力が100%アップ、パスカットが100%アップ。フィールド上にいるブラジル選手1人あたり、上記能力が追加で、上記能力が追加で2%強化される",
     "effects": [
       {
         "status": "タックル",
         "value": 60,
-        "additionalCondition": "スタメンのブラジル人選手1人につき、上記効果が",
+        "additionalCondition": "フィールド上にいるブラジル選手1人あたり、上記能力が追加で",
         "additionalValue": 2
       },
       {
         "status": "マーク",
         "value": 60,
-        "additionalCondition": "スタメンのブラジル人選手1人につき、上記効果が",
+        "additionalCondition": "フィールド上にいるブラジル選手1人あたり、上記能力が追加で",
         "additionalValue": 2
       },
       {
         "status": "決定力",
         "value": 100,
-        "additionalCondition": "スタメンのブラジル人選手1人につき、上記効果が",
+        "additionalCondition": "フィールド上にいるブラジル選手1人あたり、上記能力が追加で",
         "additionalValue": 2
       },
       {
         "status": "パスカット",
         "value": 100,
-        "additionalCondition": "スタメンのブラジル人選手1人につき、上記効果が",
+        "additionalCondition": "フィールド上にいるブラジル選手1人あたり、上記能力が追加で",
         "additionalValue": 2
       }
     ],
@@ -2910,6 +2910,80 @@
         "position": "CF",
         "positionPlace": null,
         "playStyle": "ラインブレーカー",
+        "playStyleLv": 3,
+        "conditionNo": 4
+      }
+    ]
+  },
+  {
+    "comboId": "C059",
+    "name": "ラ・ロハ'26",
+    "formation": "4-3-3B",
+    "rank": "金",
+    "combo_policys": [
+      "ポゼッション"
+    ],
+    "requiredPlayers": 4,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "フォーメーションコンボログインボーナス",
+    "availablePeriod": "2026年9月30日まで",
+    "effect": "決定力、ショートパス、タックル、マークが80%アップ。フィールド上にいるスペイン選手1人あたり、上記能力が追加で、上記能力が追加で2%強化される",
+    "effects": [
+      {
+        "status": "決定力",
+        "value": 80,
+        "additionalCondition": "フィールド上にいるスペイン選手1人あたり、上記能力が追加で",
+        "additionalValue": 2
+      },
+      {
+        "status": "ショートパス",
+        "value": 80,
+        "additionalCondition": "フィールド上にいるスペイン選手1人あたり、上記能力が追加で",
+        "additionalValue": 2
+      },
+      {
+        "status": "タックル",
+        "value": 80,
+        "additionalCondition": "フィールド上にいるスペイン選手1人あたり、上記能力が追加で",
+        "additionalValue": 2
+      },
+      {
+        "status": "マーク",
+        "value": 80,
+        "additionalCondition": "フィールド上にいるスペイン選手1人あたり、上記能力が追加で",
+        "additionalValue": 2
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 3,
+        "position": "CB",
+        "positionPlace": "Left",
+        "playStyle": "組立CB",
+        "playStyleLv": 3,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 4,
+        "position": "LB",
+        "positionPlace": null,
+        "playStyle": "攻撃的FB",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 9,
+        "position": "LW",
+        "positionPlace": null,
+        "playStyle": "サイドアタッカー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      },
+      {
+        "slotNo": 10,
+        "position": "RW",
+        "positionPlace": null,
+        "playStyle": "ワイドストライカー",
         "playStyleLv": 3,
         "conditionNo": 4
       }
