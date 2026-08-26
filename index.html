@@ -420,6 +420,26 @@
     outline:none;
   }
 
+  /* 選手検索：連動絞り込み */
+  .rankTile.is-disabled,
+  #playerPolicyGrid .imgTile.is-disabled{
+    opacity:.28;
+    filter:grayscale(1);
+    cursor:not-allowed;
+    box-shadow:none;
+  }
+  .rankTile.is-disabled{ pointer-events:none; }
+  #playerPolicyGrid .imgTile.is-disabled{ pointer-events:none; }
+  .playerFacetNote{
+    width:min(720px,96%);
+    margin:6px auto 0;
+    color:var(--muted);
+    font-size:14px;
+    font-weight:800;
+    line-height:1.5;
+    text-align:center;
+  }
+
   /* 選手リスト（選手名のみ） */
   .playerList{ margin-top:16px; }
   .playerRow{
@@ -2112,7 +2132,15 @@
         <div class="note" style="margin-top:6px;">※未選択の場合は「すべて」を表示します</div>
       </div>
 
-<div class="sectionTitle" style="font-size:24px;margin-top:6px;">フォーメーションコンボを選択</div>
+      <div class="sectionTitle" style="font-size:24px;margin-top:10px;margin-bottom:6px;">フォーメーションを選択</div>
+      <div class="centerBlock">
+        <select id="formationSelect" class="bigSelect" aria-label="フォーメーションで絞り込む">
+          <option value="">すべてのフォーメーション</option>
+        </select>
+        <div class="playerFacetNote">※ランク・ポリシーと連動して候補を絞り込みます</div>
+      </div>
+
+<div class="sectionTitle" style="font-size:24px;margin-top:12px;">フォーメーションコンボを選択</div>
       <div class="centerBlock">
         <select id="comboSelect" class="bigSelect"></select>
       </div>
@@ -2129,10 +2157,18 @@
         </label>
       </div>
 
+      <div class="sectionTitle" style="font-size:22px;margin-top:12px;margin-bottom:6px;">国籍で絞り込む</div>
+      <div class="centerBlock">
+        <select id="playerNationalitySelect" class="bigSelect" aria-label="表示選手を国籍で絞り込む">
+          <option value="">すべての国籍</option>
+        </select>
+      </div>
+
       <button id="btnShowPlayers" class="bigBtn" type="button" style="width:min(560px,96%);font-size:32px;">対応選手を表示</button>
       <div class="note" style="margin-top:8px;">
         ※選手名横は（入手方法：入手場所）<br/>
-        ※表示される選手はSP選手のみです
+        ※表示される選手はSP選手のみです<br/>
+        ※「表示選手」と「国籍」の条件を同時に適用します
       </div>
 
       <div id="comboDetail"></div>
@@ -3057,7 +3093,145 @@ const acqMethod = getComboField(combo, ["acquisitionMethod","入手方法"], "-"
 ========================= */
 let selectedRanks = new Set(); // 金/銀/銅
 let selectedPlayerPolicy = null; // ポリシー（未選択=null）
+let selectedFormation = ""; // フォーメーション（未選択=""）
 let selectedPlayerAvailability = "all"; // all / available
+let selectedPlayerNationality = ""; // 国籍（未選択=""）
+
+function getPlayerSearchComboRank(c){
+  return normalizeRank(getComboField(c, ["rank","ランク"], ""));
+}
+
+function getPlayerSearchComboFormation(c){
+  return safeStr(getComboField(c, ["formation","formationCode","フォーメーション"], "")).trim();
+}
+
+function comboHasPlayerSearchPolicy(c, policy){
+  const p = safeStr(policy).trim();
+  if(!p) return true;
+  return getComboPolicys(c).some(pol => normalizePolicy(pol) === p);
+}
+
+function comboMatchesPlayerSearchFilters(c, ignore={}){
+  const rankOk = ignore.rank || selectedRanks.size===0 || selectedRanks.has(getPlayerSearchComboRank(c));
+  const policyOk = ignore.policy || !selectedPlayerPolicy || comboHasPlayerSearchPolicy(c, selectedPlayerPolicy);
+  const formationOk = ignore.formation || !selectedFormation || getPlayerSearchComboFormation(c) === selectedFormation;
+  return rankOk && policyOk && formationOk;
+}
+
+function normalizePlayerSearchSelections(){
+  // 現在の組み合わせで成立しなくなった選択だけを自動解除する。
+  // これにより「0件になる選択肢」を残さず、各絞り込みを双方向に連動させる。
+  for(let pass=0; pass<4; pass++){
+    let changed = false;
+
+    if(selectedFormation && !COMBOS.some(c =>
+      getPlayerSearchComboFormation(c) === selectedFormation &&
+      comboMatchesPlayerSearchFilters(c, {formation:true})
+    )){
+      selectedFormation = "";
+      changed = true;
+    }
+
+    if(selectedPlayerPolicy && !COMBOS.some(c =>
+      comboHasPlayerSearchPolicy(c, selectedPlayerPolicy) &&
+      comboMatchesPlayerSearchFilters(c, {policy:true})
+    )){
+      selectedPlayerPolicy = null;
+      changed = true;
+    }
+
+    if(selectedRanks.size){
+      const validRanks = new Set([...selectedRanks].filter(rank =>
+        COMBOS.some(c =>
+          getPlayerSearchComboRank(c) === rank &&
+          comboMatchesPlayerSearchFilters(c, {rank:true})
+        )
+      ));
+      if(validRanks.size !== selectedRanks.size){
+        selectedRanks = validRanks;
+        changed = true;
+      }
+    }
+
+    if(!changed) break;
+  }
+}
+
+function updatePlayerSearchFacetStates(){
+  const board = document.getElementById("rankBoard");
+  if(board){
+    board.querySelectorAll(".rankTile").forEach(tile=>{
+      const rank = tile.dataset.rank || "";
+      const enabled = COMBOS.some(c =>
+        getPlayerSearchComboRank(c) === rank &&
+        comboMatchesPlayerSearchFilters(c, {rank:true})
+      );
+      tile.classList.toggle("is-disabled", !enabled);
+      tile.classList.toggle("selected", selectedRanks.has(rank));
+      tile.setAttribute("aria-disabled", enabled ? "false" : "true");
+      tile.tabIndex = enabled ? 0 : -1;
+    });
+  }
+
+  const ppg = document.getElementById("playerPolicyGrid");
+  if(ppg){
+    ppg.querySelectorAll(".imgTile").forEach(tile=>{
+      const pol = tile.dataset.policy || "";
+      const enabled = COMBOS.some(c =>
+        comboHasPlayerSearchPolicy(c, pol) &&
+        comboMatchesPlayerSearchFilters(c, {policy:true})
+      );
+      tile.classList.toggle("is-disabled", !enabled);
+      tile.classList.toggle("selected", pol === safeStr(selectedPlayerPolicy));
+      tile.setAttribute("aria-disabled", enabled ? "false" : "true");
+      tile.tabIndex = enabled ? 0 : -1;
+    });
+  }
+}
+
+function updateFormationSelect(){
+  const sel = document.getElementById("formationSelect");
+  if(!sel) return;
+
+  const formations = [...new Set(
+    COMBOS
+      .filter(c => comboMatchesPlayerSearchFilters(c, {formation:true}))
+      .map(getPlayerSearchComboFormation)
+      .filter(Boolean)
+  )].sort((a,b)=>a.localeCompare(b,"ja",{numeric:true}));
+
+  if(selectedFormation && !formations.includes(selectedFormation)){
+    selectedFormation = "";
+  }
+
+  sel.innerHTML = `<option value="">すべてのフォーメーション</option>` +
+    formations.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+  sel.value = selectedFormation;
+}
+
+function refreshPlayerNationalitySelect(){
+  const sel = document.getElementById("playerNationalitySelect");
+  if(!sel) return;
+
+  const nationalities = [...new Set(
+    (PLAYERS || [])
+      .filter(p=>{
+        const isSp = safeStr(p.category).trim() === "SP選手";
+        const availabilityOk = selectedPlayerAvailability !== "available" || p.available === true;
+        return isSp && availabilityOk;
+      })
+      .map(p=>safeStr(getComboField(p,["nationality","国籍"],"")).trim())
+      .filter(Boolean)
+  )].sort((a,b)=>a.localeCompare(b,"ja",{numeric:true}));
+
+  if(selectedPlayerNationality && !nationalities.includes(selectedPlayerNationality)){
+    selectedPlayerNationality = "";
+  }
+
+  sel.innerHTML = `<option value="">すべての国籍</option>` +
+    nationalities.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+  sel.value = selectedPlayerNationality;
+}
 
 function setupPlayerSearchUI(){
   // policy tiles (player search)
@@ -3072,25 +3246,46 @@ function setupPlayerSearchUI(){
 
     ppg.querySelectorAll(".imgTile").forEach(tile=>{
       tile.addEventListener("click", ()=>{
+        if(tile.classList.contains("is-disabled")) return;
         const pol = tile.dataset.policy || null;
-        // toggle off if same
         selectedPlayerPolicy = (selectedPlayerPolicy===pol) ? null : pol;
-        ppg.querySelectorAll(".imgTile").forEach(t=>t.classList.toggle("selected", (t.dataset.policy||"")===safeStr(selectedPlayerPolicy)));
         refreshComboSelect();
+      });
+      tile.addEventListener("keydown", (e)=>{
+        if((e.key === "Enter" || e.key === " ") && !tile.classList.contains("is-disabled")){
+          e.preventDefault();
+          tile.click();
+        }
       });
     });
   }
 
   const board = document.getElementById("rankBoard");
-  board.querySelectorAll(".rankTile").forEach(tile=>{
-    tile.addEventListener("click", ()=>{
-      const r = tile.dataset.rank;
-      if(selectedRanks.has(r)) selectedRanks.delete(r);
-      else selectedRanks.add(r);
-      tile.classList.toggle("selected", selectedRanks.has(r));
+  if(board){
+    board.querySelectorAll(".rankTile").forEach(tile=>{
+      tile.addEventListener("click", ()=>{
+        if(tile.classList.contains("is-disabled")) return;
+        const r = tile.dataset.rank;
+        if(selectedRanks.has(r)) selectedRanks.delete(r);
+        else selectedRanks.add(r);
+        refreshComboSelect();
+      });
+      tile.addEventListener("keydown", (e)=>{
+        if((e.key === "Enter" || e.key === " ") && !tile.classList.contains("is-disabled")){
+          e.preventDefault();
+          tile.click();
+        }
+      });
+    });
+  }
+
+  const formationSelect = document.getElementById("formationSelect");
+  if(formationSelect){
+    formationSelect.addEventListener("change", ()=>{
+      selectedFormation = formationSelect.value || "";
       refreshComboSelect();
     });
-  });
+  }
 
   document.getElementById("comboSelect").addEventListener("change", ()=>{
     renderComboDetail();
@@ -3101,50 +3296,70 @@ function setupPlayerSearchUI(){
     radio.addEventListener("change", ()=>{
       if(!radio.checked) return;
       selectedPlayerAvailability = radio.value === "available" ? "available" : "all";
+      refreshPlayerNationalitySelect();
       document.getElementById("playerResult").innerHTML = "";
     });
   });
+
+  const nationalitySelect = document.getElementById("playerNationalitySelect");
+  if(nationalitySelect){
+    nationalitySelect.addEventListener("change", ()=>{
+      selectedPlayerNationality = nationalitySelect.value || "";
+      document.getElementById("playerResult").innerHTML = "";
+    });
+  }
 
   document.getElementById("btnShowPlayers").addEventListener("click", ()=>{
     renderComboDetail();
     renderPlayersForCombo();
   });
-}
 
+  refreshPlayerNationalitySelect();
+}
 
 function filterPlayersBySelectedAvailability(players){
   return (players || []).filter(p=>{
     const isSp = safeStr(p.category).trim() === "SP選手";
     const availabilityOk = selectedPlayerAvailability !== "available" || p.available === true;
-    return isSp && availabilityOk;
+    const nationality = safeStr(getComboField(p,["nationality","国籍"],"")).trim();
+    const nationalityOk = !selectedPlayerNationality || nationality === selectedPlayerNationality;
+    return isSp && availabilityOk && nationalityOk;
   });
 }
 
 function refreshComboSelect(){
   const sel = document.getElementById("comboSelect");
-  const before = sel.value;
+  const before = sel ? sel.value : "";
 
-  const ranks = selectedRanks;
+  normalizePlayerSearchSelections();
+  updateFormationSelect();
+  normalizePlayerSearchSelections();
+  updatePlayerSearchFacetStates();
+
   const list = COMBOS
-    .filter(c=>{
-      const rOk = (ranks.size===0) ? true : ranks.has(normalizeRank(getComboField(c,["rank","ランク"],"")));
-      const pSel = safeStr(selectedPlayerPolicy);
-      const pOk = (!pSel) ? true : (getComboPolicys(c).some(pol => normalizePolicy(pol) === pSel));
-      return rOk && pOk;
-    })
+    .filter(c=>comboMatchesPlayerSearchFilters(c))
     .map(c=>{
       const id = safeStr(getComboField(c,["comboId","id","ID"],""));
       const name = getComboField(c, ["name","comboName","formationName","title"], "名称なし");
-      const formation = getComboField(c, ["formation","formationCode","フォーメーション"], "");
-      const rank = normalizeRank(getComboField(c, ["rank","ランク"], ""));
-      const label = `${name}${rank?('（'+rank+'）'):''}`;
+      const formation = getPlayerSearchComboFormation(c);
+      const rank = getPlayerSearchComboRank(c);
+      const labelParts = [rank, formation].filter(Boolean).join(" / ");
+      const label = `${name}${labelParts ? ('（'+labelParts+'）') : ''}`;
       return {id: id || label, label, combo:c};
+    })
+    .sort((a,b)=>{
+      const fa = getPlayerSearchComboFormation(a.combo);
+      const fb = getPlayerSearchComboFormation(b.combo);
+      const fc = fa.localeCompare(fb,"ja",{numeric:true});
+      return fc || a.label.localeCompare(b.label,"ja",{numeric:true});
     });
 
+  if(!sel) return;
   sel.innerHTML = "";
   if(list.length===0){
     sel.innerHTML = `<option value="">（該当なし）</option>`;
     renderComboDetail();
+    document.getElementById("playerResult").innerHTML = "";
     return;
   }
   list.forEach(item=>{
@@ -3159,6 +3374,7 @@ function refreshComboSelect(){
   const toSet = [...sel.options].some(o=>o.value===before) ? before : sel.options[0].value;
   sel.value = toSet;
   renderComboDetail();
+  document.getElementById("playerResult").innerHTML = "";
 }
 
 function getSelectedCombo(){
