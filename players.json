@@ -9740,8 +9740,8 @@
     "playStyleLv": 3,
     "mainPosition": "AM",
     "acquisitionMethod": "ガチャ",
-    "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年7月29日まで",
+    "acquisitionPlace": "SP選手スカウト",
+    "availablePeriod": "終了日未定",
     "mainSkill": "ロングキャノン",
     "mainTrait": "砕氷船",
     "category": "SP選手",
@@ -9749,7 +9749,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-07",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "AM"
     ]
@@ -9765,8 +9765,8 @@
     "playStyleLv": 2,
     "mainPosition": "CB",
     "acquisitionMethod": "ガチャ",
-    "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年7月29日まで",
+    "acquisitionPlace": "SP選手スカウト",
+    "availablePeriod": "終了日未定",
     "mainSkill": "遮断のアクション",
     "mainTrait": "パワークラッシャー",
     "category": "SP選手",
@@ -9774,7 +9774,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-07",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "CB"
     ]
@@ -9790,8 +9790,8 @@
     "playStyleLv": 2,
     "mainPosition": "LB",
     "acquisitionMethod": "ガチャ",
-    "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年7月29日まで",
+    "acquisitionPlace": "SP選手スカウト",
+    "availablePeriod": "終了日未定",
     "mainSkill": "オープンスペースの演出家",
     "mainTrait": "俊敏なドリブラー",
     "category": "SP選手",
@@ -9799,7 +9799,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-07",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "LB"
     ]
@@ -9815,8 +9815,8 @@
     "playStyleLv": 2,
     "mainPosition": "CB",
     "acquisitionMethod": "ガチャ",
-    "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年7月29日まで",
+    "acquisitionPlace": "SP選手スカウト",
+    "availablePeriod": "終了日未定",
     "mainSkill": "反撃のパスカット",
     "mainTrait": "インターセプター",
     "category": "SP選手",
@@ -9824,7 +9824,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-07",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "CB"
     ]
@@ -9849,7 +9849,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-16",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "DM"
     ]
@@ -9874,7 +9874,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-16",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CF"
     ]
@@ -10024,7 +10024,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-29",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "DM"
     ]
@@ -10049,7 +10049,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-29",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "AM"
     ]
@@ -10074,7 +10074,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-29",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "RW"
     ]
@@ -10099,7 +10099,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-07-29",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ]
@@ -10124,7 +10124,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-12",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CF"
     ]
@@ -10149,7 +10149,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-12",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CF"
     ]
@@ -10174,7 +10174,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-12",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CF"
     ]
@@ -10199,7 +10199,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-12",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "LM"
     ]
@@ -10224,7 +10224,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-12",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "AM"
     ]
@@ -10249,7 +10249,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-12",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CF"
     ]
@@ -10274,7 +10274,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-12",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CF"
     ]
@@ -10377,6 +10377,106 @@
     "available": true,
     "suitablePositions": [
       "CB"
+    ]
+  },
+  {
+    "player_id": "P0416",
+    "playerId": "P0416",
+    "name": "ラミン・ヤマル",
+    "overall": 7461,
+    "maxUpgrade": 16185,
+    "policy": "ポゼッション",
+    "playStyle": "ワイドストライカー",
+    "playStyleLv": 3,
+    "mainPosition": "RW",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "プレミアムSP選手スカウト（第2弾）",
+    "availablePeriod": "2026年9月30日まで",
+    "mainSkill": "流星の弾道",
+    "mainTrait": "変幻自在のドリブラー",
+    "category": "SP選手",
+    "nationality": "スペイン",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-26",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ]
+  },
+  {
+    "player_id": "P0417",
+    "playerId": "P0417",
+    "name": "パウ・クバルシ",
+    "overall": 6993,
+    "maxUpgrade": 15731,
+    "policy": "ポゼッション",
+    "playStyle": "組立CB",
+    "playStyleLv": 3,
+    "mainPosition": "CB",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "プレミアムSP選手スカウト（第2弾）",
+    "availablePeriod": "2026年9月30日まで",
+    "mainSkill": "逆鱗の初動",
+    "mainTrait": "反撃の起点",
+    "category": "SP選手",
+    "nationality": "スペイン",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-26",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ]
+  },
+  {
+    "player_id": "P0418",
+    "playerId": "P0418",
+    "name": "ガビ",
+    "overall": 6868,
+    "maxUpgrade": 15426,
+    "policy": "ポゼッション",
+    "playStyle": "パサー",
+    "playStyleLv": 2,
+    "mainPosition": "DM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "プレミアムSP選手スカウト（第2弾）",
+    "availablePeriod": "2026年9月30日まで",
+    "mainSkill": "3Dパス",
+    "mainTrait": "精緻なパサー",
+    "category": "SP選手",
+    "nationality": "スペイン",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-26",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ]
+  },
+  {
+    "player_id": "P0419",
+    "playerId": "P0419",
+    "name": "ウナイ・シモン",
+    "overall": 6785,
+    "maxUpgrade": 15633,
+    "policy": "ポゼッション",
+    "playStyle": "オーソドックスGK",
+    "playStyleLv": 2,
+    "mainPosition": "GK",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "プレミアムSP選手スカウト（第2弾）",
+    "availablePeriod": "2026年9月30日まで",
+    "mainSkill": "エレガントセーブ",
+    "mainTrait": "広域の守護神",
+    "category": "SP選手",
+    "nationality": "スペイン",
+    "growthType": "超早熟",
+    "implementedDate": "2026-08-26",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "GK"
     ]
   }
 ]
