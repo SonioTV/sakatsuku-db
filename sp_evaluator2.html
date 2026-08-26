@@ -622,38 +622,42 @@
     white-space:nowrap;
   }
   .statusSummary{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
     cursor:pointer;
     user-select:none;
     outline:none;
+    border-bottom:1px solid #d8e3ea;
+    background:#fff;
   }
   .statusSummary:focus-visible{
     box-shadow:inset 0 0 0 3px rgba(21,95,128,.28);
   }
-  .statusGrid6{
-    display:grid;
-    grid-template-columns:repeat(6,minmax(0,1fr));
-    gap:0;
-  }
-  .statusGrid6 > div{
+  .statusColumn{
     min-width:0;
     text-align:center;
     border-right:1px solid #d8e3ea;
-  }
-  .statusGrid6 > div:last-child{ border-right:none; }
-  .statusLabels{
-    background:var(--green);
-    color:#fff;
-    font-weight:900;
-    font-size:12px;
-  }
-  .statusLabels > div{ padding:6px 2px; }
-  .statusValues{
-    border-bottom:1px solid #d8e3ea;
-    font-weight:900;
-    font-size:15px;
     background:#fff;
   }
-  .statusValues > div{ padding:7px 2px; }
+  .statusColumn:last-child{ border-right:none; }
+  .statusCategoryLabel{
+    padding:6px 2px;
+    background:var(--green);
+    color:#fff;
+    font-size:12px;
+    font-weight:1000;
+    line-height:1.15;
+  }
+  .statusCategoryValue{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:40px;
+    padding:6px 2px;
+    font-size:15px;
+    font-weight:1000;
+    border-bottom:1px solid #d8e3ea;
+  }
   .statusRankBadge{
     display:inline-flex;
     align-items:center;
@@ -676,72 +680,63 @@
   .rank-E{ background:#eef1f5; border-color:#aab3bf; }
   .rank-F{ background:#f3f3f3; border-color:#bcbcbc; }
   .rank-G{ background:#fafafa; border-color:#d2d2d2; color:#666; }
-  .statusDetails{
+
+  /* 詳細17項目は各カテゴリ列の直下へ連続表示 */
+  .statusInlineDetails{
     display:none;
-    padding:9px;
-    background:#f8fafc;
-    border-bottom:1px solid #d8e3ea;
-  }
-  .statusDetails.open{ display:block; }
-  .statusDetailGrid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:8px;
-  }
-  .statusDetailGroup{
-    border:1px solid #d8e3ea;
-    border-radius:10px;
     background:#fff;
-    overflow:hidden;
   }
-  .statusDetailTitle{
-    padding:5px 7px;
-    background:#edf3f6;
-    color:#0b3d50;
-    font-size:11px;
-    font-weight:1000;
-    text-align:center;
-  }
-  .statusDetailItem{
-    display:grid;
-    grid-template-columns:1fr auto;
-    gap:6px;
+  .statusSummary.details-open .statusInlineDetails{ display:block; }
+  .statusInlineItem{
+    display:flex;
+    flex-direction:column;
     align-items:center;
-    padding:5px 7px;
+    justify-content:center;
+    gap:3px;
+    min-height:48px;
+    padding:5px 2px;
     border-top:1px solid #edf0f4;
-    font-size:10px;
+  }
+  .statusInlineItem:first-child{ border-top:none; }
+  .statusInlineName{
+    width:100%;
+    font-size:9px;
     font-weight:900;
-  }
-  .statusDetailItem:first-of-type{ border-top:none; }
-  .statusDetailItem .statusDetailName{
-    min-width:0;
-    text-align:left !important;
+    line-height:1.15;
+    color:#23313d;
     white-space:normal;
-    line-height:1.25;
+    overflow-wrap:anywhere;
   }
-  .statusDetailItem .statusDetailValue{
-    text-align:right !important;
+  .statusInlineValue{
+    font-size:10px;
+    font-weight:1000;
+    line-height:1;
     white-space:nowrap;
   }
-  .statusDetailItem .statusRankBadge{
-    min-width:29px;
+  .statusInlineValue .statusRankBadge{
+    min-width:28px;
     min-height:20px;
-    padding:1px 6px;
+    padding:1px 5px;
     font-size:10px;
   }
+  .statusInlineSpacer{
+    min-height:48px;
+    border-top:1px solid #edf0f4;
+    background:#fafbfc;
+  }
+
   @media (max-width:520px){
     .statusToolbar{ padding:6px 5px 4px; }
     .statusToolbar .statusHint{ font-size:8.5px; }
     .statusModeToggle{ font-size:9px; padding:3px 7px; }
-    .statusLabels{ font-size:9px; }
-    .statusLabels > div{ padding:5px 1px; }
-    .statusValues{ font-size:12px; }
-    .statusValues > div{ padding:6px 1px; }
+    .statusCategoryLabel{ font-size:9px; padding:5px 1px; }
+    .statusCategoryValue{ min-height:35px; font-size:12px; padding:5px 1px; }
     .statusRankBadge{ min-width:29px; min-height:22px; padding:1px 5px; }
-    .statusDetailGrid{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; }
-    .statusDetails{ padding:6px; }
-    .statusDetailTitle{ font-size:10px; }
-    .statusDetailItem{ font-size:9px; padding:5px 6px; }
+    .statusInlineItem{ min-height:44px; padding:4px 1px; gap:2px; }
+    .statusInlineName{ font-size:7.5px; line-height:1.1; letter-spacing:-.02em; }
+    .statusInlineValue{ font-size:9px; }
+    .statusInlineValue .statusRankBadge{ min-width:25px; min-height:18px; font-size:9px; padding:1px 4px; }
+    .statusInlineSpacer{ min-height:44px; }
   }
 
 </style>
@@ -1091,34 +1086,40 @@ function statusFieldLabel(field, player){
   return (mainPos==="GK" && field.gkLabel) ? field.gkLabel : field.label;
 }
 
-function renderStatusSummary(target){
+function renderStatusColumns(target){
   const entry = getStatusEntry(target);
+  const maxDetailRows = Math.max(...STATUS_CATEGORIES.map(category=>(STATUS_SCHEMA[category] || []).length));
+
   return STATUS_CATEGORIES.map(category=>{
     const sum = getStatusCategorySum(entry, category);
-    if(STATUS_DISPLAY_MODE === "number") return `<div>${statusNumberHtml(sum)}</div>`;
-    return `<div>${statusRankHtml(getCategoryRank(category, sum))}</div>`;
-  }).join("");
-}
+    const categoryShown = STATUS_DISPLAY_MODE === "number"
+      ? statusNumberHtml(sum)
+      : statusRankHtml(getCategoryRank(category, sum));
 
-function renderStatusDetails(target){
-  const entry = getStatusEntry(target);
-  return STATUS_CATEGORIES.map(category=>{
-    const items = STATUS_SCHEMA[category].map(field=>{
+    const fields = STATUS_SCHEMA[category] || [];
+    const items = fields.map(field=>{
       const value = getStatusFieldValue(entry, category, field.key);
       const shown = STATUS_DISPLAY_MODE === "number"
         ? statusNumberHtml(value)
         : statusRankHtml(getFieldRank(category, field.key, value));
       return `
-        <div class="statusDetailItem">
-          <div class="statusDetailName">${esc(statusFieldLabel(field, target))}</div>
-          <div class="statusDetailValue">${shown}</div>
+        <div class="statusInlineItem">
+          <div class="statusInlineName">${esc(statusFieldLabel(field, target))}</div>
+          <div class="statusInlineValue">${shown}</div>
         </div>
       `;
     }).join("");
+
+    const spacerCount = Math.max(0, maxDetailRows - fields.length);
+    const spacers = Array.from({length:spacerCount}, ()=>`<div class="statusInlineSpacer" aria-hidden="true"></div>`).join("");
+
     return `
-      <div class="statusDetailGroup">
-        <div class="statusDetailTitle">${esc(category)}</div>
-        ${items}
+      <div class="statusColumn">
+        <div class="statusCategoryLabel">${esc(category)}</div>
+        <div class="statusCategoryValue">${categoryShown}</div>
+        <div class="statusInlineDetails">
+          ${items}${spacers}
+        </div>
       </div>
     `;
   }).join("");
@@ -1890,18 +1891,8 @@ function renderResult(target){
             ${STATUS_DISPLAY_MODE === "rank" ? "表示：ランク" : "表示：数値"}
           </button>
         </div>
-        <div id="statusSummary" class="statusSummary" role="button" tabindex="0" aria-expanded="${STATUS_DETAIL_OPEN ? "true" : "false"}">
-          <div class="statusGrid6 statusLabels">
-            ${STATUS_CATEGORIES.map(c=>`<div>${esc(c)}</div>`).join("")}
-          </div>
-          <div class="statusGrid6 statusValues">
-            ${renderStatusSummary(target)}
-          </div>
-        </div>
-        <div id="statusDetails" class="statusDetails ${STATUS_DETAIL_OPEN ? "open" : ""}">
-          <div class="statusDetailGrid">
-            ${renderStatusDetails(target)}
-          </div>
+        <div id="statusSummary" class="statusSummary ${STATUS_DETAIL_OPEN ? "details-open" : ""}" role="button" tabindex="0" aria-expanded="${STATUS_DETAIL_OPEN ? "true" : "false"}">
+          ${renderStatusColumns(target)}
         </div>
       </div>
 
@@ -1982,10 +1973,11 @@ function renderResult(target){
   const statusSummary = $("statusSummary");
   const toggleStatusDetails = ()=>{
     STATUS_DETAIL_OPEN = !STATUS_DETAIL_OPEN;
-    const details = $("statusDetails");
     const hint = $("statusHint");
-    if(details) details.classList.toggle("open", STATUS_DETAIL_OPEN);
-    if(statusSummary) statusSummary.setAttribute("aria-expanded", STATUS_DETAIL_OPEN ? "true" : "false");
+    if(statusSummary){
+      statusSummary.classList.toggle("details-open", STATUS_DETAIL_OPEN);
+      statusSummary.setAttribute("aria-expanded", STATUS_DETAIL_OPEN ? "true" : "false");
+    }
     if(hint) hint.textContent = STATUS_DETAIL_OPEN ? "タップで詳細ステータスを閉じる" : "タップで17項目の詳細ステータスを表示";
   };
   if(statusSummary){
