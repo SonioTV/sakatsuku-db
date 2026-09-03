@@ -1947,8 +1947,8 @@
     <h3>コンボ適性と互換候補を併用</h3>
     <p>フォーメーションコンボの条件に合うか、似た役割を持つ候補がいるかを確認することで、「この選手でなければ成立しないのか」「手持ちで代用できるのか」を判断しやすくなります。ガチャを引く前の比較にも使えます。</p>
 
-    <h3>詳細ステータスのランクについて</h3>
-    <p>SHO・PAS・DRB・DEF・PHY・SPDと、その内訳となる17項目は、詳細ステータスが登録されているSP選手の現在のデータ分布を基準に、SS～Gの9段階で相対評価しています。数値が高いほど上位ランクになります。</p>
+    <h3>数値・詳細ステータスのランクについて</h3>
+    <p>初期総合力・最大強化・実数値（SHO～SPD合計）と、SHO・PAS・DRB・DEF・PHY・SPD、その内訳となる17項目は、SP選手の現在のデータ分布を基準に、SS～Gの9段階で相対評価しています。数値が高いほど上位ランクになります。実数値と詳細ステータスは、必要なステータスが登録されている選手だけをランク判定の母集団に含めます。</p>
     <div class="rank-guide-wrap">
       <table class="rank-guide-table">
         <thead><tr><th>ランク</th><th>全体の位置</th><th>意味</th></tr></thead>
@@ -1967,6 +1967,7 @@
     </div>
     <ul class="rank-guide-points">
       <li><strong>SSとSの違い：</strong>SSは上位5%に入る突出した数値、Sは上位5～15%の非常に高い数値です。</li>
+      <li><strong>基本数値のランク：</strong>初期総合力・最大強化はSP選手全体、実数値はSHO～SPDをすべて計算できるSP選手の分布で判定します。</li>
       <li><strong>6カテゴリの数値：</strong>カテゴリ内の詳細ステータスを合計した値です。例：SHO＝決定力＋キック力＋冷静さ。</li>
       <li><strong>17項目のランク：</strong>決定力なら決定力同士、走力なら走力同士というように、各項目ごとの分布で判定します。</li>
       <li><strong>ランクは固定ではありません：</strong>新しい選手の追加やインフレで全体の分布が変わると、同じ数値でもランクが変動する場合があります。</li>
@@ -1982,7 +1983,7 @@
 let PLAYERS = [];
 let COMBOS = [];
 let SP_PLAYERS = [];
-let STATUS_REFERENCE = { categories:{}, fields:{} };
+let STATUS_REFERENCE = { categories:{}, fields:{}, basics:{ overall:[], maxUpgrade:[], grandTotal:[] } };
 let STATUS_DISPLAY_MODE = "rank"; // rank | number
 let STATUS_DETAIL_OPEN = false;
 let LAST_STATUS_PLAYER_ID = "";
@@ -2080,7 +2081,7 @@ function getStatusCategorySum(entry, category){
 
 function buildStatusReference(){
   const spIds = new Set(SP_PLAYERS.map(getPlayerId).filter(Boolean));
-  const ref = { categories:{}, fields:{} };
+  const ref = { categories:{}, fields:{}, basics:{ overall:[], maxUpgrade:[], grandTotal:[] } };
 
   STATUS_CATEGORIES.forEach(category=>{
     ref.categories[category] = [];
@@ -2093,6 +2094,14 @@ function buildStatusReference(){
   for(const entry of SP_PLAYERS){
     const pid = getPlayerId(entry);
     if(!pid || !spIds.has(pid)) continue;
+
+    // 基本数値もSP選手全体の分布を基準にSS～Gへ相対評価する。
+    const overall = toNum(entry?.overall);
+    const maxUpgrade = toNum(entry?.maxUpgrade);
+    const grandTotal = getStatusGrandTotal(getStatusEntry(entry));
+    if(overall!==null) ref.basics.overall.push(overall);
+    if(maxUpgrade!==null) ref.basics.maxUpgrade.push(maxUpgrade);
+    if(grandTotal!==null) ref.basics.grandTotal.push(grandTotal);
 
     for(const category of STATUS_CATEGORIES){
       const sum = getStatusCategorySum(entry, category);
@@ -2111,6 +2120,7 @@ function buildStatusReference(){
       ref.fields[category][field.key].sort((a,b)=>a-b);
     });
   });
+  Object.values(ref.basics).forEach(values=>values.sort((a,b)=>a-b));
   STATUS_REFERENCE = ref;
 }
 
@@ -2151,6 +2161,10 @@ function getCategoryRank(category, value){
 
 function getFieldRank(category, key, value){
   return statusRankFromPercentile(percentileMidrank(STATUS_REFERENCE.fields?.[category]?.[key] || [], value));
+}
+
+function getBasicRank(metricKey, value){
+  return statusRankFromPercentile(percentileMidrank(STATUS_REFERENCE.basics?.[metricKey] || [], value));
 }
 
 function statusRankHtml(rank){
@@ -2384,6 +2398,16 @@ function renderComparisonNumericRow(label, rawValues){
   return renderComparisonRow(label, values);
 }
 
+function renderComparisonBasicRow(label, metricKey, rawValues){
+  if(COMPARISON_DISPLAY_MODE === "number"){
+    return renderComparisonNumericRow(label, rawValues);
+  }
+  return renderComparisonRow(
+    label,
+    rawValues.map(value=>statusRankHtml(getBasicRank(metricKey, value)))
+  );
+}
+
 function getComparisonCategoryRawValue(player, category){
   if(!player) return null;
   return getStatusCategorySum(getStatusEntry(player), category);
@@ -2559,7 +2583,7 @@ function renderComparisonView(){
         <div class="comparisonToolbar">
           <div class="comparisonToolbarTitle">
             <strong>詳細ステータス比較</strong>
-            <small>基本数値・スキル・特徴・6カテゴリ・17項目を横並び比較／6カテゴリ・17項目は表示切替対応</small>
+            <small>基本数値・スキル・特徴・6カテゴリ・17項目を横並び比較／基本数値・6カテゴリ・17項目は表示切替対応</small>
           </div>
           <button type="button" id="comparisonDisplayToggle" class="comparisonDisplayToggle">表示：${COMPARISON_DISPLAY_MODE === "rank" ? "ランク" : "数値"}</button>
         </div>
@@ -2575,9 +2599,9 @@ function renderComparisonView(){
     <div class="comparisonView">
       <div class="comparisonMatrix">
         <div class="comparisonSection">基本数値</div>
-        ${renderComparisonNumericRow("初期総合力", overallRawValues)}
-        ${renderComparisonNumericRow("最大強化", maxRawValues)}
-        ${renderComparisonNumericRow("実数値（SHO～SPD合計）", grandTotalRawValues)}
+        ${renderComparisonBasicRow("初期総合力", "overall", overallRawValues)}
+        ${renderComparisonBasicRow("最大強化", "maxUpgrade", maxRawValues)}
+        ${renderComparisonBasicRow("実数値（SHO～SPD合計）", "grandTotal", grandTotalRawValues)}
 
         <div class="comparisonSection">スキルと特徴</div>
         ${skillRow}
