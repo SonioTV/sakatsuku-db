@@ -4,11 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <title>選手図鑑｜SP選手データ・入手方法・プレイスタイル検索｜サカつく2026攻略DB</title>
-  <meta name="description" content="サカつく2026の選手図鑑。選手名、国籍、レアリティ、成長タイプ、ポリシー、適性ポジション、プレイスタイルLv、入手方法・入手場所などで絞り込みできます。">
+  <meta name="description" content="サカつく2026の選手図鑑。選手名、国籍、レアリティ、ポリシー、適性ポジション、プレイスタイルLv、入手方法・入手場所・入手可否などで絞り込みできます。">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://sakatsuku2026-db.com/player_catalog.html">
   <meta property="og:title" content="選手図鑑｜SP選手データ・入手方法・プレイスタイル検索｜サカつく2026攻略DB">
-  <meta property="og:description" content="サカつく2026の選手図鑑。選手名、国籍、レアリティ、成長タイプ、ポリシー、適性ポジション、プレイスタイルLv、入手方法・入手場所などで絞り込みできます。">
+  <meta property="og:description" content="サカつく2026の選手図鑑。選手名、国籍、レアリティ、ポリシー、適性ポジション、プレイスタイルLv、入手方法・入手場所・入手可否などで絞り込みできます。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sakatsuku2026-db.com/player_catalog.html">
   <meta name="twitter:card" content="summary">
@@ -229,27 +229,63 @@
   .playerHead{
     background:var(--green);
     color:#fff;
-    padding:10px 12px;
-    display:grid;
-    grid-template-columns: 1fr auto;
-    gap:10px;
+    padding:9px 10px;
+    display:flex;
+    gap:8px;
     align-items:center;
-  }
-  .playerName{
-    font-weight:900;
-    font-size:18px;
-    line-height:1.35;
-    word-break:break-word;
   }
   .playerHeadMain{
     min-width:0;
+    flex:1 1 auto;
     display:flex;
-    align-items:flex-start;
-    gap:10px;
+    align-items:center;
+    gap:8px;
+  }
+  .playerThumbWrap{
+    width:54px;
+    height:54px;
+    flex:0 0 54px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    border-radius:10px;
+    background:rgba(255,255,255,.16);
+  }
+  .playerThumb{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+  }
+  .playerThumbFallback{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:100%;
+    padding:2px;
+    color:#fff;
+    font-size:8px;
+    font-weight:900;
+    text-align:center;
+    line-height:1.15;
   }
   .playerHeadText{
     min-width:0;
     flex:1 1 auto;
+  }
+  .playerName{
+    font-weight:900;
+    font-size:17px;
+    line-height:1.25;
+    word-break:break-word;
+  }
+  .playerHeadActions{
+    flex:0 0 auto;
+    display:flex;
+    align-items:center;
+    gap:5px;
   }
   .favBtn{
     appearance:none;
@@ -257,18 +293,37 @@
     background:#fff;
     color:#c98a00;
     border-radius:999px;
-    min-width:42px;
-    height:42px;
-    padding:0 10px;
-    font-size:20px;
+    min-width:34px;
+    height:34px;
+    padding:0 7px;
+    font-size:18px;
     font-weight:900;
     cursor:pointer;
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    box-shadow:0 4px 10px rgba(0,0,0,.08);
+    box-shadow:0 3px 8px rgba(0,0,0,.10);
     flex:0 0 auto;
   }
+  .evaluatorLink{
+    appearance:none;
+    min-height:34px;
+    padding:0 9px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.55);
+    border-radius:10px;
+    background:#155f80;
+    color:#fff;
+    text-decoration:none;
+    font-size:11px;
+    font-weight:900;
+    line-height:1;
+    white-space:nowrap;
+    box-shadow:0 3px 8px rgba(0,0,0,.12);
+  }
+  .evaluatorLink:hover{ filter:brightness(1.06); }
   .favBtn.is-active{
     background:#fff0b8;
     border-color:rgba(201,138,0,.4);
@@ -478,7 +533,7 @@
   }
 
   @media (max-width: 520px){
-　　.note{font-size:12px;line-height:1.5;}
+    .note{font-size:12px;line-height:1.5;}
     .wrap{ padding-left:8px; padding-right:8px; }
     h1{ font-size:26px; }
     .card{ padding:12px 10px; border-radius:18px; }
@@ -489,10 +544,13 @@
     .sortWrap select{ font-size:12px; max-width:130px; }
     .summaryBadge{ padding:7px 9px; font-size:12px; }
     .playerCard{ border-width:2px; border-radius:14px; }
-    .playerHead{ grid-template-columns:1fr; padding:8px 8px; }
-    .playerHeadMain{ gap:6px; align-items:center; }
-    .favBtn{ min-width:28px; height:28px; padding:0 5px; font-size:17px; }
-    .playerName{ font-size:14px; line-height:1.3; }
+    .playerHead{ padding:6px 6px; gap:4px; }
+    .playerHeadMain{ gap:4px; }
+    .playerThumbWrap{ width:38px; height:38px; flex-basis:38px; border-radius:7px; }
+    .playerName{ font-size:11px; line-height:1.2; }
+    .playerHeadActions{ flex-direction:column; gap:3px; }
+    .favBtn{ min-width:25px; width:25px; height:25px; padding:0; font-size:15px; }
+    .evaluatorLink{ min-height:23px; padding:0 5px; border-radius:7px; font-size:8px; }
     .playerBody{ padding:8px; }
     .stats{ grid-template-columns: repeat(2, minmax(0,1fr)); gap:6px; margin-bottom:8px; }
     .stat{ padding:7px 4px 6px; border-radius:11px; }
@@ -562,7 +620,7 @@
   <h1>選手図鑑</h1>
   <div class="note">
     全選手を一覧で確認できます。<br>
-    選手名・国籍・成長タイプ・レアリティ・入手方法・入手場所・ポリシー・プレイスタイル・プレイスタイルLv・適性ポジションで絞り込み可能です。<br>
+    選手名・国籍・レアリティ・入手方法・入手場所・入手可否・ポリシー・プレイスタイル・プレイスタイルLv・適性ポジションで絞り込み可能です。<br>
     お気に入り選手登録すると「選手評価ツール」で性能をチェックしたり「フォメコン診断」で発動条件に一致するフォーメーションコンボを表示する事が出来ます。
   </div>
 
@@ -584,10 +642,6 @@
           <select id="fRarity"><option value="">（指定なし）</option></select>
         </div>
         <div>
-          <label for="fGrowthType">成長タイプ</label>
-          <select id="fGrowthType"><option value="">（指定なし）</option></select>
-        </div>
-        <div>
           <label for="fPolicy">ポリシー</label>
           <select id="fPolicy"><option value="">（指定なし）</option></select>
         </div>
@@ -602,6 +656,14 @@
         <div>
           <label for="fAcqPlace">入手場所</label>
           <select id="fAcqPlace"><option value="">（指定なし）</option></select>
+        </div>
+        <div>
+          <label for="fAvailable">入手可能</label>
+          <select id="fAvailable">
+            <option value="">（指定なし）</option>
+            <option value="true">可</option>
+            <option value="false">不可</option>
+          </select>
         </div>
         <div>
           <label for="fStyle">プレイスタイル</label>
@@ -668,7 +730,7 @@
 <section class="review-content-shell" aria-labelledby="catalog-guide-title">
   <div class="review-content">
     <h2 id="catalog-guide-title">選手図鑑で確認できる情報</h2>
-    <p>選手図鑑は、サカつく2026の登録選手を一覧で確認し、複数の条件を組み合わせて目的の選手を探すためのデータベースです。名前だけでなく、国籍・成長タイプ・レアリティ・入手方法・入手場所・ポリシー・プレイスタイル・プレイスタイルLv・適性ポジションから絞り込めます。</p>
+    <p>選手図鑑は、サカつく2026の登録選手を一覧で確認し、複数の条件を組み合わせて目的の選手を探すためのデータベースです。名前だけでなく、国籍・レアリティ・入手方法・入手場所・入手可否・ポリシー・プレイスタイル・プレイスタイルLv・適性ポジションから絞り込めます。</p>
     <h3>条件を組み合わせて候補を狭める</h3>
     <p>例えば「特定ポリシーのCF」「現在入手できるSP選手」「プレイスタイルLvⅢの選手」など、編成上の目的に合わせて検索できます。各絞り込みは他の選択条件と連動するため、候補が多い場合は国籍や入手場所まで指定すると探しやすくなります。</p>
     <h3>お気に入り登録を他のツールで再利用</h3>
@@ -707,6 +769,12 @@ function showRarity(v){
   const n = parseInt(raw, 10);
   return Number.isFinite(n) ? `★${n}` : raw;
 }
+
+function showAvailable(v){
+  if(v === true || String(v).toLowerCase() === "true") return "可";
+  if(v === false || String(v).toLowerCase() === "false") return "不可";
+  return "-";
+}
 function pick(obj, keys, fallback=""){
   for(const k of keys){
     if(obj && obj[k] !== undefined && obj[k] !== null && String(obj[k]).trim() !== "") return obj[k];
@@ -734,6 +802,10 @@ function showSuitablePositions(values){
   const arr = Array.isArray(values) ? values : [];
   return arr.length ? arr.join(" / ") : "-";
 }
+function playerImageSrc(playerId){
+  const id = normalize(playerId);
+  return id ? `img/players/${encodeURIComponent(id)}.png` : "";
+}
 function uniqueSorted(values){
   return [...new Set(values.map(normalize).filter(Boolean))]
     .sort((a,b)=>String(a).localeCompare(String(b), "ja"));
@@ -748,10 +820,11 @@ function fillSelect(selectEl, values, formatter=null){
 function getPlayerCore(p){
   const name = normalize(pick(p, ["name","player_name"], ""));
   const nationality = normalize(pick(p, ["nationality","国籍"], ""));
-  const growthType = normalize(pick(p, ["growthType","growth_type","成長タイプ"], ""));
+  const implementedDate = normalize(pick(p, ["implementedDate","implemented_date","実装日"], ""));
   const rarity = normalize(pick(p, ["rarity","レアリティ"], ""));
   const acquisitionMethod = normalize(pick(p, ["acquisitionMethod","acquisition_method","入手方法"], ""));
   const acquisitionPlace = normalize(pick(p, ["acquisitionPlace","acquisition_place","入手場所"], ""));
+  const available = pick(p, ["available","入手可否"], null);
   const availablePeriod = normalize(pick(p, ["availablePeriod","available_period","入手可能期間"], ""));
   const policy = normalize(pick(p, ["policy","ポリシー"], ""));
   const playStyle = normalize(pick(p, ["playStyle","プレイスタイル"], ""));
@@ -770,10 +843,11 @@ function getPlayerCore(p){
     playerId,
     name,
     nationality,
-    growthType,
+    implementedDate,
     rarity,
     acquisitionMethod,
     acquisitionPlace,
+    available,
     availablePeriod,
     policy,
     playStyle,
@@ -821,11 +895,11 @@ function toggleFavoritePlayer(playerId){
 const FILTER_DEFS = [
   { key:"nationality",        id:"fNationality", getter:r=>r.nationality },
   { key:"rarity",             id:"fRarity",      getter:r=>r.rarity, formatter:showRarity },
-  { key:"growthType",         id:"fGrowthType",  getter:r=>r.growthType },
   { key:"policy",             id:"fPolicy",      getter:r=>r.policy },
   { key:"position",           id:"fPosition",    getter:r=>r.suitablePositions || [], multi:true },
   { key:"acquisitionMethod",  id:"fAcqMethod",   getter:r=>r.acquisitionMethod },
   { key:"acquisitionPlace",   id:"fAcqPlace",    getter:r=>r.acquisitionPlace },
+  { key:"available",          id:"fAvailable",   getter:r=>r.available === true ? "true" : (r.available === false ? "false" : ""), formatter:v=>v === "true" ? "可" : "不可", fixedValues:["true","false"] },
   { key:"playStyle",          id:"fStyle",       getter:r=>r.playStyle },
   { key:"playStyleLv",        id:"fStyleLv",     getter:r=>String(r.playStyleLv || ""), formatter:romanLv }
 ];
@@ -834,10 +908,10 @@ function matchesFilterValue(player, key, value){
   if(!value) return true;
   switch(key){
     case "nationality":       return player.nationality === value;
-    case "growthType":        return player.growthType === value;
     case "rarity":            return player.rarity === value;
     case "acquisitionMethod": return player.acquisitionMethod === value;
     case "acquisitionPlace":  return player.acquisitionPlace === value;
+    case "available":         return value === "true" ? player.available === true : player.available === false;
     case "policy":            return player.policy === value;
     case "playStyle":         return player.playStyle === value;
     case "playStyleLv":       return String(player.playStyleLv) === String(value);
@@ -872,11 +946,25 @@ function refreshLinkedOptions(){
     }else{
       values = uniqueSorted(rows.map(r=>def.getter(r)));
     }
+    if(Array.isArray(def.fixedValues)){
+      const availableSet = new Set(values);
+      values = def.fixedValues.filter(v=>availableSet.has(v));
+    }
 
     fillSelect(select, values, def.formatter || null);
     if(selected && values.includes(selected)) select.value = selected;
     else select.value = "";
   }
+}
+
+function formatImplementedDate(value){
+  const raw = normalize(value);
+  if(!raw) return "-";
+
+  const match = raw.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+  if(!match) return raw;
+
+  return `${Number(match[1])}年${Number(match[2])}月${Number(match[3])}日`;
 }
 
 function loadOptions(){
@@ -887,10 +975,10 @@ function currentFilterState(){
   return {
     name: normalize($("fName").value).toLowerCase(),
     nationality: normalize($("fNationality").value),
-    growthType: normalize($("fGrowthType").value),
     rarity: normalize($("fRarity").value),
     acquisitionMethod: normalize($("fAcqMethod").value),
     acquisitionPlace: normalize($("fAcqPlace").value),
+    available: normalize($("fAvailable").value),
     policy: normalize($("fPolicy").value),
     playStyle: normalize($("fStyle").value),
     playStyleLv: normalize($("fStyleLv").value),
@@ -905,10 +993,10 @@ function filterPlayers(){
   return PLAYERS.map(getPlayerCore).filter(p=>{
     if(f.name && !p.name.toLowerCase().includes(f.name)) return false;
     if(f.nationality && p.nationality !== f.nationality) return false;
-    if(f.growthType && p.growthType !== f.growthType) return false;
     if(f.rarity && p.rarity !== f.rarity) return false;
     if(f.acquisitionMethod && p.acquisitionMethod !== f.acquisitionMethod) return false;
     if(f.acquisitionPlace && p.acquisitionPlace !== f.acquisitionPlace) return false;
+    if(f.available && !matchesFilterValue(p, "available", f.available)) return false;
     if(f.policy && p.policy !== f.policy) return false;
     if(f.playStyle && p.playStyle !== f.playStyle) return false;
     if(f.playStyleLv && String(p.playStyleLv) !== String(f.playStyleLv)) return false;
@@ -940,12 +1028,12 @@ function renderCurrentFilters(){
   if(f.name) parts.push(`選手名：${esc($("fName").value.trim())}`);
   if(f.nationality) parts.push(`国籍：${esc(f.nationality)}`);
   if(f.rarity) parts.push(`レアリティ：${esc(showRarity(f.rarity))}`);
-  if(f.growthType) parts.push(`成長タイプ：${esc(f.growthType)}`);
   if(f.policy) parts.push(`ポリシー：${esc(f.policy)}`);
   if(f.position) parts.push(`適性ポジション：${esc(f.position)}`);
   if(f.playStyle) parts.push(`プレイスタイル：${esc(f.playStyle)}`);
   if(f.acquisitionMethod) parts.push(`入手方法：${esc(f.acquisitionMethod)}`);
   if(f.acquisitionPlace) parts.push(`入手場所：${esc(f.acquisitionPlace)}`);
+  if(f.available) parts.push(`入手可能：${esc(f.available === "true" ? "可" : "不可")}`);
   if(f.playStyleLv) parts.push(`プレイスタイルLv：${esc(romanLv(f.playStyleLv))}`);
   if(f.favoriteOnly) parts.push(`お気に入り：のみ表示`);
   const sortLabel = f.sortOrder === "overall" ? "初期総合力順" : (f.sortOrder === "maxUpgrade" ? "最大総合力順" : "登録ID順");
@@ -974,6 +1062,21 @@ function renderCatalog(list){
       <div class="playerCard">
 <div class="playerHead">
   <div class="playerHeadMain">
+    <div class="playerThumbWrap">
+      <img
+        class="playerThumb"
+        src="${esc(playerImageSrc(p.playerId))}"
+        alt="${esc(p.name || "選手")}の選手画像"
+        loading="lazy"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+      >
+      <span class="playerThumbFallback">画像なし</span>
+    </div>
+    <div class="playerHeadText">
+      <div class="playerName">${esc(p.name || "（名称不明）")}</div>
+    </div>
+  </div>
+  <div class="playerHeadActions">
     <button
       type="button"
       class="favBtn ${isFavorite ? "is-active" : ""}"
@@ -985,9 +1088,12 @@ function renderCatalog(list){
       ${isFavorite ? "★" : "☆"}
       <span class="favText">${esc(favoriteLabel)}</span>
     </button>
-    <div class="playerHeadText">
-      <div class="playerName">${esc(p.name || "（名称不明）")}</div>
-    </div>
+    <a
+      class="evaluatorLink"
+      href="sp_evaluator.html?playerId=${encodeURIComponent(p.playerId || "")}"
+      aria-label="${esc((p.name || "選手") + "をSP選手評価ツールで開く")}"
+      title="SP選手評価ツールで開く"
+    >SP評価</a>
   </div>
 </div>
 <div class="playerBody">
@@ -1003,23 +1109,16 @@ function renderCatalog(list){
           </div>
 
 <div class="meta">
+  <div class="k">実装日</div><div class="v">${esc(formatImplementedDate(p.implementedDate))}</div>
   <div class="k">レアリティ</div><div class="v">${esc(showRarity(p.rarity))}</div>
   <div class="k">国籍</div><div class="v">${esc(p.nationality || "-")}</div>
-  <div class="k">成長タイプ</div><div class="v">${esc(p.growthType || "-")}</div>
   <div class="k">ポリシー</div><div class="v">${esc(p.policy || "-")}</div>
   <div class="k">プレイスタイル</div><div class="v">${esc(styleDisplay)}</div>
   <div class="k">ポジション</div><div class="v">${esc(p.mainPosition || "-")}</div>
-  <div class="k">適性ポジション</div><div class="v">${esc(showSuitablePositions(p.suitablePositions))}</div>
-  <div class="k">メインスキル</div><div class="v">${esc(p.mainSkill || "-")}</div>
-  <div class="k">メイン特徴</div><div class="v">${esc(p.mainTrait || "-")}</div>
   <div class="k">入手方法</div><div class="v">${esc(p.acquisitionMethod || "-")}</div>
   <div class="k">入手場所</div><div class="v">${esc(p.acquisitionPlace || "-")}</div>
+  <div class="k">入手可否</div><div class="v">${esc(showAvailable(p.available))}</div>
 </div>
-
-          <div class="chipRow">
-            ${p.category ? `<span class="chip">${esc(p.category)}</span>` : ``}
-            ${p.availablePeriod ? `<span class="chip">${esc(p.availablePeriod)}</span>` : ``}
-          </div>
 
         </div>
       </div>
@@ -1045,10 +1144,10 @@ function applyFilters(){
 function resetFilters(){
   $("fName").value = "";
   $("fNationality").value = "";
-  $("fGrowthType").value = "";
   $("fRarity").value = "";
   $("fAcqMethod").value = "";
   $("fAcqPlace").value = "";
+  $("fAvailable").value = "";
   $("fPolicy").value = "";
   $("fStyle").value = "";
   $("fStyleLv").value = "";
@@ -1063,28 +1162,22 @@ function openPlayerModal(p){
   $("playerModalTitle").textContent = p.name || "詳細";
   const sub = [];
   if(p.nationality) sub.push(`国籍：${p.nationality}`);
-  if(p.growthType) sub.push(`成長タイプ：${p.growthType}`);
   $("playerModalSub").textContent = sub.join(" / ");
 
   const lvRoman = romanLv(p.playStyleLv);
   const styleDisplay = p.playStyle ? `${p.playStyle}${lvRoman ? " " + lvRoman : ""}` : "-";
 
   const lines = [];
-  lines.push(`<div class="mLine"><span class="mKey">区分</span><span class="mVal">${esc(p.category || "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">レアリティ</span><span class="mVal">${esc(showRarity(p.rarity))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">初期総合力</span><span class="mVal">${p.overall !== "" ? esc(p.overall) : "-"}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">最大強化</span><span class="mVal">${p.maxUpgrade !== "" ? esc(p.maxUpgrade) : "-"}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">ポリシー</span><span class="mVal">${esc(p.policy || "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">プレイスタイル</span><span class="mVal">${esc(styleDisplay)}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">ポジション</span><span class="mVal">${esc(p.mainPosition || "-")}</span></div>`);
-  lines.push(`<div class="mLine"><span class="mKey">適性ポジション</span><span class="mVal">${esc(showSuitablePositions(p.suitablePositions))}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">国籍</span><span class="mVal">${esc(p.nationality || "-")}</span></div>`);
-  lines.push(`<div class="mLine"><span class="mKey">成長タイプ</span><span class="mVal">${esc(p.growthType || "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手方法</span><span class="mVal">${esc(p.acquisitionMethod || "-")}</span></div>`);
   lines.push(`<div class="mLine"><span class="mKey">入手場所</span><span class="mVal">${esc(p.acquisitionPlace || "-")}</span></div>`);
-  lines.push(`<div class="mLine"><span class="mKey">入手可能期間</span><span class="mVal">${esc(p.availablePeriod || "-")}</span></div>`);
-  lines.push(`<div class="mLine"><span class="mKey">メインスキル</span><span class="mVal">${esc(p.mainSkill || "-")}</span></div>`);
-  lines.push(`<div class="mLine"><span class="mKey">メイン特徴</span><span class="mVal">${esc(p.mainTrait || "-")}</span></div>`);
+  lines.push(`<div class="mLine"><span class="mKey">入手可否</span><span class="mVal">${esc(showAvailable(p.available))}</span></div>`);
   if(p.playerId){
     lines.push(`<div class="mLine"><span class="mKey">player_id</span><span class="mVal">${esc(p.playerId)}</span></div>`);
   }
@@ -1125,6 +1218,14 @@ async function init(){
     if(!res.ok) throw new Error("players.json の読み込みに失敗しました。");
     PLAYERS = await res.json();
     if(!Array.isArray(PLAYERS)) throw new Error("players.json の形式が不正です。");
+    const invalidPlayers = PLAYERS.filter(p=>{
+      const id = normalize(p?.player_id ?? p?.playerId);
+      const name = normalize(p?.name);
+      return !id || !name || !Array.isArray(p?.suitablePositions);
+    });
+    if(invalidPlayers.length){
+      console.warn(`players.json: 基本項目または suitablePositions の形式を確認してください (${invalidPlayers.length}件)`, invalidPlayers.slice(0,5));
+    }
     loadOptions();
     applyFilters();
   }catch(err){
@@ -1140,8 +1241,8 @@ $("sortOrder").addEventListener("change", applyFilters);
 
 // すべての絞り込み項目をリアルタイム連動
 [
-  "fNationality", "fRarity", "fGrowthType", "fPolicy", "fPosition",
-  "fAcqMethod", "fAcqPlace", "fStyle", "fStyleLv"
+  "fNationality", "fRarity", "fPolicy", "fPosition",
+  "fAcqMethod", "fAcqPlace", "fAvailable", "fStyle", "fStyleLv"
 ].forEach(id=>{
   $(id).addEventListener("change", applyFilters);
 });
