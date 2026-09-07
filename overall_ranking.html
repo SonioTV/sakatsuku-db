@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>総合力ランキング｜初期・最大強化・条件別TOP｜サカつく2026攻略DB</title>
-  <meta name="description" content="サカつく2026の選手を初期総合力・最大強化値でランキング比較。国籍、レアリティ、成長タイプ、ポリシー、ポジション、入手場所、プレイスタイルなどで絞り込みできます。">
+  <title>選手ランキング｜総合力・6カテゴリ・17項目TOP10｜サカつく2026攻略DB</title>
+  <meta name="description" content="サカつく2026の選手を初期総合力・最大強化・SHO/PAS/DRB/DEF/PHY/SPDの6カテゴリ・詳細17項目でランキング比較。各TOP10と条件別ランキングを確認できます。">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://sakatsuku2026-db.com/overall_ranking.html">
-  <meta property="og:title" content="総合力ランキング｜初期・最大強化・条件別TOP｜サカつく2026攻略DB">
-  <meta property="og:description" content="サカつく2026の選手を初期総合力・最大強化値でランキング比較。国籍、レアリティ、成長タイプ、ポリシー、ポジション、入手場所、プレイスタイルなどで絞り込みできます。">
+  <meta property="og:title" content="選手ランキング｜総合力・6カテゴリ・17項目TOP10｜サカつく2026攻略DB">
+  <meta property="og:description" content="サカつく2026の選手を初期総合力・最大強化・SHO/PAS/DRB/DEF/PHY/SPDの6カテゴリ・詳細17項目でランキング比較。各TOP10と条件別ランキングを確認できます。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sakatsuku2026-db.com/overall_ranking.html">
   <meta name="twitter:card" content="summary">
@@ -67,8 +67,28 @@
     .stat .k{font-size:12px;color:rgba(255,255,255,.75);font-weight:900}.stat .v{font-size:24px;font-weight:1000;margin-top:2px}
     .navChips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px;margin-bottom:8px}.navChips a{white-space:nowrap;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-weight:900;box-shadow:var(--shadow2);color:#234}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{background:rgba(255,255,255,.90);border:1px solid rgba(255,255,255,.85);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.card.full{grid-column:1/-1}.cardHead{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:18px 18px 12px;border-top:7px solid var(--blue)}.cardHead.purple{border-top-color:var(--purple)}.cardHead.green{border-top-color:var(--green)}.cardHead.orange{border-top-color:var(--orange)}.cardTitle{font-size:22px;font-weight:1000;margin:0}.cardNote{font-size:13px;color:var(--muted);font-weight:800;margin:5px 0 0;line-height:1.45}.metricPill{white-space:nowrap;border-radius:999px;padding:8px 10px;background:#edf5ff;color:var(--blue2);font-size:12px;font-weight:1000}.cardBody{padding:0 18px 18px}
-    .rankList{display:grid;gap:10px}.rankItem{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#fff,#f9fbff);cursor:pointer;transition:.15s transform,.15s box-shadow}.rankItem:hover{transform:translateY(-2px);box-shadow:var(--shadow2)}.rankNo{width:44px;height:44px;border-radius:15px;background:#edf3fb;display:flex;align-items:center;justify-content:center;font-weight:1000;color:#41516a}.rankItem:nth-child(1) .rankNo{background:linear-gradient(135deg,#ffe68a,#ffb92f);color:#5b3900}.rankItem:nth-child(2) .rankNo{background:linear-gradient(135deg,#f4f6fb,#b8c2d6);color:#374151}.rankItem:nth-child(3) .rankNo{background:linear-gradient(135deg,#ffc58a,#c6762a);color:#4a2600}.rankName{font-size:16px;font-weight:1000;line-height:1.25}.rankMeta{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.tag{display:inline-flex;align-items:center;border-radius:999px;padding:4px 8px;background:#eef3fb;color:#4b5870;font-size:11px;font-weight:900}.tag.policy{background:#eef7ff;color:#0b63d1}.score{text-align:right}.score .num{font-size:22px;font-weight:1000;letter-spacing:.01em}.score .lbl{font-size:11px;color:var(--muted);font-weight:900}
-    .filters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:14px;min-width:0}.filters>*{min-width:0;width:100%;max-width:100%}.select,.button{height:46px;min-width:0;width:100%;max-width:100%;border-radius:14px;border:1px solid var(--line);background:#fff;color:#172033;padding:0 12px;font-size:14px;font-weight:900;outline:none}.select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(30,136,255,.12)}.button{cursor:pointer;background:#101a2d;color:#fff;border-color:#101a2d;padding:0 16px}.filteredGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.miniCard{border:1px solid var(--line);background:#fff;border-radius:18px;padding:12px;cursor:pointer;min-height:138px}.miniCard .miniRank{font-weight:1000;color:var(--blue2);font-size:13px}.miniCard .miniName{font-size:16px;font-weight:1000;margin:8px 0;line-height:1.25}.miniCard .miniScore{font-size:24px;font-weight:1000}.miniCard .miniMeta{font-size:12px;color:var(--muted);font-weight:800;line-height:1.5;margin-top:4px}.empty{text-align:center;color:var(--muted);font-weight:900;padding:18px;border:1px dashed var(--line);border-radius:18px;background:#fff}
+    .rankList{display:grid;gap:8px}
+.rankItem{display:grid;grid-template-columns:48px 64px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#fff,#f9fbff);text-decoration:none;cursor:pointer;transition:.15s transform,.15s box-shadow}
+.rankItem:hover{transform:translateY(-2px);box-shadow:var(--shadow2)}
+.rankNo{width:44px;height:44px;border-radius:15px;background:#edf3fb;display:flex;align-items:center;justify-content:center;font-weight:1000;color:#41516a}
+.rankItem:nth-child(1) .rankNo{background:linear-gradient(135deg,#ffe68a,#ffb92f);color:#5b3900}
+.rankItem:nth-child(2) .rankNo{background:linear-gradient(135deg,#f4f6fb,#b8c2d6);color:#374151}
+.rankItem:nth-child(3) .rankNo{background:linear-gradient(135deg,#ffc58a,#c6762a);color:#4a2600}
+.rankThumb{width:60px;height:60px;display:flex;align-items:center;justify-content:center;border-radius:13px;background:#eef3f8;overflow:hidden;border:1px solid #dce5ef}
+.rankThumb img{width:100%;height:100%;object-fit:contain;display:block}
+.rankThumbFallback{font-size:10px;font-weight:1000;color:#738095;text-align:center;padding:3px}
+.rankMain{min-width:0}
+.rankName{font-size:15px;font-weight:1000;line-height:1.25;overflow-wrap:anywhere}
+.rankMeta{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.tag{display:inline-flex;align-items:center;border-radius:999px;padding:3px 7px;background:#eef3fb;color:#4b5870;font-size:10px;font-weight:900}
+.tag.policy{background:#eef7ff;color:#0b63d1}
+.score{text-align:right;white-space:nowrap}.score .num{font-size:21px;font-weight:1000;letter-spacing:.01em}.score .lbl{font-size:10px;color:var(--muted);font-weight:900}
+.rankingControls{display:grid;grid-template-columns:minmax(180px,320px) 1fr;gap:10px;align-items:center;margin-bottom:12px}
+.rankingControls .select{height:44px}
+.rankingHint{font-size:12px;color:var(--muted);font-weight:800;line-height:1.45}
+.playerPageHint{font-size:11px;color:#0b63d1;font-weight:900;margin-top:4px}
+
+    .filters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:14px;min-width:0}.filters>*{min-width:0;width:100%;max-width:100%}.select,.button{height:46px;min-width:0;width:100%;max-width:100%;border-radius:14px;border:1px solid var(--line);background:#fff;color:#172033;padding:0 12px;font-size:14px;font-weight:900;outline:none}.select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(30,136,255,.12)}.button{cursor:pointer;background:#101a2d;color:#fff;border-color:#101a2d;padding:0 16px}.filteredGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.miniCard{border:1px solid var(--line);background:#fff;border-radius:18px;padding:10px;text-decoration:none;cursor:pointer;min-height:150px;display:flex;flex-direction:column}.miniCardThumb{height:68px;display:flex;align-items:center;justify-content:center;margin-bottom:5px}.miniCardThumb img{max-width:100%;height:100%;object-fit:contain}.miniCardThumb .rankThumbFallback{height:54px;width:54px;display:flex;align-items:center;justify-content:center;background:#eef3f8;border-radius:12px}.miniCard .miniRank{font-weight:1000;color:var(--blue2);font-size:12px}.miniCard .miniName{font-size:14px;font-weight:1000;margin:5px 0;line-height:1.25}.miniCard .miniScore{font-size:21px;font-weight:1000}.miniCard .miniMeta{font-size:10px;color:var(--muted);font-weight:800;line-height:1.45;margin-top:3px}.empty{text-align:center;color:var(--muted);font-weight:900;padding:18px;border:1px dashed var(--line);border-radius:18px;background:#fff}
     .shareGrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}.shareBox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px}.shareTitle{font-weight:1000;margin-bottom:10px}.barRow{display:grid;grid-template-columns:110px 1fr 48px;gap:8px;align-items:center;margin:9px 0}.barName{font-size:12px;font-weight:900;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.barTrack{height:12px;background:#eef2f7;border-radius:999px;overflow:hidden}.barFill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--green))}.barPct{text-align:right;font-size:12px;font-weight:1000;color:#3c4658}
     .modalBack{position:fixed;inset:0;background:rgba(4,10,20,.65);display:none;align-items:center;justify-content:center;padding:16px;z-index:100}.modalBack.show{display:flex}.modal{width:min(760px,100%);background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 34px 80px rgba(0,0,0,.34)}.modalHero{display:grid;grid-template-columns:120px 1fr auto;gap:16px;align-items:center;padding:18px;background:linear-gradient(135deg,#101a2d,#163c7a);color:#fff}.avatar{width:112px;height:112px;border-radius:24px;background:linear-gradient(135deg,#edf5ff,#d6e6ff);display:flex;align-items:center;justify-content:center;overflow:hidden;border:2px solid rgba(255,255,255,.3)}.avatar img{width:100%;height:100%;object-fit:cover}.avatar .fallback{color:#0b5bd3;font-size:24px;font-weight:1000}.modalName{font-size:26px;font-weight:1000;margin:0 0 8px}.modalTags{display:flex;flex-wrap:wrap;gap:6px}.modalClose{border:0;background:rgba(255,255,255,.12);color:#fff;width:42px;height:42px;border-radius:14px;font-size:24px;cursor:pointer}.modalBody{padding:18px}.detailGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.detail{border:1px solid var(--line);border-radius:16px;padding:11px;background:#fbfdff}.detail .k{font-size:12px;color:var(--muted);font-weight:900}.detail .v{font-size:15px;font-weight:1000;margin-top:3px}.toTop{position:fixed;right:16px;bottom:18px;width:54px;height:54px;border-radius:18px;border:1px solid rgba(255,255,255,.7);background:#fff;box-shadow:var(--shadow);display:none;align-items:center;justify-content:center;font-weight:1000;cursor:pointer;z-index:80}.toTop.show{display:flex}
     @media(max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}.heroStats{grid-template-columns:repeat(2,minmax(0,1fr))}.filters{grid-template-columns:repeat(2,minmax(0,1fr))}.button{grid-column:1/-1}.filteredGrid{grid-template-columns:1fr 1fr}.shareGrid{grid-template-columns:1fr}.card.full{grid-column:auto}}
@@ -77,11 +97,25 @@
       .hero{padding:20px;border-radius:22px}
       .topbar{align-items:stretch}
       .backLink,.miniBtn{font-size:13px;padding:9px 10px}
-      .cardHead{padding:16px 14px 10px}
-      .cardBody{padding:0 14px 16px}
-      .rankItem{grid-template-columns:42px 1fr;gap:10px}
-      .score{grid-column:2;text-align:left;display:flex;align-items:baseline;gap:6px}
-      .score .num{font-size:20px}
+      .cardHead{padding:13px 11px 8px}
+      .cardTitle{font-size:18px}
+      .cardNote{font-size:11px}
+      .cardBody{padding:0 10px 12px}
+      .rankList{gap:6px}
+      .rankItem{grid-template-columns:32px 48px minmax(0,1fr) auto;gap:7px;padding:7px 8px;border-radius:13px}
+      .rankNo{width:30px;height:30px;border-radius:10px;font-size:11px}
+      .rankThumb{width:46px;height:46px;border-radius:10px}
+      .rankName{font-size:12px}
+      .rankMeta{gap:3px;margin-top:3px;max-height:19px;overflow:hidden}
+      .rankMeta .tag{font-size:8px;padding:2px 5px}
+      .score{grid-column:auto;text-align:right;display:block}
+      .score .num{font-size:15px}
+      .score .lbl{font-size:8px}
+      .playerPageHint{display:none}
+      .rankingControls{grid-template-columns:1fr;gap:6px;margin-bottom:9px}
+      .rankingControls .select{height:42px;font-size:13px}
+      .rankingHint{font-size:10px}
+
       .filters{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;max-width:100%;overflow:hidden}
       .select{font-size:13px;padding:0 8px;min-width:0;width:100%;max-width:100%}
       #filter,.card.full,.cardBody{min-width:0;max-width:100%}
@@ -197,8 +231,8 @@
     </div>
 
     <section class="hero">
-      <h1>総合力ランキング</h1>
-      <p>初期総合力・最大強化・条件別ランキングを、選手カード形式で比較しやすく整理しています。</p>
+      <h1>選手ランキング</h1>
+      <p>初期総合力・最大強化に加え、6カテゴリと詳細17項目のTOP10を選手画像つきで比較できます。</p>
       <div class="heroStats">
         <div class="stat"><div class="k">登録選手</div><div class="v" id="statTotal">-</div></div>
         <div class="stat"><div class="k">最高初期総合力</div><div class="v" id="statOverall">-</div></div>
@@ -208,18 +242,41 @@
     </section>
 
     <nav class="navChips" aria-label="ページ内リンク">
-      <a href="#overall">初期総合力</a><a href="#max">最大強化</a><a href="#filter">フィルター</a><a href="#share">割合</a>
+      <a href="#overall">初期総合力</a><a href="#max">最大強化</a><a href="#categoryRanking">6カテゴリ</a><a href="#detailRanking">17項目</a><a href="#filter">フィルター</a><a href="#share">割合</a>
     </nav>
 
     <div class="grid">
       <section id="overall" class="card">
-        <div class="cardHead"><div><h2 class="cardTitle">初期総合力 TOP10</h2><p class="cardNote">選手名クリックで詳細を表示</p></div><div class="metricPill">OVERALL</div></div>
+        <div class="cardHead"><div><h2 class="cardTitle">初期総合力 TOP10</h2><p class="cardNote">選手カードを押すと個別選手ページへ移動します</p></div><div class="metricPill">OVERALL</div></div>
         <div class="cardBody"><div id="overallList" class="rankList"></div></div>
       </section>
 
       <section id="max" class="card">
-        <div class="cardHead purple"><div><h2 class="cardTitle">最大強化 TOP10</h2><p class="cardNote">育成後の最大値でランキング</p></div><div class="metricPill">MAX</div></div>
+        <div class="cardHead purple"><div><h2 class="cardTitle">最大強化 TOP10</h2><p class="cardNote">育成後の最大値。選手画像から直感的に比較できます</p></div><div class="metricPill">MAX</div></div>
         <div class="cardBody"><div id="maxList" class="rankList"></div></div>
+      </section>
+
+
+      <section id="categoryRanking" class="card full">
+        <div class="cardHead green"><div><h2 class="cardTitle">6カテゴリ最強ランキング TOP10</h2><p class="cardNote">SHO・PAS・DRB・DEF・PHY・SPDから選択。カテゴリ内の詳細ステータス合計値で比較します。</p></div><div class="metricPill">6 CATEGORY</div></div>
+        <div class="cardBody">
+          <div class="rankingControls">
+            <select id="categoryRankSelect" class="select" aria-label="6カテゴリランキングを選択"></select>
+            <div class="rankingHint">詳細ステータスが登録されている選手だけを対象にTOP10を表示します。</div>
+          </div>
+          <div id="categoryRankList" class="rankList"></div>
+        </div>
+      </section>
+
+      <section id="detailRanking" class="card full">
+        <div class="cardHead orange"><div><h2 class="cardTitle">17項目ランキング TOP10</h2><p class="cardNote">決定力・キック力・走力など、詳細ステータスを1項目ずつ比較できます。</p></div><div class="metricPill">17 STATS</div></div>
+        <div class="cardBody">
+          <div class="rankingControls">
+            <select id="detailRankSelect" class="select" aria-label="詳細ステータスランキングを選択"></select>
+            <div class="rankingHint">GKとフィールドプレーヤーで名称が異なるDEF系項目は共通データ列として比較します。</div>
+          </div>
+          <div id="detailRankList" class="rankList"></div>
+        </div>
       </section>
 
       <section id="filter" class="card full">
@@ -265,9 +322,11 @@
 <section class="review-content-shell" aria-labelledby="ranking-guide-title">
   <div class="review-content">
     <h2 id="ranking-guide-title">総合力ランキングの読み方</h2>
-    <p>総合力ランキングは、登録選手を「入手時点の強さ」と「育成後の到達値」の両方から比較するページです。初期総合力TOP10、最大強化TOP10に加え、条件を指定したランキングやSP選手データの構成比を確認できます。</p>
+    <p>このランキングページでは、登録選手を初期総合力・最大強化だけでなく、SHO・PAS・DRB・DEF・PHY・SPDの6カテゴリと詳細17項目からも比較できます。各ランキングはTOP10を表示し、選手カードから個別選手ページへ移動できます。</p>
     <h3>初期総合力と最大強化は目的で使い分ける</h3>
     <p>初期総合力は、獲得直後からどれだけ戦力になりやすいかを見る指標です。最大強化は育成を進めたあとの到達値を比較するための指標なので、即戦力を探す場合と長期育成を前提にする場合で見るランキングを切り替えてください。</p>
+    <h3>6カテゴリ・17項目ランキングで得意分野を探す</h3>
+    <p>6カテゴリランキングではカテゴリ内の詳細ステータス合計、17項目ランキングでは各能力の実数値を基準にTOP10を表示します。総合力だけでは見えにくい「決定力が高い選手」「走力が高い選手」などを探せます。</p>
     <h3>条件別ランキングで同じ土俵に絞る</h3>
     <p>国籍、レアリティ、成長タイプ、ポリシー、適性ポジション、入手方法・入手場所、プレイスタイル、プレイスタイルLvなどを組み合わせると、編成条件に近い選手だけで比較できます。全選手ランキングだけでは見えにくい「同ポジション内での立ち位置」を確認するのに有効です。</p>
     <h3>総合力だけで最終評価を決めない</h3>
@@ -290,6 +349,86 @@ const topBy = (key, n=10)=>[...PLAYERS].filter(p=>num(p[key])>0).sort((a,b)=>num
 function uniq(key){return [...new Set(PLAYERS.map(p=>p[key]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),"ja"));}
 function tag(txt, cls=""){ return `<span class="tag ${cls}">${esc(txt || "-")}</span>`; }
 function playerImage(p){ const id=getId(p); return id ? `img/players/${id}.png` : ""; }
+function playerPageUrl(p, context={}){
+  const id=getId(p);
+  if(!id) return "player_catalog.html";
+  const q=new URLSearchParams();
+  q.set("from","ranking");
+  if(context.section) q.set("section",context.section);
+  if(context.category) q.set("category",context.category);
+  if(context.detail) q.set("detail",context.detail);
+  if(context.metric) q.set("metric",context.metric);
+  if(context.filters){
+    Object.entries(context.filters).forEach(([key,value])=>{
+      const v=normalized(value);
+      if(v) q.set(key,v);
+    });
+  }
+  return `players/${encodeURIComponent(id)}.html?${q.toString()}`;
+}
+function playerThumbHtml(p, cls="rankThumb"){
+  const id=getId(p);
+  const src=playerImage(p);
+  const fallback=esc((p?.name || id || "?").slice(0,1));
+  if(!src) return `<div class="${cls}"><span class="rankThumbFallback">${fallback}</span></div>`;
+  return `<div class="${cls}"><img src="${esc(src)}" alt="${esc(p?.name || "選手")}の選手画像" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="rankThumbFallback" style="display:none">${fallback}</span></div>`;
+}
+
+const STATUS_SCHEMA = {
+  SHO: [
+    {key:"finishing", label:"決定力"},
+    {key:"kickPower", label:"キック力"},
+    {key:"composure", label:"冷静さ"},
+  ],
+  PAS: [
+    {key:"shortPass", label:"ショートパス"},
+    {key:"longPass", label:"ロングパス"},
+    {key:"kickAccuracy", label:"キック精度"},
+  ],
+  DRB: [
+    {key:"breakthrough", label:"突破力"},
+    {key:"ballKeeping", label:"キープ力"},
+    {key:"ballTouch", label:"ボールタッチ"},
+  ],
+  DEF: [
+    {key:"tackleSaving", label:"タックル/セービング"},
+    {key:"passCutReaction", label:"パスカット/反応速度"},
+    {key:"markOneOnOne", label:"マーク/1対1"},
+  ],
+  PHY: [
+    {key:"jump", label:"ジャンプ"},
+    {key:"contact", label:"コンタクト"},
+    {key:"stamina", label:"スタミナ"},
+  ],
+  SPD: [
+    {key:"speed", label:"走力"},
+    {key:"agility", label:"敏捷性"},
+  ],
+};
+const STATUS_CATEGORIES = Object.keys(STATUS_SCHEMA);
+
+function finiteStat(v){
+  if(v===null || v===undefined || v==="") return null;
+  const n=Number(v);
+  return Number.isFinite(n) ? n : null;
+}
+function getStatusValue(p, category, key){
+  return finiteStat(p?.stats?.[category]?.[key]);
+}
+function getCategoryTotal(p, category){
+  const fields=STATUS_SCHEMA[category] || [];
+  if(!fields.length) return null;
+  const values=fields.map(f=>getStatusValue(p,category,f.key));
+  if(values.some(v=>v===null)) return null;
+  return values.reduce((sum,v)=>sum+v,0);
+}
+function topByGetter(getter, n=10){
+  return PLAYERS
+    .map(p=>({p,value:getter(p)}))
+    .filter(x=>x.value!==null && Number.isFinite(Number(x.value)))
+    .sort((a,b)=>Number(b.value)-Number(a.value) || normalized(a.p.name).localeCompare(normalized(b.p.name),"ja"))
+    .slice(0,n);
+}
 async function loadPlayers(){
   let lastErr;
   for(const file of DATA_FILES){
@@ -310,20 +449,68 @@ function renderStats(){
   $("statMax").textContent = fmt(Math.max(...PLAYERS.map(p=>num(p.maxUpgrade))));
   $("statSp").textContent = PLAYERS.filter(p=>p.category === "SP選手").length.toLocaleString("ja-JP");
 }
-function rankHtml(p, i, key, label){
-  const id = esc(getId(p));
-  return `<div class="rankItem" data-id="${id}">
+function rankHtmlValue(p, i, value, label, context={}){
+  const positions=(Array.isArray(p.suitablePositions) && p.suitablePositions.length ? p.suitablePositions : [p.mainPosition]).filter(Boolean).join("/");
+  return `<a class="rankItem" href="${esc(playerPageUrl(p,context))}">
     <div class="rankNo">${i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
-    <div><div class="rankName">${esc(p.name)}</div><div class="rankMeta">${tag(p.rarity)}${tag((Array.isArray(p.suitablePositions)?p.suitablePositions:[p.mainPosition]).join("/"))}${tag(p.policy,"policy")}${tag(p.playStyle + (p.playStyleLv ? " " + romanLv(p.playStyleLv) : ""))}</div></div>
-    <div class="score"><div class="num">${fmt(p[key])}</div><div class="lbl">${esc(label)}</div></div>
-  </div>`;
+    ${playerThumbHtml(p)}
+    <div class="rankMain">
+      <div class="rankName">${esc(p.name)}</div>
+      <div class="rankMeta">${tag(p.rarity)}${tag(positions)}${tag(p.policy,"policy")}${tag((p.playStyle||"-") + (p.playStyleLv ? " " + romanLv(p.playStyleLv) : ""))}</div>
+      <div class="playerPageHint">個別ページを見る →</div>
+    </div>
+    <div class="score"><div class="num">${fmt(value)}</div><div class="lbl">${esc(label)}</div></div>
+  </a>`;
 }
-function bindCards(root){ root.querySelectorAll("[data-id]").forEach(el=>el.addEventListener("click",()=>openModal(playerById.get(el.dataset.id)))); }
+function rankHtml(p, i, key, label, context={}){ return rankHtmlValue(p,i,p[key],label,context); }
+function bindCards(root){ /* 個別選手ページへの通常リンクを使用 */ }
 function renderRankings(){
-  $("overallList").innerHTML = topBy("overall",10).map((p,i)=>rankHtml(p,i,"overall","初期")).join("");
-  $("maxList").innerHTML = topBy("maxUpgrade",10).map((p,i)=>rankHtml(p,i,"maxUpgrade","最大")).join("");
-  bindCards($("overallList")); bindCards($("maxList"));
+  $("overallList").innerHTML = topBy("overall",10).map((p,i)=>rankHtml(p,i,"overall","初期",{section:"overall"})).join("");
+  $("maxList").innerHTML = topBy("maxUpgrade",10).map((p,i)=>rankHtml(p,i,"maxUpgrade","最大",{section:"max"})).join("");
 }
+
+function setupStatusRankings(){
+  const catSel=$("categoryRankSelect");
+  catSel.innerHTML=STATUS_CATEGORIES.map(cat=>`<option value="${cat}">${cat}</option>`).join("");
+
+  const detailOptions=[];
+  STATUS_CATEGORIES.forEach(category=>{
+    (STATUS_SCHEMA[category]||[]).forEach(field=>{
+      detailOptions.push(`<option value="${category}:${field.key}">${category}｜${esc(field.label)}</option>`);
+    });
+  });
+  $("detailRankSelect").innerHTML=detailOptions.join("");
+
+  const pageParams=new URLSearchParams(location.search);
+  const requestedCategory=pageParams.get("category") || "SHO";
+  const requestedDetail=pageParams.get("detail") || "SHO:finishing";
+  catSel.value=[...catSel.options].some(o=>o.value===requestedCategory) ? requestedCategory : "SHO";
+  $("detailRankSelect").value=[...$("detailRankSelect").options].some(o=>o.value===requestedDetail) ? requestedDetail : "SHO:finishing";
+  catSel.addEventListener("change",renderCategoryRanking);
+  $("detailRankSelect").addEventListener("change",renderDetailRanking);
+  renderCategoryRanking();
+  renderDetailRanking();
+}
+
+function renderCategoryRanking(){
+  const category=$("categoryRankSelect").value || "SHO";
+  const rows=topByGetter(p=>getCategoryTotal(p,category),10);
+  $("categoryRankList").innerHTML = rows.length
+    ? rows.map((x,i)=>rankHtmlValue(x.p,i,x.value,`${category}合計`,{section:"categoryRanking",category})).join("")
+    : `<div class="empty">このカテゴリの詳細ステータスデータがありません</div>`;
+}
+
+function renderDetailRanking(){
+  const raw=$("detailRankSelect").value || "SHO:finishing";
+  const [category,key]=raw.split(":");
+  const field=(STATUS_SCHEMA[category]||[]).find(f=>f.key===key);
+  const label=field?.label || key;
+  const rows=topByGetter(p=>getStatusValue(p,category,key),10);
+  $("detailRankList").innerHTML = rows.length
+    ? rows.map((x,i)=>rankHtmlValue(x.p,i,x.value,label,{section:"detailRanking",detail:raw})).join("")
+    : `<div class="empty">この項目の詳細ステータスデータがありません</div>`;
+}
+
 function getSuitablePositions(p){
   const raw = Array.isArray(p?.suitablePositions) ? p.suitablePositions : [];
   const main = p?.mainPosition ? [p.mainPosition] : [];
@@ -397,6 +584,16 @@ function rebuildFacetOptions(){
 
 function setupFilters(){
   rebuildFacetOptions();
+
+  const pageParams=new URLSearchParams(location.search);
+  FACETS.forEach(f=>{
+    const requested=pageParams.get(f.id) || "";
+    if(requested && [...$(f.id).options].some(o=>o.value===requested)) $(f.id).value=requested;
+  });
+  const requestedMetric=pageParams.get("metric");
+  if(requestedMetric==="overall" || requestedMetric==="maxUpgrade") $("fMetric").value=requestedMetric;
+  rebuildFacetOptions();
+
   FACETS.forEach(f=>$(f.id).addEventListener("change",()=>{
     rebuildFacetOptions();
     renderFiltered();
@@ -424,8 +621,10 @@ function renderFiltered(){
     return normalized(a.name).localeCompare(normalized(b.name),"ja");
   }).slice(0,5);
   if(!arr.length){$("filteredList").innerHTML=`<div class="empty" style="grid-column:1/-1">対象選手がいません</div>`;return;}
-  $("filteredList").innerHTML=arr.map((p,i)=>`<div class="miniCard" data-id="${esc(getId(p))}"><div class="miniRank">#${i+1}</div><div class="miniName">${esc(p.name)}</div><div class="miniScore">${fmt(p[key])}</div><div class="miniMeta">${esc(p.rarity || "-")} / ${esc(getSuitablePositions(p).join("/") || "-")}<br>${esc(p.policy || "-")} / ${esc((p.playStyle || "-") + (p.playStyleLv ? " " + romanLv(p.playStyleLv) : ""))}</div></div>`).join("");
-  bindCards($("filteredList"));
+  const returnFilters={};
+  FACETS.forEach(f=>{const v=$(f.id).value;if(v)returnFilters[f.id]=v;});
+  const returnContext={section:"filter",metric:key,filters:returnFilters};
+  $("filteredList").innerHTML=arr.map((p,i)=>`<a class="miniCard" href="${esc(playerPageUrl(p,returnContext))}"><div class="miniRank">#${i+1}</div><div class="miniCardThumb">${playerThumbHtml(p,"miniCardThumbInner").replace('class="miniCardThumbInner"','class="miniCardThumbInner" style="height:68px;display:flex;align-items:center;justify-content:center"')}</div><div class="miniName">${esc(p.name)}</div><div class="miniScore">${fmt(p[key])}</div><div class="miniMeta">${esc(p.rarity || "-")} / ${esc(getSuitablePositions(p).join("/") || "-")}<br>${esc(p.policy || "-")} / ${esc((p.playStyle || "-") + (p.playStyleLv ? " " + romanLv(p.playStyleLv) : ""))}</div></a>`).join("");
 }
 
 function renderBars(containerId, key, order=[]){
@@ -446,7 +645,7 @@ function openModal(p){
   const img=playerImage(p);
   $("modalAvatar").innerHTML = img ? `<img src="${esc(img)}" alt="${esc(p.name)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'fallback',textContent:'${esc((p.name||'?').slice(0,1))}'}))">` : `<div class="fallback">${esc((p.name||"?").slice(0,1))}</div>`;
   const details=[["初期総合力",fmt(p.overall)],["最大強化",fmt(p.maxUpgrade)],["国籍",p.nationality],["成長タイプ",p.growthType],["入手方法",p.acquisitionMethod],["入手場所",p.acquisitionPlace],["入手可能期間",p.availablePeriod],["メインスキル",p.mainSkill],["メイントレイト",p.mainTrait],["実装日",p.implementedDate]];
-  $("modalDetails").innerHTML=details.map(([k,v])=>`<div class="detail"><div class="k">${esc(k)}</div><div class="v">${esc(v || "-")}</div></div>`).join("");
+  $("modalDetails").innerHTML=details.map(([k,v])=>`<div class="detail"><div class="k">${esc(k)}</div><div class="v">${esc(v || "-")}</div></div>`).join("") + `<a href="${esc(playerPageUrl(p,{section:"overall"}))}" style="grid-column:1/-1;display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:14px;background:#0b5bd3;color:#fff;text-decoration:none;font-weight:1000">個別選手ページを見る →</a>`;
   $("modalBack").classList.add("show");
   $("modalBack").setAttribute("aria-hidden","false");
   document.body.style.overflow="hidden";
@@ -457,7 +656,7 @@ function closeModal(){
   document.body.style.overflow="";
 }
 async function init(){
-  await loadPlayers(); renderStats(); renderRankings(); setupFilters(); renderShare();
+  await loadPlayers(); renderStats(); renderRankings(); setupStatusRankings(); setupFilters(); renderShare();
 }
 $("modalClose").addEventListener("click",closeModal); $("modalBack").addEventListener("click",e=>{if(e.target===$("modalBack"))closeModal();}); window.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
 $("reloadBtn").addEventListener("click",()=>location.reload());

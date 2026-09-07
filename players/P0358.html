@@ -43,8 +43,8 @@
 @media(min-width:1000px){.recommend-grid{grid-template-columns:repeat(5,minmax(0,1fr))} .desktop-grid{display:grid;grid-template-columns:1.28fr .72fr;gap:12px;align-items:start}}</style>
 </head>
 <body>
-<header class="sitebar"><div class="sitebar-inner"><div class="brand">サカつく2026攻略DB</div><a class="back" href="../player_catalog.html">選手図鑑へ</a></div></header>
-<div class="breadcrumb"><a href="../index.html">トップ</a> › <a href="../player_catalog.html">選手図鑑</a> › ガレゴ</div>
+<header class="sitebar"><div class="sitebar-inner"><div class="brand">サカつく2026攻略DB</div><a class="back" id="contextBackLink" href="../player_catalog.html">選手図鑑へ</a></div></header>
+<div class="breadcrumb"><a href="../index.html">トップ</a> › <a id="contextBreadcrumbLink" href="../player_catalog.html">選手図鑑</a> › ガレゴ</div>
 <main class="page" data-stat-view="rank">
 <section class="hero" id="overview"><div class="hero-main"><div class="player-photo"><img src="../img/players/P0358.png" alt="ガレゴの選手画像"></div><div class="hero-content"><div class="hero-title"><div><h1>ガレゴ</h1><div class="hero-badges"><span class="badge">★3 SP</span><span class="badge">ブラジル</span><span class="badge primary">LW</span><span class="badge primary">ポゼッション</span><span class="badge">ドリブラーⅡ</span><span class="badge ok">入手可能</span></div></div><button class="fav" id="favBtn" aria-label="お気に入り">★</button></div><div class="hero-overall"><div><div class="overall-label">最大総合力</div><div class="overall-value">14,651</div></div><div class="overall-delta">初期 6,030 → +8,621</div></div><p class="section-lead" style="margin-top:12px">最大総合力は全419選手中150位、LW適性では9位。詳細ステータスでは敏捷性・突破力・キープ力が高く、SPD系の能力が目立つLWです。</p></div></div><div class="share-row"><span class="share-label">共有</span><a class="share-btn" id="shareX" href="#">X</a><a class="share-btn" id="shareLine" href="#">LINE</a><button class="share-btn" id="copyLink">リンクをコピー</button></div></section>
 <div class="rank-strip"><div class="rank-box"><span>全選手</span><b>150位</b><small> / 419人</small></div><div class="rank-box"><span>LW適性</span><b>9位</b><small> / 27人</small></div><div class="rank-box"><span>ポゼッション</span><b>38位</b><small> / 103人</small></div><div class="rank-box"><span>ドリブラー</span><b>18位</b><small> / 51人</small></div></div>
@@ -119,7 +119,47 @@
 </main>
 <button class="topbtn" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="ページ上部へ">↑</button>
 <script>
-const pid="P0358"; const favBtn=document.getElementById('favBtn');
+const pid="P0358";
+const favBtn=document.getElementById('favBtn');
+
+/* 遷移元に応じて「戻る」リンクとパンくずを切り替える。
+   canonical URL はクエリなしの個別ページのままなのでSEOには影響させない。 */
+(function setupContextBackLink(){
+  const params=new URLSearchParams(location.search);
+  if(params.get('from')!=='ranking') return;
+
+  const section=params.get('section') || 'overall';
+  const allowedSections=new Set(['overall','max','categoryRanking','detailRanking','filter']);
+  const safeSection=allowedSections.has(section) ? section : 'overall';
+
+  const backParams=new URLSearchParams();
+  const category=params.get('category');
+  const detail=params.get('detail');
+  const metric=params.get('metric');
+  if(category) backParams.set('category',category);
+  if(detail) backParams.set('detail',detail);
+  if(metric==='overall' || metric==='maxUpgrade') backParams.set('metric',metric);
+
+  const allowedFilterKeys=['fNationality','fRarity','fGrowthType','fPolicy','fPos','fAcqMethod','fPlace','fStyle','fStyleLv'];
+  allowedFilterKeys.forEach(key=>{
+    const value=params.get(key);
+    if(value) backParams.set(key,value);
+  });
+
+  const query=backParams.toString();
+  const href='../overall_ranking.html' + (query ? '?' + query : '') + '#' + safeSection;
+
+  const back=document.getElementById('contextBackLink');
+  const crumb=document.getElementById('contextBreadcrumbLink');
+  if(back){
+    back.href=href;
+    back.textContent='ランキングへ戻る';
+  }
+  if(crumb){
+    crumb.href=href;
+    crumb.textContent='選手ランキング';
+  }
+})();
 function readFav(){try{return JSON.parse(localStorage.getItem('playerPageFavorites')||'[]')}catch(e){return []}}
 function paintFav(){favBtn.classList.toggle('on',readFav().includes(pid))}
 favBtn.addEventListener('click',()=>{let a=readFav();a=a.includes(pid)?a.filter(x=>x!==pid):[...a,pid];localStorage.setItem('playerPageFavorites',JSON.stringify(a));paintFav()});paintFav();
