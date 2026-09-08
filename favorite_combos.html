@@ -90,11 +90,17 @@
   .comboCard.rank-silver{ border-left-color:var(--silver); background:#f8f8f8; }
   .comboCard.rank-bronze{ border-left-color:var(--bronze); background:#fff3e7; }
   .comboName{ font-weight:900; font-size:19px; line-height:1.4; margin-bottom:10px; }
+  .comboPageLink{
+    color:#0b63d1;
+    font-weight:900;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
   .comboMeta{ display:grid; grid-template-columns:92px 1fr; gap:6px 10px; font-size:14px; line-height:1.55; }
   .comboMeta .k{ font-weight:900; color:#223; }
   .comboMeta .v{ font-weight:800; color:#111; word-break:break-word; }
   .memberList{ display:flex; gap:6px; flex-wrap:wrap; margin-top:12px; }
-  .memberChip{ display:inline-block; font-size:12px; font-weight:900; background:rgba(21,95,128,.08); border:1px solid rgba(21,95,128,.20); color:#0b3d50; padding:5px 8px; border-radius:999px; line-height:1.35; }
+  .memberChip{ display:inline-flex; align-items:center; gap:4px; font-size:12px; font-weight:900; background:rgba(21,95,128,.08); border:1px solid rgba(21,95,128,.20); color:#0b3d50; padding:5px 8px; border-radius:999px; line-height:1.35; }
   .missingBox{ margin-top:12px; padding:10px 12px; border-radius:14px; background:#fff; border:1px solid rgba(0,0,0,.10); }
   .missingTitle{ font-weight:900; color:#9a5d00; margin-bottom:8px; }
   .candidateList{ display:grid; gap:8px; }
@@ -105,16 +111,36 @@
   .candidatePower{ font-weight:900; background:#eef7ea; color:var(--green-dark); border-radius:999px; padding:5px 8px; font-size:12px; white-space:nowrap; }
   .empty{ text-align:center; padding:28px 14px; border:2px dashed #d4dae6; border-radius:18px; color:#555; font-weight:900; background:#fff; line-height:1.7; }
   .favoritePlayers{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
-  .favoritePlayerChip{ display:inline-block; background:#fff7d6; border:1px solid rgba(201,138,0,.25); color:#6e5200; padding:6px 10px; border-radius:999px; font-weight:900; font-size:13px; }
+  .favoritePlayerChip{ display:inline-flex; align-items:center; gap:4px; background:#fff7d6; border:1px solid rgba(201,138,0,.25); color:#6e5200; padding:6px 10px; border-radius:999px; font-weight:900; font-size:13px; }
 
-  .playerEvalLink{
+  .playerPageLink{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    min-width:0;
     color:#0b63d1;
     font-weight:900;
     text-decoration:underline;
     text-underline-offset:3px;
+    vertical-align:middle;
   }
-  .memberChip .playerEvalLink,
-  .favoritePlayerChip .playerEvalLink{
+  .playerMiniThumb{
+    width:26px;
+    height:26px;
+    flex:0 0 26px;
+    object-fit:contain;
+    border-radius:6px;
+    border:1px solid rgba(0,0,0,.10);
+    background:#fff;
+  }
+  .candidateName .playerMiniThumb{
+    width:40px;
+    height:40px;
+    flex-basis:40px;
+    border-radius:8px;
+  }
+  .memberChip .playerPageLink,
+  .favoritePlayerChip .playerPageLink{
     color:inherit;
   }
 
@@ -306,11 +332,20 @@ function getPlayerCore(p){
   };
 }
 
-function playerEvalLink(core, label){
+function playerPageLink(core, label){
   const pid = normalize(core && core.playerId ? core.playerId : "");
   const text = label || (core && (core.name || core.playerId)) || "選手";
   if(!pid) return esc(text);
-  return `<a class="playerEvalLink" href="sp_evaluator.html?playerId=${encodeURIComponent(pid)}">${esc(text)}</a>`;
+  const href = `players/${encodeURIComponent(pid)}.html`;
+  const imageSrc = `img/players/${encodeURIComponent(pid)}.png`;
+  return `<a class="playerPageLink" href="${href}"><img class="playerMiniThumb" src="${imageSrc}" alt="${esc(text)}の選手画像" loading="lazy" decoding="async" onerror="this.style.display='none'"><span>${esc(text)}</span></a>`;
+}
+
+function comboPageLink(combo, label){
+  const comboId = normalize(comboField(combo, ["comboId","combo_id","id","ID"], ""));
+  const text = label || comboField(combo, ["name","comboName","formationName","title"], "フォーメーションコンボ");
+  if(!comboId) return esc(text);
+  return `<a class="comboPageLink" href="combos/${encodeURIComponent(comboId)}.html">${esc(text)}</a>`;
 }
 
 function comboField(c, keys, fallback=""){
@@ -528,11 +563,11 @@ function renderAvailable(list){
       const core = getPlayerCore(player);
       const cond = comboConditions(combo)[idx] || {};
       const pos = normalize(comboField(cond, ["position","pos","ポジション"], core.mainPosition || "-"));
-      return `<span class="memberChip">${esc(pos)}：${playerEvalLink(core, core.name || core.playerId || "選手")}</span>`;
+      return `<span class="memberChip">${esc(pos)}：${playerPageLink(core, core.name || core.playerId || "選手")}</span>`;
     }).join("");
     return `
       <article class="comboCard ${esc(comboRankClass(base.rank))}">
-        <div class="comboName">${esc(base.name)}</div>
+        <div class="comboName">${comboPageLink(combo, base.name)}</div>
         <div class="comboMeta">
           <div class="k">フォメ</div><div class="v">${esc(base.formation)}</div>
           <div class="k">ランク</div><div class="v">${esc(base.rank)}</div>
@@ -558,7 +593,7 @@ function renderOneAway(list){
       const core = getPlayerCore(player);
       const cond = comboConditions(combo)[idx] || {};
       const pos = normalize(comboField(cond, ["position","pos","ポジション"], core.mainPosition || "-"));
-      return `<span class="memberChip">${esc(pos)}：${playerEvalLink(core, core.name || core.playerId || "選手")}</span>`;
+      return `<span class="memberChip">${esc(pos)}：${playerPageLink(core, core.name || core.playerId || "選手")}</span>`;
     }).filter(Boolean).join("");
     const candidateHtml = candidates.map(p=>{
       const core = getPlayerCore(p);
@@ -566,7 +601,7 @@ function renderOneAway(list){
       return `
         <div class="candidate">
           <div>
-            <div class="candidateName">${playerEvalLink(core, core.name || core.playerId || "選手")}</div>
+            <div class="candidateName">${playerPageLink(core, core.name || core.playerId || "選手")}</div>
             <div class="candidateMeta">
               ${esc(positionText(core))} / ${esc(core.policy || "-")} / ${esc(core.playStyle || "-")}${lv ? " " + esc(lv) : ""}<br>
               入手場所：${esc(core.acquisitionPlace || "-")}
@@ -577,7 +612,7 @@ function renderOneAway(list){
     }).join("");
     return `
       <article class="comboCard ${esc(comboRankClass(base.rank))}">
-        <div class="comboName">${esc(base.name)}</div>
+        <div class="comboName">${comboPageLink(combo, base.name)}</div>
         <div class="comboMeta">
           <div class="k">フォメ</div><div class="v">${esc(base.formation)}</div>
           <div class="k">ランク</div><div class="v">${esc(base.rank)}</div>
@@ -602,7 +637,7 @@ function renderFavorites(favPlayers){
   root.innerHTML = favPlayers
     .map(getPlayerCore)
     .sort((a,b)=>a.playerId.localeCompare(b.playerId,"ja",{numeric:true}))
-    .map(p=>`<span class="favoritePlayerChip">★ ${playerEvalLink(p, p.name || p.playerId)} <small>${esc(positionText(p))}</small></span>`)
+    .map(p=>`<span class="favoritePlayerChip">★ ${playerPageLink(p, p.name || p.playerId)} <small>${esc(positionText(p))}</small></span>`)
     .join("");
 }
 function renderAll(){
