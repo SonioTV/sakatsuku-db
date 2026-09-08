@@ -2229,24 +2229,24 @@
     <div class="databaseNavTitle">データから探す</div>
     <div class="databaseNavSub">ポリシー別</div>
     <div class="databasePolicyGrid">
-      <a class="databaseNavLink" href="policy/counter.html">カウンター</a>
-      <a class="databaseNavLink" href="policy/moving.html">ムービング</a>
-      <a class="databaseNavLink" href="policy/reaction.html">リアクション</a>
-      <a class="databaseNavLink" href="policy/possession.html">ポゼッション</a>
+      <a class="databaseNavLink" href="players/policy/counter.html">カウンター</a>
+      <a class="databaseNavLink" href="players/policy/moving.html">ムービング</a>
+      <a class="databaseNavLink" href="players/policy/reaction.html">リアクション</a>
+      <a class="databaseNavLink" href="players/policy/possession.html">ポゼッション</a>
     </div>
     <div class="databaseNavSub">ポジション別</div>
     <div class="databasePositionGrid">
-      <a class="databaseNavLink" href="position/GK.html">GK</a>
-      <a class="databaseNavLink" href="position/CB.html">CB</a>
-      <a class="databaseNavLink" href="position/LB.html">LB</a>
-      <a class="databaseNavLink" href="position/RB.html">RB</a>
-      <a class="databaseNavLink" href="position/DM.html">DM</a>
-      <a class="databaseNavLink" href="position/LM.html">LM</a>
-      <a class="databaseNavLink" href="position/RM.html">RM</a>
-      <a class="databaseNavLink" href="position/AM.html">AM</a>
-      <a class="databaseNavLink" href="position/LW.html">LW</a>
-      <a class="databaseNavLink" href="position/RW.html">RW</a>
-      <a class="databaseNavLink" href="position/CF.html">CF</a>
+      <a class="databaseNavLink" href="players/position/GK.html">GK</a>
+      <a class="databaseNavLink" href="players/position/CB.html">CB</a>
+      <a class="databaseNavLink" href="players/position/LB.html">LB</a>
+      <a class="databaseNavLink" href="players/position/RB.html">RB</a>
+      <a class="databaseNavLink" href="players/position/DM.html">DM</a>
+      <a class="databaseNavLink" href="players/position/LM.html">LM</a>
+      <a class="databaseNavLink" href="players/position/RM.html">RM</a>
+      <a class="databaseNavLink" href="players/position/AM.html">AM</a>
+      <a class="databaseNavLink" href="players/position/LW.html">LW</a>
+      <a class="databaseNavLink" href="players/position/RW.html">RW</a>
+      <a class="databaseNavLink" href="players/position/CF.html">CF</a>
     </div>
     <div class="databaseNavSub">フォメコン</div>
     <a class="databaseComboLink" href="#panelPlayer" data-open-player-search>コンボから探す</a>
@@ -2469,24 +2469,24 @@
   <h2 class="sectionTitle">データから探す</h2>
   <div class="databaseNavSub">ポリシー別選手</div>
   <div class="databasePolicyGrid">
-    <a class="databaseNavLink" href="policy/counter.html">カウンター</a>
-    <a class="databaseNavLink" href="policy/moving.html">ムービング</a>
-    <a class="databaseNavLink" href="policy/reaction.html">リアクション</a>
-    <a class="databaseNavLink" href="policy/possession.html">ポゼッション</a>
+    <a class="databaseNavLink" href="players/policy/counter.html">カウンター</a>
+    <a class="databaseNavLink" href="players/policy/moving.html">ムービング</a>
+    <a class="databaseNavLink" href="players/policy/reaction.html">リアクション</a>
+    <a class="databaseNavLink" href="players/policy/possession.html">ポゼッション</a>
   </div>
   <div class="databaseNavSub">ポジション別選手</div>
   <div class="databasePositionGrid">
-    <a class="databaseNavLink" href="position/GK.html">GK</a>
-    <a class="databaseNavLink" href="position/CB.html">CB</a>
-    <a class="databaseNavLink" href="position/LB.html">LB</a>
-    <a class="databaseNavLink" href="position/RB.html">RB</a>
-    <a class="databaseNavLink" href="position/DM.html">DM</a>
-    <a class="databaseNavLink" href="position/LM.html">LM</a>
-    <a class="databaseNavLink" href="position/RM.html">RM</a>
-    <a class="databaseNavLink" href="position/AM.html">AM</a>
-    <a class="databaseNavLink" href="position/LW.html">LW</a>
-    <a class="databaseNavLink" href="position/RW.html">RW</a>
-    <a class="databaseNavLink" href="position/CF.html">CF</a>
+    <a class="databaseNavLink" href="players/position/GK.html">GK</a>
+    <a class="databaseNavLink" href="players/position/CB.html">CB</a>
+    <a class="databaseNavLink" href="players/position/LB.html">LB</a>
+    <a class="databaseNavLink" href="players/position/RB.html">RB</a>
+    <a class="databaseNavLink" href="players/position/DM.html">DM</a>
+    <a class="databaseNavLink" href="players/position/LM.html">LM</a>
+    <a class="databaseNavLink" href="players/position/RM.html">RM</a>
+    <a class="databaseNavLink" href="players/position/AM.html">AM</a>
+    <a class="databaseNavLink" href="players/position/LW.html">LW</a>
+    <a class="databaseNavLink" href="players/position/RW.html">RW</a>
+    <a class="databaseNavLink" href="players/position/CF.html">CF</a>
   </div>
   <div class="databaseNavSub">フォーメーションコンボ</div>
   <a class="databaseComboLink" href="#panelPlayer" data-open-player-search>コンボから対応選手を探す</a>
@@ -2665,7 +2665,7 @@ function getComboId(c){
 }
 function getComboDetailHref(c){
   const comboId = getComboId(c);
-  return comboId ? `combos/${encodeURIComponent(comboId)}.html` : "";
+  return comboId ? `players/combos/${encodeURIComponent(comboId)}.html` : "";
 }
 function getPlayerDetailHref(p){
   const playerId = getPlayerId(p);

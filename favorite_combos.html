@@ -345,7 +345,7 @@ function comboPageLink(combo, label){
   const comboId = normalize(comboField(combo, ["comboId","combo_id","id","ID"], ""));
   const text = label || comboField(combo, ["name","comboName","formationName","title"], "フォーメーションコンボ");
   if(!comboId) return esc(text);
-  return `<a class="comboPageLink" href="combos/${encodeURIComponent(comboId)}.html">${esc(text)}</a>`;
+  return `<a class="comboPageLink" href="players/combos/${encodeURIComponent(comboId)}.html">${esc(text)}</a>`;
 }
 
 function comboField(c, keys, fallback=""){
