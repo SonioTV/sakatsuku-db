@@ -121,33 +121,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 784,
+        "kickPower": 736,
+        "composure": 784
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 779,
+        "longPass": 779,
+        "kickAccuracy": 779
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 799,
+        "ballKeeping": 799,
+        "ballTouch": 799
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 569,
+        "passCutReaction": 563,
+        "markOneOnOne": 538
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 575,
+        "contact": 619,
+        "stamina": 624
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 643,
+        "agility": 765
       }
     },
     "tendencies": {
@@ -217,33 +217,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 818,
+        "kickPower": 818,
+        "composure": 792
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 680,
+        "longPass": 628,
+        "kickAccuracy": 676
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 795,
+        "ballKeeping": 783,
+        "ballTouch": 782
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 626,
+        "passCutReaction": 557,
+        "markOneOnOne": 540
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 791,
+        "contact": 817,
+        "stamina": 734
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 817,
+        "agility": 767
       }
     },
     "tendencies": {
@@ -313,33 +313,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 574,
+        "kickPower": 652,
+        "composure": 622
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 737,
+        "longPass": 734,
+        "kickAccuracy": 709
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 709,
+        "ballKeeping": 716,
+        "ballTouch": 742
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 819,
+        "passCutReaction": 819,
+        "markOneOnOne": 819
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 797,
+        "contact": 805,
+        "stamina": 820
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 716,
+        "agility": 731
       }
     },
     "tendencies": {
@@ -409,33 +409,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 792,
+        "kickPower": 765,
+        "composure": 788
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 812,
+        "longPass": 803,
+        "kickAccuracy": 795
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 815,
+        "ballKeeping": 814,
+        "ballTouch": 817
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 722,
+        "passCutReaction": 731,
+        "markOneOnOne": 720
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 709,
+        "contact": 737,
+        "stamina": 790
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 772,
+        "agility": 820
       }
     },
     "tendencies": {
@@ -1173,7 +1173,7 @@
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
         "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -1269,7 +1269,7 @@
         "skillNo": 1,
         "skillName": "華麗なトラップ",
         "skillId": "SK0026",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -1365,7 +1365,7 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -1564,7 +1564,7 @@
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
         "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -1660,7 +1660,7 @@
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
         "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -1756,7 +1756,7 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -1852,7 +1852,7 @@
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
         "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -1948,7 +1948,7 @@
         "skillNo": 1,
         "skillName": "高速クロス",
         "skillId": "SK0034",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -2044,7 +2044,7 @@
         "skillNo": 1,
         "skillName": "反撃のパスカット",
         "skillId": "SK0055",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -2140,7 +2140,7 @@
         "skillNo": 1,
         "skillName": "安定したパスワーク",
         "skillId": "SK0023",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -2236,7 +2236,7 @@
         "skillNo": 1,
         "skillName": "意外性のあるミドルパス",
         "skillId": "SK0024",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -2332,7 +2332,7 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -2524,7 +2524,7 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -2620,7 +2620,7 @@
         "skillNo": 1,
         "skillName": "反撃のパスカット",
         "skillId": "SK0055",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -2716,7 +2716,7 @@
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
         "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -2812,7 +2812,7 @@
         "skillNo": 1,
         "skillName": "驚異的なセービング",
         "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -15801,7 +15801,7 @@
         "skillNo": 1,
         "skillName": "ファストフィード",
         "skillId": "SK0019",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -16206,7 +16206,7 @@
         "skillNo": 1,
         "skillName": "反撃のパスカット",
         "skillId": "SK0055",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -16252,33 +16252,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 773,
+        "kickPower": 744,
+        "composure": 794
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 661,
+        "longPass": 593,
+        "kickAccuracy": 732
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 693,
+        "ballKeeping": 770,
+        "ballTouch": 745
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 649,
+        "passCutReaction": 613,
+        "markOneOnOne": 635
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 770,
+        "contact": 764,
+        "stamina": 684
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 732,
+        "agility": 771
       }
     },
     "tendencies": {
@@ -16707,7 +16707,7 @@
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
         "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -16803,7 +16803,7 @@
         "skillNo": 1,
         "skillName": "確信のロングシュート",
         "skillId": "SK0028",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -16899,7 +16899,7 @@
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
         "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -16995,7 +16995,7 @@
         "skillNo": 1,
         "skillName": "華麗なトラップ",
         "skillId": "SK0026",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -17091,7 +17091,7 @@
         "skillNo": 1,
         "skillName": "ファストフィード",
         "skillId": "SK0019",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -17187,7 +17187,7 @@
         "skillNo": 1,
         "skillName": "反撃のパスカット",
         "skillId": "SK0055",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -17283,7 +17283,7 @@
         "skillNo": 1,
         "skillName": "強引な中央突破",
         "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -17379,7 +17379,7 @@
         "skillNo": 1,
         "skillName": "ダイナミックタックル",
         "skillId": "SK0015",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -17475,7 +17475,7 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -17571,7 +17571,7 @@
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
         "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -17667,7 +17667,7 @@
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
         "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -17763,7 +17763,7 @@
         "skillNo": 1,
         "skillName": "驚異的なセービング",
         "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -17859,7 +17859,7 @@
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
         "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -17955,7 +17955,7 @@
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
         "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -18051,7 +18051,7 @@
         "skillNo": 1,
         "skillName": "敵陣を切り裂くパス",
         "skillId": "SK0052",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -18147,7 +18147,7 @@
         "skillNo": 1,
         "skillName": "強引な中央突破",
         "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -18243,7 +18243,7 @@
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
         "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -18339,7 +18339,7 @@
         "skillNo": 1,
         "skillName": "確信のロングシュート",
         "skillId": "SK0028",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -18435,7 +18435,7 @@
         "skillNo": 1,
         "skillName": "意外性のあるミドルパス",
         "skillId": "SK0024",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -18531,7 +18531,7 @@
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
         "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -18627,7 +18627,7 @@
         "skillNo": 1,
         "skillName": "楔のパス",
         "skillId": "SK0061",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -18723,7 +18723,7 @@
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
         "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -18819,7 +18819,7 @@
         "skillNo": 1,
         "skillName": "驚異的なセービング",
         "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -19224,7 +19224,7 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -19526,7 +19526,7 @@
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
         "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -19629,7 +19629,7 @@
         "skillNo": 1,
         "skillName": "反撃のパスカット",
         "skillId": "SK0055",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -20034,7 +20034,7 @@
         "skillNo": 1,
         "skillName": "敵陣を切り裂くパス",
         "skillId": "SK0052",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -21956,7 +21956,7 @@
         "skillNo": 1,
         "skillName": "安定したパスワーク",
         "skillId": "SK0023",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -22052,7 +22052,7 @@
         "skillNo": 1,
         "skillName": "確信のロングシュート",
         "skillId": "SK0028",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -35217,33 +35217,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 650,
+        "kickPower": 650,
+        "composure": 654
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 692,
+        "longPass": 726,
+        "kickAccuracy": 629
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 722,
+        "ballKeeping": 681,
+        "ballTouch": 681
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 682,
+        "passCutReaction": 694,
+        "markOneOnOne": 681
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 667,
+        "contact": 650,
+        "stamina": 764
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 752,
+        "agility": 741
       }
     },
     "tendencies": {
@@ -35313,33 +35313,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 652,
+        "kickPower": 632,
+        "composure": 650
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 645,
+        "longPass": 707,
+        "kickAccuracy": 632
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 783,
+        "ballKeeping": 713,
+        "ballTouch": 700
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 653,
+        "passCutReaction": 727,
+        "markOneOnOne": 666
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 633,
+        "contact": 602,
+        "stamina": 758
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 776,
+        "agility": 748
       }
     },
     "tendencies": {
@@ -35409,33 +35409,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 687,
+        "kickPower": 673,
+        "composure": 682
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 778,
+        "longPass": 769,
+        "kickAccuracy": 716
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 702,
+        "ballKeeping": 677,
+        "ballTouch": 681
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 703,
+        "passCutReaction": 739,
+        "markOneOnOne": 682
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 602,
+        "contact": 656,
+        "stamina": 702
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 655,
+        "agility": 656
       }
     },
     "tendencies": {
@@ -35505,33 +35505,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 661,
+        "kickPower": 652,
+        "composure": 656
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 711,
+        "longPass": 704,
+        "kickAccuracy": 694
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 687,
+        "ballKeeping": 720,
+        "ballTouch": 730
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 781,
+        "passCutReaction": 741,
+        "markOneOnOne": 737
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 613,
+        "contact": 663,
+        "stamina": 759
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 677,
+        "agility": 635
       }
     },
     "tendencies": {
@@ -35601,33 +35601,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 698,
+        "kickPower": 756,
+        "composure": 691
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 723,
+        "longPass": 718,
+        "kickAccuracy": 726
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 692,
+        "ballKeeping": 727,
+        "ballTouch": 731
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 690,
+        "passCutReaction": 667,
+        "markOneOnOne": 662
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 726,
+        "contact": 767,
+        "stamina": 705
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 680,
+        "agility": 698
       }
     },
     "tendencies": {
@@ -35697,33 +35697,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 680,
+        "kickPower": 668,
+        "composure": 680
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 696,
+        "longPass": 658,
+        "kickAccuracy": 685
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 778,
+        "ballKeeping": 704,
+        "ballTouch": 731
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 604,
+        "passCutReaction": 603,
+        "markOneOnOne": 594
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 640,
+        "contact": 614,
+        "stamina": 667
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 745,
+        "agility": 739
       }
     },
     "tendencies": {
@@ -35793,33 +35793,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 686,
+        "kickPower": 667,
+        "composure": 688
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 669,
+        "longPass": 657,
+        "kickAccuracy": 679
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 736,
+        "ballKeeping": 715,
+        "ballTouch": 726
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 603,
+        "passCutReaction": 602,
+        "markOneOnOne": 595
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 643,
+        "contact": 613,
+        "stamina": 666
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 781,
+        "agility": 753
       }
     },
     "tendencies": {
@@ -35889,33 +35889,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 739,
+        "kickPower": 692,
+        "composure": 732
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 636,
+        "longPass": 625,
+        "kickAccuracy": 657
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 749,
+        "ballKeeping": 715,
+        "ballTouch": 699
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 603,
+        "passCutReaction": 605,
+        "markOneOnOne": 590
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 657,
+        "contact": 678,
+        "stamina": 682
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 752,
+        "agility": 719
       }
     },
     "tendencies": {
@@ -37268,7 +37268,7 @@
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
         "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -37364,7 +37364,7 @@
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
         "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -37513,33 +37513,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 738,
+        "kickPower": 685,
+        "composure": 723
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 818,
+        "longPass": 741,
+        "kickAccuracy": 795
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 775,
+        "ballKeeping": 794,
+        "ballTouch": 793
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 642,
+        "passCutReaction": 674,
+        "markOneOnOne": 663
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 683,
+        "contact": 661,
+        "stamina": 718
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 743,
+        "agility": 672
       }
     },
     "tendencies": {
@@ -38174,7 +38174,7 @@
         "skillNo": 1,
         "skillName": "反撃のパスカット",
         "skillId": "SK0055",
-        "skillRank": "銅"
+        "skillRank": "銀"
       }
     ],
     "traits": [
@@ -38220,33 +38220,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 682,
+        "kickPower": 663,
+        "composure": 657
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 713,
+        "longPass": 701,
+        "kickAccuracy": 706
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 683,
+        "ballKeeping": 694,
+        "ballTouch": 702
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 764,
+        "passCutReaction": 778,
+        "markOneOnOne": 783
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 727,
+        "contact": 735,
+        "stamina": 743
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 643,
+        "agility": 669
       }
     },
     "tendencies": {
@@ -38316,33 +38316,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 771,
+        "kickPower": 717,
+        "composure": 781
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 738,
+        "longPass": 695,
+        "kickAccuracy": 726
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 795,
+        "ballKeeping": 734,
+        "ballTouch": 774
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 618,
+        "passCutReaction": 596,
+        "markOneOnOne": 605
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 687,
+        "contact": 679,
+        "stamina": 701
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 788,
+        "agility": 791
       }
     },
     "tendencies": {
@@ -38824,33 +38824,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 605,
+        "kickPower": 576,
+        "composure": 570
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 654,
+        "longPass": 681,
+        "kickAccuracy": 629
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 587,
+        "ballKeeping": 568,
+        "ballTouch": 568
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 811,
+        "passCutReaction": 785,
+        "markOneOnOne": 777
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 785,
+        "contact": 658,
+        "stamina": 581
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 693,
+        "agility": 679
       }
     },
     "tendencies": {
@@ -41219,7 +41219,7 @@
     "playerId": "P0424",
     "name": "プジョン",
     "overall": 5460,
-    "maxUpgrade": null,
+    "maxUpgrade": 11454,
     "policy": "ポゼッション",
     "playStyle": "ストッパー",
     "playStyleLv": 2,
