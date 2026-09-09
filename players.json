@@ -40012,7 +40012,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-19",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "GK"
     ],
@@ -40115,7 +40115,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-19",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CF"
     ],
@@ -40218,7 +40218,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-19",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "RW"
     ],
@@ -40314,7 +40314,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-19",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ],
@@ -40799,6 +40799,514 @@
         "traitId": "TR0071",
         "traitRank": "銅",
         "traitDescription": "途中出場"
+      }
+    ]
+  },
+  {
+    "player_id": "P0420",
+    "playerId": "P0420",
+    "name": "ペドリ",
+    "overall": 7072,
+    "maxUpgrade": 15694,
+    "policy": "ポゼッション",
+    "playStyle": "パサー",
+    "playStyleLv": 2,
+    "mainPosition": "DM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年9月23日まで",
+    "mainSkill": "ベルベットパス",
+    "mainTrait": "正確無比なキック",
+    "category": "SP選手",
+    "nationality": "スペイン",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-09",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 928,
+        "kickPower": 920,
+        "composure": 946
+      },
+      "PAS": {
+        "shortPass": 1087,
+        "longPass": 1083,
+        "kickAccuracy": 1078
+      },
+      "DRB": {
+        "breakthrough": 1046,
+        "ballKeeping": 1062,
+        "ballTouch": 1062
+      },
+      "DEF": {
+        "tackleSaving": 926,
+        "passCutReaction": 930,
+        "markOneOnOne": 905
+      },
+      "PHY": {
+        "jump": 843,
+        "contact": 920,
+        "stamina": 999
+      },
+      "SPD": {
+        "speed": 925,
+        "agility": 1050
+      }
+    },
+    "tendencies": {
+      "attack": 1,
+      "defense": 0,
+      "dribble": 0,
+      "shoot": 0,
+      "longShoot": 0,
+      "shortPass": 2,
+      "longPass": -1,
+      "throughPass": 0,
+      "cutIn": 0,
+      "keep": 0,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": 0,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "ベルベットパス",
+        "skillId": "SK0062",
+        "skillRank": "金"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "正確無比なキック",
+        "traitId": "TR0172",
+        "traitRank": "金",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "懐の深いボールタッチ",
+        "traitId": "TR0059",
+        "traitRank": "銀",
+        "traitDescription": "絶好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "俊敏なドリブラー",
+        "traitId": "TR0094",
+        "traitRank": "銅",
+        "traitDescription": "絶好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0421",
+    "playerId": "P0421",
+    "name": "ダニ・オルモ",
+    "overall": 6819,
+    "maxUpgrade": 15468,
+    "policy": "ポゼッション",
+    "playStyle": "サイドアタッカー",
+    "playStyleLv": 2,
+    "mainPosition": "LW",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年9月23日まで",
+    "mainSkill": "ジャックナイフ",
+    "mainTrait": "不敵のボールタッチ",
+    "category": "SP選手",
+    "nationality": "スペイン",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-09",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 1009,
+        "kickPower": 957,
+        "composure": 1035
+      },
+      "PAS": {
+        "shortPass": 958,
+        "longPass": 932,
+        "kickAccuracy": 934
+      },
+      "DRB": {
+        "breakthrough": 1054,
+        "ballKeeping": 1049,
+        "ballTouch": 1071
+      },
+      "DEF": {
+        "tackleSaving": 833,
+        "passCutReaction": 832,
+        "markOneOnOne": 812
+      },
+      "PHY": {
+        "jump": 833,
+        "contact": 864,
+        "stamina": 934
+      },
+      "SPD": {
+        "speed": 967,
+        "agility": 1109
+      }
+    },
+    "tendencies": {
+      "attack": 1,
+      "defense": -1,
+      "dribble": 1,
+      "shoot": 0,
+      "longShoot": 0,
+      "shortPass": 0,
+      "longPass": 0,
+      "throughPass": 0,
+      "cutIn": -1,
+      "keep": 0,
+      "delay": -1,
+      "forwardRun": 2,
+      "feint": 1,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "ジャックナイフ",
+        "skillId": "SK0011",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "不敵のボールタッチ",
+        "traitId": "TR0173",
+        "traitRank": "金",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "冷静な突破",
+        "traitId": "TR0161",
+        "traitRank": "銀",
+        "traitDescription": "絶好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "ゴール前の嗅覚",
+        "traitId": "TR0016",
+        "traitRank": "銅",
+        "traitDescription": "好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0422",
+    "playerId": "P0422",
+    "name": "マルコス・ジョレンテ",
+    "overall": 6785,
+    "maxUpgrade": 15439,
+    "policy": "ポゼッション",
+    "playStyle": "攻撃的FB",
+    "playStyleLv": 2,
+    "mainPosition": "RB",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年9月23日まで",
+    "mainSkill": "奪還",
+    "mainTrait": "無限のアジリティ",
+    "category": "SP選手",
+    "nationality": "スペイン",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-09",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "RB"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 914,
+        "kickPower": 926,
+        "composure": 925
+      },
+      "PAS": {
+        "shortPass": 945,
+        "longPass": 941,
+        "kickAccuracy": 921
+      },
+      "DRB": {
+        "breakthrough": 1000,
+        "ballKeeping": 924,
+        "ballTouch": 937
+      },
+      "DEF": {
+        "tackleSaving": 1027,
+        "passCutReaction": 1004,
+        "markOneOnOne": 928
+      },
+      "PHY": {
+        "jump": 893,
+        "contact": 961,
+        "stamina": 1075
+      },
+      "SPD": {
+        "speed": 1053,
+        "agility": 1050
+      }
+    },
+    "tendencies": {
+      "attack": -1,
+      "defense": 1,
+      "dribble": -1,
+      "shoot": -1,
+      "longShoot": -1,
+      "shortPass": 0,
+      "longPass": 0,
+      "throughPass": -1,
+      "cutIn": -1,
+      "keep": -1,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": -1,
+      "press": 1
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "奪還",
+        "skillId": "SK0051",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "無限のアジリティ",
+        "traitId": "TR0144",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "スピードクラッシャー",
+        "traitId": "TR0020",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "ワイドカッター",
+        "traitId": "TR0053",
+        "traitRank": "銅",
+        "traitDescription": "好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0423",
+    "playerId": "P0423",
+    "name": "ミケル・オヤルサバル",
+    "overall": 6773,
+    "maxUpgrade": 15442,
+    "policy": "ポゼッション",
+    "playStyle": "ラインブレーカー",
+    "playStyleLv": 2,
+    "mainPosition": "CF",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年9月23日まで",
+    "mainSkill": "コントロールショット",
+    "mainTrait": "シュートセンス",
+    "category": "SP選手",
+    "nationality": "スペイン",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-09",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 1078,
+        "kickPower": 1064,
+        "composure": 1061
+      },
+      "PAS": {
+        "shortPass": 927,
+        "longPass": 898,
+        "kickAccuracy": 896
+      },
+      "DRB": {
+        "breakthrough": 935,
+        "ballKeeping": 948,
+        "ballTouch": 992
+      },
+      "DEF": {
+        "tackleSaving": 799,
+        "passCutReaction": 808,
+        "markOneOnOne": 803
+      },
+      "PHY": {
+        "jump": 883,
+        "contact": 927,
+        "stamina": 914
+      },
+      "SPD": {
+        "speed": 1000,
+        "agility": 1028
+      }
+    },
+    "tendencies": {
+      "attack": 2,
+      "defense": -1,
+      "dribble": 0,
+      "shoot": 2,
+      "longShoot": 1,
+      "shortPass": -1,
+      "longPass": -1,
+      "throughPass": -1,
+      "cutIn": 0,
+      "keep": -1,
+      "delay": -1,
+      "forwardRun": 2,
+      "feint": 0,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "コントロールショット",
+        "skillId": "SK0008",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "シュートセンス",
+        "traitId": "TR0017",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "ムービングスナイパー",
+        "traitId": "TR0045",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "高速のボールタッチ",
+        "traitId": "TR0077",
+        "traitRank": "銅",
+        "traitDescription": "好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0424",
+    "playerId": "P0424",
+    "name": "プジョン",
+    "overall": 5460,
+    "maxUpgrade": null,
+    "policy": "ポゼッション",
+    "playStyle": "ストッパー",
+    "playStyleLv": 2,
+    "mainPosition": "CB",
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "第5回サカつくチャレンジ累計スコア報酬",
+    "availablePeriod": "2026年9月23日まで",
+    "mainSkill": "鋭角的なタックル",
+    "mainTrait": "エアバトラー",
+    "category": "SP選手",
+    "nationality": "スペイン",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-09",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": null,
+        "kickPower": null,
+        "composure": null
+      },
+      "PAS": {
+        "shortPass": null,
+        "longPass": null,
+        "kickAccuracy": null
+      },
+      "DRB": {
+        "breakthrough": null,
+        "ballKeeping": null,
+        "ballTouch": null
+      },
+      "DEF": {
+        "tackleSaving": null,
+        "passCutReaction": null,
+        "markOneOnOne": null
+      },
+      "PHY": {
+        "jump": null,
+        "contact": null,
+        "stamina": null
+      },
+      "SPD": {
+        "speed": null,
+        "agility": null
+      }
+    },
+    "tendencies": {
+      "attack": -1,
+      "defense": 1,
+      "dribble": -1,
+      "shoot": -1,
+      "longShoot": -1,
+      "shortPass": 0,
+      "longPass": 0,
+      "throughPass": -1,
+      "cutIn": -1,
+      "keep": -1,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": -1,
+      "press": 1
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "鋭角的なタックル",
+        "skillId": "SK0025",
+        "skillRank": "銅"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "エアバトラー",
+        "traitId": "TR0008",
+        "traitRank": "銀",
+        "traitDescription": "絶好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "ピッチの分断者",
+        "traitId": "TR0039",
+        "traitRank": "銅",
+        "traitDescription": "絶好調"
       }
     ]
   }
