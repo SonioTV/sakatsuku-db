@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-10T11:52:11+09:00",
+  "examCount": 1,
+  "totalQuestions": 21,
+  "exams": [
+    {
+      "examId": "EX001",
+      "title": "第1回サカつく検定",
+      "round": 1,
+      "eventEnd": "2026-09-09 12:59:59",
+      "dayCount": 7,
+      "questionsPerDay": 3,
+      "choiceCount": 4,
+      "source": "ゲーム内「サカつく検定」スクリーンショット",
+      "notes": "サカつくに関する4択問題が毎日出題。解答期限終了後にホーム画面で結果発表し、正解時は追加報酬あり。",
+      "questions": [
+        {
+          "questionId": "EX001-D01-Q01",
+          "day": 1,
+          "questionNo": 1,
+          "question": "リーグ表彰に選ばれると獲得できるものは次のうちどれでしょうか？",
+          "choices": [
+            "覚醒Pt",
+            "強化Pt",
+            "連携Pt",
+            "サカつくPt"
+          ],
+          "correctChoice": 1,
+          "correctAnswer": "覚醒Pt",
+          "answerDeadline": "2026-09-03 12:59:59",
+          "notes": null,
+          "globalNo": 1
+        },
+        {
+          "questionId": "EX001-D01-Q02",
+          "day": 1,
+          "questionNo": 2,
+          "question": "サカつくモードの覚醒練習で「PERFECT」を獲得した際の能力増加量は何％でしょうか？",
+          "choices": [
+            "133%",
+            "166%",
+            "300%",
+            "200%"
+          ],
+          "correctChoice": 4,
+          "correctAnswer": "200%",
+          "answerDeadline": "2026-09-03 12:59:59",
+          "notes": null,
+          "globalNo": 2
+        },
+        {
+          "questionId": "EX001-D01-Q03",
+          "day": 1,
+          "questionNo": 3,
+          "question": "選手個性「繊細」の効果でアップする覚醒Pt獲得量は何％でしょうか？",
+          "choices": [
+            "5%",
+            "15%",
+            "20%",
+            "10%"
+          ],
+          "correctChoice": 2,
+          "correctAnswer": "15%",
+          "answerDeadline": "2026-09-03 12:59:59",
+          "notes": null,
+          "globalNo": 3
+        },
+        {
+          "questionId": "EX001-D02-Q01",
+          "day": 2,
+          "questionNo": 1,
+          "question": "サカつくモードにて、疲労や出場機会によって好調や不調に状態が変化するものはなんでしょうか？",
+          "choices": [
+            "スキル",
+            "成長期",
+            "年齢",
+            "コンディション"
+          ],
+          "correctChoice": 4,
+          "correctAnswer": "コンディション",
+          "answerDeadline": "2026-09-04 12:59:59",
+          "notes": null,
+          "globalNo": 4
+        },
+        {
+          "questionId": "EX001-D02-Q02",
+          "day": 2,
+          "questionNo": 2,
+          "question": "コンディションが「スランプ」の時の効果はどれでしょうか？",
+          "choices": [
+            "特別練習が行えない",
+            "移籍が出来なくなる",
+            "絶不調になる",
+            "試合に出場できない"
+          ],
+          "correctChoice": 3,
+          "correctAnswer": "絶不調になる",
+          "answerDeadline": "2026-09-04 12:59:59",
+          "notes": null,
+          "globalNo": 5
+        },
+        {
+          "questionId": "EX001-D02-Q03",
+          "day": 2,
+          "questionNo": 3,
+          "question": "フォーメーション上のポジションで適性が黄色の選手の能力は何％に下がるでしょうか？",
+          "choices": [
+            "55%",
+            "70%",
+            "85%",
+            "30%"
+          ],
+          "correctChoice": 2,
+          "correctAnswer": "70%",
+          "answerDeadline": "2026-09-04 12:59:59",
+          "notes": null,
+          "globalNo": 6
+        },
+        {
+          "questionId": "EX001-D03-Q01",
+          "day": 3,
+          "questionNo": 1,
+          "question": "サカつくモードの投資は何カ月ごとに行えるでしょうか？",
+          "choices": [
+            "3か月",
+            "6か月",
+            "1か月",
+            "12か月"
+          ],
+          "correctChoice": 1,
+          "correctAnswer": "3か月",
+          "answerDeadline": "2026-09-05 12:59:59",
+          "notes": null,
+          "globalNo": 7
+        },
+        {
+          "questionId": "EX001-D03-Q02",
+          "day": 3,
+          "questionNo": 2,
+          "question": "サカつくモードでクラブの資金を2回以上赤字にした場合のペナルティはどれでしょうか？",
+          "choices": [
+            "強制的に降格される",
+            "クラブレベルが下がる",
+            "監督を解任される",
+            "選手が放出される"
+          ],
+          "correctChoice": 2,
+          "correctAnswer": "クラブレベルが下がる",
+          "answerDeadline": "2026-09-05 12:59:59",
+          "notes": null,
+          "globalNo": 8
+        },
+        {
+          "questionId": "EX001-D03-Q03",
+          "day": 3,
+          "questionNo": 3,
+          "question": "サカつくモードで最優秀選手に選出される条件は、評価点の平均値の高さに加えて全試合の何割に出場することが必要？",
+          "choices": [
+            "10割",
+            "6割",
+            "4割",
+            "8割"
+          ],
+          "correctChoice": 4,
+          "correctAnswer": "8割",
+          "answerDeadline": "2026-09-05 12:59:59",
+          "notes": null,
+          "globalNo": 9
+        },
+        {
+          "questionId": "EX001-D04-Q01",
+          "day": 4,
+          "questionNo": 1,
+          "question": "サカつくモード外のポリシー相性でリアクションに有利なのは次のうちどれでしょうか？",
+          "choices": [
+            "カウンター",
+            "ポゼッション",
+            "リアクション",
+            "ムービング"
+          ],
+          "correctChoice": 2,
+          "correctAnswer": "ポゼッション",
+          "answerDeadline": "2026-09-06 12:59:59",
+          "notes": null,
+          "globalNo": 10
+        },
+        {
+          "questionId": "EX001-D04-Q02",
+          "day": 4,
+          "questionNo": 2,
+          "question": "サカつくモードでキャプテンを任せた際にチームのコンディションが上がる選手の個性はどれでしょうか？",
+          "choices": [
+            "ベテラン",
+            "繊細",
+            "リーダーの資質",
+            "闘争心"
+          ],
+          "correctChoice": 3,
+          "correctAnswer": "リーダーの資質",
+          "answerDeadline": "2026-09-06 12:59:59",
+          "notes": null,
+          "globalNo": 11
+        },
+        {
+          "questionId": "EX001-D04-Q03",
+          "day": 4,
+          "questionNo": 3,
+          "question": "チームカラーの「攻撃スタイル」についてポゼッションにゲージを寄せると試合中の頻度が上昇するものはどれでしょうか？",
+          "choices": [
+            "パスカット",
+            "ショートパス",
+            "ロングパス",
+            "ロングシュート"
+          ],
+          "correctChoice": 2,
+          "correctAnswer": "ショートパス",
+          "answerDeadline": "2026-09-06 12:59:59",
+          "notes": null,
+          "globalNo": 12
+        },
+        {
+          "questionId": "EX001-D05-Q01",
+          "day": 5,
+          "questionNo": 1,
+          "question": "選手総合力「SHO」に【含まれない】能力はどれでしょうか？",
+          "choices": [
+            "決定力",
+            "キック力",
+            "キック精度",
+            "冷静さ"
+          ],
+          "correctChoice": 3,
+          "correctAnswer": "キック精度",
+          "answerDeadline": "2026-09-07 12:59:59",
+          "notes": null,
+          "globalNo": 13
+        },
+        {
+          "questionId": "EX001-D05-Q02",
+          "day": 5,
+          "questionNo": 2,
+          "question": "サカつくモードで毎月発生する成長ドラマで獲得することが【できない】ものはどれでしょうか？",
+          "choices": [
+            "プレースタイル",
+            "パラメーター経験値",
+            "覚醒Pt",
+            "個性"
+          ],
+          "correctChoice": 1,
+          "correctAnswer": "プレースタイル",
+          "answerDeadline": "2026-09-07 12:59:59",
+          "notes": null,
+          "globalNo": 14
+        },
+        {
+          "questionId": "EX001-D05-Q03",
+          "day": 5,
+          "questionNo": 3,
+          "question": "スキル「変速ギア」が発動可能なエリアは次のうちどこでしょうか？",
+          "choices": [
+            "ミドルセンター",
+            "ミドルレフト",
+            "ミドルライト",
+            "オフェンスレフト"
+          ],
+          "correctChoice": 1,
+          "correctAnswer": "ミドルセンター",
+          "answerDeadline": "2026-09-07 12:59:59",
+          "notes": null,
+          "globalNo": 15
+        },
+        {
+          "questionId": "EX001-D06-Q01",
+          "day": 6,
+          "questionNo": 1,
+          "question": "直接オファーの成否にかかわるパラメータはどれでしょうか？",
+          "choices": [
+            "選手の調子",
+            "スカウトパワー",
+            "チーム総合力",
+            "全体練習レベル"
+          ],
+          "correctChoice": 2,
+          "correctAnswer": "スカウトパワー",
+          "answerDeadline": "2026-09-08 12:59:59",
+          "notes": null,
+          "globalNo": 16
+        },
+        {
+          "questionId": "EX001-D06-Q02",
+          "day": 6,
+          "questionNo": 2,
+          "question": "サカつくモードの選手を放出した場合、何カ月間直接オファーができなくなるでしょうか？",
+          "choices": [
+            "2カ月",
+            "12カ月",
+            "6カ月",
+            "24カ月"
+          ],
+          "correctChoice": 3,
+          "correctAnswer": "6カ月",
+          "answerDeadline": "2026-09-08 12:59:59",
+          "notes": null,
+          "globalNo": 17
+        },
+        {
+          "questionId": "EX001-D06-Q03",
+          "day": 6,
+          "questionNo": 3,
+          "question": "サカつくモードで選手の欲求が「キャリア」の選手が重視するものは何でしょうか？",
+          "choices": [
+            "出場機会",
+            "チームのポリシー",
+            "チームの成績",
+            "自身の年俸"
+          ],
+          "correctChoice": 1,
+          "correctAnswer": "出場機会",
+          "answerDeadline": "2026-09-08 12:59:59",
+          "notes": null,
+          "globalNo": 18
+        },
+        {
+          "questionId": "EX001-D07-Q01",
+          "day": 7,
+          "questionNo": 1,
+          "question": "試合のマネージャーディシジョンの指示の中に【無い】ものはどれでしょうか？",
+          "choices": [
+            "GO",
+            "TRY",
+            "STAY",
+            "ATTACK"
+          ],
+          "correctChoice": 4,
+          "correctAnswer": "ATTACK",
+          "answerDeadline": "2026-09-09 12:59:59",
+          "notes": null,
+          "globalNo": 19
+        },
+        {
+          "questionId": "EX001-D07-Q02",
+          "day": 7,
+          "questionNo": 2,
+          "question": "サカつくのリアルタイム対戦でマネージャーディシジョンに成功すると上昇するものは何でしょうか？",
+          "choices": [
+            "マッチレベル",
+            "マッチパワー",
+            "マッチモメンタム",
+            "マッチエネルギー"
+          ],
+          "correctChoice": 3,
+          "correctAnswer": "マッチモメンタム",
+          "answerDeadline": "2026-09-09 12:59:59",
+          "notes": null,
+          "globalNo": 20
+        },
+        {
+          "questionId": "EX001-D07-Q03",
+          "day": 7,
+          "questionNo": 3,
+          "question": "試合で延長戦が行われない場合、交代できる人数は何人でしょうか？",
+          "choices": [
+            "7人",
+            "3人",
+            "10人",
+            "5人"
+          ],
+          "correctChoice": 4,
+          "correctAnswer": "5人",
+          "answerDeadline": "2026-09-09 12:59:59",
+          "notes": null,
+          "globalNo": 21
+        }
+      ]
+    }
+  ]
+}

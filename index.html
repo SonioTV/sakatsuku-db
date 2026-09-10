@@ -1784,8 +1784,8 @@
   border-radius:10px;
 }
 .toolBannerMore{margin-top:8px}
-.managerNoteToolCard{
-  grid-column:1 / -1;
+.managerNoteToolCard,
+.certificationExamToolCard{
   min-height:82px;
   display:flex;
   flex-direction:column;
@@ -1793,29 +1793,42 @@
   justify-content:center;
   gap:3px;
   padding:12px 14px;
+  text-align:center;
+}
+.managerNoteToolCard{
   border-color:rgba(74,165,42,.28);
   background:linear-gradient(135deg,#f7fff3,#eef7ea);
   color:#245f12;
-  text-align:center;
 }
-.managerNoteToolCard .managerNoteToolTitle{
+.certificationExamToolCard{
+  border-color:rgba(21,95,128,.28);
+  background:linear-gradient(135deg,#f4fbff,#eaf5fb);
+  color:#155f80;
+}
+.managerNoteToolCard .managerNoteToolTitle,
+.certificationExamToolCard .certificationExamToolTitle{
   font-size:18px;
   font-weight:900;
   line-height:1.25;
 }
-.managerNoteToolCard .managerNoteToolSub{
+.managerNoteToolCard .managerNoteToolSub,
+.certificationExamToolCard .certificationExamToolSub{
   font-size:12px;
   font-weight:800;
-  color:#58704f;
   line-height:1.35;
 }
+.managerNoteToolCard .managerNoteToolSub{color:#58704f}
+.certificationExamToolCard .certificationExamToolSub{color:#557382}
 @media (max-width:480px){
   .toolBannerGrid{gap:7px}
   .toolBannerCard{padding:3px;border-radius:11px}
   .toolBannerCard img{border-radius:8px}
-  .managerNoteToolCard{min-height:68px;padding:9px 10px}
-  .managerNoteToolCard .managerNoteToolTitle{font-size:15px}
-  .managerNoteToolCard .managerNoteToolSub{font-size:10.5px}
+  .managerNoteToolCard,
+  .certificationExamToolCard{min-height:68px;padding:9px 7px}
+  .managerNoteToolCard .managerNoteToolTitle,
+  .certificationExamToolCard .certificationExamToolTitle{font-size:15px}
+  .managerNoteToolCard .managerNoteToolSub,
+  .certificationExamToolCard .certificationExamToolSub{font-size:10.5px}
 }
 
 
@@ -2276,8 +2289,8 @@
     <a href="stadium_simulation.html">スタジアム</a>
     <a href="clubhouse_simulation.html">クラブハウス</a>
     <a href="strongest_team_simulation.html">最強チームSim</a>
-    <a href="tier_list.html">Tier表メーカー</a>
     <a href="reroll_method_timing.html">リセマラ</a>
+    <a href="certification_exam.html">検定</a>
     <a href="dice_sugoroku_simulator.html">すごろく</a>
   </nav>
 
@@ -2512,6 +2525,10 @@
     <a class="toolBannerCard managerNoteToolCard" href="manager_note.html">
       <span class="managerNoteToolTitle">📘 監督ノート</span>
       <span class="managerNoteToolSub">ゲーム内マニュアルを分類・キーワードから検索</span>
+    </a>
+    <a class="toolBannerCard certificationExamToolCard" href="certification_exam.html">
+      <span class="certificationExamToolTitle">🎯 サカつく検定</span>
+      <span class="certificationExamToolSub">過去問・答え検索＆4択クイズに挑戦</span>
     </a>
   </div>
 </div>
