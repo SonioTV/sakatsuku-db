@@ -792,11 +792,30 @@
     border:0;
   }
   .resultPlayerName{
-    display:inline-flex;
+    display:flex;
     align-items:center;
     justify-content:center;
     gap:6px;
     flex-wrap:wrap;
+    width:100%;
+    min-width:0;
+    max-width:100%;
+    overflow:hidden;
+  }
+  #resultArea .row > .resultPlayerName{
+    min-width:0 !important;
+    overflow:hidden !important;
+  }
+  .resultPlayerName > span{
+    display:block;
+    width:100%;
+    min-width:0;
+    max-width:100%;
+    white-space:normal !important;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    line-height:1.25;
+    text-align:center;
   }
 
   .resultHeader{
@@ -1592,6 +1611,20 @@
     font-size:11px;
   }
   .comparisonValue.is-missing{ color:#94a3b8; font-weight:800; }
+  .comparisonValue.comparisonInfoValue{
+    white-space:normal;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    line-height:1.25;
+    padding-left:4px;
+    padding-right:4px;
+  }
+  .comparisonTabImage.is-player-page-link{
+    cursor:pointer;
+  }
+  .comparisonTabImage.is-player-page-link:hover{
+    opacity:.86;
+  }
 
   /* ===== Comparison: skills / traits ===== */
   .comparisonValue.comparisonAbilityCell{
@@ -2444,7 +2477,7 @@ function renderComparisonTabHead(player, index){
       <span class="comparisonTabNo">タブ${index+1}</span>
       <span class="comparisonTabImageWrap">
         ${player
-          ? `<img class="comparisonTabImage" src="${esc(imageSrc)}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><span class="comparisonTabEmpty" style="display:none;">?</span>`
+          ? `<img class="comparisonTabImage is-player-page-link" data-comparison-player-id="${esc(pid)}" src="${esc(imageSrc)}" alt="${esc(name)}の選手画像" loading="lazy" title="${esc(name)}の個別選手ページを別タブで開く" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><span class="comparisonTabEmpty" style="display:none;">?</span>`
           : `<span class="comparisonTabEmpty">＋</span>`}
       </span>
     </button>`;
@@ -2455,6 +2488,24 @@ function renderComparisonRow(label, values){
     <div class="comparisonLabel">${esc(label)}</div>
     ${values.map((value,index)=>`<div class="comparisonValue ${value==="-" ? "is-missing" : ""} ${index===3 ? "is-last" : ""}">${value}</div>`).join("")}
   `;
+}
+
+function renderComparisonInfoRow(label, values){
+  return `
+    <div class="comparisonLabel">${esc(label)}</div>
+    ${values.map((value,index)=>{
+      const shown = normalize(value) || "-";
+      return `<div class="comparisonValue comparisonInfoValue ${shown==="-" ? "is-missing" : ""} ${index===3 ? "is-last" : ""}">${esc(shown)}</div>`;
+    }).join("")}
+  `;
+}
+
+function comparisonPlayStyleText(player){
+  if(!player) return "-";
+  const style = normalize(player.playStyle);
+  const lv = toNum(player.playStyleLv);
+  if(!style) return "-";
+  return `${style}${lv!=null ? ` ${romanLv(lv)}` : ""}`;
 }
 
 function comparisonAbilityRankClass(rank){
@@ -2583,7 +2634,7 @@ function renderComparisonView(){
         <div class="comparisonToolbar">
           <div class="comparisonToolbarTitle">
             <strong>詳細ステータス比較</strong>
-            <small>基本数値・スキル・特徴・6カテゴリ・17項目を横並び比較／基本数値・6カテゴリ・17項目は表示切替対応</small>
+            <small>基本情報・基本数値・スキル・特徴・6カテゴリ・17項目を横並び比較／基本数値・6カテゴリ・17項目は表示切替対応</small>
           </div>
           <button type="button" id="comparisonDisplayToggle" class="comparisonDisplayToggle">表示：${COMPARISON_DISPLAY_MODE === "rank" ? "ランク" : "数値"}</button>
         </div>
@@ -2598,6 +2649,11 @@ function renderComparisonView(){
   out.innerHTML = `
     <div class="comparisonView">
       <div class="comparisonMatrix">
+        <div class="comparisonSection">基本情報</div>
+        ${renderComparisonInfoRow("選手名", players.map(p=>p ? normalize(p.name || p.player_name || getPlayerId(p)) : "-"))}
+        ${renderComparisonInfoRow("プレースタイル", players.map(p=>comparisonPlayStyleText(p)))}
+        ${renderComparisonInfoRow("国籍", players.map(p=>p ? normalize(p.nationality) : "-"))}
+
         <div class="comparisonSection">基本数値</div>
         ${renderComparisonBasicRow("初期総合力", "overall", overallRawValues)}
         ${renderComparisonBasicRow("最大強化", "maxUpgrade", maxRawValues)}
@@ -2616,7 +2672,18 @@ function renderComparisonView(){
     </div>
   `;
 
-  if(stickyMount) attachEvaluationTabHandlers(stickyMount);
+  if(stickyMount){
+    attachEvaluationTabHandlers(stickyMount);
+    stickyMount.querySelectorAll("[data-comparison-player-id]").forEach(img=>{
+      img.addEventListener("click", (e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+        const pid = String(img.getAttribute("data-comparison-player-id") || "").trim();
+        if(!pid) return;
+        window.open(`players/${encodeURIComponent(pid)}.html`, "_blank", "noopener");
+      });
+    });
+  }
   const displayToggle = $("comparisonDisplayToggle");
   if(displayToggle){
     displayToggle.addEventListener("click", ()=>{
