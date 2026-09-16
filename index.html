@@ -1598,6 +1598,7 @@
 .homeLatest{margin:12px 0 14px;padding:14px}
 .homeLatest .sectionTitle{margin:0 0 10px;font-size:22px}
 .homeLatestList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.homeLatestStatus{grid-column:1/-1;padding:12px;text-align:center;color:#667;font-size:13px;font-weight:800}
 .homeLatestItem{display:block;min-width:0;padding:10px 11px;border:1px solid #e3e7ee;border-radius:12px;background:#fafbfc;color:#0b63d1;text-decoration:none}
 .homeLatestDate{margin-bottom:3px;color:#2e7d32;font-size:11px;font-weight:900}
 .homeLatestTitle{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;font-size:14px;font-weight:900;line-height:1.45}
@@ -2334,43 +2335,100 @@
 
 <div class="card homeLatest">
   <h2 class="sectionTitle">最新の攻略記事</h2>
-  <div class="homeLatestList">
-
-    <a href="20260912_japan_sp_scout_review.html" class="homeLatestItem">
-      <img
-        class="homeLatestThumb"
-        src="img/articles/20260626_JNT_pickup_sp_scout_review/top.png"
-        alt="日本代表SP11名を現在のカウンター環境と比較"
-        decoding="async">
-      <div class="homeLatestDate">2026/09/12</div>
-      <div class="homeLatestTitle">【サカつく2026】待望の復刻開催!!日本代表SP選手スカウトは引くべき？SP選手11名を現在のカウンター環境と比較して徹底解説</div>
-    </a>
-
-<a href="20260909_pickup_sp_scout_review.html" class="homeLatestItem">
-  <img
-    class="homeLatestThumb"
-    src="img/articles/20260909_pickup_sp_scout_review/top.png"
-    alt="新SP「ペドリ」ピックアップSP選手スカウト評価"
-    width="278"
-    height="161"
-    decoding="async">
-  <div class="homeLatestDate">2026/09/09</div>
-  <div class="homeLatestTitle">【サカつく2026】ポゼッション強化が止まらない!?新SP「ペドリ」のピックアップSP選手スカウトは引くべき？新SP選手4名を徹底評価</div>
-</a>
-
-    <a href="20260826_premium_sp_scout_review.html" class="homeLatestItem">
-      <img
-        class="homeLatestThumb"
-        src="img/articles/20260826_premium_sp_scout_review/top.png"
-        alt="新SP「ラミン・ヤマル」プレミアムSP選手スカウト評価"
-        decoding="async">
-      <div class="homeLatestDate">2026/08/26</div>
-      <div class="homeLatestTitle">【サカつく2026】ついにポゼッションが超強化!!新SP「ラミン・ヤマル」は引くべき？プレミアムSP選手スカウト評価</div>
-    </a>
-
+  <div class="homeLatestList" id="homeLatestList" aria-live="polite">
+    <div class="homeLatestStatus">最新記事を読み込み中...</div>
   </div>
   <a href="articles.html" class="homeLatestMore">攻略記事をもっと見る →</a>
 </div>
+
+<script>
+(() => {
+  const list = document.getElementById("homeLatestList");
+  if (!list) return;
+
+  const setStatus = (message) => {
+    list.replaceChildren();
+    const status = document.createElement("div");
+    status.className = "homeLatestStatus";
+    status.textContent = message;
+    list.appendChild(status);
+  };
+
+  const formatDate = (card, href) => {
+    const explicitDate = String(card.dataset.date || "").trim();
+    const time = card.querySelector("time");
+    const timeValue = String(time?.getAttribute("datetime") || time?.textContent || "").trim();
+    const source = `${explicitDate} ${timeValue} ${href}`;
+
+    let match = source.match(/(20\d{2})[-_/]?(\d{2})[-_/]?(\d{2})/);
+    if (match) return `${match[1]}/${match[2]}/${match[3]}`;
+
+    const text = card.textContent || "";
+    match = text.match(/(20\d{2})年(\d{1,2})月(\d{1,2})日/);
+    if (match) {
+      return `${match[1]}/${String(match[2]).padStart(2, "0")}/${String(match[3]).padStart(2, "0")}`;
+    }
+
+    return String(card.querySelector(".meta")?.textContent || "").trim();
+  };
+
+  fetch("articles.html", { cache: "no-cache" })
+    .then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.text();
+    })
+    .then((html) => {
+      const doc = new DOMParser().parseFromString(html, "text/html");
+      const cards = Array.from(doc.querySelectorAll("#articleGrid .articleCard"));
+      const latest = cards.slice(0, 4);
+      if (!latest.length) throw new Error("記事カードが見つかりません");
+
+      const fragment = document.createDocumentFragment();
+
+      latest.forEach((card) => {
+        const linkEl = card.querySelector(".articleThumbLink[href], .linkbtn[href]");
+        const titleEl = card.querySelector("h3");
+        const href = String(linkEl?.getAttribute("href") || "").trim();
+        const title = String(titleEl?.textContent || "").trim();
+        if (!href || !title) return;
+
+        const item = document.createElement("a");
+        item.className = "homeLatestItem";
+        item.href = href;
+
+        const sourceImg = card.querySelector(".articleThumb");
+        const imageSrc = String(sourceImg?.getAttribute("data-original-src") || sourceImg?.getAttribute("src") || "").trim();
+        if (imageSrc) {
+          const img = document.createElement("img");
+          img.className = "homeLatestThumb";
+          img.src = imageSrc;
+          img.alt = String(sourceImg?.getAttribute("alt") || title).trim();
+          img.decoding = "async";
+          img.addEventListener("error", () => img.remove(), { once: true });
+          item.appendChild(img);
+        }
+
+        const date = document.createElement("div");
+        date.className = "homeLatestDate";
+        date.textContent = formatDate(card, href);
+        item.appendChild(date);
+
+        const titleNode = document.createElement("div");
+        titleNode.className = "homeLatestTitle";
+        titleNode.textContent = title;
+        item.appendChild(titleNode);
+
+        fragment.appendChild(item);
+      });
+
+      if (!fragment.childNodes.length) throw new Error("表示できる記事がありません");
+      list.replaceChildren(fragment);
+    })
+    .catch(() => {
+      setStatus("最新記事を取得できませんでした。攻略記事一覧からご確認ください。");
+    });
+})();
+</script>
 
 <a href="wc2026_special.html" class="wc-banner compactWcBanner">
   <span class="wc-banner-title">🏆 ワールドカップ2026特集</span>
