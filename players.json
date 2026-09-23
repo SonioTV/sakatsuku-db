@@ -40822,7 +40822,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-09-09",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "DM"
     ],
@@ -40925,7 +40925,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-09-09",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "LW"
     ],
@@ -41028,7 +41028,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-09-09",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "RB"
     ],
@@ -41131,7 +41131,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-09-09",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CF"
     ],
@@ -41234,7 +41234,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-09-09",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ],
@@ -41915,6 +41915,514 @@
         "traitId": "TR0043",
         "traitRank": "銀",
         "traitDescription": "途中出場"
+      }
+    ]
+  },
+  {
+    "player_id": "P0431",
+    "playerId": "P0431",
+    "name": "ラウル・ヒメネス",
+    "overall": 6721,
+    "maxUpgrade": 15348,
+    "policy": "ムービング",
+    "playStyle": "ストライカー",
+    "playStyleLv": 2,
+    "mainPosition": "CF",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ファイブピックアップSP選手スカウト",
+    "availablePeriod": "2026年10月7日まで",
+    "mainSkill": "コントロールショット",
+    "mainTrait": "狙いすました強振",
+    "category": "SP選手",
+    "nationality": "メキシコ",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-23",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 1047,
+        "kickPower": 1053,
+        "composure": 1077
+      },
+      "PAS": {
+        "shortPass": 9.15,
+        "longPass": 903,
+        "kickAccuracy": 8.91
+      },
+      "DRB": {
+        "breakthrough": 933,
+        "ballKeeping": 957,
+        "ballTouch": 995
+      },
+      "DEF": {
+        "tackleSaving": 814,
+        "passCutReaction": 802,
+        "markOneOnOne": 786
+      },
+      "PHY": {
+        "jump": 988,
+        "contact": 1009,
+        "stamina": 899
+      },
+      "SPD": {
+        "speed": 918,
+        "agility": 937
+      }
+    },
+    "tendencies": {
+      "attack": 1,
+      "defense": -1,
+      "dribble": 0,
+      "shoot": 1,
+      "longShoot": 0,
+      "shortPass": 0,
+      "longPass": 0,
+      "throughPass": 0,
+      "cutIn": 0,
+      "keep": 0,
+      "delay": -1,
+      "forwardRun": 0,
+      "feint": 0,
+      "press": -1
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "コントロールショット",
+        "skillId": "SK0008",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "狙いすました強振",
+        "traitId": "TR0114",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "力強いフィニッシュ",
+        "traitId": "TR0151",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "俊敏なタッチ",
+        "traitId": "TR0093",
+        "traitRank": "銅",
+        "traitDescription": "絶好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0432",
+    "playerId": "P0432",
+    "name": "コーディ・ガクポ",
+    "overall": 6820,
+    "maxUpgrade": 15399,
+    "policy": "ムービング",
+    "playStyle": "サイドアタッカー",
+    "playStyleLv": 2,
+    "mainPosition": "LW",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ファイブピックアップSP選手スカウト",
+    "availablePeriod": "2026年10月7日まで",
+    "mainSkill": "スリップビート",
+    "mainTrait": "俊敏なドリブラー",
+    "category": "SP選手",
+    "nationality": "オランダ",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-23",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 973,
+        "kickPower": 977,
+        "composure": 957
+      },
+      "PAS": {
+        "shortPass": 9.45,
+        "longPass": 937,
+        "kickAccuracy": 9.38
+      },
+      "DRB": {
+        "breakthrough": 1062,
+        "ballKeeping": 1052,
+        "ballTouch": 1049
+      },
+      "DEF": {
+        "tackleSaving": 777,
+        "passCutReaction": 806,
+        "markOneOnOne": 792
+      },
+      "PHY": {
+        "jump": 913,
+        "contact": 922,
+        "stamina": 928
+      },
+      "SPD": {
+        "speed": 1019,
+        "agility": 1068
+      }
+    },
+    "tendencies": {
+      "attack": 1,
+      "defense": -1,
+      "dribble": 1,
+      "shoot": 0,
+      "longShoot": 0,
+      "shortPass": 0,
+      "longPass": 0,
+      "throughPass": 0,
+      "cutIn": -1,
+      "keep": 0,
+      "delay": -1,
+      "forwardRun": 2,
+      "feint": 1,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "スリップビート",
+        "skillId": "SK0014",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "俊敏なドリブラー",
+        "traitId": "TR0094",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "懐の深いボールタッチ",
+        "traitId": "TR0059",
+        "traitRank": "銀",
+        "traitDescription": "絶好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "ランニングキッカー",
+        "traitId": "TR0047",
+        "traitRank": "銅",
+        "traitDescription": "絶好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0433",
+    "playerId": "P0433",
+    "name": "レアンドロ・トロサール",
+    "overall": 6860,
+    "maxUpgrade": 15459,
+    "policy": "カウンター",
+    "playStyle": "ドリブラー",
+    "playStyleLv": 3,
+    "mainPosition": "LM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ファイブピックアップSP選手スカウト",
+    "availablePeriod": "2026年10月7日まで",
+    "mainSkill": "ジャックナイフ",
+    "mainTrait": "俊敏なドリブラー",
+    "category": "SP選手",
+    "nationality": "ベルギー",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-23",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "LM"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 981,
+        "kickPower": 944,
+        "composure": 1027
+      },
+      "PAS": {
+        "shortPass": 10.47,
+        "longPass": 1026,
+        "kickAccuracy": 9.67
+      },
+      "DRB": {
+        "breakthrough": 1061,
+        "ballKeeping": 1046,
+        "ballTouch": 996
+      },
+      "DEF": {
+        "tackleSaving": 777,
+        "passCutReaction": 829,
+        "markOneOnOne": 804
+      },
+      "PHY": {
+        "jump": 849,
+        "contact": 863,
+        "stamina": 948
+      },
+      "SPD": {
+        "speed": 970,
+        "agility": 1051
+      }
+    },
+    "tendencies": {
+      "attack": 2,
+      "defense": -1,
+      "dribble": 2,
+      "shoot": 1,
+      "longShoot": 0,
+      "shortPass": 0,
+      "longPass": -1,
+      "throughPass": 0,
+      "cutIn": 1,
+      "keep": 1,
+      "delay": -1,
+      "forwardRun": 1,
+      "feint": 2,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "ジャックナイフ",
+        "skillId": "SK0011",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "俊敏なドリブラー",
+        "traitId": "TR0094",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "懐の深いパサー",
+        "traitId": "TR0058",
+        "traitRank": "銀",
+        "traitDescription": "絶好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "冷静なゲームメイク",
+        "traitId": "TR0155",
+        "traitRank": "銅",
+        "traitDescription": "途中出場"
+      }
+    ]
+  },
+  {
+    "player_id": "P0434",
+    "playerId": "P0434",
+    "name": "コビー・メイヌー",
+    "overall": 6650,
+    "maxUpgrade": 15114,
+    "policy": "ムービング",
+    "playStyle": "セントラルMF",
+    "playStyleLv": 2,
+    "mainPosition": "DM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ファイブピックアップSP選手スカウト",
+    "availablePeriod": "2026年10月7日まで",
+    "mainSkill": "チェーンカッター",
+    "mainTrait": "ピッチの分断者",
+    "category": "SP選手",
+    "nationality": "イングランド",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-23",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 862,
+        "kickPower": 873,
+        "composure": 863
+      },
+      "PAS": {
+        "shortPass": 9.31,
+        "longPass": 928,
+        "kickAccuracy": 9.5
+      },
+      "DRB": {
+        "breakthrough": 962,
+        "ballKeeping": 954,
+        "ballTouch": 1021
+      },
+      "DEF": {
+        "tackleSaving": 1017,
+        "passCutReaction": 1046,
+        "markOneOnOne": 931
+      },
+      "PHY": {
+        "jump": 867,
+        "contact": 961,
+        "stamina": 1057
+      },
+      "SPD": {
+        "speed": 918,
+        "agility": 945
+      }
+    },
+    "tendencies": {
+      "attack": 0,
+      "defense": 0,
+      "dribble": 0,
+      "shoot": 0,
+      "longShoot": 0,
+      "shortPass": 1,
+      "longPass": 0,
+      "throughPass": 0,
+      "cutIn": 0,
+      "keep": 0,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": 0,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "チェーンカッター",
+        "skillId": "SK0016",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "ピッチの分断者",
+        "traitId": "TR0039",
+        "traitRank": "銀",
+        "traitDescription": "絶好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "華麗なボール奪取",
+        "traitId": "TR0056",
+        "traitRank": "銀",
+        "traitDescription": "途中出場"
+      }
+    ]
+  },
+  {
+    "player_id": "P0435",
+    "playerId": "P0435",
+    "name": "アダム・ウォートン",
+    "overall": 6856,
+    "maxUpgrade": 15343,
+    "policy": "カウンター",
+    "playStyle": "パサー",
+    "playStyleLv": 2,
+    "mainPosition": "DM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ファイブピックアップSP選手スカウト",
+    "availablePeriod": "2026年10月7日まで",
+    "mainSkill": "ドリブンパス",
+    "mainTrait": "懐の深いロングパサー",
+    "category": "SP選手",
+    "nationality": "イングランド",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-23",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 838,
+        "kickPower": 841,
+        "composure": 869
+      },
+      "PAS": {
+        "shortPass": 1067,
+        "longPass": 1077,
+        "kickAccuracy": 1003
+      },
+      "DRB": {
+        "breakthrough": 1015,
+        "ballKeeping": 1038,
+        "ballTouch": 1058
+      },
+      "DEF": {
+        "tackleSaving": 950,
+        "passCutReaction": 1006,
+        "markOneOnOne": 961
+      },
+      "PHY": {
+        "jump": 887,
+        "contact": 933,
+        "stamina": 964
+      },
+      "SPD": {
+        "speed": 929,
+        "agility": 965
+      }
+    },
+    "tendencies": {
+      "attack": 1,
+      "defense": 0,
+      "dribble": 0,
+      "shoot": 0,
+      "longShoot": 0,
+      "shortPass": 2,
+      "longPass": -1,
+      "throughPass": 0,
+      "cutIn": 0,
+      "keep": 0,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": 0,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "ドリブンパス",
+        "skillId": "SK0063",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "懐の深いロングパサー",
+        "traitId": "TR0060",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "シルクタッチ",
+        "traitId": "TR0018",
+        "traitRank": "銀",
+        "traitDescription": "途中出場"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "ワイドカッター",
+        "traitId": "TR0053",
+        "traitRank": "銅",
+        "traitDescription": "好調"
       }
     ]
   }
