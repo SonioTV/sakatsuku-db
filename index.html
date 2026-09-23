@@ -2358,6 +2358,16 @@
   const list = document.getElementById("homeLatestList");
   if (!list) return;
 
+  // articles.html と同じカテゴリ別フォールバック。
+  // 記事固有画像が無い／読み込めない場合だけ使用する。
+  const FALLBACK_IMAGES = {
+    scout: "img/articles/top.png",
+    training: "img/articles/category_training.png",
+    team: "img/articles/category_team.png",
+    event: "img/articles/category_event.png",
+    info: "img/articles/category_info.png"
+  };
+
   const setStatus = (message) => {
     list.replaceChildren();
     const status = document.createElement("div");
@@ -2410,15 +2420,26 @@
 
         const sourceImg = card.querySelector(".articleThumb");
         const imageSrc = String(sourceImg?.getAttribute("data-original-src") || sourceImg?.getAttribute("src") || "").trim();
-        if (imageSrc) {
-          const img = document.createElement("img");
-          img.className = "homeLatestThumb";
-          img.src = imageSrc;
-          img.alt = String(sourceImg?.getAttribute("alt") || title).trim();
-          img.decoding = "async";
-          img.addEventListener("error", () => img.remove(), { once: true });
-          item.appendChild(img);
-        }
+        const category = String(card.dataset.category || "scout").trim();
+        const fallbackSrc = FALLBACK_IMAGES[category] || FALLBACK_IMAGES.scout;
+
+        // 記事固有画像を最優先。存在しない場合だけカテゴリ画像へ切り替える。
+        const img = document.createElement("img");
+        img.className = "homeLatestThumb";
+        img.src = imageSrc || fallbackSrc;
+        img.alt = String(sourceImg?.getAttribute("alt") || title).trim();
+        img.decoding = "async";
+        img.dataset.fallbackSrc = fallbackSrc;
+        img.addEventListener("error", () => {
+          const fallback = img.dataset.fallbackSrc || "";
+          const current = img.getAttribute("src") || "";
+          if (fallback && current !== fallback) {
+            img.src = fallback;
+            return;
+          }
+          img.remove();
+        });
+        item.appendChild(img);
 
         const date = document.createElement("div");
         date.className = "homeLatestDate";

@@ -43,7 +43,8 @@ body{
 }
 a{color:var(--blue-dark)}
 .site-banner{width:100%;display:flex;justify-content:center;padding:8px 12px 2px;background:#fff}
-.site-banner img{display:block;width:min(1100px,100%);height:auto;border-radius:12px}
+.site-banner a{display:block;width:min(1100px,100%);margin:0 auto}
+.site-banner img{display:block;width:100%;height:auto;margin:0 auto;border-radius:12px}
 .quick-links{
   display:grid;
   grid-template-columns:repeat(6,minmax(0,1fr));
@@ -247,6 +248,30 @@ details[open] summary::after{content:"−"}
   text-decoration:none;
   font-weight:900;
 }
+/* PC表示では本文・補助テキストを読みやすいサイズへ。スマホ側の既存指定は維持する。 */
+@media (min-width:769px){
+  body{font-size:17px}
+  .quick-links a{font-size:14px}
+  .breadcrumb{font-size:13px}
+  .heroLead{font-size:17px}
+  .meta{font-size:13px}
+  .notice{font-size:14px;line-height:1.65}
+  .section h2{font-size:25px}
+  .section h3{font-size:20px}
+  .toc a{font-size:14px}
+  .routeTitle{font-size:17px}
+  .routeText{font-size:15px;line-height:1.65}
+  .step div:last-child{font-size:16px}
+  .feature strong{font-size:16px}
+  .feature span{font-size:15px;line-height:1.65}
+  .tip,.warn{font-size:15px;line-height:1.65}
+  .modeCard b{font-size:16px}
+  .modeCard p{font-size:15px;line-height:1.65}
+  .detailBody{font-size:16px}
+  .pill{font-size:12px}
+  .footer{font-size:13px}
+}
+
 @media (max-width:768px){
   .quick-links{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:0 8px}
   .quick-links a{min-height:38px;padding:6px 3px;font-size:11px}
