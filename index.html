@@ -1786,7 +1786,8 @@
 }
 .toolBannerMore{margin-top:8px}
 .managerNoteToolCard,
-.certificationExamToolCard{
+.certificationExamToolCard,
+.specialTrainingToolCard{
   min-height:82px;
   display:flex;
   flex-direction:column;
@@ -1806,30 +1807,41 @@
   background:linear-gradient(135deg,#f4fbff,#eaf5fb);
   color:#155f80;
 }
+.specialTrainingToolCard{
+  border-color:rgba(180,120,0,.28);
+  background:linear-gradient(135deg,#fffaf0,#fff2cf);
+  color:#7a5200;
+}
 .managerNoteToolCard .managerNoteToolTitle,
-.certificationExamToolCard .certificationExamToolTitle{
+.certificationExamToolCard .certificationExamToolTitle,
+.specialTrainingToolCard .specialTrainingToolTitle{
   font-size:18px;
   font-weight:900;
   line-height:1.25;
 }
 .managerNoteToolCard .managerNoteToolSub,
-.certificationExamToolCard .certificationExamToolSub{
+.certificationExamToolCard .certificationExamToolSub,
+.specialTrainingToolCard .specialTrainingToolSub{
   font-size:12px;
   font-weight:800;
   line-height:1.35;
 }
 .managerNoteToolCard .managerNoteToolSub{color:#58704f}
 .certificationExamToolCard .certificationExamToolSub{color:#557382}
+.specialTrainingToolCard .specialTrainingToolSub{color:#7a6740}
 @media (max-width:480px){
   .toolBannerGrid{gap:7px}
   .toolBannerCard{padding:3px;border-radius:11px}
   .toolBannerCard img{border-radius:8px}
   .managerNoteToolCard,
-  .certificationExamToolCard{min-height:68px;padding:9px 7px}
+  .certificationExamToolCard,
+  .specialTrainingToolCard{min-height:68px;padding:9px 7px}
   .managerNoteToolCard .managerNoteToolTitle,
-  .certificationExamToolCard .certificationExamToolTitle{font-size:15px}
+  .certificationExamToolCard .certificationExamToolTitle,
+  .specialTrainingToolCard .specialTrainingToolTitle{font-size:15px}
   .managerNoteToolCard .managerNoteToolSub,
-  .certificationExamToolCard .certificationExamToolSub{font-size:10.5px}
+  .certificationExamToolCard .certificationExamToolSub,
+  .specialTrainingToolCard .specialTrainingToolSub{font-size:10.5px}
 }
 
 
@@ -2292,7 +2304,7 @@
     <a href="strongest_team_simulation.html">最強チームSim</a>
     <a href="reroll_method_timing.html">リセマラ</a>
     <a href="certification_exam.html">検定</a>
-    <a href="dice_sugoroku_simulator.html">すごろく</a>
+    <a href="https://subcaptaintsubasa.github.io/tra-sim/index.html#" target="_blank" rel="noopener noreferrer" aria-label="特別練習カードツール（外部サイト）" title="特別練習カードツール（外部サイト）">特練カード ↗</a>
   </nav>
 
   <aside class="databaseNav pcDatabaseNav" aria-label="データベースから探す">
@@ -2589,6 +2601,10 @@
     </a>
     <a class="toolBannerCard" href="dice_sugoroku_simulator.html">
       <img src="img/label/dice_sugoroku_simulator.png" alt="ダイスすごろくシミュレーター" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard specialTrainingToolCard" href="https://subcaptaintsubasa.github.io/tra-sim/index.html#" target="_blank" rel="noopener noreferrer" aria-label="特別練習カードツール（外部サイト）">
+      <span class="specialTrainingToolTitle">🃏 特練カード ↗</span>
+      <span class="specialTrainingToolSub">特別練習カードの検索・比較ツール｜制作者様の許可を得て掲載</span>
     </a>
     <a class="toolBannerCard managerNoteToolCard" href="manager_note.html">
       <span class="managerNoteToolTitle">📘 監督ノート</span>
