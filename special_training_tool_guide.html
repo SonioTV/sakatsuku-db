@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>特練カードツールの使い方｜検索・比較・代用検索・育成シミュレータ｜サカつく2026攻略DB</title>
+<meta name="description" content="サカつく2026の特別練習（特練）カードツールの使い方を初心者向けに解説。カード検索、Mycards、比較、代用検索、育成シミュレータ、バックアップまで目的別にまとめています。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://sakatsuku2026-db.com/special_training_tool_guide.html">
+<meta property="og:title" content="特練カードツールの使い方｜サカつく2026攻略DB">
+<meta property="og:description" content="特練カードの検索・比較・代用検索・育成シミュレータ・バックアップの使い方を目的別に解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://sakatsuku2026-db.com/special_training_tool_guide.html">
+<meta name="twitter:card" content="summary">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<style>
+:root{
+  --blue:#1e88ff;
+  --blue-dark:#0b5bd3;
+  --green:#16803b;
+  --green-bg:#effaf2;
+  --orange:#d96c00;
+  --orange-bg:#fff7ed;
+  --purple:#6d45c5;
+  --purple-bg:#f6f2ff;
+  --bg:#f6f7fb;
+  --card:#fff;
+  --text:#111827;
+  --muted:#5f6877;
+  --line:#dfe4ec;
+  --shadow:0 10px 26px rgba(15,23,42,.08);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.75;
+  overflow-wrap:anywhere;
+}
+a{color:var(--blue-dark)}
+.site-banner{width:100%;display:flex;justify-content:center;padding:8px 12px 2px;background:#fff}
+.site-banner img{display:block;width:min(1100px,100%);height:auto;border-radius:12px}
+.quick-links{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  max-width:980px;
+  margin:8px auto 0;
+  padding:0 12px;
+  gap:6px;
+}
+.quick-links a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:7px 6px;
+  border:1px solid #d6dbe4;
+  border-radius:10px;
+  background:#fff;
+  color:#263238;
+  text-decoration:none;
+  text-align:center;
+  font-size:13px;
+  font-weight:900;
+  line-height:1.2;
+}
+.wrap{max-width:980px;margin:0 auto;padding:14px 12px 70px}
+.breadcrumb{margin:2px 0 10px;font-size:12px;color:var(--muted)}
+.breadcrumb a{text-decoration:none}
+.hero{
+  padding:22px 20px;
+  border:1px solid #cfe0f6;
+  border-radius:22px;
+  background:linear-gradient(135deg,#f8fbff,#eef6ff);
+  box-shadow:var(--shadow);
+}
+.hero h1{margin:0;font-size:30px;line-height:1.35;letter-spacing:-.02em}
+.heroLead{margin:10px 0 0;font-size:16px;font-weight:700;color:#324358}
+.meta{margin-top:10px;font-size:12px;color:var(--muted)}
+.ctaRow{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:10px 16px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:900;
+  line-height:1.25;
+}
+.cta.primary{background:var(--blue-dark);color:#fff;box-shadow:0 8px 16px rgba(11,91,211,.22)}
+.cta.secondary{background:#fff;color:#222;border:1px solid #cfd6e0}
+.notice{
+  margin-top:12px;
+  padding:12px 14px;
+  border-left:4px solid var(--green);
+  border-radius:10px;
+  background:var(--green-bg);
+  font-size:13px;
+}
+.section{margin-top:18px;padding:18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow)}
+.section h2{margin:0 0 12px;font-size:23px;line-height:1.35}
+.section h3{margin:20px 0 8px;font-size:18px;line-height:1.45}
+.section p{margin:8px 0}
+.toc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.toc a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:8px;
+  border:1px solid #d9e3ef;
+  border-radius:11px;
+  background:#f8fbff;
+  text-decoration:none;
+  text-align:center;
+  font-size:13px;
+  font-weight:900;
+  line-height:1.3;
+}
+.routeGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.route{
+  padding:13px;
+  border:1px solid #dce3ec;
+  border-radius:14px;
+  background:#fff;
+}
+.routeTitle{font-weight:900;font-size:16px;line-height:1.35}
+.routeText{margin-top:5px;font-size:13px;color:var(--muted);line-height:1.55}
+.stepList{display:grid;gap:10px;margin-top:12px}
+.step{
+  display:grid;
+  grid-template-columns:38px 1fr;
+  gap:10px;
+  align-items:start;
+  padding:12px;
+  border:1px solid #e0e5ed;
+  border-radius:13px;
+  background:#fafbfc;
+}
+.stepNo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:var(--blue-dark);
+  color:#fff;
+  font-weight:900;
+}
+.step strong{display:block;margin-bottom:2px}
+.step div:last-child{font-size:14px}
+.featureGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.feature{
+  padding:13px;
+  border-radius:13px;
+  border:1px solid #e1e5ec;
+  background:#fafbfc;
+}
+.feature strong{display:block;margin-bottom:4px;font-size:15px}
+.feature span{display:block;font-size:13px;color:var(--muted);line-height:1.55}
+.tip{
+  margin:12px 0 0;
+  padding:12px 14px;
+  border-radius:11px;
+  background:#fff8e6;
+  border:1px solid #f0d698;
+  font-size:13px;
+}
+.tip strong{color:#8a5b00}
+.warn{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:11px;
+  background:var(--orange-bg);
+  border:1px solid #f3c99f;
+  font-size:13px;
+}
+.modeCards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.modeCard{padding:13px;border:1px solid #dfe4ec;border-radius:13px;background:#fff}
+.modeCard b{display:block;font-size:15px;margin-bottom:4px}
+.modeCard p{margin:0;font-size:13px;color:var(--muted);line-height:1.55}
+.kbd{
+  display:inline-block;
+  padding:1px 7px;
+  border:1px solid #cdd4de;
+  border-bottom-width:2px;
+  border-radius:6px;
+  background:#fff;
+  color:#222;
+  font-size:.92em;
+  font-weight:900;
+  white-space:nowrap;
+}
+details{
+  margin-top:9px;
+  border:1px solid #dfe4ec;
+  border-radius:12px;
+  background:#fff;
+  overflow:hidden;
+}
+summary{
+  cursor:pointer;
+  list-style:none;
+  padding:12px 42px 12px 13px;
+  position:relative;
+  font-weight:900;
+  line-height:1.4;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--blue-dark);font-size:19px}
+details[open] summary::after{content:"−"}
+.detailBody{padding:0 13px 13px;font-size:14px;color:#303846}
+.detailBody p:first-child{margin-top:0}
+.pillRow{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+.pill{display:inline-block;padding:5px 8px;border-radius:999px;background:#edf4ff;border:1px solid #c9dcf8;color:#214d85;font-size:11px;font-weight:900}
+.externalBox{
+  padding:15px;
+  border:1px solid #ccbdf0;
+  border-radius:14px;
+  background:var(--purple-bg);
+}
+.externalBox strong{color:#55319c}
+.footer{margin-top:20px;padding:18px 12px;text-align:center;color:var(--muted);font-size:12px}
+.footerLinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:8px}
+.footerLinks a{text-decoration:none;font-weight:800}
+.toTop{
+  position:fixed;
+  right:12px;
+  bottom:16px;
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(0,0,0,.12);
+  border-radius:12px;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 10px 24px rgba(0,0,0,.16);
+  color:#455a64;
+  text-decoration:none;
+  font-weight:900;
+}
+@media (max-width:768px){
+  .quick-links{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:0 8px}
+  .quick-links a{min-height:38px;padding:6px 3px;font-size:11px}
+  .wrap{padding:10px 10px 64px}
+  .hero{padding:16px 14px;border-radius:17px}
+  .hero h1{font-size:24px}
+  .heroLead{font-size:14px;line-height:1.6}
+  .ctaRow{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  .cta{min-height:44px;padding:9px 8px;font-size:13px;text-align:center}
+  .section{margin-top:12px;padding:14px 12px;border-radius:15px}
+  .section h2{font-size:20px}
+  .section h3{font-size:17px}
+  .toc{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .toc a{min-height:46px;padding:7px 5px;font-size:11.5px}
+  .routeGrid,.modeCards{grid-template-columns:1fr}
+  .route{padding:11px}
+  .featureGrid{grid-template-columns:1fr}
+  .step{grid-template-columns:32px 1fr;padding:10px;gap:8px}
+  .stepNo{width:32px;height:32px;font-size:13px}
+  .step div:last-child{font-size:13px}
+}
+@media (max-width:390px){
+  .quick-links{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hero h1{font-size:22px}
+  .ctaRow{grid-template-columns:1fr}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"特練カードツールの使い方",
+  "url":"https://sakatsuku2026-db.com/special_training_tool_guide.html",
+  "description":"サカつく2026の特別練習（特練）カードツールの使い方を、検索・Mycards・比較・代用検索・育成シミュレータ・バックアップの順に解説するページです。",
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"サカつく2026攻略DB",
+    "url":"https://sakatsuku2026-db.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"トップ","item":"https://sakatsuku2026-db.com/"},
+    {"@type":"ListItem","position":2,"name":"特練カードツールの使い方","item":"https://sakatsuku2026-db.com/special_training_tool_guide.html"}
+  ]
+}
+</script>
+</head>
+<body id="top">
+<header>
+  <div class="site-banner">
+    <a href="index.html" aria-label="サカつく2026攻略DB トップへ">
+      <img src="img/title.png" alt="ソニオTVの サカつく攻略データベース">
+    </a>
+  </div>
+  <nav class="quick-links" aria-label="主要コンテンツ">
+    <a href="index.html">トップ</a>
+    <a href="articles.html">攻略記事</a>
+    <a href="player_catalog.html">選手図鑑</a>
+    <a href="sp_evaluator.html">SP選手評価</a>
+    <a href="favorite_combos.html">コンボ診断</a>
+    <a href="manager_note.html">監督ノート</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumb"><a href="index.html">トップ</a> ＞ 特練カードツールの使い方</div>
+
+  <article>
+    <section class="hero">
+      <h1>特練カードツールの使い方</h1>
+      <p class="heroLead">特別練習（特練）カードを「探す・比較する・代用品を探す・育成に組み込む」ための外部ツールを、初めて使う人向けに目的別で解説します。</p>
+      <div class="meta">確認日：2026年9月23日 ｜ 対象：Traindex - サカつく2026 特別練習（特練）データベースツール</div>
+      <div class="ctaRow">
+        <a class="cta primary" href="https://subcaptaintsubasa.github.io/tra-sim/index.html" target="_blank" rel="noopener noreferrer">🃏 特練カードツールを開く ↗</a>
+        <a class="cta secondary" href="https://x.com/subcap_soccer" target="_blank" rel="noopener noreferrer">制作者「サブキャプテン翼 奪還」さん ↗</a>
+      </div>
+      <div class="notice"><strong>掲載について：</strong>本ツールは「サブキャプテン翼 奪還」さん制作の外部ツールです。当サイトは制作者様から掲載許可をいただき、使い方を独自に整理して紹介しています。</div>
+    </section>
+
+    <section class="section" aria-labelledby="toc-title">
+      <h2 id="toc-title">このページで分かること</h2>
+      <nav class="toc" aria-label="ページ内目次">
+        <a href="#quick-start">最初にやること</a>
+        <a href="#database">カードを探す</a>
+        <a href="#mycards">Mycards</a>
+        <a href="#compare">比較する</a>
+        <a href="#substitute">代用検索</a>
+        <a href="#simulator">育成シミュレータ</a>
+        <a href="#backup">バックアップ</a>
+        <a href="#tips">目的別の使い方</a>
+      </nav>
+    </section>
+
+    <section class="section" id="quick-start">
+      <h2>まずはここだけ：目的に合わせて3つの入口を使う</h2>
+      <p>特練カードツールには複数の機能がありますが、最初からすべて覚える必要はありません。まずは自分の目的に近い入口を使えばOKです。</p>
+      <div class="routeGrid">
+        <div class="route">
+          <div class="routeTitle">🔍 欲しいカードを探したい</div>
+          <div class="routeText"><strong>「図鑑」</strong>から検索・絞り込み・並び替え。特定ステータスやボーナス条件に合うカードを探すときに使います。</div>
+        </div>
+        <div class="route">
+          <div class="routeTitle">🗂 手持ちだけで考えたい</div>
+          <div class="routeText"><strong>「Mycards」</strong>で所持カードを管理。所持カードだけを対象に絞り込みや代用検索をしたいときに便利です。</div>
+        </div>
+        <div class="route">
+          <div class="routeTitle">🧪 育成プランを組みたい</div>
+          <div class="routeText"><strong>「シミュレータ」</strong>で選手条件や育成方針を設定し、特練カードの組み合わせを検討します。</div>
+        </div>
+      </div>
+      <div class="tip"><strong>おすすめ：</strong>初めて使う場合は「図鑑」でカードを見てから、手持ちを「Mycards」に登録し、その後シミュレータを使う流れが分かりやすいです。</div>
+    </section>
+
+    <section class="section" id="database">
+      <h2>① 特練カードを探す｜図鑑（DB）</h2>
+      <p>カードを探すときは、画面上部の <span class="kbd">図鑑</span> またはメニューの <span class="kbd">選手図鑑（DB）</span> を使います。名前検索だけでなく、カードの条件をかなり細かく絞れます。</p>
+
+      <div class="featureGrid">
+        <div class="feature"><strong>基本条件</strong><span>SSR / SR、所持カードのみなどで絞り込みできます。</span></div>
+        <div class="feature"><strong>習得要素</strong><span>スキル所持、アビリティ所持、覚醒Pt所持を条件にできます。</span></div>
+        <div class="feature"><strong>ボーナス条件</strong><span>ポジションやプレースタイルなど、カードのボーナス条件から探せます。</span></div>
+        <div class="feature"><strong>パラメータ</strong><span>複数のステータスを条件として指定し、OR / ANDで検索できます。</span></div>
+      </div>
+
+      <h3>絞り込みの基本手順</h3>
+      <div class="stepList">
+        <div class="step"><div class="stepNo">1</div><div><strong>「絞り込み」を開く</strong>レアリティ、所持状況、スキル・アビリティ、覚醒Pt、ボーナスなど必要な条件を選びます。</div></div>
+        <div class="step"><div class="stepNo">2</div><div><strong>必要な条件だけ選ぶ</strong>条件を増やしすぎると候補が少なくなるため、まずは重要な条件から絞るのがおすすめです。</div></div>
+        <div class="step"><div class="stepNo">3</div><div><strong>カード一覧から候補を確認</strong>候補カードを開き、パラメータや習得スキル・アビリティなどを比較します。</div></div>
+      </div>
+
+      <h3>並び替えを使う</h3>
+      <p><span class="kbd">並び替え</span> では、複数のステータスをソート基準として選択できます。選択したステータスの<strong>合計値が高い順</strong>に並び、絞り込み側で選んだボーナス条件も計算へ反映されます。</p>
+      <div class="tip"><strong>例：</strong>「決定力＋キック力」を重視したいなら、その2項目をソート基準にして候補を比較すると探しやすくなります。</div>
+    </section>
+
+    <section class="section" id="mycards">
+      <h2>② 所持カードを管理する｜Mycards</h2>
+      <p><span class="kbd">Mycards</span> は、自分が持っている特練カードを管理するための機能です。所持状況を登録しておくと、「持っているカードだけ」で検索・検討しやすくなります。</p>
+      <div class="featureGrid">
+        <div class="feature"><strong>所持 / 未所持の管理</strong><span>選択したカードを「所持にする」「未所持」に切り替えられます。</span></div>
+        <div class="feature"><strong>レベル管理</strong><span>選択カードのレベル変更に対応。限界突破数（凸）をまとめて適用する機能もあります。</span></div>
+      </div>
+      <div class="warn"><strong>所持カードを登録するメリット：</strong>図鑑の「所持のみ」や、代用検索の「所持カードのみを対象にする」、シミュレータの所持カード参照などを活用しやすくなります。</div>
+    </section>
+
+    <section class="section" id="compare">
+      <h2>③ 複数カードを比較する</h2>
+      <p>似たカードで迷ったときは、カードを<strong>比較リスト</strong>へ追加してから <span class="kbd">比較実行</span> を使います。単体で見るより、候補を並べて差を確認しやすくなります。</p>
+      <div class="stepList">
+        <div class="step"><div class="stepNo">1</div><div><strong>比較したいカードを比較リストへ追加</strong>候補を1枚ずつ比較対象に入れます。</div></div>
+        <div class="step"><div class="stepNo">2</div><div><strong>「比較実行」を押す</strong>選択したカードの比較画面を表示します。</div></div>
+        <div class="step"><div class="stepNo">3</div><div><strong>目的に必要な差を見る</strong>総合的な強さだけでなく、育成したい選手に必要なパラメータやスキル・アビリティを中心に見比べます。</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="substitute">
+      <h2>④ 似たカードを探す｜代用検索</h2>
+      <p><strong>代用検索</strong>は、「このカードを使いたいけど持っていない」「似た効果の手持ちカードで代用したい」というときに便利です。</p>
+      <p>代用検索設定では、検索基準として以下を選択できます。</p>
+      <div class="pillRow" aria-label="代用検索の検索基準">
+        <span class="pill">パラメータ</span>
+        <span class="pill">スキル / アビリティ</span>
+        <span class="pill">特殊効果（覚醒Ptなど）</span>
+      </div>
+      <h3>おすすめの使い方</h3>
+      <div class="stepList">
+        <div class="step"><div class="stepNo">1</div><div><strong>基準にしたいカードを決める</strong>まず「本当はこのカードを使いたい」という基準カードを決めます。</div></div>
+        <div class="step"><div class="stepNo">2</div><div><strong>代用検索設定を開く</strong>重視したい検索基準を選択します。</div></div>
+        <div class="step"><div class="stepNo">3</div><div><strong>手持ちだけなら「所持カードのみ」をON</strong>実際に使えるカードだけから候補を探したい場合に有効です。</div></div>
+        <div class="step"><div class="stepNo">4</div><div><strong>「検索実行」</strong>候補を確認し、必要に応じてカード比較も併用します。</div></div>
+      </div>
+      <div class="tip"><strong>補足：</strong>「元カードのボーナス割合を計算に含める」オプションもあります。ボーナス込みで近いカードを探したい場合に使い分けてください。</div>
+    </section>
+
+    <section class="section" id="simulator">
+      <h2>⑤ 育成シミュレータの使い方</h2>
+      <p>育成シミュレータでは、選手のポジション・プレースタイルや現在値、育成方針などを設定して、特練カードの組み合わせを検討できます。</p>
+
+      <div class="modeCards">
+        <div class="modeCard"><b>ポジション＆プレースタイル</b><p>育成対象の選手条件を設定します。</p></div>
+        <div class="modeCard"><b>コンディション</b><p>普通 / 好調 / 絶好調から選択します。</p></div>
+        <div class="modeCard"><b>育成方針</b><p>バランス / 総合値 / 特化から目的に合う方針を選びます。</p></div>
+      </div>
+
+      <h3>基本の流れ</h3>
+      <div class="stepList">
+        <div class="step"><div class="stepNo">1</div><div><strong>ポジション＆プレースタイルを設定</strong>最初に育成対象の選手タイプを決めます。</div></div>
+        <div class="step"><div class="stepNo">2</div><div><strong>排出時レアリティを選択</strong>☆1 / ☆2 / ☆3から対象に合わせて設定します。</div></div>
+        <div class="step"><div class="stepNo">3</div><div><strong>現在値・最大値を入力</strong>詳細設定では手動入力に加えて、画像から自動入力する機能も用意されています。</div></div>
+        <div class="step"><div class="stepNo">4</div><div><strong>コンディションと育成方針を選択</strong>何を重視する育成なのかを決めます。「特化」では優先したいステータスを設定できます。</div></div>
+        <div class="step"><div class="stepNo">5</div><div><strong>必要なら必須スキル / アビリティを指定</strong>育成後に確保したい要素がある場合は条件に加えます。</div></div>
+        <div class="step"><div class="stepNo">6</div><div><strong>「自動計算を実行」</strong>設定内容をもとに結果を確認します。</div></div>
+      </div>
+
+      <details>
+        <summary>入力できる主なパラメータを見る</summary>
+        <div class="detailBody">
+          <p>決定力、ショートパス、突破力、タックル、セービング、ジャンプ、走力、キック力、ロングパス、キープ力、パスカット、反応速度、コンタクト、敏捷性、冷静さ、キック精度、ボールタッチ、マーク、1対1、スタミナなどを設定できます。</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="backup">
+      <h2>⑥ 所持カード・育成データをバックアップする</h2>
+      <p>Mycardsや育成データを登録したら、バックアップ機能も確認しておくのがおすすめです。ツールには<strong>クラウドバックアップ</strong>と<strong>手動バックアップ</strong>があります。</p>
+      <div class="featureGrid">
+        <div class="feature"><strong>Google Drive</strong><span>Googleでログインし、「ドライブに保存」「ドライブから復元」で所持カードや育成データを保存・復元します。</span></div>
+        <div class="feature"><strong>JSONテキスト</strong><span>「書き出し」「読み込み」で手動バックアップできます。</span></div>
+      </div>
+      <div class="warn"><strong>大事なデータを登録した後：</strong>機種変更やブラウザ環境の変更に備え、バックアップを残しておくと安心です。</div>
+    </section>
+
+    <section class="section" id="tips">
+      <h2>目的別：こういうときはこの機能</h2>
+      <details open>
+        <summary>「決定力が高い特練カードを探したい」</summary>
+        <div class="detailBody"><p><strong>図鑑 → 並び替え</strong>を使い、決定力をソート基準にします。複数項目を重視するなら、決定力＋キック力など複数選択して合計値で比較できます。</p></div>
+      </details>
+      <details>
+        <summary>「持っているカードだけで育成を考えたい」</summary>
+        <div class="detailBody"><p>最初に<strong>Mycardsで所持カードを登録</strong>します。その後「所持のみ」の絞り込みや、代用検索の「所持カードのみを対象にする」を活用します。</p></div>
+      </details>
+      <details>
+        <summary>「欲しいカードを持っていないので代用品を探したい」</summary>
+        <div class="detailBody"><p><strong>代用検索</strong>を使います。パラメータ、スキル / アビリティ、特殊効果のうち、何を似せたいかを基準にして検索します。</p></div>
+      </details>
+      <details>
+        <summary>「2～3枚のどれを使うか迷っている」</summary>
+        <div class="detailBody"><p>候補カードを<strong>比較リスト</strong>へ追加し、「比較実行」で見比べます。育成対象の選手に必要なステータス・スキル・アビリティを優先して確認すると判断しやすくなります。</p></div>
+      </details>
+      <details>
+        <summary>「育成後の組み合わせを考えたい」</summary>
+        <div class="detailBody"><p><strong>シミュレータ</strong>でポジション＆プレースタイル、現在値・最大値、コンディション、育成方針、必須スキル / アビリティなどを設定して計算します。</p></div>
+      </details>
+    </section>
+
+    <section class="section">
+      <h2>ツール利用前に知っておきたいこと</h2>
+      <div class="externalBox">
+        <p><strong>このツールは外部サイトです。</strong></p>
+        <p>「特練カードツール（Traindex）」は「サブキャプテン翼 奪還」さんが制作・運営しています。本ページはサカつく2026攻略DBが、制作者様の掲載許可を得たうえで、2026年9月23日時点の公開画面をもとに使い方を整理したガイドです。</p>
+        <p>ツール本体のアップデートによって、ボタン名・配置・機能が変更される場合があります。</p>
+      </div>
+      <div class="ctaRow">
+        <a class="cta primary" href="https://subcaptaintsubasa.github.io/tra-sim/index.html" target="_blank" rel="noopener noreferrer">特練カードツールを使う ↗</a>
+        <a class="cta secondary" href="index.html">サカつく2026攻略DBへ戻る</a>
+      </div>
+    </section>
+  </article>
+
+  <footer class="footer">
+    <div class="footerLinks">
+      <a href="index.html">トップ</a>
+      <a href="articles.html">攻略記事</a>
+      <a href="about.html">このサイトについて</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
+    <div>© サカつく2026攻略DB</div>
+  </footer>
+</main>
+
+<a class="toTop" href="#top" aria-label="ページ上部へ戻る">▲</a>
+</body>
+</html>
