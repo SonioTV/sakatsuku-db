@@ -394,7 +394,7 @@ a:hover{opacity:.85}
 <strong aria-live="polite" id="articleResultCount">39件の記事を表示中</strong>
 <button class="articleResetBtn" id="articleResetBtn" type="button">条件をリセット</button>
 </div>
-</div><div class="grid articleGrid" id="articleGrid"><article class="card articleCard" data-category="training" data-date="2026-09-23" data-order="0"><a aria-label="【サカつく2026】特練カードツールの使い方｜検索・比較・代用・育成シミュレータを解説を読む" class="articleThumbLink" href="special_training_tool_guide.html"><img alt="【サカつく2026】特練カードツールの使い方｜検索・比較・代用・育成シミュレータを解説" class="articleThumb" data-article-href="special_training_tool_guide.html" data-original-src="img/articles/top.png" decoding="async" loading="lazy" src="img/articles/top.png"/></a>
+</div><div class="grid articleGrid" id="articleGrid"><article class="card articleCard" data-category="training" data-date="2026-09-23" data-order="0"><a aria-label="【サカつく2026】特練カードツールの使い方｜検索・比較・代用・育成シミュレータを解説を読む" class="articleThumbLink" href="special_training_tool_guide.html"><img alt="【サカつく2026】特練カードツールの使い方｜検索・比較・代用・育成シミュレータを解説" class="articleThumb" data-article-href="special_training_tool_guide.html" data-original-src="img/articles/special_training_tool_guide/top.png" decoding="async" loading="lazy" src="img/articles/special_training_tool_guide/top.png"/></a>
 <div class="meta">育成・初心者</div>
 <h3>【サカつく2026】特練カードツールの使い方｜検索・比較・代用・育成シミュレータを解説</h3>
 <p class="desc">特別練習カードを探す・所持カードを管理する・カードを比較する・代用候補を探す・育成をシミュレーションするまで、外部「特練カードツール」の基本操作と便利な使い方を初心者向けにまとめています。</p>
@@ -1007,7 +1007,15 @@ a:hover{opacity:.85}
 </script>
 <script>
 (() => {
-  const FALLBACK_IMAGE = 'img/articles/top.png';
+  // 記事固有画像が見つからない場合のみ、記事カテゴリに応じた画像を表示する。
+  // スカウト・ガチャは従来どおり img/articles/top.png を使用。
+  const FALLBACK_IMAGES = {
+    scout: 'img/articles/top.png',
+    training: 'img/articles/category_training.png',
+    team: 'img/articles/category_team.png',
+    event: 'img/articles/category_event.png',
+    info: 'img/articles/category_info.png'
+  };
 
   const cleanHref = (href) =>
     (href || '').split('#')[0].split('?')[0].trim();
@@ -1037,6 +1045,14 @@ a:hover{opacity:.85}
     } catch {
       return src;
     }
+  };
+
+  const isGenericScoutFallback = (src) =>
+    normalizeImageUrl(src).split('?')[0] === 'img/articles/top.png';
+
+  const fallbackFor = (img) => {
+    const category = img.closest('.articleCard')?.dataset.category || 'scout';
+    return FALLBACK_IMAGES[category] || FALLBACK_IMAGES.scout;
   };
 
   async function discoverTopImage(articleHref) {
@@ -1078,8 +1094,17 @@ a:hover{opacity:.85}
   document.querySelectorAll('.articleThumb[data-article-href]').forEach(img => {
     const articleHref = img.dataset.articleHref;
     const candidates = candidatePaths(articleHref);
+    const category = img.closest('.articleCard')?.dataset.category || 'scout';
     let index = 0;
     let discovering = false;
+    let fallbackApplied = false;
+
+    const applyFallback = () => {
+      if (fallbackApplied) return;
+      fallbackApplied = true;
+      img.classList.add('is-fallback');
+      img.src = fallbackFor(img);
+    };
 
     const tryNext = async () => {
       index += 1;
@@ -1092,16 +1117,20 @@ a:hover{opacity:.85}
       if (!discovering) {
         discovering = true;
         const discovered = await discoverTopImage(articleHref);
-        if (discovered && !candidates.includes(discovered)) {
+        const genericScoutImage = isGenericScoutFallback(discovered);
+
+        // スカウト以外では共通スカウト画像を「記事固有画像」として採用しない。
+        if (
+          discovered &&
+          !candidates.includes(discovered) &&
+          !(category !== 'scout' && genericScoutImage)
+        ) {
           img.src = discovered;
           return;
         }
       }
 
-      if (!img.src.endsWith('/articles/top.png')) {
-        img.classList.add('is-fallback');
-        img.src = FALLBACK_IMAGE;
-      }
+      applyFallback();
     };
 
     img.addEventListener('error', tryNext);
