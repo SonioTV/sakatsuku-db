@@ -2988,5 +2988,79 @@
         "conditionNo": 4
       }
     ]
+  },
+  {
+    "comboId": "C060",
+    "name": "レ・ブルー'26",
+    "formation": "4-3-3B",
+    "rank": "金",
+    "combo_policys": [
+      "ムービング"
+    ],
+    "requiredPlayers": 4,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "フランス強化ログインボーナス",
+    "availablePeriod": "2026年10月28日まで",
+    "effect": "ボールタッチ、タックル、マーク、コンタクトが80%アップ。フィールド上にいるフランス選手1人あたり、上記能力が追加で、上記能力が追加で2%強化される",
+    "effects": [
+      {
+        "status": "ボールタッチ",
+        "value": 80,
+        "additionalCondition": "フィールド上にいるフランス選手1人あたり、上記能力が追加で",
+        "additionalValue": 2
+      },
+      {
+        "status": "タックル",
+        "value": 80,
+        "additionalCondition": "フィールド上にいるフランス選手1人あたり、上記能力が追加で",
+        "additionalValue": 2
+      },
+      {
+        "status": "マーク",
+        "value": 80,
+        "additionalCondition": "フィールド上にいるフランス選手1人あたり、上記能力が追加で",
+        "additionalValue": 2
+      },
+      {
+        "status": "コンタクト",
+        "value": 80,
+        "additionalCondition": "フィールド上にいるフランス選手1人あたり、上記能力が追加で",
+        "additionalValue": 2
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 3,
+        "position": "CB",
+        "positionPlace": "Left",
+        "playStyle": "スプリントCB",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 5,
+        "position": "RB",
+        "positionPlace": null,
+        "playStyle": "守備的FB",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 7,
+        "position": "DM",
+        "positionPlace": "Left",
+        "playStyle": "セントラルMF",
+        "playStyleLv": 3,
+        "conditionNo": 3
+      },
+      {
+        "slotNo": 8,
+        "position": "AM",
+        "positionPlace": null,
+        "playStyle": "アタッカー",
+        "playStyleLv": 3,
+        "conditionNo": 4
+      }
+    ]
   }
 ]
