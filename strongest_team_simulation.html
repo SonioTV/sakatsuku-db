@@ -701,6 +701,46 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
 }
 /* ===== end PC pitch size adjustment ===== */
 
+/* ===== Detailed stat + formation combo simulation results ===== */
+.resultSummary{margin:10px 0 12px;}
+.resultSummaryGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;}
+.summaryStat{background:#f8fafc;border:1px solid #dbe4f0;border-radius:14px;padding:10px 12px;min-width:0;}
+.summaryStat .k{font-size:11px;color:#64748b;font-weight:900;line-height:1.35;}
+.summaryStat .v{margin-top:3px;font-size:20px;color:#0f172a;font-weight:1000;line-height:1.2;white-space:nowrap;}
+.summaryStat.buff .v{color:#0f9d58;}
+.summaryStat.final{background:#eef9f3;border-color:rgba(15,157,88,.28);}
+.summaryStat.final .v{color:#087a43;}
+.comboEffectPanel{margin-top:8px;padding:10px 12px;border-radius:14px;background:#fff7e8;border:1px solid rgba(245,158,11,.30);font-size:12px;line-height:1.65;color:#475569;font-weight:800;}
+.comboEffectPanel b{color:#92400e;}
+.comboEffectChips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.comboEffectChip{display:inline-flex;align-items:center;padding:4px 8px;border-radius:999px;background:#fff;border:1px solid rgba(245,158,11,.30);color:#92400e;font-size:11px;font-weight:900;white-space:nowrap;}
+.teamMetaLine{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.teamMetaChip{display:inline-flex;align-items:center;padding:4px 8px;border-radius:999px;background:#eef7fb;border:1px solid rgba(21,95,128,.18);color:#155f80;font-size:11px;font-weight:900;}
+#gridWrap th.metricCol,#gridWrap td.metricCol{text-align:right;width:135px;}
+.playerCell{min-width:0;}
+.desktopMetric{font-variant-numeric:tabular-nums;font-weight:900;}
+.buffGain{display:block;margin-top:2px;font-size:11px;color:#0f9d58;font-weight:900;}
+.mobileMetrics{display:none;}
+@media (max-width:820px){
+  .resultSummaryGrid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:680px){
+  .resultSummaryGrid{gap:6px;}
+  .summaryStat{padding:9px 10px;border-radius:12px;}
+  .summaryStat .k{font-size:10px;}
+  .summaryStat .v{font-size:17px;}
+  .comboEffectPanel{padding:9px 10px;font-size:11px;}
+  #gridWrap tbody tr{grid-template-columns:68px minmax(0,1fr) !important;}
+  #gridWrap tbody td.pos{grid-row:1 / span 1 !important;grid-column:1 !important;}
+  #gridWrap tbody td.playerCell{grid-column:2 !important;min-width:0;padding:9px 10px !important;}
+  #gridWrap tbody td.playerCell::before{display:none !important;}
+  #gridWrap tbody td.metricCol{display:none !important;}
+  .mobileMetrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 8px;margin-top:5px;font-size:10px;line-height:1.35;color:#64748b;font-weight:900;}
+  .mobileMetrics span{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .mobileMetrics .mobileBuffed{grid-column:1 / -1;color:#0f9d58;}
+}
+/* ===== end detailed stat results ===== */
+
 </style>
 
 <style id="review-content-styles">
@@ -727,7 +767,7 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
       <a href="favorite_combos.html">⭐ フォメコン診断</a>
     </div>
     <h1>最強チームシミュレーション</h1>
-    <p class="lead">選択したフォーメーションコンボに対して、ポリシー染め／ポリシー自由のどちらかを選んで最適メンバーを表示できます。</p>
+    <p class="lead">選択したフォーメーションコンボの発動条件と能力バフを反映し、17項目の詳細ステータス合計（最大実数値）が最大になる編成候補を表示します。</p>
 <div class="card simCard">
       <div class="sectionTitle">条件を選択</div>
       <div class="ctrl">
@@ -790,12 +830,16 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
           <div>シミュレーション結果</div>
           <span>緑色＝コンボ条件一致</span>
         </div>
+        <div id="resultSummary" class="resultSummary" style="display:none"></div>
 <div class="grid" id="gridWrap" style="display:none">
         <table id="resultTable" class="singleTeamTable">
           <thead>
             <tr>
               <th style="width:82px">ポジ</th>
               <th id="teamTableHead">ポリシー染め</th>
+              <th class="metricCol">最大強化</th>
+              <th class="metricCol">最大実数値</th>
+              <th class="metricCol">バフ後実数値</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
@@ -806,7 +850,7 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
   <div class="pitch" id="pitch" aria-label="pitch"></div>
 </div>
 
-        <div id="resultNote" class="resultNote" style="display:none">※名前が緑色の選手はフォーメーションコンボの発動条件を満たしています</div>
+        <div id="resultNote" class="resultNote" style="display:none"></div>
 </div>
 </div>
   </div>
@@ -831,7 +875,7 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
 <section class="review-content-shell" aria-labelledby="team-sim-guide-title">
   <div class="review-content">
     <h2 id="team-sim-guide-title">最強チームシミュレーションの考え方</h2>
-    <p>このツールは、使いたいフォーメーションコンボを起点に、条件へ適合する選手を各ポジションへ配置して編成候補を作るためのシミュレーターです。「総合力が高い11人」を単純に並べるのではなく、コンボ条件と選手データを同時に確認できます。</p>
+    <p>このツールは、使いたいフォーメーションコンボを起点に、条件へ適合する選手を各ポジションへ配置して編成候補を作るためのシミュレーターです。17項目の詳細ステータス合計を「最大実数値」として扱い、フォーメーションコンボの能力上昇効果や国籍連動の追加効果も反映して比較します。</p>
     <h3>ポリシー染めとポリシー自由を使い分ける</h3>
     <p>ポリシーを統一した編成を作りたい場合はポリシー染め、ポリシーに縛られず候補を比較したい場合はポリシー自由を使います。同じフォーメーションでも選択方法によって候補が変わるため、目的に合わせて切り替えてください。</p>
     <h3>コンボ条件を満たす選手を確認</h3>
@@ -868,6 +912,139 @@ function escapeHtml(str){
   const getFormationFilter = ()=>$("formationSel")?.value || "";
   const getNationality = ()=>$("nationalitySel")?.value || "";
   const getAcq = ()=>$("acqSel")?.value || "";
+
+
+  const DETAIL_STAT_PATHS = [
+    ["SHO","finishing"],["SHO","kickPower"],["SHO","composure"],
+    ["PAS","shortPass"],["PAS","longPass"],["PAS","kickAccuracy"],
+    ["DRB","breakthrough"],["DRB","ballKeeping"],["DRB","ballTouch"],
+    ["DEF","tackleSaving"],["DEF","passCutReaction"],["DEF","markOneOnOne"],
+    ["PHY","jump"],["PHY","contact"],["PHY","stamina"],
+    ["SPD","speed"],["SPD","agility"]
+  ];
+
+  // フォメコン表記 -> players.json の詳細ステータス。
+  // GKではDEF系3項目の表示名が異なるため、タックル/パスカット/マークと
+  // セービング/反応速度/1対1をポジションで明示的に分ける。
+  const EFFECT_STAT_MAP = {
+    "決定力":     {group:"SHO", key:"finishing", scope:"all"},
+    "キック力":   {group:"SHO", key:"kickPower", scope:"all"},
+    "冷静さ":     {group:"SHO", key:"composure", scope:"all"},
+    "ショートパス":{group:"PAS", key:"shortPass", scope:"all"},
+    "ロングパス": {group:"PAS", key:"longPass", scope:"all"},
+    "キック精度": {group:"PAS", key:"kickAccuracy", scope:"all"},
+    "突破力":     {group:"DRB", key:"breakthrough", scope:"all"},
+    "キープ力":   {group:"DRB", key:"ballKeeping", scope:"all"},
+    "ボールタッチ":{group:"DRB", key:"ballTouch", scope:"all"},
+    "タックル":   {group:"DEF", key:"tackleSaving", scope:"field"},
+    "セービング": {group:"DEF", key:"tackleSaving", scope:"gk"},
+    "パスカット": {group:"DEF", key:"passCutReaction", scope:"field"},
+    "反応速度":   {group:"DEF", key:"passCutReaction", scope:"gk"},
+    "マーク":     {group:"DEF", key:"markOneOnOne", scope:"field"},
+    "1対1":       {group:"DEF", key:"markOneOnOne", scope:"gk"},
+    "ジャンプ":   {group:"PHY", key:"jump", scope:"all"},
+    "コンタクト": {group:"PHY", key:"contact", scope:"all"},
+    "スタミナ":   {group:"PHY", key:"stamina", scope:"all"},
+    "走力":       {group:"SPD", key:"speed", scope:"all"},
+    "敏捷性":     {group:"SPD", key:"agility", scope:"all"}
+  };
+
+  function readDetailStat(player, group, key){
+    const raw = player?.stats?.[group]?.[key];
+    if(raw === null || raw === undefined || raw === "") return null;
+    const v = Number(raw);
+    return Number.isFinite(v) ? v : null;
+  }
+
+  function getBaseRealValue(player){
+    let total = 0;
+    for(const [group,key] of DETAIL_STAT_PATHS){
+      const v = readDetailStat(player, group, key);
+      if(v === null) return null;
+      total += v;
+    }
+    return total;
+  }
+
+  function hasCompleteDetailStats(player){
+    return getBaseRealValue(player) !== null;
+  }
+
+  function parseAdditionalNationality(condition){
+    const text = String(condition || "").trim();
+    const m = text.match(/フィールド上にいる(.+?)選手1人あたり/);
+    return m ? String(m[1] || "").trim() : "";
+  }
+
+  function getComboTargetNationalities(combo){
+    const set = new Set();
+    for(const effect of (combo?.effects || [])){
+      const add = Number(effect?.additionalValue);
+      if(!Number.isFinite(add) || add === 0) continue;
+      const nationality = parseAdditionalNationality(effect?.additionalCondition);
+      if(nationality) set.add(nationality);
+    }
+    return [...set];
+  }
+
+  function effectAppliesToSlot(effectStatus, slotPosition){
+    const map = EFFECT_STAT_MAP[String(effectStatus || "").trim()];
+    if(!map) return false;
+    const isGK = normalizePositionValue(slotPosition) === "GK";
+    if(map.scope === "gk") return isGK;
+    if(map.scope === "field") return !isGK;
+    return true;
+  }
+
+  function getEffectRate(effect, nationalityCounts){
+    let rate = Number(effect?.value);
+    if(!Number.isFinite(rate)) rate = 0;
+
+    const add = Number(effect?.additionalValue);
+    if(Number.isFinite(add) && add !== 0){
+      const nationality = parseAdditionalNationality(effect?.additionalCondition);
+      if(nationality){
+        rate += (Number(nationalityCounts?.get(nationality) || 0) * add);
+      }
+    }
+    return rate;
+  }
+
+  function getBuffedRealValue(player, slotPosition, combo, nationalityCounts){
+    const base = getBaseRealValue(player);
+    if(base === null) return null;
+
+    let gain = 0;
+    for(const effect of (combo?.effects || [])){
+      const status = String(effect?.status || "").trim();
+      const map = EFFECT_STAT_MAP[status];
+      if(!map || !effectAppliesToSlot(status, slotPosition)) continue;
+      const statValue = readDetailStat(player, map.group, map.key);
+      if(statValue === null) return null;
+      const rate = getEffectRate(effect, nationalityCounts);
+      gain += statValue * rate / 100;
+    }
+
+    return { base, gain, buffed: base + gain };
+  }
+
+  function formatInteger(value){
+    const n = Number(value);
+    return Number.isFinite(n) ? Math.round(n).toLocaleString("ja-JP") : "-";
+  }
+
+  function formatSignedInteger(value){
+    const n = Number(value);
+    if(!Number.isFinite(n)) return "-";
+    const rounded = Math.round(n);
+    return `${rounded >= 0 ? "+" : ""}${rounded.toLocaleString("ja-JP")}`;
+  }
+
+  function formatPercent(value){
+    const n = Number(value);
+    if(!Number.isFinite(n)) return "-";
+    return Number.isInteger(n) ? String(n) : String(Math.round(n * 10) / 10);
+  }
 
   function normalizePositionValue(v){
     return String(v ?? "").trim().toUpperCase();
@@ -1049,14 +1226,83 @@ const div = document.createElement("div");
   }
 }
 
-function makeResultCell(player, slot){
+function getSelectedMetrics(){
+  if(!LAST) return null;
+  return getSelectedTeamMode() === "free" ? LAST.metricsB : LAST.metricsA;
+}
+
+function makeResultCell(player, slot, detail){
   if(!player) return `<span class="mut">-</span>`;
   const cls = LAST && LAST.highlightOK(player, slot) ? "hit" : "";
   const pid = getPlayerId(player);
   const nm  = player.name || "-";
+  const maxUpgrade = detail?.maxUpgrade;
+  const baseReal = detail?.baseReal;
+  const buffedReal = detail?.buffedReal;
+  const gain = detail?.buffGain;
   return `<div class="two teamCell">
     <div class="${cls}"><a href="#" class="playerLink playerName" data-pid="${esc(pid)}">${esc(nm)}</a></div>
+    <div class="mobileMetrics">
+      <span>最大強化 ${formatInteger(maxUpgrade)}</span>
+      <span>実数 ${formatInteger(baseReal)}</span>
+      <span class="mobileBuffed">バフ後 ${formatInteger(buffedReal)}（${formatSignedInteger(gain)}）</span>
+    </div>
   </div>`;
+}
+
+function renderSummary(){
+  const summary = $("resultSummary");
+  if(!summary || !LAST){
+    if(summary) summary.style.display = "none";
+    return;
+  }
+
+  const metrics = getSelectedMetrics();
+  const label = getSelectedTeamLabel();
+  if(!metrics){
+    summary.style.display = "none";
+    return;
+  }
+
+  const effectChips = (LAST.combo?.effects || []).map(effect=>{
+    const rate = getEffectRate(effect, metrics.nationalityCounts);
+    return `<span class="comboEffectChip">${esc(effect?.status || "-")} +${esc(formatPercent(rate))}%</span>`;
+  }).join("");
+
+  const bonusNations = getComboTargetNationalities(LAST.combo);
+  const bonusLines = [];
+  for(const nationality of bonusNations){
+    const count = Number(metrics.nationalityCounts.get(nationality) || 0);
+    const addValues = (LAST.combo?.effects || [])
+      .filter(effect=>parseAdditionalNationality(effect?.additionalCondition) === nationality)
+      .map(effect=>Number(effect?.additionalValue))
+      .filter(Number.isFinite);
+    const uniqueAdds = [...new Set(addValues)];
+    if(uniqueAdds.length === 1){
+      bonusLines.push(`${nationality} ${count}人 → 国籍追加 +${formatPercent(count * uniqueAdds[0])}%`);
+    }else{
+      bonusLines.push(`${nationality} ${count}人 → 国籍追加効果を反映`);
+    }
+  }
+
+  summary.innerHTML = `
+    <div class="resultSummaryGrid">
+      <div class="summaryStat"><div class="k">${metrics.filledCount}名の最大強化合計</div><div class="v">${formatInteger(metrics.totalMaxUpgrade)}</div></div>
+      <div class="summaryStat"><div class="k">${metrics.filledCount}名の最大実数値合計</div><div class="v">${formatInteger(metrics.totalBaseReal)}</div></div>
+      <div class="summaryStat buff"><div class="k">フォメコン上昇値</div><div class="v">${formatSignedInteger(metrics.totalBuffGain)}</div></div>
+      <div class="summaryStat final"><div class="k">バフ後最大実数値合計</div><div class="v">${formatInteger(metrics.totalBuffedReal)}</div></div>
+    </div>
+    <div class="teamMetaLine">
+      <span class="teamMetaChip">${esc(label)}</span>
+      <span class="teamMetaChip">編成人数 ${metrics.filledCount}/${LAST.slots.length}</span>
+      ${bonusLines.map(x=>`<span class="teamMetaChip">${esc(x)}</span>`).join("")}
+    </div>
+    <div class="comboEffectPanel">
+      <b>${esc(LAST.combo?.name || "フォーメーションコンボ")}</b> の能力上昇を17項目へ反映
+      <div class="comboEffectChips">${effectChips || `<span class="comboEffectChip">能力上昇なし</span>`}</div>
+    </div>
+  `;
+  summary.style.display = "";
 }
 
 function renderTable(){
@@ -1067,6 +1313,7 @@ function renderTable(){
   const team = getSelectedTeamMode();
   const label = getSelectedTeamLabel();
   const picks = team === "free" ? LAST.picksB : LAST.picksA;
+  const metrics = team === "free" ? LAST.metricsB : LAST.metricsA;
   if(head) head.textContent = label;
 
   const pickBySlot = new Map(
@@ -1074,16 +1321,35 @@ function renderTable(){
       .filter(x => x && x.slot)
       .map(x => [String(x.slot.slotNo), x.player || null])
   );
+  const detailBySlot = metrics?.detailBySlot || new Map();
 
   tbody.innerHTML = "";
   for(const s of LAST.slots){
-    const player = pickBySlot.get(String(s.slotNo)) || null;
+    const slotKey = String(s.slotNo);
+    const player = pickBySlot.get(slotKey) || null;
+    const detail = detailBySlot.get(slotKey) || null;
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td class="pos" data-label="ポジション"><span>${esc(s.position)}</span></td>
-      <td data-label="${esc(label)}">${makeResultCell(player, s)}</td>
+      <td class="playerCell" data-label="${esc(label)}">${makeResultCell(player, s, detail)}</td>
+      <td class="metricCol desktopMetric" data-label="最大強化">${player ? formatInteger(detail?.maxUpgrade) : "-"}</td>
+      <td class="metricCol desktopMetric" data-label="最大実数値">${player ? formatInteger(detail?.baseReal) : "-"}</td>
+      <td class="metricCol desktopMetric" data-label="バフ後実数値">${player ? `${formatInteger(detail?.buffedReal)}<span class="buffGain">${formatSignedInteger(detail?.buffGain)}</span>` : "-"}</td>
     `;
     tbody.appendChild(tr);
+  }
+
+  renderSummary();
+
+  const note = $("resultNote");
+  if(note){
+    const selectedMetrics = metrics;
+    const omitted = Number(LAST.omittedCount || 0);
+    const partial = selectedMetrics && selectedMetrics.filledCount < LAST.slots.length
+      ? ` 条件内では${selectedMetrics.filledCount}/${LAST.slots.length}名まで編成できています。`
+      : "";
+    const omittedText = omitted > 0 ? ` 詳細ステータス未登録の${omitted}名は計算対象外です。` : "";
+    note.textContent = `※緑色の選手はフォーメーションコンボの発動条件一致。最大実数値＝17項目の詳細ステータス合計。バフ計算は小数を保持し、表示時に四捨五入しています。${partial}${omittedText}`;
   }
 }
 
@@ -1095,6 +1361,7 @@ function updateView(){
   const pitchWrap = $("pitchWrap");
   const note = $("resultNote");
   const box = $("resultsBox");
+  const summary = $("resultSummary");
 
   if(box){
     box.style.display = has ? "" : "none";
@@ -1109,7 +1376,11 @@ function updateView(){
   if(note){
     note.style.display = has ? "" : "none";
   }
+  if(summary){
+    summary.style.display = has ? "" : "none";
+  }
 }
+
 // ---- end pitch view state ----
 
   function setStatus(msg, isErr=false){
@@ -1491,19 +1762,382 @@ function getSimulationPlayers(){
   return base;
 }
 
+function hungarianMinimize(costMatrix){
+  const n = costMatrix.length;
+  if(!n) return [];
+  const m = costMatrix[0]?.length || 0;
+  if(m < n) throw new Error("Hungarian algorithm requires columns >= rows");
+
+  const u = Array(n + 1).fill(0);
+  const v = Array(m + 1).fill(0);
+  const p = Array(m + 1).fill(0);
+  const way = Array(m + 1).fill(0);
+
+  for(let i=1;i<=n;i++){
+    p[0] = i;
+    let j0 = 0;
+    const minv = Array(m + 1).fill(Infinity);
+    const used = Array(m + 1).fill(false);
+
+    do{
+      used[j0] = true;
+      const i0 = p[j0];
+      let delta = Infinity;
+      let j1 = 0;
+      for(let j=1;j<=m;j++){
+        if(used[j]) continue;
+        const cur = costMatrix[i0 - 1][j - 1] - u[i0] - v[j];
+        if(cur < minv[j]){
+          minv[j] = cur;
+          way[j] = j0;
+        }
+        if(minv[j] < delta){
+          delta = minv[j];
+          j1 = j;
+        }
+      }
+      for(let j=0;j<=m;j++){
+        if(used[j]){
+          u[p[j]] += delta;
+          v[j] -= delta;
+        }else{
+          minv[j] -= delta;
+        }
+      }
+      j0 = j1;
+    }while(p[j0] !== 0);
+
+    do{
+      const j1 = way[j0];
+      p[j0] = p[j1];
+      j0 = j1;
+    }while(j0 !== 0);
+  }
+
+  const assignment = Array(n).fill(-1);
+  for(let j=1;j<=m;j++){
+    if(p[j] > 0 && p[j] <= n) assignment[p[j] - 1] = j - 1;
+  }
+  return assignment;
+}
+
+function solveAssignmentFast(slots, candidatesBySlot, combo, requiredSlotKeys){
+  const playerMap = new Map();
+  for(const slot of slots){
+    for(const p of (candidatesBySlot.get(String(slot.slotNo)) || [])){
+      const pid = getPlayerId(p);
+      if(pid && !playerMap.has(pid)) playerMap.set(pid, p);
+    }
+  }
+  const players = [...playerMap.values()].sort((a,b)=>getPlayerId(a).localeCompare(getPlayerId(b)));
+  const dummyCount = slots.length;
+  const columnCount = players.length + dummyCount;
+  if(columnCount < slots.length){
+    return {picks:slots.map(slot=>({slot,player:null}))};
+  }
+
+  const nationalityCounts = new Map(); // 国籍追加条件が無いコンボ専用
+  const FILL_BONUS = 10000000000;
+  const REQUIRED_BONUS = 100000000;
+  const INELIGIBLE_SCORE = -1000000000000;
+  const scoreMatrix = [];
+  let maxScore = 0;
+
+  for(const slot of slots){
+    const slotKey = String(slot.slotNo);
+    const allowed = new Set((candidatesBySlot.get(slotKey) || []).map(getPlayerId));
+    const row = [];
+    for(const p of players){
+      const pid = getPlayerId(p);
+      if(!allowed.has(pid)){
+        row.push(INELIGIBLE_SCORE);
+        continue;
+      }
+      const calc = getBuffedRealValue(p, slot.position, combo, nationalityCounts);
+      if(!calc){
+        row.push(INELIGIBLE_SCORE);
+        continue;
+      }
+      const realUnits = Math.round(calc.buffed * 100);
+      const maxUpgrade = Number.isFinite(Number(p?.maxUpgrade)) ? Number(p.maxUpgrade) : 0;
+      const score = FILL_BONUS
+        + (requiredSlotKeys.has(slotKey) ? REQUIRED_BONUS : 0)
+        + realUnits
+        + (maxUpgrade * 0.000001);
+      row.push(score);
+      if(score > maxScore) maxScore = score;
+    }
+    for(let i=0;i<dummyCount;i++) row.push(0);
+    scoreMatrix.push(row);
+  }
+
+  const costMatrix = scoreMatrix.map(row=>row.map(score=>maxScore - score));
+  const assignment = hungarianMinimize(costMatrix);
+  const picks = slots.map((slot, rowIndex)=>{
+    const col = assignment[rowIndex];
+    if(col < 0 || col >= players.length) return {slot,player:null};
+    const player = players[col];
+    const allowed = new Set((candidatesBySlot.get(String(slot.slotNo)) || []).map(getPlayerId));
+    return allowed.has(getPlayerId(player)) ? {slot,player} : {slot,player:null};
+  });
+  return {picks};
+}
+
+function addFlowEdge(graph, from, to, cap, cost, meta=null){
+  const forward = {to, rev:graph[to].length, cap, cost, meta};
+  const reverse = {to:from, rev:graph[from].length, cap:0, cost:-cost, meta:null};
+  graph[from].push(forward);
+  graph[to].push(reverse);
+  return forward;
+}
+
+function heapPush(heap, item){
+  heap.push(item);
+  let i = heap.length - 1;
+  while(i > 0){
+    const p = (i - 1) >> 1;
+    if(heap[p][0] <= item[0]) break;
+    heap[i] = heap[p];
+    i = p;
+  }
+  heap[i] = item;
+}
+
+function heapPop(heap){
+  if(!heap.length) return null;
+  const root = heap[0];
+  const last = heap.pop();
+  if(heap.length){
+    let i = 0;
+    while(true){
+      let child = i * 2 + 1;
+      if(child >= heap.length) break;
+      if(child + 1 < heap.length && heap[child + 1][0] < heap[child][0]) child++;
+      if(heap[child][0] >= last[0]) break;
+      heap[i] = heap[child];
+      i = child;
+    }
+    heap[i] = last;
+  }
+  return root;
+}
+
+function minCostFlow(graph, source, sink, requiredFlow){
+  const n = graph.length;
+  const potential = Array(n).fill(0);
+  let flow = 0;
+  let cost = 0;
+
+  while(flow < requiredFlow){
+    const dist = Array(n).fill(Infinity);
+    const prevNode = Array(n).fill(-1);
+    const prevEdge = Array(n).fill(-1);
+    const heap = [];
+    dist[source] = 0;
+    heapPush(heap, [0, source]);
+
+    while(heap.length){
+      const cur = heapPop(heap);
+      if(!cur) break;
+      const [d, v] = cur;
+      if(d !== dist[v]) continue;
+      const edges = graph[v];
+      for(let i=0;i<edges.length;i++){
+        const e = edges[i];
+        if(e.cap <= 0) continue;
+        const reduced = e.cost + potential[v] - potential[e.to];
+        const nd = d + reduced;
+        if(nd < dist[e.to]){
+          dist[e.to] = nd;
+          prevNode[e.to] = v;
+          prevEdge[e.to] = i;
+          heapPush(heap, [nd, e.to]);
+        }
+      }
+    }
+
+    if(!Number.isFinite(dist[sink])) break;
+    for(let i=0;i<n;i++){
+      if(Number.isFinite(dist[i])) potential[i] += dist[i];
+    }
+
+    let add = requiredFlow - flow;
+    for(let v=sink; v!==source; v=prevNode[v]){
+      if(v < 0 || prevNode[v] < 0){ add = 0; break; }
+      add = Math.min(add, graph[prevNode[v]][prevEdge[v]].cap);
+    }
+    if(add <= 0) break;
+
+    let pathCost = 0;
+    for(let v=sink; v!==source; v=prevNode[v]){
+      const e = graph[prevNode[v]][prevEdge[v]];
+      pathCost += e.cost;
+      e.cap -= add;
+      graph[v][e.rev].cap += add;
+    }
+    flow += add;
+    cost += pathCost * add;
+  }
+
+  return {flow, cost};
+}
+
+function solveAssignmentWithQuota(slots, candidatesBySlot, combo, targetNationality, targetCount, desiredFlow, requiredSlotKeys){
+  const playerMap = new Map();
+  for(const slot of slots){
+    const list = candidatesBySlot.get(String(slot.slotNo)) || [];
+    for(const p of list){
+      const pid = getPlayerId(p);
+      if(pid && !playerMap.has(pid)) playerMap.set(pid, p);
+    }
+  }
+  const players = [...playerMap.values()].sort((a,b)=>getPlayerId(a).localeCompare(getPlayerId(b)));
+  if(!players.length || desiredFlow <= 0) return {flow:0, picks:slots.map(slot=>({slot,player:null}))};
+
+  let nextNode = 0;
+  const source = nextNode++;
+  const targetGate = targetNationality ? nextNode++ : null;
+  const otherGate = nextNode++;
+  const playerNode = new Map();
+  for(const p of players) playerNode.set(getPlayerId(p), nextNode++);
+  const slotNode = new Map();
+  for(const slot of slots) slotNode.set(String(slot.slotNo), nextNode++);
+  const sink = nextNode++;
+  const graph = Array.from({length:nextNode}, ()=>[]);
+
+  if(targetNationality){
+    addFlowEdge(graph, source, targetGate, Math.max(0, Number(targetCount)||0), 0);
+    addFlowEdge(graph, source, otherGate, Math.max(0, desiredFlow - (Number(targetCount)||0)), 0);
+  }else{
+    addFlowEdge(graph, source, otherGate, desiredFlow, 0);
+  }
+
+  for(const p of players){
+    const pid = getPlayerId(p);
+    const gate = targetNationality && getPlayerNationality(p) === targetNationality ? targetGate : otherGate;
+    addFlowEdge(graph, gate, playerNode.get(pid), 1, 0);
+  }
+
+  const assumedCounts = new Map();
+  if(targetNationality) assumedCounts.set(targetNationality, Number(targetCount)||0);
+  const assignmentEdges = [];
+  const REQUIRED_SLOT_BONUS = 100000000000000; // 部分編成時も発動条件スロットを優先
+  const REAL_VALUE_SCALE = 1000000;             // 最大実数値を最優先、最大強化は同点時のみ参照
+
+  const edgeSpecs = [];
+  let maxCompositeScore = 0;
+  for(const slot of slots){
+    const slotKey = String(slot.slotNo);
+    const sNode = slotNode.get(slotKey);
+    addFlowEdge(graph, sNode, sink, 1, 0);
+
+    const list = candidatesBySlot.get(slotKey) || [];
+    for(const p of list){
+      const pid = getPlayerId(p);
+      const calc = getBuffedRealValue(p, slot.position, combo, assumedCounts);
+      if(!calc) continue;
+      const realUnits = Math.round(calc.buffed * 100); // 0.01単位で厳密比較
+      const maxUpgrade = Number.isFinite(Number(p?.maxUpgrade)) ? Math.round(Number(p.maxUpgrade)) : 0;
+      const requiredBonus = requiredSlotKeys.has(slotKey) ? REQUIRED_SLOT_BONUS : 0;
+      const compositeScore = requiredBonus + (realUnits * REAL_VALUE_SCALE) + maxUpgrade;
+      maxCompositeScore = Math.max(maxCompositeScore, compositeScore);
+      edgeSpecs.push({player:p, slot, pid, sNode, slotKey, compositeScore});
+    }
+  }
+
+  // 各経路は必ず player -> slot を1本通るため、共通値から差し引いて非負コスト化しても最適解は変わらない。
+  // これによりDijkstra + potentialで高速に最小費用流を解ける。
+  for(const spec of edgeSpecs){
+    const edgeCost = maxCompositeScore - spec.compositeScore;
+    const edge = addFlowEdge(graph, playerNode.get(spec.pid), spec.sNode, 1, edgeCost, {pid:spec.pid, slotKey:spec.slotKey});
+    assignmentEdges.push({edge, player:spec.player, slot:spec.slot});
+  }
+
+  const flowResult = minCostFlow(graph, source, sink, desiredFlow);
+  const chosenBySlot = new Map();
+  for(const ref of assignmentEdges){
+    if(ref.edge.cap === 0){
+      chosenBySlot.set(String(ref.slot.slotNo), ref.player);
+    }
+  }
+
+  return {
+    flow: flowResult.flow,
+    picks: slots.map(slot=>({slot, player:chosenBySlot.get(String(slot.slotNo)) || null}))
+  };
+}
+
+function computeTeamMetrics(picks, combo, reqMap){
+  const nationalityCounts = new Map();
+  for(const item of (picks || [])){
+    const p = item?.player;
+    if(!p) continue;
+    const nationality = getPlayerNationality(p);
+    if(nationality) nationalityCounts.set(nationality, (nationalityCounts.get(nationality) || 0) + 1);
+  }
+
+  let totalMaxUpgrade = 0;
+  let totalBaseReal = 0;
+  let totalBuffGain = 0;
+  let totalBuffedReal = 0;
+  let filledCount = 0;
+  let requiredFilled = 0;
+  const detailBySlot = new Map();
+
+  for(const item of (picks || [])){
+    const slot = item?.slot;
+    const player = item?.player;
+    if(!slot || !player) continue;
+    const calc = getBuffedRealValue(player, slot.position, combo, nationalityCounts);
+    if(!calc) continue;
+
+    const maxUpgrade = Number(player?.maxUpgrade);
+    const maxValue = Number.isFinite(maxUpgrade) ? maxUpgrade : 0;
+    const slotKey = String(slot.slotNo);
+    const isRequired = !!(reqMap?.bySlot?.get(slotKey) || []).length;
+
+    filledCount++;
+    if(isRequired) requiredFilled++;
+    totalMaxUpgrade += maxValue;
+    totalBaseReal += calc.base;
+    totalBuffGain += calc.gain;
+    totalBuffedReal += calc.buffed;
+    detailBySlot.set(slotKey, {
+      maxUpgrade:maxValue,
+      baseReal:calc.base,
+      buffGain:calc.gain,
+      buffedReal:calc.buffed
+    });
+  }
+
+  return {
+    nationalityCounts,
+    totalMaxUpgrade,
+    totalBaseReal,
+    totalBuffGain,
+    totalBuffedReal,
+    filledCount,
+    requiredFilled,
+    detailBySlot
+  };
+}
+
 function simulate(){
   if(!SLOTS.length){
+    LAST = null;
+    updateView();
     setStatus("formation_slots.json が見つかりません。ファイルを同じフォルダに配置してください。", true);
     return;
   }
   const comboId = $("comboSel")?.value;
   const combo = COMBOS.find(c=>String(c.comboId)===String(comboId));
   if(!combo){
+    LAST = null;
+    updateView();
     setStatus("フォーメーションコンボを選択してください。", true);
     return;
   }
 
-  const mode = getMode(); // always maxUpgrade
   const requiredNationality = getNationality();
   const requiredAcq = getAcq();
   const slots = SLOTS
@@ -1511,6 +2145,8 @@ function simulate(){
     .sort((a,b)=>Number(a.slotNo)-Number(b.slotNo));
 
   if(!slots.length){
+    LAST = null;
+    updateView();
     setStatus("選択したコンボのスロット定義が見つかりません（formation_slots.json を確認してください）", true);
     return;
   }
@@ -1518,35 +2154,10 @@ function simulate(){
   const forcedPolicy = Array.isArray(combo.combo_policys) ? combo.combo_policys[0] : (combo.combo_policys || "");
   const reqMap = buildRequirementMap(combo, slots);
 
-  // greedy pick (unique players)
-  const pickBest = (available, slot, forcePol)=>{
-    let best = null;
-    let bestVal = -Infinity;
-    const slotPos = String(slot?.position ?? "");
-    const slotKey = String(slot?.slotNo ?? slot?.slot_no ?? "");
-    const reqs = (reqMap.bySlot && slotKey) ? (reqMap.bySlot.get(slotKey) || []) : [];
-    for(const p of available){
-      if(!matchPlayerForSlot(p, combo, slotPos, reqMap, "", forcePol, requiredNationality, requiredAcq)) continue;
-      // If this slot is part of combo_requirements, enforce exact requirement match (playStyle & Lv)
-      if(reqs.length){
-        const ps = String(p?.playStyle ?? "");
-        const lv = Number(p?.playStyleLv ?? 0);
-        if(!reqs.some(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0))) continue;
-      }
-      const v = Number(p?.[mode] ?? -Infinity);
-      if(v > bestVal){
-        bestVal = v;
-        best = p;
-      }
-    }
-    return best;
-  };
-
   const highlightOK = (player, slot)=>{
     if(!slot) return false;
     const slotKey = String(slot.slotNo ?? slot.slot_no ?? "");
 
-    // slotNo 指定要件が1つでもある場合は、slotNo一致のスロットのみ判定対象にする
     const hasSlotReq = (reqMap.bySlot && reqMap.bySlot.size > 0);
     if(hasSlotReq){
       const reqs = reqMap.bySlot.get(slotKey) || [];
@@ -1556,7 +2167,6 @@ function simulate(){
       return reqs.some(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
     }
 
-    // slotNo 指定が無いコンボのみ、従来通り position 要件で判定
     const reqs = (reqMap.byPos.get(slot.position) || []);
     if(!reqs || !reqs.length) return false;
     const ps = String(player?.playStyle ?? "");
@@ -1564,20 +2174,9 @@ function simulate(){
     return reqs.some(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
   };
 
-  const makeCell = (player, slot)=>{
-    if(!player) return `<span class="mut">-</span>`;
-    const cls = highlightOK(player, slot) ? "hit" : "";
-    const pid = String(player.player_id || player.playerId || "");
-    const nm  = (player.name || "-");
-    // player name is clickable -> opens detail popup (players.json)
-    return `<div class="two">
-      <div class="${cls}"><a href="#" class="playerLink playerName" data-pid="${esc(pid)}">${esc(nm)}</a></div>
-    </div>`;
-  };
-
-  const simulationPlayers = getSimulationPlayers();
+  const scopedPlayers = getSimulationPlayers();
   const filterMode = getPlayerFilterMode();
-  if(!simulationPlayers.length){
+  if(!scopedPlayers.length){
     const msg = filterMode === "available"
       ? "入手可能SP選手が見つかりません。players.json の available を確認してください。"
       : (filterMode === "favorite"
@@ -1589,12 +2188,16 @@ function simulate(){
     return;
   }
 
-  const getPower = (p)=>{
-    const max = Number(p?.maxUpgrade);
-    if(Number.isFinite(max)) return max;
-    const overall = Number(p?.overall);
-    return Number.isFinite(overall) ? overall : -Infinity;
-  };
+  // 最大実数値は17項目がすべて登録済みの選手だけを対象にする。
+  // maxUpgradeで穴埋めすると異なる尺度が混在するため行わない。
+  const simulationPlayers = scopedPlayers.filter(hasCompleteDetailStats);
+  const omittedCount = scopedPlayers.length - simulationPlayers.length;
+  if(!simulationPlayers.length){
+    setStatus("選択条件内の選手に17項目の詳細ステータス登録がありません。players.json を確認してください。", true);
+    LAST = null;
+    updateView();
+    return;
+  }
 
   const getSlotReqs = (slot)=>{
     const slotKey = String(slot?.slotNo ?? slot?.slot_no ?? "");
@@ -1609,110 +2212,112 @@ function simulate(){
     return reqs.some(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
   };
 
-  const sortPlayersByPower = (arr)=>arr.slice().sort((a,b)=>{
-    const d = getPower(b) - getPower(a);
-    if(d!==0) return d;
-    return String(a?.name||"").localeCompare(String(b?.name||""), "ja");
-  });
+  const targetNationalities = getComboTargetNationalities(combo);
+  if(targetNationalities.length > 1){
+    setStatus("1つのフォーメーションコンボに複数国籍の追加条件が設定されています。現在のデータ構造を確認してください。", true);
+    LAST = null;
+    updateView();
+    return;
+  }
+  const targetNationality = targetNationalities[0] || "";
+  const requiredSlotKeys = new Set(slots.filter(s=>getSlotReqs(s).length > 0).map(s=>String(s.slotNo)));
 
-  // 発動条件スロットを先に「最大強化」合計が最大になる組み合わせで固定し、残りを総合力順で埋める
-  const buildPicks = (forcePol)=>{
-    const requiredSlots = slots.filter(s=>getSlotReqs(s).length > 0);
-    const normalSlots = slots.filter(s=>getSlotReqs(s).length === 0);
-    const chosenBySlot = new Map();
-    const usedIds = new Set();
-
-    const reqCandidates = requiredSlots.map(slot=>{
-      const list = sortPlayersByPower(simulationPlayers.filter(p=>
-        matchPlayerForSlot(p, combo, String(slot?.position ?? ""), reqMap, "", forcePol, requiredNationality, requiredAcq) &&
-        playerMatchesSlotReq(p, slot)
-      ));
-      return { slot, list };
-    });
-
-    // 候補が少ない条件から探索すると、重複選手の除外が安定しやすい
-    reqCandidates.sort((a,b)=>a.list.length - b.list.length || Number(a.slot.slotNo)-Number(b.slot.slotNo));
-
-    let bestScore = -Infinity;
-    let bestMap = new Map();
-    const dfs = (idx, score, map, used)=>{
-      if(idx >= reqCandidates.length){
-        if(score > bestScore){
-          bestScore = score;
-          bestMap = new Map(map);
-        }
-        return;
-      }
-
-      const { slot, list } = reqCandidates[idx];
-      const slotKey = String(slot.slotNo);
-
-      // 候補なしの場合も、他の発動条件スロットの選出は続ける
-      if(!list.length){
-        map.set(slotKey, null);
-        dfs(idx + 1, score, map, used);
-        map.delete(slotKey);
-        return;
-      }
-
-      for(const p of list){
-        const pid = getPlayerId(p);
-        if(pid && used.has(pid)) continue;
-        if(pid) used.add(pid);
-        map.set(slotKey, p);
-        dfs(idx + 1, score + getPower(p), map, used);
-        map.delete(slotKey);
-        if(pid) used.delete(pid);
-      }
-    };
-
-    dfs(0, 0, new Map(), new Set());
-
-    for(const [slotKey, player] of bestMap){
-      chosenBySlot.set(slotKey, player);
-      const pid = getPlayerId(player);
-      if(pid) usedIds.add(pid);
+  const isBetterResult = (candidate, best)=>{
+    if(!best) return true;
+    if(candidate.metrics.requiredFilled !== best.metrics.requiredFilled){
+      return candidate.metrics.requiredFilled > best.metrics.requiredFilled;
     }
-
-    // 残りスロットは、発動条件で固定した選手を除外して最大強化順に配置
-    for(const s of normalSlots){
-      const available = simulationPlayers.filter(p=>{
-        const pid = getPlayerId(p);
-        return !pid || !usedIds.has(pid);
-      });
-      const p = pickBest(available, s, forcePol);
-      chosenBySlot.set(String(s.slotNo), p || null);
-      const pid = getPlayerId(p);
-      if(pid) usedIds.add(pid);
+    const diff = candidate.metrics.totalBuffedReal - best.metrics.totalBuffedReal;
+    if(Math.abs(diff) > 1e-9) return diff > 0;
+    if(candidate.metrics.totalMaxUpgrade !== best.metrics.totalMaxUpgrade){
+      return candidate.metrics.totalMaxUpgrade > best.metrics.totalMaxUpgrade;
     }
-
-    return slots.map(s=>({ slot:s, player:chosenBySlot.get(String(s.slotNo)) || null }));
+    return false;
   };
 
-  // policy-dye column: force policy for all slots
-  const picksA = buildPicks(forcedPolicy || "");
+  const buildPicks = (forcePol)=>{
+    const candidatesBySlot = new Map();
+    for(const slot of slots){
+      const list = simulationPlayers.filter(p=>
+        matchPlayerForSlot(p, combo, String(slot?.position ?? ""), reqMap, "", forcePol, requiredNationality, requiredAcq) &&
+        playerMatchesSlotReq(p, slot)
+      );
+      candidatesBySlot.set(String(slot.slotNo), list);
+    }
 
-  // free column: no forced policy
-  const picksB = buildPicks("");
+    // 国籍連動が無い通常コンボはHungarian法で一括最適化する。
+    // 11枠 × 数百選手でも高速で、選手重複なしの最大値を厳密に求められる。
+    if(!targetNationality){
+      const solved = solveAssignmentFast(slots, candidatesBySlot, combo, requiredSlotKeys);
+      return {picks:solved.picks, metrics:computeTeamMetrics(solved.picks, combo, reqMap)};
+    }
 
-        const slotPlaceMap = new Map((combo.combo_requirements||[])
-      .filter(r=>r && (r.slotNo!==undefined && r.slotNo!==null) && r.positionPlace)
-      .map(r=>[String(r.slotNo), String(r.positionPlace)]));
+    // 国籍人数でバフ率が変化するコンボは、対象国籍人数を0～編成人数まで列挙し、
+    // 各人数ごとに最小費用流で最適割当を解く。これにより「国籍選手を増やすことで
+    // チーム全体のバフが上がる」効果まで含めて比較できる。
+    for(let desiredFlow = slots.length; desiredFlow >= 1; desiredFlow--){
+      let best = null;
+      const countsToTry = Array.from({length:desiredFlow+1}, (_,i)=>i);
 
-    const formationId = String(combo.formation ?? "").replace(/\s+/g,"");
+      for(const targetCount of countsToTry){
+        const solved = solveAssignmentWithQuota(
+          slots,
+          candidatesBySlot,
+          combo,
+          targetNationality,
+          targetCount,
+          desiredFlow,
+          requiredSlotKeys
+        );
+        if(solved.flow !== desiredFlow) continue;
+        const metrics = computeTeamMetrics(solved.picks, combo, reqMap);
+        const candidate = {picks:solved.picks, metrics};
+        if(isBetterResult(candidate, best)) best = candidate;
+      }
 
-    // slotNo -> (x,y) map from formation_slots.json for the selected combo
-    const slotCoordMap = new Map(
-      (slots||[])
-        .filter(s=>s && s.x!==undefined && s.y!==undefined && Number.isFinite(Number(s.x)) && Number.isFinite(Number(s.y)))
-        .map(s=>[String(s.slotNo), {x:Number(s.x), y:Number(s.y)}])
-    );
+      if(best) return best;
+    }
 
-    LAST = { comboId: String(comboId), formationId, slots, picksA, picksB, highlightOK, slotPlaceMap, slotCoordMap };
+    const emptyPicks = slots.map(slot=>({slot,player:null}));
+    return {picks:emptyPicks, metrics:computeTeamMetrics(emptyPicks, combo, reqMap)};
+  };
+
+  // ポリシー染め / ポリシー自由をそれぞれ独立して最適化する。
+  const resultA = buildPicks(forcedPolicy || "");
+  const resultB = buildPicks("");
+  const picksA = resultA.picks;
+  const picksB = resultB.picks;
+
+  const slotPlaceMap = new Map((combo.combo_requirements||[])
+    .filter(r=>r && (r.slotNo!==undefined && r.slotNo!==null) && r.positionPlace)
+    .map(r=>[String(r.slotNo), String(r.positionPlace)]));
+
+  const formationId = String(combo.formation ?? "").replace(/\s+/g,"");
+
+  const slotCoordMap = new Map(
+    (slots||[])
+      .filter(s=>s && s.x!==undefined && s.y!==undefined && Number.isFinite(Number(s.x)) && Number.isFinite(Number(s.y)))
+      .map(s=>[String(s.slotNo), {x:Number(s.x), y:Number(s.y)}])
+  );
+
+  LAST = {
+    comboId:String(comboId),
+    combo,
+    formationId,
+    slots,
+    picksA,
+    picksB,
+    metricsA:resultA.metrics,
+    metricsB:resultB.metrics,
+    highlightOK,
+    slotPlaceMap,
+    slotCoordMap,
+    omittedCount
+  };
   renderTable();
   renderPitch();
   updateView();
-  setStatus("");
+  setStatus(omittedCount > 0 ? `詳細ステータス未登録 ${omittedCount}名を計算対象外としています。` : "");
 }
 
 
