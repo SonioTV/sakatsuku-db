@@ -34929,33 +34929,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 535,
+        "kickPower": 619,
+        "composure": 548
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 546,
+        "longPass": 557,
+        "kickAccuracy": 546
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 538,
+        "ballKeeping": 535,
+        "ballTouch": 548
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 755,
+        "passCutReaction": 742,
+        "markOneOnOne": 732
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 796,
+        "contact": 792,
+        "stamina": 563
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 648,
+        "agility": 732
       }
     },
     "tendencies": {
@@ -35025,33 +35025,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 640,
+        "kickPower": 711,
+        "composure": 650
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 650,
+        "longPass": 667,
+        "kickAccuracy": 601
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 620,
+        "ballKeeping": 634,
+        "ballTouch": 629
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 739,
+        "passCutReaction": 732,
+        "markOneOnOne": 771
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 745,
+        "contact": 743,
+        "stamina": 681
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 651,
+        "agility": 654
       }
     },
     "tendencies": {
@@ -35121,33 +35121,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 603,
+        "kickPower": 662,
+        "composure": 624
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 683,
+        "longPass": 693,
+        "kickAccuracy": 651
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 647,
+        "ballKeeping": 670,
+        "ballTouch": 686
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 707,
+        "passCutReaction": 742,
+        "markOneOnOne": 744
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 732,
+        "contact": 705,
+        "stamina": 732
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 693,
+        "agility": 712
       }
     },
     "tendencies": {
@@ -40004,7 +40004,7 @@
     "mainPosition": "GK",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年9月2日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "エレガントセーブ",
     "mainTrait": "守護神",
     "category": "SP選手",
@@ -40012,7 +40012,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-19",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "GK"
     ],
@@ -40107,7 +40107,7 @@
     "mainPosition": "CF",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年9月2日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "コントロールショット",
     "mainTrait": "ターゲットマン",
     "category": "SP選手",
@@ -40115,7 +40115,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-19",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "CF"
     ],
@@ -40210,7 +40210,7 @@
     "mainPosition": "RW",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年9月2日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "スリップビート",
     "mainTrait": "失わないドリブラー",
     "category": "SP選手",
@@ -40218,7 +40218,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-19",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "RW"
     ],
@@ -40306,7 +40306,7 @@
     "mainPosition": "CB",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年9月2日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "鋭角的なタックル",
     "mainTrait": "ハードタックラー",
     "category": "SP選手",
@@ -40314,7 +40314,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-19",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "CB"
     ],
@@ -40410,7 +40410,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "RW"
     ],
@@ -40513,7 +40513,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ],
@@ -40616,7 +40616,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "DM"
     ],
@@ -40719,7 +40719,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-08-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "GK"
     ],
@@ -40814,7 +40814,7 @@
     "mainPosition": "DM",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年9月23日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "ベルベットパス",
     "mainTrait": "正確無比なキック",
     "category": "SP選手",
@@ -40822,7 +40822,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-09-09",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "DM"
     ],
@@ -40917,7 +40917,7 @@
     "mainPosition": "LW",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年9月23日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "ジャックナイフ",
     "mainTrait": "不敵のボールタッチ",
     "category": "SP選手",
@@ -40925,7 +40925,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-09-09",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "LW"
     ],
@@ -41020,7 +41020,7 @@
     "mainPosition": "RB",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年9月23日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "奪還",
     "mainTrait": "無限のアジリティ",
     "category": "SP選手",
@@ -41028,7 +41028,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-09-09",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "RB"
     ],
@@ -41123,7 +41123,7 @@
     "mainPosition": "CF",
     "acquisitionMethod": "ガチャ",
     "acquisitionPlace": "ピックアップSP選手スカウト",
-    "availablePeriod": "2026年9月23日まで",
+    "availablePeriod": "終了日未定",
     "mainSkill": "コントロールショット",
     "mainTrait": "シュートセンス",
     "category": "SP選手",
@@ -41131,7 +41131,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-09-09",
     "rarity": "★3",
-    "available": false,
+    "available": true,
     "suitablePositions": [
       "CF"
     ],
@@ -41240,33 +41240,33 @@
     ],
     "stats": {
       "SHO": {
-        "finishing": null,
-        "kickPower": null,
-        "composure": null
+        "finishing": 647,
+        "kickPower": 650,
+        "composure": 652
       },
       "PAS": {
-        "shortPass": null,
-        "longPass": null,
-        "kickAccuracy": null
+        "shortPass": 704,
+        "longPass": 676,
+        "kickAccuracy": 599
       },
       "DRB": {
-        "breakthrough": null,
-        "ballKeeping": null,
-        "ballTouch": null
+        "breakthrough": 600,
+        "ballKeeping": 637,
+        "ballTouch": 651
       },
       "DEF": {
-        "tackleSaving": null,
-        "passCutReaction": null,
-        "markOneOnOne": null
+        "tackleSaving": 777,
+        "passCutReaction": 762,
+        "markOneOnOne": 774
       },
       "PHY": {
-        "jump": null,
-        "contact": null,
-        "stamina": null
+        "jump": 775,
+        "contact": 755,
+        "stamina": 766
       },
       "SPD": {
-        "speed": null,
-        "agility": null
+        "speed": 717,
+        "agility": 741
       }
     },
     "tendencies": {
@@ -42423,6 +42423,419 @@
         "traitId": "TR0053",
         "traitRank": "銅",
         "traitDescription": "好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0436",
+    "playerId": "P0436",
+    "name": "キリアン・エンバペ",
+    "overall": 7446,
+    "maxUpgrade": 15958,
+    "policy": "ムービング",
+    "playStyle": "ストライカー",
+    "playStyleLv": 3,
+    "mainPosition": "CF",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "プレミアムSP選手スカウト（第3弾）",
+    "availablePeriod": "2026年10月28日まで",
+    "mainSkill": "ショックウェーブ",
+    "mainTrait": "フェノメーヌ・キャピテーヌ",
+    "category": "SP選手",
+    "nationality": "フランス",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-30",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CF"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 1087,
+        "kickPower": 1023,
+        "composure": 1089
+      },
+      "PAS": {
+        "shortPass": 953,
+        "longPass": 950,
+        "kickAccuracy": 999
+      },
+      "DRB": {
+        "breakthrough": 1027,
+        "ballKeeping": 1023,
+        "ballTouch": 1076
+      },
+      "DEF": {
+        "tackleSaving": 733,
+        "passCutReaction": 774,
+        "markOneOnOne": 754
+      },
+      "PHY": {
+        "jump": 978,
+        "contact": 1013,
+        "stamina": 975
+      },
+      "SPD": {
+        "speed": 1082,
+        "agility": 1077
+      }
+    },
+    "tendencies": {
+      "attack": 1,
+      "defense": -1,
+      "dribble": 0,
+      "shoot": 1,
+      "longShoot": 0,
+      "shortPass": 0,
+      "longPass": 0,
+      "throughPass": 0,
+      "cutIn": 0,
+      "keep": 1,
+      "delay": -1,
+      "forwardRun": 0,
+      "feint": 0,
+      "press": -1
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "ショックウェーブ",
+        "skillId": "SK0064",
+        "skillRank": "金"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "フェノメーヌ・キャピテーヌ",
+        "traitId": "TR0176",
+        "traitRank": "金",
+        "traitDescription": "キャプテン"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "速射砲",
+        "traitId": "TR0117",
+        "traitRank": "金",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "高速のボールタッチ",
+        "traitId": "TR0077",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0437",
+    "playerId": "P0437",
+    "name": "ウスマン・デンベレ〔2026〕",
+    "overall": 7185,
+    "maxUpgrade": 15760,
+    "policy": "ムービング",
+    "playStyle": "アタッカー",
+    "playStyleLv": 3,
+    "mainPosition": "AM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "プレミアムSP選手スカウト（第3弾）",
+    "availablePeriod": "2026年10月28日まで",
+    "mainSkill": "驚異の弾道",
+    "mainTrait": "多彩な足技",
+    "category": "SP選手",
+    "nationality": "フランス",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-30",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "AM",
+      "RW"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 966,
+        "kickPower": 944,
+        "composure": 1025
+      },
+      "PAS": {
+        "shortPass": 1011,
+        "longPass": 973,
+        "kickAccuracy": 971
+      },
+      "DRB": {
+        "breakthrough": 1083,
+        "ballKeeping": 1081,
+        "ballTouch": 1041
+      },
+      "DEF": {
+        "tackleSaving": 882,
+        "passCutReaction": 886,
+        "markOneOnOne": 903
+      },
+      "PHY": {
+        "jump": 922,
+        "contact": 949,
+        "stamina": 972
+      },
+      "SPD": {
+        "speed": 1068,
+        "agility": 1075
+      }
+    },
+    "tendencies": {
+      "attack": 1,
+      "defense": 0,
+      "dribble": 0,
+      "shoot": 1,
+      "longShoot": 2,
+      "shortPass": 0,
+      "longPass": 0,
+      "throughPass": 0,
+      "cutIn": 0,
+      "keep": 0,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": 0,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "驚異の弾道",
+        "skillId": "SK0065",
+        "skillRank": "金"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "多彩な足技",
+        "traitId": "TR0177",
+        "traitRank": "金",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "冷静なランナー",
+        "traitId": "TR0160",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "シルクタッチ",
+        "traitId": "TR0018",
+        "traitRank": "銅",
+        "traitDescription": "好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0438",
+    "playerId": "P0438",
+    "name": "アドリアン・ラビオ",
+    "overall": 7017,
+    "maxUpgrade": 15685,
+    "policy": "ムービング",
+    "playStyle": "セントラルMF",
+    "playStyleLv": 3,
+    "mainPosition": "DM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "プレミアムSP選手スカウト（第3弾）",
+    "availablePeriod": "2026年10月28日まで",
+    "mainSkill": "迎撃のインターセプト",
+    "mainTrait": "ホットラインを断つ動き",
+    "category": "SP選手",
+    "nationality": "フランス",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-30",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 908,
+        "kickPower": 954,
+        "composure": 915
+      },
+      "PAS": {
+        "shortPass": 1011,
+        "longPass": 964,
+        "kickAccuracy": 1013
+      },
+      "DRB": {
+        "breakthrough": 930,
+        "ballKeeping": 950,
+        "ballTouch": 1038
+      },
+      "DEF": {
+        "tackleSaving": 1055,
+        "passCutReaction": 1059,
+        "markOneOnOne": 934
+      },
+      "PHY": {
+        "jump": 942,
+        "contact": 1061,
+        "stamina": 1072
+      },
+      "SPD": {
+        "speed": 922,
+        "agility": 894
+      }
+    },
+    "tendencies": {
+      "attack": 0,
+      "defense": 0,
+      "dribble": 0,
+      "shoot": 0,
+      "longShoot": 0,
+      "shortPass": 1,
+      "longPass": 0,
+      "throughPass": 0,
+      "cutIn": 0,
+      "keep": 0,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": 0,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "迎撃のインターセプト",
+        "skillId": "SK0033",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "ホットラインを断つ動き",
+        "traitId": "TR0042",
+        "traitRank": "金",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "剛柔のタッチ",
+        "traitId": "TR0080",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "精緻なパサー",
+        "traitId": "TR0107",
+        "traitRank": "銅",
+        "traitDescription": "絶好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0439",
+    "playerId": "P0439",
+    "name": "リュカ・シュヴァリエ",
+    "overall": 6761,
+    "maxUpgrade": 15598,
+    "policy": "ムービング",
+    "playStyle": "オーソドックスGK",
+    "playStyleLv": 2,
+    "mainPosition": "GK",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "プレミアムSP選手スカウト（第3弾）",
+    "availablePeriod": "2026年10月28日まで",
+    "mainSkill": "エレガントセーブ",
+    "mainTrait": "広域の守護神",
+    "category": "SP選手",
+    "nationality": "フランス",
+    "growthType": "超早熟",
+    "implementedDate": "2026-09-30",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "GK"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 793,
+        "kickPower": 772,
+        "composure": 814
+      },
+      "PAS": {
+        "shortPass": 939,
+        "longPass": 917,
+        "kickAccuracy": 907
+      },
+      "DRB": {
+        "breakthrough": 836,
+        "ballKeeping": 824,
+        "ballTouch": 837
+      },
+      "DEF": {
+        "tackleSaving": 1049,
+        "passCutReaction": 1041,
+        "markOneOnOne": 1077
+      },
+      "PHY": {
+        "jump": 1036,
+        "contact": 989,
+        "stamina": 929
+      },
+      "SPD": {
+        "speed": 883,
+        "agility": 1005
+      }
+    },
+    "tendencies": {
+      "attack": -1,
+      "defense": 1,
+      "dribble": -2,
+      "shoot": -1,
+      "longShoot": -1,
+      "shortPass": -1,
+      "longPass": 1,
+      "throughPass": -1,
+      "cutIn": -1,
+      "keep": -1,
+      "delay": -1,
+      "forwardRun": -1,
+      "feint": -1,
+      "press": -1
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "エレガントセーブ",
+        "skillId": "SK0003",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "広域の守護神",
+        "traitId": "TR0075",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "全方向の守護",
+        "traitId": "TR0113",
+        "traitRank": "銀",
+        "traitDescription": "絶好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "パワーアジリティ",
+        "traitId": "TR0031",
+        "traitRank": "銅",
+        "traitDescription": "途中出場"
       }
     ]
   }
