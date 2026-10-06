@@ -41756,7 +41756,7 @@
         "composure": 1039
       },
       "PAS": {
-        "shortPass": 9.41,
+        "shortPass": 941,
         "longPass": 876,
         "kickAccuracy": 880
       },
@@ -41853,9 +41853,9 @@
         "composure": 855
       },
       "PAS": {
-        "shortPass": 9.29,
+        "shortPass": 929,
         "longPass": 938,
-        "kickAccuracy": 9.37
+        "kickAccuracy": 937
       },
       "DRB": {
         "breakthrough": 1044,
@@ -41949,9 +41949,9 @@
         "composure": 1077
       },
       "PAS": {
-        "shortPass": 9.15,
+        "shortPass": 915,
         "longPass": 903,
-        "kickAccuracy": 8.91
+        "kickAccuracy": 891
       },
       "DRB": {
         "breakthrough": 933,
@@ -42052,9 +42052,9 @@
         "composure": 957
       },
       "PAS": {
-        "shortPass": 9.45,
+        "shortPass": 945,
         "longPass": 937,
-        "kickAccuracy": 9.38
+        "kickAccuracy": 938
       },
       "DRB": {
         "breakthrough": 1062,
@@ -42155,9 +42155,9 @@
         "composure": 1027
       },
       "PAS": {
-        "shortPass": 10.47,
+        "shortPass": 1047,
         "longPass": 1026,
-        "kickAccuracy": 9.67
+        "kickAccuracy": 967
       },
       "DRB": {
         "breakthrough": 1061,
@@ -42258,9 +42258,9 @@
         "composure": 863
       },
       "PAS": {
-        "shortPass": 9.31,
+        "shortPass": 931,
         "longPass": 928,
-        "kickAccuracy": 9.5
+        "kickAccuracy": 950
       },
       "DRB": {
         "breakthrough": 962,
