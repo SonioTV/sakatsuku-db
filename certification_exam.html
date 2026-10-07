@@ -83,8 +83,8 @@ h1{position:relative;margin:0;font-size:clamp(28px,5vw,44px);line-height:1.2;let
 .card{background:var(--card);border:1px solid #e5eaf1;border-radius:22px;box-shadow:var(--shadow);padding:16px}.controls{margin-bottom:14px}.controlGrid{display:grid;grid-template-columns:minmax(170px,.9fr) minmax(140px,.7fr) minmax(0,1.6fr) auto;gap:10px;align-items:end}.field{display:grid;gap:5px;min-width:0}.field label{font-size:12px;font-weight:900;color:#334155}.field input,.field select{width:100%;height:46px;border:2px solid #dce3ec;border-radius:13px;background:#fff;padding:0 12px;font:inherit;font-size:15px;font-weight:800;color:#111827;outline:none}.field input:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(21,95,128,.10)}.reset{height:46px;border:0;border-radius:13px;background:#9aa0aa;color:#fff;padding:0 16px;font-weight:900;cursor:pointer}.reset:hover{filter:brightness(.97)}.resultBar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:12px;padding-top:11px;border-top:1px solid #e5eaf1}.resultCount{font-size:13px;color:#475569;font-weight:900}.sourceNote{font-size:11px;color:#94a3b8;font-weight:700}
 .modeTabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}.modeBtn{min-height:48px;border:2px solid #d9e2ec;border-radius:14px;background:#fff;color:#334155;font:inherit;font-weight:1000;cursor:pointer}.modeBtn.active{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 18px rgba(21,95,128,.18)}
 .examOverview{display:none;margin-bottom:14px}.examOverview.show{display:block}.overviewGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.overviewItem{border:1px solid #e2e8f0;border-radius:14px;background:#fbfdff;padding:10px 12px}.overviewKey{display:block;font-size:10px;color:#64748b;font-weight:900;margin-bottom:3px}.overviewVal{display:block;font-size:14px;color:#172033;font-weight:1000;line-height:1.45;overflow-wrap:anywhere}.overviewNote{margin:10px 0 0;padding-top:10px;border-top:1px solid #edf1f5;color:#475569;font-size:13px;font-weight:800;line-height:1.7}
-.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:10px;flex-wrap:wrap;margin:0 0 10px}.sectionHead h2{font-size:22px;margin:0}.sectionSub{font-size:12px;color:var(--muted);font-weight:800;margin:3px 0 0}.list{display:grid;gap:12px}.questionCard{background:#fff;border:1px solid var(--line);border-left:6px solid var(--green);border-radius:18px;box-shadow:0 5px 16px rgba(15,23,42,.05);padding:15px;scroll-margin-top:12px}.qMeta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:9px}.badge{display:inline-flex;align-items:center;min-height:27px;padding:3px 9px;border-radius:999px;background:#eef6ff;color:#0b63d1;border:1px solid rgba(11,99,209,.16);font-size:11px;font-weight:1000}.badge.day{background:#eef7ea;color:#34761d;border-color:rgba(74,165,42,.24)}.qText{font-size:18px;font-weight:1000;line-height:1.55;margin:0 0 12px}.choices{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;counter-reset:choice}.choice{position:relative;min-width:0;min-height:48px;border:1px solid #dce3ec;border-radius:12px;background:#f9fbfd;padding:10px 12px 10px 42px;font-weight:900;display:flex;align-items:center;line-height:1.45;overflow-wrap:anywhere;transition:background-color .15s,border-color .15s,color .15s}.choice:before{counter-increment:choice;content:counter(choice);position:absolute;left:10px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#e7edf5;color:#334155;font-size:12px;font-weight:1000}.choice.correctRevealed{background:#fff1f1;border:2px solid var(--red);color:#8f1f1f;padding-right:50px}.choice.correctRevealed:after{content:"";position:absolute;right:12px;top:50%;transform:translateY(-50%);width:27px;height:27px;border:4px solid var(--red);border-radius:50%;background:transparent;pointer-events:none}.answerRevealWrap{margin-top:11px;border-top:1px solid #edf1f5;padding-top:10px}.answerRevealBtn{cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:7px 11px;border:0;border-radius:10px;background:#eef7ea;color:#2f6f1d;font:inherit;font-weight:1000}.answerRevealBtn:hover:not(:disabled){background:#e5f3df}.answerRevealBtn:disabled{cursor:default;background:#fff1f1;color:#9b2222}
-.empty{padding:28px 14px;text-align:center;border:2px dashed #cbd5e1;border-radius:18px;background:#fff;color:#64748b;font-weight:900}.loadError{border-color:#f1b8b8;background:#fff8f8;color:#9b2222}
+.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:10px;flex-wrap:wrap;margin:0 0 10px}.sectionHead h2{font-size:22px;margin:0}.sectionSub{font-size:12px;color:var(--muted);font-weight:800;margin:3px 0 0}.list{display:grid;gap:12px}.questionCard{background:#fff;border:1px solid var(--line);border-left:6px solid var(--green);border-radius:18px;box-shadow:0 5px 16px rgba(15,23,42,.05);padding:15px;scroll-margin-top:12px}.qMeta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:9px}.badge{display:inline-flex;align-items:center;min-height:27px;padding:3px 9px;border-radius:999px;background:#eef6ff;color:#0b63d1;border:1px solid rgba(11,99,209,.16);font-size:11px;font-weight:1000}.badge.day{background:#eef7ea;color:#34761d;border-color:rgba(74,165,42,.24)}.badge.pending{background:#fff7e6;color:#9a5a00;border-color:rgba(245,158,11,.30)}.qText{font-size:18px;font-weight:1000;line-height:1.55;margin:0 0 12px}.choices{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;counter-reset:choice}.choice{position:relative;min-width:0;min-height:48px;border:1px solid #dce3ec;border-radius:12px;background:#f9fbfd;padding:10px 12px 10px 42px;font-weight:900;display:flex;align-items:center;line-height:1.45;overflow-wrap:anywhere;transition:background-color .15s,border-color .15s,color .15s}.choice:before{counter-increment:choice;content:counter(choice);position:absolute;left:10px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#e7edf5;color:#334155;font-size:12px;font-weight:1000}.choice.correctRevealed{background:#fff1f1;border:2px solid var(--red);color:#8f1f1f;padding-right:50px}.choice.correctRevealed:after{content:"";position:absolute;right:12px;top:50%;transform:translateY(-50%);width:27px;height:27px;border:4px solid var(--red);border-radius:50%;background:transparent;pointer-events:none}.answerRevealWrap{margin-top:11px;border-top:1px solid #edf1f5;padding-top:10px}.answerRevealBtn{cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:7px 11px;border:0;border-radius:10px;background:#eef7ea;color:#2f6f1d;font:inherit;font-weight:1000}.answerRevealBtn:hover:not(:disabled){background:#e5f3df}.answerRevealBtn:disabled{cursor:default;background:#fff1f1;color:#9b2222}.answerPending{display:inline-flex;align-items:center;min-height:38px;padding:7px 11px;border-radius:10px;background:#fff7e6;color:#8a5700;border:1px solid rgba(245,158,11,.26);font-size:12px;font-weight:1000}
+.empty{padding:28px 14px;text-align:center;border:2px dashed #cbd5e1;border-radius:18px;background:#fff;color:#64748b;font-weight:900}.empty.eventState{border-color:#b7d7e6;background:#f7fcff;color:#31586b}.loadError{border-color:#f1b8b8;background:#fff8f8;color:#9b2222}
 .practice[hidden],.browse[hidden]{display:none!important}.practiceIntro{margin-bottom:12px}.practiceModeButtons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px;max-width:620px}.practiceModeBtn{min-width:0;min-height:62px;border:0;border-radius:14px;padding:10px 14px;color:#fff;font:inherit;font-weight:1000;cursor:pointer;box-shadow:0 8px 18px rgba(15,23,42,.13);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;line-height:1.25}.practiceModeBtn.quick{background:linear-gradient(135deg,#f59e0b,#e67e00)}.practiceModeBtn.full{background:linear-gradient(135deg,#155f80,#0b63d1)}.practiceModeBtn:hover{filter:brightness(.98);transform:translateY(-1px)}.practiceModeBtn:active{transform:translateY(0)}.practiceModeBtn small{display:block;font-size:11px;font-weight:900;opacity:.9}.practiceCard{border:3px solid var(--blue);border-radius:18px;overflow:hidden;background:#fff}.practiceHead{background:var(--blue);color:#fff;padding:11px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-weight:1000}.practiceProgress{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.practiceScore{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.12);border-radius:999px;padding:3px 8px;font-size:11px}.practiceBody{padding:16px}.practiceQuestion{font-size:20px;font-weight:1000;line-height:1.55;margin:0 0 14px}.practiceChoices{display:grid;grid-template-columns:1fr 1fr;gap:9px}.answerBtn{border:2px solid #d9e2ec;border-radius:13px;background:#fff;min-height:54px;padding:10px 12px;font:inherit;font-weight:900;cursor:pointer;text-align:left}.answerBtn:hover:not(:disabled){border-color:#94b8d0;background:#fbfdff}.answerBtn.correct{background:var(--green-bg);border-color:var(--green);color:#245c16}.answerBtn.wrong{background:var(--red-bg);border-color:var(--red);color:#9b2222}.answerBtn:disabled{cursor:default}.practiceResult{display:none;margin-top:12px;padding:11px 13px;border-radius:13px;font-weight:1000}.practiceResult.show{display:block}.practiceResult.ok{background:var(--green-bg);color:#245c16;border:1px solid rgba(74,165,42,.30)}.practiceResult.ng{background:var(--red-bg);color:#9b2222;border:1px solid rgba(210,59,59,.25)}.practiceActions{display:flex;justify-content:flex-end;margin-top:12px}.nextBtn{display:none;border:0;border-radius:12px;background:var(--green);color:#fff;min-height:42px;padding:8px 15px;font:inherit;font-weight:1000;cursor:pointer}.nextBtn.show{display:inline-block}.practiceEmpty{padding:24px;text-align:center;color:var(--muted);font-weight:900}.practiceFinish{padding:18px;border:2px solid var(--green);border-radius:18px;background:#f8fcf6;text-align:center}.resultImageFrame{width:min(100%,620px);aspect-ratio:1/1;margin:0 auto;border-radius:18px;overflow:hidden;background:#eaf0f5;border:1px solid #d7e2eb;box-shadow:0 8px 24px rgba(15,23,42,.10);display:grid;place-items:center}.resultImage{display:block;width:100%;height:100%;object-fit:contain;background:#fff}.resultImageLoading{padding:20px;color:#64748b;font-weight:900}.srOnly{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .shareBox{margin:16px auto 0;padding:14px 14px 0;border-top:1px solid #dce8d7;max-width:760px}.shareTitle{margin:0 0 10px;font-size:15px;color:#263238;font-weight:1000}.shareHelp{margin:0 0 12px;color:#64748b;font-size:12px;font-weight:800;line-height:1.6}.shareButtons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.shareBtn{display:flex;align-items:center;justify-content:center;min-width:0;min-height:46px;padding:9px 10px;border:0;border-radius:12px;text-decoration:none;font:inherit;font-size:13px;font-weight:1000;cursor:pointer;line-height:1.3;overflow-wrap:anywhere;text-align:center}.shareBtn.image{background:linear-gradient(135deg,#155f80 0%,#4aa52a 100%);color:#fff}.shareBtn.save{background:#155f80;color:#fff}.shareBtn.x{background:#111;color:#fff}.shareBtn.line{background:#06c755;color:#fff}.shareBtn.copy{background:#eef3f8;color:#334155;border:1px solid #d7e0ea}.shareBtn:hover:not(:disabled){filter:brightness(.97)}.shareBtn:disabled{opacity:.62;cursor:wait}.shareStatus{min-height:1.4em;margin:8px 0 0;color:#34761d;font-size:12px;font-weight:900}.sharePreviewNote{margin:8px 0 0;color:#94a3b8;font-size:11px;font-weight:800}
 .guideGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}.guideCard{background:#fff;border:1px solid #e5eaf1;border-radius:18px;padding:16px}.guideCard h2{margin:0 0 8px;font-size:19px}.guideCard p{margin:0;color:#475569;font-size:13px;font-weight:750;line-height:1.75}.guideCard p+p{margin-top:8px}.relatedLinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}.relatedLink{display:inline-flex;align-items:center;min-height:38px;padding:7px 11px;border-radius:10px;border:1px solid #dce3ec;background:#f9fbfd;color:#0b63d1;text-decoration:none;font-size:12px;font-weight:900}.relatedLink:hover{background:#eef6ff}
@@ -148,7 +148,7 @@ h1{position:relative;margin:0;font-size:clamp(28px,5vw,44px);line-height:1.2;let
 
     <section class="practice" id="practicePane" role="tabpanel" aria-labelledby="practiceTab" hidden>
       <div class="practiceIntro">
-        <div><h2 style="margin:0;font-size:22px">サカつく検定 4択クイズ</h2><p class="sectionSub">現在の絞り込み条件に合う過去問から重複なしでランダム出題します。気軽に遊ぶ「サクッと！」と、しっかり挑む「ガッツリ！」から選べます。</p></div>
+        <div><h2 style="margin:0;font-size:22px">サカつく検定 4択クイズ</h2><p class="sectionSub">現在の絞り込み条件に合う、正解確認済みの登録問題から重複なしでランダム出題します。気軽に遊ぶ「サクッと！」と、しっかり挑む「ガッツリ！」から選べます。</p></div>
         <div class="practiceModeButtons" aria-label="4択クイズの挑戦モード">
           <button class="practiceModeBtn quick" id="quickPractice" type="button"><span>⚡ サクッと！</span><small>最大10問</small></button>
           <button class="practiceModeBtn full" id="fullPractice" type="button"><span>🔥 ガッツリ！</span><small>最大20問</small></button>
@@ -219,9 +219,48 @@ h1{position:relative;margin:0;font-size:clamp(28px,5vw,44px);line-height:1.2;let
     if (!v) return '-';
     const s = String(v).trim();
     const m = s.match(/^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2})(?::(\d{2}))?)?/);
-    if (!m) return esc(s);
+    if (!m) return s;
     return `${m[1]}/${m[2]}/${m[3]}${m[4] ? ` ${m[4]}:${m[5]}` : ''}`;
   };
+  const formatDateTimeRange = (start, end) => {
+    if (!start && !end) return '-';
+    if (start && end) return `${formatDateTime(start)} ～ ${formatDateTime(end)}`;
+    return start ? `${formatDateTime(start)} ～` : `～ ${formatDateTime(end)}`;
+  };
+
+  function parseGameDateTime(value){
+    if (!value) return null;
+    const s = String(value).trim();
+    const m = s.match(/^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2})(?::(\d{2}))?)?$/);
+    if (m) {
+      // ゲーム内日時は日本時間として扱い、閲覧端末のタイムゾーン差に影響されないようUTCへ変換する。
+      return Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]), Number(m[4] || 0) - 9, Number(m[5] || 0), Number(m[6] || 0));
+    }
+    const parsed = Date.parse(s);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  function getExamStatus(exam, now = Date.now()){
+    const start = parseGameDateTime(exam && exam.eventStart);
+    const end = parseGameDateTime(exam && exam.eventEnd);
+    if (start != null && now < start) return {key:'upcoming', label:'開催前'};
+    if ((start == null || now >= start) && end != null && now <= end) return {key:'ongoing', label:'開催中'};
+    if (end != null && now > end) return {key:'ended', label:'終了'};
+    if (start != null && now >= start) return {key:'ongoing', label:'開催中'};
+    return {key:'unknown', label:'開催状況不明'};
+  }
+
+  function expectedQuestionCount(exam){
+    const days = Number(exam && exam.dayCount);
+    const perDay = Number(exam && exam.questionsPerDay);
+    return Number.isInteger(days) && days > 0 && Number.isInteger(perDay) && perDay > 0 ? days * perDay : null;
+  }
+
+  function isAnswerConfirmed(q){
+    if (!q || !Array.isArray(q.choices)) return false;
+    const correct = Number(q.correctChoice);
+    return Number.isInteger(correct) && correct >= 1 && correct <= q.choices.length && String(q.correctAnswer ?? '') === String(q.choices[correct - 1] ?? '');
+  }
 
   function validateData(payload){
     if (!payload || typeof payload !== 'object' || !Array.isArray(payload.exams)) {
@@ -229,6 +268,7 @@ h1{position:relative;margin:0;font-size:clamp(28px,5vw,44px);line-height:1.2;let
     }
     const ids = new Set();
     let actualTotal = 0;
+    let confirmedTotal = 0;
     payload.exams.forEach((exam, examIndex) => {
       if (!exam || typeof exam !== 'object' || !exam.examId || !Array.isArray(exam.questions)) {
         throw new Error(`開催回データが不正です: exams[${examIndex}]`);
@@ -241,15 +281,24 @@ h1{position:relative;margin:0;font-size:clamp(28px,5vw,44px);line-height:1.2;let
         if (!Array.isArray(q.choices) || q.choices.length !== 4 || q.choices.some(c => String(c ?? '').trim() === '')) {
           throw new Error(`4つの選択肢が必要です: ${q.questionId}`);
         }
-        const correct = Number(q.correctChoice);
-        if (!Number.isInteger(correct) || correct < 1 || correct > q.choices.length) {
-          throw new Error(`correctChoice が不正です: ${q.questionId}`);
-        }
-        if (String(q.correctAnswer ?? '') !== String(q.choices[correct - 1] ?? '')) {
-          throw new Error(`correctAnswer と正解選択肢が一致しません: ${q.questionId}`);
-        }
         if (!Number.isInteger(Number(q.day)) || Number(q.day) < 1 || !Number.isInteger(Number(q.questionNo)) || Number(q.questionNo) < 1) {
           throw new Error(`day / questionNo が不正です: ${q.questionId}`);
+        }
+
+        const hasCorrectChoice = q.correctChoice !== null && q.correctChoice !== undefined && String(q.correctChoice).trim() !== '';
+        const hasCorrectAnswer = q.correctAnswer !== null && q.correctAnswer !== undefined && String(q.correctAnswer).trim() !== '';
+        if (hasCorrectChoice !== hasCorrectAnswer) {
+          throw new Error(`正解情報が片方だけ入力されています: ${q.questionId}`);
+        }
+        if (hasCorrectChoice) {
+          const correct = Number(q.correctChoice);
+          if (!Number.isInteger(correct) || correct < 1 || correct > q.choices.length) {
+            throw new Error(`correctChoice が不正です: ${q.questionId}`);
+          }
+          if (String(q.correctAnswer) !== String(q.choices[correct - 1] ?? '')) {
+            throw new Error(`correctAnswer と正解選択肢が一致しません: ${q.questionId}`);
+          }
+          confirmedTotal++;
         }
         actualTotal++;
       });
@@ -260,12 +309,12 @@ h1{position:relative;margin:0;font-size:clamp(28px,5vw,44px);line-height:1.2;let
     if (payload.examCount != null && Number(payload.examCount) !== payload.exams.length) {
       throw new Error(`examCount が実データと一致しません: ${payload.examCount} / ${payload.exams.length}`);
     }
-    return actualTotal;
+    return {actualTotal, confirmedTotal};
   }
 
   function allQuestions(){
     if (!data) return [];
-    return data.exams.flatMap(exam => exam.questions.map(q => ({...q, examId:exam.examId, examTitle:exam.title, round:exam.round, eventEnd:exam.eventEnd})))
+    return data.exams.flatMap(exam => exam.questions.map(q => ({...q, examId:exam.examId, examTitle:exam.title, round:exam.round, eventStart:exam.eventStart, eventEnd:exam.eventEnd})))
       .sort((a,b) => (Number(a.round)||0)-(Number(b.round)||0) || Number(a.day)-Number(b.day) || Number(a.questionNo)-Number(b.questionNo) || String(a.questionId).localeCompare(String(b.questionId), 'ja'));
   }
 
@@ -285,17 +334,36 @@ h1{position:relative;margin:0;font-size:clamp(28px,5vw,44px);line-height:1.2;let
   }
 
   function populateExamOptions(){
-    examFilter.innerHTML = '<option value="">すべての開催回</option>' + data.exams.map(e =>
-      `<option value="${esc(e.examId)}">${esc(e.title)}（${e.questions.length}問）</option>`
-    ).join('');
+    examFilter.innerHTML = '<option value="">すべての開催回</option>' + data.exams.map(e => {
+      const status = getExamStatus(e);
+      const expected = expectedQuestionCount(e);
+      const actual = e.questions.length;
+      let suffix = `${actual}問`;
+      if (status.key === 'ongoing' || status.key === 'upcoming') {
+        suffix = expected != null ? `${status.label}・${actual}/${expected}問` : `${status.label}・${actual}問`;
+      }
+      return `<option value="${esc(e.examId)}">${esc(e.title)}（${esc(suffix)}）</option>`;
+    }).join('');
   }
 
   function populateDayOptions(){
     const examId = examFilter.value;
     const exams = examId ? data.exams.filter(e => e.examId === examId) : data.exams;
-    const days = [...new Set(exams.flatMap(e => e.questions.map(q => Number(q.day)).filter(Number.isFinite)))].sort((a,b) => a-b);
     const current = dayFilter.value;
-    dayFilter.innerHTML = '<option value="">すべての日</option>' + days.map(day => `<option value="${day}">${day}日目</option>`).join('');
+    const days = new Set();
+    exams.forEach(exam => {
+      const dayCount = Number(exam.dayCount);
+      if (Number.isInteger(dayCount) && dayCount > 0) {
+        for (let day = 1; day <= dayCount; day++) days.add(day);
+      } else {
+        exam.questions.forEach(q => {
+          const day = Number(q.day);
+          if (Number.isInteger(day) && day > 0) days.add(day);
+        });
+      }
+    });
+    const sortedDays = [...days].sort((a,b) => a-b);
+    dayFilter.innerHTML = '<option value="">すべての日</option>' + sortedDays.map(day => `<option value="${day}">${day}日目</option>`).join('');
     dayFilter.value = [...dayFilter.options].some(o => o.value === current) ? current : '';
   }
 
@@ -305,62 +373,103 @@ h1{position:relative;margin:0;font-size:clamp(28px,5vw,44px);line-height:1.2;let
       const exam = data.exams.find(e => e.examId === selectedExamId) || null;
       return {label: exam ? (exam.title || exam.examId) : '-', exams: exam ? [exam] : []};
     }
-
     if (data.exams.length === 1) {
       const exam = data.exams[0];
       return {label: exam.title || exam.examId, exams:[exam]};
     }
-
-    const rowExamIds = [...new Set(rows.map(q => q.examId))];
-    const exams = data.exams.filter(e => rowExamIds.includes(e.examId));
-    if (exams.length === 1) return {label: exams[0].title || exams[0].examId, exams};
-    return {label: exams.length ? `全${exams.length}回` : `全${data.exams.length}回`, exams: exams.length ? exams : data.exams};
+    return {label:`全${data.exams.length}回`, exams:data.exams};
   }
 
   function renderOverview(){
     const rows = selectedQuestions();
     const context = overviewExamContext(rows);
-    const days = [...new Set(rows.map(q => Number(q.day)).filter(Number.isFinite))].sort((a,b) => a-b);
-    const selectedDay = dayFilter.value;
-    const rangeLabel = selectedDay ? `${selectedDay}日目` : (days.length ? `${days.length}日分` : '-');
+    const confirmedRows = rows.filter(isAnswerConfirmed);
+    const selectedExam = context.exams.length === 1 ? context.exams[0] : null;
 
-    const endValues = context.exams
-      .map(exam => exam.eventEnd)
-      .filter(Boolean)
-      .sort();
-    const endLabel = endValues.length ? formatDateTime(endValues[endValues.length - 1]) : '-';
+    if (selectedExam) {
+      const status = getExamStatus(selectedExam);
+      const expected = expectedQuestionCount(selectedExam);
+      const actual = selectedExam.questions.length;
+      const pending = selectedExam.questions.filter(q => !isAnswerConfirmed(q)).length;
+      overviewGrid.innerHTML = [
+        ['開催回', context.label],
+        ['開催状況', status.label],
+        ['登録状況', expected != null ? `${actual} / ${expected}問` : `${actual}問`],
+        ['開催期間', formatDateTimeRange(selectedExam.eventStart, selectedExam.eventEnd)]
+      ].map(([k,v]) => `<div class="overviewItem"><span class="overviewKey">${esc(k)}</span><span class="overviewVal">${esc(v)}</span></div>`).join('');
 
-    overviewGrid.innerHTML = [
-      ['開催回', context.label],
-      ['対象問題', `${rows.length}問`],
-      ['出題範囲', rangeLabel],
-      ['開催終了', endLabel]
-    ].map(([k,v]) => `<div class="overviewItem"><span class="overviewKey">${esc(k)}</span><span class="overviewVal">${esc(v)}</span></div>`).join('');
-
-    const baseNote = context.exams.length === 1 && context.exams[0].notes
-      ? context.exams[0].notes
-      : '登録済みの問題・選択肢・正解を過去問として掲載しています。';
-    const conditionText = keyword.value.trim() ? ` キーワード「${keyword.value.trim()}」を含む条件で${rows.length}問が対象です。` : ` 現在の絞り込み条件では${rows.length}問が対象です。`;
-    overviewNote.textContent = `${baseNote}${conditionText}`;
+      const notes = [];
+      if (status.key === 'ongoing') notes.push('現在開催中です。問題・選択肢は確認後、正解はゲーム内で確認でき次第反映します。');
+      if (status.key === 'upcoming') notes.push(`${formatDateTime(selectedExam.eventStart)}から開催予定です。`);
+      if (status.key === 'ended') notes.push('この開催回は終了しています。');
+      if (pending > 0) notes.push(`登録済み${actual}問のうち${pending}問は正解発表待ちです。`);
+      else if (actual > 0) notes.push(`登録済み${actual}問はすべて正解確認済みです。`);
+      else if (status.key === 'ongoing') notes.push('現在、問題データは登録待ちです。');
+      if (selectedExam.notes) notes.push(selectedExam.notes);
+      if (keyword.value.trim()) notes.push(`キーワード「${keyword.value.trim()}」を含む条件で${rows.length}問が対象です。`);
+      else if (dayFilter.value) notes.push(`${dayFilter.value}日目の登録済み問題は${rows.length}問です。`);
+      overviewNote.textContent = notes.join(' ');
+    } else {
+      const latest = [...data.exams].sort((a,b) => (Number(b.round)||0)-(Number(a.round)||0))[0] || null;
+      const latestStatus = latest ? getExamStatus(latest) : null;
+      overviewGrid.innerHTML = [
+        ['開催回', context.label],
+        ['対象問題', `${rows.length}問`],
+        ['正解確認済み', `${confirmedRows.length}問`],
+        ['最新開催', latest ? `${latest.title}（${latestStatus.label}）` : '-']
+      ].map(([k,v]) => `<div class="overviewItem"><span class="overviewKey">${esc(k)}</span><span class="overviewVal">${esc(v)}</span></div>`).join('');
+      const pending = rows.length - confirmedRows.length;
+      overviewNote.textContent = pending > 0
+        ? `現在の条件では${rows.length}問が対象で、うち${pending}問は正解発表待ちです。`
+        : `現在の条件では${rows.length}問が対象です。登録済み問題はすべて正解確認済みです。`;
+    }
     examOverview.classList.add('show');
   }
 
   function latestDataDate(){
+    const generated = String(data && data.generatedAt ? data.generatedAt : '').slice(0,10);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(generated)) return generated.replace(/-/g, '/');
+
+    const today = Date.now();
     const values = [];
     data.exams.forEach(exam => {
-      if (exam.eventEnd) values.push(String(exam.eventEnd).slice(0,10));
-      exam.questions.forEach(q => { if (q.answerDeadline) values.push(String(q.answerDeadline).slice(0,10)); });
+      if (exam.eventStart) {
+        const ts = parseGameDateTime(exam.eventStart);
+        if (ts != null && ts <= today) values.push(String(exam.eventStart).slice(0,10));
+      }
+      exam.questions.forEach(q => {
+        if (!q.answerDeadline) return;
+        const ts = parseGameDateTime(q.answerDeadline);
+        if (ts != null && ts <= today) values.push(String(q.answerDeadline).slice(0,10));
+      });
     });
     const valid = values.filter(v => /^\d{4}-\d{2}-\d{2}$/.test(v)).sort();
-    if (valid.length) return valid[valid.length - 1].replace(/-/g, '/');
-    return formatDateOnly(data.generatedAt);
+    return valid.length ? valid[valid.length - 1].replace(/-/g, '/') : '-';
   }
 
   function renderEventGuide(){
     const latest = [...data.exams].sort((a,b) => (Number(b.round)||0)-(Number(a.round)||0))[0];
     if (!latest) return;
-    const dayCount = Number(latest.dayCount) || new Set(latest.questions.map(q => q.day)).size;
-    $('eventGuide').textContent = `${latest.title}は${dayCount}日分・${latest.questions.length}問を収録しています。${latest.eventEnd ? `開催終了は${formatDateTime(latest.eventEnd)}です。` : ''}`;
+    const status = getExamStatus(latest);
+    const expected = expectedQuestionCount(latest);
+    const actual = latest.questions.length;
+    const pending = latest.questions.filter(q => !isAnswerConfirmed(q)).length;
+    const parts = [];
+
+    if (status.key === 'ongoing') parts.push(`${latest.title}は現在開催中です。`);
+    else if (status.key === 'upcoming') parts.push(`${latest.title}は開催前です。`);
+    else if (status.key === 'ended') parts.push(`${latest.title}は終了しています。`);
+    else parts.push(`${latest.title}の開催情報を掲載しています。`);
+
+    if (latest.eventStart || latest.eventEnd) parts.push(`開催期間は${formatDateTimeRange(latest.eventStart, latest.eventEnd)}です。`);
+    if (expected != null) parts.push(`全${expected}問予定で、現在${actual}問を登録済みです。`);
+    else parts.push(`現在${actual}問を登録済みです。`);
+
+    if (pending > 0) parts.push(`うち${pending}問は正解発表待ちです。`);
+    else if (actual > 0) parts.push('登録済み問題の正解は確認済みです。');
+    else if (status.key === 'ongoing') parts.push('問題・選択肢を確認後、順次追加し、正解はゲーム内で確認でき次第反映します。');
+
+    $('eventGuide').textContent = parts.join('');
   }
 
   function toggleCorrectChoice(button){
@@ -389,23 +498,46 @@ h1{position:relative;margin:0;font-size:clamp(28px,5vw,44px);line-height:1.2;let
   function renderList(){
     const rows = selectedQuestions();
     const total = allQuestions().length;
-    resultCount.textContent = `${rows.length}問を表示 / 登録全${total}問`;
+    const selectedExam = examFilter.value ? data.exams.find(e => e.examId === examFilter.value) : null;
+    const pendingCount = rows.filter(q => !isAnswerConfirmed(q)).length;
+    const scopeTotal = selectedExam ? selectedExam.questions.length : total;
+    const scopeLabel = selectedExam ? `${selectedExam.title} 登録${scopeTotal}問` : `登録全${scopeTotal}問`;
+    resultCount.textContent = `${rows.length}問を表示 / ${scopeLabel}${pendingCount ? `（正解未確定 ${pendingCount}問）` : ''}`;
+
     if (!rows.length) {
-      questionList.innerHTML = '<div class="empty">条件に一致する問題がありません。開催回・出題日・キーワードを変更してください。</div>';
+      if (selectedExam) {
+        const status = getExamStatus(selectedExam);
+        const dayLabel = dayFilter.value ? `${dayFilter.value}日目` : '';
+        if (status.key === 'ongoing') {
+          questionList.innerHTML = `<div class="empty eventState">${esc(selectedExam.title)}は現在開催中です。${dayLabel ? `${esc(dayLabel)}の` : ''}問題・選択肢を確認後、順次追加します。正解はゲーム内で確認でき次第反映します。</div>`;
+          return;
+        }
+        if (status.key === 'upcoming') {
+          questionList.innerHTML = `<div class="empty eventState">${esc(selectedExam.title)}は${esc(formatDateTime(selectedExam.eventStart))}から開催予定です。問題データは開催後に順次追加します。</div>`;
+          return;
+        }
+      }
+      questionList.innerHTML = '<div class="empty">条件に一致する登録済み問題がありません。開催回・出題日・キーワードを変更してください。</div>';
       return;
     }
-    questionList.innerHTML = rows.map(q => `
+
+    questionList.innerHTML = rows.map(q => {
+      const confirmed = isAnswerConfirmed(q);
+      const answerControl = confirmed
+        ? `<button class="answerRevealBtn" type="button" data-correct-choice="${esc(q.correctChoice)}" aria-pressed="false" aria-label="${esc(q.examTitle)} ${esc(q.day)}日目 第${esc(q.questionNo)}問の正解表示を切り替える">✓ 正解を見る</button>`
+        : `<span class="answerPending" role="status">⏳ 正解発表待ち${q.answerDeadline ? `（解答期限 ${esc(formatDateTime(q.answerDeadline))}）` : ''}</span>`;
+      return `
       <article class="questionCard" id="q-${esc(q.questionId)}">
         <div class="qMeta">
           <span class="badge">${esc(q.examTitle)}</span>
           <span class="badge day">${esc(q.day)}日目・第${esc(q.questionNo)}問</span>
+          ${confirmed ? '' : '<span class="badge pending">正解未確定</span>'}
         </div>
         <h3 class="qText">${esc(q.question)}</h3>
         <ol class="choices" aria-label="選択肢">${q.choices.map(c => `<li class="choice">${esc(c)}</li>`).join('')}</ol>
-        <div class="answerRevealWrap">
-          <button class="answerRevealBtn" type="button" data-correct-choice="${esc(q.correctChoice)}" aria-pressed="false" aria-label="${esc(q.examTitle)} ${esc(q.day)}日目 第${esc(q.questionNo)}問の正解表示を切り替える">✓ 正解を見る</button>
-        </div>
-      </article>`).join('');
+        <div class="answerRevealWrap">${answerControl}</div>
+      </article>`;
+    }).join('');
 
     questionList.querySelectorAll('.answerRevealBtn').forEach(btn => {
       btn.addEventListener('click', () => toggleCorrectChoice(btn));
@@ -441,9 +573,12 @@ h1{position:relative;margin:0;font-size:clamp(28px,5vw,44px);line-height:1.2;let
 
   function startPractice(limit, modeKey){
     clearResultImageCache();
-    const rows = selectedQuestions();
+    const matchedRows = selectedQuestions();
+    const rows = matchedRows.filter(isAnswerConfirmed);
     if (!rows.length) {
-      resetPracticeMessage('現在の条件では出題できる問題がありません。絞り込み条件を変更してください。');
+      resetPracticeMessage(matchedRows.length
+        ? '現在の条件に合う問題はありますが、正解発表待ちのため4択クイズにはまだ出題できません。'
+        : '現在の条件では出題できる正解確認済み問題がありません。絞り込み条件を変更してください。');
       return;
     }
 
@@ -941,7 +1076,7 @@ ${PAGE_URL}`;
       const res = await fetch(DATA_URL, {cache:'no-store'});
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const payload = await res.json();
-      const actualTotal = validateData(payload);
+      const {actualTotal} = validateData(payload);
       data = payload;
       $('examCount').textContent = data.exams.length;
       $('totalQuestions').textContent = actualTotal;

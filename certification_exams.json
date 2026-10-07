@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-10T11:52:11+09:00",
-  "examCount": 1,
+  "generatedAt": "2026-10-07T12:04:18+09:00",
+  "examCount": 2,
   "totalQuestions": 21,
   "exams": [
     {
       "examId": "EX001",
       "title": "第1回サカつく検定",
       "round": 1,
+      "eventStart": "2026-09-02 13:00:00",
       "eventEnd": "2026-09-09 12:59:59",
       "dayCount": 7,
       "questionsPerDay": 3,
@@ -373,6 +374,19 @@
           "globalNo": 21
         }
       ]
+    },
+    {
+      "examId": "EX002",
+      "title": "第2回サカつく検定",
+      "round": 2,
+      "eventStart": "2026-10-07 13:00:00",
+      "eventEnd": "2026-10-14 12:59:59",
+      "dayCount": 7,
+      "questionsPerDay": 3,
+      "choiceCount": 4,
+      "source": "ゲーム内「サカつく検定」スクリーンショット",
+      "notes": "サカつくに関する4択問題が毎日出題。解答期限終了後にホーム画面で結果発表し、正解時は追加報酬あり。",
+      "questions": []
     }
   ]
 }
