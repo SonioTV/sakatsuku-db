@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T13:43:26+09:00",
+  "generatedAt": "2026-10-08T14:56:35+09:00",
   "examCount": 2,
   "totalQuestions": 27,
   "exams": [
@@ -30,6 +30,7 @@
           "correctChoice": 1,
           "correctAnswer": "覚醒Pt",
           "answerDeadline": "2026-09-03 12:59:59",
+          "explanation": "リーグ戦やカップ戦で表彰された選手は、報酬として覚醒Ptや功績を獲得できます。最優秀選手賞だけでなく、得点王・アシスト王・ベストイレブンなども選手表彰に含まれます。",
           "notes": null,
           "globalNo": 1
         },
@@ -47,6 +48,7 @@
           "correctChoice": 4,
           "correctAnswer": "200%",
           "answerDeadline": "2026-09-03 12:59:59",
+          "explanation": "覚醒練習の結果は「Good・Great・Excellent・Perfect」の4段階です。パラメータ上昇効果はGoodが100%、Greatが133%、Excellentが166%、Perfectが200%となるため、最高結果では通常の2倍の効果を得られます。",
           "notes": null,
           "globalNo": 2
         },
@@ -64,6 +66,7 @@
           "correctChoice": 2,
           "correctAnswer": "15%",
           "answerDeadline": "2026-09-03 12:59:59",
+          "explanation": "選手個性「繊細」には覚醒Ptの獲得量を増加させる効果があります。第1回サカつく検定の公式正解データでは、その増加量は15%です。個性は育成効率やコンディションなどに影響するものがあります。",
           "notes": null,
           "globalNo": 3
         },
@@ -81,6 +84,7 @@
           "correctChoice": 4,
           "correctAnswer": "コンディション",
           "answerDeadline": "2026-09-04 12:59:59",
+          "explanation": "選手の「絶好調・好調・普通・不調・絶不調」を表すのがコンディションです。疲労、試合への出場機会、チームの成績、ドラマ、個性、監督アビリティなどによって変動します。",
           "notes": null,
           "globalNo": 4
         },
@@ -98,6 +102,7 @@
           "correctChoice": 3,
           "correctAnswer": "絶不調になる",
           "answerDeadline": "2026-09-04 12:59:59",
+          "explanation": "スランプは特殊なコンディション状態のひとつで、発生するとコンディションが絶不調で固定されます。面談を成功させることでスランプを解消できます。",
           "notes": null,
           "globalNo": 5
         },
@@ -115,6 +120,7 @@
           "correctChoice": 2,
           "correctAnswer": "70%",
           "answerDeadline": "2026-09-04 12:59:59",
+          "explanation": "ポジション適正による能力補正は、赤100%・オレンジ85%・黄色70%・無色55%です。そのため黄色適性のポジションで起用した場合、選手の能力は70%まで低下します。",
           "notes": null,
           "globalNo": 6
         },
@@ -132,6 +138,7 @@
           "correctChoice": 1,
           "correctAnswer": "3か月",
           "answerDeadline": "2026-09-05 12:59:59",
+          "explanation": "サカつくモードの投資は3カ月に1度実施できます。資金を使って地域活性やグッズ販売などへ投資し、「成功」「大成功」に応じて効果や報酬を獲得します。投資可能な月を翌月へ持ち越すことはできません。",
           "notes": null,
           "globalNo": 7
         },
@@ -149,6 +156,7 @@
           "correctChoice": 2,
           "correctAnswer": "クラブレベルが下がる",
           "answerDeadline": "2026-09-05 12:59:59",
+          "explanation": "赤字でシーズンを終了すると、翌シーズンの選手モチベーション低下などのペナルティが発生します。さらに赤字ペナルティが2回目以降になると、赤字額に応じてクラブLvが1下がるペナルティも追加されます。",
           "notes": null,
           "globalNo": 8
         },
@@ -166,6 +174,7 @@
           "correctChoice": 4,
           "correctAnswer": "8割",
           "answerDeadline": "2026-09-05 12:59:59",
+          "explanation": "リーグの最優秀選手賞は、リーグ戦全試合の8割以上に出場した選手の中から、評価点の平均値が高い選手が選ばれます。評価点だけ高くても、必要な出場数を満たしていなければ対象になりません。",
           "notes": null,
           "globalNo": 9
         },
@@ -183,6 +192,7 @@
           "correctChoice": 2,
           "correctAnswer": "ポゼッション",
           "answerDeadline": "2026-09-06 12:59:59",
+          "explanation": "ポリシー相性は、カウンター→ムービング→ポゼッション→リアクション→カウンターの順で有利になります。したがってリアクションに対して有利なのはポゼッションです。",
           "notes": null,
           "globalNo": 10
         },
@@ -200,6 +210,7 @@
           "correctChoice": 3,
           "correctAnswer": "リーダーの資質",
           "answerDeadline": "2026-09-06 12:59:59",
+          "explanation": "「リーダーの資質」などキャプテン向けの個性を持つ選手をCAPに設定すると、チーム全体のコンディションが+5上昇する効果を得られます。",
           "notes": null,
           "globalNo": 11
         },
@@ -217,6 +228,7 @@
           "correctChoice": 2,
           "correctAnswer": "ショートパス",
           "answerDeadline": "2026-09-06 12:59:59",
+          "explanation": "チームカラーの「攻撃スタイル」をポゼッション側へ寄せると、選手間の距離が近くなり、ショートパスの使用頻度が上昇します。",
           "notes": null,
           "globalNo": 12
         },
@@ -234,6 +246,7 @@
           "correctChoice": 3,
           "correctAnswer": "キック精度",
           "answerDeadline": "2026-09-07 12:59:59",
+          "explanation": "サカつく2026の選手ステータス定義では、SHOは「決定力・キック力・冷静さ」の3項目で構成されています。キック精度はPAS側のパラメータなので、SHOには含まれません。",
           "notes": null,
           "globalNo": 13
         },
@@ -251,6 +264,7 @@
           "correctChoice": 1,
           "correctAnswer": "プレースタイル",
           "answerDeadline": "2026-09-07 12:59:59",
+          "explanation": "成長ドラマでは、選手のパラメータ経験値・覚醒Pt・個性を獲得できます。一方、プレースタイルは成長ドラマで獲得する項目として含まれていないため、正解はプレースタイルです。",
           "notes": null,
           "globalNo": 14
         },
@@ -268,6 +282,7 @@
           "correctChoice": 1,
           "correctAnswer": "ミドルセンター",
           "answerDeadline": "2026-09-07 12:59:59",
+          "explanation": "スキルにはそれぞれ発動可能なエリアが設定されており、対象エリアで特定のプレーを行った際に発動判定が行われます。「変速ギア」の発動エリアは、当サイトの検定マスター上ではミドルセンターが正解として登録されています。",
           "notes": null,
           "globalNo": 15
         },
@@ -285,6 +300,7 @@
           "correctChoice": 2,
           "correctAnswer": "スカウトパワー",
           "answerDeadline": "2026-09-08 12:59:59",
+          "explanation": "直接オファーの成否を左右する重要な値がスカウトパワーです。選手の調子やチーム総合力ではなく、クラブ側のスカウト能力が直接オファーの成功に関係します。",
           "notes": null,
           "globalNo": 16
         },
@@ -302,6 +318,7 @@
           "correctChoice": 3,
           "correctAnswer": "6カ月",
           "answerDeadline": "2026-09-08 12:59:59",
+          "explanation": "サカつくモードで一度選手を放出すると、その選手に対して一定期間は直接オファーを出せません。第1回検定の公式正解データでは、その期間は6カ月です。",
           "notes": null,
           "globalNo": 17
         },
@@ -319,6 +336,7 @@
           "correctChoice": 1,
           "correctAnswer": "出場機会",
           "answerDeadline": "2026-09-08 12:59:59",
+          "explanation": "欲求「キャリア」を持つ選手は、特に試合への出場機会を重視します。出場機会が十分ならコンディション面で良い影響を受けやすく、逆に試合に出られない状態が続くとコンディションが大きく下がる場合があります。",
           "notes": null,
           "globalNo": 18
         },
@@ -336,6 +354,7 @@
           "correctChoice": 4,
           "correctAnswer": "ATTACK",
           "answerDeadline": "2026-09-09 12:59:59",
+          "explanation": "マネージャーディシジョンで使用できる指示は「GO」「TRY」「STAY」の3種類です。「ATTACK」という指示は存在しません。",
           "notes": null,
           "globalNo": 19
         },
@@ -353,6 +372,7 @@
           "correctChoice": 3,
           "correctAnswer": "マッチモメンタム",
           "answerDeadline": "2026-09-09 12:59:59",
+          "explanation": "マネージャーディシジョンに成功するとマッチモメンタムが上昇します。マッチモメンタムはチーム全体のプレー成功率に関係し、相手より高い場合は、その差に応じてプレーの成功率が上昇します。",
           "notes": null,
           "globalNo": 20
         },
@@ -370,6 +390,7 @@
           "correctChoice": 4,
           "correctAnswer": "5人",
           "answerDeadline": "2026-09-09 12:59:59",
+          "explanation": "通常の試合で延長戦が行われない場合、交代可能な選手数は5人です。第1回検定でも5人が公式正解として登録されています。",
           "notes": null,
           "globalNo": 21
         }
@@ -401,6 +422,7 @@
           "correctChoice": 4,
           "correctAnswer": "1回",
           "answerDeadline": "2026-10-08 12:59:59",
+          "explanation": "期限付き移籍は同じ選手を何度も繰り返し利用できる育成方法ではありません。監督ノートでは、期限付き移籍は1選手につき1回までと明記されています。",
           "notes": null,
           "globalNo": 1
         },
@@ -418,6 +440,7 @@
           "correctChoice": 1,
           "correctAnswer": "監督レベル",
           "answerDeadline": "2026-10-08 12:59:59",
+          "explanation": "監督Lvを上げることで人事関連の機能が解放・強化され、直接オファーできる対象も拡大していきます。より高いレベルのリーグに所属する選手へ直接オファーを出すために必要なのは監督レベルの向上です。",
           "notes": null,
           "globalNo": 2
         },
@@ -435,6 +458,7 @@
           "correctChoice": 4,
           "correctAnswer": "クラブレベル",
           "answerDeadline": "2026-10-08 12:59:59",
+          "explanation": "スカウトパワーはクラブレベルに応じて増加します。直接オファーの成功にも関係するため、クラブLvを上げることは選手獲得能力の強化にもつながります。",
           "notes": null,
           "globalNo": 3
         },
@@ -452,6 +476,7 @@
           "correctChoice": 1,
           "correctAnswer": "キープ力",
           "answerDeadline": "2026-10-09 12:59:59",
+          "explanation": "サカつく2026の選手ステータス定義では、PASは「ショートパス・ロングパス・キック精度」の3項目で構成しています。キープ力はDRBを構成するパラメータなので、PASには含まれません。",
           "notes": null,
           "globalNo": 4
         },
@@ -469,6 +494,7 @@
           "correctChoice": 2,
           "correctAnswer": "覚醒Pt",
           "answerDeadline": "2026-10-09 12:59:59",
+          "explanation": "期限付き移籍は選手を他クラブへ送り出して育成するシステムで、複数の移籍先で成長項目として「覚醒Pt」が上昇します。限界値が上昇する移籍先もありますが「限界突破が上昇する」とは表現しない為「覚醒pt」が正解です。",
           "notes": null,
           "globalNo": 5
         },
@@ -486,6 +512,7 @@
           "correctChoice": 1,
           "correctAnswer": "敏捷性",
           "answerDeadline": "2026-10-09 12:59:59",
+          "explanation": "監督ノートでは、ドリブル覚醒で大幅に上昇するパラメータは「突破力・キープ力・ボールタッチ」とされています。敏捷性はこの3項目には含まれません。敏捷性はショートパス覚醒や走力覚醒では大幅上昇の対象になります。",
           "notes": null,
           "globalNo": 6
         }
