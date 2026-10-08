@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T13:09:01+09:00",
+  "generatedAt": "2026-10-08T13:43:26+09:00",
   "examCount": 2,
-  "totalQuestions": 24,
+  "totalQuestions": 27,
   "exams": [
     {
       "examId": "EX001",
@@ -437,6 +437,57 @@
           "answerDeadline": "2026-10-08 12:59:59",
           "notes": null,
           "globalNo": 3
+        },
+        {
+          "questionId": "EX002-D02-Q01",
+          "day": 2,
+          "questionNo": 1,
+          "question": "選手総合力「PAS」に【含まれない】能力はどれでしょうか？",
+          "choices": [
+            "キープ力",
+            "ロングパス",
+            "ショートパス",
+            "キック精度"
+          ],
+          "correctChoice": 1,
+          "correctAnswer": "キープ力",
+          "answerDeadline": "2026-10-09 12:59:59",
+          "notes": null,
+          "globalNo": 4
+        },
+        {
+          "questionId": "EX002-D02-Q02",
+          "day": 2,
+          "questionNo": 2,
+          "question": "「期限付き移籍」を行うことで上昇するのは、次のうちどれでしょうか？",
+          "choices": [
+            "限界突破",
+            "覚醒Pt",
+            "疲労",
+            "年俸"
+          ],
+          "correctChoice": 2,
+          "correctAnswer": "覚醒Pt",
+          "answerDeadline": "2026-10-09 12:59:59",
+          "notes": null,
+          "globalNo": 5
+        },
+        {
+          "questionId": "EX002-D02-Q03",
+          "day": 2,
+          "questionNo": 3,
+          "question": "サカつくモードで選手を「ドリブル覚醒」させた際、次の中で大幅には【増加しない】パラメータはどれでしょうか？",
+          "choices": [
+            "敏捷性",
+            "キープ力",
+            "ボールタッチ",
+            "突破力"
+          ],
+          "correctChoice": 1,
+          "correctAnswer": "敏捷性",
+          "answerDeadline": "2026-10-09 12:59:59",
+          "notes": null,
+          "globalNo": 6
         }
       ]
     }
