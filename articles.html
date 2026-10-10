@@ -331,6 +331,78 @@ a:hover{opacity:.85}
     border-radius:14px 14px 9px 9px;
   }
 }
+
+/* ==========================================================
+   攻略記事一覧：スマホ向けコンパクト表示（2026-10-10）
+   - 記事の紹介文はデータ・キーワード検索用に保持し、スマホのみ非表示
+   - 記事画像・カテゴリ・正式タイトル・記事リンク・関連リンクは維持
+   - 選択済みカテゴリ、検索・並び替え、記事DOM順序には影響させない
+   ========================================================== */
+@media (max-width:640px){
+  .section.box{
+    margin:12px 0 16px;
+    padding:11px 12px;
+  }
+  .section.box p{
+    margin:0;
+    font-size:12px;
+    line-height:1.55;
+  }
+  .section.articleArchive{
+    margin:12px 0 16px;
+  }
+  .articleArchive .articleControls{
+    margin-bottom:10px;
+  }
+  .articleArchive .articleGrid{
+    gap:8px;
+  }
+  .articleGrid .articleCard{
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+    padding:9px;
+    border-radius:12px;
+  }
+  .articleGrid .articleThumbLink{
+    margin:-9px -9px 8px;
+    border-radius:12px 12px 8px 8px;
+  }
+  .articleGrid .articleCard .meta{
+    align-self:flex-start;
+    max-width:100%;
+    margin-bottom:6px;
+    padding:2px 6px;
+    font-size:9.5px;
+    line-height:1.35;
+    white-space:normal;
+  }
+  .articleGrid .articleCard h3{
+    margin:0 0 7px;
+    font-size:12.5px;
+    line-height:1.42;
+    overflow-wrap:anywhere;
+  }
+  .articleGrid .articleCard .desc{
+    display:none;
+  }
+  .articleGrid .articleCard .linkrow{
+    margin-top:auto;
+    padding-top:5px;
+  }
+  .articleGrid .articleCard .linkbtn{
+    min-height:34px;
+    padding:8px 5px;
+    font-size:11.5px;
+    line-height:1.4;
+  }
+  .articleGrid .articleCard .subLinks{
+    margin-top:6px;
+    font-size:10px;
+    line-height:1.5;
+    overflow-wrap:anywhere;
+  }
+}
 </style>
 </head>
 <body>
@@ -352,7 +424,7 @@ a:hover{opacity:.85}
 <h1>攻略記事一覧</h1>
 <small>サカつく2026の攻略情報をテーマ別にまとめています。</small>
 <div class="section box">
-<p>このページでは、サカつく2026攻略DBに掲載している攻略記事を5つのカテゴリに整理しています。<br/><br/>スカウト・ガチャ、育成・初心者、選手・編成、イベント・特集、アップデート・情報から絞り込みでき、キーワード検索と最新順・古い順の並び替えにも対応しています。目的の記事を探す際にご活用ください。</p>
+<p>ガチャ評価・育成・選手編成などの攻略記事をまとめています。カテゴリ・キーワード検索と最新順・古い順の並び替えで、読みたい記事を探せます。</p>
 </div>
 <div class="section articleArchive">
 <h2>攻略記事を探す</h2>
@@ -394,7 +466,9 @@ a:hover{opacity:.85}
 <strong aria-live="polite" id="articleResultCount">42件の記事を表示中</strong>
 <button class="articleResetBtn" id="articleResetBtn" type="button">条件をリセット</button>
 </div>
-</div><div class="grid articleGrid" id="articleGrid"><article class="card articleCard" data-category="event" data-date="2026-10-07" data-order="-1"><a aria-label="【サカつく2026】第2回サカつく検定の答え・正解まとめ｜1日目～7日目を読む" class="articleThumbLink" href="20261007_certification_exam_2_answers.html"><img alt="【サカつく2026】第2回サカつく検定の答え・正解まとめ｜1日目～7日目" class="articleThumb" data-article-href="20261007_certification_exam_2_answers.html" data-original-src="img/articles/20261007_certification_exam_2_answers/day1_questions.png" decoding="async" loading="lazy" src="img/articles/20261007_certification_exam_2_answers/day1_questions.png"/></a>
+</div>
+<!-- data-date は確認済みの記事のみ設定。公開日が未確認の過去記事に推測日付を追加しない。 -->
+<div class="grid articleGrid" id="articleGrid"><article class="card articleCard" data-category="event" data-date="2026-10-07" data-order="-1"><a aria-label="【サカつく2026】第2回サカつく検定の答え・正解まとめ｜1日目～7日目を読む" class="articleThumbLink" href="20261007_certification_exam_2_answers.html"><img alt="【サカつく2026】第2回サカつく検定の答え・正解まとめ｜1日目～7日目" class="articleThumb" data-article-href="20261007_certification_exam_2_answers.html" data-original-src="img/articles/20261007_certification_exam_2_answers/day1_questions.png" decoding="async" loading="lazy" src="img/articles/20261007_certification_exam_2_answers/day1_questions.png"/></a>
 <div class="meta">イベント・特集</div>
 <h3>【サカつく2026】第2回サカつく検定の答え・正解まとめ｜1日目～7日目</h3>
 <p class="desc">第2回サカつく検定の問題・4択・答えを日別に速報更新。1日目は「期限付き移籍」「直接オファー」「スカウトパワー」の3問を、ゲーム内「監督ノート」を根拠に回答しています。</p>

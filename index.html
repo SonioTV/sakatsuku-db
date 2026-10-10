@@ -537,6 +537,10 @@
     border-radius:22px;
     box-shadow:0 30px 60px rgba(0,0,0,.25);
     overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    max-height:calc(100vh - 36px);
+    max-height:calc(100dvh - 36px);
   }
   .modalHead{
     padding:16px 18px;
@@ -546,6 +550,7 @@
     justify-content:space-between;
     align-items:center;
     gap:12px;
+    flex-shrink:0;
   }
   .modalHead .ttl{ font-size:18px; font-weight:900; color:#ffd400; }
   .modalHead .subttl{ font-size:13px; font-weight:800; opacity:.9; margin-top:4px; color:#ffd400; }
@@ -556,7 +561,12 @@
     font-size:22px;
     cursor:pointer;
   }
-  .modalBody{ padding:16px 18px 18px; }
+  .modalBody{
+    padding:16px 18px 18px;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    min-height:0;
+  }
 
 
 /* ===== 選手詳細モーダル：画像・評価ツールリンク ===== */
@@ -1248,6 +1258,12 @@
     background:#f5f5f5;
 }
 
+/* タブレット・小型PCではボタンの幅を確保する */
+@media (min-width:769px) and (max-width:1599px){
+    .quick-links{grid-template-columns:repeat(6,minmax(0,1fr))}
+    .quick-links a{min-width:0;text-align:center}
+}
+
 /* スマホ */
 @media (max-width:768px){
 
@@ -1531,6 +1547,24 @@
   border-color:#ffc27b;
 }
 @media (max-width:480px){
+  /* 4条件以上はアイコンを上に置き、選手名の2行表示を許可する */
+  .comboManyConditions .comboPlayerCell{height:auto}
+  .comboManyConditions .comboPlayerCellInner,
+  .comboManyConditions .comboPlayerFixedArea{min-height:0}
+  .comboManyConditions .comboPlayerMiniCard{flex-direction:column;gap:3px;min-height:48px;padding:4px 2px}
+  .comboManyConditions .comboPlayerIcon{width:22px;height:22px}
+  .comboManyConditions .comboPlayerTable .styleRow td{white-space:normal;overflow-wrap:anywhere}
+  .comboManyConditions .comboMoreDetails summary{white-space:normal;overflow-wrap:anywhere}
+  .comboManyConditions .comboPlayerMiniText{
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    white-space:normal;
+    overflow-wrap:anywhere;
+    font-size:10px;
+    line-height:1.25;
+    text-align:center;
+  }
   .comboPlayerTableWrap{ padding:5px; border-radius:16px; overflow-x:visible; }
   .comboPlayerTable{ font-size:10px; table-layout:fixed; }
   .comboPlayerTable th,
@@ -2295,15 +2329,15 @@
   <nav class="quick-links" aria-label="主要コンテンツ">
     <a href="articles.html">攻略記事</a>
     <a href="player_catalog.html">選手図鑑</a>
-    <a href="sp_evaluator.html">SP選手評価</a>
-    <a href="overall_ranking.html">最強ランキング</a>
-    <a href="favorite_combos.html">コンボ診断</a>
+    <a href="sp_evaluator.html">SP評価ツール</a>
     <a href="loan_matching_tool.html">期限付き移籍</a>
+    <a href="overall_ranking.html" aria-label="最強選手ランキング">最強選手</a>
+    <a href="strongest_formation.html" aria-label="最強フォメコンランキング">最強フォメコン</a>
     <a href="stadium_simulation.html">スタジアム</a>
     <a href="clubhouse_simulation.html">クラブハウス</a>
     <a href="strongest_team_simulation.html">最強チームSim</a>
     <a href="reroll_method_timing.html">リセマラ</a>
-    <a href="certification_exam.html">検定</a>
+    <a href="certification_exam.html">サカつく検定</a>
     <a href="special_training_tool_guide.html" aria-label="特練カードツールの使い方">特練カード</a>
   </nav>
 
@@ -2376,22 +2410,17 @@
     list.appendChild(status);
   };
 
-  const formatDate = (card, href) => {
-    const explicitDate = String(card.dataset.date || "").trim();
-    const time = card.querySelector("time");
-    const timeValue = String(time?.getAttribute("datetime") || time?.textContent || "").trim();
-    const source = `${explicitDate} ${timeValue} ${href}`;
-
-    let match = source.match(/(20\d{2})[-_/]?(\d{2})[-_/]?(\d{2})/);
-    if (match) return `${match[1]}/${match[2]}/${match[3]}`;
-
-    const text = card.textContent || "";
-    match = text.match(/(20\d{2})年(\d{1,2})月(\d{1,2})日/);
-    if (match) {
-      return `${match[1]}/${String(match[2]).padStart(2, "0")}/${String(match[3]).padStart(2, "0")}`;
-    }
-
-    return String(card.querySelector(".meta")?.textContent || "").trim();
+  const formatDate = (card) => {
+    // 記事一覧に明示された公開日だけを使用する（URLやカテゴリ名から推測しない）。
+    const dateValue = String(card.dataset.date || card.querySelector("time[datetime]")?.getAttribute("datetime") || "").trim();
+    const match = dateValue.match(/^(20\d{2})-(\d{2})-(\d{2})(?:$|T)/);
+    if (!match) return "";
+    const year = Number(match[1]);
+    const month = Number(match[2]);
+    const day = Number(match[3]);
+    const d = new Date(year, month - 1, day);
+    if (d.getFullYear() !== year || d.getMonth() !== month - 1 || d.getDate() !== day) return "";
+    return `${match[1]}/${match[2]}/${match[3]}`;
   };
 
   fetch("articles.html", { cache: "no-cache" })
@@ -2441,10 +2470,13 @@
         });
         item.appendChild(img);
 
-        const date = document.createElement("div");
-        date.className = "homeLatestDate";
-        date.textContent = formatDate(card, href);
-        item.appendChild(date);
+        const dateText = formatDate(card);
+        if (dateText) {
+          const date = document.createElement("div");
+          date.className = "homeLatestDate";
+          date.textContent = dateText;
+          item.appendChild(date);
+        }
 
         const titleNode = document.createElement("div");
         titleNode.className = "homeLatestTitle";
@@ -2597,10 +2629,10 @@
       <img src="img/label/sp_evaluator.png" alt="選手評価ツール" loading="lazy" decoding="async">
     </a>
     <a class="toolBannerCard" href="overall_ranking.html">
-      <img src="img/label/overall_ranking.png" alt="総合力ランキング" loading="lazy" decoding="async">
+      <img src="img/label/overall_ranking.png" alt="最強選手ランキング" loading="lazy" decoding="async">
     </a>
-    <a class="toolBannerCard" href="loan_matching_tool.html">
-      <img src="img/label/loan_matching_tool.png" alt="期限付き移籍マッチングツール" loading="lazy" decoding="async">
+    <a class="toolBannerCard" href="strongest_formation.html">
+      <img src="img/label/strongest_formation.png" alt="最強フォメコンランキング" loading="lazy" decoding="async">
     </a>
     <a class="toolBannerCard" href="strongest_team_simulation.html">
       <img src="img/label/strongest_team_simulation.png" alt="最強チームシミュレーション" loading="lazy" decoding="async">
@@ -2617,11 +2649,17 @@
     <a class="toolBannerCard" href="clubhouse_simulation.html">
       <img src="img/label/clubhouse_simulation.png" alt="クラブハウス設備シミュレーション" loading="lazy" decoding="async">
     </a>
+    <a class="toolBannerCard" href="loan_matching_tool.html">
+      <img src="img/label/loan_matching_tool.png" alt="期限付き移籍マッチングツール" loading="lazy" decoding="async">
+    </a>
     <a class="toolBannerCard" href="tier_list.html">
       <img src="img/label/tier_list.png" alt="サカつく2026Tier表メーカー" loading="lazy" decoding="async">
     </a>
     <a class="toolBannerCard" href="dice_sugoroku_simulator.html">
       <img src="img/label/dice_sugoroku_simulator.png" alt="ダイスすごろくシミュレーター" loading="lazy" decoding="async">
+    </a>
+    <a class="toolBannerCard" href="certification_exam.html">
+      <img src="img/label/Sakatsuku_Quiz.png" alt="サカつく検定" loading="lazy" decoding="async">
     </a>
     <a class="toolBannerCard specialTrainingToolCard" href="special_training_tool_guide.html" aria-label="特練カードツールの使い方">
       <span class="specialTrainingToolTitle">🃏 特練カード</span>
@@ -2630,10 +2668,6 @@
     <a class="toolBannerCard managerNoteToolCard" href="manager_note.html">
       <span class="managerNoteToolTitle">📘 監督ノート</span>
       <span class="managerNoteToolSub">ゲーム内マニュアルを分類・キーワードから検索</span>
-    </a>
-    <a class="toolBannerCard certificationExamToolCard" href="certification_exam.html">
-      <span class="certificationExamToolTitle">🎯 サカつく検定</span>
-      <span class="certificationExamToolSub">過去問・答え検索＆4択クイズに挑戦</span>
     </a>
   </div>
 </div>
@@ -2751,7 +2785,6 @@
 
   </div>
 
-</div>
 </div>
 
 <!-- ===== サカつく2026 ゲーム情報 ===== -->
@@ -3063,6 +3096,7 @@ function openPlayerModal(p){
   }
 
   document.getElementById("modalBody").innerHTML = lines.join("");
+  document.getElementById("modalBody").scrollTop = 0;
   const back = document.getElementById("modalBack");
   back.classList.add("show");
   back.setAttribute("aria-hidden","false");
@@ -3100,6 +3134,7 @@ function openPlayerListModal(title, players){
     });
   }
 
+  body.scrollTop = 0;
   const back = document.getElementById("modalBack");
   back.classList.add("show");
   back.setAttribute("aria-hidden","false");
@@ -4177,7 +4212,7 @@ function renderPlayersForCombo(){
   const polTotal = columns.reduce((sum, col)=>sum + col.matchedPolDiff.length, 0);
   const colCount = Math.max(columns.length, 1);
   out.innerHTML = `
-    <div class="comboPlayerTableWrap">
+    <div class="comboPlayerTableWrap${colCount >= 4 ? " comboManyConditions" : ""}">
       <table class="comboPlayerTable">
         <tr class="condHead">
           ${columns.map(col=>`<th class="condColor${(col.idx % 6)+1}">条件${col.idx+1}</th>`).join("")}
