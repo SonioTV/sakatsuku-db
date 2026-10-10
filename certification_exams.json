@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T13:48:54+09:00",
+  "generatedAt": "2026-10-10T13:19:01+09:00",
   "examCount": 2,
-  "totalQuestions": 30,
+  "totalQuestions": 33,
   "exams": [
     {
       "examId": "EX001",
@@ -569,6 +569,60 @@
           "explanation": "ポジション適正では、能力補正は赤100%・オレンジ85%・黄色70%・無色55%です。そのため、適性が無色のポジションで起用した場合は55%まで低下します。",
           "notes": null,
           "globalNo": 9
+        },
+        {
+          "questionId": "EX002-D04-Q01",
+          "day": 4,
+          "questionNo": 1,
+          "question": "サカつくモードの特別練習は何か月ごとに行えるでしょうか？",
+          "choices": [
+            "6か月後",
+            "1か月後",
+            "翌シーズン",
+            "3か月後"
+          ],
+          "correctChoice": 4,
+          "correctAnswer": "3か月後",
+          "answerDeadline": "2026-10-11 12:59:59",
+          "explanation": "特別練習は実施してから3か月後に再度実施できます。そのため正解は「3か月後」です。",
+          "notes": null,
+          "globalNo": 10
+        },
+        {
+          "questionId": "EX002-D04-Q02",
+          "day": 4,
+          "questionNo": 2,
+          "question": "「特別練習」を行いたい選手がどのような状態のとき、特別練習を【実行できなくなってしまう】でしょうか？",
+          "choices": [
+            "不調",
+            "スランプ",
+            "絶不調",
+            "怪我や天狗"
+          ],
+          "correctChoice": 4,
+          "correctAnswer": "怪我や天狗",
+          "answerDeadline": "2026-10-11 12:59:59",
+          "explanation": "怪我中の選手は特別練習を行えず、天狗状態の選手も特別練習や選手継承ができなくなります。不調・絶不調では特別練習の効果量は下がりますが、実行自体は可能です。",
+          "notes": null,
+          "globalNo": 11
+        },
+        {
+          "questionId": "EX002-D04-Q03",
+          "day": 4,
+          "questionNo": 3,
+          "question": "全体練習が強化され、練習効果が向上する「キャンプ」は、1シーズンのうちに何回実施できるでしょうか？",
+          "choices": [
+            "2回",
+            "1回",
+            "3回",
+            "制限なし"
+          ],
+          "correctChoice": 1,
+          "correctAnswer": "2回",
+          "answerDeadline": "2026-10-11 12:59:59",
+          "explanation": "シーズン中に2回キャンプに行くことができます。キャンプでは全体練習が強化され、練習効果量の増加や全体練習メニューLvの上昇などの効果があります。",
+          "notes": null,
+          "globalNo": 12
         }
       ]
     }

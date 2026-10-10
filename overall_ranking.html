@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>選手ランキング｜総合力・6カテゴリ・17項目TOP10｜サカつく2026攻略DB</title>
-  <meta name="description" content="サカつく2026の選手を初期総合力・最大強化・SHO/PAS/DRB/DEF/PHY/SPDの6カテゴリ・詳細17項目でランキング比較。各TOP10と条件別ランキングを確認できます。">
+  <title>サカつく2026最強選手ランキング｜総合力・実数値・能力別TOP10｜サカつく2026攻略DB</title>
+  <meta name="description" content="サカつく2026の最強選手を初期総合力・最大強化・実数値（詳細17項目の合計）・6カテゴリ・17項目のTOP10で比較。国籍・ポリシー・ポジションなどの条件別ランキングも確認できます。">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://sakatsuku2026-db.com/overall_ranking.html">
-  <meta property="og:title" content="選手ランキング｜総合力・6カテゴリ・17項目TOP10｜サカつく2026攻略DB">
-  <meta property="og:description" content="サカつく2026の選手を初期総合力・最大強化・SHO/PAS/DRB/DEF/PHY/SPDの6カテゴリ・詳細17項目でランキング比較。各TOP10と条件別ランキングを確認できます。">
+  <meta property="og:title" content="サカつく2026最強選手ランキング｜総合力・実数値・能力別TOP10｜サカつく2026攻略DB">
+  <meta property="og:description" content="サカつく2026の最強選手を初期総合力・最大強化・実数値（詳細17項目の合計）・6カテゴリ・17項目のTOP10で比較。国籍・ポリシー・ポジションなどの条件別ランキングも確認できます。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sakatsuku2026-db.com/overall_ranking.html">
   <meta name="twitter:card" content="summary">
@@ -231,8 +231,8 @@
     </div>
 
     <section class="hero">
-      <h1>選手ランキング</h1>
-      <p>初期総合力・最大強化に加え、6カテゴリと詳細17項目のTOP10を選手画像つきで比較できます。</p>
+      <h1>サカつく2026 最強選手ランキング</h1>
+      <p>初期総合力・最大強化・実数値（詳細17項目の合計）に加え、6カテゴリと17項目の最強選手TOP10を比較できます。</p>
       <div class="heroStats">
         <div class="stat"><div class="k">登録選手</div><div class="v" id="statTotal">-</div></div>
         <div class="stat"><div class="k">最高初期総合力</div><div class="v" id="statOverall">-</div></div>
@@ -242,7 +242,7 @@
     </section>
 
     <nav class="navChips" aria-label="ページ内リンク">
-      <a href="#overall">初期総合力</a><a href="#max">最大強化</a><a href="#categoryRanking">6カテゴリ</a><a href="#detailRanking">17項目</a><a href="#filter">フィルター</a><a href="#share">割合</a>
+      <a href="#overall">初期総合力</a><a href="#max">最大強化</a><a href="#realRanking">実数値</a><a href="#categoryRanking">6カテゴリ</a><a href="#detailRanking">17項目</a><a href="#filter">フィルター</a><a href="#share">割合</a>
     </nav>
 
     <div class="grid">
@@ -256,6 +256,11 @@
         <div class="cardBody"><div id="maxList" class="rankList"></div></div>
       </section>
 
+
+      <section id="realRanking" class="card full">
+        <div class="cardHead purple"><div><h2 class="cardTitle">実数値 最強ランキング TOP10</h2><p class="cardNote">詳細17項目の合計値で比較。17項目すべてが登録された選手のみ対象です。</p></div><div class="metricPill">17 TOTAL</div></div>
+        <div class="cardBody"><div id="realRankList" class="rankList"></div></div>
+      </section>
 
       <section id="categoryRanking" class="card full">
         <div class="cardHead green"><div><h2 class="cardTitle">6カテゴリ最強ランキング TOP10</h2><p class="cardNote">SHO・PAS・DRB・DEF・PHY・SPDから選択。カテゴリ内の詳細ステータス合計値で比較します。</p></div><div class="metricPill">6 CATEGORY</div></div>
@@ -280,7 +285,7 @@
       </section>
 
       <section id="filter" class="card full">
-        <div class="cardHead green"><div><h2 class="cardTitle">総合フィルターランキング TOP5</h2><p class="cardNote">国籍・レアリティ・成長タイプ・ポリシー・適性ポジション・入手方法・入手場所・プレイスタイル・Lvを組み合わせて表示</p></div><div class="metricPill">FILTER</div></div>
+        <div class="cardHead green"><div><h2 class="cardTitle">総合フィルターランキング TOP10</h2><p class="cardNote">国籍・レアリティ・成長タイプ・ポリシー・適性ポジション・入手方法・入手場所・プレイスタイル・Lvを組み合わせて表示</p></div><div class="metricPill">FILTER</div></div>
         <div class="cardBody">
           <div class="filters">
             <select id="fNationality" class="select" aria-label="国籍"></select>
@@ -292,7 +297,7 @@
             <select id="fPlace" class="select" aria-label="入手場所"></select>
             <select id="fStyle" class="select" aria-label="プレイスタイル"></select>
             <select id="fStyleLv" class="select" aria-label="プレイスタイルLv"></select>
-            <select id="fMetric" class="select" aria-label="ランキング基準"><option value="overall">初期総合力</option><option value="maxUpgrade">最大強化</option></select>
+            <select id="fMetric" class="select" aria-label="ランキング基準"><option value="overall">初期総合力</option><option value="maxUpgrade">最大強化</option><option value="realTotal">実数値（17項目合計）</option></select>
             <button id="resetBtn" class="button" type="button">リセット</button>
           </div>
           <div id="filteredList" class="filteredGrid"></div>
@@ -321,14 +326,16 @@
 
 <section class="review-content-shell" aria-labelledby="ranking-guide-title">
   <div class="review-content">
-    <h2 id="ranking-guide-title">総合力ランキングの読み方</h2>
-    <p>このランキングページでは、登録選手を初期総合力・最大強化だけでなく、SHO・PAS・DRB・DEF・PHY・SPDの6カテゴリと詳細17項目からも比較できます。各ランキングはTOP10を表示し、選手カードから個別選手ページへ移動できます。</p>
+    <h2 id="ranking-guide-title">最強選手ランキングの比較基準と使い方</h2>
+    <p>このランキングページでは、登録選手を初期総合力・最大強化・実数値（詳細17項目の合計）・SHO・PAS・DRB・DEF・PHY・SPDの6カテゴリ・詳細17項目から比較できます。各ランキングはTOP10を表示し、選手カードから個別選手ページへ移動できます。</p>
     <h3>初期総合力と最大強化は目的で使い分ける</h3>
     <p>初期総合力は、獲得直後からどれだけ戦力になりやすいかを見る指標です。最大強化は育成を進めたあとの到達値を比較するための指標なので、即戦力を探す場合と長期育成を前提にする場合で見るランキングを切り替えてください。</p>
+    <h3>実数値ランキングで詳細能力の合計を比較する</h3>
+    <p>実数値は詳細17項目の数値を合算した指標です。欠損がある選手を0扱いで過小評価しないため、17項目すべてが登録された選手だけを対象にしています。最大強化総合力とは異なる評価軸であり、試合での強さを保証するものではありません。</p>
     <h3>6カテゴリ・17項目ランキングで得意分野を探す</h3>
     <p>6カテゴリランキングではカテゴリ内の詳細ステータス合計、17項目ランキングでは各能力の実数値を基準にTOP10を表示します。総合力だけでは見えにくい「決定力が高い選手」「走力が高い選手」などを探せます。</p>
     <h3>条件別ランキングで同じ土俵に絞る</h3>
-    <p>国籍、レアリティ、成長タイプ、ポリシー、適性ポジション、入手方法・入手場所、プレイスタイル、プレイスタイルLvなどを組み合わせると、編成条件に近い選手だけで比較できます。全選手ランキングだけでは見えにくい「同ポジション内での立ち位置」を確認するのに有効です。</p>
+    <p>国籍、レアリティ、成長タイプ、ポリシー、適性ポジション、入手方法・入手場所、プレイスタイル、プレイスタイルLvなどを組み合わせると、編成条件に近い選手だけで比較できます。初期総合力・最大強化・実数値から並び替えられ、全選手ランキングだけでは見えにくい「同ポジション内での立ち位置」を確認するのに有効です。</p>
     <h3>総合力だけで最終評価を決めない</h3>
     <p>総合力は比較しやすい共通指標ですが、実際の編成ではフォーメーションコンボ、ポリシー、プレイスタイル、入手状況なども重要です。気になる選手は選手評価ツールやフォメコン診断も併用して確認してください。</p>
     <div class="review-links"><a href="howto_overall_ranking.html">ランキングの詳しい使い方</a><a href="sp_evaluator.html">SP選手評価ツール</a><a href="index.html">攻略DBトップへ</a></div>
@@ -422,6 +429,14 @@ function getCategoryTotal(p, category){
   if(values.some(v=>v===null)) return null;
   return values.reduce((sum,v)=>sum+v,0);
 }
+function getRealTotal(p){
+  const values=STATUS_CATEGORIES.flatMap(category=>(STATUS_SCHEMA[category]||[]).map(field=>getStatusValue(p,category,field.key)));
+  if(values.length!==17 || values.some(value=>value===null)) return null;
+  return values.reduce((sum,value)=>sum+value,0);
+}
+function getRankingValue(p,key){
+  return key==="realTotal" ? getRealTotal(p) : finiteStat(p[key]);
+}
 function topByGetter(getter, n=10){
   return PLAYERS
     .map(p=>({p,value:getter(p)}))
@@ -467,6 +482,10 @@ function bindCards(root){ /* 個別選手ページへの通常リンクを使用
 function renderRankings(){
   $("overallList").innerHTML = topBy("overall",10).map((p,i)=>rankHtml(p,i,"overall","初期",{section:"overall"})).join("");
   $("maxList").innerHTML = topBy("maxUpgrade",10).map((p,i)=>rankHtml(p,i,"maxUpgrade","最大",{section:"max"})).join("");
+  const realRows=topByGetter(getRealTotal,10);
+  $("realRankList").innerHTML = realRows.length
+    ? realRows.map((x,i)=>rankHtmlValue(x.p,i,x.value,"実数値",{section:"filter",metric:"realTotal"})).join("")
+    : `<div class="empty">詳細17項目がすべて登録された選手がいません</div>`;
 }
 
 function setupStatusRankings(){
@@ -591,7 +610,7 @@ function setupFilters(){
     if(requested && [...$(f.id).options].some(o=>o.value===requested)) $(f.id).value=requested;
   });
   const requestedMetric=pageParams.get("metric");
-  if(requestedMetric==="overall" || requestedMetric==="maxUpgrade") $("fMetric").value=requestedMetric;
+  if(["overall","maxUpgrade","realTotal"].includes(requestedMetric)) $("fMetric").value=requestedMetric;
   rebuildFacetOptions();
 
   FACETS.forEach(f=>$(f.id).addEventListener("change",()=>{
@@ -612,19 +631,22 @@ function renderFiltered(){
   const state=getFacetState();
   const key=$("fMetric").value || "overall";
   let arr=PLAYERS.filter(p=>matchesAllFacets(p,state));
-  arr=arr.filter(p=>num(p[key])>0).sort((a,b)=>{
-    const diff=num(b[key])-num(a[key]);
+  arr=arr.filter(p=>{
+    const value=getRankingValue(p,key);
+    return value!==null && value>0;
+  }).sort((a,b)=>{
+    const diff=getRankingValue(b,key)-getRankingValue(a,key);
     if(diff!==0) return diff;
     const subKey=key==="overall" ? "maxUpgrade" : "overall";
     const subDiff=num(b[subKey])-num(a[subKey]);
     if(subDiff!==0) return subDiff;
     return normalized(a.name).localeCompare(normalized(b.name),"ja");
-  }).slice(0,5);
+  }).slice(0,10);
   if(!arr.length){$("filteredList").innerHTML=`<div class="empty" style="grid-column:1/-1">対象選手がいません</div>`;return;}
   const returnFilters={};
   FACETS.forEach(f=>{const v=$(f.id).value;if(v)returnFilters[f.id]=v;});
   const returnContext={section:"filter",metric:key,filters:returnFilters};
-  $("filteredList").innerHTML=arr.map((p,i)=>`<a class="miniCard" href="${esc(playerPageUrl(p,returnContext))}"><div class="miniRank">#${i+1}</div><div class="miniCardThumb">${playerThumbHtml(p,"miniCardThumbInner").replace('class="miniCardThumbInner"','class="miniCardThumbInner" style="height:68px;display:flex;align-items:center;justify-content:center"')}</div><div class="miniName">${esc(p.name)}</div><div class="miniScore">${fmt(p[key])}</div><div class="miniMeta">${esc(p.rarity || "-")} / ${esc(getSuitablePositions(p).join("/") || "-")}<br>${esc(p.policy || "-")} / ${esc((p.playStyle || "-") + (p.playStyleLv ? " " + romanLv(p.playStyleLv) : ""))}</div></a>`).join("");
+  $("filteredList").innerHTML=arr.map((p,i)=>`<a class="miniCard" href="${esc(playerPageUrl(p,returnContext))}"><div class="miniRank">#${i+1}</div><div class="miniCardThumb">${playerThumbHtml(p,"miniCardThumbInner").replace('class="miniCardThumbInner"','class="miniCardThumbInner" style="height:68px;display:flex;align-items:center;justify-content:center"')}</div><div class="miniName">${esc(p.name)}</div><div class="miniScore">${fmt(getRankingValue(p,key))}</div><div class="miniMeta">${esc(p.rarity || "-")} / ${esc(getSuitablePositions(p).join("/") || "-")}<br>${esc(p.policy || "-")} / ${esc((p.playStyle || "-") + (p.playStyleLv ? " " + romanLv(p.playStyleLv) : ""))}</div></a>`).join("");
 }
 
 function renderBars(containerId, key, order=[]){

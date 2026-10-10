@@ -741,6 +741,15 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
 }
 /* ===== end detailed stat results ===== */
 
+/* 編成成立とプレビュー数値の区別。既存結果レイアウトは保持 */
+.formationValidity{padding:10px 12px;border:1px solid #dbe4f0;border-radius:13px;margin:6px 0 10px;font-size:13px;font-weight:800;line-height:1.55;overflow-wrap:anywhere}
+.formationValidity.ok{color:#12643a;background:#edf9f2;border-color:#bde5cf}
+.formationValidity.warn{color:#865016;background:#fff8ec;border-color:#f1d8ad}
+.formationValidity.invalid{color:#9a3412;background:#fff2ec;border-color:#f3c1aa}
+.summaryStat.final.provisional{background:#fff8ec;border-color:#f1d8ad}
+.summaryStat.final.provisional .v{color:#865016}
+@media(max-width:680px){.formationValidity{font-size:12px;padding:9px 10px}}
+
 </style>
 
 <style id="review-content-styles">
@@ -765,6 +774,7 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
     <div class="topNav">
       <a href="index.html">← サイトに戻る</a>
       <a href="favorite_combos.html">⭐ フォメコン診断</a>
+      <a href="strongest_formation.html">🏆 最強フォーメーションランキング</a>
     </div>
     <h1>最強チームシミュレーション</h1>
     <p class="lead">選択したフォーメーションコンボの発動条件と能力バフを反映し、17項目の詳細ステータス合計（最大実数値）が最大になる編成候補を表示します。</p>
@@ -830,6 +840,7 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
           <div>シミュレーション結果</div>
           <span>緑色＝コンボ条件一致</span>
         </div>
+        <div id="formationValidity" class="formationValidity" role="status" aria-live="polite" style="display:none"></div>
         <div id="resultSummary" class="resultSummary" style="display:none"></div>
 <div class="grid" id="gridWrap" style="display:none">
         <table id="resultTable" class="singleTeamTable">
@@ -880,10 +891,11 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
     <p>ポリシーを統一した編成を作りたい場合はポリシー染め、ポリシーに縛られず候補を比較したい場合はポリシー自由を使います。同じフォーメーションでも選択方法によって候補が変わるため、目的に合わせて切り替えてください。</p>
     <h3>コンボ条件を満たす選手を確認</h3>
     <p>結果では、フォーメーションコンボの発動条件に関係する選手を視覚的に確認できます。国籍や入手場所などの条件も指定できるため、「現在入手可能な範囲だけで組む」「特定の選手群を除いて比較する」といった検討にも利用できます。</p>
+    <p>11人が重複なくそろい、必須条件と配置定義が一致した編成を「編成成立」と表示します。人数不足などの場合も編成候補は表示できますが、その能力バフ後の数値は発動を保証しない参考値です。ランキングとの比較は、追加の国籍・入手場所指定なし、ポリシー染めで成立した編成を対象にしてください。</p>
     <h3>テーブル表示とピッチ表示</h3>
     <p>数値や条件を細かく確認したい場合はテーブル、配置イメージを見たい場合はピッチ表示が便利です。両方を表示して、数値面とポジション配置を同時に確認することもできます。</p>
     <p class="review-note">表示結果は収録データと指定条件をもとにした編成候補です。試合での操作感、スキル発動、戦術相性など、データ化していない要素まで含めた絶対的な最強編成を保証するものではありません。</p>
-    <div class="review-links"><a href="howto_strongest_team_simulation.html">詳しい使い方</a><a href="favorite_combos.html">フォメコン診断</a><a href="index.html">攻略DBトップへ</a></div>
+    <div class="review-links"><a href="howto_strongest_team_simulation.html">詳しい使い方</a><a href="strongest_formation.html">最強フォーメーションランキング</a><a href="favorite_combos.html">フォメコン診断</a><a href="index.html">攻略DBトップへ</a></div>
   </div>
 </section>
 
@@ -1250,6 +1262,30 @@ function makeResultCell(player, slot, detail){
   </div>`;
 }
 
+function renderFormationValidity(){
+  const target=$("formationValidity");
+  if(!target) return;
+  if(!LAST){target.style.display="none";return;}
+  const free=getSelectedTeamMode()==="free";
+  const v=free?LAST.validityB:LAST.validityA;
+  if(!v){target.style.display="none";return;}
+  target.className="formationValidity";
+  if(v.definitionError){
+    target.classList.add("invalid");
+    target.textContent=`編成成立判定不可：${v.definitionError}。現在の編成・バフ値は参考値です。元データを確認してください。`;
+  }else if(!v.valid){
+    target.classList.add("warn");
+    target.textContent=`編成未成立（${v.filled}/11人・必須条件 ${v.matched}/${v.required}件）。バフ後実数値は仮適用の参考値で、コンボ発動を保証しません。`;
+  }else if(free){
+    target.classList.add("ok");
+    target.textContent=`11人配置・必須条件 ${v.matched}/${v.required}件を満たす編成です。ポリシー自由での参考編成のため、ランキングの「ポリシー染め」とは数値を直接比較できません。`;
+  }else{
+    target.classList.add("ok");
+    target.textContent=`編成成立（11/11人・必須条件 ${v.matched}/${v.required}件一致）。ポリシー染め・追加絞り込みなしの場合、ランキングと同条件で比較できます。`;
+  }
+  target.style.display="";
+}
+
 function renderSummary(){
   const summary = $("resultSummary");
   if(!summary || !LAST){
@@ -1259,6 +1295,8 @@ function renderSummary(){
 
   const metrics = getSelectedMetrics();
   const label = getSelectedTeamLabel();
+  const validity = getSelectedTeamMode()==="free" ? LAST.validityB : LAST.validityA;
+  const preliminary = !validity?.valid;
   if(!metrics){
     summary.style.display = "none";
     return;
@@ -1289,8 +1327,8 @@ function renderSummary(){
     <div class="resultSummaryGrid">
       <div class="summaryStat"><div class="k">${metrics.filledCount}名の最大強化合計</div><div class="v">${formatInteger(metrics.totalMaxUpgrade)}</div></div>
       <div class="summaryStat"><div class="k">${metrics.filledCount}名の最大実数値合計</div><div class="v">${formatInteger(metrics.totalBaseReal)}</div></div>
-      <div class="summaryStat buff"><div class="k">フォメコン上昇値</div><div class="v">${formatSignedInteger(metrics.totalBuffGain)}</div></div>
-      <div class="summaryStat final"><div class="k">バフ後最大実数値合計</div><div class="v">${formatInteger(metrics.totalBuffedReal)}</div></div>
+      <div class="summaryStat buff"><div class="k">${preliminary ? "参考：仮の上昇値" : "フォメコン上昇値"}</div><div class="v">${formatSignedInteger(metrics.totalBuffGain)}</div></div>
+      <div class="summaryStat final${preliminary ? " provisional" : ""}"><div class="k">${preliminary ? "参考：仮のバフ後合計" : "バフ後最大実数値合計"}</div><div class="v">${formatInteger(metrics.totalBuffedReal)}</div></div>
     </div>
     <div class="teamMetaLine">
       <span class="teamMetaChip">${esc(label)}</span>
@@ -1298,7 +1336,7 @@ function renderSummary(){
       ${bonusLines.map(x=>`<span class="teamMetaChip">${esc(x)}</span>`).join("")}
     </div>
     <div class="comboEffectPanel">
-      <b>${esc(LAST.combo?.name || "フォーメーションコンボ")}</b> の能力上昇を17項目へ反映
+      <b>${esc(LAST.combo?.name || "フォーメーションコンボ")}</b> の${preliminary ? "仮の能力上昇" : "能力上昇"}を17項目へ反映
       <div class="comboEffectChips">${effectChips || `<span class="comboEffectChip">能力上昇なし</span>`}</div>
     </div>
   `;
@@ -1340,6 +1378,7 @@ function renderTable(){
   }
 
   renderSummary();
+  renderFormationValidity();
 
   const note = $("resultNote");
   if(note){
@@ -1441,6 +1480,34 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
   rebuildComboSelect();
 }
 
+  // ランキングから ?combo=C059&mode=available 等で編成を開ける。
+  // 不正なパラメータは無視し、通常の手動操作を残す。
+  function applyRankingDeepLink(){
+    const qs=new URLSearchParams(window.location.search);
+    const comboId=qs.get("combo");
+    if(!comboId) return;
+    const combo=COMBOS.find(c=>String(c.comboId)===comboId);
+    if(!combo){setStatus("リンク先のフォーメーションコンボが見つかりません。",true);return;}
+    $("rankSel").value=String(combo.rank||"");
+    const policy=Array.isArray(combo.combo_policys)?(combo.combo_policys[0]||""):String(combo.combo_policys||"");
+    $("policySel").value=policy;
+    rebuildFormationSelect();
+    $("formationSel").value=String(combo.formation||"");
+    rebuildComboSelect();
+    $("comboSel").value=comboId;
+    if($("comboSel").value!==comboId){setStatus("指定コンボを選択できませんでした。",true);return;}
+    const mode=qs.get("mode");
+    const playerMode=["all","available","favorite"].includes(mode)?mode:"all";
+    const input=document.querySelector(`input[name="playerFilter"][value="${playerMode}"]`);
+    if(input) input.checked=true;
+    const team=qs.get("team");
+    if(["dye","free"].includes(team)){
+      const input=document.querySelector(`input[name="pitchTeam"][value="${team}"]`);
+      if(input) input.checked=true;
+    }
+    simulate();
+  }
+
   function rebuildPolicySelect(){
     const sel = $("policySel");
     if(!sel) return;
@@ -1503,48 +1570,70 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
   }
 
   function buildRequirementMap(combo, slotsForCombo=[]){
-    const byPos = new Map();        // position -> [req...]
-    const bySlot = new Map();       // slotNo(string) -> [req...]
-    const byCondition = new Map();  // conditionNo(string) -> [req...]
-
-    const pushMap = (map, key, req)=>{
-      const k = String(key);
-      if(!map.has(k)) map.set(k, []);
-      map.get(k).push(req);
+    const byPos = new Map();
+    const bySlot = new Map();
+    const byCondition = new Map();
+    const push = (map,key,req)=>{
+      const k=String(key);
+      if(!map.has(k)) map.set(k,[]);
+      if(!map.get(k).includes(req)) map.get(k).push(req);
     };
-
-    (combo.combo_requirements||[]).forEach(req=>{
-      const pos = req.position;
-      if(pos) pushMap(byPos, pos, req);
-
-      // combos.json 側が slotNo / slot_no を持つ場合
-      const sn = req.slotNo ?? req.slot_no;
-      if(sn!==undefined && sn!==null && sn!=="") pushMap(bySlot, sn, req);
-
-      // combos.json 側が conditionNo / condition_no を持つ場合
-      const cn = req.conditionNo ?? req.condition_no;
-      if(cn!==undefined && cn!==null && cn!=="") pushMap(byCondition, cn, req);
-    });
-
-    // formation_slots.json の conditionNo と combos.json の conditionNo を紐づけて、
-    // 実際の slotNo に発動条件を展開する。
-    // これにより、同じDMが2枠ある場合でも「発動条件DM」と「空きDM」を分けて扱える。
-    for(const slot of (slotsForCombo||[])){
-      const slotNo = slot?.slotNo ?? slot?.slot_no;
-      const conditionNo = slot?.conditionNo ?? slot?.condition_no;
-      if(slotNo===undefined || slotNo===null || slotNo==="") continue;
-      if(conditionNo===undefined || conditionNo===null || conditionNo==="") continue;
-
-      const reqs = byCondition.get(String(conditionNo)) || [];
-      if(!reqs.length) continue;
-      const k = String(slotNo);
-      if(!bySlot.has(k)) bySlot.set(k, []);
-      for(const req of reqs){
-        if(!bySlot.get(k).includes(req)) bySlot.get(k).push(req);
+    // combo_requirementsのslotNoを最優先する。
+    // formation_slotsのcondition_noは複数スロットで同一値になるケースがあり、
+    // conditionNoで再展開すると無関係な枠にも発動条件が付くため禁止。
+    for(const req of (combo.combo_requirements||[])){
+      if(req.position) push(byPos,req.position,req);
+      const sn=req.slotNo??req.slot_no;
+      const cn=req.conditionNo??req.condition_no;
+      if(cn!==undefined&&cn!==null&&cn!=="") push(byCondition,cn,req);
+      if(sn!==undefined&&sn!==null&&sn!==""){
+        push(bySlot,sn,req);
+      }else if(cn!==undefined&&cn!==null&&cn!==""){
+        // 過去データへの互換対応。明示slotNoを持つ現在のデータでは使用しない。
+        const candidates=slotsForCombo.filter(slot=>
+          String(slot.conditionNo??slot.condition_no??"")===String(cn) &&
+          (!req.position||String(slot.position)===String(req.position))
+        );
+        if(candidates.length===1) push(bySlot,candidates[0].slotNo??candidates[0].slot_no,req);
       }
     }
+    return {byPos,bySlot,byCondition};
+  }
 
-    return { byPos, bySlot, byCondition };
+  function getComboDefinitionError(combo,slots){
+    if(slots.length!==11||new Set(slots.map(s=>String(s.slotNo))).size!==11){
+      return "フォーメーション配置が11枠で定義されていません";
+    }
+    const slotByNo=new Map(slots.map(s=>[String(s.slotNo),s]));
+    for(const req of (combo.combo_requirements||[])){
+      const sn=req.slotNo??req.slot_no;
+      if(sn===null||sn===undefined||sn===""||!slotByNo.has(String(sn))){
+        return `必須条件のスロット番号が無効です：${sn??"未設定"}`;
+      }
+      const pos=String(req.position||"").trim().toUpperCase();
+      const slotPos=String(slotByNo.get(String(sn)).position||"").trim().toUpperCase();
+      if(pos&&pos!==slotPos){
+        return `データ要確認：${sn}枠の発動条件 ${pos} と配置ポジション ${slotPos} が一致していません`;
+      }
+    }
+    return "";
+  }
+
+  function getTeamFormationStatus(picks,combo,slots,reqMap,definitionError){
+    const assigned=new Map((picks||[]).filter(x=>x?.slot&&x.player).map(x=>[String(x.slot.slotNo),x.player]));
+    const filled=assigned.size;
+    const ids=[...assigned.values()].map(getPlayerId);
+    const unique=ids.length===new Set(ids).size;
+    const required=(combo.combo_requirements||[]);
+    let matched=0;
+    for(const req of required){
+      const sn=String(req.slotNo??req.slot_no??"");
+      const p=assigned.get(sn);
+      if(p && String(p.playStyle||"")===String(req.playStyle||"") &&
+        Number(p.playStyleLv||0)===Number(req.playStyleLv||0)) matched++;
+    }
+    const valid=filled===11&&slots.length===11&&unique&&matched===required.length&&!definitionError;
+    return {valid,filled,matched,required:required.length,unique,definitionError};
   }
 
   function matchPlayerForSlot(player, combo, slotPos, reqMap, kw, forcedPolicy, requiredNationality, requiredAcq){
@@ -1693,59 +1782,16 @@ function rebuildAcqSelect(){
 
 
 function getFavoritePlayerIds(){
-  const favIds = new Set();
-  const addId = (v)=>{
-    const s = String(v ?? "").trim();
-    if(/^P\d{4,}$/i.test(s)) favIds.add(s.toUpperCase());
-  };
-  const scanValue = (value)=>{
-    if(value == null) return;
-    if(typeof value === "string"){
-      addId(value);
-      try{
-        scanValue(JSON.parse(value));
-      }catch(e){
-        const matches = value.match(/P\d{4,}/gi) || [];
-        matches.forEach(addId);
-      }
-      return;
-    }
-    if(Array.isArray(value)){
-      value.forEach(scanValue);
-      return;
-    }
-    if(typeof value === "object"){
-      for(const [k,v] of Object.entries(value)){
-        if(v === true || v === 1 || v === "1" || String(v).toLowerCase() === "true") addId(k);
-        scanValue(v);
-      }
-    }
-  };
-
-  const preferredKeys = [
-    "favoritePlayers",
-    "favoritePlayerIds",
-    "favorites",
-    "sakatsuku_favorite_players",
-    "sakatsuku2026_favorite_players",
-    "playerFavorites"
-  ];
-
-  for(const key of preferredKeys){
-    try{ scanValue(localStorage.getItem(key)); }catch(e){}
-  }
-
-  // キー名が違っていても拾えるように、favorite / fav を含むlocalStorageも確認
+  // 選手図鑑・SP評価・フォメコンランキングと共通の保存キー。
+  // 他機能のfavorite系localStorageを横断スキャンすると誤登録するため除外。
   try{
-    for(let i=0;i<localStorage.length;i++){
-      const key = localStorage.key(i) || "";
-      if(/favorite|favorites|fav|お気に入り/i.test(key)){
-        scanValue(localStorage.getItem(key));
-      }
-    }
-  }catch(e){}
-
-  return favIds;
+    const parsed=JSON.parse(localStorage.getItem("sakatsuku2026_player_catalog_favorites")||"[]");
+    if(!Array.isArray(parsed)) return new Set();
+    return new Set(parsed.map(v=>String(v??"").trim().toUpperCase()).filter(v=>/^P\d{4,}$/i.test(v)));
+  }catch(e){
+    console.warn("お気に入りデータを読み込めませんでした",e);
+    return new Set();
+  }
 }
 
 function getSimulationPlayers(){
@@ -1858,7 +1904,7 @@ function solveAssignmentFast(slots, candidatesBySlot, combo, requiredSlotKeys){
         row.push(INELIGIBLE_SCORE);
         continue;
       }
-      const realUnits = Math.round(calc.buffed * 100);
+      const realUnits = Math.round(calc.buffed * 10000);
       const maxUpgrade = Number.isFinite(Number(p?.maxUpgrade)) ? Number(p.maxUpgrade) : 0;
       const score = FILL_BONUS
         + (requiredSlotKeys.has(slotKey) ? REQUIRED_BONUS : 0)
@@ -2022,7 +2068,7 @@ function solveAssignmentWithQuota(slots, candidatesBySlot, combo, targetNational
   if(targetNationality) assumedCounts.set(targetNationality, Number(targetCount)||0);
   const assignmentEdges = [];
   const REQUIRED_SLOT_BONUS = 100000000000000; // 部分編成時も発動条件スロットを優先
-  const REAL_VALUE_SCALE = 1000000;             // 最大実数値を最優先、最大強化は同点時のみ参照
+  const REAL_VALUE_SCALE = 100;                 // 実数値を0.0001単位で優先
 
   const edgeSpecs = [];
   let maxCompositeScore = 0;
@@ -2036,7 +2082,7 @@ function solveAssignmentWithQuota(slots, candidatesBySlot, combo, targetNational
       const pid = getPlayerId(p);
       const calc = getBuffedRealValue(p, slot.position, combo, assumedCounts);
       if(!calc) continue;
-      const realUnits = Math.round(calc.buffed * 100); // 0.01単位で厳密比較
+      const realUnits = Math.round(calc.buffed * 10000); // ランキングと同じ0.0001単位で比較
       const maxUpgrade = Number.isFinite(Number(p?.maxUpgrade)) ? Math.round(Number(p.maxUpgrade)) : 0;
       const requiredBonus = requiredSlotKeys.has(slotKey) ? REQUIRED_SLOT_BONUS : 0;
       const compositeScore = requiredBonus + (realUnits * REAL_VALUE_SCALE) + maxUpgrade;
@@ -2152,6 +2198,7 @@ function simulate(){
   }
 
   const forcedPolicy = Array.isArray(combo.combo_policys) ? combo.combo_policys[0] : (combo.combo_policys || "");
+  const definitionError = getComboDefinitionError(combo, slots);
   const reqMap = buildRequirementMap(combo, slots);
 
   const highlightOK = (player, slot)=>{
@@ -2164,14 +2211,14 @@ function simulate(){
       if(!reqs.length) return false;
       const ps = String(player?.playStyle ?? "");
       const lv = Number(player?.playStyleLv ?? 0);
-      return reqs.some(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
+      return reqs.every(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
     }
 
     const reqs = (reqMap.byPos.get(slot.position) || []);
     if(!reqs || !reqs.length) return false;
     const ps = String(player?.playStyle ?? "");
     const lv = Number(player?.playStyleLv ?? 0);
-    return reqs.some(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
+    return reqs.every(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
   };
 
   const scopedPlayers = getSimulationPlayers();
@@ -2209,7 +2256,7 @@ function simulate(){
     if(!reqs.length) return true;
     const ps = String(player?.playStyle ?? "");
     const lv = Number(player?.playStyleLv ?? 0);
-    return reqs.some(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
+    return reqs.every(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
   };
 
   const targetNationalities = getComboTargetNationalities(combo);
@@ -2309,6 +2356,8 @@ function simulate(){
     picksB,
     metricsA:resultA.metrics,
     metricsB:resultB.metrics,
+    validityA:getTeamFormationStatus(picksA,combo,slots,reqMap,definitionError),
+    validityB:getTeamFormationStatus(picksB,combo,slots,reqMap,definitionError),
     highlightOK,
     slotPlaceMap,
     slotCoordMap,
@@ -2435,7 +2484,7 @@ document.querySelectorAll('input[name="playerFilter"]').forEach(el=>{
   $("btnReset").addEventListener("click", resetSelections);
   
 
-  loadAll().catch(err=>{
+  loadAll().then(applyRankingDeepLink).catch(err=>{
     console.error(err);
     setStatus("データの読み込みに失敗しました（players.json / combos.json / formation_slots.json を同じフォルダに配置してください）", true);
   });
