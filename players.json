@@ -42838,5 +42838,101 @@
         "traitDescription": "途中出場"
       }
     ]
+  },
+  {
+    "player_id": "P0440",
+    "playerId": "P0440",
+    "name": "デサビ",
+    "overall": 5468,
+    "maxUpgrade": 11462,
+    "policy": "ムービング",
+    "playStyle": "ストッパー",
+    "playStyleLv": 2,
+    "mainPosition": "CB",
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "サカつくBOXイベント（第1弾）",
+    "availablePeriod": "2026年10月22日まで",
+    "mainSkill": "奮戦のタックル",
+    "mainTrait": "ボールハンター",
+    "category": "SP選手",
+    "nationality": "フランス",
+    "growthType": "超早熟",
+    "implementedDate": "2026-10-07",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 599,
+        "kickPower": 720,
+        "composure": 600
+      },
+      "PAS": {
+        "shortPass": 637,
+        "longPass": 602,
+        "kickAccuracy": 529
+      },
+      "DRB": {
+        "breakthrough": 560,
+        "ballKeeping": 581,
+        "ballTouch": 576
+      },
+      "DEF": {
+        "tackleSaving": 734,
+        "passCutReaction": 734,
+        "markOneOnOne": 734
+      },
+      "PHY": {
+        "jump": 734,
+        "contact": 734,
+        "stamina": 734
+      },
+      "SPD": {
+        "speed": 725,
+        "agility": 690
+      }
+    },
+    "tendencies": {
+      "attack": -1,
+      "defense": 1,
+      "dribble": -1,
+      "shoot": -1,
+      "longShoot": -1,
+      "shortPass": 0,
+      "longPass": 0,
+      "throughPass": -1,
+      "cutIn": -1,
+      "keep": -1,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": -1,
+      "press": 1
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "奮戦のタックル",
+        "skillId": "SK0056",
+        "skillRank": "銅"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "ボールハンター",
+        "traitId": "TR0041",
+        "traitRank": "銀",
+        "traitDescription": "絶好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "上空の寸断者",
+        "traitId": "TR0101",
+        "traitRank": "銅",
+        "traitDescription": "絶好調"
+      }
+    ]
   }
 ]
