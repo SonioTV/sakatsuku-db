@@ -2382,7 +2382,26 @@
 <div class="card homeLatest">
   <h2 class="sectionTitle">最新の攻略記事</h2>
   <div class="homeLatestList" id="homeLatestList" aria-live="polite">
-    <div class="homeLatestStatus">最新記事を読み込み中...</div>
+    <a class="homeLatestItem" href="20261014_pickup_sp_scout_review.html">
+      <img class="homeLatestThumb" src="img/articles/20261014_pickup_sp_scout_review/top.png" alt="【サカつく2026】ムービング強化が止まらない!?新SP「イブラヒマ・コナテ」のピックアップSP選手スカウトは引くべき？新SP選手4名を徹底評価" decoding="async" loading="lazy" data-fallback-src="img/articles/top.png">
+      <div class="homeLatestDate">2026/10/14</div>
+      <div class="homeLatestTitle">【サカつく2026】ムービング強化が止まらない!?新SP「イブラヒマ・コナテ」のピックアップSP選手スカウトは引くべき？新SP選手4名を徹底評価</div>
+    </a>
+    <a class="homeLatestItem" href="20261007_certification_exam_2_answers.html">
+      <img class="homeLatestThumb" src="img/articles/20261007_certification_exam_2_answers/day1_questions.png" alt="【サカつく2026】第2回サカつく検定の答え・正解まとめ｜1日目～7日目" decoding="async" loading="lazy" data-fallback-src="img/articles/category_event.png">
+      <div class="homeLatestDate">2026/10/07</div>
+      <div class="homeLatestTitle">【サカつく2026】第2回サカつく検定の答え・正解まとめ｜1日目～7日目</div>
+    </a>
+    <a class="homeLatestItem" href="20260930_premium_sp_scout_review.html">
+      <img class="homeLatestThumb" src="img/articles/20260930_premium_sp_scout_review/top.png" alt="【サカつく2026】約4ヶ月ぶりのムービング超強化!!新SP「キリアン・エンバペ」は引くべき？プレミアムSP選手スカウト評価" decoding="async" loading="lazy" data-fallback-src="img/articles/top.png">
+      <div class="homeLatestDate">2026/09/30</div>
+      <div class="homeLatestTitle">【サカつく2026】約4ヶ月ぶりのムービング超強化!!新SP「キリアン・エンバペ」は引くべき？プレミアムSP選手スカウト評価</div>
+    </a>
+    <a class="homeLatestItem" href="sakatsuku_tv11_ver2.3_update_summary.html">
+      <img class="homeLatestThumb" src="img/articles/sakatsuku_tv11_renamed_images/top.png" alt="【サカつくTV #11】Ver2.3アップデート情報まとめ｜ロードマップ・WPS・BOXガチャ・新ガチャ" decoding="async" loading="lazy" data-fallback-src="img/articles/category_info.png">
+      <div class="homeLatestDate">2026/09/29</div>
+      <div class="homeLatestTitle">【サカつくTV #11】Ver2.3アップデート情報まとめ｜ロードマップ・WPS・BOXガチャ・新ガチャ</div>
+    </a>
   </div>
   <a href="articles.html" class="homeLatestMore">攻略記事をもっと見る →</a>
 </div>
@@ -2402,13 +2421,29 @@
     info: "img/articles/category_info.png"
   };
 
-  const setStatus = (message) => {
-    list.replaceChildren();
-    const status = document.createElement("div");
-    status.className = "homeLatestStatus";
-    status.textContent = message;
-    list.appendChild(status);
+  // サイトルートに配置された記事ページと記事画像だけを採用する。
+  // 外部URL・URLスキーム・親ディレクトリ参照を排除する。
+  const validArticleHref = (value) => /^[A-Za-z0-9_.-]+\.html$/.test(value) && !value.includes("..");
+  const validImageSrc = (value) =>
+    /^img\/articles\/[A-Za-z0-9_./-]+\.(?:png|jpe?g|webp|gif|avif)$/i.test(value) &&
+    !value.split("/").includes("..");
+
+  const attachImageFallback = (img, fallbackSrc) => {
+    img.dataset.fallbackSrc = fallbackSrc;
+    img.addEventListener("error", () => {
+      const fallback = img.dataset.fallbackSrc || "";
+      if (fallback && validImageSrc(fallback) && img.getAttribute("src") !== fallback) {
+        img.src = fallback;
+      } else {
+        img.remove();
+      }
+    });
   };
+
+  // 初期HTMLの画像にも、従来と同じフォールバック処理を適用。
+  list.querySelectorAll(".homeLatestThumb").forEach((img) => {
+    attachImageFallback(img, img.dataset.fallbackSrc || FALLBACK_IMAGES.scout);
+  });
 
   const formatDate = (card) => {
     // 記事一覧に明示された公開日だけを使用する（URLやカテゴリ名から推測しない）。
@@ -2423,6 +2458,9 @@
     return `${match[1]}/${match[2]}/${match[3]}`;
   };
 
+  // 初期HTMLが公開済みの新記事を持つ場合、古い articles.html で上書きしない。
+  const initialFirstHref = list.querySelector(".homeLatestItem[href]")?.getAttribute("href") || "";
+
   fetch("articles.html", { cache: "no-cache" })
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -2431,66 +2469,80 @@
     .then((html) => {
       const doc = new DOMParser().parseFromString(html, "text/html");
       const cards = Array.from(doc.querySelectorAll("#articleGrid .articleCard"));
-      const latest = cards.slice(0, 4);
-      if (!latest.length) throw new Error("記事カードが見つかりません");
+      if (!cards.length) throw new Error("記事カードが見つかりません");
+
+      // 古い一覧・不完全なレスポンスによる最新記事の巻き戻りを防止。
+      if (initialFirstHref && !cards.some((card) =>
+        Array.from(card.querySelectorAll(".articleThumbLink[href], .linkbtn[href]"))
+          .some((link) => link.getAttribute("href") === initialFirstHref))) return;
+
+      const latest = [];
+      const seen = new Set();
+      for (const card of cards) {
+        const title = String(card.querySelector("h3")?.textContent || "").trim();
+        const linkEl = card.querySelector(".articleThumbLink[href], .linkbtn[href]");
+        const href = String(linkEl?.getAttribute("href") || "").trim();
+        if (!title || !validArticleHref(href) || seen.has(href)) continue;
+
+        const sourceImg = card.querySelector(".articleThumb");
+        const src = String(sourceImg?.getAttribute("data-original-src") || sourceImg?.getAttribute("src") || "").trim();
+        const category = String(card.dataset.category || "scout").trim();
+        const fallbackSrc = FALLBACK_IMAGES[category] || FALLBACK_IMAGES.scout;
+        latest.push({
+          href, title,
+          imageSrc: validImageSrc(src) ? src : fallbackSrc,
+          imageAlt: String(sourceImg?.getAttribute("alt") || title).trim() || title,
+          fallbackSrc, dateText: formatDate(card)
+        });
+        seen.add(href);
+        if (latest.length === 4) break;
+      }
+
+      // 4件取得できない部分レスポンスでは初期4件を維持する。
+      if (latest.length !== 4) throw new Error("有効な記事が4件未満です");
+
+      // 内容が同じ場合はDOMを触らず、画像の再読込・ちらつきを避ける。
+      const current = Array.from(list.querySelectorAll(".homeLatestItem"));
+      const unchanged = current.length === latest.length && current.every((item, i) =>
+        item.getAttribute("href") === latest[i].href &&
+        item.querySelector(".homeLatestTitle")?.textContent === latest[i].title &&
+        (item.querySelector(".homeLatestDate")?.textContent || "") === latest[i].dateText &&
+        item.querySelector(".homeLatestThumb")?.getAttribute("src") === latest[i].imageSrc
+      );
+      if (unchanged) return;
 
       const fragment = document.createDocumentFragment();
-
-      latest.forEach((card) => {
-        const linkEl = card.querySelector(".articleThumbLink[href], .linkbtn[href]");
-        const titleEl = card.querySelector("h3");
-        const href = String(linkEl?.getAttribute("href") || "").trim();
-        const title = String(titleEl?.textContent || "").trim();
-        if (!href || !title) return;
-
+      latest.forEach(({ href, title, imageSrc, imageAlt, fallbackSrc, dateText }) => {
         const item = document.createElement("a");
         item.className = "homeLatestItem";
         item.href = href;
 
-        const sourceImg = card.querySelector(".articleThumb");
-        const imageSrc = String(sourceImg?.getAttribute("data-original-src") || sourceImg?.getAttribute("src") || "").trim();
-        const category = String(card.dataset.category || "scout").trim();
-        const fallbackSrc = FALLBACK_IMAGES[category] || FALLBACK_IMAGES.scout;
-
-        // 記事固有画像を最優先。存在しない場合だけカテゴリ画像へ切り替える。
         const img = document.createElement("img");
         img.className = "homeLatestThumb";
-        img.src = imageSrc || fallbackSrc;
-        img.alt = String(sourceImg?.getAttribute("alt") || title).trim();
+        img.src = imageSrc;
+        img.alt = imageAlt;
         img.decoding = "async";
-        img.dataset.fallbackSrc = fallbackSrc;
-        img.addEventListener("error", () => {
-          const fallback = img.dataset.fallbackSrc || "";
-          const current = img.getAttribute("src") || "";
-          if (fallback && current !== fallback) {
-            img.src = fallback;
-            return;
-          }
-          img.remove();
-        });
+        img.loading = "lazy";
+        attachImageFallback(img, fallbackSrc);
         item.appendChild(img);
 
-        const dateText = formatDate(card);
         if (dateText) {
           const date = document.createElement("div");
           date.className = "homeLatestDate";
           date.textContent = dateText;
           item.appendChild(date);
         }
-
         const titleNode = document.createElement("div");
         titleNode.className = "homeLatestTitle";
         titleNode.textContent = title;
         item.appendChild(titleNode);
-
         fragment.appendChild(item);
       });
-
-      if (!fragment.childNodes.length) throw new Error("表示できる記事がありません");
       list.replaceChildren(fragment);
     })
-    .catch(() => {
-      setStatus("最新記事を取得できませんでした。攻略記事一覧からご確認ください。");
+    .catch((error) => {
+      // 通信失敗時は初期HTMLの4記事を保持する（画面へエラー文字列を出さない）。
+      console.warn("最新攻略記事の更新をスキップしました:", error);
     });
 })();
 </script>
