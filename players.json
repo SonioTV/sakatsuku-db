@@ -43346,5 +43346,411 @@
         "traitDescription": "途中出場"
       }
     ]
+  },
+  {
+    "player_id": "P0445",
+    "playerId": "P0445",
+    "name": "デジレ・ドゥエ",
+    "overall": 7128,
+    "maxUpgrade": 15616,
+    "policy": "ムービング",
+    "playStyle": "アタッカー",
+    "playStyleLv": 3,
+    "mainPosition": "AM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年11月4日まで",
+    "mainSkill": "変速ギア",
+    "mainTrait": "変幻自在のドリブラー",
+    "category": "SP選手",
+    "nationality": "フランス",
+    "growthType": "超極限",
+    "implementedDate": "2026-10-21",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "AM",
+      "LW"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 966,
+        "kickPower": 942,
+        "composure": 967
+      },
+      "PAS": {
+        "shortPass": 1014,
+        "longPass": 1027,
+        "kickAccuracy": 972
+      },
+      "DRB": {
+        "breakthrough": 1079,
+        "ballKeeping": 1079,
+        "ballTouch": 1078
+      },
+      "DEF": {
+        "tackleSaving": 875,
+        "passCutReaction": 882,
+        "markOneOnOne": 893
+      },
+      "PHY": {
+        "jump": 916,
+        "contact": 946,
+        "stamina": 970
+      },
+      "SPD": {
+        "speed": 1037,
+        "agility": 1050
+      }
+    },
+    "tendencies": {
+      "attack": 0,
+      "defense": 0,
+      "dribble": 0,
+      "shoot": 0,
+      "longShoot": 0,
+      "shortPass": 1,
+      "longPass": 0,
+      "throughPass": 0,
+      "cutIn": 0,
+      "keep": 0,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": 0,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "変速ギア",
+        "skillId": "SK0058",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "変幻自在のドリブラー",
+        "traitId": "TR0140",
+        "traitRank": "金",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "快速のロングパサー",
+        "traitId": "TR0057",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "俊敏なパサー",
+        "traitId": "TR0095",
+        "traitRank": "銅",
+        "traitDescription": "好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0446",
+    "playerId": "P0446",
+    "name": "エンゴロ・カンテ",
+    "overall": 7050,
+    "maxUpgrade": 15681,
+    "policy": "ムービング",
+    "playStyle": "ハードマーカー",
+    "playStyleLv": 2,
+    "mainPosition": "DM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年11月4日まで",
+    "mainSkill": "奪還",
+    "mainTrait": "不死鳥のタックル",
+    "category": "SP選手",
+    "nationality": "フランス",
+    "growthType": "超早熟",
+    "implementedDate": "2026-10-21",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 889,
+        "kickPower": 879,
+        "composure": 902
+      },
+      "PAS": {
+        "shortPass": 1045,
+        "longPass": 992,
+        "kickAccuracy": 960
+      },
+      "DRB": {
+        "breakthrough": 969,
+        "ballKeeping": 966,
+        "ballTouch": 977
+      },
+      "DEF": {
+        "tackleSaving": 1080,
+        "passCutReaction": 1062,
+        "markOneOnOne": 1041
+      },
+      "PHY": {
+        "jump": 893,
+        "contact": 958,
+        "stamina": 1130
+      },
+      "SPD": {
+        "speed": 881,
+        "agility": 995
+      }
+    },
+    "tendencies": {
+      "attack": 0,
+      "defense": 0,
+      "dribble": 0,
+      "shoot": 0,
+      "longShoot": 0,
+      "shortPass": 1,
+      "longPass": 0,
+      "throughPass": 0,
+      "cutIn": 0,
+      "keep": 0,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": 0,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "奪還",
+        "skillId": "SK0051",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "不死鳥のタックル",
+        "traitId": "TR0179",
+        "traitRank": "金",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "ピッチの分断者",
+        "traitId": "TR0039",
+        "traitRank": "銀",
+        "traitDescription": "絶好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "リスクヘッジパサー",
+        "traitId": "TR0051",
+        "traitRank": "銅",
+        "traitDescription": "絶好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0447",
+    "playerId": "P0447",
+    "name": "マクサンス・ラクロワ",
+    "overall": 6746,
+    "maxUpgrade": 15458,
+    "policy": "ムービング",
+    "playStyle": "ストッパー",
+    "playStyleLv": 2,
+    "mainPosition": "CB",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年11月4日まで",
+    "mainSkill": "熟練のインターセプト",
+    "mainTrait": "上空の寸断者",
+    "category": "SP選手",
+    "nationality": "フランス",
+    "growthType": "超早熟",
+    "implementedDate": "2026-10-21",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 807,
+        "kickPower": 866,
+        "composure": 826
+      },
+      "PAS": {
+        "shortPass": 900,
+        "longPass": 897,
+        "kickAccuracy": 880
+      },
+      "DRB": {
+        "breakthrough": 927,
+        "ballKeeping": 916,
+        "ballTouch": 927
+      },
+      "DEF": {
+        "tackleSaving": 1019,
+        "passCutReaction": 1068,
+        "markOneOnOne": 1060
+      },
+      "PHY": {
+        "jump": 1047,
+        "contact": 1025,
+        "stamina": 895
+      },
+      "SPD": {
+        "speed": 1062,
+        "agility": 952
+      }
+    },
+    "tendencies": {
+      "attack": -1,
+      "defense": 1,
+      "dribble": -1,
+      "shoot": -1,
+      "longShoot": -1,
+      "shortPass": 0,
+      "longPass": 0,
+      "throughPass": -1,
+      "cutIn": -1,
+      "keep": -1,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": -1,
+      "press": 1
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "熟練のインターセプト",
+        "skillId": "SK0042",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "上空の寸断者",
+        "traitId": "TR0101",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "ランニングマーカー",
+        "traitId": "TR0050",
+        "traitRank": "銀",
+        "traitDescription": "絶好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "ハードタックラー",
+        "traitId": "TR0029",
+        "traitRank": "銅",
+        "traitDescription": "好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0448",
+    "playerId": "P0448",
+    "name": "グラニト・ジャカ",
+    "overall": 6676,
+    "maxUpgrade": 14990,
+    "policy": "リアクション",
+    "playStyle": "ハードマーカー",
+    "playStyleLv": 2,
+    "mainPosition": "DM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年11月4日まで",
+    "mainSkill": "絶好の楔",
+    "mainTrait": "不屈のキッカー",
+    "category": "SP選手",
+    "nationality": "スイス",
+    "growthType": "超早熟",
+    "implementedDate": "2026-10-21",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "DM"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 865,
+        "kickPower": 921,
+        "composure": 909
+      },
+      "PAS": {
+        "shortPass": 1044,
+        "longPass": 1043,
+        "kickAccuracy": 1040
+      },
+      "DRB": {
+        "breakthrough": 894,
+        "ballKeeping": 922,
+        "ballTouch": 979
+      },
+      "DEF": {
+        "tackleSaving": 968,
+        "passCutReaction": 974,
+        "markOneOnOne": 958
+      },
+      "PHY": {
+        "jump": 925,
+        "contact": 958,
+        "stamina": 1052
+      },
+      "SPD": {
+        "speed": 851,
+        "agility": 841
+      }
+    },
+    "tendencies": {
+      "attack": 0,
+      "defense": 0,
+      "dribble": 0,
+      "shoot": 0,
+      "longShoot": 0,
+      "shortPass": 1,
+      "longPass": 0,
+      "throughPass": 0,
+      "cutIn": 0,
+      "keep": 0,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": 0,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "絶好の楔",
+        "skillId": "SK0046",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "不屈のキッカー",
+        "traitId": "TR0133",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "長短のキック",
+        "traitId": "TR0124",
+        "traitRank": "銀",
+        "traitDescription": "途中出場"
+      }
+    ]
   }
 ]
