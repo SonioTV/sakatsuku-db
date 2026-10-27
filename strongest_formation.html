@@ -139,6 +139,123 @@ h1{margin:0;font-size:clamp(25px,4vw,36px);font-weight:900;letter-spacing:.01em;
 .pickCandidate button{border:0;background:#f59e0b;color:#1a2632;padding:9px 10px;border-radius:9px;font-size:12px;font-weight:900;cursor:pointer}
 .pickCurrent{padding:9px;background:#eef7ff;border-radius:10px;margin:9px 0;font-size:12px}
 @media(max-width:480px){.pickDialog{padding:10px}.pickCandidate{gap:5px}.pickCandidate>img{width:34px;height:45px}.pickCandidate button{padding:8px 7px;font-size:11px}.playerNumbers{font-size:10px}}
+
+
+/* ============================================================
+   PC表示の可読性・コンパクト化（スマートフォンCSSは変更しない）
+   - ランキングは常に1列
+   - カード上部は横方向にまとめ、縦の占有を抑える
+   - 編成詳細と入れ替えダイアログは画面高を上限にする
+   ============================================================ */
+@media (min-width: 781px){
+  .wrap{max-width:1240px}
+  .rankPanel .panelInside{padding:18px 22px}
+  .rankPanel .sectionHead h2{font-size:24px}
+  .rankPanel .note{font-size:15px;line-height:1.55}
+  .rankPanel .resultStatus{font-size:14px}
+
+  /* 1カード＝1行。PCでの2列表示は行わない */
+  .rankGrid{grid-template-columns:minmax(0,1fr);gap:10px}
+  .rankCard{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 250px;
+    gap:3px 18px;
+    padding:12px 17px;
+    align-items:center;
+  }
+  .rankLine{--rank-icon:47px;gap:10px}
+  .rankNo{font-size:21px}
+  .rankTier{font-size:18px}
+  .rankTitle{font-size:20px;line-height:1.3}
+  .rankFormationText{font-size:14px;margin-top:1px}
+  .rankValue{
+    margin-top:0;
+    padding:5px 12px;
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    justify-content:center;
+    gap:0;
+  }
+  .rankValue small{font-size:14px}
+  .rankValue strong{font-size:34px}
+  .rankMeta{grid-column:1/-1;margin-top:4px;gap:14px;font-size:14px}
+  .details{grid-column:1/-1;margin-top:5px;padding-top:5px}
+  .details>summary{font-size:16px;min-height:33px}
+  .details>summary::after{font-size:21px}
+  .detailContent{
+    margin-top:7px;
+    padding:12px 14px;
+    max-height:calc(100dvh - 200px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+  }
+  .metrics{gap:9px}
+  .metric{padding:9px 12px}
+  .metric span{font-size:13px}
+  .metric strong{font-size:21px}
+  .effectItem{font-size:13px;padding:5px 9px}
+  .infoText{font-size:14px;margin-top:9px}
+  .manualReset{min-height:42px;font-size:14px}
+  .manualNote{font-size:13px}
+  .viewChange{margin:10px 0 8px}
+  .viewChange button{min-height:42px;font-size:14px}
+
+  /* 詳細の11人は3列で一覧性を確保。数値は2列のまま */
+  .playerGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .playerItem{gap:9px;padding:9px;align-items:flex-start}
+  .playerItem img{width:48px;height:56px;flex:0 0 48px}
+  .playerItem .nm{font-size:15px;line-height:1.4}
+  .playerItem .sm{font-size:12px;line-height:1.5}
+  .playerNumbers{font-size:13px;gap:3px 10px;line-height:1.5}
+  .pitch{max-width:430px}
+  .pitchPlayer .pitchName{font-size:11px}
+  .links .action,.links .secondary{font-size:15px;min-height:45px}
+
+  /* TOP5候補は拡大するが、モーダル全体は必ず画面内に収める */
+  .pickOverlay{padding:18px}
+  .pickDialog{
+    width:min(940px,100%);
+    max-height:calc(100dvh - 36px);
+    padding:0;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  .pickHeader{flex:0 0 auto;padding:14px 20px}
+  .pickHeader h2{font-size:22px}
+  .pickClose{font-size:15px;min-height:42px;padding:8px 16px}
+  #pickContents{
+    flex:1 1 auto;
+    min-height:0;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding:12px 20px 16px;
+  }
+  .pickHelp{font-size:14px;line-height:1.55;margin:3px 0 11px}
+  .pickCurrent{font-size:15px;padding:11px 13px;margin:10px 0}
+  .pickCandidate{gap:13px;padding:11px 6px}
+  .pickCandidate>img{width:59px;height:67px}
+  .pickCandidate .pickInfo strong{font-size:17px;line-height:1.4}
+  .pickCandidate .pickInfo small{font-size:13px;line-height:1.5}
+  .pickCandidate .pickScore{font-size:15px;line-height:1.5}
+  .pickCandidate button{min-height:44px;min-width:84px;font-size:14px;padding:9px 12px}
+}
+/* 中型ノートPCでは候補カードを2列にして数値の折り返しを避ける */
+@media (min-width: 781px) and (max-width: 1020px){
+  .rankCard{grid-template-columns:minmax(0,1fr) 205px}
+  .rankLine{--rank-icon:42px;gap:7px}
+  .rankTitle{font-size:18px}
+  .rankValue strong{font-size:31px}
+  .playerGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width: 781px) and (max-height: 620px){
+  .detailContent{max-height:calc(100dvh - 148px)}
+  .pickHeader{padding-top:8px;padding-bottom:8px}
+  #pickContents{padding-top:6px;padding-bottom:8px}
+  .pickCandidate{padding-top:7px;padding-bottom:7px}
+}
 </style>
 </head>
 <body>
