@@ -113,6 +113,32 @@ h1{margin:0;font-size:clamp(25px,4vw,36px);font-weight:900;letter-spacing:.01em;
 @media(max-width:780px){.rankGrid{grid-template-columns:1fr}.rankTitle{font-size:15px}}
 @media(max-width:520px){.wrap{padding:11px 10px 46px}.lead{font-size:12px;margin-bottom:13px}.panel{border-radius:19px}.panelInside{padding:12px}.sectionHead h2{font-size:18px}.rankGrid{gap:7px}.rankCard{padding:10px;border-radius:14px}.rankLine{--rank-icon:35px;grid-template-columns:repeat(4,var(--rank-icon)) minmax(0,1fr);gap:5px}.rankNo{font-size:15px;border-radius:9px}.rankTier{font-size:14px;border-radius:9px}.rankFormationText{font-size:11px}.rankTitle{font-size:13px}.rankValue{padding:6px 10px;margin-top:8px}.rankValue strong{font-size:30px}.rankValue small{font-size:11px}.chip{font-size:10px;padding:2px 5px}.metrics{gap:4px}.metric{padding:6px}.metric strong{font-size:14px}.playerItem{gap:4px;padding:5px}.playerItem img{width:30px;height:34px;flex-basis:30px}.playerItem .nm{font-size:11px}.playerItem .sm{font-size:9px}.summaryBox{padding:7px}.summaryBox .v{font-size:17px}.modeButtons button{font-size:13px}.filters{gap:7px}.control select{font-size:16px;padding:0 6px}.seoTopList{grid-template-columns:1fr}.method{padding:15px 12px}.method h2{font-size:18px}}
 @media(max-width:350px){.rankLine{--rank-icon:31px;grid-template-columns:repeat(4,var(--rank-icon)) minmax(0,1fr);gap:4px}.rankTitle{font-size:12px}.rankTier{font-size:12px}.rankFormationText{font-size:10px}.rankValue strong{font-size:28px}.rankMeta{margin-top:4px}}
+
+/* 手動編成・候補比較（既存のスタイルへの追加のみ） */
+.pitchPlayer{border:0;background:none;padding:0;cursor:pointer;font:inherit}
+.pitchPlayer:focus-visible{outline:3px solid #ffd166;outline-offset:4px}
+.pitchPlayer .pitchName{font-size:9px;max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#104d34eb}
+.playerNumbers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 8px;margin-top:5px;font-size:11px;color:#334155}
+.playerNumbers b{color:#155f80}
+.manualActions{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:9px 0}
+.manualReset{border:1px solid #bdd2e5;background:#fff;border-radius:9px;padding:8px 11px;color:#155f80;font-weight:900;cursor:pointer}
+.manualNote{font-size:11px;color:#64748b}
+.pickOverlay[hidden]{display:none!important}
+.pickOverlay{position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.6);display:flex;align-items:center;justify-content:center;padding:12px}
+.pickDialog{background:#fff;border-radius:18px;width:min(580px,100%);max-height:min(90dvh,800px);overflow:auto;box-shadow:0 25px 80px #0004;padding:14px;color:#172234}
+.pickHeader{display:flex;align-items:center;justify-content:space-between;gap:9px;border-bottom:1px solid #dbe4f0;padding-bottom:9px}
+.pickHeader h2{margin:0;font-size:19px}
+.pickClose{background:#fff;border:1px solid #ccd8e4;border-radius:10px;padding:8px 12px;cursor:pointer;font-weight:800}
+.pickHelp{font-size:12px;color:#52637b;margin:8px 0}
+.pickCandidate{display:flex;align-items:center;gap:9px;padding:9px 5px;border-bottom:1px solid #e0e8f0;min-width:0}
+.pickCandidate>img{width:44px;height:52px;object-fit:contain;flex-shrink:0}
+.pickCandidate .pickInfo{flex:1;min-width:0}
+.pickCandidate .pickInfo strong{display:block;font-size:13px;overflow-wrap:anywhere}
+.pickCandidate .pickInfo small{display:block;font-size:10px;color:#617087}
+.pickCandidate .pickScore{font-size:12px;font-weight:900;text-align:right;white-space:nowrap}
+.pickCandidate button{border:0;background:#f59e0b;color:#1a2632;padding:9px 10px;border-radius:9px;font-size:12px;font-weight:900;cursor:pointer}
+.pickCurrent{padding:9px;background:#eef7ff;border-radius:10px;margin:9px 0;font-size:12px}
+@media(max-width:480px){.pickDialog{padding:10px}.pickCandidate{gap:5px}.pickCandidate>img{width:34px;height:45px}.pickCandidate button{padding:8px 7px;font-size:11px}.playerNumbers{font-size:10px}}
 </style>
 </head>
 <body>
@@ -184,6 +210,7 @@ h1{margin:0;font-size:clamp(25px,4vw,36px);font-weight:900;letter-spacing:.01em;
   </section>
   <p class="footer"><a href="index.html">サカつく2026攻略DB トップへ戻る</a></p>
 </main>
+<div id="pickOverlay" class="pickOverlay" hidden><div class="pickDialog" role="dialog" aria-modal="true" aria-labelledby="pickTitle"><div class="pickHeader"><h2 id="pickTitle">選手入れ替え</h2><button type="button" class="pickClose" id="pickClose">閉じる</button></div><div id="pickContents"></div></div></div>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
@@ -235,15 +262,19 @@ function thumbMarkup(r){
     : `<span class="rankIcon rankFormation"><span class="fallbackThumb">${esc(r.formation||'-')}</span></span>`;
   return policyHtml+formationHtml;
 }
-function playerMarkup(p){let id=String(p.playerId||'');return `<a class="playerItem${p.required?' isReq':''}" href="players/${encodeURIComponent(id)}.html" title="${esc(p.playerName)}の個別ページ"><img src="img/players/${encodeURIComponent(id)}.png" alt="${esc(p.playerName)}" loading="lazy" onerror="this.style.display='none'"><span class="txt"><span class="nm">${esc(p.playerName)}</span><span class="sm">${esc(p.position)} / ${esc(p.playStyle)} ${romanLv(p.playStyleLv)}</span><span class="sm">実数 ${format(p.buffedReal)}${p.required?'・発動条件':''}</span></span></a>`;}
-function pitchMarkup(players){const names=players.map(p=>{let x=Number(p.x),y=Number(p.y);if(!Number.isFinite(x))x=50;if(!Number.isFinite(y))y=50;x=Math.max(7,Math.min(93,x));y=Math.max(7,Math.min(93,y));return `<a class="pitchPlayer" style="left:${x}%;top:${y}%" href="players/${encodeURIComponent(p.playerId)}.html" title="${esc(p.position)} ${esc(p.playerName)}"><img src="img/players/${encodeURIComponent(p.playerId)}.png" loading="lazy" alt="${esc(p.playerName)}" onerror="this.style.display='none'"><span>${esc(p.position)}</span></a>`}).join('');return `<div class="pitch" aria-label="最適11人のポジション配置"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#e3fff0" stroke-width="1" opacity=".85"><rect x="3" y="3" width="94" height="94" rx="2"/><path d="M3 3H97 M30 3 Q50 25 70 3 M16 97V75H84V97 M30 97V86H70V97 M35 75Q50 61 65 75"/></g></svg>${names}</div>`;}
+let SOURCE=null;
+const manualTeams=new Map();
+const sourcePlayerMap=new Map();
+function playerNumbers(p){const master=sourcePlayerMap.get(p.playerId);return `<div class="playerNumbers"><span>最大強化 <b>${format(exactNumber(master?.maxUpgrade))}</b></span><span>実数値 <b>${format(p.baseReal)}</b></span><span>バフ効果 <b>${plus(p.buffGain)}</b></span><span>バフ後 <b>${format(p.buffedReal)}</b></span></div>`;}
+function playerMarkup(p){const id=String(p.playerId||'');return `<a class="playerItem${p.required?' isReq':''}" href="players/${encodeURIComponent(id)}.html" title="${esc(p.playerName)}の個別ページ"><img src="img/players/${encodeURIComponent(id)}.png" alt="${esc(p.playerName)}" loading="lazy" onerror="this.style.display='none'"><span class="txt"><span class="nm">${esc(p.playerName)}</span><span class="sm">${esc(p.position)} / ${esc(p.playStyle)} ${romanLv(p.playStyleLv)}</span>${playerNumbers(p)}${p.required?'<span class="sm">発動条件</span>':''}</span></a>`;}
+function pitchMarkup(players,comboId){const names=players.map(p=>{let x=Number(p.x),y=Number(p.y);if(!Number.isFinite(x))x=50;if(!Number.isFinite(y))y=50;x=Math.max(7,Math.min(93,x));y=Math.max(7,Math.min(93,y));return `<button type="button" class="pitchPlayer" data-pick-combo="${esc(comboId)}" data-pick-slot="${p.slotNo}" style="left:${x}%;top:${y}%" title="${esc(p.playerName)}を入れ替える"><img src="img/players/${encodeURIComponent(p.playerId)}.png" loading="lazy" alt="${esc(p.playerName)}" onerror="this.style.display='none'"><span>${esc(p.position)}</span><span class="pitchName">${esc(p.playerName)}</span></button>`}).join('');return `<div class="pitch" aria-label="11人のポジション配置"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#e3fff0" stroke-width="1" opacity=".85"><rect x="3" y="3" width="94" height="94" rx="2"/><path d="M3 3H97 M30 3 Q50 25 70 3 M16 97V75H84V97 M30 97V86H70V97 M35 75Q50 61 65 75"/></g></svg>${names}</div>`;}
 function detailMarkup(r){let effects=(r.effects||[]).map(x=>`<span class="effectItem">${esc(effectLabel(x))}</span>`).join('');let bonus=r.nationalityBonus;let bonusNote=bonus&&bonus.nationality?`${esc(bonus.nationality)}選手 ${bonus.count}人の追加効果を反映`:'国籍追加効果なし';
 return `<details class="details"><summary>最適11人・能力バフの内訳を見る</summary><div class="detailContent">
 <div class="metrics"><div class="metric"><span>編成前実数値</span><strong>${format(r.baseReal)}</strong></div><div class="metric"><span>コンボ上昇量</span><strong>${plus(r.buffGain)}</strong></div><div class="metric emphasis"><span>バフ後実数値</span><strong>${format(r.buffedReal)}</strong></div></div>
 <div class="effectList">${effects||'<span class="effectItem">能力効果なし</span>'}</div><p class="infoText">${bonusNote} / 発動条件 ${(r.requirements||[]).length}枠すべて一致</p>
-<div class="viewChange" role="group" aria-label="11人編成の表示形式"><button type="button" class="viewBtn" data-view="list" aria-pressed="true">選手一覧</button><button type="button" class="viewBtn" data-view="pitch" aria-pressed="false">ピッチ表示</button></div>
+<div class="manualActions"><button type="button" class="manualReset" data-reset-combo="${esc(r.comboId)}">最適編成に戻す</button><span class="manualNote">ピッチ上の選手をタップすると変更できます。ランキング順位は自動編成基準です。</span></div><div class="viewChange" role="group" aria-label="11人編成の表示形式"><button type="button" class="viewBtn" data-view="list" aria-pressed="true">選手一覧</button><button type="button" class="viewBtn" data-view="pitch" aria-pressed="false">ピッチ表示</button></div>
 <div class="playerGrid" data-display="list">${(r.players||[]).map(playerMarkup).join('')}</div>
-<div class="pitchArea" data-display="pitch" hidden>${pitchMarkup(r.players||[])}</div>
+<div class="pitchArea" data-display="pitch" hidden>${pitchMarkup(r.players||[],r.comboId)}</div>
 <div class="links"><a class="secondary" href="players/combos/${encodeURIComponent(r.comboId)}.html">フォメコン詳細を見る</a><a class="action" href="strongest_team_simulation.html?combo=${encodeURIComponent(r.comboId)}&amp;mode=${encodeURIComponent(mode)}&amp;team=dye">このフォメコンで編成する</a></div>
 </div></details>`;}
 function cardMarkup(r,i){return `<article class="rankCard">
@@ -268,8 +299,10 @@ function updateStatusText(){
 }
 function render(){if(!DATA)return;
   const rows=filteredResults(),formed=rows.filter(r=>r.formed),unformed=rows.filter(r=>!r.formed);
-  const limited=formed.slice(0,10);
+  const limited=formed.slice(0,10).map(r=>manualTeams.get(mode+"|"+r.comboId)||r);
+  const opened=[...$('rankingList').querySelectorAll('.rankCard')].map(el=>({id:el.querySelector('[data-reset-combo]')?.dataset.resetCombo,open:!!el.querySelector('details.details')?.open,view:el.querySelector('.viewBtn[aria-pressed="true"]')?.dataset.view}));
   $('rankingList').innerHTML=limited.length?limited.map(cardMarkup).join(''):'<div class="empty">この条件で11人編成が成立するフォメコンはありません。絞り込みを変更してください。</div>';
+  opened.forEach(v=>{const card=[...$('rankingList').querySelectorAll('[data-reset-combo]')].find(el=>el.dataset.resetCombo===v.id)?.closest('.rankCard');if(!card)return;const d=card.querySelector('details.details');if(d)d.open=v.open;if(v.view==='pitch'){card.querySelectorAll('.viewBtn').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view==='pitch')));card.querySelectorAll('[data-display]').forEach(el=>el.hidden=el.dataset.display!=='pitch');}});
   $('totalCombos').textContent=rows.length.toLocaleString('ja-JP');
   $('formedCombos').textContent=formed.length.toLocaleString('ja-JP');
   $('playerCount').textContent=Number(DATA.modes[mode].eligiblePlayers||0).toLocaleString('ja-JP');
@@ -300,6 +333,45 @@ $('rankFilter').addEventListener('change',render);
 $('resetFilters').addEventListener('click',()=>{$('policyFilter').value='';$('rankFilter').value='';switchMode('all');});
 $('rankingList').addEventListener('click',e=>{const target=e.target.closest('button.viewBtn');if(!target)return;const container=target.closest('.detailContent');if(!container)return;const type=target.dataset.view;container.querySelectorAll('.viewBtn').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===type)));container.querySelectorAll('[data-display]').forEach(el=>{el.hidden=(el.dataset.display!==type);});});
 
+
+function currentComboRow(id){return currentResults().find(r=>r.comboId===id);}
+function chosenRow(id){return manualTeams.get(mode+'|'+id)||currentComboRow(id);}
+function getComboDefinition(id){return SOURCE?.combos.find(c=>c.comboId===id);}
+function evaluateReplacement(result,slotNo,candidate){
+ const combo=getComboDefinition(result.comboId),slots=SOURCE?.slotMap[result.comboId];if(!combo||!slots)return null;
+ const info=checkCombo(combo,slots);if(info.error)return null;
+ const picks=[];
+ for(const slot of slots){const row=result.players.find(p=>p.slotNo===slot.slotNo);const p=slot.slotNo===slotNo?candidate:sourcePlayerMap.get(row?.playerId);if(!p||!matchingPlayer(p,slot,info.policy,info.requirements[slot.slotNo]||[]))return null;picks.push(p);}
+ if(new Set(picks.map(playerId)).size!==11)return null;
+ const metric=metricsForTeam(slots,picks,combo,info.requirements,info.nation);delete metric.scoreScaled;
+ return {...result,...metric,players:metric.players};
+}
+function pickCandidates(comboId,slotNo){
+ const result=chosenRow(comboId),combo=getComboDefinition(comboId),slots=SOURCE?.slotMap[comboId],slot=slots?.find(s=>s.slotNo===slotNo);
+ if(!result||!combo||!slot)return null;
+ const info=checkCombo(combo,slots);if(info.error)return null;
+ const existing=new Set(result.players.filter(p=>p.slotNo!==slotNo).map(p=>p.playerId));
+ const pool=SOURCE.players.filter(p=>!existing.has(playerId(p))&&matchingPlayer(p,slot,info.policy,info.requirements[slotNo]||[])&&(mode!=='available'||p.available===true)&&(mode!=='favorite'||loadFavoriteIds().includes(playerId(p))));
+ const rows=pool.map(p=>{const evaluated=evaluateReplacement(result,slotNo,p);return evaluated?{p,result:evaluated,diff:evaluated.buffedReal-result.buffedReal}:null;}).filter(Boolean);
+ rows.sort((a,b)=>b.result.buffedReal-a.result.buffedReal||playerId(a.p).localeCompare(playerId(b.p),'ja'));
+ return {result,slot,rows:rows.filter(x=>playerId(x.p)!==result.players.find(y=>y.slotNo===slotNo)?.playerId).slice(0,5)};
+}
+let dialogContext=null;
+function openPicker(comboId,slotNo){
+ if(!SOURCE){alert('候補データの読み込みが完了していません。');return;}
+ const v=pickCandidates(comboId,slotNo);if(!v)return;
+ dialogContext={comboId,slotNo};const current=v.result.players.find(p=>p.slotNo===slotNo);
+ $('pickTitle').textContent=`選手入れ替え｜${v.slot.position}`;
+ $('pickContents').innerHTML=`<p class="pickHelp">フォメコンの発動条件と表示モードを維持し、他の10名は固定。チームのバフ後実数値が高い順に候補5名を表示します。</p><div class="pickCurrent">現在：<b>${esc(current.playerName)}</b> ／ チーム合計 <b>${format(v.result.buffedReal)}</b></div>`+(v.rows.length?v.rows.map((row,i)=>{const p=row.p,pr=row.result.players.find(x=>x.slotNo===slotNo);return `<div class="pickCandidate"><img src="img/players/${encodeURIComponent(playerId(p))}.png" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><div class="pickInfo"><strong>${i+1}位 ${esc(p.name)}</strong><small>${esc(p.nationality)}／最大強化 ${format(exactNumber(p.maxUpgrade))}</small><small>実数値 ${format(pr.baseReal)}・バフ +${format(pr.buffGain)}・バフ後 ${format(pr.buffedReal)}</small><small><a href="players/${encodeURIComponent(playerId(p))}.html" target="_blank" rel="noopener">選手詳細</a></small></div><div class="pickScore">合計 ${format(row.result.buffedReal)}<br><span style="color:${row.diff>=0?'#07834c':'#bd3838'}">${row.diff>=0?'+':''}${format(row.diff)}</span></div><button type="button" data-apply-id="${esc(playerId(p))}">入れ替え</button></div>`}).join(''):'<p class="pickHelp">入れ替え可能な候補が見つかりません。</p>');
+ $('pickOverlay').hidden=false;document.body.style.overflow='hidden';$('pickClose').focus();
+}
+function closePicker(){$('pickOverlay').hidden=true;document.body.style.overflow='';dialogContext=null;}
+$('pickClose').addEventListener('click',closePicker);
+$('pickOverlay').addEventListener('click',e=>{if(e.target===$('pickOverlay'))closePicker();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('pickOverlay').hidden)closePicker();});
+$('pickContents').addEventListener('click',e=>{const btn=e.target.closest('[data-apply-id]');if(!btn||!dialogContext)return;const {comboId,slotNo}=dialogContext;const p=sourcePlayerMap.get(btn.dataset.applyId);const next=p&&evaluateReplacement(chosenRow(comboId),slotNo,p);if(!next)return;manualTeams.set(mode+'|'+comboId,next);closePicker();render();});
+$('rankingList').addEventListener('click',e=>{const btn=e.target.closest('[data-pick-combo]');if(btn){openPicker(btn.dataset.pickCombo,Number(btn.dataset.pickSlot));return;}const reset=e.target.closest('[data-reset-combo]');if(reset){manualTeams.delete(mode+'|'+reset.dataset.resetCombo);render();}});
+
 async function init(){
   try{
     const qs=new URLSearchParams(location.search);
@@ -311,6 +383,7 @@ async function init(){
     DATA=json;
     if(mode==='favorite') await ensureFavoriteModeData();
     render();
+    loadSourceData().then(src=>{SOURCE=src;sourcePlayerMap.clear();src.players.forEach(p=>sourcePlayerMap.set(playerId(p),p));render();}).catch(e=>console.warn("選手データ読み込み:",e));
   }catch(e){
     $('dataDate').textContent='ランキングデータを読み込めませんでした'; $('resultCount').textContent='下記は初期表示用ランキングです'; $('unformedBox').hidden=true; console.error('formation ranking:',e);
   }
@@ -513,6 +586,7 @@ async function ensureFavoriteModeData(){
   results.sort((a,b)=>{ if(a.formed!==b.formed) return a.formed?-1:1; if(a.formed&&b.formed&&a.buffedReal!==b.buffedReal) return b.buffedReal-a.buffedReal; return String(a.comboId||'').localeCompare(String(b.comboId||''),'ja'); });
   let rank=0; results.forEach(r=>{ if(r.formed){ rank++; r.overallRank=rank; } else { r.overallRank=null; } });
   DATA.modes.favorite={eligiblePlayers:usable.length, formed:rank, unformed:results.length-rank, results};
+  for(const k of [...manualTeams.keys()])if(k.startsWith('favorite|'))manualTeams.delete(k);
   favoriteCacheKey=key;
 }
 init();
