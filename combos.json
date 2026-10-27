@@ -3062,5 +3062,79 @@
         "conditionNo": 4
       }
     ]
+  },
+  {
+    "comboId": "C061",
+    "name": "セレソン・ダス・キナス'26",
+    "formation": "4-3-3B",
+    "rank": "金",
+    "combo_policys": [
+      "カウンター"
+    ],
+    "requiredPlayers": 4,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "ポルトガル強化ログインボーナス",
+    "availablePeriod": "2026年11月25日まで",
+    "effect": "突破力、タックル、マーク、コンタクトが80%アップ。フィールド上にいるポルトガル選手1人あたり、上記能力が追加で、上記能力が追加で2%強化される",
+    "effects": [
+      {
+        "status": "突破力",
+        "value": 80,
+        "additionalCondition": "フィールド上にいるポルトガル選手1人あたり、上記能力が追加で",
+        "additionalValue": 2
+      },
+      {
+        "status": "タックル",
+        "value": 80,
+        "additionalCondition": "フィールド上にいるポルトガル選手1人あたり、上記能力が追加で",
+        "additionalValue": 2
+      },
+      {
+        "status": "マーク",
+        "value": 80,
+        "additionalCondition": "フィールド上にいるポルトガル選手1人あたり、上記能力が追加で",
+        "additionalValue": 2
+      },
+      {
+        "status": "コンタクト",
+        "value": 80,
+        "additionalCondition": "フィールド上にいるポルトガル選手1人あたり、上記能力が追加で",
+        "additionalValue": 2
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 4,
+        "position": "LB",
+        "positionPlace": null,
+        "playStyle": "攻撃的FB",
+        "playStyleLv": 2,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 5,
+        "position": "RB",
+        "positionPlace": null,
+        "playStyle": "攻撃的FB",
+        "playStyleLv": 3,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 6,
+        "position": "DM",
+        "positionPlace": "Right",
+        "playStyle": "パサー",
+        "playStyleLv": 3,
+        "conditionNo": 3
+      },
+      {
+        "slotNo": 9,
+        "position": "LW",
+        "positionPlace": null,
+        "playStyle": "サイドアタッカー",
+        "playStyleLv": 2,
+        "conditionNo": 4
+      }
+    ]
   }
 ]
