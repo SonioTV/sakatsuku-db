@@ -36384,7 +36384,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CF"
     ],
@@ -36487,7 +36487,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "LM",
       "AM"
@@ -36591,7 +36591,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "RM",
       "AM"
@@ -36695,7 +36695,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "LM",
       "LW"
@@ -36799,7 +36799,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "RM",
       "RW"
@@ -36903,7 +36903,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "DM"
     ],
@@ -37006,7 +37006,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "DM"
     ],
@@ -37109,7 +37109,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ],
@@ -37212,7 +37212,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ],
@@ -37308,7 +37308,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ],
@@ -37404,7 +37404,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-06-26",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "GK"
     ],
@@ -43859,7 +43859,7 @@
   {
     "player_id": "P0450",
     "playerId": "P0450",
-    "name": "ヴァティーニャ",
+    "name": "ヴィティーニャ",
     "overall": 7090,
     "maxUpgrade": 15753,
     "policy": "カウンター",
