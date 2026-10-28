@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://sakatsuku2026-db.com/strongest_formation.html">
 <meta name="twitter:card" content="summary">
 <!-- SEO_ITEMLIST_START -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"サカつく2026 最強フォーメーションランキング（全登録選手）","itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":10,"itemListElement":[{"@type":"ListItem","position":1,"name":"レ・ブルー'26","url":"https://sakatsuku2026-db.com/players/combos/C060.html"},{"@type":"ListItem","position":2,"name":"ラ・ロハ'26","url":"https://sakatsuku2026-db.com/players/combos/C059.html"},{"@type":"ListItem","position":3,"name":"セレソン'70","url":"https://sakatsuku2026-db.com/players/combos/C058.html"},{"@type":"ListItem","position":4,"name":"ゴーデンゾーネン'95","url":"https://sakatsuku2026-db.com/players/combos/C026.html"},{"@type":"ListItem","position":5,"name":"ソベラーノ'94","url":"https://sakatsuku2026-db.com/players/combos/C025.html"},{"@type":"ListItem","position":6,"name":"アルビセレステ'01","url":"https://sakatsuku2026-db.com/players/combos/C029.html"},{"@type":"ListItem","position":7,"name":"カナリア軍団'06","url":"https://sakatsuku2026-db.com/players/combos/C045.html"},{"@type":"ListItem","position":8,"name":"ネラッズーロ'10","url":"https://sakatsuku2026-db.com/players/combos/C053.html"},{"@type":"ListItem","position":9,"name":"レ・ブルー'98","url":"https://sakatsuku2026-db.com/players/combos/C027.html"},{"@type":"ListItem","position":10,"name":"ラ・ロハ'24","url":"https://sakatsuku2026-db.com/players/combos/C032.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"サカつく2026 最強フォーメーションランキング（通常最強・全登録選手）","itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":10,"itemListElement":[{"@type":"ListItem","position":1,"name":"レ・ブルー'26","url":"https://sakatsuku2026-db.com/players/combos/C060.html"},{"@type":"ListItem","position":2,"name":"ラ・ロハ'26","url":"https://sakatsuku2026-db.com/players/combos/C059.html"},{"@type":"ListItem","position":3,"name":"セレソン'70","url":"https://sakatsuku2026-db.com/players/combos/C058.html"},{"@type":"ListItem","position":4,"name":"ゴーデンゾーネン'95","url":"https://sakatsuku2026-db.com/players/combos/C026.html"},{"@type":"ListItem","position":5,"name":"ソベラーノ'94","url":"https://sakatsuku2026-db.com/players/combos/C025.html"},{"@type":"ListItem","position":6,"name":"アルビセレステ'01","url":"https://sakatsuku2026-db.com/players/combos/C029.html"},{"@type":"ListItem","position":7,"name":"カナリア軍団'06","url":"https://sakatsuku2026-db.com/players/combos/C045.html"},{"@type":"ListItem","position":8,"name":"ネラッズーロ'10","url":"https://sakatsuku2026-db.com/players/combos/C053.html"},{"@type":"ListItem","position":9,"name":"ラ・ロハ'24","url":"https://sakatsuku2026-db.com/players/combos/C032.html"},{"@type":"ListItem","position":10,"name":"レ・ブルー'98","url":"https://sakatsuku2026-db.com/players/combos/C027.html"}]}</script>
 <!-- SEO_ITEMLIST_END -->
 <style>
 :root{--bg:#f6f7fb;--surface:#fff;--ink:#111827;--muted:#64748b;--line:#dbe4f0;--blue:#155f80;--bright:#2687f6;--green:#159452;--orange:#f59e0b;--orange-dark:#8a4700;--shadow:0 13px 32px rgba(15,23,42,.09)}
@@ -256,6 +256,19 @@ h1{margin:0;font-size:clamp(25px,4vw,36px);font-weight:900;letter-spacing:.01em;
   #pickContents{padding-top:6px;padding-bottom:8px}
   .pickCandidate{padding-top:7px;padding-bottom:7px}
 }
+
+/* 通常／有利の切替およびランキングと独立した詳細対象条件 */
+.scoreButtons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:5px;background:#eaf1f8;border:1px solid #d7e2eb;border-radius:14px;margin:0 0 12px}
+.scoreButtons button{background:transparent;border:0;min-width:0;min-height:45px;border-radius:10px;color:#155f80;font-weight:900;cursor:pointer}
+.scoreButtons button[aria-pressed="true"]{background:#155f80;color:#fff;box-shadow:0 3px 10px #155f802f}
+.detailPool,.pickerPool{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin:9px 0;padding:3px;background:#eaf1f8;border-radius:9px}
+.detailPool button,.pickerPool button{min-height:39px;min-width:0;border:0;background:transparent;border-radius:7px;color:#155f80;font-size:12px;font-weight:900;cursor:pointer;overflow-wrap:anywhere}
+.detailPool button[aria-pressed="true"],.pickerPool button[aria-pressed="true"]{background:#155f80;color:#fff}
+.metric strong,.rankValue strong{overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.rankNote{font-size:11px;color:#54657a;margin:4px 0 9px}
+.rankNote.warn{color:#ad4c05}
+.pickScore{overflow-wrap:anywhere;max-width:135px}
+@media(max-width:520px){.detailPool button,.pickerPool button{font-size:11px;min-height:38px}.pickScore{max-width:88px;white-space:normal!important}.rankValue strong{font-size:28px}}
 </style>
 </head>
 <body>
@@ -269,6 +282,7 @@ h1{margin:0;font-size:clamp(25px,4vw,36px);font-weight:900;letter-spacing:.01em;
     <div class="panelAccent"></div>
     <div class="panelInside">
       <div class="sectionHead"><h2 id="conditionTitle">ランキング条件を選択</h2></div>
+      <div class="scoreButtons" role="group" aria-label="最強の評価基準"><button type="button" data-score-mode="normal" aria-pressed="true">通常最強</button><button type="button" data-score-mode="advantage" aria-pressed="false">有利対戦最強</button></div>
       <div class="modeButtons" role="group" aria-label="ランキング対象の選手条件">
         <button type="button" data-mode="all" aria-pressed="true">全登録選手</button>
         <button type="button" data-mode="available" aria-pressed="false">現在入手可能</button>
@@ -291,19 +305,19 @@ h1{margin:0;font-size:clamp(25px,4vw,36px);font-weight:900;letter-spacing:.01em;
     <div class="panelAccent"></div>
     <div class="panelInside">
       <div class="sectionHead"><h2 id="rankTitle">最強フォーメーション TOP10</h2><span class="resultStatus" id="resultCount">バフ後実数値で比較</span></div>
-      <p class="note">フォメコン指定ポリシーで統一し、必須発動条件をすべて満たす11人編成のみ順位付け。同点はコンボID順です。<a href="#calculation">計算基準を見る</a></p>
+      <p class="note">必須発動条件を満たした11人を、ポリシー混成も含めて比較。同点はコンボID順です。<a href="#calculation">計算基準を見る</a></p>
       <div id="rankingList" class="rankGrid" aria-live="polite">
         <!-- SEO_RANKING_SNAPSHOT_START -->
-<article class="rankCard"><div class="rankLine"><div class="rankNo">1</div><span class="rankIcon rankPolicy"><img src="img/policy/moving.png" data-fallback="img/moving.png" alt="ムービングポリシー" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; !this.dataset.retried){this.dataset.retried='1';this.src=this.dataset.fallback;}else{this.hidden=true;this.nextElementSibling.hidden=false;}"><span class="fallbackThumb" hidden>ムー</span></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-3-3B.png" alt="4-3-3Bのフォーメーション" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallbackThumb" hidden>4-3-3B</span></span><div class="rankTier gold" aria-label="金ランク">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C060.html">レ・ブルー&#39;26</a></div><span class="rankFormationText">4-3-3B</span></div></div><div class="rankValue"><small>バフ後実数値</small><strong>222,259</strong></div></article>
-<article class="rankCard"><div class="rankLine"><div class="rankNo">2</div><span class="rankIcon rankPolicy"><img src="img/policy/possession.png" data-fallback="img/possession.png" alt="ポゼッションポリシー" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; !this.dataset.retried){this.dataset.retried='1';this.src=this.dataset.fallback;}else{this.hidden=true;this.nextElementSibling.hidden=false;}"><span class="fallbackThumb" hidden>ポゼ</span></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-3-3B.png" alt="4-3-3Bのフォーメーション" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallbackThumb" hidden>4-3-3B</span></span><div class="rankTier gold" aria-label="金ランク">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C059.html">ラ・ロハ&#39;26</a></div><span class="rankFormationText">4-3-3B</span></div></div><div class="rankValue"><small>バフ後実数値</small><strong>218,452</strong></div></article>
-<article class="rankCard"><div class="rankLine"><div class="rankNo">3</div><span class="rankIcon rankPolicy"><img src="img/policy/reaction.png" data-fallback="img/reaction.png" alt="リアクションポリシー" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; !this.dataset.retried){this.dataset.retried='1';this.src=this.dataset.fallback;}else{this.hidden=true;this.nextElementSibling.hidden=false;}"><span class="fallbackThumb" hidden>リア</span></span><span class="rankIcon rankFormation"><img src="img/formation_combo/3-4-3C.png" alt="3-4-3Cのフォーメーション" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallbackThumb" hidden>3-4-3C</span></span><div class="rankTier gold" aria-label="金ランク">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C058.html">セレソン&#39;70</a></div><span class="rankFormationText">3-4-3C</span></div></div><div class="rankValue"><small>バフ後実数値</small><strong>218,050</strong></div></article>
-<article class="rankCard"><div class="rankLine"><div class="rankNo">4</div><span class="rankIcon rankPolicy"><img src="img/policy/reaction.png" data-fallback="img/reaction.png" alt="リアクションポリシー" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; !this.dataset.retried){this.dataset.retried='1';this.src=this.dataset.fallback;}else{this.hidden=true;this.nextElementSibling.hidden=false;}"><span class="fallbackThumb" hidden>リア</span></span><span class="rankIcon rankFormation"><img src="img/formation_combo/3-4-3C.png" alt="3-4-3Cのフォーメーション" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallbackThumb" hidden>3-4-3C</span></span><div class="rankTier gold" aria-label="金ランク">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C026.html">ゴーデンゾーネン&#39;95</a></div><span class="rankFormationText">3-4-3C</span></div></div><div class="rankValue"><small>バフ後実数値</small><strong>214,457</strong></div></article>
-<article class="rankCard"><div class="rankLine"><div class="rankNo">5</div><span class="rankIcon rankPolicy"><img src="img/policy/moving.png" data-fallback="img/moving.png" alt="ムービングポリシー" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; !this.dataset.retried){this.dataset.retried='1';this.src=this.dataset.fallback;}else{this.hidden=true;this.nextElementSibling.hidden=false;}"><span class="fallbackThumb" hidden>ムー</span></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-4-2E.png" alt="4-4-2Eのフォーメーション" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallbackThumb" hidden>4-4-2E</span></span><div class="rankTier gold" aria-label="金ランク">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C025.html">ソベラーノ&#39;94</a></div><span class="rankFormationText">4-4-2E</span></div></div><div class="rankValue"><small>バフ後実数値</small><strong>213,684</strong></div></article>
-<article class="rankCard"><div class="rankLine"><div class="rankNo">6</div><span class="rankIcon rankPolicy"><img src="img/policy/moving.png" data-fallback="img/moving.png" alt="ムービングポリシー" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; !this.dataset.retried){this.dataset.retried='1';this.src=this.dataset.fallback;}else{this.hidden=true;this.nextElementSibling.hidden=false;}"><span class="fallbackThumb" hidden>ムー</span></span><span class="rankIcon rankFormation"><img src="img/formation_combo/3-4-3A.png" alt="3-4-3Aのフォーメーション" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallbackThumb" hidden>3-4-3A</span></span><div class="rankTier gold" aria-label="金ランク">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C029.html">アルビセレステ&#39;01</a></div><span class="rankFormationText">3-4-3A</span></div></div><div class="rankValue"><small>バフ後実数値</small><strong>213,447</strong></div></article>
-<article class="rankCard"><div class="rankLine"><div class="rankNo">7</div><span class="rankIcon rankPolicy"><img src="img/policy/moving.png" data-fallback="img/moving.png" alt="ムービングポリシー" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; !this.dataset.retried){this.dataset.retried='1';this.src=this.dataset.fallback;}else{this.hidden=true;this.nextElementSibling.hidden=false;}"><span class="fallbackThumb" hidden>ムー</span></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-4-2C.png" alt="4-4-2Cのフォーメーション" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallbackThumb" hidden>4-4-2C</span></span><div class="rankTier gold" aria-label="金ランク">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C045.html">カナリア軍団&#39;06</a></div><span class="rankFormationText">4-4-2C</span></div></div><div class="rankValue"><small>バフ後実数値</small><strong>213,292</strong></div></article>
-<article class="rankCard"><div class="rankLine"><div class="rankNo">8</div><span class="rankIcon rankPolicy"><img src="img/policy/moving.png" data-fallback="img/moving.png" alt="ムービングポリシー" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; !this.dataset.retried){this.dataset.retried='1';this.src=this.dataset.fallback;}else{this.hidden=true;this.nextElementSibling.hidden=false;}"><span class="fallbackThumb" hidden>ムー</span></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-3-3B.png" alt="4-3-3Bのフォーメーション" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallbackThumb" hidden>4-3-3B</span></span><div class="rankTier gold" aria-label="金ランク">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C053.html">ネラッズーロ&#39;10</a></div><span class="rankFormationText">4-3-3B</span></div></div><div class="rankValue"><small>バフ後実数値</small><strong>212,648</strong></div></article>
-<article class="rankCard"><div class="rankLine"><div class="rankNo">9</div><span class="rankIcon rankPolicy"><img src="img/policy/counter.png" data-fallback="img/counter.png" alt="カウンターポリシー" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; !this.dataset.retried){this.dataset.retried='1';this.src=this.dataset.fallback;}else{this.hidden=true;this.nextElementSibling.hidden=false;}"><span class="fallbackThumb" hidden>カウ</span></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-4-2D.png" alt="4-4-2Dのフォーメーション" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallbackThumb" hidden>4-4-2D</span></span><div class="rankTier gold" aria-label="金ランク">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C027.html">レ・ブルー&#39;98</a></div><span class="rankFormationText">4-4-2D</span></div></div><div class="rankValue"><small>バフ後実数値</small><strong>212,502</strong></div></article>
-<article class="rankCard"><div class="rankLine"><div class="rankNo">10</div><span class="rankIcon rankPolicy"><img src="img/policy/possession.png" data-fallback="img/possession.png" alt="ポゼッションポリシー" loading="lazy" onerror="if(this.dataset.fallback &amp;&amp; !this.dataset.retried){this.dataset.retried='1';this.src=this.dataset.fallback;}else{this.hidden=true;this.nextElementSibling.hidden=false;}"><span class="fallbackThumb" hidden>ポゼ</span></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-3-3B.png" alt="4-3-3Bのフォーメーション" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="fallbackThumb" hidden>4-3-3B</span></span><div class="rankTier gold" aria-label="金ランク">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C032.html">ラ・ロハ&#39;24</a></div><span class="rankFormationText">4-3-3B</span></div></div><div class="rankValue"><small>バフ後実数値</small><strong>212,466</strong></div></article>
+<article class="rankCard"><div class="rankLine"><div class="rankNo">1</div><span class="rankIcon rankPolicy"><img src="img/policy/moving.png" alt="ムービングポリシー" loading="lazy"></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-3-3B.png" alt="4-3-3Bのフォーメーション" loading="lazy"></span><div class="rankTier gold">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C060.html">レ・ブルー&#39;26</a></div><span class="rankFormationText">4-3-3B</span></div></div><div class="rankValue"><small>通常時の補正後総合力</small><strong>231,180</strong></div></article>
+<article class="rankCard"><div class="rankLine"><div class="rankNo">2</div><span class="rankIcon rankPolicy"><img src="img/policy/possession.png" alt="ポゼッションポリシー" loading="lazy"></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-3-3B.png" alt="4-3-3Bのフォーメーション" loading="lazy"></span><div class="rankTier gold">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C059.html">ラ・ロハ&#39;26</a></div><span class="rankFormationText">4-3-3B</span></div></div><div class="rankValue"><small>通常時の補正後総合力</small><strong>227,331</strong></div></article>
+<article class="rankCard"><div class="rankLine"><div class="rankNo">3</div><span class="rankIcon rankPolicy"><img src="img/policy/reaction.png" alt="リアクションポリシー" loading="lazy"></span><span class="rankIcon rankFormation"><img src="img/formation_combo/3-4-3C.png" alt="3-4-3Cのフォーメーション" loading="lazy"></span><div class="rankTier gold">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C058.html">セレソン&#39;70</a></div><span class="rankFormationText">3-4-3C</span></div></div><div class="rankValue"><small>通常時の補正後総合力</small><strong>226,939</strong></div></article>
+<article class="rankCard"><div class="rankLine"><div class="rankNo">4</div><span class="rankIcon rankPolicy"><img src="img/policy/reaction.png" alt="リアクションポリシー" loading="lazy"></span><span class="rankIcon rankFormation"><img src="img/formation_combo/3-4-3C.png" alt="3-4-3Cのフォーメーション" loading="lazy"></span><div class="rankTier gold">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C026.html">ゴーデンゾーネン&#39;95</a></div><span class="rankFormationText">3-4-3C</span></div></div><div class="rankValue"><small>通常時の補正後総合力</small><strong>223,353</strong></div></article>
+<article class="rankCard"><div class="rankLine"><div class="rankNo">5</div><span class="rankIcon rankPolicy"><img src="img/policy/moving.png" alt="ムービングポリシー" loading="lazy"></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-4-2E.png" alt="4-4-2Eのフォーメーション" loading="lazy"></span><div class="rankTier gold">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C025.html">ソベラーノ&#39;94</a></div><span class="rankFormationText">4-4-2E</span></div></div><div class="rankValue"><small>通常時の補正後総合力</small><strong>222,562</strong></div></article>
+<article class="rankCard"><div class="rankLine"><div class="rankNo">6</div><span class="rankIcon rankPolicy"><img src="img/policy/moving.png" alt="ムービングポリシー" loading="lazy"></span><span class="rankIcon rankFormation"><img src="img/formation_combo/3-4-3A.png" alt="3-4-3Aのフォーメーション" loading="lazy"></span><div class="rankTier gold">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C029.html">アルビセレステ&#39;01</a></div><span class="rankFormationText">3-4-3A</span></div></div><div class="rankValue"><small>通常時の補正後総合力</small><strong>222,447</strong></div></article>
+<article class="rankCard"><div class="rankLine"><div class="rankNo">7</div><span class="rankIcon rankPolicy"><img src="img/policy/moving.png" alt="ムービングポリシー" loading="lazy"></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-4-2C.png" alt="4-4-2Cのフォーメーション" loading="lazy"></span><div class="rankTier gold">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C045.html">カナリア軍団&#39;06</a></div><span class="rankFormationText">4-4-2C</span></div></div><div class="rankValue"><small>通常時の補正後総合力</small><strong>222,194</strong></div></article>
+<article class="rankCard"><div class="rankLine"><div class="rankNo">8</div><span class="rankIcon rankPolicy"><img src="img/policy/moving.png" alt="ムービングポリシー" loading="lazy"></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-3-3B.png" alt="4-3-3Bのフォーメーション" loading="lazy"></span><div class="rankTier gold">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C053.html">ネラッズーロ&#39;10</a></div><span class="rankFormationText">4-3-3B</span></div></div><div class="rankValue"><small>通常時の補正後総合力</small><strong>221,572</strong></div></article>
+<article class="rankCard"><div class="rankLine"><div class="rankNo">9</div><span class="rankIcon rankPolicy"><img src="img/policy/possession.png" alt="ポゼッションポリシー" loading="lazy"></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-3-3B.png" alt="4-3-3Bのフォーメーション" loading="lazy"></span><div class="rankTier gold">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C032.html">ラ・ロハ&#39;24</a></div><span class="rankFormationText">4-3-3B</span></div></div><div class="rankValue"><small>通常時の補正後総合力</small><strong>221,362</strong></div></article>
+<article class="rankCard"><div class="rankLine"><div class="rankNo">10</div><span class="rankIcon rankPolicy"><img src="img/policy/counter.png" alt="カウンターポリシー" loading="lazy"></span><span class="rankIcon rankFormation"><img src="img/formation_combo/4-4-2D.png" alt="4-4-2Dのフォーメーション" loading="lazy"></span><div class="rankTier gold">金</div><div class="rankIdentity"><div class="rankTitle"><a href="players/combos/C027.html">レ・ブルー&#39;98</a></div><span class="rankFormationText">4-4-2D</span></div></div><div class="rankValue"><small>通常時の補正後総合力</small><strong>221,338</strong></div></article>
 <!-- SEO_RANKING_SNAPSHOT_END -->
       </div>
       <details id="unformedBox" class="unformed" hidden>
@@ -315,19 +329,20 @@ h1{margin:0;font-size:clamp(25px,4vw,36px);font-weight:900;letter-spacing:.01em;
 
   <section class="panel method" id="calculation" aria-labelledby="calculationTitle">
     <h2 id="calculationTitle">ランキングの計算方法・見方</h2>
-    <p>最強の判定基準は、各フォーメーションコンボの条件で編成した11人の「最大実数値合計＋フォメコン上昇値」です。選手の詳細17項目の値がすべて登録されている場合のみ使用し、選手の重複配置は行いません。</p>
+    <p>通常最強は「17項目の基本能力＋ポリシー一致5%＋フォメコン補正」、有利対戦最強はこれに一致人数に応じた有利ボーナスを加算した推定値で比較します。選手の詳細17項目の値がすべて登録されている場合のみ使用し、選手の重複配置は行いません。</p>
     <h3>全登録選手と現在入手可能の違い</h3>
     <p>「全登録選手」は入手不可の選手も含む理論上の編成です。「現在入手可能」は、マスターの <code>available=true</code> の選手だけで計算します。「お気に入り登録」は、選手図鑑やSP評価ツールで保存したお気に入り選手だけを対象に、このページを開いたブラウザ内で再計算します。入手可否は掲載時点のマスターデータに依存し、リアルタイムのゲーム内状況を保証しません。</p>
     <h3>フォメコン条件を優先して算出</h3>
-    <p>フォメコン指定ポリシー・適性ポジション・必須プレースタイルとLvが一致する選手を配置し、11人すべての配置と発動条件を満たす組み合わせを比較します。Lvは現行の最強チームシミュレーターに合わせて「要求Lvと同一」で判定します。国籍人数による追加効果のあるコンボは人数ごとの組み合わせも考慮します。</p>
+    <p>適性ポジション・必須プレースタイルとLvを満たす選手を配置し、ポリシーが異なる選手も候補に含めて、11人すべての配置と発動条件を満たす組み合わせを比較します。Lvは現行の最強チームシミュレーターに合わせて「要求Lvと同一」で判定します。国籍人数による追加効果のあるコンボは人数ごとの組み合わせも考慮します。</p>
     <h3>ランキング数値についての注意</h3>
-    <p>数値はゲーム内で確認した能力値とコンボ効果から算出した参考値で、スキル発動、戦術相性、試合展開、勝率などは評価に含めません。そのため、ランキング上位が対戦で必ず勝てることを意味しません。表示数値は四捨五入していますが、順位は内部計算値で比較しています。</p>
+    <p>数値はゲーム内で確認した能力値とコンボ効果から算出した参考値で、スキル発動、戦術相性、試合展開、勝率などは評価に含めません。そのため、ランキング上位が対戦で必ず勝てることを意味しません。能力項目ごとに補正値の小数点以下を切り捨てて合算します。有利対戦の数値はゲーム内の試合開始画面を完全再現した値ではありません。国籍連動と有利人数制約が重なる編成のみ近似探索です。</p>
     <p>編成可能な選手が揃わないコンボやデータ定義に矛盾のあるコンボは、推測で補完せず「編成未成立・データ要確認」として分けて表示します。</p>
     <div class="links"><a class="secondary" href="strongest_team_simulation.html">最強チームシミュレーター</a><a class="secondary" href="overall_ranking.html">最強選手ランキング</a><a class="secondary" href="favorite_combos.html">フォメコン診断</a></div>
   </section>
   <p class="footer"><a href="index.html">サカつく2026攻略DB トップへ戻る</a></p>
 </main>
 <div id="pickOverlay" class="pickOverlay" hidden><div class="pickDialog" role="dialog" aria-modal="true" aria-labelledby="pickTitle"><div class="pickHeader"><h2 id="pickTitle">選手入れ替え</h2><button type="button" class="pickClose" id="pickClose">閉じる</button></div><div id="pickContents"></div></div></div>
+<script src="team_optimizer.js"></script>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
@@ -348,15 +363,20 @@ const EFFECT_MAP={
 const NATION_RE=/フィールド上にいる(.+?)選手1人あたり/;
 let DATA=null;
 let mode='all';
+let scoreMode='normal';
+const O=window.SakaTeamOptimizer;
+const detailModes=new Map();
+const candidateModes=new Map();
 let sourceDataPromise=null;
 let favoriteCacheKey='';
 
-function isValid(data){return data?.schemaVersion===1&&Array.isArray(data?.modes?.all?.results)&&Array.isArray(data?.modes?.available?.results);} 
+function isValid(data){return data?.schemaVersion===1&&data?.algorithmVersion==='team-optimizer-v2-20261028'&&Array.isArray(data?.modes?.all?.results)&&Array.isArray(data?.modes?.available?.results)&&Array.isArray(data?.advantageModes?.all?.results)&&Array.isArray(data?.advantageModes?.available?.results);} 
 function exactNumber(value){if(value===null||value===undefined||value===''||typeof value==='boolean') return null; const n=Number(value); return Number.isFinite(n)?n:null;}
 function playerId(p){return String(p?.player_id||p?.playerId||'').trim();}
 function romanLv(n){return ({1:'Ⅰ',2:'Ⅱ',3:'Ⅲ'})[Number(n)]||String(n??'');}
 function loadFavoriteIds(){try{const raw=localStorage.getItem(FAVORITES_STORAGE_KEY); if(!raw) return []; const parsed=JSON.parse(raw); return Array.isArray(parsed)?parsed.map(v=>String(v??'').trim()).filter(Boolean):[];}catch(e){console.warn('favorites load failed',e); return [];}}
-function currentResults(){return DATA?.modes?.[mode]?.results||[];}
+function modeData(scope=mode){return (scoreMode==='advantage'?DATA?.advantageModes:DATA?.modes)?.[scope];}
+function currentResults(){return modeData()?.results||[];}
 function filteredResults(){return currentResults().filter(r=>(!$('policyFilter').value||r.policy===$('policyFilter').value)&&(!$('rankFilter').value||r.rank===$('rankFilter').value));}
 function effectLabel(f){let text=String(f.status||'')+' +'+Number(f.value||0).toLocaleString('ja-JP')+'%';if(f.additionalValue){text+='（国籍追加 +'+f.additionalValue+'%/人）'}return text;}
 function formationImagePath(formation){return formation?`img/formation_combo/${encodeURIComponent(String(formation).trim())}.png`:'';}
@@ -382,18 +402,45 @@ function thumbMarkup(r){
 let SOURCE=null;
 const manualTeams=new Map();
 const sourcePlayerMap=new Map();
-function playerNumbers(p){const master=sourcePlayerMap.get(p.playerId);return `<div class="playerNumbers"><span>最大強化 <b>${format(exactNumber(master?.maxUpgrade))}</b></span><span>実数値 <b>${format(p.baseReal)}</b></span><span>バフ効果 <b>${plus(p.buffGain)}</b></span><span>バフ後 <b>${format(p.buffedReal)}</b></span></div>`;}
+function playerNumbers(p){const master=sourcePlayerMap.get(p.playerId);return `<div class="playerNumbers"><span>最大強化 <b>${format(exactNumber(master?.maxUpgrade))}</b></span><span>基本実数値 <b>${format(p.baseReal)}</b></span><span>ポリシー <b>${plus(p.policyGain||0)}</b></span><span>コンボ <b>${plus(p.buffGain)}</b></span></div>`;}
 function playerMarkup(p){const id=String(p.playerId||'');return `<a class="playerItem${p.required?' isReq':''}" href="players/${encodeURIComponent(id)}.html" title="${esc(p.playerName)}の個別ページ"><img src="img/players/${encodeURIComponent(id)}.png" alt="${esc(p.playerName)}" loading="lazy" onerror="this.style.display='none'"><span class="txt"><span class="nm">${esc(p.playerName)}</span><span class="sm">${esc(p.position)} / ${esc(p.playStyle)} ${romanLv(p.playStyleLv)}</span>${playerNumbers(p)}${p.required?'<span class="sm">発動条件</span>':''}</span></a>`;}
 function pitchMarkup(players,comboId){const names=players.map(p=>{let x=Number(p.x),y=Number(p.y);if(!Number.isFinite(x))x=50;if(!Number.isFinite(y))y=50;x=Math.max(7,Math.min(93,x));y=Math.max(7,Math.min(93,y));return `<button type="button" class="pitchPlayer" data-pick-combo="${esc(comboId)}" data-pick-slot="${p.slotNo}" style="left:${x}%;top:${y}%" title="${esc(p.playerName)}を入れ替える"><img src="img/players/${encodeURIComponent(p.playerId)}.png" loading="lazy" alt="${esc(p.playerName)}" onerror="this.style.display='none'"><span>${esc(p.position)}</span><span class="pitchName">${esc(p.playerName)}</span></button>`}).join('');return `<div class="pitch" aria-label="11人のポジション配置"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#e3fff0" stroke-width="1" opacity=".85"><rect x="3" y="3" width="94" height="94" rx="2"/><path d="M3 3H97 M30 3 Q50 25 70 3 M16 97V75H84V97 M30 97V86H70V97 M35 75Q50 61 65 75"/></g></svg>${names}</div>`;}
-function detailMarkup(r){let effects=(r.effects||[]).map(x=>`<span class="effectItem">${esc(effectLabel(x))}</span>`).join('');let bonus=r.nationalityBonus;let bonusNote=bonus&&bonus.nationality?`${esc(bonus.nationality)}選手 ${bonus.count}人の追加効果を反映`:'国籍追加効果なし';
-return `<details class="details"><summary>最適11人・能力バフの内訳を見る</summary><div class="detailContent">
-<div class="metrics"><div class="metric"><span>編成前実数値</span><strong>${format(r.baseReal)}</strong></div><div class="metric"><span>コンボ上昇量</span><strong>${plus(r.buffGain)}</strong></div><div class="metric emphasis"><span>バフ後実数値</span><strong>${format(r.buffedReal)}</strong></div></div>
-<div class="effectList">${effects||'<span class="effectItem">能力効果なし</span>'}</div><p class="infoText">${bonusNote} / 発動条件 ${(r.requirements||[]).length}枠すべて一致</p>
-<div class="manualActions"><button type="button" class="manualReset" data-reset-combo="${esc(r.comboId)}">最適編成に戻す</button><span class="manualNote">ピッチ上の選手をタップすると変更できます。ランキング順位は自動編成基準です。</span></div><div class="viewChange" role="group" aria-label="11人編成の表示形式"><button type="button" class="viewBtn" data-view="list" aria-pressed="true">選手一覧</button><button type="button" class="viewBtn" data-view="pitch" aria-pressed="false">ピッチ表示</button></div>
-<div class="playerGrid" data-display="list">${(r.players||[]).map(playerMarkup).join('')}</div>
-<div class="pitchArea" data-display="pitch" hidden>${pitchMarkup(r.players||[],r.comboId)}</div>
-<div class="links"><a class="secondary" href="players/combos/${encodeURIComponent(r.comboId)}.html">フォメコン詳細を見る</a><a class="action" href="strongest_team_simulation.html?combo=${encodeURIComponent(r.comboId)}&amp;mode=${encodeURIComponent(mode)}&amp;team=dye">このフォメコンで編成する</a></div>
-</div></details>`;}
+function detailScope(id){return detailModes.get(scoreMode+'|'+mode+'|'+id)||mode;}
+function manualKey(id){return scoreMode+'|'+mode+'|'+detailScope(id)+'|'+id;}
+function selectedDetail(r){
+ const custom=manualTeams.get(manualKey(r.comboId));if(custom)return custom;
+ const scope=detailScope(r.comboId);
+ if(scope===mode)return r;
+ const ready=modeData(scope)?.results?.find(x=>x.comboId===r.comboId);
+ if(ready)return ready;
+ if(!SOURCE)return {...r,formed:false,reason:'お気に入り選手データを読込中',players:[]};
+ const favorite=new Set(loadFavoriteIds());const subset=scope==='favorite'?SOURCE.players.filter(p=>favorite.has(playerId(p))):scope==='available'?SOURCE.players.filter(p=>p.available===true):SOURCE.players;
+ return O.solve(getComboDefinition(r.comboId),SOURCE.slotMap[r.comboId]||[],subset,{mode:scoreMode});
+}
+function scopeButtons(type,id,active){const cls=type==='detail'?'detailPool':'pickerPool';const attr=type==='detail'?'data-detail-scope':'data-picker-scope';return `<div class="${cls}" role="group" aria-label="${type==='detail'?'編成選手':'候補選手'}の対象">${[['all','全選手'],['available','入手可能'],['favorite','お気に入り']].map(([k,v])=>`<button type="button" ${attr}="${k}" data-combo-id="${esc(id)}" aria-pressed="${String(k===active)}">${v}</button>`).join('')}</div>`;}
+function detailMarkup(r,ranked){
+ const selected=selectedDetail(r); const effects=(r.effects||[]).map(x=>`<span class="effectItem">${esc(effectLabel(x))}</span>`).join('');
+ const different=detailScope(r.comboId)!==mode;
+ const note=different?`<p class="rankNote warn">ランキングの順位・スコアは「${esc(mode==='all'?'全登録選手':mode==='available'?'現在入手可能':'お気に入り')}」を基準に固定。現在の詳細は別条件で再編成した値です。</p>`:'';
+ const bonus=selected.nationalityBonus,bonusNote=bonus?.nationality?`${esc(bonus.nationality)} ${bonus.count}名の追加効果を適用`:'国籍人数の追加効果なし';
+ return `<details class="details"><summary>最適11人・能力補正の内訳を見る</summary><div class="detailContent">
+ ${scopeButtons('detail',r.comboId,detailScope(r.comboId))}${note}
+ ${!selected.formed?`<p class="empty">11人編成未成立：${esc(selected.reason)}</p>`:`<div class="metrics">
+ <div class="metric"><span>基本実数値</span><strong>${format(selected.baseReal)}</strong></div>
+ <div class="metric"><span>ポリシー一致5%</span><strong>${plus(selected.policyGain)}</strong></div>
+ <div class="metric"><span>フォメコン補正</span><strong>${plus(selected.buffGain)}</strong></div>
+ <div class="metric"><span>通常時の補正後総合力</span><strong>${format(selected.buffedReal)}</strong></div>
+ <div class="metric"><span>有利ボーナス（${selected.policyCount}人 / ${selected.advantageRate}%）</span><strong>${plus(selected.advantageGain)}</strong></div>
+ <div class="metric emphasis"><span>${scoreMode==='advantage'?'有利対戦時の推定総合力':'通常最強の評価値'}</span><strong>${format(selected.score)}</strong></div></div>
+ <p class="rankNote ${selected.optimization==='heuristic'?'warn':''}">${esc(bonusNote)}・${selected.optimization==='manual'?'手動変更した編成':selected.optimization==='manual'?'手動変更した編成':selected.optimization==='heuristic'?'近似最適編成':'厳密最適編成'} ${scoreMode==='advantage'?'（試合画面とは差が生じる推定モデル）':''}</p>
+ <div class="effectList">${effects||'<span class="effectItem">能力効果なし</span>'}</div>
+ <div class="manualActions"><button type="button" class="manualReset" data-reset-combo="${esc(r.comboId)}">自動編成に戻す</button><span class="manualNote">ピッチの選手をタップすると変更できます。ランキング順位は自動編成基準です。</span></div>
+ <div class="viewChange" role="group" aria-label="編成表示"><button type="button" class="viewBtn" data-view="list" aria-pressed="true">選手一覧</button><button type="button" class="viewBtn" data-view="pitch" aria-pressed="false">ピッチ表示</button></div>
+ <div class="playerGrid" data-display="list">${selected.players.map(playerMarkup).join('')}</div>
+ <div class="pitchArea" data-display="pitch" hidden>${pitchMarkup(selected.players,r.comboId)}</div>`}
+ <div class="links"><a class="secondary" href="players/combos/${encodeURIComponent(r.comboId)}.html">フォメコン詳細</a><a class="action" href="strongest_team_simulation.html?combo=${encodeURIComponent(r.comboId)}&amp;mode=${encodeURIComponent(detailScope(r.comboId))}&amp;team=free&amp;score=${scoreMode}">このコンボで編成する</a></div>
+ </div></details>`;
+}
 function cardMarkup(r,i){return `<article class="rankCard">
 <div class="rankLine">
   <div class="rankNo">${i+1}</div>
@@ -401,14 +448,14 @@ function cardMarkup(r,i){return `<article class="rankCard">
   <div class="rankTier ${rankClasses[r.rank]||''}" aria-label="${esc(r.rank)}ランク">${esc(r.rank)}</div>
   <div class="rankIdentity"><div class="rankTitle"><a href="players/combos/${encodeURIComponent(r.comboId)}.html">${esc(r.name)}</a></div><span class="rankFormationText">${esc(r.formation)}</span></div>
 </div>
-<div class="rankValue"><small>バフ後実数値</small><strong>${format(r.buffedReal)}</strong></div>
-<div class="rankMeta"><span>コンボ上昇 <b>${plus(r.buffGain)}</b></span><span>全体 ${r.overallRank??'—'}位</span><span>11人編成成立</span></div>${detailMarkup(r)}</article>`;}
+<div class="rankValue"><small>${scoreMode==='advantage'?'有利対戦時の推定総合力':'通常時の補正後総合力'}</small><strong>${format(r.score)}</strong></div>
+<div class="rankMeta"><span>ポリシー補正 <b>${plus(r.policyGain)}</b></span><span>コンボ上昇 <b>${plus(r.buffGain)}</b></span><span>全体 ${r.overallRank??'—'}位</span><span>${r.optimization==='heuristic'?'近似最適':'厳密最適'}</span></div>${detailMarkup(r)}</article>`;}
 
 
 function updateStatusText(){
   if(!DATA) return;
   if(mode==='favorite'){
-    const count=Number(DATA.modes.favorite?.eligiblePlayers||0).toLocaleString('ja-JP');
+    const count=Number(modeData('favorite')?.eligiblePlayers||0).toLocaleString('ja-JP');
     $('dataDate').textContent=`お気に入り登録をブラウザ内で再計算 / 対象選手 ${count}名`;
   }else{
     $('dataDate').textContent=`ランキング計算日：${new Date(DATA.generatedAt).toLocaleDateString('ja-JP',{timeZone:'Asia/Tokyo'})}`;
@@ -416,20 +463,21 @@ function updateStatusText(){
 }
 function render(){if(!DATA)return;
   const rows=filteredResults(),formed=rows.filter(r=>r.formed),unformed=rows.filter(r=>!r.formed);
-  const limited=formed.slice(0,10).map(r=>manualTeams.get(mode+"|"+r.comboId)||r);
-  const opened=[...$('rankingList').querySelectorAll('.rankCard')].map(el=>({id:el.querySelector('[data-reset-combo]')?.dataset.resetCombo,open:!!el.querySelector('details.details')?.open,view:el.querySelector('.viewBtn[aria-pressed="true"]')?.dataset.view}));
+  const limited=formed.slice(0,10);
+  const opened=[...$('rankingList').querySelectorAll('.rankCard')].map(el=>({id:el.querySelector('[data-detail-scope]')?.dataset.comboId,open:!!el.querySelector('details.details')?.open,view:el.querySelector('.viewBtn[aria-pressed="true"]')?.dataset.view}));
   $('rankingList').innerHTML=limited.length?limited.map(cardMarkup).join(''):'<div class="empty">この条件で11人編成が成立するフォメコンはありません。絞り込みを変更してください。</div>';
-  opened.forEach(v=>{const card=[...$('rankingList').querySelectorAll('[data-reset-combo]')].find(el=>el.dataset.resetCombo===v.id)?.closest('.rankCard');if(!card)return;const d=card.querySelector('details.details');if(d)d.open=v.open;if(v.view==='pitch'){card.querySelectorAll('.viewBtn').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view==='pitch')));card.querySelectorAll('[data-display]').forEach(el=>el.hidden=el.dataset.display!=='pitch');}});
+  opened.forEach(v=>{const card=[...$('rankingList').querySelectorAll('[data-detail-scope]')].find(el=>el.dataset.comboId===v.id)?.closest('.rankCard');if(!card)return;const d=card.querySelector('details.details');if(d)d.open=v.open;if(v.view==='pitch'){card.querySelectorAll('.viewBtn').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view==='pitch')));card.querySelectorAll('[data-display]').forEach(el=>el.hidden=el.dataset.display!=='pitch');}});
   $('totalCombos').textContent=rows.length.toLocaleString('ja-JP');
   $('formedCombos').textContent=formed.length.toLocaleString('ja-JP');
-  $('playerCount').textContent=Number(DATA.modes[mode].eligiblePlayers||0).toLocaleString('ja-JP');
+  $('playerCount').textContent=Number(modeData()?.eligiblePlayers||0).toLocaleString('ja-JP');
   $('resultCount').textContent=`${formed.length}件中 ${limited.length}件表示`;
   const no=$('unformedBox'); no.hidden=!unformed.length;
   $('unformedSummary').textContent=`編成未成立・データ要確認（${unformed.length}件）`;
   $('unformedList').innerHTML=unformed.map(r=>`<li><strong>${esc(r.name)}</strong> <em>［${esc(r.rank)}・${esc(r.policy)}］ ${esc(r.reason)}</em></li>`).join('');
   updateStatusText();
   document.querySelectorAll('[data-mode]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.mode===mode)));
-  try{const params=new URLSearchParams(location.search);params.set('mode',mode);if($('policyFilter').value)params.set('policy',$('policyFilter').value);else params.delete('policy');if($('rankFilter').value)params.set('rank',$('rankFilter').value);else params.delete('rank');history.replaceState(null,'',location.pathname+'?'+params.toString()+location.hash)}catch(e){}
+  document.querySelectorAll('[data-score-mode]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.scoreMode===scoreMode)));
+  try{const params=new URLSearchParams(location.search);params.set('mode',mode);params.set('score',scoreMode);if($('policyFilter').value)params.set('policy',$('policyFilter').value);else params.delete('policy');if($('rankFilter').value)params.set('rank',$('rankFilter').value);else params.delete('rank');history.replaceState(null,'',location.pathname+'?'+params.toString()+location.hash)}catch(e){}
 }
 
 async function switchMode(nextMode){
@@ -445,6 +493,8 @@ async function switchMode(nextMode){
 }
 
 document.querySelectorAll('[data-mode]').forEach(btn=>btn.addEventListener('click',()=>{switchMode(btn.dataset.mode);}));
+document.querySelectorAll('[data-score-mode]').forEach(btn=>btn.addEventListener('click',async()=>{if(scoreMode===btn.dataset.scoreMode)return;scoreMode=btn.dataset.scoreMode;if(mode==='favorite'){await ensureFavoriteModeData();}render();}));
+$('rankingList').addEventListener('click',async e=>{const b=e.target.closest('[data-detail-scope]');if(!b)return;const id=b.dataset.comboId;detailModes.set(scoreMode+'|'+mode+'|'+id,b.dataset.detailScope);await loadSourceData().then(src=>{SOURCE=src;sourcePlayerMap.clear();src.players.forEach(p=>sourcePlayerMap.set(playerId(p),p));});render();});
 $('policyFilter').addEventListener('change',render);
 $('rankFilter').addEventListener('change',render);
 $('resetFilters').addEventListener('click',()=>{$('policyFilter').value='';$('rankFilter').value='';switchMode('all');});
@@ -452,46 +502,45 @@ $('rankingList').addEventListener('click',e=>{const target=e.target.closest('but
 
 
 function currentComboRow(id){return currentResults().find(r=>r.comboId===id);}
-function chosenRow(id){return manualTeams.get(mode+'|'+id)||currentComboRow(id);}
+function chosenRow(id){return manualTeams.get(manualKey(id))||selectedDetail(currentComboRow(id));}
 function getComboDefinition(id){return SOURCE?.combos.find(c=>c.comboId===id);}
 function evaluateReplacement(result,slotNo,candidate){
- const combo=getComboDefinition(result.comboId),slots=SOURCE?.slotMap[result.comboId];if(!combo||!slots)return null;
- const info=checkCombo(combo,slots);if(info.error)return null;
+ const combo=getComboDefinition(result.comboId),slots=SOURCE?.slotMap[result.comboId];if(!combo||!slots||!result.formed)return null;
  const picks=[];
- for(const slot of slots){const row=result.players.find(p=>p.slotNo===slot.slotNo);const p=slot.slotNo===slotNo?candidate:sourcePlayerMap.get(row?.playerId);if(!p||!matchingPlayer(p,slot,info.policy,info.requirements[slot.slotNo]||[]))return null;picks.push(p);}
- if(new Set(picks.map(playerId)).size!==11)return null;
- const metric=metricsForTeam(slots,picks,combo,info.requirements,info.nation);delete metric.scoreScaled;
- return {...result,...metric,players:metric.players};
+ for(const slot of slots){const row=result.players.find(p=>p.slotNo===slot.slotNo);const p=slot.slotNo===slotNo?candidate:sourcePlayerMap.get(row?.playerId);if(!p)return null;picks.push(p);}
+ const metric=O.evaluate(combo,slots,picks,scoreMode);return metric?{...result,...metric,formed:true,optimization:'manual'}:null;
 }
 function pickCandidates(comboId,slotNo){
  const result=chosenRow(comboId),combo=getComboDefinition(comboId),slots=SOURCE?.slotMap[comboId],slot=slots?.find(s=>s.slotNo===slotNo);
- if(!result||!combo||!slot)return null;
- const info=checkCombo(combo,slots);if(info.error)return null;
+ if(!result?.formed||!combo||!slot)return null;
+ const info=O.validate(combo,slots);if(info.error)return null;
  const existing=new Set(result.players.filter(p=>p.slotNo!==slotNo).map(p=>p.playerId));
- const pool=SOURCE.players.filter(p=>!existing.has(playerId(p))&&matchingPlayer(p,slot,info.policy,info.requirements[slotNo]||[])&&(mode!=='available'||p.available===true)&&(mode!=='favorite'||loadFavoriteIds().includes(playerId(p))));
- const rows=pool.map(p=>{const evaluated=evaluateReplacement(result,slotNo,p);return evaluated?{p,result:evaluated,diff:evaluated.buffedReal-result.buffedReal}:null;}).filter(Boolean);
- rows.sort((a,b)=>b.result.buffedReal-a.result.buffedReal||playerId(a.p).localeCompare(playerId(b.p),'ja'));
- return {result,slot,rows:rows.filter(x=>playerId(x.p)!==result.players.find(y=>y.slotNo===slotNo)?.playerId).slice(0,5)};
+ const scope=candidateModes.get(scoreMode+'|'+mode+'|'+comboId)||detailScope(comboId),favorites=new Set(loadFavoriteIds());
+ const pool=SOURCE.players.filter(p=>!existing.has(playerId(p))&&O.isCandidate(p,slot,info.requirements[slotNo]||[])&&(scope!=='available'||p.available===true)&&(scope!=='favorite'||favorites.has(playerId(p))));
+ const rows=pool.map(p=>{const evaluated=evaluateReplacement(result,slotNo,p);return evaluated?{p,result:evaluated,diff:evaluated.score-result.score}:null;}).filter(Boolean);
+ rows.sort((a,b)=>b.result.score-a.result.score||playerId(a.p).localeCompare(playerId(b.p),'ja'));
+ return {result,slot,scope,rows:rows.filter(x=>playerId(x.p)!==result.players.find(y=>y.slotNo===slotNo)?.playerId).slice(0,10)};
 }
 let dialogContext=null;
 function openPicker(comboId,slotNo){
- if(!SOURCE){alert('候補データの読み込みが完了していません。');return;}
+ if(!SOURCE){alert('選手データを読み込めていません。');return;}
  const v=pickCandidates(comboId,slotNo);if(!v)return;
- dialogContext={comboId,slotNo};const current=v.result.players.find(p=>p.slotNo===slotNo);
+ dialogContext={comboId,slotNo};const current=v.result.players.find(p=>p.slotNo===slotNo),scored=x=>format(x?.score);
  $('pickTitle').textContent=`選手入れ替え｜${v.slot.position}`;
- $('pickContents').innerHTML=`<p class="pickHelp">フォメコンの発動条件と表示モードを維持し、他の10名は固定。チームのバフ後実数値が高い順に候補5名を表示します。</p><div class="pickCurrent">現在：<b>${esc(current.playerName)}</b> ／ チーム合計 <b>${format(v.result.buffedReal)}</b></div>`+(v.rows.length?v.rows.map((row,i)=>{const p=row.p,pr=row.result.players.find(x=>x.slotNo===slotNo);return `<div class="pickCandidate"><img src="img/players/${encodeURIComponent(playerId(p))}.png" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><div class="pickInfo"><strong>${i+1}位 ${esc(p.name)}</strong><small>${esc(p.nationality)}／最大強化 ${format(exactNumber(p.maxUpgrade))}</small><small>実数値 ${format(pr.baseReal)}・バフ +${format(pr.buffGain)}・バフ後 ${format(pr.buffedReal)}</small><small><a href="players/${encodeURIComponent(playerId(p))}.html" target="_blank" rel="noopener">選手詳細</a></small></div><div class="pickScore">合計 ${format(row.result.buffedReal)}<br><span style="color:${row.diff>=0?'#07834c':'#bd3838'}">${row.diff>=0?'+':''}${format(row.diff)}</span></div><button type="button" data-apply-id="${esc(playerId(p))}">入れ替え</button></div>`}).join(''):'<p class="pickHelp">入れ替え可能な候補が見つかりません。</p>');
+ $('pickContents').innerHTML=`${scopeButtons('picker',comboId,v.scope)}<p class="pickHelp">他の10人は固定し、条件成立と国籍・ポリシー人数を再計算。${scoreMode==='advantage'?'有利対戦時の推定総合力':'通常時の補正後総合力'}順TOP10。</p><div class="pickCurrent">現在：<b>${esc(current.playerName)}</b> ／ チーム評価 <b>${scored(v.result)}</b></div>`+(v.rows.length?v.rows.map((row,i)=>{const p=row.p,pr=row.result.players.find(x=>x.slotNo===slotNo);return `<div class="pickCandidate"><img src="img/players/${encodeURIComponent(playerId(p))}.png" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><div class="pickInfo"><strong>${i+1}位 ${esc(p.name)}</strong><small>${esc(p.nationality)}／最大強化 ${format(exactNumber(p.maxUpgrade))}</small><small>基本 ${format(pr.baseReal)}・ポリシー +${format(pr.policyGain)}・コンボ +${format(pr.buffGain)}</small><small><a href="players/${encodeURIComponent(playerId(p))}.html" target="_blank" rel="noopener">選手詳細</a></small></div><div class="pickScore">合計 ${format(row.result.score)}<br><span style="color:${row.diff>=0?'#07834c':'#bd3838'}">${row.diff>=0?'+':''}${format(row.diff)}</span></div><button type="button" data-apply-id="${esc(playerId(p))}">入れ替え</button></div>`}).join(''):'<p class="pickHelp">入れ替え候補が見つかりません。</p>');
  $('pickOverlay').hidden=false;document.body.style.overflow='hidden';$('pickClose').focus();
 }
 function closePicker(){$('pickOverlay').hidden=true;document.body.style.overflow='';dialogContext=null;}
 $('pickClose').addEventListener('click',closePicker);
 $('pickOverlay').addEventListener('click',e=>{if(e.target===$('pickOverlay'))closePicker();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('pickOverlay').hidden)closePicker();});
-$('pickContents').addEventListener('click',e=>{const btn=e.target.closest('[data-apply-id]');if(!btn||!dialogContext)return;const {comboId,slotNo}=dialogContext;const p=sourcePlayerMap.get(btn.dataset.applyId);const next=p&&evaluateReplacement(chosenRow(comboId),slotNo,p);if(!next)return;manualTeams.set(mode+'|'+comboId,next);closePicker();render();});
-$('rankingList').addEventListener('click',e=>{const btn=e.target.closest('[data-pick-combo]');if(btn){openPicker(btn.dataset.pickCombo,Number(btn.dataset.pickSlot));return;}const reset=e.target.closest('[data-reset-combo]');if(reset){manualTeams.delete(mode+'|'+reset.dataset.resetCombo);render();}});
+$('pickContents').addEventListener('click',e=>{const pick=e.target.closest('[data-picker-scope]');if(pick&&dialogContext){candidateModes.set(scoreMode+'|'+mode+'|'+dialogContext.comboId,pick.dataset.pickerScope);openPicker(dialogContext.comboId,dialogContext.slotNo);return;}const btn=e.target.closest('[data-apply-id]');if(!btn||!dialogContext)return;const {comboId,slotNo}=dialogContext;const p=sourcePlayerMap.get(btn.dataset.applyId);const next=p&&evaluateReplacement(chosenRow(comboId),slotNo,p);if(!next)return;manualTeams.set(manualKey(comboId),next);closePicker();render();});
+$('rankingList').addEventListener('click',e=>{const btn=e.target.closest('[data-pick-combo]');if(btn){openPicker(btn.dataset.pickCombo,Number(btn.dataset.pickSlot));return;}const reset=e.target.closest('[data-reset-combo]');if(reset){manualTeams.delete(manualKey(reset.dataset.resetCombo));render();}});
 
 async function init(){
   try{
     const qs=new URLSearchParams(location.search);
+    if(['normal','advantage'].includes(qs.get('score')))scoreMode=qs.get('score');
     const modeParam=qs.get('mode'); if(['all','available','favorite'].includes(modeParam)) mode=modeParam;
     if([...$('policyFilter').options].some(o=>o.value===qs.get('policy'))) $('policyFilter').value=qs.get('policy');
     if([...$('rankFilter').options].some(o=>o.value===qs.get('rank'))) $('rankFilter').value=qs.get('rank');
@@ -500,199 +549,42 @@ async function init(){
     DATA=json;
     if(mode==='favorite') await ensureFavoriteModeData();
     render();
-    loadSourceData().then(src=>{SOURCE=src;sourcePlayerMap.clear();src.players.forEach(p=>sourcePlayerMap.set(playerId(p),p));render();}).catch(e=>console.warn("選手データ読み込み:",e));
+    loadSourceData().then(src=>{SOURCE=src;sourcePlayerMap.clear();src.players.forEach(p=>sourcePlayerMap.set(playerId(p),p));render();}).catch(e=>{console.error('ランキングデータ整合性:',e);DATA=null;$('rankingList').innerHTML='<div class="empty">最新データとの照合に失敗しました。ランキングJSONを再生成してください。</div>';$('dataDate').textContent=String(e.message||e);});
   }catch(e){
     $('dataDate').textContent='ランキングデータを読み込めませんでした'; $('resultCount').textContent='下記は初期表示用ランキングです'; $('unformedBox').hidden=true; console.error('formation ranking:',e);
   }
 }
 
-function positionsOf(p){
-  const raw=p?.suitablePositions;
-  const arr=Array.isArray(raw)?raw:(typeof raw==='string'?raw.split(/[／/,、\s]+/):[]);
-  const vals=[p?.mainPosition,...arr].map(v=>String(v||'').trim().toUpperCase()).filter(Boolean);
-  return [...new Set(vals)];
-}
-function preparePlayers(players){
-  const seen=new Set(); const out=[];
-  for(const src of players||[]){
-    const pid=playerId(src); if(!pid||seen.has(pid)) continue; seen.add(pid);
-    const values=[]; let ok=true;
-    for(const [group,key] of STAT_KEYS){ const v=exactNumber(src?.stats?.[group]?.[key]); if(v===null){ok=false; break;} values.push(v); }
-    if(!ok) continue;
-    const copied=JSON.parse(JSON.stringify(src));
-    copied._base=values.reduce((a,b)=>a+b,0);
-    copied._positions=positionsOf(copied);
-    out.push(copied);
-  }
-  return out.sort((a,b)=>playerId(a).localeCompare(playerId(b),'ja'));
-}
-function normalizeSlots(raw){
-  const result={};
-  for(const s of raw||[]){
-    const cid=String(s?.combo_id||s?.comboId||'').trim();
-    const n=s?.slot_no??s?.slotNo; if(!cid||n===undefined||n===null) continue;
-    const item={slotNo:Number(n),position:String(s?.position||'').trim().toUpperCase(),x:s?.x,y:s?.y,conditionNo:s?.condition_no??s?.conditionNo};
-    (result[cid] ||= []).push(item);
-  }
-  Object.values(result).forEach(a=>a.sort((x,y)=>x.slotNo-y.slotNo));
-  return result;
-}
-function checkCombo(combo,slots){
-  if(!Array.isArray(slots)||slots.length!==11||new Set(slots.map(s=>s.slotNo)).size!==11) return {error:'配置スロットが11枠そろっていません'};
-  if(slots.some(s=>!s.position)) return {error:'配置ポジションが未設定です'};
-  const slotByNo=Object.fromEntries(slots.map(s=>[s.slotNo,s]));
-  const reqBySlot={};
-  for(const r of (combo.combo_requirements||[])){
-    const sn=Number(r.slotNo??r.slot_no); if(!Number.isFinite(sn)||!slotByNo[sn]) return {error:`発動条件のスロットが不正です: ${r.slotNo??r.slot_no}`};
-    const expected=String(r.position||'').trim().toUpperCase(); const actual=slotByNo[sn].position;
-    if(expected && expected!==actual) return {error:`発動条件と配置位置が不一致: ${sn}枠（条件 ${expected} / 配置 ${actual}）`};
-    (reqBySlot[sn] ||= []).push(r);
-  }
-  const nationSet=new Set();
-  for(const e of (combo.effects||[])){
-    if(!EFFECT_MAP[String(e.status||'').trim()]) return {error:`未対応の能力効果: ${e.status}`};
-    if(exactNumber(e.value)===null) return {error:'能力バフの数値が不正です'};
-    if(!(e.additionalValue===undefined||e.additionalValue===null||e.additionalValue===''||Number(e.additionalValue)===0)){
-      const m=NATION_RE.exec(String(e.additionalCondition||''));
-      if(!m || exactNumber(e.additionalValue)===null) return {error:'国籍追加条件が未対応の形式です'};
-      nationSet.add(m[1].trim());
-    }
-  }
-  if(nationSet.size>1) return {error:'複数国籍の追加効果があり現在の計算方式では対応していません'};
-  let policys=combo.combo_policys||[]; if(typeof policys==='string') policys=[policys];
-  if(policys.length!==1) return {error:'フォメコン指定ポリシーが1種類ではありません'};
-  return {requirements:reqBySlot,nation:[...nationSet][0]||'',policy:policys[0]};
-}
-function matchingPlayer(p,slot,policy,requirements){
-  if(p.policy!==policy || !(p._positions||[]).includes(slot.position)) return false;
-  for(const r of requirements||[]){ if(p.playStyle!==r.playStyle) return false; if(Number(p.playStyleLv||0)!==Number(r.playStyleLv||0)) return false; }
-  return true;
-}
-function statScore(p,slot,combo,nationName='',nationCount=0){
-  let value=Math.round((p._base||0)*10000); let gain=0;
-  for(const effect of (combo.effects||[])){
-    const spec=EFFECT_MAP[effect.status]; if(!spec) continue;
-    const [group,key,scope]=spec; if((scope==='gk'&&slot.position!=='GK')||(scope==='field'&&slot.position==='GK')) continue;
-    const stat=exactNumber(p?.stats?.[group]?.[key]); const pct=exactNumber(effect.value); if(stat===null||pct===null) continue;
-    let rate=pct;
-    if(nationName && !(effect.additionalValue===undefined||effect.additionalValue===null||effect.additionalValue===''||Number(effect.additionalValue)===0)){
-      const m=NATION_RE.exec(String(effect.additionalCondition||'')); if(m && m[1].trim()===nationName) rate += exactNumber(effect.additionalValue)*nationCount;
-    }
-    gain += Math.round(stat * rate / 100 * 10000);
-  }
-  return value+gain;
-}
-function hungarianMinimize(cost){
-  const n=cost.length, m=n?cost[0].length:0; if(m<n) return null;
-  const u=Array(n+1).fill(0), v=Array(m+1).fill(0), p=Array(m+1).fill(0), way=Array(m+1).fill(0);
-  for(let i=1;i<=n;i++){
-    p[0]=i; let j0=0; const minv=Array(m+1).fill(Infinity), used=Array(m+1).fill(false);
-    while(true){
-      used[j0]=true; const i0=p[j0]; let delta=Infinity, j1=0;
-      for(let j=1;j<=m;j++){
-        if(used[j]) continue;
-        const cur=cost[i0-1][j-1]-u[i0]-v[j];
-        if(cur<minv[j]){minv[j]=cur; way[j]=j0;}
-        if(minv[j]<delta){delta=minv[j]; j1=j;}
-      }
-      for(let j=0;j<=m;j++){ if(used[j]){u[p[j]]+=delta; v[j]-=delta;} else if(minv[j]!==Infinity){minv[j]-=delta;} }
-      j0=j1; if(p[j0]===0) break;
-    }
-    while(true){ const j1=way[j0]; p[j0]=p[j1]; j0=j1; if(j0===0) break; }
-  }
-  const ans=Array(n).fill(-1); for(let j=1;j<=m;j++){ if(p[j]>0) ans[p[j]-1]=j-1; } return ans;
-}
-function hungarianAssignment(slots,candidates,combo){
-  const map=new Map(); candidates.forEach(xs=>xs.forEach(p=>map.set(playerId(p),p)));
-  const pool=[...map.values()].sort((a,b)=>playerId(a).localeCompare(playerId(b),'ja'));
-  if(pool.length<11 || candidates.some(xs=>!xs.length)) return null;
-  const INF=1e12; const allowed=candidates.map(xs=>new Set(xs.map(playerId)));
-  const costs=slots.map((slot,idx)=>pool.map(p=>allowed[idx].has(playerId(p)) ? -statScore(p,slot,combo) : INF));
-  const result=hungarianMinimize(costs);
-  if(!result || result.some((j,i)=>j<0 || costs[i][j]>=INF)) return null;
-  return result.map(j=>pool[j]);
-}
-function mincostQuotaAssignment(slots,candidates,combo,nation,nationCount){
-  const map=new Map(); candidates.forEach(xs=>xs.forEach(p=>map.set(playerId(p),p)));
-  const pool=[...map.values()].sort((a,b)=>playerId(a).localeCompare(playerId(b),'ja'));
-  if(pool.length<11 || candidates.some(xs=>!xs.length)) return null;
-  const target=pool.filter(p=>p.nationality===nation), other=pool.filter(p=>p.nationality!==nation);
-  if(target.length<nationCount || other.length<11-nationCount) return null;
-  const playerStart=3, slotStart=playerStart+pool.length, sink=slotStart+slots.length;
-  const adj=Array.from({length:sink+1},()=>[]);
-  const add=(a,b,cap,cost)=>{const e=[b,adj[b].length,cap,cost], rev=[a,adj[a].length,0,-cost]; adj[a].push(e); adj[b].push(rev); return e;};
-  add(0,1,nationCount,0); add(0,2,11-nationCount,0);
-  const allowed=candidates.map(xs=>new Set(xs.map(playerId))); const scores=new Map(); let bestscore=0;
-  slots.forEach((slot,i)=>{ pool.forEach((p,j)=>{ if(allowed[i].has(playerId(p))){ const sc=statScore(p,slot,combo,nation,nationCount); scores.set(i+'|'+j,sc); if(sc>bestscore) bestscore=sc; } }); });
-  pool.forEach((p,j)=>add(p.nationality===nation?1:2,playerStart+j,1,0));
-  const assignmentEdges=[];
-  slots.forEach((slot,i)=>{ const snode=slotStart+i; add(snode,sink,1,0); pool.forEach((p,j)=>{ if(scores.has(i+'|'+j)){ const edge=add(playerStart+j,snode,1,bestscore-scores.get(i+'|'+j)); assignmentEdges.push([i,j,edge]); } }); });
-  const potential=Array(sink+1).fill(0); let flow=0;
-  while(flow<11){
-    const dist=Array(sink+1).fill(Infinity), prev=Array(sink+1).fill(null); dist[0]=0;
-    const used=Array(sink+1).fill(false);
-    for(let _=0;_<sink+1;_++){
-      let v=-1; for(let i=0;i<=sink;i++){ if(!used[i] && dist[i]<Infinity && (v===-1 || dist[i]<dist[v])) v=i; }
-      if(v===-1) break; used[v]=true;
-      adj[v].forEach((e,ei)=>{ const [to,,cap,cost]=e; if(cap<=0) return; const nd=dist[v]+cost+potential[v]-potential[to]; if(nd<dist[to]){ dist[to]=nd; prev[to]=[v,ei]; } });
-    }
-    if(!Number.isFinite(dist[sink])) return null;
-    for(let i=0;i<=sink;i++){ if(Number.isFinite(dist[i])) potential[i]+=dist[i]; }
-    let cur=sink; while(cur!==0){ const [v,ei]=prev[cur]; const e=adj[v][ei]; e[2]-=1; adj[cur][e[1]][2]+=1; cur=v; }
-    flow++;
-  }
-  const chosen=Array(11).fill(null); assignmentEdges.forEach(([i,j,edge])=>{ if(edge[2]===0) chosen[i]=pool[j]; });
-  if(chosen.some(x=>!x)) return null;
-  if(chosen.filter(p=>p.nationality===nation).length!==nationCount) return null;
-  return chosen;
-}
-function metricsForTeam(slots,picks,combo,reqBySlot,nation=''){
-  const counts={}; picks.forEach(p=>{ const k=p.nationality||''; counts[k]=(counts[k]||0)+1; }); const n=nation?(counts[nation]||0):0;
-  const rows=[]; let totalBase=0,totalBuffed=0;
-  for(let i=0;i<slots.length;i++){
-    const slot=slots[i], p=picks[i]; const base=Math.round((p._base||0)*10000), buffed=statScore(p,slot,combo,nation,n); totalBase+=base; totalBuffed+=buffed;
-    const reqs=reqBySlot[slot.slotNo]||[];
-    rows.push({slotNo:slot.slotNo,position:slot.position,x:slot.x,y:slot.y,playerId:playerId(p),playerName:p.name||'',nationality:p.nationality||'',playStyle:p.playStyle||'',playStyleLv:p.playStyleLv,required:Boolean(reqs.length),baseReal:base/10000,buffGain:(buffed-base)/10000,buffedReal:buffed/10000});
-  }
-  return {baseReal:totalBase/10000,buffGain:(totalBuffed-totalBase)/10000,buffedReal:totalBuffed/10000,scoreScaled:totalBuffed,nationalityBonus:nation?{nationality:nation,count:n}:null,players:rows};
-}
-function solveCombo(combo,slots,players){
-  const base={comboId:combo.comboId,name:combo.name||'',rank:combo.rank||'',policy:Array.isArray(combo.combo_policys)?(combo.combo_policys[0]||''):String(combo.combo_policys||''),formation:combo.formation||'',effects:combo.effects||[],requirements:combo.combo_requirements||[],formed:false,reason:'',baseReal:null,buffGain:null,buffedReal:null,nationalityBonus:null,players:[]};
-  const info=checkCombo(combo,slots); if(info.error){base.reason=info.error; return base;}
-  const policy=info.policy, reqs=info.requirements;
-  const candidates=slots.map(slot=>players.filter(p=>matchingPlayer(p,slot,policy,reqs[slot.slotNo]||[])));
-  const idx=candidates.findIndex(xs=>!xs.length);
-  if(idx>=0){ const slot=slots[idx], rs=reqs[slot.slotNo]||[]; if(rs.length){ const r=rs[0]; base.reason=`${slot.position}の必須条件（${r.playStyle} Lv${r.playStyleLv}）に一致する選手がいません`; } else { base.reason=`${slot.position}に配置可能な選手がいません`; } return base; }
-  const nation=info.nation; let picks=null, bestMetric=null;
-  if(!nation){ picks=hungarianAssignment(slots,candidates,combo); }
-  else {
-    for(let n=0;n<=11;n++){
-      const tested=mincostQuotaAssignment(slots,candidates,combo,nation,n); if(!tested) continue;
-      const metric=metricsForTeam(slots,tested,combo,reqs,nation);
-      if(!bestMetric || metric.scoreScaled>bestMetric.scoreScaled){ picks=tested; bestMetric=metric; }
-    }
-  }
-  if(!picks){ base.reason='発動条件を満たす11人を重複なく編成できません'; return base; }
-  const metric=bestMetric || metricsForTeam(slots,picks,combo,reqs,nation); delete metric.scoreScaled;
-  base.formed=true; Object.assign(base,metric); return base;
-}
+function preparePlayers(p){return O.preparePlayers(p);}
+function normalizeSlots(s){return O.normalizeSlots(s);}
+function checkCombo(c,s){return O.validate(c,s);}
+function matchingPlayer(p,s,policy,req){return O.isCandidate(p,s,req);}
+function metricsForTeam(slots,picks,combo,requirements,nation){return O.evaluate(combo,slots,picks,scoreMode);}
+function solveCombo(combo,slots,players){return O.solve(combo,slots,players,{mode:scoreMode});}
 async function loadSourceData(){
-  if(sourceDataPromise) return sourceDataPromise;
+  if(sourceDataPromise)return sourceDataPromise;
   sourceDataPromise=(async()=>{
-    const [playersRes, combosRes, slotsRes] = await Promise.all([
-      fetch('players.json',{cache:'no-store'}), fetch('combos.json',{cache:'no-store'}), fetch('formation_slots.json',{cache:'no-store'})
-    ]);
-    if(!playersRes.ok||!combosRes.ok||!slotsRes.ok) throw new Error('お気に入り計算用データを読み込めませんでした');
-    const [players, combos, slots] = await Promise.all([playersRes.json(), combosRes.json(), slotsRes.json()]);
-    return {players:preparePlayers(players), combos, slotMap:normalizeSlots(slots)};
+    const names=['players.json','combos.json','formation_slots.json','team_optimizer.js'];
+    const responses=await Promise.all(names.map(x=>fetch(x,{cache:'no-store'})));
+    if(responses.some(x=>!x.ok))throw new Error('選手・フォメコン・スロットまたは計算エンジンを取得できませんでした');
+    const raws=await Promise.all(responses.map(x=>x.text()));
+    if(DATA?.sourceHash&&globalThis.crypto?.subtle){
+      const enc=new TextEncoder(),parts=[];let total=0;
+      for(let i=0;i<names.length;i++){for(const t of [names[i],raws[i]]){const a=enc.encode(t);parts.push(a);total+=a.length;}}
+      const joined=new Uint8Array(total);let offset=0;for(const a of parts){joined.set(a,offset);offset+=a.length;}
+      const digest=await crypto.subtle.digest('SHA-256',joined);
+      const hash=Array.from(new Uint8Array(digest)).map(x=>x.toString(16).padStart(2,'0')).join('');
+      if(hash!==DATA.sourceHash)throw new Error('ランキングの事前計算データが最新版のJSON／計算エンジンと一致しません。generate_formation_ranking.js を実行して再配置してください');
+    }
+    return {players:preparePlayers(JSON.parse(raws[0])),combos:JSON.parse(raws[1]),slotMap:normalizeSlots(JSON.parse(raws[2]))};
   })();
   return sourceDataPromise;
 }
 async function ensureFavoriteModeData(){
   if(!DATA) return;
   const favoriteIds=[...new Set(loadFavoriteIds().sort())];
-  const key=favoriteIds.join('|');
-  if(DATA.modes.favorite && favoriteCacheKey===key) return;
+  const key=scoreMode+'|'+favoriteIds.join('|');
+  if(modeData('favorite') && favoriteCacheKey===key) return;
   const {players,combos,slotMap}=await loadSourceData();
   const usable=players.filter(p=>favoriteIds.includes(playerId(p)));
   const results=[];
@@ -700,10 +592,10 @@ async function ensureFavoriteModeData(){
     results.push(solveCombo(combos[i], slotMap[combos[i].comboId]||[], usable));
     if(i%5===4) await new Promise(r=>setTimeout(r,0));
   }
-  results.sort((a,b)=>{ if(a.formed!==b.formed) return a.formed?-1:1; if(a.formed&&b.formed&&a.buffedReal!==b.buffedReal) return b.buffedReal-a.buffedReal; return String(a.comboId||'').localeCompare(String(b.comboId||''),'ja'); });
-  let rank=0; results.forEach(r=>{ if(r.formed){ rank++; r.overallRank=rank; } else { r.overallRank=null; } });
-  DATA.modes.favorite={eligiblePlayers:usable.length, formed:rank, unformed:results.length-rank, results};
-  for(const k of [...manualTeams.keys()])if(k.startsWith('favorite|'))manualTeams.delete(k);
+  O.rank(results,scoreMode);
+  const rank=results.filter(r=>r.formed).length;
+  (scoreMode==='advantage'?DATA.advantageModes:DATA.modes).favorite={eligiblePlayers:usable.length, formed:rank, unformed:results.length-rank, results};
+  for(const k of [...manualTeams.keys()])if(k.includes('|favorite|'))manualTeams.delete(k);
   favoriteCacheKey=key;
 }
 init();

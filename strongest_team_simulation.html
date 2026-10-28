@@ -750,6 +750,15 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
 .summaryStat.final.provisional .v{color:#865016}
 @media(max-width:680px){.formationValidity{font-size:12px;padding:9px 10px}}
 
+
+/* v2 : 既存デザインに合わせた独立スコアモード */
+.scoreSelector{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:5px;background:#eaf2f8;border-radius:13px;border:1px solid #cfdfea;margin:9px 0}
+.scoreMode{white-space:nowrap;border:0;border-radius:10px;min-width:0;min-height:43px;color:#155f80;font-size:14px;font-weight:900;background:transparent;cursor:pointer}
+.scoreMode[aria-pressed="true"]{background:#155f80;color:#fff;box-shadow:0 3px 10px #155f8030}
+.resultSummaryGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.resultSummaryGrid .summaryStat{min-width:0}
+.resultSummaryGrid .summaryStat .v{font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+@media(max-width:520px){.scoreMode{font-size:13px;padding:6px}.resultSummaryGrid .summaryStat .v{font-size:19px}}
 </style>
 
 <style id="review-content-styles">
@@ -820,10 +829,12 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
   <label class="pill"><input type="radio" name="view" value="pitch"> ピッチ</label>
   <label class="pill"><input type="radio" name="view" value="both"> 両方</label>
 </div>
+  <div class="viewLabel pitchTeamLabel">最強の評価基準</div>
+  <div class="scoreSelector" role="group" aria-label="最強編成の評価モード"><button type="button" class="scoreMode" data-score-mode="normal" aria-pressed="true">通常最強</button><button type="button" class="scoreMode" data-score-mode="advantage" aria-pressed="false">有利対戦最強</button></div>
   <div class="viewLabel pitchTeamLabel">表示チーム</div>
 <div class="row viewRow">
-  <label class="pill"><input type="radio" name="pitchTeam" value="dye" checked> ポリシー染め</label>
-  <label class="pill"><input type="radio" name="pitchTeam" value="free"> ポリシー自由</label>
+  <label class="pill"><input type="radio" name="pitchTeam" value="dye"> ポリシー染め</label>
+  <label class="pill"><input type="radio" name="pitchTeam" value="free" checked> ポリシー自由</label>
 </div>
 
   <div class="viewLabel pitchTeamLabel">表示選手</div>
@@ -891,7 +902,7 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
     <p>ポリシーを統一した編成を作りたい場合はポリシー染め、ポリシーに縛られず候補を比較したい場合はポリシー自由を使います。同じフォーメーションでも選択方法によって候補が変わるため、目的に合わせて切り替えてください。</p>
     <h3>コンボ条件を満たす選手を確認</h3>
     <p>結果では、フォーメーションコンボの発動条件に関係する選手を視覚的に確認できます。国籍や入手場所などの条件も指定できるため、「現在入手可能な範囲だけで組む」「特定の選手群を除いて比較する」といった検討にも利用できます。</p>
-    <p>11人が重複なくそろい、必須条件と配置定義が一致した編成を「編成成立」と表示します。人数不足などの場合も編成候補は表示できますが、その能力バフ後の数値は発動を保証しない参考値です。ランキングとの比較は、追加の国籍・入手場所指定なし、ポリシー染めで成立した編成を対象にしてください。</p>
+    <p>11人が重複なくそろい、必須条件と配置定義が一致した編成を「編成成立」と表示します。人数不足などの場合も編成候補は表示できますが、その能力バフ後の数値は発動を保証しない参考値です。ランキングとの比較は、追加の国籍・入手場所指定なし、ポリシー自由で成立した編成を対象にしてください。</p>
     <h3>テーブル表示とピッチ表示</h3>
     <p>数値や条件を細かく確認したい場合はテーブル、配置イメージを見たい場合はピッチ表示が便利です。両方を表示して、数値面とポジション配置を同時に確認することもできます。</p>
     <p class="review-note">表示結果は収録データと指定条件をもとにした編成候補です。試合での操作感、スキル発動、戦術相性など、データ化していない要素まで含めた絶対的な最強編成を保証するものではありません。</p>
@@ -899,6 +910,7 @@ tbody tr:nth-child(even) td{background:#fbfdff;}
   </div>
 </section>
 
+<script src="team_optimizer.js"></script>
 <script>
 function escapeHtml(str){
   return String(str)
@@ -915,9 +927,13 @@ function escapeHtml(str){
   const roman = (n)=>({1:"Ⅰ",2:"Ⅱ",3:"Ⅲ"}[Number(n)]||String(n??""));
   const short2 = (s)=>String(s??"").slice(0,2);
   const getPlayerId = (p)=>String(p?.player_id || p?.playerId || "");
-  const getSelectedTeamMode = ()=>document.querySelector('input[name="pitchTeam"]:checked')?.value || "dye";
+  const getSelectedTeamMode = ()=>document.querySelector('input[name="pitchTeam"]:checked')?.value || "free";
   const getSelectedTeamLabel = ()=>getSelectedTeamMode() === "free" ? "ポリシー自由" : "ポリシー染め";
   const getPlayerFilterMode = ()=>document.querySelector('input[name="playerFilter"]:checked')?.value || "all";
+  let scoreMode='normal';
+  const getScoreMode=()=>scoreMode;
+  function updateScoreButtons(){document.querySelectorAll('[data-score-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.scoreMode===scoreMode)));}
+  document.querySelectorAll('[data-score-mode]').forEach(b=>b.addEventListener('click',()=>{if(scoreMode===b.dataset.scoreMode)return;scoreMode=b.dataset.scoreMode;updateScoreButtons();if($('comboSel')?.value)simulate();}));
   const getMode = ()=>"maxUpgrade";
   const getRank = ()=>$("rankSel")?.value || "";
   const getPolicyFilter = ()=>$("policySel")?.value || "";
@@ -1022,22 +1038,13 @@ function escapeHtml(str){
     return rate;
   }
 
-  function getBuffedRealValue(player, slotPosition, combo, nationalityCounts){
-    const base = getBaseRealValue(player);
-    if(base === null) return null;
-
-    let gain = 0;
-    for(const effect of (combo?.effects || [])){
-      const status = String(effect?.status || "").trim();
-      const map = EFFECT_STAT_MAP[status];
-      if(!map || !effectAppliesToSlot(status, slotPosition)) continue;
-      const statValue = readDetailStat(player, map.group, map.key);
-      if(statValue === null) return null;
-      const rate = getEffectRate(effect, nationalityCounts);
-      gain += statValue * rate / 100;
-    }
-
-    return { base, gain, buffed: base + gain };
+  function getBuffedRealValue(player,slotPosition,combo,nationalityCounts){
+    // レガシー最小費用流への互換ラッパー。実能力への補正は常に共通エンジンへ委譲。
+    const q=window.SakaTeamOptimizer?.preparePlayers([player])?.[0];if(!q)return null;
+    const policy=Array.isArray(combo.combo_policys)?combo.combo_policys[0]:combo.combo_policys;
+    const nation=getComboTargetNationalities(combo)[0]||'';
+    const n=window.SakaTeamOptimizer.perPlayer(q,{position:slotPosition},combo,policy,nation,Number(nationalityCounts?.get(nation)||0));
+    return{base:n.base,policyGain:n.policyGain,comboGain:n.comboGain,gain:n.policyGain+n.comboGain,buffed:n.total};
   }
 
   function formatInteger(value){
@@ -1157,7 +1164,7 @@ function renderPitch(){
     return;
   }
 
-  const team = document.querySelector('input[name="pitchTeam"]:checked')?.value || "dye";
+  const team = document.querySelector('input[name="pitchTeam"]:checked')?.value || "free";
   const picks = team === "free" ? LAST.picksB : LAST.picksA;
 
   // ★追加：slotNo -> player のMap（indexズレ対策）
@@ -1272,16 +1279,16 @@ function renderFormationValidity(){
   target.className="formationValidity";
   if(v.definitionError){
     target.classList.add("invalid");
-    target.textContent=`編成成立判定不可：${v.definitionError}。現在の編成・バフ値は参考値です。元データを確認してください。`;
+    target.textContent=`編成成立判定不可：${v.definitionError}。能力補正値は表示しません。元データを確認してください。`;
   }else if(!v.valid){
     target.classList.add("warn");
-    target.textContent=`編成未成立（${v.filled}/11人・必須条件 ${v.matched}/${v.required}件）。バフ後実数値は仮適用の参考値で、コンボ発動を保証しません。`;
+    target.textContent=`編成未成立（${v.filled}/11人・必須条件 ${v.matched}/${v.required}件）。発動条件を満たさない編成に補正後の評価値は表示しません。`;
   }else if(free){
     target.classList.add("ok");
-    target.textContent=`11人配置・必須条件 ${v.matched}/${v.required}件を満たす編成です。ポリシー自由での参考編成のため、ランキングの「ポリシー染め」とは数値を直接比較できません。`;
+    target.textContent=`編成成立（必須条件 ${v.matched}/${v.required}件）。ポリシー自由がランキングの基本条件です。同じ選手集合・モードなら同じ編成評価値になります。`;
   }else{
     target.classList.add("ok");
-    target.textContent=`編成成立（11/11人・必須条件 ${v.matched}/${v.required}件一致）。ポリシー染め・追加絞り込みなしの場合、ランキングと同条件で比較できます。`;
+    target.textContent=`編成成立（11/11人・必須条件 ${v.matched}/${v.required}件一致）。ポリシー11人一致を制約にして評価しています。`;
   }
   target.style.display="";
 }
@@ -1325,14 +1332,17 @@ function renderSummary(){
 
   summary.innerHTML = `
     <div class="resultSummaryGrid">
-      <div class="summaryStat"><div class="k">${metrics.filledCount}名の最大強化合計</div><div class="v">${formatInteger(metrics.totalMaxUpgrade)}</div></div>
-      <div class="summaryStat"><div class="k">${metrics.filledCount}名の最大実数値合計</div><div class="v">${formatInteger(metrics.totalBaseReal)}</div></div>
-      <div class="summaryStat buff"><div class="k">${preliminary ? "参考：仮の上昇値" : "フォメコン上昇値"}</div><div class="v">${formatSignedInteger(metrics.totalBuffGain)}</div></div>
-      <div class="summaryStat final${preliminary ? " provisional" : ""}"><div class="k">${preliminary ? "参考：仮のバフ後合計" : "バフ後最大実数値合計"}</div><div class="v">${formatInteger(metrics.totalBuffedReal)}</div></div>
+      <div class="summaryStat"><div class="k">基本実数値（17能力）</div><div class="v">${formatInteger(metrics.totalBaseReal)}</div></div>
+      <div class="summaryStat"><div class="k">ポリシー一致5%補正</div><div class="v">${formatSignedInteger(metrics.totalPolicyGain)}</div></div>
+      <div class="summaryStat buff"><div class="k">フォメコン補正（国籍込み）</div><div class="v">${formatSignedInteger(metrics.totalComboGain)}</div></div>
+      <div class="summaryStat"><div class="k">通常時の補正後総合力</div><div class="v">${formatInteger(metrics.totalBuffedReal)}</div></div>
+      <div class="summaryStat"><div class="k">有利ボーナス（${metrics.policyCount}人・${formatPercent(metrics.advantageRate)}%）</div><div class="v">${formatSignedInteger(metrics.advantageGain)}</div></div>
+      <div class="summaryStat final${preliminary ? " provisional" : ""}"><div class="k">${getScoreMode()==='advantage'?'★ 有利対戦時の推定総合力':'★ 通常最強の評価値'}</div><div class="v">${formatInteger(getScoreMode()==='advantage'?metrics.advantageReal:metrics.totalBuffedReal)}</div></div>
     </div>
     <div class="teamMetaLine">
       <span class="teamMetaChip">${esc(label)}</span>
       <span class="teamMetaChip">編成人数 ${metrics.filledCount}/${LAST.slots.length}</span>
+      <span class="teamMetaChip">一致 ${metrics.policyCount}/11人 ${metrics.optimization==='heuristic'?'・近似選出':'・厳密最適'}</span>
       ${bonusLines.map(x=>`<span class="teamMetaChip">${esc(x)}</span>`).join("")}
     </div>
     <div class="comboEffectPanel">
@@ -1388,7 +1398,7 @@ function renderTable(){
       ? ` 条件内では${selectedMetrics.filledCount}/${LAST.slots.length}名まで編成できています。`
       : "";
     const omittedText = omitted > 0 ? ` 詳細ステータス未登録の${omitted}名は計算対象外です。` : "";
-    note.textContent = `※緑色の選手はフォーメーションコンボの発動条件一致。最大実数値＝17項目の詳細ステータス合計。バフ計算は小数を保持し、表示時に四捨五入しています。${partial}${omittedText}`;
+    note.textContent = `※緑色の選手はフォーメーションコンボの発動条件一致。最大実数値＝17項目の詳細ステータス合計。各選手の各能力へ補正率を掛けて切り捨てた整数値を合算しています。有利対戦時の数値は試合画面の完全再現値ではありません。${partial}${omittedText}`;
   }
 }
 
@@ -1500,6 +1510,7 @@ COMBOS  = (c||[]).filter(x=>x && x.comboId);
     const playerMode=["all","available","favorite"].includes(mode)?mode:"all";
     const input=document.querySelector(`input[name="playerFilter"][value="${playerMode}"]`);
     if(input) input.checked=true;
+    if(['normal','advantage'].includes(qs.get('score'))){scoreMode=qs.get('score');updateScoreButtons();}
     const team=qs.get("team");
     if(["dye","free"].includes(team)){
       const input=document.querySelector(`input[name="pitchTeam"][value="${team}"]`);
@@ -2201,26 +2212,6 @@ function simulate(){
   const definitionError = getComboDefinitionError(combo, slots);
   const reqMap = buildRequirementMap(combo, slots);
 
-  const highlightOK = (player, slot)=>{
-    if(!slot) return false;
-    const slotKey = String(slot.slotNo ?? slot.slot_no ?? "");
-
-    const hasSlotReq = (reqMap.bySlot && reqMap.bySlot.size > 0);
-    if(hasSlotReq){
-      const reqs = reqMap.bySlot.get(slotKey) || [];
-      if(!reqs.length) return false;
-      const ps = String(player?.playStyle ?? "");
-      const lv = Number(player?.playStyleLv ?? 0);
-      return reqs.every(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
-    }
-
-    const reqs = (reqMap.byPos.get(slot.position) || []);
-    if(!reqs || !reqs.length) return false;
-    const ps = String(player?.playStyle ?? "");
-    const lv = Number(player?.playStyleLv ?? 0);
-    return reqs.every(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
-  };
-
   const scopedPlayers = getSimulationPlayers();
   const filterMode = getPlayerFilterMode();
   if(!scopedPlayers.length){
@@ -2259,82 +2250,38 @@ function simulate(){
     return reqs.every(r=>String(r.playStyle??"")===ps && lv === Number(r.playStyleLv ?? 0));
   };
 
-  const targetNationalities = getComboTargetNationalities(combo);
-  if(targetNationalities.length > 1){
-    setStatus("1つのフォーメーションコンボに複数国籍の追加条件が設定されています。現在のデータ構造を確認してください。", true);
-    LAST = null;
-    updateView();
-    return;
-  }
-  const targetNationality = targetNationalities[0] || "";
-  const requiredSlotKeys = new Set(slots.filter(s=>getSlotReqs(s).length > 0).map(s=>String(s.slotNo)));
-
-  const isBetterResult = (candidate, best)=>{
-    if(!best) return true;
-    if(candidate.metrics.requiredFilled !== best.metrics.requiredFilled){
-      return candidate.metrics.requiredFilled > best.metrics.requiredFilled;
-    }
-    const diff = candidate.metrics.totalBuffedReal - best.metrics.totalBuffedReal;
-    if(Math.abs(diff) > 1e-9) return diff > 0;
-    if(candidate.metrics.totalMaxUpgrade !== best.metrics.totalMaxUpgrade){
-      return candidate.metrics.totalMaxUpgrade > best.metrics.totalMaxUpgrade;
-    }
-    return false;
+  // 2つのHTMLとランキング生成が利用する共通エンジン。
+  // 不成立時は架空の能力値を表示しない（部分編成へのフォメコン補正は禁止）。
+  const optimizer=window.SakaTeamOptimizer;
+  if(!optimizer){LAST=null;updateView();setStatus('team_optimizer.js が読み込めません。',true);return;}
+  const pool=optimizer.preparePlayers(scopedPlayers);
+  const optSlots=slots.map(x=>({slotNo:Number(x.slotNo),position:String(x.position),x:Number(x.x),y:Number(x.y)}));
+  const options={mode:getScoreMode(),nationality:requiredNationality,acquisition:requiredAcq};
+  const solvedA=optimizer.solve(combo,optSlots,pool,{...options,dye:true});
+  const solvedB=optimizer.solve(combo,optSlots,pool,{...options,dye:false});
+  const makeResult=(result)=>{
+    const assigned=new Map((result.players||[]).map(r=>[String(r.slotNo),r]));
+    const picks=slots.map(slot=>({slot,player:assigned.has(String(slot.slotNo))?PLAYER_MAP.get(assigned.get(String(slot.slotNo)).playerId)||null:null}));
+    if(!result.formed)return{picks,metrics:null};
+    const nationalityCounts=new Map();for(const row of result.players){nationalityCounts.set(row.nationality,(nationalityCounts.get(row.nationality)||0)+1);}
+    const detailBySlot=new Map(result.players.map(row=>[String(row.slotNo),{
+      maxUpgrade:Number(PLAYER_MAP.get(row.playerId)?.maxUpgrade)||0,baseReal:row.baseReal,
+      policyGain:row.policyGain,comboGain:row.buffGain,buffGain:row.policyGain+row.buffGain,buffedReal:row.buffedReal
+    }]));
+    const metrics={nationalityCounts,totalMaxUpgrade:picks.reduce((n,x)=>n+(Number(x.player?.maxUpgrade)||0),0),
+      totalBaseReal:result.baseReal,totalPolicyGain:result.policyGain,totalComboGain:result.buffGain,
+      totalBuffGain:result.policyGain+result.buffGain,totalBuffedReal:result.buffedReal,
+      advantageRate:result.advantageRate,advantageGain:result.advantageGain,advantageReal:result.advantageReal,
+      policyCount:result.policyCount,score:result.score,optimization:result.optimization,
+      filledCount:11,requiredFilled:(combo.combo_requirements||[]).length,detailBySlot};
+    return{picks,metrics};
   };
-
-  const buildPicks = (forcePol)=>{
-    const candidatesBySlot = new Map();
-    for(const slot of slots){
-      const list = simulationPlayers.filter(p=>
-        matchPlayerForSlot(p, combo, String(slot?.position ?? ""), reqMap, "", forcePol, requiredNationality, requiredAcq) &&
-        playerMatchesSlotReq(p, slot)
-      );
-      candidatesBySlot.set(String(slot.slotNo), list);
-    }
-
-    // 国籍連動が無い通常コンボはHungarian法で一括最適化する。
-    // 11枠 × 数百選手でも高速で、選手重複なしの最大値を厳密に求められる。
-    if(!targetNationality){
-      const solved = solveAssignmentFast(slots, candidatesBySlot, combo, requiredSlotKeys);
-      return {picks:solved.picks, metrics:computeTeamMetrics(solved.picks, combo, reqMap)};
-    }
-
-    // 国籍人数でバフ率が変化するコンボは、対象国籍人数を0～編成人数まで列挙し、
-    // 各人数ごとに最小費用流で最適割当を解く。これにより「国籍選手を増やすことで
-    // チーム全体のバフが上がる」効果まで含めて比較できる。
-    for(let desiredFlow = slots.length; desiredFlow >= 1; desiredFlow--){
-      let best = null;
-      const countsToTry = Array.from({length:desiredFlow+1}, (_,i)=>i);
-
-      for(const targetCount of countsToTry){
-        const solved = solveAssignmentWithQuota(
-          slots,
-          candidatesBySlot,
-          combo,
-          targetNationality,
-          targetCount,
-          desiredFlow,
-          requiredSlotKeys
-        );
-        if(solved.flow !== desiredFlow) continue;
-        const metrics = computeTeamMetrics(solved.picks, combo, reqMap);
-        const candidate = {picks:solved.picks, metrics};
-        if(isBetterResult(candidate, best)) best = candidate;
-      }
-
-      if(best) return best;
-    }
-
-    const emptyPicks = slots.map(slot=>({slot,player:null}));
-    return {picks:emptyPicks, metrics:computeTeamMetrics(emptyPicks, combo, reqMap)};
+  const resultA=makeResult(solvedA),resultB=makeResult(solvedB);
+  const picksA=resultA.picks,picksB=resultB.picks;
+  const highlightOK=(player,slot)=>{
+    const rs=reqMap.bySlot.get(String(slot?.slotNo))||[];
+    return rs.length>0&&rs.every(r=>r.playStyle===player?.playStyle&&Number(r.playStyleLv)===Number(player?.playStyleLv));
   };
-
-  // ポリシー染め / ポリシー自由をそれぞれ独立して最適化する。
-  const resultA = buildPicks(forcedPolicy || "");
-  const resultB = buildPicks("");
-  const picksA = resultA.picks;
-  const picksB = resultB.picks;
-
   const slotPlaceMap = new Map((combo.combo_requirements||[])
     .filter(r=>r && (r.slotNo!==undefined && r.slotNo!==null) && r.positionPlace)
     .map(r=>[String(r.slotNo), String(r.positionPlace)]));
@@ -2361,12 +2308,14 @@ function simulate(){
     highlightOK,
     slotPlaceMap,
     slotCoordMap,
-    omittedCount
+    omittedCount,solvedA,solvedB
   };
   renderTable();
   renderPitch();
   updateView();
-  setStatus(omittedCount > 0 ? `詳細ステータス未登録 ${omittedCount}名を計算対象外としています。` : "");
+  const selectedSolved=getSelectedTeamMode()==='free'?solvedB:solvedA;
+  const note=selectedSolved.formed?(selectedSolved.optimization==='heuristic'?'国籍と有利人数を含む近似最適編成です。':'条件内の厳密な最大値を求めました。'):`編成未成立：${selectedSolved.reason}`;
+  setStatus(note+(omittedCount>0?` 詳細能力未登録 ${omittedCount}名は対象外。`:''),!selectedSolved.formed);
 }
 
 
@@ -2413,7 +2362,7 @@ function showPlayerDetailById(pid){
     ["メイン特徴", p.mainTrait],
   ].map(([k,v])=>makeRow(k,v)).join("");
 
-  modalBody.innerHTML = rows;
+  modalBody.innerHTML = rows + `<div style="margin-top:12px;text-align:center"><a href="players/${encodeURIComponent(getPlayerId(p))}.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 15px;background:#155f80;color:#fff;border-radius:12px;font-weight:900;text-decoration:none">選手個別ページを見る</a></div>`;
   openModal();
 }
 
@@ -2447,7 +2396,10 @@ document.querySelectorAll('input[name="view"]').forEach(el=>{
   el.addEventListener("change", ()=>{ updateView(); });
 });
 document.querySelectorAll('input[name="pitchTeam"]').forEach(el=>{
-  el.addEventListener("change", ()=>{ renderTable(); renderPitch(); updateView(); });
+  el.addEventListener("change", ()=>{
+    renderTable();renderPitch();updateView();
+    if(LAST){const r=getSelectedTeamMode()==='free'?LAST.solvedB:LAST.solvedA;if(r)setStatus(r.formed?(r.optimization==='heuristic'?'有利対戦人数と国籍を含む近似最適編成です。':'指定条件で厳密最適化済みです。'):'編成未成立：'+r.reason,!r.formed);}
+  });
 });
 document.querySelectorAll('input[name="playerFilter"]').forEach(el=>{
   el.addEventListener("change", ()=>{
@@ -2469,10 +2421,11 @@ document.querySelectorAll('input[name="playerFilter"]').forEach(el=>{
     if(comboSel) comboSel.selectedIndex = 0;
 
     const tableView = document.querySelector('input[name="view"][value="table"]');
-    const dyeTeam = document.querySelector('input[name="pitchTeam"][value="dye"]');
+    const dyeTeam = document.querySelector('input[name="pitchTeam"][value="free"]');
     const allPlayers = document.querySelector('input[name="playerFilter"][value="all"]');
     if(tableView) tableView.checked = true;
     if(dyeTeam) dyeTeam.checked = true;
+    scoreMode="normal";updateScoreButtons();
     if(allPlayers) allPlayers.checked = true;
 
     updateView();
