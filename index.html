@@ -2185,6 +2185,7 @@
     position:fixed;
     left:max(18px, calc(50vw - 670px));
     top:400px; /* JSで「主要コンテンツ12項目」の直下から追尾する */
+    visibility:hidden; /* タイトル画像の読み込みが完了するまで誤った位置で表示しない */
     z-index:18;
     width:190px;
     max-height:calc(100vh - 420px);
@@ -2955,16 +2956,24 @@ document.addEventListener("click", (e)=>{
   openPlayerSearchPanel();
 });
 
-/* PC左サイド「データから探す」：初期位置は主要コンテンツ12項目の直下、以降は画面上部へ追尾 */
+/* PC左サイド「データから探す」：画像の読込後も位置を補正し、12項目の下から追尾 */
 function setupPcDatabaseNavPosition(){
   const nav = document.querySelector(".pcDatabaseNav");
   const quickLinks = document.querySelector(".quick-links");
   if(!nav || !quickLinks) return;
+  const titleImage = document.querySelector(".site-banner .title-img");
+  const banner = document.querySelector(".site-banner");
 
   const update = ()=>{
     if(window.innerWidth < 1360){
       nav.style.top = "";
       nav.style.maxHeight = "";
+      nav.style.visibility = "";
+      return;
+    }
+    // 画像の高さが未確定の間はメニューを表示しない
+    if(titleImage && !titleImage.complete){
+      nav.style.visibility = "hidden";
       return;
     }
 
@@ -2973,8 +2982,21 @@ function setupPcDatabaseNavPosition(){
     const top = Math.max(minTop, Math.round(quickLinks.getBoundingClientRect().bottom + gap));
     nav.style.top = `${top}px`;
     nav.style.maxHeight = `calc(100vh - ${top + 16}px)`;
+    nav.style.visibility = "visible";
   };
 
+  // 初回だけでなく、画像読込・レイアウト変化・ブラウザ復帰にも追従
+  if(titleImage){
+    titleImage.addEventListener("load", update);
+    titleImage.addEventListener("error", update);
+  }
+  if(typeof ResizeObserver !== "undefined"){
+    const observer = new ResizeObserver(update);
+    observer.observe(quickLinks);
+    if(banner) observer.observe(banner);
+  }
+  window.addEventListener("load", update);
+  window.addEventListener("pageshow", update);
   window.addEventListener("scroll", update, {passive:true});
   window.addEventListener("resize", update, {passive:true});
   requestAnimationFrame(update);
