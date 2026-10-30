@@ -1611,6 +1611,8 @@
     font-size:11px;
   }
   .comparisonValue.is-missing{ color:#94a3b8; font-weight:800; }
+  .comparisonValue.comparisonInfoValue.is-available{ color:#0b63d1; }
+  .comparisonValue.comparisonInfoValue.is-unavailable{ color:#c62828; }
   .comparisonValue.comparisonInfoValue{
     white-space:normal;
     overflow-wrap:anywhere;
@@ -1812,6 +1814,193 @@
     .comparisonPlaceBadge{ min-width:23px; min-height:14px; padding:1px 3px; font-size:6.7px; }
   }
 
+
+  /* 2026-10-30: タブ名称と比較タブ2～4のマウス/タッチ入れ替え */
+  .evaluationTabNo,.comparisonTabNo{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    line-height:1.1;
+    white-space:nowrap;
+    gap:1px;
+  }
+  .evaluationTabRole{ display:block; font-size:.9em; }
+  [data-drag-evaluation-tab]{
+    cursor:grab;
+    touch-action:pan-y;
+    user-select:none;
+    -webkit-user-select:none;
+    -webkit-touch-callout:none;
+  }
+  [data-drag-evaluation-tab] img{ pointer-events:none; user-select:none; -webkit-user-drag:none; }
+  .evaluationTabCell.is-drag-source .evaluationTabImageWrap,
+  .comparisonTabCell.is-drag-source .comparisonTabImageWrap{opacity:.45;}
+  .evaluationTabCell.is-drop-target,
+  .comparisonTabCell.is-drop-target{
+    outline:3px dashed #f59e0b;
+    outline-offset:-4px;
+    z-index:4;
+    background:#fff8e8;
+  }
+  .evaluationTabDragGhost{
+    position:fixed;
+    z-index:100000;
+    transform:translate(-50%,-115%);
+    pointer-events:none;
+    display:flex;
+    align-items:center;
+    gap:5px;
+    max-width:140px;
+    padding:5px 7px;
+    border:2px solid #f59e0b;
+    border-radius:9px;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 6px 22px rgba(15,23,42,.25);
+    color:#0f172a;
+    font-size:10px;
+    font-weight:900;
+  }
+  .evaluationTabDragGhost img{width:36px;height:40px;object-fit:contain;flex:0 0 36px;}
+  .evaluationTabDragGhost span{min-width:0;overflow:hidden;overflow-wrap:anywhere;line-height:1.2;}
+  @media(max-width:520px){
+    /* チェック欄と2行になったタブ名が重ならない位置にする。 */
+    .evaluationTabCell .evaluationTab,.comparisonTabCell .comparisonTabHead{padding-top:19px;}
+    .evaluationTabNo{font-size:8px;}
+    .comparisonTabNo{font-size:7.7px;}
+    .evaluationTabRole{font-size:.86em;}
+    .evaluationTabDragGhost{max-width:108px;font-size:9px;}
+    .evaluationTabDragGhost img{width:28px;height:32px;flex-basis:28px;}
+  }
+
+  /* 2026-10-30: SP選手評価ツール（入手可否・チェック式タブ削除・詳細ボタン・数値差分） */
+  .ctrlRow .favoriteFilter{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+    min-width:0;
+  }
+  .ctrlRow .favoriteFilter label{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    min-width:0;
+    margin:0;
+    font-size:12px;
+    font-weight:900;
+    line-height:1.35;
+    cursor:pointer;
+  }
+  .ctrlRow .favoriteFilter input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    flex:0 0 18px;
+    padding:0;
+    margin:0;
+    accent-color:var(--blue);
+    cursor:pointer;
+  }
+  .evaluationTabCell,.comparisonTabCell{ position:relative; min-width:0; }
+  .evaluationTabCell .evaluationTab{ width:100%; height:100%; }
+  .evaluationTabCheck{
+    position:absolute;
+    z-index:3;
+    top:4px;
+    left:4px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:19px;
+    height:19px;
+    margin:0;
+    padding:1px;
+    border:1px solid #cbd5e1;
+    border-radius:5px;
+    background:#fff;
+    box-shadow:0 1px 3px rgba(0,0,0,.08);
+  }
+  .evaluationTabCheck input{
+    appearance:auto;
+    width:15px;
+    height:15px;
+    min-width:15px;
+    margin:0;
+    padding:0;
+    accent-color:var(--blue);
+    cursor:pointer;
+  }
+  .evaluationTabCheck:has(input:disabled){ opacity:.45; }
+  .resultTabClear:disabled{ opacity:.45; cursor:not-allowed; }
+  .comparisonTabCell{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    border-right:1px solid #d8e3ea;
+    border-bottom:1px solid #d8e3ea;
+    background:#f8fafc;
+  }
+  .comparisonTabCell.is-last{ border-right:0; }
+  .comparisonTabCell .comparisonTabHead{
+    width:100%;
+    flex:1 1 auto;
+    border-right:0;
+    border-bottom:0;
+  }
+  .comparisonPlayerDetailLink,.comparisonPlayerDetailPlaceholder{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-width:0;
+    min-height:32px;
+    margin:2px 3px 4px;
+    border-radius:6px;
+    text-align:center;
+    font-size:9px;
+    font-weight:900;
+    line-height:1.15;
+  }
+  .comparisonPlayerDetailLink{
+    padding:3px 2px;
+    color:#fff;
+    background:var(--blue);
+    text-decoration:none;
+    overflow-wrap:anywhere;
+  }
+  .comparisonPlayerDetailLink:hover{ background:#0b4765; }
+  .comparisonPlayerDetailLink:focus-visible,.evaluationTabCheck input:focus-visible{
+    outline:2px solid #f59e0b;
+    outline-offset:2px;
+  }
+  .comparisonNumericWrap{ gap:2px; }
+  .comparisonDelta{
+    display:block;
+    font-size:10px;
+    font-weight:1000;
+    line-height:1.2;
+    white-space:nowrap;
+    font-variant-numeric:tabular-nums;
+  }
+  .comparisonDelta.is-positive{ color:#0b63d1; }
+  .comparisonDelta.is-negative{ color:#c62828; }
+  .comparisonDelta.is-equal{ color:#64748b; }
+  @media(max-width:520px){
+    .ctrlRow > .favoriteFilter{ grid-column:1 / -1; }
+    .ctrlRow .favoriteFilter{ gap:5px; }
+    .ctrlRow .favoriteFilter label{ font-size:11px; gap:5px; }
+    .ctrlRow .favoriteFilter input[type="checkbox"]{ width:16px; height:16px; flex-basis:16px; }
+    .resultHeader{ flex-wrap:wrap; }
+    .resultActionStack{ flex:0 0 100%; justify-content:flex-end; gap:5px; }
+    .evaluationTabCheck{ top:3px; left:2px; width:15px; height:15px; padding:0; border-radius:4px; }
+    .evaluationTabCheck input{ width:13px; height:13px; min-width:13px; }
+    .comparisonPlayerDetailLink,.comparisonPlayerDetailPlaceholder{
+      min-height:30px;
+      margin:1px 1px 3px;
+      padding:2px 1px;
+      font-size:7.4px;
+    }
+    .comparisonDelta{ font-size:7.5px; }
+  }
+
 </style>
 
 <style id="review-content-styles">
@@ -1900,9 +2089,13 @@
         </div>
 
 <div class="favoriteFilter">
-  <label style="display:flex;align-items:center;gap:8px;">
-    <input id="favOnly" type="checkbox" style="width:18px;height:18px;margin:0;">
+  <label for="favOnly">
+    <input id="favOnly" type="checkbox">
     <span>お気に入り選手のみ表示</span>
+  </label>
+  <label for="availableOnly">
+    <input id="availableOnly" type="checkbox">
+    <span>入手可能選手のみ表示</span>
   </label>
 </div>
 
@@ -1928,7 +2121,7 @@
           <button id="resultCompareToggle" class="resultCompareToggle" type="button" disabled>比較</button>
           <div class="resultActionStack">
             <button id="resultFavoriteToggle" class="favoriteToggle" type="button" aria-pressed="false">☆ お気に入り登録</button>
-            <button id="resultTabClear" class="resultTabClear" type="button">タブをクリア</button>
+            <button id="resultTabClear" class="resultTabClear" type="button" disabled>チェックしたタブをクリア</button>
           </div>
         </div>
         <div id="comparisonStickyMount" class="comparisonStickyMount"></div>
@@ -2022,6 +2215,7 @@ let STATUS_DETAIL_OPEN = false;
 let LAST_STATUS_PLAYER_ID = "";
 let EVALUATION_TABS = [null, null, null, null];
 let ACTIVE_EVALUATION_TAB = 0;
+const CHECKED_EVALUATION_TABS = new Set(); // タブ削除のチェック状態は通常/比較表示で共通
 let COMPARISON_MODE = false;
 let COMPARISON_DISPLAY_MODE = "rank"; // rank | number
 const FAVORITES_STORAGE_KEY = "sakatsuku2026_player_catalog_favorites";
@@ -2337,36 +2531,52 @@ function evaluationTabImageSrc(pid){
   return safePid ? `img/players/${encodeURIComponent(safePid)}.png` : "";
 }
 
+function evaluationTabLabel(index){
+  return `タブ${index+1}(${index===0 ? "メイン" : "比較"})`;
+}
+
+function evaluationTabLabelHtml(index){
+  return `タブ${index+1}<span class="evaluationTabRole">(${index===0 ? "メイン" : "比較"})</span>`;
+}
+
+function evaluationClearCheckboxHtml(index, hasPlayer){
+  const checked = hasPlayer && CHECKED_EVALUATION_TABS.has(index);
+  return `<label class="evaluationTabCheck" title="${evaluationTabLabel(index)}をクリア対象に選択">
+    <input type="checkbox" data-clear-evaluation-tab="${index}" aria-label="${evaluationTabLabel(index)}をクリア対象に選択" ${checked ? "checked" : ""} ${hasPlayer ? "" : "disabled"}>
+  </label>`;
+}
+
 function renderEvaluationTabs(){
   return `
-    <div class="evaluationTabs" role="tablist" aria-label="選手評価の比較タブ">
+    <div class="evaluationTabs" aria-label="選手評価の比較タブ">
       ${EVALUATION_TABS.map((pid,index)=>{
         const p = pid ? findPlayerById(pid) : null;
-        const name = p ? normalize(p.name || p.player_name || pid) : `タブ${index+1}は空です`;
+        const name = p ? normalize(p.name || p.player_name || pid) : `${evaluationTabLabel(index)}は空です`;
         const active = index === ACTIVE_EVALUATION_TAB;
         const imageSrc = pid ? evaluationTabImageSrc(pid) : "";
         return `
-          <button
-            type="button"
-            class="evaluationTab ${active ? "is-active" : ""}"
-            data-evaluation-tab="${index}"
-            role="tab"
-            aria-selected="${active ? "true" : "false"}"
-            title="${esc(name)}"
-          >
-            <span class="evaluationTabNo">タブ${index+1}</span>
-            <span class="evaluationTabImageWrap">
-              ${pid
-                ? `<img class="evaluationTabImage" src="${esc(imageSrc)}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><span class="evaluationTabEmpty" style="display:none;">?</span>`
-                : `<span class="evaluationTabEmpty">＋</span>`}
-            </span>
-          </button>
+          <div class="evaluationTabCell" data-tab-drop-index="${index}">
+            ${evaluationClearCheckboxHtml(index, !!p)}
+            <button
+              type="button"
+              class="evaluationTab ${active ? "is-active" : ""}"
+              data-evaluation-tab="${index}"
+              aria-current="${active ? "true" : "false"}"
+              title="${esc(name)}"
+            >
+              <span class="evaluationTabNo">${evaluationTabLabelHtml(index)}</span>
+              <span class="evaluationTabImageWrap" ${index > 0 && pid ? `data-drag-evaluation-tab="${index}" title="${evaluationTabLabel(index)}の選手画像をドラッグして入れ替え（スマホは長押し）"` : ""}>
+                ${pid
+                  ? `<img class="evaluationTabImage" draggable="false" src="${esc(imageSrc)}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><span class="evaluationTabEmpty" style="display:none;">?</span>`
+                  : `<span class="evaluationTabEmpty">＋</span>`}
+              </span>
+            </button>
+          </div>
         `;
       }).join("")}
     </div>
   `;
 }
-
 
 function getComparisonTabPlayers(){
   return EVALUATION_TABS.map(pid=>pid ? (findPlayerById(pid) || null) : null);
@@ -2420,13 +2630,25 @@ function comparisonPlaceBadgeHtml(place){
   return `<span class="comparisonPlaceBadge place-${safePlace}" title="比較中${safePlace}位" aria-label="比較中${safePlace}位">${safePlace}位</span>`;
 }
 
+function comparisonDeltaHtml(value, baseline, index){
+  if(index === 0) return "";
+  const current = statusNum(value);
+  const base = statusNum(baseline);
+  if(current === null || base === null) return "";
+  const diff = current - base;
+  const sign = diff > 0 ? "+" : "";
+  const cls = diff > 0 ? "is-positive" : (diff < 0 ? "is-negative" : "is-equal");
+  return `<span class="comparisonDelta ${cls}" title="タブ1(メイン)との差" aria-label="タブ1(メイン)との差 ${sign}${diff.toLocaleString("ja-JP")}">${sign}${diff.toLocaleString("ja-JP")}</span>`;
+}
+
 function renderComparisonNumericRow(label, rawValues){
   const ranks = getComparisonPlaceRanks(rawValues);
+  const baseline = rawValues[0];
   const values = rawValues.map((raw,index)=>{
     const formatted = comparisonNumberHtml(raw);
     if(formatted==="-") return "-";
     if(COMPARISON_DISPLAY_MODE !== "number") return formatted;
-    return `<span class="comparisonNumericWrap"><span class="comparisonNumericValue">${formatted}</span>${comparisonPlaceBadgeHtml(ranks[index])}</span>`;
+    return `<span class="comparisonNumericWrap"><span class="comparisonNumericValue">${formatted}</span>${comparisonPlaceBadgeHtml(ranks[index])}${comparisonDeltaHtml(raw, baseline, index)}</span>`;
   });
   return renderComparisonRow(label, values);
 }
@@ -2470,17 +2692,23 @@ function comparisonFieldCommonLabel(field){
 function renderComparisonTabHead(player, index){
   const active = index === ACTIVE_EVALUATION_TAB;
   const pid = player ? getPlayerId(player) : "";
-  const name = player ? normalize(player.name || player.player_name || pid) : `タブ${index+1}は空です`;
+  const name = player ? normalize(player.name || player.player_name || pid) : `${evaluationTabLabel(index)}は空です`;
   const imageSrc = pid ? evaluationTabImageSrc(pid) : "";
   return `
-    <button type="button" class="comparisonTabHead ${active ? "is-active" : ""} ${index===3 ? "is-last" : ""}" data-evaluation-tab="${index}" title="${esc(name)}" aria-label="タブ${index+1}${player ? `：${esc(name)}` : "：空"}">
-      <span class="comparisonTabNo">タブ${index+1}</span>
-      <span class="comparisonTabImageWrap">
-        ${player
-          ? `<img class="comparisonTabImage is-player-page-link" data-comparison-player-id="${esc(pid)}" src="${esc(imageSrc)}" alt="${esc(name)}の選手画像" loading="lazy" title="${esc(name)}の個別選手ページを別タブで開く" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><span class="comparisonTabEmpty" style="display:none;">?</span>`
-          : `<span class="comparisonTabEmpty">＋</span>`}
-      </span>
-    </button>`;
+    <div class="comparisonTabCell ${index===3 ? "is-last" : ""}" data-tab-drop-index="${index}">
+      ${evaluationClearCheckboxHtml(index, !!player)}
+      <button type="button" class="comparisonTabHead ${active ? "is-active" : ""}" data-evaluation-tab="${index}" title="${esc(name)}" aria-label="${evaluationTabLabel(index)}${player ? `：${esc(name)}` : "：空"}">
+        <span class="comparisonTabNo">${evaluationTabLabelHtml(index)}</span>
+        <span class="comparisonTabImageWrap" ${index > 0 && pid ? `data-drag-evaluation-tab="${index}" title="${evaluationTabLabel(index)}の選手画像をドラッグして入れ替え（スマホは長押し）"` : ""}>
+          ${player
+            ? `<img class="comparisonTabImage" draggable="false" src="${esc(imageSrc)}" alt="${esc(name)}の選手画像" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><span class="comparisonTabEmpty" style="display:none;">?</span>`
+            : `<span class="comparisonTabEmpty">＋</span>`}
+        </span>
+      </button>
+      ${pid
+        ? `<a class="comparisonPlayerDetailLink" href="players/${encodeURIComponent(pid)}.html" target="_blank" rel="noopener noreferrer" aria-label="${esc(name)}の詳細情報を別タブで見る">詳細情報を見る</a>`
+        : `<span class="comparisonPlayerDetailPlaceholder" aria-hidden="true"></span>`}
+    </div>`;
 }
 
 function renderComparisonRow(label, values){
@@ -2490,12 +2718,13 @@ function renderComparisonRow(label, values){
   `;
 }
 
-function renderComparisonInfoRow(label, values){
+function renderComparisonInfoRow(label, values, { availabilityColors=false }={}){
   return `
     <div class="comparisonLabel">${esc(label)}</div>
     ${values.map((value,index)=>{
       const shown = normalize(value) || "-";
-      return `<div class="comparisonValue comparisonInfoValue ${shown==="-" ? "is-missing" : ""} ${index===3 ? "is-last" : ""}">${esc(shown)}</div>`;
+      const availabilityClass = availabilityColors ? (shown === "入手可能" ? "is-available" : shown === "入手不可" ? "is-unavailable" : "") : "";
+      return `<div class="comparisonValue comparisonInfoValue ${shown==="-" ? "is-missing" : ""} ${availabilityClass} ${index===3 ? "is-last" : ""}">${esc(shown)}</div>`;
     }).join("")}
   `;
 }
@@ -2653,6 +2882,7 @@ function renderComparisonView(){
         ${renderComparisonInfoRow("選手名", players.map(p=>p ? normalize(p.name || p.player_name || getPlayerId(p)) : "-"))}
         ${renderComparisonInfoRow("プレースタイル", players.map(p=>comparisonPlayStyleText(p)))}
         ${renderComparisonInfoRow("国籍", players.map(p=>p ? normalize(p.nationality) : "-"))}
+        ${renderComparisonInfoRow("入手可否", players.map(p=>p ? (p.available === true ? "入手可能" : p.available === false ? "入手不可" : "未登録") : "-"), { availabilityColors:true })}
 
         <div class="comparisonSection">基本数値</div>
         ${renderComparisonBasicRow("初期総合力", "overall", overallRawValues)}
@@ -2672,18 +2902,7 @@ function renderComparisonView(){
     </div>
   `;
 
-  if(stickyMount){
-    attachEvaluationTabHandlers(stickyMount);
-    stickyMount.querySelectorAll("[data-comparison-player-id]").forEach(img=>{
-      img.addEventListener("click", (e)=>{
-        e.preventDefault();
-        e.stopPropagation();
-        const pid = String(img.getAttribute("data-comparison-player-id") || "").trim();
-        if(!pid) return;
-        window.open(`players/${encodeURIComponent(pid)}.html`, "_blank", "noopener");
-      });
-    });
-  }
+  if(stickyMount) attachEvaluationTabHandlers(stickyMount);
   const displayToggle = $("comparisonDisplayToggle");
   if(displayToggle){
     displayToggle.addEventListener("click", ()=>{
@@ -2692,6 +2911,7 @@ function renderComparisonView(){
     });
   }
   updateComparisonButtonState();
+  updateCheckedClearButton();
 }
 
 function closePlayerDetailModal(){
@@ -2712,6 +2932,7 @@ function startEvaluationInTab1(player, {scroll=false}={}){
   const pid = getPlayerId(player);
   if(!pid) return;
   EVALUATION_TABS = [pid, null, null, null];
+  CHECKED_EVALUATION_TABS.clear();
   ACTIVE_EVALUATION_TAB = 0;
   COMPARISON_MODE = false;
   renderResult(player);
@@ -2723,6 +2944,7 @@ function setPlayerInActiveEvaluationTab(player, {scroll=false}={}){
   if(!player) return;
   const pid = getPlayerId(player);
   if(!pid) return;
+  if(EVALUATION_TABS[ACTIVE_EVALUATION_TAB] !== pid) CHECKED_EVALUATION_TABS.delete(ACTIVE_EVALUATION_TAB);
   EVALUATION_TABS[ACTIVE_EVALUATION_TAB] = pid;
   if(COMPARISON_MODE && getComparisonPlayerCount() >= 2) renderComparisonView();
   else renderResult(player);
@@ -2749,6 +2971,7 @@ function openPlayerInComparisonTab(player, {scroll=true}={}){
       tabIndex = [1,2,3].find(index=>!EVALUATION_TABS[index]);
       if(tabIndex===undefined) tabIndex = 3;
     }
+    CHECKED_EVALUATION_TABS.delete(tabIndex);
     EVALUATION_TABS[tabIndex] = pid;
   }
 
@@ -2770,12 +2993,13 @@ function renderEmptyEvaluationTab(){
   out.innerHTML = `
     ${renderEvaluationTabs()}
     <div class="note" style="margin:14px 0 4px;">
-      タブ${ACTIVE_EVALUATION_TAB + 1}は空です。<br>
+      ${evaluationTabLabel(ACTIVE_EVALUATION_TAB)}は空です。<br>
       上の「評価する」で選手を設定するか、他のタブを選択してください。
     </div>
   `;
   attachEvaluationTabHandlers(out);
   updateComparisonButtonState();
+  updateCheckedClearButton();
 }
 
 function switchEvaluationTab(index){
@@ -2792,27 +3016,204 @@ function switchEvaluationTab(index){
   updateComparisonButtonState();
 }
 
-function clearActiveEvaluationTab(){
-  if(ACTIVE_EVALUATION_TAB < 0 || ACTIVE_EVALUATION_TAB > 3) return;
-  EVALUATION_TABS[ACTIVE_EVALUATION_TAB] = null;
+function clearCheckedEvaluationTabs(){
+  const targets = [...CHECKED_EVALUATION_TABS].filter(i=>Number.isInteger(i) && i>=0 && i<4 && !!EVALUATION_TABS[i]);
+  if(!targets.length) return;
+  const activeWasCleared = targets.includes(ACTIVE_EVALUATION_TAB);
+  targets.forEach(i=>{ EVALUATION_TABS[i] = null; });
+  CHECKED_EVALUATION_TABS.clear();
+  if(activeWasCleared){
+    const next = EVALUATION_TABS.findIndex(Boolean);
+    ACTIVE_EVALUATION_TAB = next === -1 ? 0 : next;
+  }
   LAST_STATUS_PLAYER_ID = "";
   STATUS_DETAIL_OPEN = false;
   if(COMPARISON_MODE && getComparisonPlayerCount() >= 2){
     renderComparisonView();
   }else{
     if(getComparisonPlayerCount() < 2) COMPARISON_MODE = false;
-    renderEmptyEvaluationTab();
+    const player = getEvaluationTabPlayer(ACTIVE_EVALUATION_TAB);
+    if(player) renderResult(player);
+    else renderEmptyEvaluationTab();
   }
   updateComparisonButtonState();
+  updateCheckedClearButton();
+}
+
+function updateCheckedClearButton(){
+  const btn = $("resultTabClear");
+  if(!btn) return;
+  const hasTabs = getComparisonPlayerCount() > 0;
+  const hasChecked = [...CHECKED_EVALUATION_TABS].some(i=>!!EVALUATION_TABS[i]);
+  btn.style.display = hasTabs ? "inline-flex" : "none";
+  btn.disabled = !hasChecked;
+  btn.title = hasChecked ? "チェックしたタブの選手を削除します" : "削除するタブにチェックを付けてください";
+}
+
+// タブ1は基準選手として固定。比較タブ2～4間だけを並び替える。
+function swapComparisonEvaluationTabs(fromIndex, toIndex){
+  if(!Number.isInteger(fromIndex) || !Number.isInteger(toIndex)) return false;
+  if(fromIndex < 1 || fromIndex > 3 || toIndex < 1 || toIndex > 3) return false;
+  if(fromIndex === toIndex || !EVALUATION_TABS[fromIndex]) return false;
+
+  [EVALUATION_TABS[fromIndex], EVALUATION_TABS[toIndex]] = [EVALUATION_TABS[toIndex], EVALUATION_TABS[fromIndex]];
+  const fromChecked = CHECKED_EVALUATION_TABS.has(fromIndex);
+  const toChecked = CHECKED_EVALUATION_TABS.has(toIndex);
+  CHECKED_EVALUATION_TABS.delete(fromIndex);
+  CHECKED_EVALUATION_TABS.delete(toIndex);
+  if(fromChecked) CHECKED_EVALUATION_TABS.add(toIndex);
+  if(toChecked) CHECKED_EVALUATION_TABS.add(fromIndex);
+
+  if(ACTIVE_EVALUATION_TAB === fromIndex) ACTIVE_EVALUATION_TAB = toIndex;
+  else if(ACTIVE_EVALUATION_TAB === toIndex) ACTIVE_EVALUATION_TAB = fromIndex;
+
+  if(COMPARISON_MODE && getComparisonPlayerCount() >= 2){
+    renderComparisonView();
+  }else{
+    const activePlayer = getEvaluationTabPlayer(ACTIVE_EVALUATION_TAB);
+    if(activePlayer) renderResult(activePlayer);
+    else renderEmptyEvaluationTab();
+  }
+  updateComparisonButtonState();
+  updateCheckedClearButton();
+  return true;
+}
+
+let ACTIVE_TAB_DRAG = null;
+let TAB_DRAG_SUPPRESS_CLICK_UNTIL = 0;
+const TAB_DRAG_HOLD_MS = 350;
+
+// Pointer EventsでPCのドラッグ・スマホの長押しドラッグを共通実装。
+// ドラッグを開始できるのは画像部分のみ。チェックボックスと詳細リンクはそのまま操作可能。
+function attachEvaluationTabDragHandlers(scope){
+  scope.querySelectorAll("[data-drag-evaluation-tab]").forEach(handle=>{
+    handle.addEventListener("dragstart", e=>e.preventDefault());
+    handle.addEventListener("contextmenu", e=>e.preventDefault());
+    handle.addEventListener("pointerdown", e=>{
+      if(ACTIVE_TAB_DRAG || !e.isPrimary || (e.pointerType === "mouse" && e.button !== 0)) return;
+      const fromIndex = Number(handle.dataset.dragEvaluationTab);
+      if(!Number.isInteger(fromIndex) || fromIndex < 1 || fromIndex > 3 || !EVALUATION_TABS[fromIndex]) return;
+
+      const session = {
+        pointerId:e.pointerId, fromIndex, handle, startX:e.clientX, startY:e.clientY,
+        x:e.clientX, y:e.clientY, dragging:false, waiting:true,
+        timer:null, ghost:null, dropCell:null, onMove:null, onEnd:null, onCancel:null
+      };
+      ACTIVE_TAB_DRAG = session;
+
+      function dropCellAt(x,y){
+        const el = document.elementFromPoint(x,y);
+        const cell = el?.closest("[data-tab-drop-index]");
+        if(!cell || !scope.contains(cell)) return null;
+        const index = Number(cell.dataset.tabDropIndex);
+        return Number.isInteger(index) && index >= 1 && index <= 3 && index !== fromIndex ? cell : null;
+      }
+
+      function moveGhost(x,y){
+        if(session.ghost){
+          session.ghost.style.left = `${x}px`;
+          session.ghost.style.top = `${y}px`;
+        }
+        const nextCell = dropCellAt(x,y);
+        if(session.dropCell !== nextCell){
+          session.dropCell?.classList.remove("is-drop-target");
+          session.dropCell = nextCell;
+          session.dropCell?.classList.add("is-drop-target");
+        }
+      }
+
+      function activateDrag(){
+        if(ACTIVE_TAB_DRAG !== session || !session.waiting) return;
+        session.dragging = true;
+        session.waiting = false;
+        TAB_DRAG_SUPPRESS_CLICK_UNTIL = Date.now() + 900;
+        handle.closest("[data-tab-drop-index]")?.classList.add("is-drag-source");
+        const player = getEvaluationTabPlayer(fromIndex);
+        const ghost = document.createElement("div");
+        ghost.className = "evaluationTabDragGhost";
+        ghost.setAttribute("aria-hidden", "true");
+        ghost.innerHTML = `<img src="${esc(evaluationTabImageSrc(getPlayerId(player)))}" alt="" draggable="false"><span>${esc(player?.name || "選手")}</span>`;
+        document.body.appendChild(ghost);
+        session.ghost = ghost;
+        moveGhost(session.x,session.y);
+      }
+
+      function cleanup(){
+        clearTimeout(session.timer);
+        session.dropCell?.classList.remove("is-drop-target");
+        handle.closest("[data-tab-drop-index]")?.classList.remove("is-drag-source");
+        session.ghost?.remove();
+        window.removeEventListener("pointermove", session.onMove);
+        window.removeEventListener("pointerup", session.onEnd);
+        window.removeEventListener("pointercancel", session.onCancel);
+        try{ if(handle.hasPointerCapture?.(session.pointerId)) handle.releasePointerCapture(session.pointerId); }catch(_){ /* removed node */ }
+        if(ACTIVE_TAB_DRAG === session) ACTIVE_TAB_DRAG = null;
+      }
+
+      session.onMove = event=>{
+        if(event.pointerId !== session.pointerId || ACTIVE_TAB_DRAG !== session) return;
+        session.x=event.clientX;
+        session.y=event.clientY;
+        const movement = Math.hypot(session.x-session.startX, session.y-session.startY);
+        if(!session.dragging){
+          if(e.pointerType === "touch" || e.pointerType === "pen"){
+            // 長押し前の移動は通常スクロール/タップとみなし、ドラッグにしない。
+            if(movement > 10){ clearTimeout(session.timer); session.waiting=false; }
+          }else if(movement > 6){
+            activateDrag();
+          }
+        }
+        if(session.dragging){
+          event.preventDefault();
+          moveGhost(session.x, session.y);
+        }
+      };
+      session.onEnd = event=>{
+        if(event.pointerId !== session.pointerId) return;
+        const wasDragging = session.dragging;
+        const dropCell = wasDragging ? dropCellAt(event.clientX,event.clientY) : null;
+        const toIndex = dropCell ? Number(dropCell.dataset.tabDropIndex) : null;
+        if(wasDragging){
+          TAB_DRAG_SUPPRESS_CLICK_UNTIL = Date.now() + 700;
+          event.preventDefault();
+        }
+        cleanup();
+        if(wasDragging && toIndex !== null) swapComparisonEvaluationTabs(fromIndex,toIndex);
+      };
+      session.onCancel = event=>{
+        if(event.pointerId === session.pointerId) cleanup();
+      };
+
+      window.addEventListener("pointermove", session.onMove, { passive:false });
+      window.addEventListener("pointerup", session.onEnd);
+      window.addEventListener("pointercancel", session.onCancel);
+      try{ handle.setPointerCapture(e.pointerId); }catch(_){ /* fallback to window events */ }
+      if(e.pointerType === "touch" || e.pointerType === "pen"){
+        session.timer = setTimeout(activateDrag, TAB_DRAG_HOLD_MS);
+      }
+    });
+  });
 }
 
 function attachEvaluationTabHandlers(scope){
   scope.querySelectorAll("[data-evaluation-tab]").forEach(btn=>{
     btn.addEventListener("click", ()=>{
+      // 長押し/ドラッグ後にブラウザが発火するクリックはタブ切替として扱わない。
+      if(Date.now() < TAB_DRAG_SUPPRESS_CLICK_UNTIL) return;
       const index = Number(btn.getAttribute("data-evaluation-tab"));
       if(Number.isInteger(index)) switchEvaluationTab(index);
     });
   });
+  scope.querySelectorAll("[data-clear-evaluation-tab]").forEach(input=>{
+    input.addEventListener("change", ()=>{
+      const index = Number(input.getAttribute("data-clear-evaluation-tab"));
+      if(!Number.isInteger(index) || index<0 || index>3 || !EVALUATION_TABS[index]) return;
+      if(input.checked) CHECKED_EVALUATION_TABS.add(index);
+      else CHECKED_EVALUATION_TABS.delete(index);
+      updateCheckedClearButton();
+    });
+  });
+  attachEvaluationTabDragHandlers(scope);
 }
 
 function isFavoritePlayer(player){
@@ -2869,27 +3270,23 @@ function refreshFavoriteButtons(scope=document){
 
 function setResultFavoriteToggle(player){
   const btn = $("resultFavoriteToggle");
-  const clearBtn = $("resultTabClear");
   if(!btn) return;
 
   const pid = getPlayerId(player);
   if(!pid){
     btn.style.display = "none";
     btn.removeAttribute("data-favorite-id");
-    if(clearBtn) clearBtn.style.display = "none";
     return;
   }
 
   btn.style.display = "inline-flex";
   btn.setAttribute("data-favorite-id", pid);
-  if(clearBtn) clearBtn.style.display = "inline-flex";
   attachFavoriteHandlers(btn.parentElement || document);
   refreshFavoriteButtons(btn.parentElement || document);
 }
 
 function hideResultFavoriteToggle(){
   const btn = $("resultFavoriteToggle");
-  const clearBtn = $("resultTabClear");
   if(btn){
     btn.style.display = "none";
     btn.removeAttribute("data-favorite-id");
@@ -2897,7 +3294,6 @@ function hideResultFavoriteToggle(){
     btn.classList.remove("is-active");
     btn.setAttribute("aria-pressed", "false");
   }
-  if(clearBtn) clearBtn.style.display = "none";
 }
 
 function attachFavoriteHandlers(scope=document){
@@ -2973,7 +3369,8 @@ function getFilterState(){
     acquisitionPlace: normalize($("fAcqPlace").value),
     playStyle: normalize($("fStyle").value),
     playStyleLv: normalize($("fStyleLv").value),
-    favoriteOnly: !!$("favOnly").checked
+    favoriteOnly: !!$("favOnly").checked,
+    availableOnly: !!$("availableOnly").checked
   };
 }
 
@@ -2992,6 +3389,7 @@ function playerMatchesState(p, state, exceptKey=null){
   if(exceptKey!=="playStyle" && state.playStyle && normalize(p.playStyle)!==state.playStyle) return false;
   if(exceptKey!=="playStyleLv" && state.playStyleLv && String(p.playStyleLv ?? "").trim()!==state.playStyleLv) return false;
   if(state.favoriteOnly && !isFavoritePlayer(p)) return false;
+  if(state.availableOnly && p.available !== true) return false;
   return true;
 }
 
@@ -3032,12 +3430,9 @@ function refreshFacetedFilters({ preserveSelection=true } = {}){
 function getFilteredCandidates(){
   const state = getFilterState();
   return SP_PLAYERS.filter(p=>playerMatchesState(p, state)).sort((a,b)=>{
-    const ao = toNum(a.overall) ?? -Infinity;
-    const bo = toNum(b.overall) ?? -Infinity;
-    if(bo!==ao) return bo-ao;
-    const am = toNum(a.maxUpgrade) ?? -Infinity;
-    const bm = toNum(b.maxUpgrade) ?? -Infinity;
-    if(bm!==am) return bm-am;
+    // player_id は一意のPxxxx。新しいIDが上に来るよう降順にする。
+    const idOrder = getPlayerId(b).localeCompare(getPlayerId(a), "en", { numeric:true });
+    if(idOrder !== 0) return idOrder;
     return normalize(a.name||"").localeCompare(normalize(b.name||""), "ja");
   });
 }
@@ -3094,6 +3489,7 @@ REALTIME_FILTER_IDS.forEach(id=>{
 
 $("fKw").addEventListener("input", refreshRealtimeFilters);
 $("favOnly").addEventListener("change", refreshRealtimeFilters);
+$("availableOnly").addEventListener("change", refreshRealtimeFilters);
 
 /* ===== Ranking calculations ===== */
 function isSpPlayer(p){
@@ -3933,6 +4329,7 @@ function renderResult(target){
   });
 
   attachFavoriteHandlers(out);
+  updateCheckedClearButton();
 }
 
 function renderComboLine(label, combos, comboKey){
@@ -4000,7 +4397,9 @@ function resetAll(){
   $("fAcqPlace").value="";
   $("fKw").value="";
   $("favOnly").checked=false;
+  $("availableOnly").checked=false;
   EVALUATION_TABS = [null, null, null, null];
+  CHECKED_EVALUATION_TABS.clear();
   ACTIVE_EVALUATION_TAB = 0;
   COMPARISON_MODE = false;
   COMPARISON_DISPLAY_MODE = "rank";
@@ -4008,7 +4407,10 @@ function resetAll(){
   STATUS_DETAIL_OPEN = false;
   $("resultArea").innerHTML = `<div class="note" style="margin-top:4px;">左側で候補を絞り、評価したい選手を選択してください。</div>`;
   hideResultFavoriteToggle();
+  clearComparisonStickyMount();
+  document.querySelector(".resultCard")?.classList.remove("is-comparison-mode");
   updateComparisonButtonState();
+  updateCheckedClearButton();
   setErr("");
   refreshFacetedFilters({ preserveSelection:false });
   refreshCandidatePick();
@@ -4016,9 +4418,7 @@ function resetAll(){
 
 $("btnReset").addEventListener("click", resetAll);
 
-$("resultTabClear").addEventListener("click", ()=>{
-  clearActiveEvaluationTab();
-});
+$("resultTabClear").addEventListener("click", clearCheckedEvaluationTabs);
 
 $("resultCompareToggle").addEventListener("click", ()=>{
   if(getComparisonPlayerCount() < 2) return;
