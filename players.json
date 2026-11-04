@@ -43364,7 +43364,7 @@
     "mainTrait": "変幻自在のドリブラー",
     "category": "SP選手",
     "nationality": "フランス",
-    "growthType": "超極限",
+    "growthType": "超早熟",
     "implementedDate": "2026-10-21",
     "rarity": "★3",
     "available": true,
@@ -44160,6 +44160,102 @@
         "traitNo": 3,
         "traitName": "制空のボールタッチ",
         "traitId": "TR0103",
+        "traitRank": "銅",
+        "traitDescription": "途中出場"
+      }
+    ]
+  },
+  {
+    "player_id": "P0453",
+    "playerId": "P0453",
+    "name": "ポポ",
+    "overall": 5460,
+    "maxUpgrade": 11439,
+    "policy": "カウンター",
+    "playStyle": "スプリントCB",
+    "playStyleLv": 2,
+    "mainPosition": "CB",
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "ポルトガル強化ミッション",
+    "availablePeriod": "2026年11月25日まで",
+    "mainSkill": "反撃のパスカット",
+    "mainTrait": "ボールハンター",
+    "category": "SP選手",
+    "nationality": "ポルトガル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-10-28",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "CB"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 643,
+        "kickPower": 709,
+        "composure": 636
+      },
+      "PAS": {
+        "shortPass": 591,
+        "longPass": 715,
+        "kickAccuracy": 607
+      },
+      "DRB": {
+        "breakthrough": 614,
+        "ballKeeping": 653,
+        "ballTouch": 643
+      },
+      "DEF": {
+        "tackleSaving": 768,
+        "passCutReaction": 769,
+        "markOneOnOne": 783
+      },
+      "PHY": {
+        "jump": 768,
+        "contact": 777,
+        "stamina": 746
+      },
+      "SPD": {
+        "speed": 741,
+        "agility": 714
+      }
+    },
+    "tendencies": {
+      "attack": -1,
+      "defense": 1,
+      "dribble": -1,
+      "shoot": -1,
+      "longShoot": -1,
+      "shortPass": 0,
+      "longPass": 0,
+      "throughPass": -1,
+      "cutIn": -1,
+      "keep": -1,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": -1,
+      "press": 1
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "反撃のパスカット",
+        "skillId": "SK0055",
+        "skillRank": "銅"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "ボールハンター",
+        "traitId": "TR0041",
+        "traitRank": "銀",
+        "traitDescription": "絶好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "ノンストップジャンパー",
+        "traitId": "TR0027",
         "traitRank": "銅",
         "traitDescription": "途中出場"
       }
