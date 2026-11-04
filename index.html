@@ -1821,6 +1821,7 @@
 .toolBannerMore{margin-top:8px}
 .managerNoteToolCard,
 .certificationExamToolCard,
+.diceSugorokuToolCard,
 .specialTrainingToolCard{
   min-height:82px;
   display:flex;
@@ -1830,6 +1831,12 @@
   gap:3px;
   padding:12px 14px;
   text-align:center;
+}
+.diceSugorokuToolName{display:block;white-space:nowrap}
+.diceSugorokuToolCard{
+  border-color:rgba(21,95,128,.28);
+  background:linear-gradient(135deg,#f4fbff,#eaf5fb);
+  color:#155f80;
 }
 .managerNoteToolCard{
   border-color:rgba(74,165,42,.28);
@@ -1847,6 +1854,7 @@
   color:#7a5200;
 }
 .managerNoteToolCard .managerNoteToolTitle,
+.diceSugorokuToolCard .diceSugorokuToolTitle,
 .certificationExamToolCard .certificationExamToolTitle,
 .specialTrainingToolCard .specialTrainingToolTitle{
   font-size:18px;
@@ -1854,6 +1862,7 @@
   line-height:1.25;
 }
 .managerNoteToolCard .managerNoteToolSub,
+.diceSugorokuToolCard .diceSugorokuToolSub,
 .certificationExamToolCard .certificationExamToolSub,
 .specialTrainingToolCard .specialTrainingToolSub{
   font-size:12px;
@@ -1861,6 +1870,7 @@
   line-height:1.35;
 }
 .managerNoteToolCard .managerNoteToolSub{color:#58704f}
+.diceSugorokuToolCard .diceSugorokuToolSub{color:#557382}
 .certificationExamToolCard .certificationExamToolSub{color:#557382}
 .specialTrainingToolCard .specialTrainingToolSub{color:#7a6740}
 @media (max-width:480px){
@@ -1868,12 +1878,15 @@
   .toolBannerCard{padding:3px;border-radius:11px}
   .toolBannerCard img{border-radius:8px}
   .managerNoteToolCard,
+  .diceSugorokuToolCard,
   .certificationExamToolCard,
   .specialTrainingToolCard{min-height:68px;padding:9px 7px}
   .managerNoteToolCard .managerNoteToolTitle,
+  .diceSugorokuToolCard .diceSugorokuToolTitle,
   .certificationExamToolCard .certificationExamToolTitle,
   .specialTrainingToolCard .specialTrainingToolTitle{font-size:15px}
   .managerNoteToolCard .managerNoteToolSub,
+  .diceSugorokuToolCard .diceSugorokuToolSub,
   .certificationExamToolCard .certificationExamToolSub,
   .specialTrainingToolCard .specialTrainingToolSub{font-size:10.5px}
 }
@@ -2303,6 +2316,58 @@
   .articleMoreCard{min-height:86px;font-size:18px}
 }
 
+
+/* ===== トップ：注目ツールのコンパクトなテキストバナー ===== */
+.homeFeaturedBanners{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  max-width:760px;
+  margin:0 auto 6px;
+}
+.homeFeaturedBanner{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  min-height:44px;
+  padding:9px 12px;
+  border:1px solid #bfd5f4;
+  border-radius:11px;
+  background:#eef6ff;
+  color:#155f80;
+  text-align:center;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:900;
+  line-height:1.3;
+  overflow-wrap:anywhere;
+  box-shadow:0 4px 10px rgba(15,23,42,.05);
+  transition:transform .1s ease, box-shadow .12s ease;
+}
+.diceFeaturedBanner{flex-direction:column}
+.diceFeaturedBanner span{display:block;white-space:nowrap}
+.homeFeaturedBanner:nth-child(2){
+  border-color:rgba(74,165,42,.35);
+  background:#eef7ea;
+  color:#245f12;
+}
+.homeFeaturedBanner:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 16px rgba(15,23,42,.10);
+}
+.homeFeaturedBanner:active{transform:scale(.985)}
+.homeFeaturedBanner:focus-visible{outline:3px solid #1e88ff;outline-offset:2px}
+@media (max-width:768px){
+  /* 画像バナー時の固定高さと上下の空きを解消。トップの案内ボタンと揃える */
+  .topUtilityLinks{margin-bottom:3px}
+  .wrap{padding-top:4px}
+  .homeFeaturedBanners{gap:5px;margin:0 auto 4px}
+  .homeFeaturedBanner{min-height:42px;padding:7px 5px;font-size:clamp(11px,3.2vw,13px)}
+  .diceSugorokuToolCard .diceSugorokuToolTitle{font-size:clamp(12px,3.7vw,15px)}
+  main.wrap>h1{margin-top:6px}
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -2336,9 +2401,9 @@
     <a href="strongest_formation.html" aria-label="最強フォメコンランキング">最強フォメコン</a>
     <a href="stadium_simulation.html">スタジアム</a>
     <a href="clubhouse_simulation.html">クラブハウス</a>
+    <a href="favorite_combos.html">フォメコン診断</a>
     <a href="strongest_team_simulation.html">最強チームSim</a>
     <a href="reroll_method_timing.html">リセマラ</a>
-    <a href="certification_exam.html">サカつく検定</a>
     <a href="special_training_tool_guide.html" aria-label="特練カードツールの使い方">特練カード</a>
   </nav>
 
@@ -2353,17 +2418,17 @@
     </div>
     <div class="databaseNavSub">ポジション別</div>
     <div class="databasePositionGrid">
-      <a class="databaseNavLink" href="players/position/gk.html">GK</a>
+      <a class="databaseNavLink" href="players/position/cf.html">CF</a>
+      <a class="databaseNavLink" href="players/position/lw.html">LW</a>
+      <a class="databaseNavLink" href="players/position/rw.html">RW</a>
+      <a class="databaseNavLink" href="players/position/am.html">AM</a>
+      <a class="databaseNavLink" href="players/position/lm.html">LM</a>
+      <a class="databaseNavLink" href="players/position/rm.html">RM</a>
+      <a class="databaseNavLink" href="players/position/dm.html">DM</a>
       <a class="databaseNavLink" href="players/position/cb.html">CB</a>
       <a class="databaseNavLink" href="players/position/lb.html">LB</a>
       <a class="databaseNavLink" href="players/position/rb.html">RB</a>
-      <a class="databaseNavLink" href="players/position/dm.html">DM</a>
-      <a class="databaseNavLink" href="players/position/lm.html">LM</a>
-      <a class="databaseNavLink" href="players/position/rm.html">RM</a>
-      <a class="databaseNavLink" href="players/position/am.html">AM</a>
-      <a class="databaseNavLink" href="players/position/lw.html">LW</a>
-      <a class="databaseNavLink" href="players/position/rw.html">RW</a>
-      <a class="databaseNavLink" href="players/position/cf.html">CF</a>
+      <a class="databaseNavLink" href="players/position/gk.html">GK</a>
     </div>
     <div class="databaseNavSub">フォメコン</div>
     <a class="databaseComboLink" href="#panelPlayer" data-open-player-search>コンボから探す</a>
@@ -2376,6 +2441,14 @@
   </div>
 
   <main class="wrap">
+    <!-- トップ注目ツール：監督ノート・公式サイトと同系統のテキストバナー -->
+    <nav class="homeFeaturedBanners" aria-label="注目の攻略ツール">
+      <a class="homeFeaturedBanner diceFeaturedBanner" href="dice_sugoroku_simulator.html" aria-label="ダイスすごろくシミュレーター">
+        <span>🎲 ダイスすごろくシミュレーター</span>
+      </a>
+      <a class="homeFeaturedBanner" href="certification_exam.html">📝 サカつく検定</a>
+    </nav>
+
     <h1>サカつく2026攻略DB</h1>
     <div class="homeLead">実際のゲームプレイと検証データをもとに、選手評価・育成・フォーメーションコンボなどを攻略。記事で確認し、データベースや検索ツールですぐ比較できます。</div>
 
@@ -2708,11 +2781,13 @@
     <a class="toolBannerCard" href="tier_list.html">
       <img src="img/label/tier_list.png" alt="サカつく2026Tier表メーカー" loading="lazy" decoding="async">
     </a>
-    <a class="toolBannerCard" href="dice_sugoroku_simulator.html">
-      <img src="img/label/dice_sugoroku_simulator.png" alt="ダイスすごろくシミュレーター" loading="lazy" decoding="async">
+    <a class="toolBannerCard diceSugorokuToolCard" href="dice_sugoroku_simulator.html">
+      <span class="diceSugorokuToolTitle"><span class="diceSugorokuToolName">🎲 ダイスすごろく</span><span class="diceSugorokuToolName">シミュレーター</span></span>
+      <span class="diceSugorokuToolSub">すごろくの進行をシミュレーション</span>
     </a>
-    <a class="toolBannerCard" href="certification_exam.html">
-      <img src="img/label/Sakatsuku_Quiz.png" alt="サカつく検定" loading="lazy" decoding="async">
+    <a class="toolBannerCard certificationExamToolCard" href="certification_exam.html">
+      <span class="certificationExamToolTitle">📝 サカつく検定</span>
+      <span class="certificationExamToolSub">サカつくのクイズに挑戦</span>
     </a>
     <a class="toolBannerCard specialTrainingToolCard" href="special_training_tool_guide.html" aria-label="特練カードツールの使い方">
       <span class="specialTrainingToolTitle">🃏 特練カード</span>
@@ -2746,17 +2821,17 @@
   </div>
   <div class="databaseNavSub">ポジション別選手</div>
   <div class="databasePositionGrid">
-    <a class="databaseNavLink" href="players/position/gk.html">GK</a>
-    <a class="databaseNavLink" href="players/position/cb.html">CB</a>
-    <a class="databaseNavLink" href="players/position/lb.html">LB</a>
-    <a class="databaseNavLink" href="players/position/rb.html">RB</a>
-    <a class="databaseNavLink" href="players/position/dm.html">DM</a>
-    <a class="databaseNavLink" href="players/position/lm.html">LM</a>
-    <a class="databaseNavLink" href="players/position/rm.html">RM</a>
-    <a class="databaseNavLink" href="players/position/am.html">AM</a>
-    <a class="databaseNavLink" href="players/position/lw.html">LW</a>
-    <a class="databaseNavLink" href="players/position/rw.html">RW</a>
-    <a class="databaseNavLink" href="players/position/cf.html">CF</a>
+      <a class="databaseNavLink" href="players/position/cf.html">CF</a>
+      <a class="databaseNavLink" href="players/position/lw.html">LW</a>
+      <a class="databaseNavLink" href="players/position/rw.html">RW</a>
+      <a class="databaseNavLink" href="players/position/am.html">AM</a>
+      <a class="databaseNavLink" href="players/position/lm.html">LM</a>
+      <a class="databaseNavLink" href="players/position/rm.html">RM</a>
+      <a class="databaseNavLink" href="players/position/dm.html">DM</a>
+      <a class="databaseNavLink" href="players/position/cb.html">CB</a>
+      <a class="databaseNavLink" href="players/position/lb.html">LB</a>
+      <a class="databaseNavLink" href="players/position/rb.html">RB</a>
+      <a class="databaseNavLink" href="players/position/gk.html">GK</a>
   </div>
   <div class="databaseNavSub">フォーメーションコンボ</div>
   <a class="databaseComboLink" href="#panelPlayer" data-open-player-search>コンボから対応選手を探す</a>
