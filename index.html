@@ -2317,13 +2317,13 @@
   align-items:center;
   justify-content:center;
   min-width:0;
-  padding:5px;
-  border:1px solid #dfe4ec;
-  border-radius:13px;
-  background:#fff;
+  padding:0;
+  border:none;
+  border-radius:0;
+  background:transparent;
   text-decoration:none;
-  box-shadow:0 5px 12px rgba(15,23,42,.06);
-  transition:transform .1s ease,box-shadow .12s ease;
+  box-shadow:none;
+  transition:transform .1s ease;
 }
 .homeFeaturedBanner:hover{
   transform:translateY(-1px);
@@ -2340,7 +2340,7 @@
 }
 @media (max-width:768px){
   .homeFeaturedBanners{gap:6px;margin:0 auto 6px}
-  .homeFeaturedBanner{padding:3px;border-radius:10px}
+  .homeFeaturedBanner{padding:0;border-radius:0}
   .homeFeaturedBanner img{height:66px;border-radius:7px}
 }
 
