@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T13:57:12+09:00",
-  "examCount": 2,
-  "totalQuestions": 42,
+  "generatedAt": "2026-11-04T13:22:29+09:00",
+  "examCount": 3,
+  "totalQuestions": 45,
   "exams": [
     {
       "examId": "EX001",
@@ -558,13 +558,13 @@
           "questionNo": 3,
           "question": "フォーメーション上のポジションで適性が無色の選手の能力は何%に下がるでしょうか？",
           "choices": [
-            "0.3",
-            "0.7",
-            "0.55",
-            "0.85"
+            "30%",
+            "70%",
+            "55%",
+            "85%"
           ],
           "correctChoice": 3,
-          "correctAnswer": "0.55",
+          "correctAnswer": "55%",
           "answerDeadline": "2026-10-10 12:59:59",
           "explanation": "ポジション適正では、能力補正は赤100%・オレンジ85%・黄色70%・無色55%です。そのため、適性が無色のポジションで起用した場合は55%まで低下します。",
           "notes": null,
@@ -785,6 +785,74 @@
           "explanation": "監督ノートでは、ユース選手は3シーズンの間在籍でき、トップ昇格させずに3シーズンが経過した選手はユースリストから抹消されると説明されています。そのため正解は「3シーズン」です。",
           "notes": null,
           "globalNo": 21
+        }
+      ]
+    },
+    {
+      "examId": "EX003",
+      "title": "第3回サカつく検定",
+      "round": 3,
+      "eventStart": "2026-11-04 13:00:00",
+      "eventEnd": "2026-11-11 12:59:59",
+      "dayCount": 7,
+      "questionsPerDay": 3,
+      "choiceCount": 4,
+      "source": "ゲーム内「サカつく検定」スクリーンショット",
+      "notes": "サカつくに関する4択問題が毎日出題。解答期限終了後にホーム画面で結果発表し、正解時は追加報酬あり。",
+      "questions": [
+        {
+          "questionId": "EX003-D01-Q01",
+          "day": 1,
+          "questionNo": 1,
+          "question": "カウンターに有利なポリシー相性は次のうちどれでしょうか？",
+          "choices": [
+            "ポゼッション",
+            "ムービング",
+            "カウンター",
+            "リアクション"
+          ],
+          "correctChoice": 4,
+          "correctAnswer": "リアクション",
+          "answerDeadline": "2026-11-05 12:59:59",
+          "explanation": "監督ノートの「ポリシー相性」によると、リアクションはカウンターに強く、カウンターはムービングに強い関係です。「カウンターに有利」なのは、カウンターに対して有利な「リアクション」です。",
+          "notes": null,
+          "globalNo": 1
+        },
+        {
+          "questionId": "EX003-D01-Q02",
+          "day": 1,
+          "questionNo": 2,
+          "question": "フォーメーション上のポジションで適性がオレンジ色の選手の能力は何%に下がるでしょうか？",
+          "choices": [
+            "85%",
+            "55%",
+            "75%",
+            "65%"
+          ],
+          "correctChoice": 1,
+          "correctAnswer": "85%",
+          "answerDeadline": "2026-11-05 12:59:59",
+          "explanation": "監督ノートの「ポジション」によると、選手の能力補正は赤100%・オレンジ85%・黄色70%・無色55%です。オレンジ色の適性では能力が85%になります。",
+          "notes": null,
+          "globalNo": 2
+        },
+        {
+          "questionId": "EX003-D01-Q03",
+          "day": 1,
+          "questionNo": 3,
+          "question": "フォーメーションコンボ「セレソン・ダス・キナス'26」のキーポジション条件に【含まれない】プレースタイルはどれでしょうか？",
+          "choices": [
+            "サイドアタッカーⅡ",
+            "攻撃的FBⅢ",
+            "パサーⅡ",
+            "攻撃的FBⅡ"
+          ],
+          "correctChoice": 3,
+          "correctAnswer": "パサーⅡ",
+          "answerDeadline": "2026-11-05 12:59:59",
+          "explanation": "「セレソン・ダス・キナス'26」のキーポジション条件は、攻撃的FBⅡ（LB）・攻撃的FBⅢ（RB）・パサーⅢ（DM）・サイドアタッカーⅡ（LW）です。「パサーⅡ」は条件に含まれません。",
+          "notes": null,
+          "globalNo": 3
         }
       ]
     }
