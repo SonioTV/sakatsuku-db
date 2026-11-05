@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-04T13:22:29+09:00",
+  "generatedAt": "2026-11-05T14:31:56+09:00",
   "examCount": 3,
-  "totalQuestions": 45,
+  "totalQuestions": 48,
   "exams": [
     {
       "examId": "EX001",
@@ -853,6 +853,60 @@
           "explanation": "「セレソン・ダス・キナス'26」のキーポジション条件は、攻撃的FBⅡ（LB）・攻撃的FBⅢ（RB）・パサーⅢ（DM）・サイドアタッカーⅡ（LW）です。「パサーⅡ」は条件に含まれません。",
           "notes": null,
           "globalNo": 3
+        },
+        {
+          "questionId": "EX003-D02-Q01",
+          "day": 2,
+          "questionNo": 1,
+          "question": "アクセサリを売却すると獲得できるアイテムはどれでしょうか？",
+          "choices": [
+            "トレーナー強化Pt",
+            "選手強化Pt",
+            "ランクアップミサンガ",
+            "強化シューズ"
+          ],
+          "correctChoice": 2,
+          "correctAnswer": "選手強化Pt",
+          "answerDeadline": "2026-11-06 12:59:59",
+          "explanation": "監督ノートの「アクセサリ」には、アクセサリ一覧の売却モードでアクセサリを売却すると「選手強化Pt」を入手できると記載されています。",
+          "notes": null,
+          "globalNo": 4
+        },
+        {
+          "questionId": "EX003-D02-Q02",
+          "day": 2,
+          "questionNo": 2,
+          "question": "アクセサリ強化時に消費するアイテムはどれでしょうか？",
+          "choices": [
+            "選手強化Pt",
+            "トレーナー強化Pt",
+            "ボーナスカウント",
+            "アクセサリ"
+          ],
+          "correctChoice": 4,
+          "correctAnswer": "アクセサリ",
+          "answerDeadline": "2026-11-06 12:59:59",
+          "explanation": "監督ノートの「アクセサリ」によると、他のアクセサリを素材として消費し、経験値を獲得してレベルを上げます。強化で消費するのは「アクセサリ」です。",
+          "notes": null,
+          "globalNo": 5
+        },
+        {
+          "questionId": "EX003-D02-Q03",
+          "day": 2,
+          "questionNo": 3,
+          "question": "ボーナスカウントを消費して獲得可能なアイテムとして【含まれない】ものはどれでしょうか？",
+          "choices": [
+            "ゴールデンボール/GB",
+            "トレーナー強化Pt",
+            "アクセサリ",
+            "選手強化Pt"
+          ],
+          "correctChoice": 1,
+          "correctAnswer": "ゴールデンボール/GB",
+          "answerDeadline": "2026-11-06 12:59:59",
+          "explanation": "監督ノートの「ボーナスカウント」では、消費するとアイテムやアクセサリを獲得できると説明されています。GBは逆にボーナスカウントの回復時に消費する通貨であり、ボーナスカウントを使って獲得するアイテムには含まれません。",
+          "notes": null,
+          "globalNo": 6
         }
       ]
     }
