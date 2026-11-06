@@ -104,6 +104,24 @@ p{margin:0 0 12px}.card>p:last-child{margin-bottom:0}
 .dayJumpBtn{display:flex;align-items:center;justify-content:center;min-width:0;min-height:40px;padding:6px 4px;border:1px solid #bfd0df;border-radius:10px;background:#fff;color:#155f80;text-decoration:none;font-size:12px;font-weight:1000;line-height:1.2}
 .dayJumpBtn:hover{background:#eef6ff}
 .dayJumpBtn[aria-disabled="true"]{background:#f1f5f9;color:#94a3b8;border-color:#e2e8f0;pointer-events:none}
+
+/* 日別ジャンプ：問題の掲載状況を記事本文から判定し、3色で表示 */
+.dayJumpBtn{flex-direction:column;gap:3px;min-height:53px}
+.dayJumpBtnState{display:block;font-size:10px;font-weight:900;line-height:1.2}
+.dayJumpBtn.is-official{background:#e7f5e7;border-color:#70b679;color:#24652f}
+.dayJumpBtn.is-preview{background:#fff0d6;border-color:#e7ae48;color:#854e0a}
+.dayJumpBtn.is-pending{background:#f1f5f9;border-color:#d7e0e8;color:#66758a}
+.dayJumpBtn.is-official:hover{background:#d6ecd7}
+.dayJumpBtn.is-preview:hover{background:#ffe5ba}
+.dayJumpBtn.is-pending:hover{background:#e8eef5}
+.dayJumpBtn:focus-visible{outline:3px solid #0b63d1;outline-offset:2px}
+.dayJumpLegend{display:flex;align-items:center;flex-wrap:wrap;gap:6px 13px;margin-top:9px;color:#475569;font-size:11px;font-weight:800}
+.dayJumpLegendItem{display:inline-flex;align-items:center;gap:5px}
+.dayJumpLegendDot{display:inline-block;width:10px;height:10px;border-radius:50%;border:1px solid rgba(0,0,0,.12)}
+.dayJumpLegendDot.is-official{background:#70b679}
+.dayJumpLegendDot.is-preview{background:#e7ae48}
+.dayJumpLegendDot.is-pending{background:#cbd5e1}
+@media(max-width:420px){.dayJumpBtn{min-height:50px}.dayJumpBtnState{font-size:9px}}
 section[id^="day"]{scroll-margin-top:12px}
 .draftNotice{background:#fff1f1;border-color:#eebaba;color:#8f1f1f}
 .status{display:inline-flex;align-items:center;min-height:25px;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:1000;margin-top:6px}
@@ -196,8 +214,19 @@ section[id^="day"]{scroll-margin-top:12px}
       <div class="dayJumpWrap">
         <span class="dayJumpLabel">日別の問題・正解へジャンプ</span>
         <nav class="dayJumpNav" aria-label="日別問題へのジャンプ">
-          <a class="dayJumpBtn" href="#day1">1日目</a><a class="dayJumpBtn" href="#day2">2日目</a><a class="dayJumpBtn" href="#day3">3日目</a><a class="dayJumpBtn" href="#day4">4日目</a><a class="dayJumpBtn" href="#day5">5日目</a><a class="dayJumpBtn" href="#day6">6日目</a><a class="dayJumpBtn" href="#day7">7日目</a>
+          <a class="dayJumpBtn is-official" href="#day1" aria-label="1日目：公式正解を確認"><span>1日目</span><small class="dayJumpBtnState">公式正解</small></a>
+          <a class="dayJumpBtn is-official" href="#day2" aria-label="2日目：公式正解を確認"><span>2日目</span><small class="dayJumpBtnState">公式正解</small></a>
+          <a class="dayJumpBtn is-preview" href="#day3" aria-label="3日目：予想解答を確認"><span>3日目</span><small class="dayJumpBtnState">予想解答</small></a>
+          <a class="dayJumpBtn is-pending" href="#day4" aria-label="4日目：未掲載を確認"><span>4日目</span><small class="dayJumpBtnState">未掲載</small></a>
+          <a class="dayJumpBtn is-pending" href="#day5" aria-label="5日目：未掲載を確認"><span>5日目</span><small class="dayJumpBtnState">未掲載</small></a>
+          <a class="dayJumpBtn is-pending" href="#day6" aria-label="6日目：未掲載を確認"><span>6日目</span><small class="dayJumpBtnState">未掲載</small></a>
+          <a class="dayJumpBtn is-pending" href="#day7" aria-label="7日目：未掲載を確認"><span>7日目</span><small class="dayJumpBtnState">未掲載</small></a>
         </nav>
+        <div class="dayJumpLegend" aria-label="ジャンプボタンの色の意味">
+          <span class="dayJumpLegendItem"><span class="dayJumpLegendDot is-official" aria-hidden="true"></span>公式正解確認済み</span>
+          <span class="dayJumpLegendItem"><span class="dayJumpLegendDot is-preview" aria-hidden="true"></span>予想解答・公式未確認</span>
+          <span class="dayJumpLegendItem"><span class="dayJumpLegendDot is-pending" aria-hidden="true"></span>未掲載</span>
+        </div>
       </div>
       <div class="notice"><strong>解答時の注意：</strong> 検定はログインした当日の問題にしか解答できません。後から過去の日の問題に戻って解答することはできません。公式正解は次の問題更新後にログインした際に発表されます。<br><strong>正解の扱い：</strong> 公式発表前の回答は根拠を明記し、未確認の内容を「公式正解」とは表記しません。</div>
     </section>
@@ -361,7 +390,7 @@ section[id^="day"]{scroll-margin-top:12px}
         <img src="img/articles/20261014_certification_exam_3_answers/day3_questions.png" width="2048" height="944" loading="lazy" decoding="async" alt="第3回サカつく検定3日目の問題：監督Lvで解放される機能、人事マネジメント強化、クラブ資金の赤字ペナルティ">
         <figcaption>第3回サカつく検定 3日目の問題と選択肢（2026年11月6日公開・ゲーム内画面）</figcaption>
       </figure>
-      <div class="notice"><strong>3日目は予想解答です：</strong>監督ノートと監督強化の項目を照合した予想です。公式発表前は確定扱いにしません。<strong>公式正解は11月7日13:00以降に確認</strong>します。</div>
+      <div class="notice"><strong>3日目は予想解答です：</strong>監督ノートと監督強化の項目を照合した予想です。第3問は監督ノートに「モチベーション低下」と記載されており、選択肢「コンディション低下」と表現が異なるため、公式発表前は確定扱いにしません。<strong>公式正解は11月7日13:00以降に確認</strong>します。</div>
       <!-- DAY3_Q1_START -->
       <section class="questionBlock" id="day3-q1">
         <div class="questionHead"><strong>3日目・第1問</strong><span class="status status速報">予想解答・公式未確認</span></div>
@@ -414,7 +443,7 @@ section[id^="day"]{scroll-margin-top:12px}
           <button class="answerToggle" type="button" aria-expanded="false" aria-controls="day3-q3-answer">答えを表示</button>
           <div class="answerReveal" id="day3-q3-answer" hidden>
             <div class="answerBox"><span class="answerLabel">予想解答（公式正解発表前）</span><span class="answerText">コンディション低下</span></div>
-            <p class="reason" data-question-id="EX003-D03-Q03"><span class="reasonLabel">解説：</span>監督ノートの「資金」では、赤字でシーズンを終えると翌シーズンの在籍選手のコンディションが半年間低下すると説明されています。</p>
+            <p class="reason" data-question-id="EX003-D03-Q03"><span class="reasonLabel">解説：</span>監督ノートの「資金」では、赤字でシーズンを終えると翌シーズンの在籍選手のモチベーションが半年間低下すると説明されています。選択肢では「コンディション低下」が最も近いと推定されますが、監督ノートの表記は「モチベーション低下」のため、公式正解の発表で確認が必要です。</p>
           </div>
         </div>
       </section>
@@ -566,6 +595,26 @@ section[id^="day"]{scroll-margin-top:12px}
       console.warn('certification_exams.json の解説読み込みに失敗しました。HTML内の解説を使用します。', err);
     }
   }
+
+
+  // 各日の問題掲載状況を本文から判定。翌日以降の追加時も色変更は不要。
+  function updateDayJumpStatuses(){
+    document.querySelectorAll('.dayJumpBtn[href^="#day"]').forEach(link => {
+      const target = document.getElementById(link.getAttribute('href').slice(1));
+      if (!target) return;
+      const questions = Array.from(target.querySelectorAll('.questionBlock'));
+      const allOfficial = questions.length === 3 &&
+        questions.every(question => question.querySelector('.questionHead .status.official'));
+      const kind = allOfficial ? 'official' : (questions.length > 0 ? 'preview' : 'pending');
+      const label = kind === 'official' ? '公式正解' : kind === 'preview' ? '予想解答' : '未掲載';
+      link.classList.remove('is-official', 'is-preview', 'is-pending');
+      link.classList.add('is-' + kind);
+      const note = link.querySelector('.dayJumpBtnState');
+      if (note) note.textContent = label;
+      link.setAttribute('aria-label', link.getAttribute('href').slice(4) + '日目：' + label + 'を確認');
+    });
+  }
+  updateDayJumpStatuses();
 
   if(document.querySelector('.reason[data-question-id]')) syncExplanationsFromJson();
   document.querySelectorAll('.answerToggle').forEach(button => {
