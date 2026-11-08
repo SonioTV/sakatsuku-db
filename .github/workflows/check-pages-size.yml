@@ -24,3 +24,6 @@ jobs:
             awk -F '\t' '{
               printf "%.2f MB  %s\n", $1/1048576, $2
             }'
+
+echo "=== Largest article folders ==="
+du -sh img/articles/* | sort -hr | sed -n '1,30p'
