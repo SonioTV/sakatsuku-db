@@ -1,30 +1,117 @@
-
 name: Check Pages File Sizes
 
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check sizes
+      - name: Create size report
+        shell: bash
         run: |
-          echo "=== Largest directories ==="
-          du -h --max-depth=2 --exclude=.git . |
-            sort -hr | head -40
+          python3 - <<'PY'
+          import os
+          from collections import defaultdict
+          from pathlib import Path
 
-          echo "=== Largest files ==="
-          find . -type f -not -path './.git/*' \
-            -printf '%s\t%p\n' |
-            sort -nr | head -40 |
-            awk -F '\t' '{
-              printf "%.2f MB  %s\n", $1/1048576, $2
-            }'
+          LIMIT = 1_000_000_000       # 1 GB (decimal): conservative comparison guide
+          WARNING = 850_000_000      # 850 MB: suggested check point
+          IMAGE_EXTS = {'.png', '.jpg', '.jpeg', '.webp', '.gif', '.avif', '.bmp', '.tif', '.tiff'}
 
-          echo "=== Largest article folders ==="
-          du -sh img/articles/* | sort -hr | sed -n '1,30p'
+          total = 0
+          file_count = 0
+          directory_sizes = defaultdict(int)
+          article_sizes = defaultdict(int)
+          images = []
 
+          for base, dirs, names in os.walk('.'):
+              dirs[:] = [d for d in dirs if d != '.git']
+              for name in names:
+                  path = Path(base) / name
+                  try:
+                      size = path.stat().st_size
+                  except OSError:
+                      continue
+                  parts = path.parts
+                  if parts and parts[0] == '.':
+                      parts = parts[1:]
+                  if not parts:
+                      continue
+                  relative = '/'.join(parts)
+                  total += size
+                  file_count += 1
+
+                  if len(parts) >= 3:
+                      directory_sizes['/'.join(parts[:2]) + '/'] += size
+                  elif len(parts) == 2:
+                      directory_sizes[parts[0] + '/'] += size
+                  else:
+                      directory_sizes['(root files)'] += size
+
+                  if len(parts) >= 4 and parts[:2] == ('img', 'articles'):
+                      article_sizes['img/articles/' + parts[2] + '/'] += size
+
+                  if path.suffix.lower() in IMAGE_EXTS:
+                      images.append((size, relative))
+
+          def mb(value):
+              return f'{value / 1_000_000:,.1f} MB'
+
+          remaining = LIMIT - total
+          if total >= LIMIT:
+              status = '⚠️ ファイル合計が1 GBの目安を超えています'
+          elif total >= WARNING:
+              status = '⚠️ 850 MB以上です。画像の軽量化を検討してください'
+          else:
+              status = '✅ 850 MB未満です'
+
+          lines = [
+              '# サカつく2026攻略DB｜容量チェック',
+              '',
+              f'**{status}**',
+              '',
+              '| 指標 | 値 |',
+              '|---|---:|',
+              f'| ファイル合計（.gitを除く） | **{mb(total)}** |',
+              f'| ファイル数 | {file_count:,} |',
+              f'| 1 GBまでの差（目安） | {mb(remaining) if remaining >= 0 else "超過 " + mb(-remaining)} |',
+              f'| 850 MBまでの差（目安） | {mb(WARNING - total) if total <= WARNING else "超過 " + mb(total - WARNING)} |',
+              '',
+              '※ **これはGitHubリポジトリのファイル合計です。** GitHub Pagesが実際に公開する成果物の容量とは一致しない場合があります。',
+              '表示単位は10進（1 MB = 1,000,000バイト）。画像の削除・圧縮・変更は行いません。',
+              '',
+              '## 容量が大きいフォルダ TOP10',
+              '',
+              '| フォルダ | 容量 |',
+              '|---|---:|',
+          ]
+
+          for folder, size in sorted(directory_sizes.items(), key=lambda x: x[1], reverse=True)[:10]:
+              lines.append(f'| `{folder}` | {mb(size)} |')
+
+          lines += ['', '## 容量が大きい記事フォルダ TOP10', '', '| フォルダ | 容量 |', '|---|---:|']
+          for folder, size in sorted(article_sizes.items(), key=lambda x: x[1], reverse=True)[:10]:
+              lines.append(f'| `{folder}` | {mb(size)} |')
+          if not article_sizes:
+              lines.append('| （記事フォルダなし） | — |')
+
+          lines += ['', '## 容量が大きい画像 TOP20', '', '| ファイル | 容量 |', '|---|---:|']
+          for size, path in sorted(images, reverse=True)[:20]:
+              lines.append(f'| `{path}` | {mb(size)} |')
+          if not images:
+              lines.append('| （画像なし） | — |')
+
+          result = '\n'.join(lines) + '\n'
+          print(result)
+          summary_file = os.environ.get('GITHUB_STEP_SUMMARY')
+          if summary_file:
+              with open(summary_file, 'a', encoding='utf-8') as out:
+                  out.write(result)
+          PY
