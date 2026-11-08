@@ -1,0 +1,30 @@
+
+name: Check Pages File Sizes
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check sizes
+        run: |
+          echo "=== Largest directories ==="
+          du -h --max-depth=2 --exclude=.git . |
+            sort -hr | head -40
+
+          echo "=== Largest files ==="
+          find . -type f -not -path './.git/*' \
+            -printf '%s\t%p\n' |
+            sort -nr | head -40 |
+            awk -F '\t' '{
+              printf "%.2f MB  %s\n", $1/1048576, $2
+            }'
+
+          echo "=== Largest article folders ==="
+          du -sh img/articles/* | sort -hr | sed -n '1,30p'
+
