@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T13:22:11+09:00",
+  "generatedAt": "2026-11-10T14:09:14+09:00",
   "examCount": 3,
-  "totalQuestions": 60,
+  "totalQuestions": 63,
   "exams": [
     {
       "examId": "EX001",
@@ -1123,6 +1123,60 @@
           "explanation": "監督ノートの「約束」によると、約束ミッションを達成すると覚醒Pt獲得、パラメータアップ、コンディションアップなどの効果が得られます。一方、スキルレベルアップは「約束」の達成効果として記載されていないため、選択肢の中ではこれが該当します。",
           "notes": null,
           "globalNo": 18
+        },
+        {
+          "questionId": "EX003-D07-Q01",
+          "day": 7,
+          "questionNo": 1,
+          "question": "SPECIAL 1vs1 EVENTの通常対戦は金・土・日の3日間開催されます。通常対戦で挑戦できる試合数の上限は何回でしょうか？",
+          "choices": [
+            "9",
+            "6",
+            "3",
+            "12"
+          ],
+          "correctChoice": 1,
+          "correctAnswer": "9",
+          "answerDeadline": "2026-11-11 12:59:59",
+          "explanation": "SEGA公式の「SPECIAL 1vs1」イベント案内では、通常対戦の試合数カウントは最大9回で、開催期間中にリセットされないと明記されています。練習試合は回数制限なしですが、通常対戦は合計9回までです。",
+          "notes": null,
+          "globalNo": 19
+        },
+        {
+          "questionId": "EX003-D07-Q02",
+          "day": 7,
+          "questionNo": 2,
+          "question": "「GO」「TRY」「STAY」の3つの指示のうち、相手との能力差によってコストが変動するものはどれでしょうか？",
+          "choices": [
+            "TRY",
+            "STAY",
+            "GO",
+            "全て"
+          ],
+          "correctChoice": 3,
+          "correctAnswer": "GO",
+          "answerDeadline": "2026-11-11 12:59:59",
+          "explanation": "監督ノートの「マネージャーディシジョン」では、3つの指示のうち「GO」のコストが相手との能力差によって変動すると説明されています。",
+          "notes": null,
+          "globalNo": 20
+        },
+        {
+          "questionId": "EX003-D07-Q03",
+          "day": 7,
+          "questionNo": 3,
+          "question": "初期値よりも増加しているマッチモメンタムは、どのようなプレーによって減少するでしょうか？",
+          "choices": [
+            "失点",
+            "得点",
+            "ファウル",
+            "選手交代"
+          ],
+          "correctChoice": 2,
+          "correctAnswer": "得点",
+          "answerDeadline": "2026-11-11 12:59:59",
+          "explanation": "監督ノートの「マネージャーディシジョン」によると、マッチモメンタムが初期値より上昇しているときに得点すると減少します。また、TRYで指示に失敗した場合も減少します。",
+          "notes": null,
+          "globalNo": 21
         }
       ]
     }
