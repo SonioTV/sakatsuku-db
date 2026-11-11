@@ -44312,7 +44312,7 @@
         "stamina": 894
       },
       "SPD": {
-        "speed": 106,
+        "speed": 1060,
         "agility": 1084
       }
     },
@@ -44622,7 +44622,7 @@
       },
       "SPD": {
         "speed": 1067,
-        "agility": 1067
+        "agility": 1065
       }
     },
     "tendencies": {
