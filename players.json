@@ -43367,7 +43367,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-10-21",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "AM",
       "LW"
@@ -43471,7 +43471,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-10-21",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "DM"
     ],
@@ -43574,7 +43574,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-10-21",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "CB"
     ],
@@ -43677,7 +43677,7 @@
     "growthType": "超早熟",
     "implementedDate": "2026-10-21",
     "rarity": "★3",
-    "available": true,
+    "available": false,
     "suitablePositions": [
       "DM"
     ],
@@ -44258,6 +44258,418 @@
         "traitId": "TR0027",
         "traitRank": "銅",
         "traitDescription": "途中出場"
+      }
+    ]
+  },
+  {
+    "player_id": "P0454",
+    "playerId": "P0454",
+    "name": "ラファエル・レオン",
+    "overall": 6967,
+    "maxUpgrade": 15635,
+    "policy": "カウンター",
+    "playStyle": "サイドアタッカー",
+    "playStyleLv": 2,
+    "mainPosition": "LW",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年11月25日まで",
+    "mainSkill": "カッティングエッジ",
+    "mainTrait": "多彩な足技",
+    "category": "SP選手",
+    "nationality": "ポルトガル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-11-11",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "LW"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 1021,
+        "kickPower": 954,
+        "composure": 971
+      },
+      "PAS": {
+        "shortPass": 925,
+        "longPass": 917,
+        "kickAccuracy": 920
+      },
+      "DRB": {
+        "breakthrough": 1079,
+        "ballKeeping": 1076,
+        "ballTouch": 1053
+      },
+      "DEF": {
+        "tackleSaving": 797,
+        "passCutReaction": 820,
+        "markOneOnOne": 810
+      },
+      "PHY": {
+        "jump": 977,
+        "contact": 986,
+        "stamina": 894
+      },
+      "SPD": {
+        "speed": 106,
+        "agility": 1084
+      }
+    },
+    "tendencies": {
+      "attack": 1,
+      "defense": -1,
+      "dribble": 1,
+      "shoot": 0,
+      "longShoot": 0,
+      "shortPass": 0,
+      "longPass": 0,
+      "throughPass": 0,
+      "cutIn": -1,
+      "keep": 0,
+      "delay": -1,
+      "forwardRun": 2,
+      "feint": 1,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "カッティングエッジ",
+        "skillId": "SK0005",
+        "skillRank": "金"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "多彩な足技",
+        "traitId": "TR0177",
+        "traitRank": "金",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "高速のボールタッチ",
+        "traitId": "TR0077",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "力強いフィニッシュ",
+        "traitId": "TR0151",
+        "traitRank": "銅",
+        "traitDescription": "絶好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0455",
+    "playerId": "P0455",
+    "name": "ブルーノ・フェルナンデス",
+    "overall": 7071,
+    "maxUpgrade": 15686,
+    "policy": "カウンター",
+    "playStyle": "パサー",
+    "playStyleLv": 2,
+    "mainPosition": "AM",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年11月25日まで",
+    "mainSkill": "妙なる調べ",
+    "mainTrait": "無尽蔵のパサー",
+    "category": "SP選手",
+    "nationality": "ポルトガル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-11-11",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "AM"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 1050,
+        "kickPower": 964,
+        "composure": 1025
+      },
+      "PAS": {
+        "shortPass": 1084,
+        "longPass": 1086,
+        "kickAccuracy": 1070
+      },
+      "DRB": {
+        "breakthrough": 943,
+        "ballKeeping": 927,
+        "ballTouch": 1029
+      },
+      "DEF": {
+        "tackleSaving": 897,
+        "passCutReaction": 885,
+        "markOneOnOne": 911
+      },
+      "PHY": {
+        "jump": 883,
+        "contact": 946,
+        "stamina": 1086
+      },
+      "SPD": {
+        "speed": 926,
+        "agility": 966
+      }
+    },
+    "tendencies": {
+      "attack": 1,
+      "defense": 0,
+      "dribble": 0,
+      "shoot": 0,
+      "longShoot": 0,
+      "shortPass": 0,
+      "longPass": 2,
+      "throughPass": 1,
+      "cutIn": 0,
+      "keep": 0,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": 0,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "妙なる調べ",
+        "skillId": "SK0069",
+        "skillRank": "金"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "無尽蔵のパサー",
+        "traitId": "TR0182",
+        "traitRank": "金",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "精密なフィニッシュ",
+        "traitId": "TR0106",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "冷静なボールタッチ",
+        "traitId": "TR0159",
+        "traitRank": "銅",
+        "traitDescription": "絶好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0456",
+    "playerId": "P0456",
+    "name": "ベルナルド・シウバ",
+    "overall": 7019,
+    "maxUpgrade": 15660,
+    "policy": "カウンター",
+    "playStyle": "ドリブラー",
+    "playStyleLv": 2,
+    "mainPosition": "RW",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年11月25日まで",
+    "mainSkill": "予測不能",
+    "mainTrait": "誘いの遊戯",
+    "category": "SP選手",
+    "nationality": "ポルトガル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-11-11",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "RW"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 940,
+        "kickPower": 911,
+        "composure": 983
+      },
+      "PAS": {
+        "shortPass": 1076,
+        "longPass": 1063,
+        "kickAccuracy": 1047
+      },
+      "DRB": {
+        "breakthrough": 1061,
+        "ballKeeping": 1085,
+        "ballTouch": 1082
+      },
+      "DEF": {
+        "tackleSaving": 815,
+        "passCutReaction": 859,
+        "markOneOnOne": 848
+      },
+      "PHY": {
+        "jump": 808,
+        "contact": 849,
+        "stamina": 996
+      },
+      "SPD": {
+        "speed": 955,
+        "agility": 1043
+      }
+    },
+    "tendencies": {
+      "attack": 2,
+      "defense": -1,
+      "dribble": 2,
+      "shoot": 1,
+      "longShoot": 0,
+      "shortPass": 0,
+      "longPass": -1,
+      "throughPass": 0,
+      "cutIn": 1,
+      "keep": 1,
+      "delay": -1,
+      "forwardRun": 1,
+      "feint": 2,
+      "press": 0
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "予測不能",
+        "skillId": "SK0070",
+        "skillRank": "金"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "誘いの遊戯",
+        "traitId": "TR0146",
+        "traitRank": "金",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "すり抜けるロングパサー",
+        "traitId": "TR0024",
+        "traitRank": "銀",
+        "traitDescription": "絶好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "俊敏なキッカー",
+        "traitId": "TR0092",
+        "traitRank": "銅",
+        "traitDescription": "好調"
+      }
+    ]
+  },
+  {
+    "player_id": "P0457",
+    "playerId": "P0457",
+    "name": "ヌーノ・メンデス",
+    "overall": 6878,
+    "maxUpgrade": 15442,
+    "policy": "カウンター",
+    "playStyle": "攻撃的FB",
+    "playStyleLv": 2,
+    "mainPosition": "LB",
+    "acquisitionMethod": "ガチャ",
+    "acquisitionPlace": "ピックアップSP選手スカウト",
+    "availablePeriod": "2026年11月25日まで",
+    "mainSkill": "ビルドアップドライブ",
+    "mainTrait": "俊敏なドリブラー",
+    "category": "SP選手",
+    "nationality": "ポルトガル",
+    "growthType": "超早熟",
+    "implementedDate": "2026-11-11",
+    "rarity": "★3",
+    "available": true,
+    "suitablePositions": [
+      "LB"
+    ],
+    "stats": {
+      "SHO": {
+        "finishing": 896,
+        "kickPower": 905,
+        "composure": 909
+      },
+      "PAS": {
+        "shortPass": 950,
+        "longPass": 945,
+        "kickAccuracy": 952
+      },
+      "DRB": {
+        "breakthrough": 1056,
+        "ballKeeping": 1031,
+        "ballTouch": 1044
+      },
+      "DEF": {
+        "tackleSaving": 975,
+        "passCutReaction": 954,
+        "markOneOnOne": 945
+      },
+      "PHY": {
+        "jump": 877,
+        "contact": 948,
+        "stamina": 1005
+      },
+      "SPD": {
+        "speed": 1067,
+        "agility": 1067
+      }
+    },
+    "tendencies": {
+      "attack": -1,
+      "defense": 1,
+      "dribble": -1,
+      "shoot": -1,
+      "longShoot": -1,
+      "shortPass": 0,
+      "longPass": 0,
+      "throughPass": -1,
+      "cutIn": -1,
+      "keep": -1,
+      "delay": 0,
+      "forwardRun": -1,
+      "feint": -1,
+      "press": 1
+    },
+    "skills": [
+      {
+        "skillNo": 1,
+        "skillName": "ビルドアップドライブ",
+        "skillId": "SK0071",
+        "skillRank": "銀"
+      }
+    ],
+    "traits": [
+      {
+        "traitNo": 1,
+        "traitName": "俊敏なドリブラー",
+        "traitId": "TR0094",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 2,
+        "traitName": "高速のボールタッチ",
+        "traitId": "TR0077",
+        "traitRank": "銀",
+        "traitDescription": "好調"
+      },
+      {
+        "traitNo": 3,
+        "traitName": "不屈の魂",
+        "traitId": "TR0136",
+        "traitRank": "銅",
+        "traitDescription": "好調"
       }
     ]
   }
