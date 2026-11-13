@@ -75,7 +75,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -170,8 +171,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -266,8 +268,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -362,8 +365,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -458,8 +462,9 @@
       {
         "skillNo": 1,
         "skillName": "敵陣を切り裂くパス",
-        "skillId": "SK0052",
-        "skillRank": "銅"
+        "skillId": "SK0051",
+        "skillRank": "銅",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -555,7 +560,8 @@
         "skillNo": 1,
         "skillName": "コントロールショット",
         "skillId": "SK0008",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -658,7 +664,8 @@
         "skillNo": 1,
         "skillName": "ゴールへ導くトラップ",
         "skillId": "SK0007",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -761,7 +768,8 @@
         "skillNo": 1,
         "skillName": "シャペウトラップ",
         "skillId": "SK0012",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -864,7 +872,8 @@
         "skillNo": 1,
         "skillName": "スリップビート",
         "skillId": "SK0014",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -966,8 +975,9 @@
       {
         "skillNo": 1,
         "skillName": "ロングキャノン",
-        "skillId": "SK0022",
-        "skillRank": "銀"
+        "skillId": "SK0021",
+        "skillRank": "銀",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -1070,7 +1080,8 @@
         "skillNo": 1,
         "skillName": "エレガントセーブ",
         "skillId": "SK0003",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -1172,8 +1183,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銀"
+        "skillId": "SK0047",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -1268,8 +1280,9 @@
       {
         "skillNo": 1,
         "skillName": "華麗なトラップ",
-        "skillId": "SK0026",
-        "skillRank": "銀"
+        "skillId": "SK0025",
+        "skillRank": "銀",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -1365,7 +1378,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -1461,7 +1475,8 @@
         "skillNo": 1,
         "skillName": "ピンポイントクロス",
         "skillId": "SK0018",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -1563,8 +1578,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銀"
+        "skillId": "SK0047",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -1659,8 +1675,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銀"
+        "skillId": "SK0044",
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -1756,7 +1773,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -1851,8 +1869,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銀"
+        "skillId": "SK0044",
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -1947,8 +1966,9 @@
       {
         "skillNo": 1,
         "skillName": "高速クロス",
-        "skillId": "SK0034",
-        "skillRank": "銀"
+        "skillId": "SK0033",
+        "skillRank": "銀",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -2043,8 +2063,9 @@
       {
         "skillNo": 1,
         "skillName": "反撃のパスカット",
-        "skillId": "SK0055",
-        "skillRank": "銀"
+        "skillId": "SK0054",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -2139,8 +2160,9 @@
       {
         "skillNo": 1,
         "skillName": "安定したパスワーク",
-        "skillId": "SK0023",
-        "skillRank": "銀"
+        "skillId": "SK0022",
+        "skillRank": "銀",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -2235,8 +2257,9 @@
       {
         "skillNo": 1,
         "skillName": "意外性のあるミドルパス",
-        "skillId": "SK0024",
-        "skillRank": "銀"
+        "skillId": "SK0023",
+        "skillRank": "銀",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -2332,7 +2355,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -2427,8 +2451,9 @@
       {
         "skillNo": 1,
         "skillName": "熟練のインターセプト",
-        "skillId": "SK0042",
-        "skillRank": "銀"
+        "skillId": "SK0041",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -2524,7 +2549,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -2619,8 +2645,9 @@
       {
         "skillNo": 1,
         "skillName": "反撃のパスカット",
-        "skillId": "SK0055",
-        "skillRank": "銀"
+        "skillId": "SK0054",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -2715,8 +2742,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銀"
+        "skillId": "SK0024",
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -2811,8 +2839,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銀"
+        "skillId": "SK0031",
+        "skillRank": "銀",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -2908,7 +2937,8 @@
         "skillNo": 1,
         "skillName": "コントロールトラップ",
         "skillId": "SK0009",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -3003,8 +3033,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -3099,8 +3130,9 @@
       {
         "skillNo": 1,
         "skillName": "高速クロス",
-        "skillId": "SK0034",
-        "skillRank": "銅"
+        "skillId": "SK0033",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -3195,8 +3227,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -3291,8 +3324,9 @@
       {
         "skillNo": 1,
         "skillName": "意外性のあるミドルパス",
-        "skillId": "SK0024",
-        "skillRank": "銅"
+        "skillId": "SK0023",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -3388,7 +3422,8 @@
         "skillNo": 1,
         "skillName": "コントロールトラップ",
         "skillId": "SK0009",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -3483,8 +3518,9 @@
       {
         "skillNo": 1,
         "skillName": "華麗なトラップ",
-        "skillId": "SK0026",
-        "skillRank": "銅"
+        "skillId": "SK0025",
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -3580,7 +3616,8 @@
         "skillNo": 1,
         "skillName": "コントロールトラップ",
         "skillId": "SK0009",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -3675,8 +3712,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -3771,8 +3809,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -3867,8 +3906,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -3963,8 +4003,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -4059,8 +4100,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -4155,8 +4197,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -4251,8 +4294,9 @@
       {
         "skillNo": 1,
         "skillName": "高速クロス",
-        "skillId": "SK0034",
-        "skillRank": "銅"
+        "skillId": "SK0033",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -4347,8 +4391,9 @@
       {
         "skillNo": 1,
         "skillName": "華麗なトラップ",
-        "skillId": "SK0026",
-        "skillRank": "銅"
+        "skillId": "SK0025",
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -4443,8 +4488,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -4540,7 +4586,8 @@
         "skillNo": 1,
         "skillName": "ダイナミックタックル",
         "skillId": "SK0015",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -4635,8 +4682,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -4732,7 +4780,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -4827,8 +4876,9 @@
       {
         "skillNo": 1,
         "skillName": "確信のロングシュート",
-        "skillId": "SK0028",
-        "skillRank": "銅"
+        "skillId": "SK0027",
+        "skillRank": "銅",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -4923,8 +4973,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -5019,8 +5070,9 @@
       {
         "skillNo": 1,
         "skillName": "確信のロングシュート",
-        "skillId": "SK0028",
-        "skillRank": "銅"
+        "skillId": "SK0027",
+        "skillRank": "銅",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -5116,7 +5168,8 @@
         "skillNo": 1,
         "skillName": "コントロールフィード",
         "skillId": "SK0010",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -5212,7 +5265,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -5308,7 +5362,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -5403,8 +5458,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -5499,8 +5555,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -5595,8 +5652,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -5691,8 +5749,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -5787,8 +5846,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -5883,8 +5943,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -5979,8 +6040,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -6075,8 +6137,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -6172,7 +6235,8 @@
         "skillNo": 1,
         "skillName": "コントロールトラップ",
         "skillId": "SK0009",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -6267,8 +6331,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -6363,8 +6428,9 @@
       {
         "skillNo": 1,
         "skillName": "敵陣を切り裂くパス",
-        "skillId": "SK0052",
-        "skillRank": "銅"
+        "skillId": "SK0051",
+        "skillRank": "銅",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -6460,7 +6526,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -6555,8 +6622,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -6652,7 +6720,8 @@
         "skillNo": 1,
         "skillName": "ファストフィード",
         "skillId": "SK0019",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -6747,8 +6816,9 @@
       {
         "skillNo": 1,
         "skillName": "確信のロングシュート",
-        "skillId": "SK0028",
-        "skillRank": "銅"
+        "skillId": "SK0027",
+        "skillRank": "銅",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -6843,8 +6913,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -6939,8 +7010,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -7035,8 +7107,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -7132,7 +7205,8 @@
         "skillNo": 1,
         "skillName": "ダイナミックタックル",
         "skillId": "SK0015",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -7227,8 +7301,9 @@
       {
         "skillNo": 1,
         "skillName": "安定したパスワーク",
-        "skillId": "SK0023",
-        "skillRank": "銅"
+        "skillId": "SK0022",
+        "skillRank": "銅",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -7323,8 +7398,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -7420,7 +7496,8 @@
         "skillNo": 1,
         "skillName": "コントロールフィード",
         "skillId": "SK0010",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -7515,8 +7592,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -7611,8 +7689,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -7708,7 +7787,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -7803,8 +7883,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -7899,8 +7980,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -7995,8 +8077,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -8092,7 +8175,8 @@
         "skillNo": 1,
         "skillName": "コントロールフィード",
         "skillId": "SK0010",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -8187,8 +8271,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -8283,8 +8368,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -8379,8 +8465,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -8475,8 +8562,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -8571,8 +8659,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -8668,7 +8757,8 @@
         "skillNo": 1,
         "skillName": "コントロールフィード",
         "skillId": "SK0010",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -8763,8 +8853,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -8859,8 +8950,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -8955,8 +9047,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -9052,7 +9145,8 @@
         "skillNo": 1,
         "skillName": "ファストフィード",
         "skillId": "SK0019",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -9147,8 +9241,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -9243,8 +9338,9 @@
       {
         "skillNo": 1,
         "skillName": "確信のロングシュート",
-        "skillId": "SK0028",
-        "skillRank": "銅"
+        "skillId": "SK0027",
+        "skillRank": "銅",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -9339,8 +9435,9 @@
       {
         "skillNo": 1,
         "skillName": "高速クロス",
-        "skillId": "SK0034",
-        "skillRank": "銅"
+        "skillId": "SK0033",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -9435,8 +9532,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -9531,8 +9629,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -9627,8 +9726,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -9723,8 +9823,9 @@
       {
         "skillNo": 1,
         "skillName": "意外性のあるミドルパス",
-        "skillId": "SK0024",
-        "skillRank": "銅"
+        "skillId": "SK0023",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -9819,8 +9920,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -9915,8 +10017,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -10011,8 +10114,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -10108,7 +10212,8 @@
         "skillNo": 1,
         "skillName": "ファストフィード",
         "skillId": "SK0019",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -10203,8 +10308,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -10299,8 +10405,9 @@
       {
         "skillNo": 1,
         "skillName": "高速クロス",
-        "skillId": "SK0034",
-        "skillRank": "銅"
+        "skillId": "SK0033",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -10395,8 +10502,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -10492,7 +10600,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -10587,8 +10696,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -10684,7 +10794,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -10779,8 +10890,9 @@
       {
         "skillNo": 1,
         "skillName": "高速クロス",
-        "skillId": "SK0034",
-        "skillRank": "銅"
+        "skillId": "SK0033",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -10875,8 +10987,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -10971,8 +11084,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -11067,8 +11181,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -11163,8 +11278,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -11259,8 +11375,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -11355,8 +11472,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -11451,8 +11569,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -11547,8 +11666,9 @@
       {
         "skillNo": 1,
         "skillName": "高速クロス",
-        "skillId": "SK0034",
-        "skillRank": "銅"
+        "skillId": "SK0033",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -11643,8 +11763,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -11739,8 +11860,9 @@
       {
         "skillNo": 1,
         "skillName": "反撃のパスカット",
-        "skillId": "SK0055",
-        "skillRank": "銅"
+        "skillId": "SK0054",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -11835,8 +11957,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -11931,8 +12054,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -12027,8 +12151,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -12124,7 +12249,8 @@
         "skillNo": 1,
         "skillName": "コントロールフィード",
         "skillId": "SK0010",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -12219,8 +12345,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -12315,8 +12442,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -12411,8 +12539,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -12507,8 +12636,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -12603,8 +12733,9 @@
       {
         "skillNo": 1,
         "skillName": "敵陣を切り裂くパス",
-        "skillId": "SK0052",
-        "skillRank": "銅"
+        "skillId": "SK0051",
+        "skillRank": "銅",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -12699,8 +12830,9 @@
       {
         "skillNo": 1,
         "skillName": "確信のロングシュート",
-        "skillId": "SK0028",
-        "skillRank": "銅"
+        "skillId": "SK0027",
+        "skillRank": "銅",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -12795,8 +12927,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -12891,8 +13024,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -12987,8 +13121,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -13083,8 +13218,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -13180,7 +13316,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -13275,8 +13412,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -13372,7 +13510,8 @@
         "skillNo": 1,
         "skillName": "ダイナミックタックル",
         "skillId": "SK0015",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -13467,8 +13606,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -13564,7 +13704,8 @@
         "skillNo": 1,
         "skillName": "ダイナミックタックル",
         "skillId": "SK0015",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -13659,8 +13800,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -13755,8 +13897,9 @@
       {
         "skillNo": 1,
         "skillName": "高速クロス",
-        "skillId": "SK0034",
-        "skillRank": "銅"
+        "skillId": "SK0033",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -13851,8 +13994,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -13947,8 +14091,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -14043,8 +14188,9 @@
       {
         "skillNo": 1,
         "skillName": "高速クロス",
-        "skillId": "SK0034",
-        "skillRank": "銅"
+        "skillId": "SK0033",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -14139,8 +14285,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -14235,8 +14382,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -14331,8 +14479,9 @@
       {
         "skillNo": 1,
         "skillName": "反撃のパスカット",
-        "skillId": "SK0055",
-        "skillRank": "銅"
+        "skillId": "SK0054",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -14427,8 +14576,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -14524,7 +14674,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -14619,8 +14770,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -14715,8 +14867,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -14811,8 +14964,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -14907,8 +15061,9 @@
       {
         "skillNo": 1,
         "skillName": "意外性のあるミドルパス",
-        "skillId": "SK0024",
-        "skillRank": "銅"
+        "skillId": "SK0023",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -15003,8 +15158,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -15099,8 +15255,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -15196,7 +15353,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -15291,8 +15449,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -15388,8 +15547,9 @@
       {
         "skillNo": 1,
         "skillName": "魔術師の弾道",
-        "skillId": "SK0059",
-        "skillRank": "銀"
+        "skillId": "SK0058",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -15492,7 +15652,8 @@
         "skillNo": 1,
         "skillName": "ジャックナイフ",
         "skillId": "SK0011",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -15594,8 +15755,9 @@
       {
         "skillNo": 1,
         "skillName": "魂のワンタッチ",
-        "skillId": "SK0035",
-        "skillRank": "銀"
+        "skillId": "SK0034",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -15697,8 +15859,9 @@
       {
         "skillNo": 1,
         "skillName": "指令のロングフィード",
-        "skillId": "SK0039",
-        "skillRank": "銀"
+        "skillId": "SK0038",
+        "skillRank": "銀",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -15801,7 +15964,8 @@
         "skillNo": 1,
         "skillName": "ファストフィード",
         "skillId": "SK0019",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -15896,8 +16060,9 @@
       {
         "skillNo": 1,
         "skillName": "勝機を生み出すフィード",
-        "skillId": "SK0043",
-        "skillRank": "銀"
+        "skillId": "SK0042",
+        "skillRank": "銀",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -15999,8 +16164,9 @@
       {
         "skillNo": 1,
         "skillName": "仕上げの起点",
-        "skillId": "SK0038",
-        "skillRank": "銀"
+        "skillId": "SK0037",
+        "skillRank": "銀",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -16103,7 +16269,8 @@
         "skillNo": 1,
         "skillName": "シルキーパス",
         "skillId": "SK0013",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -16205,8 +16372,9 @@
       {
         "skillNo": 1,
         "skillName": "反撃のパスカット",
-        "skillId": "SK0055",
-        "skillRank": "銀"
+        "skillId": "SK0054",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -16301,8 +16469,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -16397,8 +16566,9 @@
       {
         "skillNo": 1,
         "skillName": "勝機を生み出すフィード",
-        "skillId": "SK0043",
-        "skillRank": "銀"
+        "skillId": "SK0042",
+        "skillRank": "銀",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -16500,8 +16670,9 @@
       {
         "skillNo": 1,
         "skillName": "華麗なる一閃",
-        "skillId": "SK0027",
-        "skillRank": "銀"
+        "skillId": "SK0026",
+        "skillRank": "銀",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -16604,7 +16775,8 @@
         "skillNo": 1,
         "skillName": "スリップビート",
         "skillId": "SK0014",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -16706,8 +16878,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銀"
+        "skillId": "SK0024",
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -16802,8 +16975,9 @@
       {
         "skillNo": 1,
         "skillName": "確信のロングシュート",
-        "skillId": "SK0028",
-        "skillRank": "銀"
+        "skillId": "SK0027",
+        "skillRank": "銀",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -16898,8 +17072,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銀"
+        "skillId": "SK0047",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -16994,8 +17169,9 @@
       {
         "skillNo": 1,
         "skillName": "華麗なトラップ",
-        "skillId": "SK0026",
-        "skillRank": "銀"
+        "skillId": "SK0025",
+        "skillRank": "銀",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -17091,7 +17267,8 @@
         "skillNo": 1,
         "skillName": "ファストフィード",
         "skillId": "SK0019",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -17186,8 +17363,9 @@
       {
         "skillNo": 1,
         "skillName": "反撃のパスカット",
-        "skillId": "SK0055",
-        "skillRank": "銀"
+        "skillId": "SK0054",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -17282,8 +17460,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銀"
+        "skillId": "SK0030",
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -17379,7 +17558,8 @@
         "skillNo": 1,
         "skillName": "ダイナミックタックル",
         "skillId": "SK0015",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -17475,7 +17655,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -17570,8 +17751,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銀"
+        "skillId": "SK0035",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -17666,8 +17848,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銀"
+        "skillId": "SK0024",
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -17762,8 +17945,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銀"
+        "skillId": "SK0031",
+        "skillRank": "銀",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -17858,8 +18042,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銀"
+        "skillId": "SK0047",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -17954,8 +18139,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銀"
+        "skillId": "SK0053",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -18050,8 +18236,9 @@
       {
         "skillNo": 1,
         "skillName": "敵陣を切り裂くパス",
-        "skillId": "SK0052",
-        "skillRank": "銀"
+        "skillId": "SK0051",
+        "skillRank": "銀",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -18146,8 +18333,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銀"
+        "skillId": "SK0030",
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -18242,8 +18430,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銀"
+        "skillId": "SK0047",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -18338,8 +18527,9 @@
       {
         "skillNo": 1,
         "skillName": "確信のロングシュート",
-        "skillId": "SK0028",
-        "skillRank": "銀"
+        "skillId": "SK0027",
+        "skillRank": "銀",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -18434,8 +18624,9 @@
       {
         "skillNo": 1,
         "skillName": "意外性のあるミドルパス",
-        "skillId": "SK0024",
-        "skillRank": "銀"
+        "skillId": "SK0023",
+        "skillRank": "銀",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -18530,8 +18721,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銀"
+        "skillId": "SK0024",
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -18626,8 +18818,9 @@
       {
         "skillNo": 1,
         "skillName": "楔のパス",
-        "skillId": "SK0061",
-        "skillRank": "銀"
+        "skillId": "SK0060",
+        "skillRank": "銀",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -18722,8 +18915,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銀"
+        "skillId": "SK0035",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -18818,8 +19012,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銀"
+        "skillId": "SK0031",
+        "skillRank": "銀",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -18914,8 +19109,9 @@
       {
         "skillNo": 1,
         "skillName": "ロングキャノン",
-        "skillId": "SK0022",
-        "skillRank": "銀"
+        "skillId": "SK0021",
+        "skillRank": "銀",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -19018,7 +19214,8 @@
         "skillNo": 1,
         "skillName": "チェーンカッター",
         "skillId": "SK0016",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -19120,8 +19317,9 @@
       {
         "skillNo": 1,
         "skillName": "熟練のインターセプト",
-        "skillId": "SK0042",
-        "skillRank": "銀"
+        "skillId": "SK0041",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -19224,7 +19422,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -19319,8 +19518,9 @@
       {
         "skillNo": 1,
         "skillName": "華麗なる一閃",
-        "skillId": "SK0027",
-        "skillRank": "銀"
+        "skillId": "SK0026",
+        "skillRank": "銀",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -19423,7 +19623,8 @@
         "skillNo": 1,
         "skillName": "エレガントセーブ",
         "skillId": "SK0003",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -19525,8 +19726,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銀"
+        "skillId": "SK0053",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -19628,8 +19830,9 @@
       {
         "skillNo": 1,
         "skillName": "反撃のパスカット",
-        "skillId": "SK0055",
-        "skillRank": "銀"
+        "skillId": "SK0054",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -19724,8 +19927,9 @@
       {
         "skillNo": 1,
         "skillName": "逆襲",
-        "skillId": "SK0029",
-        "skillRank": "銀"
+        "skillId": "SK0028",
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -19828,7 +20032,8 @@
         "skillNo": 1,
         "skillName": "チェーンカッター",
         "skillId": "SK0016",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -19931,7 +20136,8 @@
         "skillNo": 1,
         "skillName": "スリップビート",
         "skillId": "SK0014",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -20033,8 +20239,9 @@
       {
         "skillNo": 1,
         "skillName": "敵陣を切り裂くパス",
-        "skillId": "SK0052",
-        "skillRank": "銀"
+        "skillId": "SK0051",
+        "skillRank": "銀",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -20130,7 +20337,8 @@
         "skillNo": 1,
         "skillName": "コントロールショット",
         "skillId": "SK0008",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -20232,8 +20440,9 @@
       {
         "skillNo": 1,
         "skillName": "変速ギア",
-        "skillId": "SK0058",
-        "skillRank": "銀"
+        "skillId": "SK0057",
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -20335,8 +20544,9 @@
       {
         "skillNo": 1,
         "skillName": "熟練のインターセプト",
-        "skillId": "SK0042",
-        "skillRank": "銀"
+        "skillId": "SK0041",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -20439,7 +20649,8 @@
         "skillNo": 1,
         "skillName": "コントロールショット",
         "skillId": "SK0008",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -20542,7 +20753,8 @@
         "skillNo": 1,
         "skillName": "チェーンカッター",
         "skillId": "SK0016",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -20644,8 +20856,9 @@
       {
         "skillNo": 1,
         "skillName": "逆襲",
-        "skillId": "SK0029",
-        "skillRank": "銀"
+        "skillId": "SK0028",
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -20748,7 +20961,8 @@
         "skillNo": 1,
         "skillName": "スリップビート",
         "skillId": "SK0014",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -20843,8 +21057,9 @@
       {
         "skillNo": 1,
         "skillName": "絶好の楔",
-        "skillId": "SK0046",
-        "skillRank": "銀"
+        "skillId": "SK0045",
+        "skillRank": "銀",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -20946,8 +21161,9 @@
       {
         "skillNo": 1,
         "skillName": "変速ギア",
-        "skillId": "SK0058",
-        "skillRank": "銀"
+        "skillId": "SK0057",
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -21049,8 +21265,9 @@
       {
         "skillNo": 1,
         "skillName": "魂のワンタッチ",
-        "skillId": "SK0035",
-        "skillRank": "銀"
+        "skillId": "SK0034",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -21153,7 +21370,8 @@
         "skillNo": 1,
         "skillName": "ゴールへ導くトラップ",
         "skillId": "SK0007",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -21255,8 +21473,9 @@
       {
         "skillNo": 1,
         "skillName": "迎撃のインターセプト",
-        "skillId": "SK0033",
-        "skillRank": "銀"
+        "skillId": "SK0032",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -21358,8 +21577,9 @@
       {
         "skillNo": 1,
         "skillName": "迎撃のインターセプト",
-        "skillId": "SK0033",
-        "skillRank": "銀"
+        "skillId": "SK0032",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -21461,8 +21681,9 @@
       {
         "skillNo": 1,
         "skillName": "熟練のインターセプト",
-        "skillId": "SK0042",
-        "skillRank": "銀"
+        "skillId": "SK0041",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -21564,8 +21785,9 @@
       {
         "skillNo": 1,
         "skillName": "勝機を生み出すフィード",
-        "skillId": "SK0043",
-        "skillRank": "銀"
+        "skillId": "SK0042",
+        "skillRank": "銀",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -21668,7 +21890,8 @@
         "skillNo": 1,
         "skillName": "エレガントセーブ",
         "skillId": "SK0003",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -21764,7 +21987,8 @@
         "skillNo": 1,
         "skillName": "コントロールショット",
         "skillId": "SK0008",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -21859,8 +22083,9 @@
       {
         "skillNo": 1,
         "skillName": "勝機を生み出すフィード",
-        "skillId": "SK0043",
-        "skillRank": "銀"
+        "skillId": "SK0042",
+        "skillRank": "銀",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -21955,8 +22180,9 @@
       {
         "skillNo": 1,
         "skillName": "安定したパスワーク",
-        "skillId": "SK0023",
-        "skillRank": "銀"
+        "skillId": "SK0022",
+        "skillRank": "銀",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -22051,8 +22277,9 @@
       {
         "skillNo": 1,
         "skillName": "確信のロングシュート",
-        "skillId": "SK0028",
-        "skillRank": "銀"
+        "skillId": "SK0027",
+        "skillRank": "銀",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -22148,7 +22375,8 @@
         "skillNo": 1,
         "skillName": "ジャックナイフ",
         "skillId": "SK0011",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -22251,7 +22479,8 @@
         "skillNo": 1,
         "skillName": "キラーパス",
         "skillId": "SK0006",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -22354,7 +22583,8 @@
         "skillNo": 1,
         "skillName": "スリップビート",
         "skillId": "SK0014",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -22456,8 +22686,9 @@
       {
         "skillNo": 1,
         "skillName": "変速ギア",
-        "skillId": "SK0058",
-        "skillRank": "銀"
+        "skillId": "SK0057",
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -22553,7 +22784,8 @@
         "skillNo": 1,
         "skillName": "アンストッパブルショット",
         "skillId": "SK0002",
-        "skillRank": "金"
+        "skillRank": "金",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -22656,7 +22888,8 @@
         "skillNo": 1,
         "skillName": "ジャックナイフ",
         "skillId": "SK0011",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -22758,8 +22991,9 @@
       {
         "skillNo": 1,
         "skillName": "仕上げのスパイス",
-        "skillId": "SK0037",
-        "skillRank": "銀"
+        "skillId": "SK0036",
+        "skillRank": "銀",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -22861,8 +23095,9 @@
       {
         "skillNo": 1,
         "skillName": "ルミナストラップ",
-        "skillId": "SK0021",
-        "skillRank": "銀"
+        "skillId": "SK0020",
+        "skillRank": "銀",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -22964,8 +23199,9 @@
       {
         "skillNo": 1,
         "skillName": "奪還",
-        "skillId": "SK0051",
-        "skillRank": "銀"
+        "skillId": "SK0050",
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -23067,8 +23303,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -23163,8 +23400,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -23259,8 +23497,9 @@
       {
         "skillNo": 1,
         "skillName": "楔のパス",
-        "skillId": "SK0061",
-        "skillRank": "銅"
+        "skillId": "SK0060",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -23355,8 +23594,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -23451,8 +23691,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -23547,8 +23788,9 @@
       {
         "skillNo": 1,
         "skillName": "高速クロス",
-        "skillId": "SK0034",
-        "skillRank": "銅"
+        "skillId": "SK0033",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -23643,8 +23885,9 @@
       {
         "skillNo": 1,
         "skillName": "奮戦のパスカット",
-        "skillId": "SK0057",
-        "skillRank": "銅"
+        "skillId": "SK0056",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -23739,8 +23982,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -23835,8 +24079,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -23931,8 +24176,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -24027,8 +24273,9 @@
       {
         "skillNo": 1,
         "skillName": "確信のロングシュート",
-        "skillId": "SK0028",
-        "skillRank": "銅"
+        "skillId": "SK0027",
+        "skillRank": "銅",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -24123,8 +24370,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -24219,8 +24467,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -24316,7 +24565,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -24411,8 +24661,9 @@
       {
         "skillNo": 1,
         "skillName": "操舵のパス",
-        "skillId": "SK0049",
-        "skillRank": "銅"
+        "skillId": "SK0048",
+        "skillRank": "銅",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -24507,8 +24758,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -24603,8 +24855,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -24700,7 +24953,8 @@
         "skillNo": 1,
         "skillName": "ダイナミックタックル",
         "skillId": "SK0015",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -24795,8 +25049,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -24891,8 +25146,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -24987,8 +25243,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -25083,8 +25340,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -25179,8 +25437,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -25275,8 +25534,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -25371,8 +25631,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -25467,8 +25728,9 @@
       {
         "skillNo": 1,
         "skillName": "意外性のあるミドルパス",
-        "skillId": "SK0024",
-        "skillRank": "銅"
+        "skillId": "SK0023",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -25563,8 +25825,9 @@
       {
         "skillNo": 1,
         "skillName": "反撃のパスカット",
-        "skillId": "SK0055",
-        "skillRank": "銅"
+        "skillId": "SK0054",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -25659,8 +25922,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -25755,8 +26019,9 @@
       {
         "skillNo": 1,
         "skillName": "奮戦のパスカット",
-        "skillId": "SK0057",
-        "skillRank": "銅"
+        "skillId": "SK0056",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -25851,8 +26116,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -25947,8 +26213,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -26043,8 +26310,9 @@
       {
         "skillNo": 1,
         "skillName": "楔のパス",
-        "skillId": "SK0061",
-        "skillRank": "銅"
+        "skillId": "SK0060",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -26140,7 +26408,8 @@
         "skillNo": 1,
         "skillName": "コントロールフィード",
         "skillId": "SK0010",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -26235,8 +26504,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -26331,8 +26601,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -26427,8 +26698,9 @@
       {
         "skillNo": 1,
         "skillName": "絶妙なトラップ",
-        "skillId": "SK0047",
-        "skillRank": "銅"
+        "skillId": "SK0046",
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -26523,8 +26795,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -26619,8 +26892,9 @@
       {
         "skillNo": 1,
         "skillName": "打開のドリブル",
-        "skillId": "SK0050",
-        "skillRank": "銅"
+        "skillId": "SK0049",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -26716,7 +26990,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -26811,8 +27086,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -26907,8 +27183,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -27003,8 +27280,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -27099,8 +27377,9 @@
       {
         "skillNo": 1,
         "skillName": "絶妙なトラップ",
-        "skillId": "SK0047",
-        "skillRank": "銅"
+        "skillId": "SK0046",
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -27196,7 +27475,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -27291,8 +27571,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -27387,8 +27668,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -27483,8 +27765,9 @@
       {
         "skillNo": 1,
         "skillName": "反撃のパスカット",
-        "skillId": "SK0055",
-        "skillRank": "銅"
+        "skillId": "SK0054",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -27579,8 +27862,9 @@
       {
         "skillNo": 1,
         "skillName": "敵陣を切り裂くパス",
-        "skillId": "SK0052",
-        "skillRank": "銅"
+        "skillId": "SK0051",
+        "skillRank": "銅",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -27675,8 +27959,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -27771,8 +28056,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -27867,8 +28153,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -27963,8 +28250,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -28059,8 +28347,9 @@
       {
         "skillNo": 1,
         "skillName": "反撃のパスカット",
-        "skillId": "SK0055",
-        "skillRank": "銅"
+        "skillId": "SK0054",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -28155,8 +28444,9 @@
       {
         "skillNo": 1,
         "skillName": "楔のパス",
-        "skillId": "SK0061",
-        "skillRank": "銅"
+        "skillId": "SK0060",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -28251,8 +28541,9 @@
       {
         "skillNo": 1,
         "skillName": "強引な中央突破",
-        "skillId": "SK0031",
-        "skillRank": "銅"
+        "skillId": "SK0030",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -28347,8 +28638,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -28443,8 +28735,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -28540,7 +28833,8 @@
         "skillNo": 1,
         "skillName": "コントロールフィード",
         "skillId": "SK0010",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -28635,8 +28929,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -28731,8 +29026,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -28827,8 +29123,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -28923,8 +29220,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -29019,8 +29317,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -29116,7 +29415,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -29212,7 +29512,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -29307,8 +29608,9 @@
       {
         "skillNo": 1,
         "skillName": "意外性のあるミドルパス",
-        "skillId": "SK0024",
-        "skillRank": "銅"
+        "skillId": "SK0023",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -29403,8 +29705,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -29499,8 +29802,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -29595,8 +29899,9 @@
       {
         "skillNo": 1,
         "skillName": "奮戦のタックル",
-        "skillId": "SK0056",
-        "skillRank": "銅"
+        "skillId": "SK0055",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -29691,8 +29996,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -29787,8 +30093,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -29883,8 +30190,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -29979,8 +30287,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -30076,7 +30385,8 @@
         "skillNo": 1,
         "skillName": "コントロールフィード",
         "skillId": "SK0010",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -30171,8 +30481,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -30267,8 +30578,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -30363,8 +30675,9 @@
       {
         "skillNo": 1,
         "skillName": "展開のドリブル",
-        "skillId": "SK0053",
-        "skillRank": "銅"
+        "skillId": "SK0052",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -30459,8 +30772,9 @@
       {
         "skillNo": 1,
         "skillName": "安定したパスワーク",
-        "skillId": "SK0023",
-        "skillRank": "銅"
+        "skillId": "SK0022",
+        "skillRank": "銅",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -30556,7 +30870,8 @@
         "skillNo": 1,
         "skillName": "ファストフィード",
         "skillId": "SK0019",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -30651,8 +30966,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -30747,8 +31063,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -30850,8 +31167,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -30946,8 +31264,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -31042,8 +31361,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -31138,8 +31458,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -31234,8 +31555,9 @@
       {
         "skillNo": 1,
         "skillName": "操舵のパス",
-        "skillId": "SK0049",
-        "skillRank": "銅"
+        "skillId": "SK0048",
+        "skillRank": "銅",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -31330,8 +31652,9 @@
       {
         "skillNo": 1,
         "skillName": "奮戦のタックル",
-        "skillId": "SK0056",
-        "skillRank": "銅"
+        "skillId": "SK0055",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -31426,8 +31749,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -31522,8 +31846,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -31618,8 +31943,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -31714,8 +32040,9 @@
       {
         "skillNo": 1,
         "skillName": "奮戦のパスカット",
-        "skillId": "SK0057",
-        "skillRank": "銅"
+        "skillId": "SK0056",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -31810,8 +32137,9 @@
       {
         "skillNo": 1,
         "skillName": "意外性のあるミドルパス",
-        "skillId": "SK0024",
-        "skillRank": "銅"
+        "skillId": "SK0023",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -31907,7 +32235,8 @@
         "skillNo": 1,
         "skillName": "ダイナミックタックル",
         "skillId": "SK0015",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -32002,8 +32331,9 @@
       {
         "skillNo": 1,
         "skillName": "絶妙なトラップ",
-        "skillId": "SK0047",
-        "skillRank": "銅"
+        "skillId": "SK0046",
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -32098,8 +32428,9 @@
       {
         "skillNo": 1,
         "skillName": "華麗なトラップ",
-        "skillId": "SK0026",
-        "skillRank": "銅"
+        "skillId": "SK0025",
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -32194,8 +32525,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -32290,8 +32622,9 @@
       {
         "skillNo": 1,
         "skillName": "疾走のトラップ",
-        "skillId": "SK0040",
-        "skillRank": "銅"
+        "skillId": "SK0039",
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -32386,8 +32719,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -32482,8 +32816,9 @@
       {
         "skillNo": 1,
         "skillName": "絶妙なトラップ",
-        "skillId": "SK0047",
-        "skillRank": "銅"
+        "skillId": "SK0046",
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -32578,8 +32913,9 @@
       {
         "skillNo": 1,
         "skillName": "展開のドリブル",
-        "skillId": "SK0053",
-        "skillRank": "銅"
+        "skillId": "SK0052",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -32675,7 +33011,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -32770,8 +33107,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -32866,8 +33204,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -32962,8 +33301,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -33058,8 +33398,9 @@
       {
         "skillNo": 1,
         "skillName": "操舵のパス",
-        "skillId": "SK0049",
-        "skillRank": "銅"
+        "skillId": "SK0048",
+        "skillRank": "銅",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -33154,8 +33495,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -33251,7 +33593,8 @@
         "skillNo": 1,
         "skillName": "コントロールトラップ",
         "skillId": "SK0009",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -33346,8 +33689,9 @@
       {
         "skillNo": 1,
         "skillName": "奮戦のパスカット",
-        "skillId": "SK0057",
-        "skillRank": "銅"
+        "skillId": "SK0056",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -33443,7 +33787,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -33538,8 +33883,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -33634,8 +33980,9 @@
       {
         "skillNo": 1,
         "skillName": "奮戦のパスカット",
-        "skillId": "SK0057",
-        "skillRank": "銅"
+        "skillId": "SK0056",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -33730,8 +34077,9 @@
       {
         "skillNo": 1,
         "skillName": "高速クロス",
-        "skillId": "SK0034",
-        "skillRank": "銅"
+        "skillId": "SK0033",
+        "skillRank": "銅",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -33826,8 +34174,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -33923,7 +34272,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -34018,8 +34368,9 @@
       {
         "skillNo": 1,
         "skillName": "疾走のトラップ",
-        "skillId": "SK0040",
-        "skillRank": "銅"
+        "skillId": "SK0039",
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -34114,8 +34465,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -34210,8 +34562,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -34307,7 +34660,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -34403,7 +34757,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -34498,8 +34853,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -34594,8 +34950,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -34690,8 +35047,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -34786,8 +35144,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -34883,7 +35242,8 @@
         "skillNo": 1,
         "skillName": "コントロールトラップ",
         "skillId": "SK0009",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -34978,8 +35338,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -35074,8 +35435,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -35170,8 +35532,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銅"
+        "skillId": "SK0035",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -35267,7 +35630,8 @@
         "skillNo": 1,
         "skillName": "ファストフィード",
         "skillId": "SK0019",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ロングパス"
       }
     ],
     "traits": [
@@ -35362,8 +35726,9 @@
       {
         "skillNo": 1,
         "skillName": "打開のドリブル",
-        "skillId": "SK0050",
-        "skillRank": "銅"
+        "skillId": "SK0049",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -35458,8 +35823,9 @@
       {
         "skillNo": 1,
         "skillName": "安定したパスワーク",
-        "skillId": "SK0023",
-        "skillRank": "銅"
+        "skillId": "SK0022",
+        "skillRank": "銅",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -35554,8 +35920,9 @@
       {
         "skillNo": 1,
         "skillName": "奮戦のタックル",
-        "skillId": "SK0056",
-        "skillRank": "銅"
+        "skillId": "SK0055",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -35651,7 +36018,8 @@
         "skillNo": 1,
         "skillName": "コントロールトラップ",
         "skillId": "SK0009",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -35747,7 +36115,8 @@
         "skillNo": 1,
         "skillName": "テクニカルドリブル",
         "skillId": "SK0017",
-        "skillRank": "銅"
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -35842,8 +36211,9 @@
       {
         "skillNo": 1,
         "skillName": "切り裂くドリブル",
-        "skillId": "SK0045",
-        "skillRank": "銅"
+        "skillId": "SK0044",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -35938,8 +36308,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -36034,8 +36405,9 @@
       {
         "skillNo": 1,
         "skillName": "変速ギア",
-        "skillId": "SK0058",
-        "skillRank": "銀"
+        "skillId": "SK0057",
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -36138,7 +36510,8 @@
         "skillNo": 1,
         "skillName": "エレガントセーブ",
         "skillId": "SK0003",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -36240,8 +36613,9 @@
       {
         "skillNo": 1,
         "skillName": "仕上げのスパイス",
-        "skillId": "SK0037",
-        "skillRank": "銀"
+        "skillId": "SK0036",
+        "skillRank": "銀",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -36343,8 +36717,9 @@
       {
         "skillNo": 1,
         "skillName": "遮断のアクション",
-        "skillId": "SK0041",
-        "skillRank": "銀"
+        "skillId": "SK0040",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -36440,7 +36815,8 @@
         "skillNo": 1,
         "skillName": "コントロールショット",
         "skillId": "SK0008",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -36543,8 +36919,9 @@
       {
         "skillNo": 1,
         "skillName": "変速ギア",
-        "skillId": "SK0058",
-        "skillRank": "銀"
+        "skillId": "SK0057",
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -36648,7 +37025,8 @@
         "skillNo": 1,
         "skillName": "コントロールショット",
         "skillId": "SK0008",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -36752,7 +37130,8 @@
         "skillNo": 1,
         "skillName": "ジャックナイフ",
         "skillId": "SK0011",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -36856,7 +37235,8 @@
         "skillNo": 1,
         "skillName": "スリップビート",
         "skillId": "SK0014",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -36959,7 +37339,8 @@
         "skillNo": 1,
         "skillName": "3Dパス",
         "skillId": "SK0001",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -37061,8 +37442,9 @@
       {
         "skillNo": 1,
         "skillName": "奪還",
-        "skillId": "SK0051",
-        "skillRank": "銀"
+        "skillId": "SK0050",
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -37164,8 +37546,9 @@
       {
         "skillNo": 1,
         "skillName": "遮断のアクション",
-        "skillId": "SK0041",
-        "skillRank": "銀"
+        "skillId": "SK0040",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -37267,8 +37650,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銀"
+        "skillId": "SK0024",
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -37363,8 +37747,9 @@
       {
         "skillNo": 1,
         "skillName": "冴え渡るインターセプト",
-        "skillId": "SK0036",
-        "skillRank": "銀"
+        "skillId": "SK0035",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -37460,7 +37845,8 @@
         "skillNo": 1,
         "skillName": "エレガントセーブ",
         "skillId": "SK0003",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -37562,8 +37948,9 @@
       {
         "skillNo": 1,
         "skillName": "敵陣を切り裂くパス",
-        "skillId": "SK0052",
-        "skillRank": "銅"
+        "skillId": "SK0051",
+        "skillRank": "銅",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -37658,8 +38045,9 @@
       {
         "skillNo": 1,
         "skillName": "魂のワンタッチ",
-        "skillId": "SK0035",
-        "skillRank": "銀"
+        "skillId": "SK0034",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -37762,7 +38150,8 @@
         "skillNo": 1,
         "skillName": "スリップビート",
         "skillId": "SK0014",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -37864,8 +38253,9 @@
       {
         "skillNo": 1,
         "skillName": "ロングキャノン",
-        "skillId": "SK0022",
-        "skillRank": "銀"
+        "skillId": "SK0021",
+        "skillRank": "銀",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -37967,8 +38357,9 @@
       {
         "skillNo": 1,
         "skillName": "遮断のアクション",
-        "skillId": "SK0041",
-        "skillRank": "銀"
+        "skillId": "SK0040",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -38071,7 +38462,8 @@
         "skillNo": 1,
         "skillName": "オープンスペースの演出家",
         "skillId": "SK0004",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -38173,8 +38565,9 @@
       {
         "skillNo": 1,
         "skillName": "反撃のパスカット",
-        "skillId": "SK0055",
-        "skillRank": "銀"
+        "skillId": "SK0054",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -38269,8 +38662,9 @@
       {
         "skillNo": 1,
         "skillName": "奮戦のパスカット",
-        "skillId": "SK0057",
-        "skillRank": "銅"
+        "skillId": "SK0056",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -38365,8 +38759,9 @@
       {
         "skillNo": 1,
         "skillName": "点で合わせるシュート",
-        "skillId": "SK0054",
-        "skillRank": "銅"
+        "skillId": "SK0053",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -38462,7 +38857,8 @@
         "skillNo": 1,
         "skillName": "アンストッパブルショット",
         "skillId": "SK0002",
-        "skillRank": "金"
+        "skillRank": "金",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -38565,7 +38961,8 @@
         "skillNo": 1,
         "skillName": "カッティングエッジ",
         "skillId": "SK0005",
-        "skillRank": "金"
+        "skillRank": "金",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -38668,7 +39065,8 @@
         "skillNo": 1,
         "skillName": "チェーンカッター",
         "skillId": "SK0016",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -38770,8 +39168,9 @@
       {
         "skillNo": 1,
         "skillName": "遮断のアクション",
-        "skillId": "SK0041",
-        "skillRank": "銀"
+        "skillId": "SK0040",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -38873,8 +39272,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異的なセービング",
-        "skillId": "SK0032",
-        "skillRank": "銅"
+        "skillId": "SK0031",
+        "skillRank": "銅",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -38969,8 +39369,9 @@
       {
         "skillNo": 1,
         "skillName": "奪還",
-        "skillId": "SK0051",
-        "skillRank": "銀"
+        "skillId": "SK0050",
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -39072,8 +39473,9 @@
       {
         "skillNo": 1,
         "skillName": "ルミナストラップ",
-        "skillId": "SK0021",
-        "skillRank": "銀"
+        "skillId": "SK0020",
+        "skillRank": "銀",
+        "skillCategory": "トラップ"
       }
     ],
     "traits": [
@@ -39176,7 +39578,8 @@
         "skillNo": 1,
         "skillName": "ジャックナイフ",
         "skillId": "SK0011",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -39279,7 +39682,8 @@
         "skillNo": 1,
         "skillName": "チェーンカッター",
         "skillId": "SK0016",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -39382,7 +39786,8 @@
         "skillNo": 1,
         "skillName": "アンストッパブルショット",
         "skillId": "SK0002",
-        "skillRank": "金"
+        "skillRank": "金",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -39484,8 +39889,9 @@
       {
         "skillNo": 1,
         "skillName": "上空の覇者",
-        "skillId": "SK0044",
-        "skillRank": "金"
+        "skillId": "SK0043",
+        "skillRank": "金",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -39587,8 +39993,9 @@
       {
         "skillNo": 1,
         "skillName": "魂のワンタッチ",
-        "skillId": "SK0035",
-        "skillRank": "銀"
+        "skillId": "SK0034",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -39684,7 +40091,8 @@
         "skillNo": 1,
         "skillName": "ジャックナイフ",
         "skillId": "SK0011",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -39779,8 +40187,9 @@
       {
         "skillNo": 1,
         "skillName": "ロングキャノン",
-        "skillId": "SK0022",
-        "skillRank": "銀"
+        "skillId": "SK0021",
+        "skillRank": "銀",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -39876,7 +40285,8 @@
         "skillNo": 1,
         "skillName": "コントロールショット",
         "skillId": "SK0008",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -39971,8 +40381,9 @@
       {
         "skillNo": 1,
         "skillName": "魂のワンタッチ",
-        "skillId": "SK0035",
-        "skillRank": "銀"
+        "skillId": "SK0034",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -40068,7 +40479,8 @@
         "skillNo": 1,
         "skillName": "エレガントセーブ",
         "skillId": "SK0003",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -40171,7 +40583,8 @@
         "skillNo": 1,
         "skillName": "コントロールショット",
         "skillId": "SK0008",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -40274,7 +40687,8 @@
         "skillNo": 1,
         "skillName": "スリップビート",
         "skillId": "SK0014",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -40369,8 +40783,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -40465,8 +40880,9 @@
       {
         "skillNo": 1,
         "skillName": "流星の弾道",
-        "skillId": "SK0060",
-        "skillRank": "金"
+        "skillId": "SK0059",
+        "skillRank": "金",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -40568,8 +40984,9 @@
       {
         "skillNo": 1,
         "skillName": "逆襲の初動",
-        "skillId": "SK0030",
-        "skillRank": "金"
+        "skillId": "SK0029",
+        "skillRank": "金",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -40672,7 +41089,8 @@
         "skillNo": 1,
         "skillName": "3Dパス",
         "skillId": "SK0001",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -40775,7 +41193,8 @@
         "skillNo": 1,
         "skillName": "エレガントセーブ",
         "skillId": "SK0003",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -40877,8 +41296,9 @@
       {
         "skillNo": 1,
         "skillName": "ベルベットパス",
-        "skillId": "SK0062",
-        "skillRank": "金"
+        "skillId": "SK0061",
+        "skillRank": "金",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -40981,7 +41401,8 @@
         "skillNo": 1,
         "skillName": "ジャックナイフ",
         "skillId": "SK0011",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -41083,8 +41504,9 @@
       {
         "skillNo": 1,
         "skillName": "奪還",
-        "skillId": "SK0051",
-        "skillRank": "銀"
+        "skillId": "SK0050",
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -41187,7 +41609,8 @@
         "skillNo": 1,
         "skillName": "コントロールショット",
         "skillId": "SK0008",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -41289,8 +41712,9 @@
       {
         "skillNo": 1,
         "skillName": "鋭角的なタックル",
-        "skillId": "SK0025",
-        "skillRank": "銅"
+        "skillId": "SK0024",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -41386,8 +41810,9 @@
       {
         "skillNo": 1,
         "skillName": "ベルベットパス",
-        "skillId": "SK0062",
-        "skillRank": "金"
+        "skillId": "SK0061",
+        "skillRank": "金",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -41489,8 +41914,9 @@
       {
         "skillNo": 1,
         "skillName": "奪還",
-        "skillId": "SK0051",
-        "skillRank": "銀"
+        "skillId": "SK0050",
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -41592,8 +42018,9 @@
       {
         "skillNo": 1,
         "skillName": "上空の覇者",
-        "skillId": "SK0044",
-        "skillRank": "金"
+        "skillId": "SK0043",
+        "skillRank": "金",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -41696,8 +42123,9 @@
       {
         "skillNo": 1,
         "skillName": "魂のワンタッチ",
-        "skillId": "SK0035",
-        "skillRank": "銀"
+        "skillId": "SK0034",
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -41800,8 +42228,9 @@
       {
         "skillNo": 1,
         "skillName": "狙いすましたシュート",
-        "skillId": "SK0048",
-        "skillRank": "銅"
+        "skillId": "SK0047",
+        "skillRank": "銅",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -41897,8 +42326,9 @@
       {
         "skillNo": 1,
         "skillName": "展開のドリブル",
-        "skillId": "SK0053",
-        "skillRank": "銅"
+        "skillId": "SK0052",
+        "skillRank": "銅",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -41994,7 +42424,8 @@
         "skillNo": 1,
         "skillName": "コントロールショット",
         "skillId": "SK0008",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -42097,7 +42528,8 @@
         "skillNo": 1,
         "skillName": "スリップビート",
         "skillId": "SK0014",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -42200,7 +42632,8 @@
         "skillNo": 1,
         "skillName": "ジャックナイフ",
         "skillId": "SK0011",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -42303,7 +42736,8 @@
         "skillNo": 1,
         "skillName": "チェーンカッター",
         "skillId": "SK0016",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -42398,8 +42832,9 @@
       {
         "skillNo": 1,
         "skillName": "ドリブンパス",
-        "skillId": "SK0063",
-        "skillRank": "銀"
+        "skillId": "SK0062",
+        "skillRank": "銀",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -42501,8 +42936,9 @@
       {
         "skillNo": 1,
         "skillName": "ショックウェーブ",
-        "skillId": "SK0064",
-        "skillRank": "金"
+        "skillId": "SK0063",
+        "skillRank": "金",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -42605,8 +43041,9 @@
       {
         "skillNo": 1,
         "skillName": "驚異の弾道",
-        "skillId": "SK0065",
-        "skillRank": "金"
+        "skillId": "SK0064",
+        "skillRank": "金",
+        "skillCategory": "ロングシュート"
       }
     ],
     "traits": [
@@ -42708,8 +43145,9 @@
       {
         "skillNo": 1,
         "skillName": "迎撃のインターセプト",
-        "skillId": "SK0033",
-        "skillRank": "銀"
+        "skillId": "SK0032",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -42812,7 +43250,8 @@
         "skillNo": 1,
         "skillName": "エレガントセーブ",
         "skillId": "SK0003",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "セービング"
       }
     ],
     "traits": [
@@ -42914,8 +43353,9 @@
       {
         "skillNo": 1,
         "skillName": "奮戦のタックル",
-        "skillId": "SK0056",
-        "skillRank": "銅"
+        "skillId": "SK0055",
+        "skillRank": "銅",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -43010,8 +43450,9 @@
       {
         "skillNo": 1,
         "skillName": "エリアの格闘家",
-        "skillId": "SK0066",
-        "skillRank": "銀"
+        "skillId": "SK0065",
+        "skillRank": "銀",
+        "skillCategory": "コンタクト"
       }
     ],
     "traits": [
@@ -43114,7 +43555,8 @@
         "skillNo": 1,
         "skillName": "チェーンカッター",
         "skillId": "SK0016",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -43216,8 +43658,9 @@
       {
         "skillNo": 1,
         "skillName": "熟練のインターセプト",
-        "skillId": "SK0042",
-        "skillRank": "銀"
+        "skillId": "SK0041",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -43320,7 +43763,8 @@
         "skillNo": 1,
         "skillName": "ジャックナイフ",
         "skillId": "SK0011",
-        "skillRank": "銀"
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -43423,8 +43867,9 @@
       {
         "skillNo": 1,
         "skillName": "変速ギア",
-        "skillId": "SK0058",
-        "skillRank": "銀"
+        "skillId": "SK0057",
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -43526,8 +43971,9 @@
       {
         "skillNo": 1,
         "skillName": "奪還",
-        "skillId": "SK0051",
-        "skillRank": "銀"
+        "skillId": "SK0050",
+        "skillRank": "銀",
+        "skillCategory": "タックル"
       }
     ],
     "traits": [
@@ -43629,8 +44075,9 @@
       {
         "skillNo": 1,
         "skillName": "熟練のインターセプト",
-        "skillId": "SK0042",
-        "skillRank": "銀"
+        "skillId": "SK0041",
+        "skillRank": "銀",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -43732,8 +44179,9 @@
       {
         "skillNo": 1,
         "skillName": "絶好の楔",
-        "skillId": "SK0046",
-        "skillRank": "銀"
+        "skillId": "SK0045",
+        "skillRank": "銀",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -43829,7 +44277,8 @@
         "skillNo": 1,
         "skillName": "アンストッパブルショット",
         "skillId": "SK0002",
-        "skillRank": "金"
+        "skillRank": "金",
+        "skillCategory": "シュート"
       }
     ],
     "traits": [
@@ -43931,8 +44380,9 @@
       {
         "skillNo": 1,
         "skillName": "クリティカルウェッジ",
-        "skillId": "SK0067",
-        "skillRank": "金"
+        "skillId": "SK0066",
+        "skillRank": "金",
+        "skillCategory": "パス"
       }
     ],
     "traits": [
@@ -44034,8 +44484,9 @@
       {
         "skillNo": 1,
         "skillName": "演出のアーティスト",
-        "skillId": "SK0068",
-        "skillRank": "金"
+        "skillId": "SK0067",
+        "skillRank": "金",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -44137,8 +44588,9 @@
       {
         "skillNo": 1,
         "skillName": "エリアの格闘家",
-        "skillId": "SK0066",
-        "skillRank": "銀"
+        "skillId": "SK0065",
+        "skillRank": "銀",
+        "skillCategory": "コンタクト"
       }
     ],
     "traits": [
@@ -44240,8 +44692,9 @@
       {
         "skillNo": 1,
         "skillName": "反撃のパスカット",
-        "skillId": "SK0055",
-        "skillRank": "銅"
+        "skillId": "SK0054",
+        "skillRank": "銅",
+        "skillCategory": "パスカット"
       }
     ],
     "traits": [
@@ -44337,7 +44790,8 @@
         "skillNo": 1,
         "skillName": "カッティングエッジ",
         "skillId": "SK0005",
-        "skillRank": "金"
+        "skillRank": "金",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -44439,8 +44893,9 @@
       {
         "skillNo": 1,
         "skillName": "妙なる調べ",
-        "skillId": "SK0069",
-        "skillRank": "金"
+        "skillId": "SK0068",
+        "skillRank": "金",
+        "skillCategory": "ショートパス"
       }
     ],
     "traits": [
@@ -44542,8 +44997,9 @@
       {
         "skillNo": 1,
         "skillName": "予測不能",
-        "skillId": "SK0070",
-        "skillRank": "金"
+        "skillId": "SK0069",
+        "skillRank": "金",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [
@@ -44645,8 +45101,9 @@
       {
         "skillNo": 1,
         "skillName": "ビルドアップドライブ",
-        "skillId": "SK0071",
-        "skillRank": "銀"
+        "skillId": "SK0070",
+        "skillRank": "銀",
+        "skillCategory": "ドリブル"
       }
     ],
     "traits": [

@@ -2001,6 +2001,123 @@
     .comparisonDelta{ font-size:7.5px; }
   }
 
+
+  /* Image-first candidate picker: native select remains the source of selected player_id. */
+  .controlCard{ position:relative; overflow:visible; z-index:3; }
+  .candidatePickWrap{ position:relative; min-width:0; }
+  .candidatePickWrap.is-enhanced #playerPick{ display:none; }
+  .playerPickEnhanced{ position:relative; min-width:0; }
+  .playerPickEnhanced[hidden],.playerPickOptions[hidden]{ display:none !important; }
+  .playerPickTrigger{
+    display:flex; align-items:center; justify-content:space-between; gap:7px;
+    width:100%; min-height:52px; padding:5px 10px;
+    border:2px solid #e1e5ef; border-radius:14px;
+    background:#fff; color:#111827; text-align:left; cursor:pointer;
+    font-size:14px; font-weight:900;
+  }
+  .playerPickTrigger:disabled{ opacity:.65; cursor:default; }
+  .playerPickTrigger:focus-visible{ outline:3px solid #79b6ee; outline-offset:2px; }
+  .playerPickSelected{ display:flex; align-items:center; gap:8px; min-width:0; }
+  .playerPickSelectedName{ min-width:0; overflow-wrap:anywhere; line-height:1.35; }
+  .playerPickThumb{ width:38px; height:44px; object-fit:contain; flex:0 0 38px; }
+  .playerPickThumbFallback{ display:none; align-items:center; justify-content:center; width:38px; height:44px; flex:0 0 38px; background:#f1f5f9; border-radius:7px; font-size:10px; color:#64748b; }
+  .playerPickChevron{ flex:0 0 auto; color:#64748b; }
+  .playerPickOptions{
+    position:absolute; z-index:40; left:0; right:0; top:calc(100% + 3px);
+    max-height:min(350px,52vh); overflow-y:auto; overscroll-behavior:contain;
+    padding:4px; border:2px solid #cbd5e1; border-radius:12px;
+    background:#fff; box-shadow:0 15px 28px rgba(15,23,42,.18);
+  }
+  .playerPickOption{
+    display:flex; align-items:center; gap:9px;
+    width:100%; min-height:52px; padding:4px 7px;
+    border:0; border-radius:9px; background:#fff; text-align:left;
+    color:#111827; font-size:14px; font-weight:800; cursor:pointer;
+  }
+  .playerPickOption:hover,.playerPickOption:focus-visible{ background:#edf6fc; outline:none; }
+  .playerPickOption[aria-selected="true"]{ background:#e5f4fa; color:#0b3d50; }
+  .playerPickOption .playerPickThumb{ width:40px; height:45px; flex-basis:40px; }
+  .playerPickOptionName{ min-width:0; overflow-wrap:anywhere; line-height:1.4; }
+
+  /* Normal view: detail-page links below the same player images as comparison view. */
+  .evaluationTabCell{ display:flex; flex-direction:column; min-width:0; }
+  .evaluationTabCell .evaluationTab{ flex:1 1 auto; height:auto; }
+  .evaluationTabCell .comparisonPlayerDetailLink,
+  .evaluationTabCell .comparisonPlayerDetailPlaceholder{ flex:0 0 auto; }
+
+  /* Normal view: five equal-width units, skills span two and traits span three. */
+  .resultAbilities{
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:0;
+    padding:0;
+    border-top:1px solid #d8e3ea;
+  }
+  .resultAbilitySection{ min-width:0; display:flex; flex-direction:column; }
+  .resultAbilitySection:first-child{ grid-column:span 2; }
+  .resultAbilitySection:last-child{ grid-column:span 3; }
+  .resultAbilityTitle{
+    margin:0; padding:6px 2px;
+    background:var(--green); color:#fff; text-align:center;
+    font-size:12px; font-weight:1000; line-height:1.15;
+    border-right:1px solid #d8e3ea;
+  }
+  .resultAbilitySection:last-child .resultAbilityTitle{ border-right:0; }
+  .resultAbilityItems{
+    flex:1 1 auto;
+    display:flex;
+    align-items:stretch;
+    gap:0;
+  }
+  .resultAbilityItem{
+    flex:1 1 0;
+    min-width:0;
+    padding:5px 2px;
+    background:#fff;
+    border-right:1px solid #d8e3ea;
+    text-align:center;
+  }
+  .resultAbilitySection:last-child .resultAbilityItem:last-child{ border-right:0; }
+  .resultAbilityRank{
+    display:flex; align-items:center; justify-content:center;
+    min-width:0; min-height:34px; padding:3px 2px;
+    border:1px solid #cbd5e1; border-radius:6px;
+    font-size:10px; font-weight:1000; line-height:1.2;
+    overflow-wrap:anywhere; word-break:break-word; white-space:normal;
+    box-shadow:0 1px 3px rgba(15,23,42,.08);
+  }
+  .resultAbilityRank.rank-gold{ background:linear-gradient(180deg,var(--gold1),var(--gold2)); border-color:#b89423; color:#4b3800; }
+  .resultAbilityRank.rank-silver{ background:linear-gradient(180deg,var(--silver1),var(--silver2)); border-color:#9b9b9b; color:#343434; }
+  .resultAbilityRank.rank-bronze{ background:linear-gradient(180deg,var(--bronze1),var(--bronze2)); border-color:#ad6d32; color:#4a2507; }
+  .resultAbilityRank.rank-other{ background:#f1f5f9; color:#334155; }
+  .resultAbilityMeta{
+    display:block; margin-top:4px; color:#526275;
+    font-size:9px; font-weight:800; line-height:1.3;
+    overflow-wrap:anywhere; word-break:break-word;
+  }
+  .resultAbilityMissing{ display:block; padding:6px 2px; color:#64748b; font-size:11px; }
+
+  /* Prevent the existing grid items from expanding the whole page on narrow phones. */
+  @media(max-width:359px){
+    .grid{ grid-template-columns:minmax(0,1fr); }
+    .grid > .card{ min-width:0; }
+  }
+
+  /* Tendency values remain numeric in both rank and number modes. */
+  .comparisonTendency{ font-variant-numeric:tabular-nums; font-size:inherit; font-weight:1000; }
+  .comparisonTendency.is-positive{ color:#0b63d1; }
+  .comparisonTendency.is-negative{ color:#c62828; }
+  .comparisonTendency.is-zero{ color:#64748b; }
+  @media(max-width:520px){
+    .playerPickTrigger{ min-height:49px; font-size:13px; padding:4px 8px; }
+    .playerPickOption{ font-size:13px; }
+    .resultAbilityTitle{ font-size:9px; padding:5px 1px; }
+    .resultAbilityItem{ padding:4px 1px; }
+    .resultAbilityRank{ min-height:30px; padding:2px 1px; font-size:8px; line-height:1.15; }
+    .resultAbilityMeta{ margin-top:3px; font-size:7.5px; line-height:1.25; }
+    .evaluationTabCell .comparisonPlayerDetailLink{ font-size:7.4px; }
+  }
+
 </style>
 
 <style id="review-content-styles">
@@ -2100,8 +2217,15 @@
 </div>
 
         <div class="candidatePickWrap" style="margin-top:12px;">
-          <label>評価するSP選手（候補から1人選択）</label>
+          <label for="playerPickTrigger">評価するSP選手（候補から1人選択）</label>
           <select id="playerPick"><option value="">（候補を読み込み中です）</option></select>
+          <div id="playerPickEnhanced" class="playerPickEnhanced" hidden>
+            <button type="button" id="playerPickTrigger" class="playerPickTrigger" aria-haspopup="listbox" aria-controls="playerPickOptions" aria-expanded="false" disabled>
+              <span id="playerPickSelected" class="playerPickSelected">（候補を読み込み中です）</span>
+              <span class="playerPickChevron" aria-hidden="true">▾</span>
+            </button>
+            <div id="playerPickOptions" class="playerPickOptions" role="listbox" aria-label="評価するSP選手の候補" hidden></div>
+          </div>
         </div>
 
         <div class="btnRow" style="margin-top:12px;">
@@ -2571,6 +2695,9 @@ function renderEvaluationTabs(){
                   : `<span class="evaluationTabEmpty">＋</span>`}
               </span>
             </button>
+            ${pid
+              ? `<a class="comparisonPlayerDetailLink" href="players/${encodeURIComponent(pid)}.html" target="_blank" rel="noopener noreferrer" aria-label="${esc(name)}の詳細情報を別タブで見る">詳細情報を見る</a>`
+              : `<span class="comparisonPlayerDetailPlaceholder" aria-hidden="true"></span>`}
           </div>
         `;
       }).join("")}
@@ -2807,6 +2934,26 @@ function renderComparisonAbilityRow(label, values){
   `;
 }
 
+
+const TENDENCY_SCHEMA = [
+  ["attack","攻撃"], ["defense","守備"], ["dribble","ドリブル"],
+  ["shoot","シュート"], ["longShoot","ロングシュート"],
+  ["shortPass","ショートパス"], ["longPass","ロングパス"],
+  ["throughPass","スルーパス"], ["cutIn","切り込み"],
+  ["keep","キープ"], ["delay","ディレイ"],
+  ["forwardRun","飛び出し"], ["feint","フェイント"], ["press","プレス"]
+];
+
+function comparisonTendencyValueHtml(player, key){
+  if(!player) return "-";
+  const raw = player.tendencies?.[key];
+  const value = statusNum(raw);
+  if(value === null) return "-";
+  const cls = value > 0 ? "is-positive" : value < 0 ? "is-negative" : "is-zero";
+  const sign = value > 0 ? "+" : "";
+  return `<span class="comparisonTendency ${cls}">${sign}${esc(value.toLocaleString("ja-JP"))}</span>`;
+}
+
 function renderComparisonView(){
   const out = $("resultArea");
   if(!out) return;
@@ -2838,6 +2985,9 @@ function renderComparisonView(){
     "特徴",
     players.map(p=>comparisonTraitValueHtml(p))
   );
+  const tendencyRows = TENDENCY_SCHEMA.map(([key,label])=>
+    renderComparisonRow(label, players.map(p=>comparisonTendencyValueHtml(p,key)))
+  ).join("");
 
   const categoryRows = STATUS_CATEGORIES.map(category=>{
     const rawValues = players.map(p=>getComparisonCategoryRawValue(p, category));
@@ -2863,7 +3013,7 @@ function renderComparisonView(){
         <div class="comparisonToolbar">
           <div class="comparisonToolbarTitle">
             <strong>詳細ステータス比較</strong>
-            <small>基本情報・基本数値・スキル・特徴・6カテゴリ・17項目を横並び比較／基本数値・6カテゴリ・17項目は表示切替対応</small>
+            <small>基本情報・基本数値・スキル・特徴・6カテゴリ・17項目・選手傾向を横並び比較／基本数値・6カテゴリ・17項目は表示切替対応</small>
           </div>
           <button type="button" id="comparisonDisplayToggle" class="comparisonDisplayToggle">表示：${COMPARISON_DISPLAY_MODE === "rank" ? "ランク" : "数値"}</button>
         </div>
@@ -2898,6 +3048,9 @@ function renderComparisonView(){
 
         <div class="comparisonSection">17詳細項目</div>
         ${detailRows}
+
+        <div class="comparisonSection">選手傾向</div>
+        ${tendencyRows}
       </div>
     </div>
   `;
@@ -3437,13 +3590,105 @@ function getFilteredCandidates(){
   });
 }
 
+
+let PLAYER_PICK_CANDIDATES = [];
+
+function playerPickImageHtml(player){
+  const pid = getPlayerId(player);
+  return `<img class="playerPickThumb" src="${esc(evaluationTabImageSrc(pid))}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><span class="playerPickThumbFallback" aria-hidden="true">－</span>`;
+}
+
+function closePlayerPick(){
+  const menu = $("playerPickOptions");
+  const trigger = $("playerPickTrigger");
+  if(menu) menu.hidden = true;
+  if(trigger) trigger.setAttribute("aria-expanded", "false");
+}
+
+function renderPlayerPickOptions(){
+  const menu = $("playerPickOptions");
+  if(!menu) return;
+  const selected = $("playerPick").value;
+  menu.innerHTML = PLAYER_PICK_CANDIDATES.map(player=>{
+    const pid = getPlayerId(player);
+    const name = normalize(player.name || player.player_name || pid || "(名称不明)");
+    return `<button type="button" role="option" class="playerPickOption" data-player-pick-id="${esc(pid)}" aria-selected="${pid===selected ? "true" : "false"}">${playerPickImageHtml(player)}<span class="playerPickOptionName">${esc(name)}</span></button>`;
+  }).join("");
+}
+
+function syncPlayerPickDisplay(){
+  const enhanced = $("playerPickEnhanced");
+  if(!enhanced || enhanced.hidden) return;
+  const selected = $("playerPick").value;
+  const player = PLAYER_PICK_CANDIDATES.find(p=>getPlayerId(p)===selected) || findPlayerById(selected);
+  $("playerPickTrigger").disabled = !player;
+  $("playerPickSelected").innerHTML = player
+    ? `${playerPickImageHtml(player)}<span class="playerPickSelectedName">${esc(player.name || player.player_name || selected)}</span>`
+    : `<span class="playerPickSelectedName">（該当なし）</span>`;
+  if(!$("playerPickOptions").hidden) renderPlayerPickOptions();
+}
+
+function initPlayerPickEnhanced(){
+  const enhanced = $("playerPickEnhanced");
+  const trigger = $("playerPickTrigger");
+  const menu = $("playerPickOptions");
+  if(!enhanced || !trigger || !menu) return;
+  enhanced.hidden = false;
+  enhanced.closest(".candidatePickWrap").classList.add("is-enhanced");
+  trigger.addEventListener("click", ()=>{
+    if(trigger.disabled) return;
+    if(!menu.hidden){ closePlayerPick(); return; }
+    renderPlayerPickOptions();
+    menu.hidden = false;
+    trigger.setAttribute("aria-expanded", "true");
+    const selected = [...menu.querySelectorAll("[data-player-pick-id]")]
+      .find(b=>b.getAttribute("data-player-pick-id") === $("playerPick").value);
+    selected?.scrollIntoView({ block:"nearest" });
+  });
+  trigger.addEventListener("keydown", e=>{
+    if(e.key === "ArrowDown" || e.key === "ArrowUp"){
+      e.preventDefault();
+      if(menu.hidden) trigger.click();
+      const options = [...menu.querySelectorAll("[data-player-pick-id]")];
+      const first = e.key === "ArrowUp" ? options[options.length-1] : (options.find(b=>b.getAttribute("aria-selected")==="true") || options[0]);
+      first?.focus();
+    }
+  });
+  menu.addEventListener("click", e=>{
+    const option = e.target.closest("[data-player-pick-id]");
+    if(!option) return;
+    $("playerPick").value = option.getAttribute("data-player-pick-id");
+    syncPlayerPickDisplay();
+    closePlayerPick();
+    trigger.focus();
+  });
+  menu.addEventListener("keydown", e=>{
+    if(e.key === "Escape"){
+      e.preventDefault(); closePlayerPick(); trigger.focus(); return;
+    }
+    if(e.key !== "ArrowDown" && e.key !== "ArrowUp" && e.key !== "Home" && e.key !== "End") return;
+    e.preventDefault();
+    const options = [...menu.querySelectorAll("[data-player-pick-id]")];
+    const i = options.indexOf(document.activeElement);
+    const next = e.key === "Home" ? 0 : e.key === "End" ? options.length-1
+      : e.key === "ArrowDown" ? Math.min(options.length-1,i+1) : Math.max(0,i-1);
+    options[next]?.focus();
+  });
+  document.addEventListener("pointerdown", e=>{ if(!enhanced.contains(e.target)) closePlayerPick(); });
+  document.addEventListener("focusin", e=>{ if(!enhanced.contains(e.target)) closePlayerPick(); });
+  $("playerPick").addEventListener("change", syncPlayerPickDisplay);
+}
+
 function refreshCandidatePick(){
   const list = getFilteredCandidates();
   const sel = $("playerPick");
   const previous = normalize(sel.value);
 
+  PLAYER_PICK_CANDIDATES = list;
+  closePlayerPick();
   if(!list.length){
     sel.innerHTML = `<option value="">（該当なし）</option>`;
+    syncPlayerPickDisplay();
     setErr("条件に一致するSP選手が見つかりませんでした。");
     return { list:[], message:"条件に一致するSP選手が見つかりませんでした。" };
   }
@@ -3455,6 +3700,7 @@ function refreshCandidatePick(){
   }).join("");
 
   if(previous && list.some(p=>getPlayerId(p)===previous)) sel.value = previous;
+  syncPlayerPickDisplay();
   setErr("");
   return { list, message:`${list.length}人の候補が見つかりました。` };
 }
@@ -4096,6 +4342,34 @@ function openComboList(title, combos){
 }
 
 /* ===== Render ===== */
+
+function renderResultAbilityItems(player, kind){
+  const isSkill = kind === "skill";
+  const items = isSkill ? player?.skills : player?.traits;
+  const nameKey = isSkill ? "skillName" : "traitName";
+  const rankKey = isSkill ? "skillRank" : "traitRank";
+  const metaKey = isSkill ? "skillCategory" : "traitDescription";
+  const entries = Array.isArray(items) ? items.filter(item=>normalize(item?.[nameKey])) : [];
+  if(!entries.length) return `<span class="resultAbilityMissing">-</span>`;
+  return entries.map(item=>{
+    const name = normalize(item[nameKey]);
+    const rank = normalize(item[rankKey]);
+    const detail = normalize(item[metaKey]);
+    const metaLabel = isSkill ? "スキルカテゴリ" : "発動条件";
+    return `<div class="resultAbilityItem">
+      <span class="resultAbilityRank ${comparisonAbilityRankClass(rank)}" title="${esc(`${name}（${rank || "ランク未設定"}）`)}">${esc(name)}</span>
+      <span class="resultAbilityMeta">${metaLabel}：${esc(detail || "未登録")}</span>
+    </div>`;
+  }).join("");
+}
+
+function renderResultAbilities(player){
+  return `<div class="resultAbilities">
+    <section class="resultAbilitySection"><h3 class="resultAbilityTitle">スキル</h3><div class="resultAbilityItems">${renderResultAbilityItems(player,"skill")}</div></section>
+    <section class="resultAbilitySection"><h3 class="resultAbilityTitle">特徴</h3><div class="resultAbilityItems">${renderResultAbilityItems(player,"trait")}</div></section>
+  </div>`;
+}
+
 function renderResult(target){
   document.querySelector(".resultCard")?.classList.remove("is-comparison-mode");
   clearComparisonStickyMount();
@@ -4173,6 +4447,7 @@ function renderResult(target){
         <div class="center">${esc(pos||"-")}</div>
         <div class="center">${styShow}</div>
       </div>
+      ${renderResultAbilities(target)}
     </div>
 
     <!-- ① Rankings -->
@@ -4468,6 +4743,8 @@ function autoEvaluateFromUrl(){
   // 候補プルダウンに該当選手を入れて選択状態にする
   $("playerPick").innerHTML = `<option value="${esc(pid)}">${esc(p.name || p.player_name || pid)}</option>`;
   $("playerPick").value = pid;
+  PLAYER_PICK_CANDIDATES = [p];
+  syncPlayerPickDisplay();
 
   // 評価結果をタブ1で自動表示
   startEvaluationInTab1(p);
@@ -4480,6 +4757,7 @@ function autoEvaluateFromUrl(){
 (async ()=>{
   try{
     favoritePlayerIds = loadFavoritePlayerIds();
+    initPlayerPickEnhanced();
     await loadData();
     autoEvaluateFromUrl();
   }catch(e){
