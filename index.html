@@ -2368,6 +2368,29 @@
   main.wrap>h1{margin-top:6px}
 }
 
+
+/* ===== トップページ：手動広告枠（自動広告の青い候補位置を参考） ===== */
+.homeManualAdSlot{
+  width:100%;
+  max-width:720px;
+  min-width:0;
+  box-sizing:border-box;
+  margin:20px auto;
+  clear:both;
+  text-align:center;
+}
+/* 広告ユニットID未設定時は空枠・余白を作らない */
+.homeManualAdSlot:empty{display:none}
+.homeManualAdLabel{
+  margin:0 0 6px;
+  color:#667085;
+  font-size:12px;
+  line-height:1.4;
+  font-weight:500;
+}
+@media (max-width:768px){
+  .homeManualAdSlot{max-width:100%;margin:16px auto}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -2448,6 +2471,10 @@
       </a>
       <a class="homeFeaturedBanner" href="certification_exam.html">📝 サカつく検定</a>
     </nav>
+
+
+    <!-- 手動広告：上部の案内リンクの後／サイト説明の前（検索・操作要素の外側） -->
+    <div class="homeManualAdSlot" data-home-ad-pos="after-featured"></div>
 
     <h1>サカつく2026攻略DB</h1>
     <div class="homeLead">実際のゲームプレイと検証データをもとに、選手評価・育成・フォーメーションコンボなどを攻略。記事で確認し、データベースや検索ツールですぐ比較できます。</div>
@@ -2621,6 +2648,10 @@
 })();
 </script>
 
+
+    <!-- 手動広告：最新攻略記事と特集バナーの間（検索・操作要素の外側） -->
+    <div class="homeManualAdSlot" data-home-ad-pos="after-latest"></div>
+
 <a href="wc2026_special.html" class="wc-banner compactWcBanner">
   <span class="wc-banner-title">🏆 ワールドカップ2026特集</span>
   <span class="wc-banner-sub">見る →</span>
@@ -2738,6 +2769,10 @@
       <div id="playerResult" class="playerList"></div>
     </div>
   </section>
+
+    <!-- 手動広告：検索パネル全体の後／ツール一覧の前（検索・操作要素の外側） -->
+    <div class="homeManualAdSlot" data-home-ad-pos="after-search"></div>
+
   <!-- ===== トップ表示リンク群 ===== -->
 <section id="panelBonus" class="compactBonus">
   <div class="card compactGuideCard toolListCard">
@@ -2810,6 +2845,10 @@
   </div>
 </section>
 
+
+    <!-- 手動広告：ツール一覧・情報提供リンクの後／データから探すの前（検索・操作要素の外側） -->
+    <div class="homeManualAdSlot" data-home-ad-pos="after-tools"></div>
+
 <div class="card compactGuideCard databaseNav mobileDatabaseLinks" aria-label="データベースから探す">
   <h2 class="sectionTitle">データから探す</h2>
   <div class="databaseNavSub">ポリシー別選手</div>
@@ -2861,6 +2900,10 @@
     </a>
   </div>
 </div>
+
+
+    <!-- 手動広告：攻略記事一覧の後／更新履歴の前（検索・操作要素の外側） -->
+    <div class="homeManualAdSlot" data-home-ad-pos="after-articles"></div>
 
 <!-- ===== 更新履歴 ===== -->
 
@@ -2915,6 +2958,10 @@
 
 </div>
 
+
+    <!-- 手動広告：SNS関連の後／ゲーム情報の前（検索・操作要素の外側） -->
+    <div class="homeManualAdSlot" data-home-ad-pos="after-sns"></div>
+
 <!-- ===== サカつく2026 ゲーム情報 ===== -->
 <div class="card gameInfoCard">
   <h2 class="gameInfoHead">サカつく2026 ゲーム情報</h2>
@@ -2961,6 +3008,10 @@
     </table>
   </div>
 </div>
+
+    <!-- 手動広告：ゲーム情報の後／サイト情報の前（検索・操作要素の外側） -->
+    <div class="homeManualAdSlot" data-home-ad-pos="after-game-info"></div>
+
 </main>
 
 <!-- モーダル -->
@@ -4485,6 +4536,36 @@ function renderComboPlayerCell(arr, type){
       alt="【PR】プレミアムウォーター お友達紹介 初回配送ボトル1セットプレゼント">
   </a>
 </div>
+
+
+<!-- ===== トップページ手動AdSense：スロットID設定後に広告HTMLを生成 ===== -->
+<script>
+(() => {
+  "use strict";
+  // AdSense「広告ユニットごと」で作成した手動広告ユニットID。
+  // 同一広告ユニットを各独立した掲載位置で使用する。
+  const HOME_ADSENSE_SLOT_ID = "7128674145";
+  if (!/^\d{6,20}$/.test(HOME_ADSENSE_SLOT_ID)) return;
+
+  document.querySelectorAll(".homeManualAdSlot[data-home-ad-pos]").forEach((container) => {
+    const label = document.createElement("div");
+    label.className = "homeManualAdLabel";
+    label.textContent = "広告";
+
+    const unit = document.createElement("ins");
+    unit.className = "adsbygoogle";
+    unit.style.display = "block";
+    unit.setAttribute("data-ad-client", "ca-pub-7589811048145654");
+    unit.setAttribute("data-ad-slot", HOME_ADSENSE_SLOT_ID);
+    unit.setAttribute("data-ad-format", "auto");
+    // スマホでページ幅より大きいフル幅広告にならないよう抑制
+    unit.setAttribute("data-full-width-responsive", "false");
+
+    container.append(label, unit);
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+})();
+</script>
 
 <script>
 /* =========================
