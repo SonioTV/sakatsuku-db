@@ -92,13 +92,70 @@
 /* 記事タイトル：番組名を明示し、キャッチコピーとは役割を分ける */
 .article-title{margin:9px 0 17px;padding:0 0 0 15px;border-left:6px solid #eaa64c;color:#173851;font-size:clamp(22px,2.9vw,30px);font-weight:900;line-height:1.5;letter-spacing:-.018em;text-wrap:pretty}
 @media(max-width:650px){.article-title{margin:7px 0 13px;padding-left:10px;border-left-width:5px;font-size:clamp(20px,5.2vw,25px)}}
+
+/* Share: compact article-specific controls; no changes to existing components */
+.article-share{margin:16px 0 20px;padding:15px 17px 12px;background:#fffdf8;border:1px solid #eadcca;border-radius:15px;box-shadow:0 5px 17px #493c2a0b}
+.article-share-title{margin:0 0 10px;font-size:14px;font-weight:900;color:#754b3d}
+.article-share-actions{display:flex;flex-wrap:wrap;gap:9px}
+.article-share .share-action{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:9px 16px;border:1px solid transparent;border-radius:11px;font:inherit;font-size:13px;font-weight:900;text-decoration:none;line-height:1.35;cursor:pointer;transition:filter .15s,transform .15s}
+.article-share .share-action:hover{filter:brightness(.96);transform:translateY(-1px)}
+.article-share .share-action:focus-visible,.image-lightbox button:focus-visible{outline:3px solid #eea346;outline-offset:3px}
+.article-share .share-action-x{background:#263340;color:#fff}
+.article-share .share-action-line{background:#ddf6e5;border-color:#a6dabc;color:#176838}
+.article-share .share-action-copy{background:#e7f3fc;border-color:#bfdceb;color:#185779}
+.article-share .share-action-icon{font-size:19px;font-weight:900;line-height:1}
+.article-share .share-action-line-icon{display:inline-block;color:white;background:#0aaf53;border-radius:5px;padding:4px 3px;font-size:9px;letter-spacing:-.04em;line-height:1}
+.article-share-feedback{margin:0;min-height:0;font-size:12px;color:#346746;font-weight:750}
+.article-share-feedback:not(:empty){margin-top:8px}
+/* In-page image lightbox. Native dialog handles focus and Esc. */
+.hero-cover[data-lightbox],.photo a[data-lightbox]{cursor:zoom-in}
+.image-lightbox{box-sizing:border-box;width:min(98vw,1230px);max-width:none;max-height:94vh;max-height:94dvh;margin:auto;padding:0;border:1px solid #3b5262;border-radius:17px;background:#142332;color:#fff;box-shadow:0 18px 75px #0009;overflow:hidden}
+.image-lightbox::backdrop{background:rgba(8,17,28,.87)}
+.image-lightbox-shell{display:flex;flex-direction:column;max-height:94vh;max-height:94dvh}
+.image-lightbox-toolbar{display:flex;justify-content:space-between;align-items:center;gap:9px;padding:9px 12px;background:#1d3445}
+.image-lightbox-count{font-size:12px;font-weight:850;color:#dcebf2}
+.image-lightbox-actions{display:flex;gap:8px}
+.image-lightbox button{min-height:41px;padding:7px 13px;border:1px solid #688093;border-radius:9px;background:#294556;color:#fff;font:inherit;font-size:13px;font-weight:850;cursor:pointer}
+.image-lightbox button:hover{background:#385a70}
+.image-lightbox button:disabled{opacity:.35;cursor:default}
+.image-lightbox button.image-lightbox-close{background:#fff;color:#243745;border-color:#fff}
+.image-lightbox-stage{min-height:0;flex:1 1 auto;overflow:auto;background:#0d161e;text-align:center;overscroll-behavior:contain}
+.image-lightbox-stage img{display:block;margin:0 auto;width:auto;height:auto;max-width:100%;max-height:calc(94dvh - 154px);object-fit:contain;cursor:zoom-in}
+.image-lightbox-stage.is-zoomed img{width:max(960px,160%);max-width:none;max-height:none;cursor:zoom-out}
+.image-lightbox-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;background:#1d3445}
+.image-lightbox-caption{margin:0;flex:1;min-width:0;text-align:center;color:#ecf5fa;font-size:12px;line-height:1.6}
+.image-lightbox-footer button{white-space:nowrap}
+@media(max-width:650px){
+ .article-share{padding:12px;margin:13px 0 17px}
+ .article-share-title{font-size:13px}
+ .article-share-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .article-share .share-action{padding:9px 7px;font-size:12px;min-width:0}
+ .article-share .share-action-copy{grid-column:1/-1}
+ .image-lightbox{width:100vw;max-height:100dvh;border:0;border-radius:0}
+ .image-lightbox-shell{max-height:100dvh;height:100dvh}
+ .image-lightbox-stage img{max-height:calc(100dvh - 165px)}
+ .image-lightbox-toolbar,.image-lightbox-footer{padding:9px}
+ .image-lightbox-caption{font-size:11px}
+ .image-lightbox-footer button{padding:7px 9px;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){.article-share .share-action{transition:none}}
+
 </style></head><body>
 <header class="sitebar"><div class="sitebar-in"><a href="index.html" class="brand">サカつく2026攻略DB</a><a href="articles.html" class="site-link">攻略記事一覧へ</a></div></header>
 <nav class="bread" aria-label="パンくず"><a href="index.html">トップ</a> › <a href="articles.html">攻略記事</a> › サカつくTV ハーフタイムSP'26冬</nav>
 <main class="page"><article>
 <h1 class="article-title">【サカつく2026】サカつくTV ハーフタイムSP'26冬｜Ver.3.0・超覚醒・バイエルンSP11人の公式生配信まとめ</h1>
-<div class="hero"><div class="hero-core"><div class="hero-text"><div class="overline">SAKATSUKU TV · HALFTIME SPECIAL '26 WINTER</div><div class="story-chips"><span>公式生配信まとめ</span><span>Ver.2.5 / Ver.3.0</span><span class="chip-amber">ソニオTVの本音</span></div><p class="hero-headline">育成の常識が変わる!? <span class="flame">シナリオモード＆超覚醒</span>、そしてバイエルンSPが11人同時登場！</p><div class="hero-statement">未来にはワクワクする。<br>でも、<b>11人まとめてガチャ追加</b>には言いたいことがある。</div></div><a class="hero-cover" href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_654.webp" target="_blank" rel="noopener"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_654.webp" width="960" height="540" alt="サカつくTV ハーフタイムSP'26冬の公式番組タイトル" fetchpriority="high"></a><p class="hero-remark">11月19日の公式生配信で、12月の大型アップデートに向けた情報が一気に公開されました。セーブデータの注意点から育成の新システム、FCバイエルン・ミュンヘンの11選手まで。後半では、僕が期待していることと、どうしても納得できないことも書きます。</p></div><div class="hero-meta"><span>公開：<time datetime="2026-11-20">2026年11月20日</time></span><span>配信：2026年11月19日</span><span>筆者：ソニオTV</span><span>公式情報＋個人考察</span></div></div>
+<div class="hero"><div class="hero-core"><div class="hero-text"><div class="overline">SAKATSUKU TV · HALFTIME SPECIAL '26 WINTER</div><div class="story-chips"><span>公式生配信まとめ</span><span>Ver.2.5 / Ver.3.0</span><span class="chip-amber">ソニオTVの本音</span></div><p class="hero-headline">育成の常識が変わる!? <span class="flame">シナリオモード＆超覚醒</span>、そしてバイエルンSPが11人同時登場！</p><div class="hero-statement">未来にはワクワクする。<br>でも、<b>11人まとめてガチャ追加</b>には言いたいことがある。</div></div><a class="hero-cover" href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_654.webp" data-lightbox="true"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_654.webp" width="960" height="540" alt="サカつくTV ハーフタイムSP'26冬の公式番組タイトル" fetchpriority="high"></a><p class="hero-remark">11月19日の公式生配信で、12月の大型アップデートに向けた情報が一気に公開されました。セーブデータの注意点から育成の新システム、FCバイエルン・ミュンヘンの11選手まで。後半では、僕が期待していることと、どうしても納得できないことも書きます。</p></div><div class="hero-meta"><span>公開：<time datetime="2026-11-20">2026年11月20日</time></span><span>配信：2026年11月19日</span><span>筆者：ソニオTV</span><span>公式情報＋個人考察</span></div></div>
 <p class="story-opening">先に言っておきます。今回の配信、<strong>Ver.3.0の「シナリオモード」と「超覚醒」はかなり楽しみ</strong>です。育成をじっくり極めたい人にも、短時間で戦力を整えたい人にも、新しい遊び方が生まれそう。<br>一方で、バイエルンSPはまさかの11人同時追加。うれしいニュースであるほど、ガチャの仕組みには慎重であってほしい。この<strong>期待と違和感の両方</strong>を、放送内容に沿って整理します。</p>
+<section class="article-share" aria-label="この記事を共有">
+  <p class="article-share-title">この記事が役に立ったら、シェアしてね！</p>
+  <div class="article-share-actions">
+    <a class="share-action share-action-x" href="https://twitter.com/intent/tweet?text=%E3%80%90%E3%82%B5%E3%82%AB%E3%81%A4%E3%81%8F2026%E3%80%91%E3%82%B5%E3%82%AB%E3%81%A4%E3%81%8FTV%20%E3%83%8F%E3%83%BC%E3%83%95%E3%82%BF%E3%82%A4%E3%83%A0SP%2726%E5%86%AC%EF%BD%9CVer.3.0%E3%83%BB%E8%B6%85%E8%A6%9A%E9%86%92%E3%83%BB%E3%83%90%E3%82%A4%E3%82%A8%E3%83%AB%E3%83%B3SP11%E4%BA%BA%E3%81%AE%E5%85%AC%E5%BC%8F%E7%94%9F%E9%85%8D%E4%BF%A1%E3%81%BE%E3%81%A8%E3%82%81&url=https%3A%2F%2Fsakatsuku2026-db.com%2Fsakatsuku_tv_halftime_sp26w_summary.html" target="_blank" rel="noopener noreferrer" aria-label="Xで記事をポストする"><span class="share-action-icon" aria-hidden="true">𝕏</span>Xでポスト</a>
+    <a class="share-action share-action-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fsakatsuku2026-db.com%2Fsakatsuku_tv_halftime_sp26w_summary.html" target="_blank" rel="noopener noreferrer" aria-label="LINEで記事を共有する"><span class="share-action-line-icon" aria-hidden="true">LINE</span>LINEで共有</a>
+    <button class="share-action share-action-copy" type="button" data-copy-article-link><span class="share-action-icon" aria-hidden="true">🔗</span>リンクをコピー</button>
+  </div>
+  <p class="article-share-feedback" role="status" aria-live="polite"></p>
+</section>
 <section class="broadcast-video" aria-label="公式生配信のアーカイブ動画">
   <div class="broadcast-video-heading"><span class="broadcast-label">OFFICIAL LIVE ARCHIVE</span><h2>公式生配信をここで再生</h2><p>番組の内容を動画でも確認できます。再生できない場合はYouTubeのリンクをご利用ください。</p></div>
   <div class="broadcast-video-player"><iframe src="https://www.youtube.com/embed/cYZQrmrHqqM" title="サカつくTV ハーフタイムSP'26冬 公式生配信アーカイブ" loading="eager" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
@@ -125,27 +182,27 @@
 <nav class="contents" aria-label="記事内の目次"><b>今回の生配信、気になるところから読めます</b><div class="contents-grid"><a href="#roster">ロスター更新とメダル</a><a href="#ver25">11/25 Ver.2.5</a><a href="#scenario">新シナリオモード</a><a href="#awakening">SPにも超覚醒</a><a href="#bayern">バイエルンSP11人</a><a href="#comments">監督コメント6問</a><a href="#events">大会・サポーター企画</a><a href="#sonio">ソニオTVの本音</a></div></nav>
 
 <section class="section blue" id="roster"><div class="chapter-no">01 / まずは絶対に押さえたい注意点</div><h2>ロスター更新で何が変わる？ セーブデータとメダルの扱い</h2><p class="lead-claim">今あるスカウトチケットは、慌てて使い切らなくてOK。ただし、旧メダルの交換には期限があります。</p><p>12月予定のVer.3.0では、2026-27シーズンの夏の移籍市場を反映するロスターアップデートが行われます。選手・クラブ構成だけでなく、SP選手スカウトのラインナップやメダル交換所にも変更が入ります。</p>
-<figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_604134.webp" target="_blank" rel="noopener" aria-label="画像を拡大：ロスターアップデートの注意事項、セーブデータ引き継ぎ、新旧メダルの交換方向と期限"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_604134.webp" width="960" height="540" loading="lazy" decoding="async" alt="ロスターアップデートの注意事項、セーブデータ引き継ぎ、新旧メダルの交換方向と期限"></a><figcaption>ロスター更新の注意事項。重要な期限は2027年3月31日10:59（JST）。</figcaption></figure>
+<figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_604134.webp" data-lightbox="true" aria-label="画像を拡大：ロスターアップデートの注意事項、セーブデータ引き継ぎ、新旧メダルの交換方向と期限"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_604134.webp" width="960" height="540" loading="lazy" decoding="async" alt="ロスターアップデートの注意事項、セーブデータ引き継ぎ、新旧メダルの交換方向と期限"></a><figcaption>ロスター更新の注意事項。重要な期限は2027年3月31日10:59（JST）。</figcaption></figure>
 <h3>シーズン開始時点からプレイし直しになる</h3><div class="feature-grid"><div class="feature amber"><span class="icon">↩️</span><b>ロスター更新時に戻るもの</b><p>Ver.3.0前に作成したサカつくモードのセーブはシーズン開始時点からプレイし直し。所属選手はクラブの初期状態に戻ります。</p></div><div class="feature teal"><span class="icon">✅</span><b>引き継がれるもの</b><p>選抜チーム・選抜選手、獲得済みSP選手、特別練習カード、シーズン年数、資金、マイタウンなどは継続します。</p></div></div>
 <h3>新メダルと旧メダルの交換方向を間違えない</h3><div class="flowbox"><h3>メダルのルールを図で整理</h3><div class="flowrow"><div class="flowpart good"><small>Ver.3.0以降</small><strong>新メダル</strong></div><div class="arrow">→</div><div class="flowpart"><small>Ver.3.0以前</small><strong>旧メダル</strong></div></div><p class="flow-warning"><strong>新 → 旧は交換可能／旧 → 新は交換不可。</strong> 旧メダルは旧ラインナップ専用の交換所で使用します。</p></div><div class="hint"><strong>期限に注意：</strong>新メダルから旧メダルへの変更と、旧メダル専用交換所の利用期限は<strong>2027年3月31日（水）10:59（JST）</strong>です。なお、現在所持している通常SP・JリーグセレクトSPのスカウトチケットは更新後の新ガチャでも使用可能。特別練習カードガチャの内容は今回のロスター更新で変更しないとの説明です。</div><p>新しいラインナップを待ってチケットを使うか、今の目当ての選手を狙うか。<strong>「先に消費しなきゃ損」という状況ではない</strong>のはありがたいですね。ただしメダルの交換方向と期限は、後から知らなかったでは済ませたくない部分です。</p><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=604s" target="_blank" rel="noopener">▶ ロスター更新の説明を見る（10:04）</a></section>
 
-<section class="section orange" id="ver25"><div class="chapter-no">02 / 11月25日に実施</div><h2>Ver.2.5は大型改修ではない。でも、見た目は大きく変わる！</h2><p>Ver.2.5の実施予定日は<strong>2026年11月25日（水）</strong>。開発側は、もともと予定していなかったマイナーアップデートだと説明しました。新しい大型機能の追加が中心ではなく、Ver.2.4までの一部不具合修正と、ガチャ・コラボに伴う更新が主な内容です。</p><div class="info">例えば、選抜選手に装着中のアクセサリーを誤って強化素材として使えてしまう問題への対策が予定されています。修正項目の全容はアップデート後の公式告知で確認してください。</div><p>一方、<strong>FCバイエルン・ミュンヘンを前面に出した新キービジュアル</strong>やアプリアイコンも登場。ここから年末に向けた空気がガラッと変わっていきそうです。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1218118.webp" target="_blank" rel="noopener" aria-label="画像を拡大：FCバイエルン・ミュンヘン選手を使ったVer.2.5新キービジュアル"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1218118.webp" width="960" height="540" loading="lazy" decoding="async" alt="FCバイエルン・ミュンヘン選手を使ったVer.2.5新キービジュアル"></a><figcaption>公式配信で公開された新キービジュアル。</figcaption></figure><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=962s" target="_blank" rel="noopener">▶ Ver.2.5の説明を見る（16:02）</a></section>
+<section class="section orange" id="ver25"><div class="chapter-no">02 / 11月25日に実施</div><h2>Ver.2.5は大型改修ではない。でも、見た目は大きく変わる！</h2><p>Ver.2.5の実施予定日は<strong>2026年11月25日（水）</strong>。開発側は、もともと予定していなかったマイナーアップデートだと説明しました。新しい大型機能の追加が中心ではなく、Ver.2.4までの一部不具合修正と、ガチャ・コラボに伴う更新が主な内容です。</p><div class="info">例えば、選抜選手に装着中のアクセサリーを誤って強化素材として使えてしまう問題への対策が予定されています。修正項目の全容はアップデート後の公式告知で確認してください。</div><p>一方、<strong>FCバイエルン・ミュンヘンを前面に出した新キービジュアル</strong>やアプリアイコンも登場。ここから年末に向けた空気がガラッと変わっていきそうです。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1218118.webp" data-lightbox="true" aria-label="画像を拡大：FCバイエルン・ミュンヘン選手を使ったVer.2.5新キービジュアル"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1218118.webp" width="960" height="540" loading="lazy" decoding="async" alt="FCバイエルン・ミュンヘン選手を使ったVer.2.5新キービジュアル"></a><figcaption>公式配信で公開された新キービジュアル。</figcaption></figure><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=962s" target="_blank" rel="noopener">▶ Ver.2.5の説明を見る（16:02）</a></section>
 
-<section class="section green" id="scenario"><div class="chapter-no">03 / Ver.3.0 先出し情報</div><h2>シナリオモード登場！ 3年でアジア王者を目指す、新しい育成の旅</h2><p class="lead-claim">SP選手を最大6人同時に育成。育成時間を短縮しながら、クラブ経営のドラマも楽しめる。</p><p>これまで「新サカつくモード」と呼ばれていた新要素の正式名称が<strong>「シナリオモード」</strong>と発表されました。既存クラブへの就任ではなく、オリジナルクラブを設立してスタートし、<strong>3年間でアジア王者を目指す</strong>形式です。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1669197.webp" target="_blank" rel="noopener" aria-label="画像を拡大：Ver.3.0の新シナリオモード概要、オリジナルクラブと3年間のアジア王者への挑戦"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1669197.webp" width="960" height="540" loading="lazy" decoding="async" alt="Ver.3.0の新シナリオモード概要、オリジナルクラブと3年間のアジア王者への挑戦"></a><figcaption>新モードの正式名称は「シナリオモード」。画面は開発中のものです。</figcaption></figure>
+<section class="section green" id="scenario"><div class="chapter-no">03 / Ver.3.0 先出し情報</div><h2>シナリオモード登場！ 3年でアジア王者を目指す、新しい育成の旅</h2><p class="lead-claim">SP選手を最大6人同時に育成。育成時間を短縮しながら、クラブ経営のドラマも楽しめる。</p><p>これまで「新サカつくモード」と呼ばれていた新要素の正式名称が<strong>「シナリオモード」</strong>と発表されました。既存クラブへの就任ではなく、オリジナルクラブを設立してスタートし、<strong>3年間でアジア王者を目指す</strong>形式です。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1669197.webp" data-lightbox="true" aria-label="画像を拡大：Ver.3.0の新シナリオモード概要、オリジナルクラブと3年間のアジア王者への挑戦"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1669197.webp" width="960" height="540" loading="lazy" decoding="async" alt="Ver.3.0の新シナリオモード概要、オリジナルクラブと3年間のアジア王者への挑戦"></a><figcaption>新モードの正式名称は「シナリオモード」。画面は開発中のものです。</figcaption></figure>
 <div class="rail"><div class="rail-item"><small>目指すゴール</small><strong>3年間</strong><p>期間内にアジア王者を目指す</p></div><div class="rail-item"><small>SP選手の同時育成</small><strong>最大6人</strong><p>短い期間でも戦力を整えやすく</p></div><div class="rail-item"><small>プレイするクラブ</small><strong>新設クラブ</strong><p>アジア各リーグのシナリオを体験</p></div></div>
-<h3>練習は「月4週」。カードをつなげて効率を上げる</h3><p>このモードでは、ひと月を4週に分けて練習を配置します。一度使った練習カードは手元からなくなり、翌月に入るカードは抽選。同じ種類の練習を<strong>最大3週分までつなげる</strong>と、効果が高まる仕組みです。</p><div class="media-grid"><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1793825.webp" target="_blank" rel="noopener" aria-label="画像を拡大：シナリオモードの週別練習配置画面"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1793825.webp" width="960" height="540" loading="lazy" decoding="async" alt="シナリオモードの週別練習配置画面"></a><figcaption>週ごとに練習をセット。ゲーム画面は開発中。</figcaption></figure><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1799901.webp" target="_blank" rel="noopener" aria-label="画像を拡大：同じ練習をつなげて効果を高める画面"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1799901.webp" width="960" height="540" loading="lazy" decoding="async" alt="同じ練習をつなげて効果を高める画面"></a><figcaption>同系統の練習を連結させる仕組み。</figcaption></figure></div>
+<h3>練習は「月4週」。カードをつなげて効率を上げる</h3><p>このモードでは、ひと月を4週に分けて練習を配置します。一度使った練習カードは手元からなくなり、翌月に入るカードは抽選。同じ種類の練習を<strong>最大3週分までつなげる</strong>と、効果が高まる仕組みです。</p><div class="media-grid"><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1793825.webp" data-lightbox="true" aria-label="画像を拡大：シナリオモードの週別練習配置画面"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1793825.webp" width="960" height="540" loading="lazy" decoding="async" alt="シナリオモードの週別練習配置画面"></a><figcaption>週ごとに練習をセット。ゲーム画面は開発中。</figcaption></figure><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1799901.webp" data-lightbox="true" aria-label="画像を拡大：同じ練習をつなげて効果を高める画面"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1799901.webp" width="960" height="540" loading="lazy" decoding="async" alt="同じ練習をつなげて効果を高める画面"></a><figcaption>同系統の練習を連結させる仕組み。</figcaption></figure></div>
 <p>目の前の2枚を今つなぐか、もう1枚を待って3週連結を狙うか。<strong>カードの引きと配置を考える面白さ</strong>がありそうです。</p>
-<h3>2カ月に1回の「練習強化」で育成を加速</h3><p>資金を使った「練習強化」は2カ月に1回。練習レベルを上げたり、コンディションや観客数に関わる選択肢が登場したりします。公開練習など、クラブ経営らしい要素も紹介されました。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1802280.webp" target="_blank" rel="noopener" aria-label="画像を拡大：シナリオモードの練習強化画面、公開練習やモチベーター"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1802280.webp" width="960" height="540" loading="lazy" decoding="async" alt="シナリオモードの練習強化画面、公開練習やモチベーター"></a><figcaption>練習強化の選択画面。画面は開発中です。</figcaption></figure><div class="hint"><strong>重要：</strong>既存のサカつくモードがなくなるわけではありません。開発側は、従来の5回覚醒などのやり込み育成には優位性が残る想定と説明しています。新モードは「既存育成の完全上位互換」ではなく、主に<strong>育成の時短と新しい達成体験</strong>を狙ったものです。</div><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=1669s" target="_blank" rel="noopener">▶ シナリオモードの紹介を見る（27:49）</a></section>
+<h3>2カ月に1回の「練習強化」で育成を加速</h3><p>資金を使った「練習強化」は2カ月に1回。練習レベルを上げたり、コンディションや観客数に関わる選択肢が登場したりします。公開練習など、クラブ経営らしい要素も紹介されました。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1802280.webp" data-lightbox="true" aria-label="画像を拡大：シナリオモードの練習強化画面、公開練習やモチベーター"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1802280.webp" width="960" height="540" loading="lazy" decoding="async" alt="シナリオモードの練習強化画面、公開練習やモチベーター"></a><figcaption>練習強化の選択画面。画面は開発中です。</figcaption></figure><div class="hint"><strong>重要：</strong>既存のサカつくモードがなくなるわけではありません。開発側は、従来の5回覚醒などのやり込み育成には優位性が残る想定と説明しています。新モードは「既存育成の完全上位互換」ではなく、主に<strong>育成の時短と新しい達成体験</strong>を狙ったものです。</div><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=1669s" target="_blank" rel="noopener">▶ シナリオモードの紹介を見る（27:49）</a></section>
 
-<section class="section violet" id="awakening"><div class="chapter-no">04 / 育成の新要素</div><h2>超覚醒とは？ SP選手も対象、スキル・特徴枠が増える可能性も！</h2><p>「超覚醒」は、従来の覚醒とは別のゲージを使う新たな成長要素として紹介されました。<strong>現在能力と成長上限の上昇</strong>に加え、選手によっては<strong>スキル枠・特徴枠が増える可能性</strong>も示されています。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2093445.webp" target="_blank" rel="noopener" aria-label="画像を拡大：Ver.3.0新要素「超覚醒」の紹介スライド"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2093445.webp" width="960" height="540" loading="lazy" decoding="async" alt="Ver.3.0新要素「超覚醒」の紹介スライド"></a><figcaption>超覚醒の紹介映像。効果の詳細や確率は正式実装時の確認が必要。</figcaption></figure><div class="feature-grid"><div class="feature teal"><span class="icon">⚡</span><b>SP選手にも発生</b><p>監督コメントへの回答で、SP選手も超覚醒の対象であることが明言されました。</p></div><div class="feature amber"><span class="icon">🎲</span><b>成長幅は選手ごとに異なる</b><p>発生率や成長量を全SP選手一律とはせず、選手ごとに調整する予定と説明されています。</p></div></div><p>この発表だけで「全員が必ず大幅強化される」と受け取るのは禁物です。仕組みの正確な数値や条件は、Ver.3.0の続報を確認したいところ。</p><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=2093s" target="_blank" rel="noopener">▶ 超覚醒の紹介を見る（34:53）</a></section>
+<section class="section violet" id="awakening"><div class="chapter-no">04 / 育成の新要素</div><h2>超覚醒とは？ SP選手も対象、スキル・特徴枠が増える可能性も！</h2><p>「超覚醒」は、従来の覚醒とは別のゲージを使う新たな成長要素として紹介されました。<strong>現在能力と成長上限の上昇</strong>に加え、選手によっては<strong>スキル枠・特徴枠が増える可能性</strong>も示されています。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2093445.webp" data-lightbox="true" aria-label="画像を拡大：Ver.3.0新要素「超覚醒」の紹介スライド"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2093445.webp" width="960" height="540" loading="lazy" decoding="async" alt="Ver.3.0新要素「超覚醒」の紹介スライド"></a><figcaption>超覚醒の紹介映像。効果の詳細や確率は正式実装時の確認が必要。</figcaption></figure><div class="feature-grid"><div class="feature teal"><span class="icon">⚡</span><b>SP選手にも発生</b><p>監督コメントへの回答で、SP選手も超覚醒の対象であることが明言されました。</p></div><div class="feature amber"><span class="icon">🎲</span><b>成長幅は選手ごとに異なる</b><p>発生率や成長量を全SP選手一律とはせず、選手ごとに調整する予定と説明されています。</p></div></div><p>この発表だけで「全員が必ず大幅強化される」と受け取るのは禁物です。仕組みの正確な数値や条件は、Ver.3.0の続報を確認したいところ。</p><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=2093s" target="_blank" rel="noopener">▶ 超覚醒の紹介を見る（34:53）</a></section>
 
 <section class="section gold" id="bayern"><div class="chapter-no">05 / 11月25日 スカウト情報</div><h2>FCバイエルンSP選手が11人同時登場！ ポリシーはリアクション</h2><p class="lead-claim">ハリー・ケイン、ムシアラ、キミッヒ、ノイアーまで。まさかのベストイレブン規模で実装！</p><p>11月25日から「FCバイエルン・ミュンヘン SP選手スカウト」が開始予定。番組では、<strong>11選手が同時にラインナップへ加わる</strong>こと、ポリシーが<strong>リアクション</strong>であることが紹介されました。</p><div class="lineup"><div class="lineup-card"><h3>⚽ 前線の3選手</h3><ul><li>ルイス・ディアス（LW）</li><li>ハリー・ケイン（CF）</li><li>ミカエル・オリーズ（RW）</li></ul></div><div class="lineup-card"><h3>🎯 中盤の3選手</h3><ul><li>ジャマル・ムシアラ（AM）</li><li>ヨシュア・キミッヒ（DM）</li><li>アレクサンダル・パブロヴィッチ（DM）</li></ul></div><div class="lineup-card"><h3>🛡️ 守備・GKの5選手</h3><ul><li>ナサニエル・ブラウン（LB）</li><li>キム・ミンジェ（CB）</li><li>ダヨ・ウパメカノ（CB）</li><li>コンラート・ライマー（RB）</li><li>マヌエル・ノイアー（GK）</li></ul></div></div>
-<div class="media-grid triple"><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3176484.webp" target="_blank" rel="noopener" aria-label="画像を拡大：FCバイエルンSP前線の3選手のカード"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3176484.webp" width="960" height="540" loading="lazy" decoding="async" alt="FCバイエルンSP前線の3選手のカード"></a><figcaption>前線の3選手。</figcaption></figure><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3205082.webp" target="_blank" rel="noopener" aria-label="画像を拡大：FCバイエルンSP中盤の3選手のカード"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3205082.webp" width="960" height="540" loading="lazy" decoding="async" alt="FCバイエルンSP中盤の3選手のカード"></a><figcaption>中盤の3選手。</figcaption></figure><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3219333.webp" target="_blank" rel="noopener" aria-label="画像を拡大：FCバイエルンSP守備陣とGKの5選手のカード"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3219333.webp" width="960" height="540" loading="lazy" decoding="async" alt="FCバイエルンSP守備陣とGKの5選手のカード"></a><figcaption>守備陣・GKの5選手。</figcaption></figure></div>
-<h3>ハリー・ケインには特別な「虹の特徴」</h3><p>キービジュアルの5選手について、プレイスタイル・メインスキル・特徴も先行公開。ハリー・ケインには、最優秀選手受賞を受けた特別な特徴<strong>「最優秀選手の証明」</strong>が用意され、開発側はレジェンド選手に近い特徴と説明しています。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3303961.webp" target="_blank" rel="noopener" aria-label="画像を拡大：FCバイエルンSPの注目5選手のプレイスタイル・スキル・特徴"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3303961.webp" width="960" height="540" loading="lazy" decoding="async" alt="FCバイエルンSPの注目5選手のプレイスタイル・スキル・特徴"></a><figcaption>5選手のスキル・特徴の詳細は画像参照。数値・発動条件は正式実装時に確認。</figcaption></figure>
-<h3>ガチャチケットは最大30枚＋★3確定1枚</h3><div class="ticket-strip"><div class="ticket"><small>ロスター3直前</small><strong>10枚</strong></div><div class="ticket-mark">＋</div><div class="ticket"><small>実装記念</small><strong>20枚</strong></div><div class="ticket-mark last-mark">＝</div><div class="ticket extra"><small>スカウトチケット</small><strong>最大30枚</strong></div></div><p>カウントダウンログインボーナスで<strong>最大10枚</strong>、別途、実装記念のログイン施策で<strong>最大20枚</strong>。さらに<strong>バイエルンSPの★3確定チケット1枚</strong>も配布予定です。ログイン日数や受け取り条件は実装時のゲーム内お知らせで確認してください。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3367100.webp" target="_blank" rel="noopener" aria-label="画像を拡大：ロスター3直前カウントダウンログインボーナス"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3367100.webp" width="960" height="540" loading="lazy" decoding="async" alt="ロスター3直前カウントダウンログインボーナス"></a><figcaption>最大10枚のスカウトチケットなどを紹介。別枠の最大20枚・★3確定1枚は番組内の口頭説明。</figcaption></figure>
-<div class="hint"><strong>注意：</strong>「11人同時実装」は<strong>11人全員が一度のガチャで確定入手できる</strong>という意味ではありません。また、各選手の提供割合や全員を集めるまでの費用は、放送のスライドだけでは確定できません。</div><h3>育成応援パックも登場予定</h3><p>スカウトとは別に育成応援パックA／B／Cも紹介されました。スライド上の価格はA<strong>2,800RB</strong>、B<strong>4,800RB</strong>、C<strong>9,800RB</strong>。内容・販売条件は実装時のお知らせを確認してください。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3504354.webp" target="_blank" rel="noopener" aria-label="画像を拡大：FCバイエルン・ミュンヘン育成応援パックA B Cの内容と価格"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3504354.webp" width="960" height="540" loading="lazy" decoding="async" alt="FCバイエルン・ミュンヘン育成応援パックA B Cの内容と価格"></a><figcaption>公式配信で紹介されたパック内容。販売前の情報です。</figcaption></figure><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=3176s" target="_blank" rel="noopener">▶ FCバイエルン11選手の紹介を見る（52:56）</a></section>
+<div class="media-grid triple"><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3176484.webp" data-lightbox="true" aria-label="画像を拡大：FCバイエルンSP前線の3選手のカード"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3176484.webp" width="960" height="540" loading="lazy" decoding="async" alt="FCバイエルンSP前線の3選手のカード"></a><figcaption>前線の3選手。</figcaption></figure><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3205082.webp" data-lightbox="true" aria-label="画像を拡大：FCバイエルンSP中盤の3選手のカード"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3205082.webp" width="960" height="540" loading="lazy" decoding="async" alt="FCバイエルンSP中盤の3選手のカード"></a><figcaption>中盤の3選手。</figcaption></figure><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3219333.webp" data-lightbox="true" aria-label="画像を拡大：FCバイエルンSP守備陣とGKの5選手のカード"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3219333.webp" width="960" height="540" loading="lazy" decoding="async" alt="FCバイエルンSP守備陣とGKの5選手のカード"></a><figcaption>守備陣・GKの5選手。</figcaption></figure></div>
+<h3>ハリー・ケインには特別な「虹の特徴」</h3><p>キービジュアルの5選手について、プレイスタイル・メインスキル・特徴も先行公開。ハリー・ケインには、最優秀選手受賞を受けた特別な特徴<strong>「最優秀選手の証明」</strong>が用意され、開発側はレジェンド選手に近い特徴と説明しています。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3303961.webp" data-lightbox="true" aria-label="画像を拡大：FCバイエルンSPの注目5選手のプレイスタイル・スキル・特徴"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3303961.webp" width="960" height="540" loading="lazy" decoding="async" alt="FCバイエルンSPの注目5選手のプレイスタイル・スキル・特徴"></a><figcaption>5選手のスキル・特徴の詳細は画像参照。数値・発動条件は正式実装時に確認。</figcaption></figure>
+<h3>ガチャチケットは最大30枚＋★3確定1枚</h3><div class="ticket-strip"><div class="ticket"><small>ロスター3直前</small><strong>10枚</strong></div><div class="ticket-mark">＋</div><div class="ticket"><small>実装記念</small><strong>20枚</strong></div><div class="ticket-mark last-mark">＝</div><div class="ticket extra"><small>スカウトチケット</small><strong>最大30枚</strong></div></div><p>カウントダウンログインボーナスで<strong>最大10枚</strong>、別途、実装記念のログイン施策で<strong>最大20枚</strong>。さらに<strong>バイエルンSPの★3確定チケット1枚</strong>も配布予定です。ログイン日数や受け取り条件は実装時のゲーム内お知らせで確認してください。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3367100.webp" data-lightbox="true" aria-label="画像を拡大：ロスター3直前カウントダウンログインボーナス"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3367100.webp" width="960" height="540" loading="lazy" decoding="async" alt="ロスター3直前カウントダウンログインボーナス"></a><figcaption>最大10枚のスカウトチケットなどを紹介。別枠の最大20枚・★3確定1枚は番組内の口頭説明。</figcaption></figure>
+<div class="hint"><strong>注意：</strong>「11人同時実装」は<strong>11人全員が一度のガチャで確定入手できる</strong>という意味ではありません。また、各選手の提供割合や全員を集めるまでの費用は、放送のスライドだけでは確定できません。</div><h3>育成応援パックも登場予定</h3><p>スカウトとは別に育成応援パックA／B／Cも紹介されました。スライド上の価格はA<strong>2,800RB</strong>、B<strong>4,800RB</strong>、C<strong>9,800RB</strong>。内容・販売条件は実装時のお知らせを確認してください。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3504354.webp" data-lightbox="true" aria-label="画像を拡大：FCバイエルン・ミュンヘン育成応援パックA B Cの内容と価格"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3504354.webp" width="960" height="540" loading="lazy" decoding="async" alt="FCバイエルン・ミュンヘン育成応援パックA B Cの内容と価格"></a><figcaption>公式配信で紹介されたパック内容。販売前の情報です。</figcaption></figure><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=3176s" target="_blank" rel="noopener">▶ FCバイエルン11選手の紹介を見る（52:56）</a></section>
 
-<section class="section green" id="comments"><div class="chapter-no">06 / 監督コメントピックアップ</div><h2>運営に直接聞けた！ 監督たちの質問と回答6件</h2><p>放送中に寄せられた質問へ、運営・開発チームが回答したコーナーです。肖像権への配慮から<strong>使用画像はコーナータイトルの1枚のみ</strong>とし、質問と回答を文章で整理しました。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2481520.webp" target="_blank" rel="noopener" aria-label="画像を拡大：監督コメントピックアップのコーナータイトル"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2481520.webp" width="960" height="540" loading="lazy" decoding="async" alt="監督コメントピックアップのコーナータイトル"></a><figcaption>このコーナーの掲載画像は上記の1枚のみ。</figcaption></figure>
+<section class="section green" id="comments"><div class="chapter-no">06 / 監督コメントピックアップ</div><h2>運営に直接聞けた！ 監督たちの質問と回答6件</h2><p>放送中に寄せられた質問へ、運営・開発チームが回答したコーナーです。肖像権への配慮から<strong>使用画像はコーナータイトルの1枚のみ</strong>とし、質問と回答を文章で整理しました。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2481520.webp" data-lightbox="true" aria-label="画像を拡大：監督コメントピックアップのコーナータイトル"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2481520.webp" width="960" height="540" loading="lazy" decoding="async" alt="監督コメントピックアップのコーナータイトル"></a><figcaption>このコーナーの掲載画像は上記の1枚のみ。</figcaption></figure>
 <div class="qa-intro"><strong>編集方針：</strong>Qの文章は文字起こしを基に趣旨が伝わるよう再構成しています。逐語引用ではありません。回答も発言の要旨です。</div>
 <div class="qa"><div class="qa-head"><span class="qa-num">Q1</span><h3>シナリオモードと従来のサカつくモードでは、育成結果にどんな差がある？</h3></div><span class="a-mark">運営の回答</span><p>シナリオモードの狙いは育成時間の短縮と、強い選手に追いつきやすくすること。従来の5回覚醒などを突き詰めて育てた選手を超えるためのモードではありません。監督実績・リーグレベル・選手継承など、従来モード独自のやり込み要素も残ります。</p><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=2507s" target="_blank" rel="noopener">▶ 質問場面へ（41:47）</a></div>
 <div class="qa"><div class="qa-head"><span class="qa-num">Q2</span><h3>SP選手にも「超覚醒」は発生する？</h3></div><span class="a-mark">運営の回答</span><p><strong>SP選手にも発生します。</strong> ただし発生確率や成長量は選手ごとに設定する方針で、すべての選手が同じように大きく伸びるわけではありません。</p><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=2657s" target="_blank" rel="noopener">▶ 質問場面へ（44:17）</a></div>
@@ -154,8 +211,8 @@
 <div class="qa"><div class="qa-head"><span class="qa-num">Q5</span><h3>シナリオモードは3年間が終わった後も遊び続けられる？</h3></div><span class="a-mark">運営の回答</span><p><strong>3年間が経過した時点で終了します。</strong> 指定条件を達成できなければ途中でゲームオーバーになる場合も。今後、別の地域を舞台にしたシナリオへ広げる可能性には触れましたが、実装が決まったわけではありません。</p><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=2948s" target="_blank" rel="noopener">▶ 質問場面へ（49:08）</a></div>
 <div class="qa"><div class="qa-head"><span class="qa-num">Q6</span><h3>次のダイスイベントは今回の仕様を続ける？ 以前の設定に戻す？</h3></div><span class="a-mark">運営の回答</span><p>単純に以前の仕様へ戻すのではなく、新たな設定で調整する方針です。運営の説明では、虹のかけらの平均獲得数は従来も今回もおよそ10個。一方で今回の仕様は、ほとんど獲得できない人が出るなど<strong>獲得数のばらつきが大きかった</strong>ことを問題と認識。次回はディレクター自身もより深く調整に関わると述べました。</p><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=3027s" target="_blank" rel="noopener">▶ 質問場面へ（50:27）</a></div><p class="minor">※「約96％」や「平均約10個」は、配信内で開発側が説明した対象・集計による数字です。全プレイヤーの実績や次回イベントの確定獲得量ではありません。</p></section>
 
-<section class="section blue" id="events"><div class="chapter-no">07 / 公式大会と新企画</div><h2>サポーター企画が始動！ 12月6日には第2回最強監督決定戦</h2><h3>サカつくサポータープロジェクトとは？</h3><p>『サカつく2026』の魅力を動画・配信・SNSで発信する監督を、公式が支援するプロジェクト。投稿や活動状況に応じてポイントが加算され、ランクに応じて称号や専用報酬などが検討されています。</p><div class="media-grid"><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2335080.webp" target="_blank" rel="noopener" aria-label="画像を拡大：サカつくサポータープロジェクトの仕組み"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2335080.webp" width="960" height="540" loading="lazy" decoding="async" alt="サカつくサポータープロジェクトの仕組み"></a><figcaption>投稿・活動に応じたポイント、ランクアップの流れ。</figcaption></figure><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2421776.webp" target="_blank" rel="noopener" aria-label="画像を拡大：サカつくサポータープロジェクトの応募条件と期間"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2421776.webp" width="960" height="540" loading="lazy" decoding="async" alt="サカつくサポータープロジェクトの応募条件と期間"></a><figcaption>募集期間は11/20〜11/30 23:59、結果発表は12/16予定。</figcaption></figure></div><div class="mini-table"><div><small>応募期間</small><strong>11/20〜30</strong></div><div><small>応募条件の一例</small><strong>100名以上</strong></div><div><small>結果発表予定</small><strong>12/16</strong></div></div><p>応募条件の一例はYouTube登録者数またはXフォロワー数100名以上で、専用ハッシュタグを付けた活動実績なども必要。<strong>応募期限は11月30日23:59</strong>です。詳細条件は公式のお知らせを優先してください。</p>
-<h3>第2回サカつく2026 最強監督決定戦 in JAPAN</h3><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1328597.webp" target="_blank" rel="noopener" aria-label="画像を拡大：第2回サカつく2026最強監督決定戦 in JAPANの開催日時・場所"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1328597.webp" width="960" height="540" loading="lazy" decoding="async" alt="第2回サカつく2026最強監督決定戦 in JAPANの開催日時・場所"></a><figcaption>2026年12月6日（日）13:00〜18:30予定、セガ本社（東京・大崎）。</figcaption></figure><p>開催予定は<strong>12月6日（日）13:00〜18:30</strong>、会場は<strong>セガ本社（東京・大崎）</strong>。観覧は無料で、事前エントリーの締切は<strong>11月23日（月・祝）23:59</strong>です。協賛として「銀のさら」も紹介されましたが、会場での飲食提供は数量に限りがあります。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1503151.webp" target="_blank" rel="noopener" aria-label="画像を拡大：最強監督決定戦の観覧募集と来場者特典"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1503151.webp" width="960" height="540" loading="lazy" decoding="async" alt="最強監督決定戦の観覧募集と来場者特典"></a><figcaption>観覧募集の締切は11/23 23:59。来場者特典の内容・条件は公式募集要項を確認。</figcaption></figure><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=1328s" target="_blank" rel="noopener">▶ 公式大会の紹介を見る（22:08）</a></section>
+<section class="section blue" id="events"><div class="chapter-no">07 / 公式大会と新企画</div><h2>サポーター企画が始動！ 12月6日には第2回最強監督決定戦</h2><h3>サカつくサポータープロジェクトとは？</h3><p>『サカつく2026』の魅力を動画・配信・SNSで発信する監督を、公式が支援するプロジェクト。投稿や活動状況に応じてポイントが加算され、ランクに応じて称号や専用報酬などが検討されています。</p><div class="media-grid"><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2335080.webp" data-lightbox="true" aria-label="画像を拡大：サカつくサポータープロジェクトの仕組み"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2335080.webp" width="960" height="540" loading="lazy" decoding="async" alt="サカつくサポータープロジェクトの仕組み"></a><figcaption>投稿・活動に応じたポイント、ランクアップの流れ。</figcaption></figure><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2421776.webp" data-lightbox="true" aria-label="画像を拡大：サカつくサポータープロジェクトの応募条件と期間"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_2421776.webp" width="960" height="540" loading="lazy" decoding="async" alt="サカつくサポータープロジェクトの応募条件と期間"></a><figcaption>募集期間は11/20〜11/30 23:59、結果発表は12/16予定。</figcaption></figure></div><div class="mini-table"><div><small>応募期間</small><strong>11/20〜30</strong></div><div><small>応募条件の一例</small><strong>100名以上</strong></div><div><small>結果発表予定</small><strong>12/16</strong></div></div><p>応募条件の一例はYouTube登録者数またはXフォロワー数100名以上で、専用ハッシュタグを付けた活動実績なども必要。<strong>応募期限は11月30日23:59</strong>です。詳細条件は公式のお知らせを優先してください。</p>
+<h3>第2回サカつく2026 最強監督決定戦 in JAPAN</h3><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1328597.webp" data-lightbox="true" aria-label="画像を拡大：第2回サカつく2026最強監督決定戦 in JAPANの開催日時・場所"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1328597.webp" width="960" height="540" loading="lazy" decoding="async" alt="第2回サカつく2026最強監督決定戦 in JAPANの開催日時・場所"></a><figcaption>2026年12月6日（日）13:00〜18:30予定、セガ本社（東京・大崎）。</figcaption></figure><p>開催予定は<strong>12月6日（日）13:00〜18:30</strong>、会場は<strong>セガ本社（東京・大崎）</strong>。観覧は無料で、事前エントリーの締切は<strong>11月23日（月・祝）23:59</strong>です。協賛として「銀のさら」も紹介されましたが、会場での飲食提供は数量に限りがあります。</p><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1503151.webp" data-lightbox="true" aria-label="画像を拡大：最強監督決定戦の観覧募集と来場者特典"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_1503151.webp" width="960" height="540" loading="lazy" decoding="async" alt="最強監督決定戦の観覧募集と来場者特典"></a><figcaption>観覧募集の締切は11/23 23:59。来場者特典の内容・条件は公式募集要項を確認。</figcaption></figure><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=1328s" target="_blank" rel="noopener">▶ 公式大会の紹介を見る（22:08）</a></section>
 
 <section class="section editorial" id="sonio">
   <div class="chapter-no">08 / ここからはソニオTVの考察と本音</div>
@@ -216,8 +273,135 @@
   </article>
 </section>
 
-<section class="section gold" id="closing"><div class="chapter-no">09 / 今回のまとめ・次回の楽しみ</div><h2>12月のVer.3.0は「育成の楽しさ」が変わる節目になりそう</h2><p>今回の配信で一番楽しみになったのは、<strong>従来のやり込みを残しながら、新しい育成体験が増える</strong>ことです。3年間でアジア王者を目指すシナリオモード、SP選手にも適用される超覚醒。育成をもう一度最初から考えたくなる情報でした。</p><p>その一方で、ロスター更新時のメダル交換期限やセーブデータの注意点は、期待だけで見落としてはいけない部分です。バイエルン11人同時追加も、豪華さとガチャの遊びやすさを分けて考えたいですね。</p><h3>次回は12月6日、公式大会会場から生配信予定</h3><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3941762.webp" target="_blank" rel="noopener" aria-label="画像を拡大：2026年12月6日のサカつくTV公式大会出張版の予告"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3941762.webp" width="960" height="540" loading="lazy" decoding="async" alt="2026年12月6日のサカつくTV公式大会出張版の予告"></a><figcaption>12月6日の大会会場から「サカつくTV 公式大会出張版」を生配信予定。</figcaption></figure><p>番組終盤には、<strong>12月6日（日）の「サカつくTV 公式大会出張版」</strong>を予告。スペシャルゲストや未公開情報、重要発表にも触れていました。さらに2027年1月の1周年、2月のシリーズ31周年に向けて準備を進めているとのこと。何が発表されるのか、ここは素直に楽しみに待ちたいです。</p><p class="hint"><strong>更新確認ポイント：</strong>Ver.3.0の正式実施日、シナリオモード・超覚醒の最終仕様、バイエルンSPの提供割合、サポータープロジェクトの詳細条件は、ゲーム内や公式サイトの続報を確認してください。</p><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=3941s" target="_blank" rel="noopener">▶ 次回予告を見る（65:41）</a></section>
+<section class="section gold" id="closing"><div class="chapter-no">09 / 今回のまとめ・次回の楽しみ</div><h2>12月のVer.3.0は「育成の楽しさ」が変わる節目になりそう</h2><p>今回の配信で一番楽しみになったのは、<strong>従来のやり込みを残しながら、新しい育成体験が増える</strong>ことです。3年間でアジア王者を目指すシナリオモード、SP選手にも適用される超覚醒。育成をもう一度最初から考えたくなる情報でした。</p><p>その一方で、ロスター更新時のメダル交換期限やセーブデータの注意点は、期待だけで見落としてはいけない部分です。バイエルン11人同時追加も、豪華さとガチャの遊びやすさを分けて考えたいですね。</p><h3>次回は12月6日、公式大会会場から生配信予定</h3><figure class="photo "><a href="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3941762.webp" data-lightbox="true" aria-label="画像を拡大：2026年12月6日のサカつくTV公式大会出張版の予告"><img src="img/articles/sakatsuku_tv_halftime_sp26w/videoframe_3941762.webp" width="960" height="540" loading="lazy" decoding="async" alt="2026年12月6日のサカつくTV公式大会出張版の予告"></a><figcaption>12月6日の大会会場から「サカつくTV 公式大会出張版」を生配信予定。</figcaption></figure><p>番組終盤には、<strong>12月6日（日）の「サカつくTV 公式大会出張版」</strong>を予告。スペシャルゲストや未公開情報、重要発表にも触れていました。さらに2027年1月の1周年、2月のシリーズ31周年に向けて準備を進めているとのこと。何が発表されるのか、ここは素直に楽しみに待ちたいです。</p><p class="hint"><strong>更新確認ポイント：</strong>Ver.3.0の正式実施日、シナリオモード・超覚醒の最終仕様、バイエルンSPの提供割合、サポータープロジェクトの詳細条件は、ゲーム内や公式サイトの続報を確認してください。</p><a class="time-link" href="https://www.youtube.com/watch?v=cYZQrmrHqqM&t=3941s" target="_blank" rel="noopener">▶ 次回予告を見る（65:41）</a></section>
 
 <section class="section blue" id="related"><div class="chapter-no">10 / あわせて活用したい攻略情報</div><h2>新環境に備えて、手持ちと編成をチェック</h2><div class="related"><a href="player_catalog.html">選手図鑑・入手方法</a><a href="strongest_formation.html">最強フォメコンランキング</a><a href="strongest_team_simulation.html">最強チームシミュレーション</a><a href="sp_evaluator.html">SP選手評価ツール</a><a href="20261111_pickup_sp_scout_review.html">11/11 SPスカウト評価</a><a href="articles.html">ほかの攻略記事</a></div></section>
+<section class="article-share" aria-label="この記事を共有">
+  <p class="article-share-title">この記事が役に立ったら、シェアしてね！</p>
+  <div class="article-share-actions">
+    <a class="share-action share-action-x" href="https://twitter.com/intent/tweet?text=%E3%80%90%E3%82%B5%E3%82%AB%E3%81%A4%E3%81%8F2026%E3%80%91%E3%82%B5%E3%82%AB%E3%81%A4%E3%81%8FTV%20%E3%83%8F%E3%83%BC%E3%83%95%E3%82%BF%E3%82%A4%E3%83%A0SP%2726%E5%86%AC%EF%BD%9CVer.3.0%E3%83%BB%E8%B6%85%E8%A6%9A%E9%86%92%E3%83%BB%E3%83%90%E3%82%A4%E3%82%A8%E3%83%AB%E3%83%B3SP11%E4%BA%BA%E3%81%AE%E5%85%AC%E5%BC%8F%E7%94%9F%E9%85%8D%E4%BF%A1%E3%81%BE%E3%81%A8%E3%82%81&url=https%3A%2F%2Fsakatsuku2026-db.com%2Fsakatsuku_tv_halftime_sp26w_summary.html" target="_blank" rel="noopener noreferrer" aria-label="Xで記事をポストする"><span class="share-action-icon" aria-hidden="true">𝕏</span>Xでポスト</a>
+    <a class="share-action share-action-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fsakatsuku2026-db.com%2Fsakatsuku_tv_halftime_sp26w_summary.html" target="_blank" rel="noopener noreferrer" aria-label="LINEで記事を共有する"><span class="share-action-line-icon" aria-hidden="true">LINE</span>LINEで共有</a>
+    <button class="share-action share-action-copy" type="button" data-copy-article-link><span class="share-action-icon" aria-hidden="true">🔗</span>リンクをコピー</button>
+  </div>
+  <p class="article-share-feedback" role="status" aria-live="polite"></p>
+</section>
 <div class="sources"><strong>出典：</strong><a href="https://www.youtube.com/watch?v=cYZQrmrHqqM" target="_blank" rel="noopener">サカつくTV ハーフタイムSP'26冬（2026年11月19日公式生配信）</a>。画像は配信映像のユーザー提供スクリーンショットを掲載しています。発表内容は配信時点の予定・開発中画面を含みます。公式発表の事実とソニオTVの個人的な考察・提案は節を分けて記載しました。</div>
-</article><footer class="footer">© サカつく2026攻略DB ／ ソニオTV　<a href="index.html">トップページ</a></footer></main></body></html>
+</article><footer class="footer">© サカつく2026攻略DB ／ ソニオTV　<a href="index.html">トップページ</a></footer></main>
+<dialog class="image-lightbox" id="articleImageLightbox" aria-label="記事画像を拡大表示">
+  <div class="image-lightbox-shell">
+    <div class="image-lightbox-toolbar">
+      <span class="image-lightbox-count" aria-live="polite"></span>
+      <div class="image-lightbox-actions">
+        <button type="button" class="image-lightbox-zoom" aria-pressed="false">さらに拡大</button>
+        <button type="button" class="image-lightbox-close" aria-label="拡大表示を閉じる">✕ 閉じる</button>
+      </div>
+    </div>
+    <div class="image-lightbox-stage"><img alt=""></div>
+    <div class="image-lightbox-footer">
+      <button type="button" class="image-lightbox-prev" aria-label="前の画像へ">‹ 前へ</button>
+      <p class="image-lightbox-caption"></p>
+      <button type="button" class="image-lightbox-next" aria-label="次の画像へ">次へ ›</button>
+    </div>
+  </div>
+</dialog>
+<script>
+/* Article image lightbox and sharing, with no external libraries. */
+(function(){
+  'use strict';
+  var lightbox = document.getElementById('articleImageLightbox');
+  var sources = Array.from(document.querySelectorAll('a[data-lightbox]'));
+  var image = lightbox.querySelector('.image-lightbox-stage img');
+  var stage = lightbox.querySelector('.image-lightbox-stage');
+  var caption = lightbox.querySelector('.image-lightbox-caption');
+  var count = lightbox.querySelector('.image-lightbox-count');
+  var close = lightbox.querySelector('.image-lightbox-close');
+  var zoom = lightbox.querySelector('.image-lightbox-zoom');
+  var previous = lightbox.querySelector('.image-lightbox-prev');
+  var next = lightbox.querySelector('.image-lightbox-next');
+  var current = 0;
+  var previousPageOverflow = "";
+
+  function setZoom(enabled){
+    stage.classList.toggle('is-zoomed', enabled);
+    zoom.setAttribute('aria-pressed', String(enabled));
+    zoom.textContent = enabled ? '縮小する' : 'さらに拡大';
+    stage.scrollTop = 0;
+    stage.scrollLeft = 0;
+  }
+  function showImage(index){
+    if(index < 0 || index >= sources.length) return;
+    current = index;
+    var source = sources[index];
+    var thumb = source.querySelector('img');
+    var figure = source.closest('figure');
+    var figureCaption = figure && figure.querySelector('figcaption');
+    image.src = source.href;
+    image.alt = thumb ? thumb.alt : '';
+    caption.textContent = (figureCaption && figureCaption.textContent.trim()) || image.alt;
+    count.textContent = '画像 ' + (index+1) + ' / ' + sources.length;
+    previous.disabled = index === 0;
+    next.disabled = index === sources.length - 1;
+    setZoom(false);
+  }
+  sources.forEach(function(source,index){
+    source.addEventListener('click',function(event){
+      if(typeof lightbox.showModal !== 'function') return; // old browser falls back to original image URL
+      event.preventDefault();
+      showImage(index);
+      if(!lightbox.open){
+        previousPageOverflow = document.documentElement.style.overflow;
+        document.documentElement.style.overflow = "hidden";
+        lightbox.showModal();
+      }
+      close.focus();
+    });
+  });
+  close.addEventListener('click',function(){lightbox.close();});
+  zoom.addEventListener('click',function(){setZoom(!stage.classList.contains('is-zoomed'));});
+  image.addEventListener('click',function(){setZoom(!stage.classList.contains('is-zoomed'));});
+  previous.addEventListener('click',function(){showImage(current-1);});
+  next.addEventListener('click',function(){showImage(current+1);});
+  lightbox.addEventListener('click',function(event){if(event.target===lightbox) lightbox.close();});
+  lightbox.addEventListener('keydown',function(event){
+    if(event.key==='ArrowLeft' && current>0){event.preventDefault();showImage(current-1);}
+    if(event.key==='ArrowRight' && current<sources.length-1){event.preventDefault();showImage(current+1);}
+  });
+  lightbox.addEventListener('close',function(){
+    document.documentElement.style.overflow = previousPageOverflow;
+    image.removeAttribute('src');
+    setZoom(false);
+  });
+
+  var canonicalLink = document.querySelector('link[rel="canonical"]');
+  var articleUrl = canonicalLink ? canonicalLink.href : location.href;
+  function fallbackCopy(value){
+    var temp=document.createElement('textarea');
+    temp.value=value;
+    temp.setAttribute('readonly','');
+    temp.style.cssText='position:fixed;left:-10000px;top:0;opacity:0';
+    document.body.appendChild(temp);
+    temp.focus();
+    temp.select();
+    var success=false;
+    try{success=document.execCommand('copy');}catch(e){}
+    temp.remove();
+    return success;
+  }
+  document.querySelectorAll('[data-copy-article-link]').forEach(function(button){
+    button.addEventListener('click',async function(){
+      var copied=false;
+      try{
+        if(navigator.clipboard && window.isSecureContext){
+          await navigator.clipboard.writeText(articleUrl);
+          copied=true;
+        }
+      }catch(e){}
+      if(!copied) copied=fallbackCopy(articleUrl);
+      var status=button.closest('.article-share').querySelector('.article-share-feedback');
+      status.textContent=copied ? '✓ 記事のリンクをコピーしました！' : 'コピーできませんでした。ブラウザのアドレスバーからURLをコピーしてください。';
+      button.focus();
+    });
+  });
+})();
+</script>
+</body></html>
