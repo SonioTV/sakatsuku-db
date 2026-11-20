@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "algorithmVersion": "team-optimizer-v2-20261028",
-  "sourceHash": "2d2c16bd627c2bac86726ce7e5b4b578ee07f14f256486f627b897eb909b5be5",
-  "generatedAt": "2026-11-11T08:01:44.870Z",
+  "sourceHash": "0e890166e02c8f4a646384b1623aeed19e80279e474ca21a49c0b5dd79ab3b97",
+  "generatedAt": "2026-11-20T07:10:00.887Z",
   "scoring": "per-stat-floor-policy5-combo-nation-and-favorable-match-count",
   "modes": {
     "all": {
