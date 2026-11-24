@@ -3136,5 +3136,71 @@
         "conditionNo": 4
       }
     ]
+  },
+  {
+    "comboId": "C062",
+    "name": "ディー・ローテン'26",
+    "formation": "4-3-3B",
+    "rank": "金",
+    "combo_policys": [
+      "リアクション"
+    ],
+    "requiredPlayers": 4,
+    "acquisitionMethod": "その他",
+    "acquisitionPlace": "ロスター3直前カウントダウンログインボーナス",
+    "availablePeriod": "2026年12月16日まで",
+    "effect": "タックルが100%アップ、マークが100%アップ、ショートパスが60%アップ、敏捷性が60%アップ",
+    "effects": [
+      {
+        "status": "タックル",
+        "value": 100
+      },
+      {
+        "status": "マーク",
+        "value": 100
+      },
+      {
+        "status": "ショートパス",
+        "value": 60
+      },
+      {
+        "status": "敏捷性",
+        "value": 60
+      }
+    ],
+    "combo_requirements": [
+      {
+        "slotNo": 1,
+        "position": "GK",
+        "positionPlace": null,
+        "playStyle": "スイーパーGK",
+        "playStyleLv": 3,
+        "conditionNo": 1
+      },
+      {
+        "slotNo": 4,
+        "position": "LB",
+        "positionPlace": null,
+        "playStyle": "攻撃的FB",
+        "playStyleLv": 2,
+        "conditionNo": 2
+      },
+      {
+        "slotNo": 7,
+        "position": "DM",
+        "positionPlace": "Left",
+        "playStyle": "パサー",
+        "playStyleLv": 2,
+        "conditionNo": 3
+      },
+      {
+        "slotNo": 10,
+        "position": "RW",
+        "positionPlace": null,
+        "playStyle": "ワイドストライカー",
+        "playStyleLv": 3,
+        "conditionNo": 4
+      }
+    ]
   }
 ]

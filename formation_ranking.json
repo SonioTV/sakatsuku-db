@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "algorithmVersion": "team-optimizer-v2-20261028",
-  "sourceHash": "0e890166e02c8f4a646384b1623aeed19e80279e474ca21a49c0b5dd79ab3b97",
-  "generatedAt": "2026-11-20T07:10:00.887Z",
+  "sourceHash": "e7380859a66939227f18a5d7f991c1e4dc1be868b950c9c744091bca46971942",
+  "generatedAt": "2026-11-24T08:00:30.598Z",
   "scoring": "per-stat-floor-policy5-combo-nation-and-favorable-match-count",
   "modes": {
     "all": {
       "eligiblePlayers": 409,
       "formed": 48,
-      "unformed": 13,
+      "unformed": 14,
       "results": [
         {
           "comboId": "C060",
@@ -12091,13 +12091,83 @@
           "score": null,
           "players": [],
           "overallRank": null
+        },
+        {
+          "comboId": "C062",
+          "name": "ディー・ローテン'26",
+          "rank": "金",
+          "policy": "リアクション",
+          "formation": "4-3-3B",
+          "effects": [
+            {
+              "status": "タックル",
+              "value": 100
+            },
+            {
+              "status": "マーク",
+              "value": 100
+            },
+            {
+              "status": "ショートパス",
+              "value": 60
+            },
+            {
+              "status": "敏捷性",
+              "value": 60
+            }
+          ],
+          "requirements": [
+            {
+              "slotNo": 1,
+              "position": "GK",
+              "positionPlace": null,
+              "playStyle": "スイーパーGK",
+              "playStyleLv": 3,
+              "conditionNo": 1
+            },
+            {
+              "slotNo": 4,
+              "position": "LB",
+              "positionPlace": null,
+              "playStyle": "攻撃的FB",
+              "playStyleLv": 2,
+              "conditionNo": 2
+            },
+            {
+              "slotNo": 7,
+              "position": "DM",
+              "positionPlace": "Left",
+              "playStyle": "パサー",
+              "playStyleLv": 2,
+              "conditionNo": 3
+            },
+            {
+              "slotNo": 10,
+              "position": "RW",
+              "positionPlace": null,
+              "playStyle": "ワイドストライカー",
+              "playStyleLv": 3,
+              "conditionNo": 4
+            }
+          ],
+          "formed": false,
+          "reason": "GK必須条件（スイーパーGK Lv3）の選手不足",
+          "baseReal": null,
+          "policyGain": null,
+          "buffGain": null,
+          "buffedReal": null,
+          "advantageGain": null,
+          "advantageReal": null,
+          "score": null,
+          "players": [],
+          "overallRank": null
         }
       ]
     },
     "available": {
       "eligiblePlayers": 231,
       "formed": 47,
-      "unformed": 14,
+      "unformed": 15,
       "results": [
         {
           "comboId": "C061",
@@ -23999,6 +24069,76 @@
           "score": null,
           "players": [],
           "overallRank": null
+        },
+        {
+          "comboId": "C062",
+          "name": "ディー・ローテン'26",
+          "rank": "金",
+          "policy": "リアクション",
+          "formation": "4-3-3B",
+          "effects": [
+            {
+              "status": "タックル",
+              "value": 100
+            },
+            {
+              "status": "マーク",
+              "value": 100
+            },
+            {
+              "status": "ショートパス",
+              "value": 60
+            },
+            {
+              "status": "敏捷性",
+              "value": 60
+            }
+          ],
+          "requirements": [
+            {
+              "slotNo": 1,
+              "position": "GK",
+              "positionPlace": null,
+              "playStyle": "スイーパーGK",
+              "playStyleLv": 3,
+              "conditionNo": 1
+            },
+            {
+              "slotNo": 4,
+              "position": "LB",
+              "positionPlace": null,
+              "playStyle": "攻撃的FB",
+              "playStyleLv": 2,
+              "conditionNo": 2
+            },
+            {
+              "slotNo": 7,
+              "position": "DM",
+              "positionPlace": "Left",
+              "playStyle": "パサー",
+              "playStyleLv": 2,
+              "conditionNo": 3
+            },
+            {
+              "slotNo": 10,
+              "position": "RW",
+              "positionPlace": null,
+              "playStyle": "ワイドストライカー",
+              "playStyleLv": 3,
+              "conditionNo": 4
+            }
+          ],
+          "formed": false,
+          "reason": "GK必須条件（スイーパーGK Lv3）の選手不足",
+          "baseReal": null,
+          "policyGain": null,
+          "buffGain": null,
+          "buffedReal": null,
+          "advantageGain": null,
+          "advantageReal": null,
+          "score": null,
+          "players": [],
+          "overallRank": null
         }
       ]
     }
@@ -24007,7 +24147,7 @@
     "all": {
       "eligiblePlayers": 409,
       "formed": 48,
-      "unformed": 13,
+      "unformed": 14,
       "results": [
         {
           "comboId": "C060",
@@ -36090,13 +36230,83 @@
           "score": null,
           "players": [],
           "overallRank": null
+        },
+        {
+          "comboId": "C062",
+          "name": "ディー・ローテン'26",
+          "rank": "金",
+          "policy": "リアクション",
+          "formation": "4-3-3B",
+          "effects": [
+            {
+              "status": "タックル",
+              "value": 100
+            },
+            {
+              "status": "マーク",
+              "value": 100
+            },
+            {
+              "status": "ショートパス",
+              "value": 60
+            },
+            {
+              "status": "敏捷性",
+              "value": 60
+            }
+          ],
+          "requirements": [
+            {
+              "slotNo": 1,
+              "position": "GK",
+              "positionPlace": null,
+              "playStyle": "スイーパーGK",
+              "playStyleLv": 3,
+              "conditionNo": 1
+            },
+            {
+              "slotNo": 4,
+              "position": "LB",
+              "positionPlace": null,
+              "playStyle": "攻撃的FB",
+              "playStyleLv": 2,
+              "conditionNo": 2
+            },
+            {
+              "slotNo": 7,
+              "position": "DM",
+              "positionPlace": "Left",
+              "playStyle": "パサー",
+              "playStyleLv": 2,
+              "conditionNo": 3
+            },
+            {
+              "slotNo": 10,
+              "position": "RW",
+              "positionPlace": null,
+              "playStyle": "ワイドストライカー",
+              "playStyleLv": 3,
+              "conditionNo": 4
+            }
+          ],
+          "formed": false,
+          "reason": "GK必須条件（スイーパーGK Lv3）の選手不足",
+          "baseReal": null,
+          "policyGain": null,
+          "buffGain": null,
+          "buffedReal": null,
+          "advantageGain": null,
+          "advantageReal": null,
+          "score": null,
+          "players": [],
+          "overallRank": null
         }
       ]
     },
     "available": {
       "eligiblePlayers": 231,
       "formed": 47,
-      "unformed": 14,
+      "unformed": 15,
       "results": [
         {
           "comboId": "C061",
@@ -47989,6 +48199,76 @@
           ],
           "formed": false,
           "reason": "GK必須条件（スイーパーGK Lv2）の選手不足",
+          "baseReal": null,
+          "policyGain": null,
+          "buffGain": null,
+          "buffedReal": null,
+          "advantageGain": null,
+          "advantageReal": null,
+          "score": null,
+          "players": [],
+          "overallRank": null
+        },
+        {
+          "comboId": "C062",
+          "name": "ディー・ローテン'26",
+          "rank": "金",
+          "policy": "リアクション",
+          "formation": "4-3-3B",
+          "effects": [
+            {
+              "status": "タックル",
+              "value": 100
+            },
+            {
+              "status": "マーク",
+              "value": 100
+            },
+            {
+              "status": "ショートパス",
+              "value": 60
+            },
+            {
+              "status": "敏捷性",
+              "value": 60
+            }
+          ],
+          "requirements": [
+            {
+              "slotNo": 1,
+              "position": "GK",
+              "positionPlace": null,
+              "playStyle": "スイーパーGK",
+              "playStyleLv": 3,
+              "conditionNo": 1
+            },
+            {
+              "slotNo": 4,
+              "position": "LB",
+              "positionPlace": null,
+              "playStyle": "攻撃的FB",
+              "playStyleLv": 2,
+              "conditionNo": 2
+            },
+            {
+              "slotNo": 7,
+              "position": "DM",
+              "positionPlace": "Left",
+              "playStyle": "パサー",
+              "playStyleLv": 2,
+              "conditionNo": 3
+            },
+            {
+              "slotNo": 10,
+              "position": "RW",
+              "positionPlace": null,
+              "playStyle": "ワイドストライカー",
+              "playStyleLv": 3,
+              "conditionNo": 4
+            }
+          ],
+          "formed": false,
+          "reason": "GK必須条件（スイーパーGK Lv3）の選手不足",
           "baseReal": null,
           "policyGain": null,
           "buffGain": null,
