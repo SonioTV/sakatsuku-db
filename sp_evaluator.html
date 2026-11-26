@@ -335,11 +335,17 @@
   .rankingTop10Table{ width:100%; border-collapse:collapse; table-layout:fixed; font-size:12px; }
   .rankingTop10Table th,.rankingTop10Table td{ border:1px solid #d8e3ea; padding:6px 4px; text-align:center; vertical-align:middle; }
   .rankingTop10Table th{ background:#eef6fa; color:#0b3d50; font-weight:900; line-height:1.2; }
-  .rankingTop10Table th:nth-child(1),.rankingTop10Table td:nth-child(1){ width:11%; }
-  .rankingTop10Table th:nth-child(2),.rankingTop10Table td:nth-child(2){ width:13%; }
-  .rankingTop10Table th:nth-child(3),.rankingTop10Table td:nth-child(3){ width:13%; }
-  .rankingTop10Table th:nth-child(4),.rankingTop10Table td:nth-child(4){ width:39%; text-align:left; }
-  .rankingTop10Table th:nth-child(5),.rankingTop10Table td:nth-child(5){ width:24%; }
+  .rankingTop10Table th:nth-child(1),.rankingTop10Table td:nth-child(1){ width:10%; }
+  .rankingTop10Table th:nth-child(2),.rankingTop10Table td:nth-child(2){ width:12%; }
+  .rankingTop10Table th:nth-child(3),.rankingTop10Table td:nth-child(3){ width:12%; }
+  .rankingTop10Table th:nth-child(4),.rankingTop10Table td:nth-child(4){ width:36%; text-align:left; }
+  .rankingTop10Table th:nth-child(5),.rankingTop10Table td:nth-child(5){ width:19%; }
+  .rankingTop10Table th:nth-child(6),.rankingTop10Table td:nth-child(6){ width:11%; }
+  .rankingAvailabilityFlag{ font-weight:900; white-space:nowrap; }
+  .rankingAvailabilityFlag.is-available{ color:#1565c0; }
+  .rankingAvailabilityFlag.is-unavailable{ color:#c62828; }
+  .rankingAvailabilityFlag.is-unknown{ color:#64748b; }
+  .rankingTop10Table .rankingPlayerNameText{ overflow-wrap:anywhere; }
   .rankingTop10Table tbody tr.currentRankingPlayer{ background:#fff3c4; box-shadow:inset 4px 0 0 #f59e0b; }
   .rankingTop10Table tbody tr.currentRankingPlayer td:nth-child(4){ font-weight:1000; color:#9a5a00; }
   .rankingDetailIcon{ display:block; width:34px; height:34px; object-fit:contain; margin:0 auto; }
@@ -350,11 +356,12 @@
     .modal.rankingDetailCompact .modal-body{ padding:7px; }
     .rankingTop10Table{ font-size:9.5px; }
     .rankingTop10Table th,.rankingTop10Table td{ padding:4px 2px; }
-    .rankingTop10Table th:nth-child(1),.rankingTop10Table td:nth-child(1){ width:11%; }
-    .rankingTop10Table th:nth-child(2),.rankingTop10Table td:nth-child(2){ width:13%; }
-    .rankingTop10Table th:nth-child(3),.rankingTop10Table td:nth-child(3){ width:13%; }
-    .rankingTop10Table th:nth-child(4),.rankingTop10Table td:nth-child(4){ width:39%; }
-    .rankingTop10Table th:nth-child(5),.rankingTop10Table td:nth-child(5){ width:24%; }
+    .rankingTop10Table th:nth-child(1),.rankingTop10Table td:nth-child(1){ width:10%; }
+    .rankingTop10Table th:nth-child(2),.rankingTop10Table td:nth-child(2){ width:12%; }
+    .rankingTop10Table th:nth-child(3),.rankingTop10Table td:nth-child(3){ width:12%; }
+    .rankingTop10Table th:nth-child(4),.rankingTop10Table td:nth-child(4){ width:35%; }
+    .rankingTop10Table th:nth-child(5),.rankingTop10Table td:nth-child(5){ width:19%; }
+    .rankingTop10Table th:nth-child(6),.rankingTop10Table td:nth-child(6){ width:12%; }
     .rankingDetailIcon{ width:27px; height:27px; }
     .rankingDetailIconFallback{ width:25px; height:25px; font-size:8px; }
     .rankingDetailNote{ font-size:9px; }
@@ -3871,6 +3878,11 @@ function openRankingDetail(rankRow, metricKey, target){
     const current = !!(targetId && pid===targetId);
     const policy = normalize(p?.policy || "");
     const playStyle = normalize(p?.playStyle || "");
+    const availabilityHtml = p?.available === true
+      ? '<span class="rankingAvailabilityFlag is-available" title="入手可能">可</span>'
+      : p?.available === false
+        ? '<span class="rankingAvailabilityFlag is-unavailable" title="入手不可">不可</span>'
+        : '<span class="rankingAvailabilityFlag is-unknown" title="入手可否未登録">－</span>';
     return `
       <tr class="${current ? "currentRankingPlayer" : ""}">
         <td>${esc(item.rank)}位</td>
@@ -3878,6 +3890,7 @@ function openRankingDetail(rankRow, metricKey, target){
         <td>${rankingDetailImageHtml("style", playStyle)}</td>
         <td><button type="button" class="rankingPlayerLink" data-ranking-player-id="${esc(pid)}"><img class="rankingPlayerThumb" src="${esc(evaluationTabImageSrc(pid))}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';"><span class="rankingPlayerThumbFallback" style="display:none;">?</span><span class="rankingPlayerNameText">&nbsp;${esc(name)}</span></button>${current ? ' <span aria-label="評価中">★</span>' : ''}</td>
         <td>${esc(Math.round(item.value).toLocaleString("ja-JP"))}</td>
+        <td>${availabilityHtml}</td>
       </tr>
     `;
   }).join("");
@@ -3885,8 +3898,8 @@ function openRankingDetail(rankRow, metricKey, target){
   const body = `
     <p class="rankingDetailNote">比較条件：${esc(conditionText)} ／ 上位10人を表示${targetId ? "（★は現在評価中の選手）" : ""}</p>
     <table class="rankingTop10Table">
-      <thead><tr><th>順位</th><th>ポリシー</th><th>プレスタ</th><th>選手名</th><th>${esc(metricLabel)}</th></tr></thead>
-      <tbody>${rowsHtml || '<tr><td colspan="5">対象データなし</td></tr>'}</tbody>
+      <thead><tr><th>順位</th><th>ポリシー</th><th>プレスタ</th><th>選手名</th><th>${esc(metricLabel)}</th><th>入手可否</th></tr></thead>
+      <tbody>${rowsHtml || '<tr><td colspan="6">対象データなし</td></tr>'}</tbody>
     </table>
   `;
   openModal(`${metricLabel}順位｜${rankRow.labelKey}`, body, { compactRanking:true });
